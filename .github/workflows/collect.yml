@@ -13,6 +13,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: snapshot
+        continue-on-error: true
         run: |
           mkdir -p data
           python3 - <<'PY'
@@ -22,35 +23,63 @@ jobs:
 
           UA = {"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
                 "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0 Safari/537.36",
-                "Accept": "application/json"}
+                "Accept": "application/json,text/plain,*/*",
+                "Accept-Language": "en-US,en;q=0.9",
+                "Referer": "https://sportsbook.draftkings.com/"}
           L = "88808"
-          URLS = [
-            f"https://sportsbook-nash.draftkings.com/api/sportscontent/dkusoh/v1/leagues/{L}",
-            f"https://sportsbook-nash.draftkings.com/api/sportscontent/dkusdc/v1/leagues/{L}",
-            f"https://sportsbook.draftkings.com/sites/US-SB/api/v5/eventgroups/{L}?format=json",
+          CANDIDATES = [
+            ("dk_nash_oh",  f"https://sportsbook-nash.draftkings.com/api/sportscontent/dkusoh/v1/leagues/{L}"),
+            ("dk_nash_dc",  f"https://sportsbook-nash.draftkings.com/api/sportscontent/dkusdc/v1/leagues/{L}"),
+            ("dk_nash_nj",  f"https://sportsbook-nash.draftkings.com/api/sportscontent/dkusnj/v1/leagues/{L}"),
+            ("dk_v5",       f"https://sportsbook.draftkings.com/sites/US-SB/api/v5/eventgroups/{L}?format=json"),
+            ("dk_api_v5",   f"https://sportsbook-us-nh.draftkings.com/sites/US-NH-SB/api/v5/eventgroups/{L}?format=json"),
+            # control: a public sports API that is friendly to datacenter IPs.
+            # If this works and the DK ones don't, DK is blocking the runner.
+            ("espn_ctl",    "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard"),
           ]
 
-          def get(u):
-              for i in range(3):
-                  try:
-                      with urlopen(Request(u, headers=UA), timeout=30) as r:
-                          return json.loads(r.read().decode("utf-8", "replace"))
-                  except Exception as e:
-                      print("  retry", type(e).__name__, e, file=sys.stderr)
-                      time.sleep(2 * (i + 1))
-              return None
+          diag = {"run_utc": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
+                  "attempts": []}
+          winner = None
 
-          data = None
-          for u in URLS:
-              print("try", u[:80]); data = get(u)
-              if data:
-                  print("  OK keys:", list(data)[:12]); break
-          if not data:
-              print("ALL ENDPOINTS FAILED"); sys.exit(1)
+          for name, url in CANDIDATES:
+              rec = {"name": name, "url": url}
+              try:
+                  with urlopen(Request(url, headers=UA), timeout=25) as r:
+                      body = r.read()
+                      rec["http"] = r.status
+                      rec["bytes"] = len(body)
+                      rec["ctype"] = r.headers.get("Content-Type", "")
+                      try:
+                          j = json.loads(body.decode("utf-8", "replace"))
+                          rec["json"] = True
+                          rec["top_keys"] = list(j)[:15] if isinstance(j, dict) else f"list[{len(j)}]"
+                          if winner is None and name != "espn_ctl":
+                              winner = (name, j)
+                      except Exception as pe:
+                          rec["json"] = False
+                          rec["head"] = body[:300].decode("utf-8", "replace")
+                          rec["parse_err"] = str(pe)[:120]
+              except Exception as e:
+                  rec["error"] = f"{type(e).__name__}: {str(e)[:200]}"
+                  rec["http"] = getattr(e, "code", None)
+                  try: rec["head"] = e.read()[:300].decode("utf-8", "replace")
+                  except Exception: pass
+              print(json.dumps(rec)[:400])
+              diag["attempts"].append(rec)
 
+          diag["winner"] = winner[0] if winner else None
+          json.dump(diag, open("data/_diag.json", "w"), indent=1)
+          print("wrote data/_diag.json ; winner =", diag["winner"])
+
+          if not winner:
+              print("no usable props source this run")
+              sys.exit(0)
+
+          name, data = winner
           if not os.path.exists("data/_raw_probe.json"):
               json.dump(data, open("data/_raw_probe.json", "w"))
-              print("wrote data/_raw_probe.json")
+              print("wrote data/_raw_probe.json from", name)
 
           sels, mkts, evs = [], {}, {}
           def walk(o, path=""):
@@ -64,8 +93,7 @@ jobs:
                       sels.append({"label": str(lab), "price": str(pr),
                                    "line": o.get("points", o.get("line","")),
                                    "who": who, "mid": str(o.get("marketId","")), "path": path})
-                  mid = o.get("id") or o.get("marketId")
-                  nm = o.get("name")
+                  mid = o.get("id") or o.get("marketId"); nm = o.get("name")
                   if mid and nm: mkts.setdefault(str(mid), str(nm))
                   if mid and nm and any(k in o for k in ("startEventDate","startDate","teamName1")):
                       evs[str(mid)] = str(nm)
@@ -75,19 +103,20 @@ jobs:
           walk(data)
           print(f"parsed {len(sels)} selections / {len(mkts)} markets / {len(evs)} events")
 
-          ts = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+          ts = diag["run_utc"]
           y, w, _ = datetime.now(timezone.utc).isocalendar()
           p = f"data/props_{y}W{w:02d}.csv"
           new = not os.path.exists(p)
           with open(p, "a", newline="") as f:
               c = csv.writer(f)
-              if new: c.writerow(["ts_utc","event","market","player","line","price","market_id","path"])
+              if new: c.writerow(["ts_utc","src","event","market","player","line","price","market_id","path"])
               for s in sels:
-                  c.writerow([ts, evs.get(s["mid"],""), mkts.get(s["mid"],""),
+                  c.writerow([ts, name, evs.get(s["mid"],""), mkts.get(s["mid"],""),
                               s["who"] or s["label"], s["line"], s["price"], s["mid"], s["path"][:60]])
           print("appended", len(sels), "rows ->", p)
           PY
       - name: commit
+        if: always()
         run: |
           git config user.name propwatch
           git config user.email propwatch@users.noreply.github.com
