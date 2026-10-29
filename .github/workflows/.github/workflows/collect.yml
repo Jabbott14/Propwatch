@@ -1,0 +1,97 @@
+name: collect-props
+on:
+  schedule:
+    - cron: "*/30 * * * *"
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: collect
+jobs:
+  snap:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: snapshot
+        run: |
+          mkdir -p data
+          python3 - <<'PY'
+          import csv, json, os, sys, time
+          from datetime import datetime, timezone
+          from urllib.request import Request, urlopen
+
+          UA = {"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
+                "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0 Safari/537.36",
+                "Accept": "application/json"}
+          L = "88808"
+          URLS = [
+            f"https://sportsbook-nash.draftkings.com/api/sportscontent/dkusoh/v1/leagues/{L}",
+            f"https://sportsbook-nash.draftkings.com/api/sportscontent/dkusdc/v1/leagues/{L}",
+            f"https://sportsbook.draftkings.com/sites/US-SB/api/v5/eventgroups/{L}?format=json",
+          ]
+
+          def get(u):
+              for i in range(3):
+                  try:
+                      with urlopen(Request(u, headers=UA), timeout=30) as r:
+                          return json.loads(r.read().decode("utf-8", "replace"))
+                  except Exception as e:
+                      print("  retry", type(e).__name__, e, file=sys.stderr)
+                      time.sleep(2 * (i + 1))
+              return None
+
+          data = None
+          for u in URLS:
+              print("try", u[:80]); data = get(u)
+              if data:
+                  print("  OK keys:", list(data)[:12]); break
+          if not data:
+              print("ALL ENDPOINTS FAILED"); sys.exit(1)
+
+          if not os.path.exists("data/_raw_probe.json"):
+              json.dump(data, open("data/_raw_probe.json", "w"))
+              print("wrote data/_raw_probe.json")
+
+          sels, mkts, evs = [], {}, {}
+          def walk(o, path=""):
+              if isinstance(o, dict):
+                  lab = o.get("label") or o.get("outcomeType") or o.get("name")
+                  pr = o.get("displayOdds") or o.get("oddsAmerican") or o.get("odds")
+                  if isinstance(pr, dict): pr = pr.get("american")
+                  if lab and pr is not None and ("marketId" in o or "points" in o or "line" in o):
+                      pt = o.get("participants")
+                      who = pt[0].get("name","") if isinstance(pt, list) and pt else o.get("participant","")
+                      sels.append({"label": str(lab), "price": str(pr),
+                                   "line": o.get("points", o.get("line","")),
+                                   "who": who, "mid": str(o.get("marketId","")), "path": path})
+                  mid = o.get("id") or o.get("marketId")
+                  nm = o.get("name")
+                  if mid and nm: mkts.setdefault(str(mid), str(nm))
+                  if mid and nm and any(k in o for k in ("startEventDate","startDate","teamName1")):
+                      evs[str(mid)] = str(nm)
+                  for k, v in o.items(): walk(v, (path+"/"+k) if path else k)
+              elif isinstance(o, list):
+                  for v in o: walk(v, path)
+          walk(data)
+          print(f"parsed {len(sels)} selections / {len(mkts)} markets / {len(evs)} events")
+
+          ts = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+          y, w, _ = datetime.now(timezone.utc).isocalendar()
+          p = f"data/props_{y}W{w:02d}.csv"
+          new = not os.path.exists(p)
+          with open(p, "a", newline="") as f:
+              c = csv.writer(f)
+              if new: c.writerow(["ts_utc","event","market","player","line","price","market_id","path"])
+              for s in sels:
+                  c.writerow([ts, evs.get(s["mid"],""), mkts.get(s["mid"],""),
+                              s["who"] or s["label"], s["line"], s["price"], s["mid"], s["path"][:60]])
+          print("appended", len(sels), "rows ->", p)
+          PY
+      - name: commit
+        run: |
+          git config user.name propwatch
+          git config user.email propwatch@users.noreply.github.com
+          git add -A data/
+          git diff --staged --quiet || git commit -m "snapshot $(date -u +%FT%TZ)"
+          git pull --rebase --autostash || true
+          git push
