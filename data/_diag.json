@@ -1,33 +1,33 @@
 {
- "run_utc": "2026-10-30T01:17:37Z",
+ "run_utc": "2026-10-30T07:40:04Z",
  "attempts": [
   {
    "name": "dk_nash_oh",
    "url": "https://sportsbook-nash.draftkings.com/api/sportscontent/dkusoh/v1/leagues/88808",
    "error": "HTTPError: HTTP Error 403: Forbidden",
    "http": 403,
-   "head": "<HTML><HEAD>\n<TITLE>Access Denied</TITLE>\n</HEAD><BODY>\n<H1>Access Denied</H1>\n \nYou don't have permission to access \"http&#58;&#47;&#47;sportsbook&#45;nash&#46;draftkings&#46;com&#47;api&#47;sportscontent&#47;dkusoh&#47;v1&#47;leagues&#47;88808\" on this server.<P>\nReference&#32;&#35;18&#46;846d3e17"
+   "head": "<HTML><HEAD>\n<TITLE>Access Denied</TITLE>\n</HEAD><BODY>\n<H1>Access Denied</H1>\n \nYou don't have permission to access \"http&#58;&#47;&#47;sportsbook&#45;nash&#46;draftkings&#46;com&#47;api&#47;sportscontent&#47;dkusoh&#47;v1&#47;leagues&#47;88808\" on this server.<P>\nReference&#32;&#35;18&#46;4cd02e17"
   },
   {
    "name": "dk_nash_dc",
    "url": "https://sportsbook-nash.draftkings.com/api/sportscontent/dkusdc/v1/leagues/88808",
    "error": "HTTPError: HTTP Error 403: Forbidden",
    "http": 403,
-   "head": "<HTML><HEAD>\n<TITLE>Access Denied</TITLE>\n</HEAD><BODY>\n<H1>Access Denied</H1>\n \nYou don't have permission to access \"http&#58;&#47;&#47;sportsbook&#45;nash&#46;draftkings&#46;com&#47;api&#47;sportscontent&#47;dkusdc&#47;v1&#47;leagues&#47;88808\" on this server.<P>\nReference&#32;&#35;18&#46;846d3e17"
+   "head": "<HTML><HEAD>\n<TITLE>Access Denied</TITLE>\n</HEAD><BODY>\n<H1>Access Denied</H1>\n \nYou don't have permission to access \"http&#58;&#47;&#47;sportsbook&#45;nash&#46;draftkings&#46;com&#47;api&#47;sportscontent&#47;dkusdc&#47;v1&#47;leagues&#47;88808\" on this server.<P>\nReference&#32;&#35;18&#46;4cd02e17"
   },
   {
    "name": "dk_nash_nj",
    "url": "https://sportsbook-nash.draftkings.com/api/sportscontent/dkusnj/v1/leagues/88808",
    "error": "HTTPError: HTTP Error 403: Forbidden",
    "http": 403,
-   "head": "<HTML><HEAD>\n<TITLE>Access Denied</TITLE>\n</HEAD><BODY>\n<H1>Access Denied</H1>\n \nYou don't have permission to access \"http&#58;&#47;&#47;sportsbook&#45;nash&#46;draftkings&#46;com&#47;api&#47;sportscontent&#47;dkusnj&#47;v1&#47;leagues&#47;88808\" on this server.<P>\nReference&#32;&#35;18&#46;886d3e17"
+   "head": "<HTML><HEAD>\n<TITLE>Access Denied</TITLE>\n</HEAD><BODY>\n<H1>Access Denied</H1>\n \nYou don't have permission to access \"http&#58;&#47;&#47;sportsbook&#45;nash&#46;draftkings&#46;com&#47;api&#47;sportscontent&#47;dkusnj&#47;v1&#47;leagues&#47;88808\" on this server.<P>\nReference&#32;&#35;18&#46;4cd02e17"
   },
   {
    "name": "dk_v5",
    "url": "https://sportsbook.draftkings.com/sites/US-SB/api/v5/eventgroups/88808?format=json",
    "error": "HTTPError: HTTP Error 403: Forbidden",
    "http": 403,
-   "head": "<HTML><HEAD>\n<TITLE>Access Denied</TITLE>\n</HEAD><BODY>\n<H1>Access Denied</H1>\n \nYou don't have permission to access \"http&#58;&#47;&#47;sportsbook&#46;draftkings&#46;com&#47;sites&#47;US&#45;SB&#47;api&#47;v5&#47;eventgroups&#47;88808&#63;\" on this server.<P>\nReference&#32;&#35;18&#46;836d3e17&#46;"
+   "head": "<HTML><HEAD>\n<TITLE>Access Denied</TITLE>\n</HEAD><BODY>\n<H1>Access Denied</H1>\n \nYou don't have permission to access \"http&#58;&#47;&#47;sportsbook&#46;draftkings&#46;com&#47;sites&#47;US&#45;SB&#47;api&#47;v5&#47;eventgroups&#47;88808&#63;\" on this server.<P>\nReference&#32;&#35;18&#46;4ad02e17&#46;"
   },
   {
    "name": "dk_api_v5",
@@ -40,7 +40,7 @@
    "name": "espn_ctl",
    "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard",
    "http": 200,
-   "bytes": 245369,
+   "bytes": 252902,
    "ctype": "application/json;charset=UTF-8",
    "json": true,
    "top_keys": [
