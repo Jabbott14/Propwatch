@@ -1,7 +1,7 @@
 name: collect
 on:
   schedule:
-    - cron: "*/30 * * * *"
+    - cron: "*/20 * * * *"
   workflow_dispatch:
 permissions:
   contents: write
@@ -24,44 +24,58 @@ jobs:
               "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0 Safari/537.36",
               "Accept":"application/json,text/html,*/*","Accept-Language":"en-US,en;q=0.9"}
           PIN={"X-API-Key":"CmX2KcMrXuFmNg6YFbmTxE0y9CIrOi0R"}
-
-          # Confirmed working from a datacenter IP (2026-11-01 probe).
-          # Dead and removed: draftkings, caesars, betonline, bovada.
-          C=[("actionnet","https://api.actionnetwork.com/web/v2/scoreboard/nfl?period=game",{}),
-             ("pin_matchups","https://guest.api.arcadia.pinnacle.com/0.1/leagues/889/matchups",PIN),
-             ("pin_prices","https://guest.api.arcadia.pinnacle.com/0.1/leagues/889/markets/straight",PIN),
-             ("pin_prices_alt","https://guest.api.arcadia.pinnacle.com/0.1/leagues/889/markets/straight?primaryOnly=false",PIN),
-             ("fanduel","https://sbapi.nj.sportsbook.fanduel.com/api/content-managed-page?page=CUSTOM&customPageId=nfl&_ak=FhMFpcPWXMeyZxOx",{}),
-             ("vsin","https://data.vsin.com/betting-splits/?sport=NFL",{}),
-             ("sbr","https://www.sportsbookreview.com/betting-odds/nfl-football/",{}),
-             ("espn","https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard",{})]
+          AK="FhMFpcPWXMeyZxOx"
+          FD="https://sbapi.nj.sportsbook.fanduel.com/api"
 
           now=datetime.now(timezone.utc)
           ts=now.strftime("%Y-%m-%dT%H%MZ"); day=now.strftime("%Y-%m-%d")
           diag={"run_utc":now.strftime("%Y-%m-%dT%H:%M:%SZ"),"attempts":[]}; saved=[]
-          for name,url,extra in C:
-              h=dict(UA); h.update(extra); rec={"name":name}
+
+          def grab(name,url,extra=None,keep=500):
+              h=dict(UA); h.update(extra or {}); rec={"name":name}; txt=None
               try:
                   with urlopen(Request(url,headers=h),timeout=25) as r:
                       body=r.read(); txt=body.decode("utf-8","replace")
                       rec.update(http=r.status,bytes=len(body))
-                      try:
-                          j=json.loads(txt); rec["json"]=True
-                          rec["top"]=list(j)[:8] if isinstance(j,dict) else f"list[{len(j)}]"
-                      except Exception: rec["json"]=False
-                      if len(body)>500:
+                      if len(body)>keep:
                           d=f"raw/{name}/{day}"; os.makedirs(d,exist_ok=True)
                           p=f"{d}/{ts}.json.gz"
                           with gzip.open(p,"wt",encoding="utf-8",compresslevel=9) as f: f.write(txt)
                           rec["gz"]=os.path.getsize(p); saved.append(name)
               except Exception as e:
-                  rec["error"]=f"{type(e).__name__}: {str(e)[:140]}"
-                  rec["http"]=getattr(e,"code",None)
-              print(json.dumps(rec)[:260]); diag["attempts"].append(rec)
+                  rec["error"]=f"{type(e).__name__}: {str(e)[:120]}"
+                  rec["http"]=getattr(e,"code",None); txt=None
+              diag["attempts"].append(rec); print(json.dumps(rec)[:200])
+              return txt
+
+          # --- step 1: lobbies, splits, prices ---
+          lob=grab("fanduel",f"{FD}/content-managed-page?page=CUSTOM&customPageId=nfl&_ak={AK}")
+          grab("actionnet","https://api.actionnetwork.com/web/v2/scoreboard/nfl?period=game")
+          grab("pin_matchups","https://guest.api.arcadia.pinnacle.com/0.1/leagues/889/matchups",PIN)
+          grab("pin_prices","https://guest.api.arcadia.pinnacle.com/0.1/leagues/889/markets/straight",PIN)
+          grab("vsin","https://data.vsin.com/betting-splits/?sport=NFL")
+          grab("sbr","https://www.sportsbookreview.com/betting-odds/nfl-football/")
+          grab("espn","https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard")
+
+          # --- step 2: FanDuel per-game prop boards ---
+          eids=[]
+          try:
+              ev=json.loads(lob)["attachments"]["events"]
+              today=now.strftime("%Y-%m-%d")
+              for k,v in ev.items():
+                  nm=str(v.get("name","")); od=str(v.get("openDate",""))
+                  if "@" in nm and od[:10]>=today: eids.append((od,str(v.get("eventId") or k),nm))
+              eids.sort(); eids=eids[:16]
+          except Exception as e:
+              diag["eventparse"]=f"{type(e).__name__}: {str(e)[:100]}"
+          diag["events"]=[e[2] for e in eids]
+          for od,eid,nm in eids:
+              grab(f"fd_event/{eid}",f"{FD}/event-page?eventId={eid}&_ak={AK}",keep=2000)
+
           diag["saved"]=saved
           os.makedirs("data",exist_ok=True)
           json.dump(diag,open("data/_diag.json","w"),indent=1)
-          print("ARCHIVED:",saved); sys.exit(0)
+          print("ARCHIVED:",len(saved)); sys.exit(0)
           PY
       - name: commit
         if: always()
