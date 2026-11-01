@@ -1,23 +1,17 @@
 {
- "run_utc": "2026-11-01T17:40:23Z",
+ "run_utc": "2026-11-01T17:43:25Z",
  "attempts": [
   {
    "name": "fanduel",
    "http": 200,
-   "bytes": 1658898,
-   "gz": 117279
+   "bytes": 1658765,
+   "gz": 117278
   },
   {
    "name": "actionnet",
    "http": 200,
-   "bytes": 462231,
-   "gz": 28988
-  },
-  {
-   "name": "pin_matchups",
-   "http": 200,
-   "bytes": 2478888,
-   "gz": 81186
+   "bytes": 462234,
+   "gz": 29116
   },
   {
    "name": "pin_prices",
@@ -26,161 +20,97 @@
    "gz": 43895
   },
   {
+   "name": "pin_matchups",
+   "http": 200,
+   "bytes": 2478888,
+   "gz": 81142
+  },
+  {
    "name": "vsin",
    "http": 200,
-   "bytes": 356736,
-   "gz": 51246
+   "bytes": 356713,
+   "gz": 51235
   },
   {
    "name": "sbr",
    "http": 200,
-   "bytes": 493594,
-   "gz": 49559
+   "bytes": 493666,
+   "gz": 49605
   },
   {
    "name": "espn",
    "http": 200,
-   "bytes": 250175,
-   "gz": 20963
-  },
-  {
-   "name": "fd_event/36215312",
-   "http": 200,
-   "bytes": 84757,
-   "gz": 8587
-  },
-  {
-   "name": "fd_event/36215313",
-   "http": 200,
-   "bytes": 84208,
-   "gz": 8568
-  },
-  {
-   "name": "fd_event/36215314",
-   "http": 200,
-   "bytes": 84946,
-   "gz": 8596
-  },
-  {
-   "name": "fd_event/36215315",
-   "http": 200,
-   "bytes": 84747,
-   "gz": 8571
-  },
-  {
-   "name": "fd_event/36215317",
-   "http": 200,
-   "bytes": 85385,
-   "gz": 8739
-  },
-  {
-   "name": "fd_event/36215318",
-   "http": 200,
-   "bytes": 84435,
-   "gz": 8535
-  },
-  {
-   "name": "fd_event/36215319",
-   "http": 200,
-   "bytes": 84700,
-   "gz": 8562
-  },
-  {
-   "name": "fd_event/36215320",
-   "http": 200,
-   "bytes": 84716,
-   "gz": 8577
-  },
-  {
-   "name": "fd_event/36215316",
-   "http": 200,
-   "bytes": 84930,
-   "gz": 8576
-  },
-  {
-   "name": "fd_event/36215321",
-   "http": 200,
-   "bytes": 84808,
-   "gz": 8515
-  },
-  {
-   "name": "fd_event/36215322",
-   "http": 200,
-   "bytes": 85212,
-   "gz": 8551
-  },
-  {
-   "name": "fd_event/36215324",
-   "http": 200,
-   "bytes": 85056,
-   "gz": 8620
-  },
-  {
-   "name": "fd_event/36215323",
-   "http": 200,
-   "bytes": 82953,
-   "gz": 8442
-  },
-  {
-   "name": "fd_event/36244870",
-   "http": 200,
-   "bytes": 61511,
-   "gz": 6270
-  },
-  {
-   "name": "fd_event/35603243",
-   "http": 200,
-   "bytes": 63082,
-   "gz": 6434
-  },
-  {
-   "name": "fd_event/36244867",
-   "http": 200,
-   "bytes": 60777,
-   "gz": 6211
+   "bytes": 250228,
+   "gz": 20991
   }
  ],
- "events": [
-  "Tennessee Titans @ Cincinnati Bengals",
-  "Baltimore Ravens @ Buffalo Bills",
-  "Arizona Cardinals @ Dallas Cowboys",
-  "Cleveland Browns @ Pittsburgh Steelers",
-  "Indianapolis Colts @ Jacksonville Jaguars",
-  "Minnesota Vikings @ Detroit Lions",
-  "Atlanta Falcons @ Tampa Bay Buccaneers",
-  "Las Vegas Raiders @ New York Jets",
-  "Los Angeles Chargers @ Los Angeles Rams",
-  "Kansas City Chiefs @ Denver Broncos",
-  "New England Patriots @ Miami Dolphins",
-  "Philadelphia Eagles @ Washington Commanders",
-  "Chicago Bears @ Seattle Seahawks",
-  "Jacksonville Jaguars @ Baltimore Ravens",
-  "Cincinnati Bengals @ Atlanta Falcons",
-  "Denver Broncos @ Carolina Panthers"
- ],
- "saved": [
-  "fanduel",
-  "actionnet",
-  "pin_matchups",
-  "pin_prices",
-  "vsin",
-  "sbr",
-  "espn",
-  "fd_event/36215312",
-  "fd_event/36215313",
-  "fd_event/36215314",
-  "fd_event/36215315",
-  "fd_event/36215317",
-  "fd_event/36215318",
-  "fd_event/36215319",
-  "fd_event/36215320",
-  "fd_event/36215316",
-  "fd_event/36215321",
-  "fd_event/36215322",
-  "fd_event/36215324",
-  "fd_event/36215323",
-  "fd_event/36244870",
-  "fd_event/35603243",
-  "fd_event/36244867"
+ "n_games": 27,
+ "probe": {
+  "num": 8,
+  "slug": 21,
+  "none": 8
+ },
+ "mode": "slug",
+ "pulls_ok": 112,
+ "pulls_fail": 0,
+ "rows": 17773,
+ "props_gz": 155618,
+ "market_types": [
+  [
+   "FIRST_HALF_ALTERNATE_TOTAL_POINTS",
+   866
+  ],
+  [
+   "SECOND_HALF_ALTERNATE_TOTAL_POINTS",
+   806
+  ],
+  [
+   "PLAYER_X_ALT_RECEIVING_YARDS_MEDIUM",
+   765
+  ],
+  [
+   "ANYTIME_2ND_HALF_TD_SCORER",
+   734
+  ],
+  [
+   "ANYTIME_1ST_HALF_TD_SCORER",
+   696
+  ],
+  [
+   "FIRST_HALF_ALTERNATE_HANDICAP",
+   546
+  ],
+  [
+   "SECOND_HALF_ALTERNATE_HANDICAP",
+   546
+  ],
+  [
+   "HOME_-_SECOND_HALF_ALTERNATE_TOTAL_POINTS",
+   540
+  ],
+  [
+   "AWAY_-_SECOND_HALF_ALTERNATE_TOTAL_POINTS",
+   530
+  ],
+  [
+   "HOME_-_FIRST_HALF_ALTERNATE_TOTAL_POINTS",
+   526
+  ],
+  [
+   "AWAY_-_FIRST_HALF_ALTERNATE_TOTAL_POINTS",
+   520
+  ],
+  [
+   "PLAYER_X_ALT_RECEPTIONS_MEDIUM",
+   456
+  ],
+  [
+   "PLAYER_X_ALT_RECEIVING_YARDS_LOW",
+   440
+  ],
+  [
+   "PLAYER_X_ALT_RECEIVING_YARDS_HIGH",
+   439
+  ]
  ]
 }
