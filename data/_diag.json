@@ -1,116 +1,112 @@
 {
- "run_utc": "2026-11-01T21:07:43Z",
+ "run_utc": "2026-11-01T21:23:13Z",
  "attempts": [
   {
    "name": "fanduel",
    "http": 200,
-   "bytes": 800510,
-   "gz": 68334
+   "bytes": 793221,
+   "gz": 67204
   },
   {
    "name": "actionnet",
    "http": 200,
-   "bytes": 546625,
-   "gz": 35564
+   "bytes": 535438,
+   "gz": 35112
   },
   {
    "name": "pin_prices",
    "http": 200,
-   "bytes": 546737,
-   "gz": 29020
+   "bytes": 475741,
+   "gz": 25601
   },
   {
    "name": "pin_matchups",
    "http": 200,
-   "bytes": 2226574,
-   "gz": 75442
+   "bytes": 1847501,
+   "gz": 60888
   },
   {
    "name": "vsin",
    "http": 200,
-   "bytes": 356713,
-   "gz": 51235
+   "bytes": 356698,
+   "gz": 51225
   },
   {
    "name": "sbr",
    "http": 200,
-   "bytes": 513071,
-   "gz": 50307
+   "bytes": 512809,
+   "gz": 50331
   },
   {
    "name": "espn",
    "http": 200,
-   "bytes": 166469,
-   "gz": 17075
+   "bytes": 197261,
+   "gz": 19615
   }
  ],
- "n_games": 9,
+ "n_games": 7,
  "probe": {
   "num": 7,
-  "slug": 12,
+  "slug": 3,
   "none": 7
  },
- "mode": "slug",
- "pulls_ok": 63,
+ "mode": null,
+ "pulls_ok": 7,
  "pulls_fail": 0,
- "rows": 6822,
- "props_gz": 60863,
+ "rows": 193,
+ "props_gz": 2412,
  "market_types": [
   [
-   "SECOND_HALF_ALTERNATE_TOTAL_POINTS",
-   329
-  ],
-  [
-   "FIRST_HALF_ALTERNATE_TOTAL_POINTS",
-   329
-  ],
-  [
-   "PLAYER_X_ALT_RECEIVING_YARDS_MEDIUM",
-   303
-  ],
-  [
-   "PLAYER_X_ALT_RECEIVING_YARDS_LOW",
-   231
-  ],
-  [
-   "ANYTIME_2ND_HALF_TD_SCORER",
-   222
-  ],
-  [
-   "SECOND_HALF_ALTERNATE_HANDICAP",
-   221
-  ],
-  [
-   "FIRST_HALF_ALTERNATE_HANDICAP",
-   210
-  ],
-  [
-   "ANYTIME_1ST_HALF_TD_SCORER",
-   210
-  ],
-  [
-   "ANY_TIME_TOUCHDOWN_SCORER",
-   185
-  ],
-  [
-   "PLAYER_X_ALT_RECEPTIONS_MEDIUM",
-   178
-  ],
-  [
-   "AWAY_-_SECOND_HALF_ALTERNATE_TOTAL_POINTS",
-   164
-  ],
-  [
    "X_TOUCHDOWN_SCORER_QB",
-   163
+   34
   ],
   [
-   "AWAY_-_FIRST_HALF_ALTERNATE_TOTAL_POINTS",
-   162
+   "X_HOME_TOUCHDOWN_SCORER_QB",
+   25
   ],
   [
-   "HOME_-_SECOND_HALF_ALTERNATE_TOTAL_POINTS",
-   162
+   "HOME_TEAM_13TH_DRIVE_-_TO_SCORE_A_TD",
+   21
+  ],
+  [
+   "4TH_QUARTER_WINNER_THREE_WAY",
+   15
+  ],
+  [
+   "MATCH_HANDICAP_(2-WAY)",
+   14
+  ],
+  [
+   "TOTAL_POINTS_(OVER/UNDER)",
+   14
+  ],
+  [
+   "MONEY_LINE",
+   14
+  ],
+  [
+   "4TH_QUARTER_WINNER",
+   10
+  ],
+  [
+   "4TH_QUARTER_TOTAL",
+   10
+  ],
+  [
+   "4TH_QUARTER_HANDICAP",
+   10
+  ],
+  [
+   "AWAY_TEAM_13TH_DRIVE_-_TO_SCORE_A_TD",
+   9
+  ],
+  [
+   "X_AWAY_TOUCHDOWN_SCORER_QB",
+   9
+  ],
+  [
+   "BOTH_TEAMS_TO_SCORE_-_QTR_4",
+   8
   ]
  ]
 }
