@@ -1,56 +1,150 @@
 {
- "run_utc": "2026-11-01T16:42:33Z",
+ "run_utc": "2026-11-01T17:26:17Z",
  "attempts": [
   {
-   "name": "dk_nash_oh",
-   "url": "https://sportsbook-nash.draftkings.com/api/sportscontent/dkusoh/v1/leagues/88808",
-   "error": "HTTPError: HTTP Error 403: Forbidden",
-   "http": 403,
-   "head": "<HTML><HEAD>\n<TITLE>Access Denied</TITLE>\n</HEAD><BODY>\n<H1>Access Denied</H1>\n \nYou don't have permission to access \"http&#58;&#47;&#47;sportsbook&#45;nash&#46;draftkings&#46;com&#47;api&#47;sportscontent&#47;dkusoh&#47;v1&#47;leagues&#47;88808\" on this server.<P>\nReference&#32;&#35;18&#46;a9c83017"
-  },
-  {
-   "name": "dk_nash_dc",
-   "url": "https://sportsbook-nash.draftkings.com/api/sportscontent/dkusdc/v1/leagues/88808",
-   "error": "HTTPError: HTTP Error 403: Forbidden",
-   "http": 403,
-   "head": "<HTML><HEAD>\n<TITLE>Access Denied</TITLE>\n</HEAD><BODY>\n<H1>Access Denied</H1>\n \nYou don't have permission to access \"http&#58;&#47;&#47;sportsbook&#45;nash&#46;draftkings&#46;com&#47;api&#47;sportscontent&#47;dkusdc&#47;v1&#47;leagues&#47;88808\" on this server.<P>\nReference&#32;&#35;18&#46;a5c83017"
-  },
-  {
-   "name": "dk_nash_nj",
-   "url": "https://sportsbook-nash.draftkings.com/api/sportscontent/dkusnj/v1/leagues/88808",
-   "error": "HTTPError: HTTP Error 403: Forbidden",
-   "http": 403,
-   "head": "<HTML><HEAD>\n<TITLE>Access Denied</TITLE>\n</HEAD><BODY>\n<H1>Access Denied</H1>\n \nYou don't have permission to access \"http&#58;&#47;&#47;sportsbook&#45;nash&#46;draftkings&#46;com&#47;api&#47;sportscontent&#47;dkusnj&#47;v1&#47;leagues&#47;88808\" on this server.<P>\nReference&#32;&#35;18&#46;a9c83017"
-  },
-  {
-   "name": "dk_v5",
-   "url": "https://sportsbook.draftkings.com/sites/US-SB/api/v5/eventgroups/88808?format=json",
-   "error": "HTTPError: HTTP Error 403: Forbidden",
-   "http": 403,
-   "head": "<HTML><HEAD>\n<TITLE>Access Denied</TITLE>\n</HEAD><BODY>\n<H1>Access Denied</H1>\n \nYou don't have permission to access \"http&#58;&#47;&#47;sportsbook&#46;draftkings&#46;com&#47;sites&#47;US&#45;SB&#47;api&#47;v5&#47;eventgroups&#47;88808&#63;\" on this server.<P>\nReference&#32;&#35;18&#46;a6c83017&#46;"
-  },
-  {
-   "name": "dk_api_v5",
-   "url": "https://sportsbook-us-nh.draftkings.com/sites/US-NH-SB/api/v5/eventgroups/88808?format=json",
-   "error": "HTTPError: HTTP Error 403: Forbidden",
-   "http": 403,
-   "head": "<HTML><HEAD>\n<TITLE>Access Denied</TITLE>\n</HEAD><BODY>\n<H1>Access Denied</H1>\n \nYou don't have permission to access \"http&#58;&#47;&#47;sportsbook&#45;us&#45;nh&#46;draftkings&#46;com&#47;sites&#47;US&#45;NH&#45;SB&#47;api&#47;v5&#47;eventgroups&#47;88808&#63;\" on this server.<P>\nReference&#32;&#35"
-  },
-  {
-   "name": "espn_ctl",
-   "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard",
+   "name": "actionnet",
    "http": 200,
-   "bytes": 250167,
-   "ctype": "application/json;charset=UTF-8",
+   "bytes": 462261,
+   "props": [
+    "player_"
+   ],
+   "splits": [
+    "bet_info",
+    "tickets"
+   ],
    "json": true,
-   "top_keys": [
+   "top": [
+    "league",
+    "games",
+    "market_rules",
+    "content_live_count"
+   ],
+   "saved": 28987
+  },
+  {
+   "name": "actionnet_v1",
+   "http": 200,
+   "bytes": 1162520,
+   "props": [],
+   "splits": [],
+   "json": true,
+   "top": [
+    "league",
+    "games",
+    "content_live_count"
+   ],
+   "saved": 114940
+  },
+  {
+   "name": "bovada",
+   "http": 200,
+   "bytes": 2,
+   "props": [],
+   "splits": [],
+   "json": true,
+   "top": []
+  },
+  {
+   "name": "caesars",
+   "error": "HTTPError: HTTP Error 403: Forbidden",
+   "http": 403
+  },
+  {
+   "name": "pinnacle",
+   "http": 200,
+   "bytes": 2478888,
+   "props": [
+    "passing yards",
+    "receiving yards",
+    "receptions",
+    "rushing yards"
+   ],
+   "splits": [],
+   "json": true,
+   "top": "list[930]",
+   "saved": 81186
+  },
+  {
+   "name": "betonline",
+   "error": "TimeoutError: The read operation timed out",
+   "http": null
+  },
+  {
+   "name": "fanduel",
+   "http": 200,
+   "bytes": 1658850,
+   "props": [
+    "anytime",
+    "passing yards",
+    "player_",
+    "receiving yards",
+    "receptions",
+    "rush yds",
+    "rushing yards",
+    "touchdown scorer"
+   ],
+   "splits": [
+    "handle"
+   ],
+   "json": true,
+   "top": [
+    "layout",
+    "attachments"
+   ],
+   "saved": 117141
+  },
+  {
+   "name": "vsin",
+   "http": 200,
+   "bytes": 356736,
+   "props": [],
+   "splits": [
+    "handle"
+   ],
+   "json": false,
+   "saved": 51246
+  },
+  {
+   "name": "sbr",
+   "http": 200,
+   "bytes": 493608,
+   "props": [
+    "anytime",
+    "rushing yards",
+    "touchdown scorer"
+   ],
+   "splits": [
+    "handle"
+   ],
+   "json": false,
+   "saved": 49515
+  },
+  {
+   "name": "espn",
+   "http": 200,
+   "bytes": 250224,
+   "props": [],
+   "splits": [
+    "tickets"
+   ],
+   "json": true,
+   "top": [
     "leagues",
     "season",
     "week",
     "events",
     "provider"
-   ]
+   ],
+   "saved": 20971
   }
  ],
- "winner": null
+ "saved": [
+  "actionnet",
+  "actionnet_v1",
+  "pinnacle",
+  "fanduel",
+  "vsin",
+  "sbr",
+  "espn"
+ ]
 }
