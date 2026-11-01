@@ -1,150 +1,186 @@
 {
- "run_utc": "2026-11-01T17:26:17Z",
+ "run_utc": "2026-11-01T17:40:23Z",
  "attempts": [
-  {
-   "name": "actionnet",
-   "http": 200,
-   "bytes": 462261,
-   "props": [
-    "player_"
-   ],
-   "splits": [
-    "bet_info",
-    "tickets"
-   ],
-   "json": true,
-   "top": [
-    "league",
-    "games",
-    "market_rules",
-    "content_live_count"
-   ],
-   "saved": 28987
-  },
-  {
-   "name": "actionnet_v1",
-   "http": 200,
-   "bytes": 1162520,
-   "props": [],
-   "splits": [],
-   "json": true,
-   "top": [
-    "league",
-    "games",
-    "content_live_count"
-   ],
-   "saved": 114940
-  },
-  {
-   "name": "bovada",
-   "http": 200,
-   "bytes": 2,
-   "props": [],
-   "splits": [],
-   "json": true,
-   "top": []
-  },
-  {
-   "name": "caesars",
-   "error": "HTTPError: HTTP Error 403: Forbidden",
-   "http": 403
-  },
-  {
-   "name": "pinnacle",
-   "http": 200,
-   "bytes": 2478888,
-   "props": [
-    "passing yards",
-    "receiving yards",
-    "receptions",
-    "rushing yards"
-   ],
-   "splits": [],
-   "json": true,
-   "top": "list[930]",
-   "saved": 81186
-  },
-  {
-   "name": "betonline",
-   "error": "TimeoutError: The read operation timed out",
-   "http": null
-  },
   {
    "name": "fanduel",
    "http": 200,
-   "bytes": 1658850,
-   "props": [
-    "anytime",
-    "passing yards",
-    "player_",
-    "receiving yards",
-    "receptions",
-    "rush yds",
-    "rushing yards",
-    "touchdown scorer"
-   ],
-   "splits": [
-    "handle"
-   ],
-   "json": true,
-   "top": [
-    "layout",
-    "attachments"
-   ],
-   "saved": 117141
+   "bytes": 1658898,
+   "gz": 117279
+  },
+  {
+   "name": "actionnet",
+   "http": 200,
+   "bytes": 462231,
+   "gz": 28988
+  },
+  {
+   "name": "pin_matchups",
+   "http": 200,
+   "bytes": 2478888,
+   "gz": 81186
+  },
+  {
+   "name": "pin_prices",
+   "http": 200,
+   "bytes": 875030,
+   "gz": 43895
   },
   {
    "name": "vsin",
    "http": 200,
    "bytes": 356736,
-   "props": [],
-   "splits": [
-    "handle"
-   ],
-   "json": false,
-   "saved": 51246
+   "gz": 51246
   },
   {
    "name": "sbr",
    "http": 200,
-   "bytes": 493608,
-   "props": [
-    "anytime",
-    "rushing yards",
-    "touchdown scorer"
-   ],
-   "splits": [
-    "handle"
-   ],
-   "json": false,
-   "saved": 49515
+   "bytes": 493594,
+   "gz": 49559
   },
   {
    "name": "espn",
    "http": 200,
-   "bytes": 250224,
-   "props": [],
-   "splits": [
-    "tickets"
-   ],
-   "json": true,
-   "top": [
-    "leagues",
-    "season",
-    "week",
-    "events",
-    "provider"
-   ],
-   "saved": 20971
+   "bytes": 250175,
+   "gz": 20963
+  },
+  {
+   "name": "fd_event/36215312",
+   "http": 200,
+   "bytes": 84757,
+   "gz": 8587
+  },
+  {
+   "name": "fd_event/36215313",
+   "http": 200,
+   "bytes": 84208,
+   "gz": 8568
+  },
+  {
+   "name": "fd_event/36215314",
+   "http": 200,
+   "bytes": 84946,
+   "gz": 8596
+  },
+  {
+   "name": "fd_event/36215315",
+   "http": 200,
+   "bytes": 84747,
+   "gz": 8571
+  },
+  {
+   "name": "fd_event/36215317",
+   "http": 200,
+   "bytes": 85385,
+   "gz": 8739
+  },
+  {
+   "name": "fd_event/36215318",
+   "http": 200,
+   "bytes": 84435,
+   "gz": 8535
+  },
+  {
+   "name": "fd_event/36215319",
+   "http": 200,
+   "bytes": 84700,
+   "gz": 8562
+  },
+  {
+   "name": "fd_event/36215320",
+   "http": 200,
+   "bytes": 84716,
+   "gz": 8577
+  },
+  {
+   "name": "fd_event/36215316",
+   "http": 200,
+   "bytes": 84930,
+   "gz": 8576
+  },
+  {
+   "name": "fd_event/36215321",
+   "http": 200,
+   "bytes": 84808,
+   "gz": 8515
+  },
+  {
+   "name": "fd_event/36215322",
+   "http": 200,
+   "bytes": 85212,
+   "gz": 8551
+  },
+  {
+   "name": "fd_event/36215324",
+   "http": 200,
+   "bytes": 85056,
+   "gz": 8620
+  },
+  {
+   "name": "fd_event/36215323",
+   "http": 200,
+   "bytes": 82953,
+   "gz": 8442
+  },
+  {
+   "name": "fd_event/36244870",
+   "http": 200,
+   "bytes": 61511,
+   "gz": 6270
+  },
+  {
+   "name": "fd_event/35603243",
+   "http": 200,
+   "bytes": 63082,
+   "gz": 6434
+  },
+  {
+   "name": "fd_event/36244867",
+   "http": 200,
+   "bytes": 60777,
+   "gz": 6211
   }
  ],
+ "events": [
+  "Tennessee Titans @ Cincinnati Bengals",
+  "Baltimore Ravens @ Buffalo Bills",
+  "Arizona Cardinals @ Dallas Cowboys",
+  "Cleveland Browns @ Pittsburgh Steelers",
+  "Indianapolis Colts @ Jacksonville Jaguars",
+  "Minnesota Vikings @ Detroit Lions",
+  "Atlanta Falcons @ Tampa Bay Buccaneers",
+  "Las Vegas Raiders @ New York Jets",
+  "Los Angeles Chargers @ Los Angeles Rams",
+  "Kansas City Chiefs @ Denver Broncos",
+  "New England Patriots @ Miami Dolphins",
+  "Philadelphia Eagles @ Washington Commanders",
+  "Chicago Bears @ Seattle Seahawks",
+  "Jacksonville Jaguars @ Baltimore Ravens",
+  "Cincinnati Bengals @ Atlanta Falcons",
+  "Denver Broncos @ Carolina Panthers"
+ ],
  "saved": [
-  "actionnet",
-  "actionnet_v1",
-  "pinnacle",
   "fanduel",
+  "actionnet",
+  "pin_matchups",
+  "pin_prices",
   "vsin",
   "sbr",
-  "espn"
+  "espn",
+  "fd_event/36215312",
+  "fd_event/36215313",
+  "fd_event/36215314",
+  "fd_event/36215315",
+  "fd_event/36215317",
+  "fd_event/36215318",
+  "fd_event/36215319",
+  "fd_event/36215320",
+  "fd_event/36215316",
+  "fd_event/36215321",
+  "fd_event/36215322",
+  "fd_event/36215324",
+  "fd_event/36215323",
+  "fd_event/36244870",
+  "fd_event/35603243",
+  "fd_event/36244867"
  ]
 }
