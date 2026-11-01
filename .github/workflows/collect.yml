@@ -23,55 +23,45 @@ jobs:
           UA={"User-Agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
               "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0 Safari/537.36",
               "Accept":"application/json,text/html,*/*","Accept-Language":"en-US,en;q=0.9"}
+          PIN={"X-API-Key":"CmX2KcMrXuFmNg6YFbmTxE0y9CIrOi0R"}
 
-          # Every source worth trying. Whatever answers gets archived raw+gzipped.
-          # ALL parsing happens downstream, so this file never needs to change again.
+          # Confirmed working from a datacenter IP (2026-11-01 probe).
+          # Dead and removed: draftkings, caesars, betonline, bovada.
           C=[("actionnet","https://api.actionnetwork.com/web/v2/scoreboard/nfl?period=game",{}),
-             ("actionnet_v1","https://api.actionnetwork.com/web/v1/scoreboard/nfl",{}),
-             ("bovada","https://www.bovada.lv/services/sports/event/coupon/events/A/description/football/nfl?marketFilterId=def&preMatchOnly=true&lang=en",{}),
-             ("caesars","https://api.americanwagering.com/regions/us/locations/nj/brands/czr/sb/v3/sports/americanfootball/events/schedule",{}),
-             ("pinnacle","https://guest.api.arcadia.pinnacle.com/0.1/leagues/889/matchups",{"X-API-Key":"CmX2KcMrXuFmNg6YFbmTxE0y9CIrOi0R"}),
-             ("betonline","https://api.betonline.ag/sportsbook/v1/sports/football/leagues/nfl/events",{}),
+             ("pin_matchups","https://guest.api.arcadia.pinnacle.com/0.1/leagues/889/matchups",PIN),
+             ("pin_prices","https://guest.api.arcadia.pinnacle.com/0.1/leagues/889/markets/straight",PIN),
+             ("pin_prices_alt","https://guest.api.arcadia.pinnacle.com/0.1/leagues/889/markets/straight?primaryOnly=false",PIN),
              ("fanduel","https://sbapi.nj.sportsbook.fanduel.com/api/content-managed-page?page=CUSTOM&customPageId=nfl&_ak=FhMFpcPWXMeyZxOx",{}),
              ("vsin","https://data.vsin.com/betting-splits/?sport=NFL",{}),
              ("sbr","https://www.sportsbookreview.com/betting-odds/nfl-football/",{}),
              ("espn","https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard",{})]
 
-          PROPS=["receiving yards","rushing yards","passing yards","receptions","anytime",
-                 "touchdown scorer","pass yds","rec yds","rush yds","player_"]
-          SPLITS=["bet_percent","money_percent","public_betting","bet_info","handle","tickets"]
-
           now=datetime.now(timezone.utc)
           ts=now.strftime("%Y-%m-%dT%H%MZ"); day=now.strftime("%Y-%m-%d")
-          diag={"run_utc":now.strftime("%Y-%m-%dT%H:%M:%SZ"),"attempts":[]}
-          saved=[]
+          diag={"run_utc":now.strftime("%Y-%m-%dT%H:%M:%SZ"),"attempts":[]}; saved=[]
           for name,url,extra in C:
-              h=dict(UA); h.update(extra)
-              rec={"name":name}
+              h=dict(UA); h.update(extra); rec={"name":name}
               try:
                   with urlopen(Request(url,headers=h),timeout=25) as r:
-                      body=r.read(); txt=body.decode("utf-8","replace"); low=txt.lower()
-                      rec.update(http=r.status, bytes=len(body),
-                                 props=sorted({w for w in PROPS if w in low}),
-                                 splits=sorted({w for w in SPLITS if w in low}))
+                      body=r.read(); txt=body.decode("utf-8","replace")
+                      rec.update(http=r.status,bytes=len(body))
                       try:
                           j=json.loads(txt); rec["json"]=True
-                          rec["top"]=list(j)[:10] if isinstance(j,dict) else f"list[{len(j)}]"
+                          rec["top"]=list(j)[:8] if isinstance(j,dict) else f"list[{len(j)}]"
                       except Exception: rec["json"]=False
                       if len(body)>500:
                           d=f"raw/{name}/{day}"; os.makedirs(d,exist_ok=True)
                           p=f"{d}/{ts}.json.gz"
                           with gzip.open(p,"wt",encoding="utf-8",compresslevel=9) as f: f.write(txt)
-                          rec["saved"]=os.path.getsize(p); saved.append(name)
+                          rec["gz"]=os.path.getsize(p); saved.append(name)
               except Exception as e:
                   rec["error"]=f"{type(e).__name__}: {str(e)[:140]}"
                   rec["http"]=getattr(e,"code",None)
-              print(json.dumps(rec)[:280]); diag["attempts"].append(rec)
+              print(json.dumps(rec)[:260]); diag["attempts"].append(rec)
           diag["saved"]=saved
           os.makedirs("data",exist_ok=True)
           json.dump(diag,open("data/_diag.json","w"),indent=1)
-          print("ARCHIVED:",saved)
-          sys.exit(0)
+          print("ARCHIVED:",saved); sys.exit(0)
           PY
       - name: commit
         if: always()
