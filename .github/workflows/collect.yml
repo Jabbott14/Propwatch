@@ -17,7 +17,7 @@ jobs:
         run: |
           python3 - <<'PY'
           import gzip, json, os, sys
-          from datetime import datetime, timezone
+          from datetime import datetime, timezone, timedelta
           from urllib.request import Request, urlopen
 
           UA={"User-Agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
@@ -29,60 +29,114 @@ jobs:
 
           now=datetime.now(timezone.utc)
           ts=now.strftime("%Y-%m-%dT%H%MZ"); day=now.strftime("%Y-%m-%d")
-          diag={"run_utc":now.strftime("%Y-%m-%dT%H:%M:%SZ"),"attempts":[]}; saved=[]
+          horizon=(now+timedelta(days=8)).strftime("%Y-%m-%d")
+          diag={"run_utc":now.strftime("%Y-%m-%dT%H:%M:%SZ"),"attempts":[]}
 
-          def grab(name,url,extra=None,keep=500):
-              h=dict(UA); h.update(extra or {}); rec={"name":name}; txt=None
+          def get(url,extra=None):
+              h=dict(UA); h.update(extra or {})
+              with urlopen(Request(url,headers=h),timeout=25) as r:
+                  return r.status, r.read().decode("utf-8","replace")
+
+          def archive(name,url,extra=None,keep=500):
+              rec={"name":name}; txt=None
               try:
-                  with urlopen(Request(url,headers=h),timeout=25) as r:
-                      body=r.read(); txt=body.decode("utf-8","replace")
-                      rec.update(http=r.status,bytes=len(body))
-                      if len(body)>keep:
-                          d=f"raw/{name}/{day}"; os.makedirs(d,exist_ok=True)
-                          p=f"{d}/{ts}.json.gz"
-                          with gzip.open(p,"wt",encoding="utf-8",compresslevel=9) as f: f.write(txt)
-                          rec["gz"]=os.path.getsize(p); saved.append(name)
+                  st,txt=get(url,extra); rec.update(http=st,bytes=len(txt))
+                  if len(txt)>keep:
+                      d=f"raw/{name}/{day}"; os.makedirs(d,exist_ok=True)
+                      p=f"{d}/{ts}.json.gz"
+                      with gzip.open(p,"wt",encoding="utf-8",compresslevel=9) as f: f.write(txt)
+                      rec["gz"]=os.path.getsize(p)
               except Exception as e:
-                  rec["error"]=f"{type(e).__name__}: {str(e)[:120]}"
-                  rec["http"]=getattr(e,"code",None); txt=None
-              diag["attempts"].append(rec); print(json.dumps(rec)[:200])
+                  rec["error"]=f"{type(e).__name__}: {str(e)[:110]}"; txt=None
+              diag["attempts"].append(rec); print(json.dumps(rec)[:190])
               return txt
 
-          # --- step 1: lobbies, splits, prices ---
-          lob=grab("fanduel",f"{FD}/content-managed-page?page=CUSTOM&customPageId=nfl&_ak={AK}")
-          grab("actionnet","https://api.actionnetwork.com/web/v2/scoreboard/nfl?period=game")
-          grab("pin_matchups","https://guest.api.arcadia.pinnacle.com/0.1/leagues/889/matchups",PIN)
-          grab("pin_prices","https://guest.api.arcadia.pinnacle.com/0.1/leagues/889/markets/straight",PIN)
-          grab("vsin","https://data.vsin.com/betting-splits/?sport=NFL")
-          grab("sbr","https://www.sportsbookreview.com/betting-odds/nfl-football/")
-          grab("espn","https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard")
+          # ---- 1. splits / prices / lobby (raw archive) ----
+          lob=archive("fanduel",f"{FD}/content-managed-page?page=CUSTOM&customPageId=nfl&_ak={AK}")
+          archive("actionnet","https://api.actionnetwork.com/web/v2/scoreboard/nfl?period=game")
+          archive("pin_prices","https://guest.api.arcadia.pinnacle.com/0.1/leagues/889/markets/straight",PIN)
+          archive("pin_matchups","https://guest.api.arcadia.pinnacle.com/0.1/leagues/889/matchups",PIN)
+          archive("vsin","https://data.vsin.com/betting-splits/?sport=NFL")
+          archive("sbr","https://www.sportsbookreview.com/betting-odds/nfl-football/")
+          archive("espn","https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard")
 
-          # --- step 2: FanDuel per-game prop boards ---
-          eids=[]
+          # ---- 2. event ids ----
+          games=[]
           try:
               ev=json.loads(lob)["attachments"]["events"]
-              today=now.strftime("%Y-%m-%d")
               for k,v in ev.items():
                   nm=str(v.get("name","")); od=str(v.get("openDate",""))
-                  if "@" in nm and od[:10]>=today: eids.append((od,str(v.get("eventId") or k),nm))
-              eids.sort(); eids=eids[:16]
+                  if "@" in nm and day<=od[:10]<=horizon:
+                      games.append((od,str(v.get("eventId") or k),nm))
+              games.sort()
           except Exception as e:
               diag["eventparse"]=f"{type(e).__name__}: {str(e)[:100]}"
-          diag["events"]=[e[2] for e in eids]
-          for od,eid,nm in eids:
-              grab(f"fd_event/{eid}",f"{FD}/event-page?eventId={eid}&_ak={AK}",keep=2000)
+          diag["n_games"]=len(games)
 
-          diag["saved"]=saved
+          # ---- 3. probe which tab spelling works ----
+          TABS={"pass":217,"recv":218,"rush":219,"tdsc":220,"h1":20,"h2":151}
+          SLUG={217:"passing-props",218:"receiving-props",219:"rushing-props",
+                220:"td-scorer-props",20:"1st-half",151:"2nd-half"}
+          mode=None
+          if games:
+              eid=games[0][1]; probe={}
+              for label,q in [("num",f"tab=219"),("slug",f"tab=rushing-props"),("none","")]:
+                  try:
+                      st,t=get(f"{FD}/event-page?eventId={eid}&{q}&_ak={AK}")
+                      probe[label]=len(json.loads(t).get("attachments",{}).get("markets",{}))
+                  except Exception as e: probe[label]=f"ERR {str(e)[:40]}"
+              diag["probe"]=probe
+              best=max([k for k in ("num","slug") if isinstance(probe.get(k),int)],
+                       key=lambda k:probe[k], default=None)
+              if best and isinstance(probe.get("none"),int) and probe[best]>probe["none"]:
+                  mode=best
+          diag["mode"]=mode
+
+          # ---- 4. pull boards, emit slim rows ----
+          rows=[]; ok=0; fail=0
+          def od_of(r):
+              try: return r["winRunnerOdds"]["americanDisplayOdds"]["americanOdds"]
+              except Exception: return None
+          def pull(eid,gname,q):
+              global ok,fail
+              try:
+                  st,t=get(f"{FD}/event-page?eventId={eid}{q}&_ak={AK}")
+                  mk=json.loads(t).get("attachments",{}).get("markets",{})
+                  for m in mk.values():
+                      for r in m.get("runners",[]):
+                          rows.append({"t":ts,"e":eid,"g":gname,
+                                       "mt":m.get("marketType"),"mn":m.get("marketName"),
+                                       "r":r.get("runnerName"),"h":r.get("handicap"),
+                                       "o":od_of(r),"s":r.get("runnerStatus")})
+                  ok+=1
+              except Exception: fail+=1
+
+          for od,eid,nm in games[:16]:
+              pull(eid,nm,"")
+              if mode:
+                  for lab,tid in TABS.items():
+                      q=f"&tab={tid}" if mode=="num" else f"&tab={SLUG[tid]}"
+                      pull(eid,nm,q)
+          diag["pulls_ok"]=ok; diag["pulls_fail"]=fail; diag["rows"]=len(rows)
+
+          if rows:
+              d=f"props/{day}"; os.makedirs(d,exist_ok=True)
+              with gzip.open(f"{d}/{ts}.jsonl.gz","wt",encoding="utf-8",compresslevel=9) as f:
+                  for r in rows: f.write(json.dumps(r,separators=(",",":"))+"\n")
+              diag["props_gz"]=os.path.getsize(f"{d}/{ts}.jsonl.gz")
+              import collections
+              diag["market_types"]=collections.Counter(r["mt"] for r in rows).most_common(14)
+
           os.makedirs("data",exist_ok=True)
           json.dump(diag,open("data/_diag.json","w"),indent=1)
-          print("ARCHIVED:",len(saved)); sys.exit(0)
+          print("ROWS:",len(rows),"MODE:",mode); sys.exit(0)
           PY
       - name: commit
         if: always()
         run: |
           git config user.name propwatch
           git config user.email propwatch@users.noreply.github.com
-          git add -A data/ raw/ 2>/dev/null || true
+          git add -A data/ raw/ props/ 2>/dev/null || true
           git diff --staged --quiet || git commit -m "snap $(date -u +%FT%TZ)"
           git pull --rebase --autostash || true
           git push
