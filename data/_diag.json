@@ -1,29 +1,29 @@
 {
- "run_utc": "2026-11-01T17:43:25Z",
+ "run_utc": "2026-11-01T21:07:43Z",
  "attempts": [
   {
    "name": "fanduel",
    "http": 200,
-   "bytes": 1658765,
-   "gz": 117278
+   "bytes": 800510,
+   "gz": 68334
   },
   {
    "name": "actionnet",
    "http": 200,
-   "bytes": 462234,
-   "gz": 29116
+   "bytes": 546625,
+   "gz": 35564
   },
   {
    "name": "pin_prices",
    "http": 200,
-   "bytes": 875030,
-   "gz": 43895
+   "bytes": 546737,
+   "gz": 29020
   },
   {
    "name": "pin_matchups",
    "http": 200,
-   "bytes": 2478888,
-   "gz": 81142
+   "bytes": 2226574,
+   "gz": 75442
   },
   {
    "name": "vsin",
@@ -34,83 +34,83 @@
   {
    "name": "sbr",
    "http": 200,
-   "bytes": 493666,
-   "gz": 49605
+   "bytes": 513071,
+   "gz": 50307
   },
   {
    "name": "espn",
    "http": 200,
-   "bytes": 250228,
-   "gz": 20991
+   "bytes": 166469,
+   "gz": 17075
   }
  ],
- "n_games": 27,
+ "n_games": 9,
  "probe": {
-  "num": 8,
-  "slug": 21,
-  "none": 8
+  "num": 7,
+  "slug": 12,
+  "none": 7
  },
  "mode": "slug",
- "pulls_ok": 112,
+ "pulls_ok": 63,
  "pulls_fail": 0,
- "rows": 17773,
- "props_gz": 155618,
+ "rows": 6822,
+ "props_gz": 60863,
  "market_types": [
   [
-   "FIRST_HALF_ALTERNATE_TOTAL_POINTS",
-   866
+   "SECOND_HALF_ALTERNATE_TOTAL_POINTS",
+   329
   ],
   [
-   "SECOND_HALF_ALTERNATE_TOTAL_POINTS",
-   806
+   "FIRST_HALF_ALTERNATE_TOTAL_POINTS",
+   329
   ],
   [
    "PLAYER_X_ALT_RECEIVING_YARDS_MEDIUM",
-   765
-  ],
-  [
-   "ANYTIME_2ND_HALF_TD_SCORER",
-   734
-  ],
-  [
-   "ANYTIME_1ST_HALF_TD_SCORER",
-   696
-  ],
-  [
-   "FIRST_HALF_ALTERNATE_HANDICAP",
-   546
-  ],
-  [
-   "SECOND_HALF_ALTERNATE_HANDICAP",
-   546
-  ],
-  [
-   "HOME_-_SECOND_HALF_ALTERNATE_TOTAL_POINTS",
-   540
-  ],
-  [
-   "AWAY_-_SECOND_HALF_ALTERNATE_TOTAL_POINTS",
-   530
-  ],
-  [
-   "HOME_-_FIRST_HALF_ALTERNATE_TOTAL_POINTS",
-   526
-  ],
-  [
-   "AWAY_-_FIRST_HALF_ALTERNATE_TOTAL_POINTS",
-   520
-  ],
-  [
-   "PLAYER_X_ALT_RECEPTIONS_MEDIUM",
-   456
+   303
   ],
   [
    "PLAYER_X_ALT_RECEIVING_YARDS_LOW",
-   440
+   231
   ],
   [
-   "PLAYER_X_ALT_RECEIVING_YARDS_HIGH",
-   439
+   "ANYTIME_2ND_HALF_TD_SCORER",
+   222
+  ],
+  [
+   "SECOND_HALF_ALTERNATE_HANDICAP",
+   221
+  ],
+  [
+   "FIRST_HALF_ALTERNATE_HANDICAP",
+   210
+  ],
+  [
+   "ANYTIME_1ST_HALF_TD_SCORER",
+   210
+  ],
+  [
+   "ANY_TIME_TOUCHDOWN_SCORER",
+   185
+  ],
+  [
+   "PLAYER_X_ALT_RECEPTIONS_MEDIUM",
+   178
+  ],
+  [
+   "AWAY_-_SECOND_HALF_ALTERNATE_TOTAL_POINTS",
+   164
+  ],
+  [
+   "X_TOUCHDOWN_SCORER_QB",
+   163
+  ],
+  [
+   "AWAY_-_FIRST_HALF_ALTERNATE_TOTAL_POINTS",
+   162
+  ],
+  [
+   "HOME_-_SECOND_HALF_ALTERNATE_TOTAL_POINTS",
+   162
   ]
  ]
 }
