@@ -1,4 +1,4 @@
-name: collect-props
+name: collect
 on:
   schedule:
     - cron: "*/30 * * * *"
@@ -15,112 +15,70 @@ jobs:
       - name: snapshot
         continue-on-error: true
         run: |
-          mkdir -p data
           python3 - <<'PY'
-          import csv, json, os, sys, time
+          import gzip, json, os, sys
           from datetime import datetime, timezone
           from urllib.request import Request, urlopen
 
-          UA = {"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
-                "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0 Safari/537.36",
-                "Accept": "application/json,text/plain,*/*",
-                "Accept-Language": "en-US,en;q=0.9",
-                "Referer": "https://sportsbook.draftkings.com/"}
-          L = "88808"
-          CANDIDATES = [
-            ("dk_nash_oh",  f"https://sportsbook-nash.draftkings.com/api/sportscontent/dkusoh/v1/leagues/{L}"),
-            ("dk_nash_dc",  f"https://sportsbook-nash.draftkings.com/api/sportscontent/dkusdc/v1/leagues/{L}"),
-            ("dk_nash_nj",  f"https://sportsbook-nash.draftkings.com/api/sportscontent/dkusnj/v1/leagues/{L}"),
-            ("dk_v5",       f"https://sportsbook.draftkings.com/sites/US-SB/api/v5/eventgroups/{L}?format=json"),
-            ("dk_api_v5",   f"https://sportsbook-us-nh.draftkings.com/sites/US-NH-SB/api/v5/eventgroups/{L}?format=json"),
-            # control: a public sports API that is friendly to datacenter IPs.
-            # If this works and the DK ones don't, DK is blocking the runner.
-            ("espn_ctl",    "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard"),
-          ]
+          UA={"User-Agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
+              "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0 Safari/537.36",
+              "Accept":"application/json,text/html,*/*","Accept-Language":"en-US,en;q=0.9"}
 
-          diag = {"run_utc": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
-                  "attempts": []}
-          winner = None
+          # Every source worth trying. Whatever answers gets archived raw+gzipped.
+          # ALL parsing happens downstream, so this file never needs to change again.
+          C=[("actionnet","https://api.actionnetwork.com/web/v2/scoreboard/nfl?period=game",{}),
+             ("actionnet_v1","https://api.actionnetwork.com/web/v1/scoreboard/nfl",{}),
+             ("bovada","https://www.bovada.lv/services/sports/event/coupon/events/A/description/football/nfl?marketFilterId=def&preMatchOnly=true&lang=en",{}),
+             ("caesars","https://api.americanwagering.com/regions/us/locations/nj/brands/czr/sb/v3/sports/americanfootball/events/schedule",{}),
+             ("pinnacle","https://guest.api.arcadia.pinnacle.com/0.1/leagues/889/matchups",{"X-API-Key":"CmX2KcMrXuFmNg6YFbmTxE0y9CIrOi0R"}),
+             ("betonline","https://api.betonline.ag/sportsbook/v1/sports/football/leagues/nfl/events",{}),
+             ("fanduel","https://sbapi.nj.sportsbook.fanduel.com/api/content-managed-page?page=CUSTOM&customPageId=nfl&_ak=FhMFpcPWXMeyZxOx",{}),
+             ("vsin","https://data.vsin.com/betting-splits/?sport=NFL",{}),
+             ("sbr","https://www.sportsbookreview.com/betting-odds/nfl-football/",{}),
+             ("espn","https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard",{})]
 
-          for name, url in CANDIDATES:
-              rec = {"name": name, "url": url}
+          PROPS=["receiving yards","rushing yards","passing yards","receptions","anytime",
+                 "touchdown scorer","pass yds","rec yds","rush yds","player_"]
+          SPLITS=["bet_percent","money_percent","public_betting","bet_info","handle","tickets"]
+
+          now=datetime.now(timezone.utc)
+          ts=now.strftime("%Y-%m-%dT%H%MZ"); day=now.strftime("%Y-%m-%d")
+          diag={"run_utc":now.strftime("%Y-%m-%dT%H:%M:%SZ"),"attempts":[]}
+          saved=[]
+          for name,url,extra in C:
+              h=dict(UA); h.update(extra)
+              rec={"name":name}
               try:
-                  with urlopen(Request(url, headers=UA), timeout=25) as r:
-                      body = r.read()
-                      rec["http"] = r.status
-                      rec["bytes"] = len(body)
-                      rec["ctype"] = r.headers.get("Content-Type", "")
+                  with urlopen(Request(url,headers=h),timeout=25) as r:
+                      body=r.read(); txt=body.decode("utf-8","replace"); low=txt.lower()
+                      rec.update(http=r.status, bytes=len(body),
+                                 props=sorted({w for w in PROPS if w in low}),
+                                 splits=sorted({w for w in SPLITS if w in low}))
                       try:
-                          j = json.loads(body.decode("utf-8", "replace"))
-                          rec["json"] = True
-                          rec["top_keys"] = list(j)[:15] if isinstance(j, dict) else f"list[{len(j)}]"
-                          if winner is None and name != "espn_ctl":
-                              winner = (name, j)
-                      except Exception as pe:
-                          rec["json"] = False
-                          rec["head"] = body[:300].decode("utf-8", "replace")
-                          rec["parse_err"] = str(pe)[:120]
+                          j=json.loads(txt); rec["json"]=True
+                          rec["top"]=list(j)[:10] if isinstance(j,dict) else f"list[{len(j)}]"
+                      except Exception: rec["json"]=False
+                      if len(body)>500:
+                          d=f"raw/{name}/{day}"; os.makedirs(d,exist_ok=True)
+                          p=f"{d}/{ts}.json.gz"
+                          with gzip.open(p,"wt",encoding="utf-8",compresslevel=9) as f: f.write(txt)
+                          rec["saved"]=os.path.getsize(p); saved.append(name)
               except Exception as e:
-                  rec["error"] = f"{type(e).__name__}: {str(e)[:200]}"
-                  rec["http"] = getattr(e, "code", None)
-                  try: rec["head"] = e.read()[:300].decode("utf-8", "replace")
-                  except Exception: pass
-              print(json.dumps(rec)[:400])
-              diag["attempts"].append(rec)
-
-          diag["winner"] = winner[0] if winner else None
-          json.dump(diag, open("data/_diag.json", "w"), indent=1)
-          print("wrote data/_diag.json ; winner =", diag["winner"])
-
-          if not winner:
-              print("no usable props source this run")
-              sys.exit(0)
-
-          name, data = winner
-          if not os.path.exists("data/_raw_probe.json"):
-              json.dump(data, open("data/_raw_probe.json", "w"))
-              print("wrote data/_raw_probe.json from", name)
-
-          sels, mkts, evs = [], {}, {}
-          def walk(o, path=""):
-              if isinstance(o, dict):
-                  lab = o.get("label") or o.get("outcomeType") or o.get("name")
-                  pr = o.get("displayOdds") or o.get("oddsAmerican") or o.get("odds")
-                  if isinstance(pr, dict): pr = pr.get("american")
-                  if lab and pr is not None and ("marketId" in o or "points" in o or "line" in o):
-                      pt = o.get("participants")
-                      who = pt[0].get("name","") if isinstance(pt, list) and pt else o.get("participant","")
-                      sels.append({"label": str(lab), "price": str(pr),
-                                   "line": o.get("points", o.get("line","")),
-                                   "who": who, "mid": str(o.get("marketId","")), "path": path})
-                  mid = o.get("id") or o.get("marketId"); nm = o.get("name")
-                  if mid and nm: mkts.setdefault(str(mid), str(nm))
-                  if mid and nm and any(k in o for k in ("startEventDate","startDate","teamName1")):
-                      evs[str(mid)] = str(nm)
-                  for k, v in o.items(): walk(v, (path+"/"+k) if path else k)
-              elif isinstance(o, list):
-                  for v in o: walk(v, path)
-          walk(data)
-          print(f"parsed {len(sels)} selections / {len(mkts)} markets / {len(evs)} events")
-
-          ts = diag["run_utc"]
-          y, w, _ = datetime.now(timezone.utc).isocalendar()
-          p = f"data/props_{y}W{w:02d}.csv"
-          new = not os.path.exists(p)
-          with open(p, "a", newline="") as f:
-              c = csv.writer(f)
-              if new: c.writerow(["ts_utc","src","event","market","player","line","price","market_id","path"])
-              for s in sels:
-                  c.writerow([ts, name, evs.get(s["mid"],""), mkts.get(s["mid"],""),
-                              s["who"] or s["label"], s["line"], s["price"], s["mid"], s["path"][:60]])
-          print("appended", len(sels), "rows ->", p)
+                  rec["error"]=f"{type(e).__name__}: {str(e)[:140]}"
+                  rec["http"]=getattr(e,"code",None)
+              print(json.dumps(rec)[:280]); diag["attempts"].append(rec)
+          diag["saved"]=saved
+          os.makedirs("data",exist_ok=True)
+          json.dump(diag,open("data/_diag.json","w"),indent=1)
+          print("ARCHIVED:",saved)
+          sys.exit(0)
           PY
       - name: commit
         if: always()
         run: |
           git config user.name propwatch
           git config user.email propwatch@users.noreply.github.com
-          git add -A data/
-          git diff --staged --quiet || git commit -m "snapshot $(date -u +%FT%TZ)"
+          git add -A data/ raw/ 2>/dev/null || true
+          git diff --staged --quiet || git commit -m "snap $(date -u +%FT%TZ)"
           git pull --rebase --autostash || true
           git push
