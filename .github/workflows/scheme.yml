@@ -1,0 +1,180 @@
+name: scheme
+on:
+  schedule:
+    - cron: "23 11 * * *"
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: scheme
+jobs:
+  derive:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - name: deps
+        run: pip install --quiet pandas pyarrow
+      - name: pull nflverse
+        run: |
+          set -e
+          B=https://github.com/nflverse/nflverse-data/releases/download
+          curl -sL -o /tmp/pbp.parquet "$B/pbp/play_by_play_2026.parquet"
+          curl -sL -o /tmp/snaps.csv   "$B/snap_counts/snap_counts_2026.csv"
+          ls -la /tmp/pbp.parquet /tmp/snaps.csv
+      - name: derive
+        run: |
+          DAY=$(date -u +%F)
+          mkdir -p scheme/$DAY
+          python3 - "scheme/$DAY" /tmp/pbp.parquet /tmp/snaps.csv <<'PY'
+          #!/usr/bin/env python3
+          """Propwatch scheme layer. Derives team/player tendency tables from nflverse
+          play-by-play and writes compact CSVs. Head-to-head meetings are kept as their
+          own table so a prior matchup is never averaged into a season mean."""
+          import os, sys
+          import pandas as pd, numpy as np
+
+          OUT = sys.argv[1] if len(sys.argv) > 1 else "scheme"
+          PBP = sys.argv[2] if len(sys.argv) > 2 else "/tmp/pbp_fresh.parquet"
+          SNP = sys.argv[3] if len(sys.argv) > 3 else "/tmp/snaps.csv"
+          os.makedirs(OUT, exist_ok=True)
+
+          d = pd.read_parquet(PBP)
+
+          # ---------- 1. halves / quarters ----------
+          x = d[d.qtr <= 4].copy()
+          x["pts"] = (x.groupby("game_id")["total_home_score"].diff().fillna(0)
+                      + x.groupby("game_id")["total_away_score"].diff().fillna(0))
+          q = x.groupby(["game_id", "qtr"])["pts"].sum().unstack(fill_value=0)
+          for c in (1, 2, 3, 4):
+              if c not in q.columns: q[c] = 0
+          g = x.groupby("game_id")[["home_team", "away_team", "week"]].first()
+          G = g.join(q)
+          G["H1"] = G[1] + G[2]; G["H2"] = G[3] + G[4]; G["TOT"] = G.H1 + G.H2
+          G = G.reset_index().rename(columns={1: "Q1", 2: "Q2", 3: "Q3", 4: "Q4"})
+          G[["game_id","week","away_team","home_team","Q1","Q2","Q3","Q4","H1","H2","TOT"]] \
+              .to_csv(f"{OUT}/games.csv", index=False)
+
+          rows = []
+          for t in sorted(set(G.home_team) | set(G.away_team)):
+              s = G[(G.home_team == t) | (G.away_team == t)]
+              if not len(s): continue
+              rows.append({"team": t, "n": len(s),
+                           "H1_avg": round(s.H1.mean(), 1), "H2_avg": round(s.H2.mean(), 1),
+                           "TOT_avg": round(s.TOT.mean(), 1),
+                           "H1_share": round(100 * s.H1.sum() / max(1, s.TOT.sum()), 1),
+                           "H1_max": int(s.H1.max()), "H1_min": int(s.H1.min()),
+                           "Q1_avg": round(s.Q1.mean(), 1), "Q4_avg": round(s.Q4.mean(), 1)})
+          H = pd.DataFrame(rows)
+          lg = {"team": "LEAGUE", "n": len(G), "H1_avg": round(G.H1.mean(), 1),
+                "H2_avg": round(G.H2.mean(), 1), "TOT_avg": round(G.TOT.mean(), 1),
+                "H1_share": round(100 * G.H1.sum() / max(1, G.TOT.sum()), 1),
+                "H1_max": int(G.H1.max()), "H1_min": int(G.H1.min()),
+                "Q1_avg": round(G.Q1.mean(), 1), "Q4_avg": round(G.Q4.mean(), 1)}
+          pd.concat([pd.DataFrame([lg]), H]).to_csv(f"{OUT}/halves.csv", index=False)
+
+          # ---------- 2. head-to-head (never averaged away) ----------
+          G["pair"] = G.apply(lambda r: "|".join(sorted([r.home_team, r.away_team])), axis=1)
+          h2h = G.sort_values("week")[["pair","week","game_id","away_team","home_team",
+                                       "Q1","Q2","Q3","Q4","H1","H2","TOT"]]
+          h2h.to_csv(f"{OUT}/h2h.csv", index=False)
+
+          # ---------- 3. run location / gap ----------
+          r = d[(d.play_type == "run") & d.posteam.notna()].copy()
+          if "run_location" in r.columns:
+              rl = (r.groupby(["posteam", "run_location"])
+                      .agg(att=("rush_attempt", "sum"), yds=("rushing_yards", "sum"),
+                           epa=("epa", "mean")).reset_index())
+              rl["ypc"] = (rl.yds / rl.att.replace(0, np.nan)).round(2)
+              rl["epa"] = rl.epa.round(3)
+              rl.to_csv(f"{OUT}/run_location.csv", index=False)
+          if "run_gap" in r.columns:
+              rg = (r[r.run_gap.notna()].groupby(["posteam", "run_gap"])
+                      .agg(att=("rush_attempt", "sum"), yds=("rushing_yards", "sum"),
+                           epa=("epa", "mean")).reset_index())
+              rg["ypc"] = (rg.yds / rg.att.replace(0, np.nan)).round(2)
+              rg["epa"] = rg.epa.round(3)
+              rg.to_csv(f"{OUT}/run_gap.csv", index=False)
+
+          # ---------- 4. red zone pass/rush ----------
+          rz = []
+          for thr in (20, 10, 5):
+              z = d[(d.yardline_100 <= thr) & d.play_type.isin(["run", "pass"]) & d.posteam.notna()]
+              a = (z.groupby(["posteam", "play_type"]).size().unstack(fill_value=0)
+                     .rename(columns={"pass": "pass", "run": "run"}))
+              if a.empty: continue
+              a["plays"] = a.sum(axis=1)
+              a["pass_rate"] = (100 * a["pass"] / a.plays).round(1)
+              a["zone"] = f"<={thr}"
+              rz.append(a.reset_index())
+          if rz: pd.concat(rz).to_csv(f"{OUT}/red_zone.csv", index=False)
+
+          # ---------- 5. pass profile: screen proxy, deep rate, aDOT ----------
+          p = d[(d.play_type == "pass") & d.posteam.notna() & d.air_yards.notna()].copy()
+          pp = p.groupby("posteam").agg(
+              att=("pass_attempt", "sum"), adot=("air_yards", "mean"),
+              screen_rate=("air_yards", lambda s: 100 * (s <= 0).mean()),
+              deep_rate=("air_yards", lambda s: 100 * (s >= 20).mean()),
+              epa=("epa", "mean")).reset_index()
+          for c in ("adot", "screen_rate", "deep_rate"): pp[c] = pp[c].round(1)
+          pp["epa"] = pp.epa.round(3)
+          pp.to_csv(f"{OUT}/pass_profile.csv", index=False)
+
+          # ---------- 6. three and outs ----------
+          if "fixed_drive_result" in d.columns and "drive_play_count" in d.columns:
+              dr = d[d.posteam.notna()].groupby(["game_id", "posteam", "fixed_drive"]).agg(
+                  n=("drive_play_count", "max"), res=("fixed_drive_result", "first")).reset_index()
+              dr["three_out"] = (dr.n <= 3) & dr.res.isin(["Punt", "Turnover", "Turnover on downs"])
+              to = dr.groupby("posteam").agg(drives=("three_out", "size"),
+                                             three_outs=("three_out", "sum")).reset_index()
+              to["rate"] = (100 * to.three_outs / to.drives).round(1)
+              to.to_csv(f"{OUT}/three_and_out.csv", index=False)
+
+          # ---------- 7. player usage + role change ----------
+          tg = d[d.play_type == "pass"].groupby(["posteam", "week"]).size().rename("tm_pass")
+          ru = d[d.play_type == "run"].groupby(["posteam", "week"]).size().rename("tm_rush")
+          rec = (d[d.receiver_player_name.notna()]
+                 .groupby(["posteam", "week", "receiver_player_name"])
+                 .agg(tgt=("pass_attempt", "sum"), yds=("receiving_yards", "sum")).reset_index()
+                 .rename(columns={"receiver_player_name": "player"}))
+          rec = rec.join(tg, on=["posteam", "week"])
+          rec["share"] = (100 * rec.tgt / rec.tm_pass.replace(0, np.nan)).round(1)
+          rec["kind"] = "target"; rec["vol"] = rec.tgt
+          rsh = (d[d.rusher_player_name.notna()]
+                 .groupby(["posteam", "week", "rusher_player_name"])
+                 .agg(car=("rush_attempt", "sum"), yds=("rushing_yards", "sum")).reset_index()
+                 .rename(columns={"rusher_player_name": "player"}))
+          rsh = rsh.join(ru, on=["posteam", "week"])
+          rsh["share"] = (100 * rsh.car / rsh.tm_rush.replace(0, np.nan)).round(1)
+          rsh["kind"] = "carry"; rsh["vol"] = rsh.car
+          U = pd.concat([rec[["posteam","week","player","share","vol","yds","kind"]],
+                         rsh[["posteam","week","player","share","vol","yds","kind"]]])
+          U.to_csv(f"{OUT}/usage.csv", index=False)
+
+          N = 3
+          out = []
+          for (kind, tm, pl), s in U.sort_values("week").groupby(["kind", "posteam", "player"]):
+              if len(s) < N + 1: continue
+              last = s.iloc[-1]; prior = s.iloc[-(N + 1):-1]
+              if last.vol < 4 and prior.vol.mean() < 4: continue
+              out.append({"kind": kind, "team": tm, "player": pl, "wk": int(last.week),
+                          "share_now": last.share, "share_base": round(prior.share.mean(), 1),
+                          "delta": round(last.share - prior.share.mean(), 1),
+                          "vol_now": int(last.vol), "vol_base": round(prior.vol.mean(), 1),
+                          "yds_now": int(last.yds), "yds_base": round(prior.yds.mean(), 1)})
+          R = pd.DataFrame(out).sort_values("delta")
+          R.to_csv(f"{OUT}/role_change.csv", index=False)
+
+          print("wrote:", sorted(os.listdir(OUT)))
+          print(f"games={len(G)}  teams={len(H)}  usage_rows={len(U)}  role_rows={len(R)}")
+          print(f"total size: {sum(os.path.getsize(os.path.join(OUT,f)) for f in os.listdir(OUT))/1024:.0f} KB")
+          PY
+      - name: commit
+        if: always()
+        run: |
+          git config user.name propwatch
+          git config user.email propwatch@users.noreply.github.com
+          git add -A scheme/ || true
+          git diff --staged --quiet || git commit -q -m "scheme $(date -u +%F)"
+          git pull -q --rebase --autostash || true
+          git push -q
