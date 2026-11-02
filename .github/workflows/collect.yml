@@ -1,22 +1,24 @@
 name: collect
 on:
   schedule:
-    - cron: "*/20 * * * *"
+    - cron: "7 */2 * * *"
   workflow_dispatch:
 permissions:
   contents: write
 concurrency:
   group: collect
+  cancel-in-progress: false
 jobs:
   snap:
     runs-on: ubuntu-latest
+    timeout-minutes: 350
     steps:
       - uses: actions/checkout@v4
-      - name: snapshot
+      - name: collect loop
         continue-on-error: true
         run: |
           python3 - <<'PY'
-          import gzip, json, os, sys
+          import gzip, json, os, subprocess, sys, time
           from datetime import datetime, timezone, timedelta
           from urllib.request import Request, urlopen
 
@@ -24,119 +26,139 @@ jobs:
               "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0 Safari/537.36",
               "Accept":"application/json,text/html,*/*","Accept-Language":"en-US,en;q=0.9"}
           PIN={"X-API-Key":"CmX2KcMrXuFmNg6YFbmTxE0y9CIrOi0R"}
-          AK="FhMFpcPWXMeyZxOx"
-          FD="https://sbapi.nj.sportsbook.fanduel.com/api"
+          AK="FhMFpcPWXMeyZxOx"; FD="https://sbapi.nj.sportsbook.fanduel.com/api"
 
-          now=datetime.now(timezone.utc)
-          ts=now.strftime("%Y-%m-%dT%H%MZ"); day=now.strftime("%Y-%m-%d")
-          horizon=(now+timedelta(days=8)).strftime("%Y-%m-%d")
-          diag={"run_utc":now.strftime("%Y-%m-%dT%H:%M:%SZ"),"attempts":[]}
+          CYCLE   = 600        # seconds between snapshots (10 min)
+          RUNFOR  = 320*60     # stay alive ~5h20m, under the 6h job ceiling
+          HEAVY_N = 6          # full raw set every Nth cycle (hourly)
+          PUSH_N  = 3          # commit every Nth cycle (30 min)
+          TABS    = ["passing-props","receiving-props","rushing-props",
+                     "td-scorer-props","1st-half","2nd-half"]
 
-          def get(url,extra=None):
+          def skip(mt):
+              mt = mt or ""
+              return ("ALTERNATE" in mt or "_ALT_" in mt or "DRIVE_X" in mt
+                      or mt.startswith(("ANYTIME_1ST_HALF","ANYTIME_2ND_HALF",
+                                        "EITHER_PLAYER","PLAYERS_WITH_")))
+
+          def get(url, extra=None, timeout=25):
               h=dict(UA); h.update(extra or {})
-              with urlopen(Request(url,headers=h),timeout=25) as r:
-                  return r.status, r.read().decode("utf-8","replace")
+              with urlopen(Request(url,headers=h),timeout=timeout) as r:
+                  return r.read().decode("utf-8","replace")
 
-          def archive(name,url,extra=None,keep=500):
+          def archive(name,url,extra=None,keep=500,ts=None,day=None,diag=None):
               rec={"name":name}; txt=None
               try:
-                  st,txt=get(url,extra); rec.update(http=st,bytes=len(txt))
+                  txt=get(url,extra); rec["bytes"]=len(txt)
                   if len(txt)>keep:
                       d=f"raw/{name}/{day}"; os.makedirs(d,exist_ok=True)
                       p=f"{d}/{ts}.json.gz"
                       with gzip.open(p,"wt",encoding="utf-8",compresslevel=9) as f: f.write(txt)
                       rec["gz"]=os.path.getsize(p)
               except Exception as e:
-                  rec["error"]=f"{type(e).__name__}: {str(e)[:110]}"; txt=None
-              diag["attempts"].append(rec); print(json.dumps(rec)[:190])
+                  rec["error"]=f"{type(e).__name__}: {str(e)[:100]}"; txt=None
+              if diag is not None: diag.append(rec)
               return txt
 
-          # ---- 1. splits / prices / lobby (raw archive) ----
-          lob=archive("fanduel",f"{FD}/content-managed-page?page=CUSTOM&customPageId=nfl&_ak={AK}")
-          archive("actionnet","https://api.actionnetwork.com/web/v2/scoreboard/nfl?period=game")
-          archive("pin_prices","https://guest.api.arcadia.pinnacle.com/0.1/leagues/889/markets/straight",PIN)
-          archive("pin_matchups","https://guest.api.arcadia.pinnacle.com/0.1/leagues/889/matchups",PIN)
-          archive("vsin","https://data.vsin.com/betting-splits/?sport=NFL")
-          archive("sbr","https://www.sportsbookreview.com/betting-odds/nfl-football/")
-          archive("espn","https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard")
-
-          # ---- 2. event ids ----
-          games=[]
-          try:
-              ev=json.loads(lob)["attachments"]["events"]
-              for k,v in ev.items():
-                  nm=str(v.get("name","")); od=str(v.get("openDate",""))
-                  if "@" in nm and day<=od[:10]<=horizon:
-                      games.append((od,str(v.get("eventId") or k),nm))
-              games.sort()
-          except Exception as e:
-              diag["eventparse"]=f"{type(e).__name__}: {str(e)[:100]}"
-          diag["n_games"]=len(games)
-
-          # ---- 3. probe which tab spelling works ----
-          TABS={"pass":217,"recv":218,"rush":219,"tdsc":220,"h1":20,"h2":151}
-          SLUG={217:"passing-props",218:"receiving-props",219:"rushing-props",
-                220:"td-scorer-props",20:"1st-half",151:"2nd-half"}
-          mode=None
-          if games:
-              eid=games[0][1]; probe={}
-              for label,q in [("num",f"tab=219"),("slug",f"tab=rushing-props"),("none","")]:
-                  try:
-                      st,t=get(f"{FD}/event-page?eventId={eid}&{q}&_ak={AK}")
-                      probe[label]=len(json.loads(t).get("attachments",{}).get("markets",{}))
-                  except Exception as e: probe[label]=f"ERR {str(e)[:40]}"
-              diag["probe"]=probe
-              best=max([k for k in ("num","slug") if isinstance(probe.get(k),int)],
-                       key=lambda k:probe[k], default=None)
-              if best and isinstance(probe.get("none"),int) and probe[best]>probe["none"]:
-                  mode=best
-          diag["mode"]=mode
-
-          # ---- 4. pull boards, emit slim rows ----
-          rows=[]; ok=0; fail=0
           def od_of(r):
               try: return r["winRunnerOdds"]["americanDisplayOdds"]["americanOdds"]
               except Exception: return None
-          def pull(eid,gname,q):
-              global ok,fail
+
+          def commit():
               try:
-                  st,t=get(f"{FD}/event-page?eventId={eid}{q}&_ak={AK}")
-                  mk=json.loads(t).get("attachments",{}).get("markets",{})
-                  for m in mk.values():
-                      for r in m.get("runners",[]):
-                          rows.append({"t":ts,"e":eid,"g":gname,
-                                       "mt":m.get("marketType"),"mn":m.get("marketName"),
-                                       "r":r.get("runnerName"),"h":r.get("handicap"),
-                                       "o":od_of(r),"s":r.get("runnerStatus")})
-                  ok+=1
-              except Exception: fail+=1
+                  subprocess.run(["git","add","-A","data/","raw/","props/"],check=False)
+                  if subprocess.run(["git","diff","--staged","--quiet"]).returncode != 0:
+                      subprocess.run(["git","commit","-q","-m",
+                          f"snap {datetime.now(timezone.utc).strftime('%FT%TZ')}"],check=False)
+                  subprocess.run(["git","pull","-q","--rebase","--autostash"],check=False)
+                  subprocess.run(["git","push","-q"],check=False)
+              except Exception as e: print("commit err",e)
 
-          for od,eid,nm in games[:16]:
-              pull(eid,nm,"")
-              if mode:
-                  for lab,tid in TABS.items():
-                      q=f"&tab={tid}" if mode=="num" else f"&tab={SLUG[tid]}"
-                      pull(eid,nm,q)
-          diag["pulls_ok"]=ok; diag["pulls_fail"]=fail; diag["rows"]=len(rows)
+          subprocess.run(["git","config","user.name","propwatch"],check=False)
+          subprocess.run(["git","config","user.email",
+                          "propwatch@users.noreply.github.com"],check=False)
 
-          if rows:
-              d=f"props/{day}"; os.makedirs(d,exist_ok=True)
-              with gzip.open(f"{d}/{ts}.jsonl.gz","wt",encoding="utf-8",compresslevel=9) as f:
-                  for r in rows: f.write(json.dumps(r,separators=(",",":"))+"\n")
-              diag["props_gz"]=os.path.getsize(f"{d}/{ts}.jsonl.gz")
-              import collections
-              diag["market_types"]=collections.Counter(r["mt"] for r in rows).most_common(14)
+          t0=time.time(); cyc=0
+          while time.time()-t0 < RUNFOR:
+              cyc+=1
+              now=datetime.now(timezone.utc)
+              ts=now.strftime("%Y-%m-%dT%H%MZ"); day=now.strftime("%Y-%m-%d")
+              horizon=(now+timedelta(days=8)).strftime("%Y-%m-%d")
+              diag=[]; heavy = (cyc % HEAVY_N == 1)
 
-          os.makedirs("data",exist_ok=True)
-          json.dump(diag,open("data/_diag.json","w"),indent=1)
-          print("ROWS:",len(rows),"MODE:",mode); sys.exit(0)
+              # every cycle: the signal sources
+              archive("actionnet","https://api.actionnetwork.com/web/v2/scoreboard/nfl?period=game",
+                      ts=ts,day=day,diag=diag)
+              lob=archive("fanduel",f"{FD}/content-managed-page?page=CUSTOM&customPageId=nfl&_ak={AK}",
+                          ts=ts,day=day,diag=diag) if heavy else None
+              if lob is None:
+                  try: lob=get(f"{FD}/content-managed-page?page=CUSTOM&customPageId=nfl&_ak={AK}")
+                  except Exception: lob=None
+
+              if heavy:
+                  archive("pin_prices","https://guest.api.arcadia.pinnacle.com/0.1/leagues/889/markets/straight",
+                          PIN,ts=ts,day=day,diag=diag)
+                  archive("pin_matchups","https://guest.api.arcadia.pinnacle.com/0.1/leagues/889/matchups",
+                          PIN,ts=ts,day=day,diag=diag)
+                  archive("vsin","https://data.vsin.com/betting-splits/?sport=NFL",ts=ts,day=day,diag=diag)
+                  archive("sbr","https://www.sportsbookreview.com/betting-odds/nfl-football/",
+                          ts=ts,day=day,diag=diag)
+                  archive("espn","https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard",
+                          ts=ts,day=day,diag=diag)
+
+              # per-game boards -> deduped, filtered rows
+              games=[]
+              try:
+                  for k,v in json.loads(lob)["attachments"]["events"].items():
+                      nm=str(v.get("name","")); od=str(v.get("openDate",""))
+                      if "@" in nm and day<=od[:10]<=horizon:
+                          games.append((od,str(v.get("eventId") or k),nm))
+                  games.sort()
+              except Exception as e:
+                  diag.append({"name":"eventparse","error":str(e)[:100]})
+
+              seen=set(); rows=[]; ok=fail=0
+              for od,eid,nm in games[:16]:
+                  for q in [""]+[f"&tab={t}" for t in TABS]:
+                      try:
+                          mk=json.loads(get(f"{FD}/event-page?eventId={eid}{q}&_ak={AK}")
+                                        ).get("attachments",{}).get("markets",{})
+                          ok+=1
+                      except Exception:
+                          fail+=1; continue
+                      for m in mk.values():
+                          mt=m.get("marketType")
+                          if skip(mt): continue
+                          for r in m.get("runners",[]):
+                              key=(eid,mt,m.get("marketName"),r.get("runnerName"),r.get("handicap"))
+                              if key in seen: continue
+                              seen.add(key)
+                              rows.append({"t":ts,"e":eid,"g":nm,"mt":mt,"mn":m.get("marketName"),
+                                           "r":r.get("runnerName"),"h":r.get("handicap"),
+                                           "o":od_of(r),"s":r.get("runnerStatus")})
+
+              gz_sz=0
+              if rows:
+                  d=f"props/{day}"; os.makedirs(d,exist_ok=True)
+                  p=f"{d}/{ts}.jsonl.gz"
+                  with gzip.open(p,"wt",encoding="utf-8",compresslevel=9) as f:
+                      for r in rows: f.write(json.dumps(r,separators=(",",":"))+"\n")
+                  gz_sz=os.path.getsize(p)
+
+              os.makedirs("data",exist_ok=True)
+              json.dump({"run_utc":now.strftime("%Y-%m-%dT%H:%M:%SZ"),"cycle":cyc,
+                         "heavy":heavy,"games":len(games),"rows":len(rows),
+                         "props_gz":gz_sz,"pulls_ok":ok,"pulls_fail":fail,
+                         "elapsed_min":round((time.time()-t0)/60,1),"attempts":diag},
+                        open("data/_diag.json","w"),indent=1)
+              print(f"cyc {cyc:3} {ts} games={len(games)} rows={len(rows)} "
+                    f"gz={gz_sz//1024}KB ok={ok} fail={fail} heavy={heavy}", flush=True)
+
+              if cyc % PUSH_N == 0: commit()
+              left=RUNFOR-(time.time()-t0)
+              if left <= 0: break
+              time.sleep(min(CYCLE, max(5,left)))
+
+          commit()
+          print("DONE cycles:",cyc); sys.exit(0)
           PY
-      - name: commit
-        if: always()
-        run: |
-          git config user.name propwatch
-          git config user.email propwatch@users.noreply.github.com
-          git add -A data/ raw/ props/ 2>/dev/null || true
-          git diff --staged --quiet || git commit -m "snap $(date -u +%FT%TZ)"
-          git pull --rebase --autostash || true
-          git push
