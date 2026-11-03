@@ -1,0 +1,22 @@
+name: collect-cbb
+# College basketball collector. Same self-hosting loop as collect.yml: each job stays
+# alive ~5h20m snapshotting every 10 min, and the 2-hourly cron keeps one queued behind
+# it so coverage is continuous. Offset to :37 so it never starts with the NFL job.
+on:
+  schedule:
+    - cron: "37 */2 * * *"
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: collect-cbb
+  cancel-in-progress: false
+jobs:
+  snap:
+    runs-on: ubuntu-latest
+    timeout-minutes: 350
+    steps:
+      - uses: actions/checkout@v4
+      - name: collect loop
+        continue-on-error: true
+        run: python3 cbb/collect.py .
