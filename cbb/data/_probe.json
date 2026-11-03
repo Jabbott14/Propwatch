@@ -1,0 +1,68 @@
+{
+ "chosen": {
+  "an_div": "&division=D1",
+  "an_ok": true,
+  "fd_lobby": "https://sbapi.nj.sportsbook.fanduel.com/api/content-managed-page?page=CUSTOM&customPageId=ncaab&_ak=<ak>",
+  "pin_league": 493,
+  "pin_name": "NCAA",
+  "vsin": "https://data.vsin.com/betting-splits/?sport=CBB"
+ },
+ "pin_leagues": [
+  {
+   "id": 493,
+   "n": 20,
+   "name": "NCAA"
+  }
+ ],
+ "run_utc": "2026-11-03T18:02:30Z",
+ "tried": [
+  {
+   "bytes": 381915,
+   "kind": "fd_lobby",
+   "score": 22,
+   "url": "https://sbapi.nj.sportsbook.fanduel.com/api/content-managed-page?page=CUSTOM&customPageId=ncaab&_ak=<ak>"
+  },
+  {
+   "error": "HTTPError: HTTP Error 404: Not Found",
+   "kind": "fd_lobby",
+   "score": -1,
+   "url": "https://sbapi.nj.sportsbook.fanduel.com/api/content-managed-page?page=CUSTOM&customPageId=ncaa-basketball&_ak=<ak>"
+  },
+  {
+   "error": "HTTPError: HTTP Error 404: Not Found",
+   "kind": "fd_lobby",
+   "score": -1,
+   "url": "https://sbapi.nj.sportsbook.fanduel.com/api/content-managed-page?page=CUSTOM&customPageId=college-basketball&_ak=<ak>"
+  },
+  {
+   "error": "HTTPError: HTTP Error 404: Not Found",
+   "kind": "fd_lobby",
+   "score": -1,
+   "url": "https://sbapi.nj.sportsbook.fanduel.com/api/content-managed-page?page=CUSTOM&customPageId=ncaa-basketball-men&_ak=<ak>"
+  },
+  {
+   "bytes": 130236,
+   "kind": "actionnet",
+   "score": 5,
+   "url": "https://api.actionnetwork.com/web/v2/scoreboard/ncaab?period=game&date=20261103"
+  },
+  {
+   "bytes": 515948,
+   "kind": "actionnet",
+   "score": 19,
+   "url": "https://api.actionnetwork.com/web/v2/scoreboard/ncaab?period=game&division=D1&date=20261103"
+  },
+  {
+   "bytes": 363925,
+   "kind": "vsin",
+   "score": 363925,
+   "url": "https://data.vsin.com/betting-splits/?sport=CBB"
+  },
+  {
+   "bytes": 356026,
+   "kind": "vsin",
+   "score": 356026,
+   "url": "https://data.vsin.com/betting-splits/?sport=NCAAB"
+  }
+ ]
+}
