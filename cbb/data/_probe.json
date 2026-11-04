@@ -19,12 +19,12 @@
    "name": "Philippines - NCAA"
   }
  ],
- "run_utc": "2026-11-04T16:30:42Z",
+ "run_utc": "2026-11-04T22:06:57Z",
  "tried": [
   {
-   "bytes": 317069,
+   "bytes": 410546,
    "kind": "fd_lobby",
-   "score": 9,
+   "score": 28,
    "url": "https://sbapi.nj.sportsbook.fanduel.com/api/content-managed-page?page=CUSTOM&customPageId=ncaab&_ak=<ak>"
   },
   {
@@ -52,15 +52,15 @@
    "url": "https://api.actionnetwork.com/web/v2/scoreboard/ncaab?period=game&date=20261104"
   },
   {
-   "bytes": 285971,
+   "bytes": 277126,
    "kind": "actionnet",
    "score": 10,
    "url": "https://api.actionnetwork.com/web/v2/scoreboard/ncaab?period=game&division=D1&date=20261104"
   },
   {
-   "bytes": 363736,
+   "bytes": 363750,
    "kind": "vsin",
-   "score": 363736,
+   "score": 363750,
    "url": "https://data.vsin.com/betting-splits/?sport=CBB"
   },
   {
