@@ -1,18 +1,18 @@
 {
- "run_utc": "2026-11-04T19:18:40Z",
- "cycle": 9,
+ "run_utc": "2026-11-04T19:49:00Z",
+ "cycle": 12,
  "heavy": false,
  "games": 15,
- "rows": 3334,
- "props_gz": 34013,
+ "rows": 3333,
+ "props_gz": 34005,
  "pulls_ok": 105,
  "pulls_fail": 0,
- "elapsed_min": 81.2,
+ "elapsed_min": 111.5,
  "attempts": [
   {
    "name": "actionnet",
-   "bytes": 479130,
-   "gz": 25123
+   "bytes": 479139,
+   "gz": 25100
   }
  ]
 }
