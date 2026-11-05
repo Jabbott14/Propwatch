@@ -27,9 +27,15 @@ jobs:
 
           # Variable cadence. NFL lines are flat for days and then move fast in the
           # hours before kickoff, so sample densely only near a kickoff.
-          CYCLE_NEAR = 600     # 10 min when a kickoff is within NEAR_H hours
-          CYCLE_FAR  = 3600    # 60 min otherwise
-          NEAR_H     = 12
+          # Sharp money lands LATE -- big limits, max information, minutes before
+          # kickoff. On 2026-11-02 the archive's last look at CHI@SEA was T-50min
+          # and the run then died through the kickoff entirely, so the close was
+          # never captured. The final two hours get the densest sampling.
+          CYCLE_CLOSE = 180    # 3 min inside CLOSE_H hours of a kickoff
+          CYCLE_NEAR  = 600    # 10 min inside NEAR_H hours
+          CYCLE_FAR   = 3600   # 60 min otherwise
+          CLOSE_H     = 2
+          NEAR_H      = 12
           RUNFOR  = 350*60     # ~5h50m; hourly cron overlaps runs so a dropped firing leaves no hole
           HEAVY_N = 6          # full raw set every Nth dense cycle; every cycle when sparse
           PUSH_N  = 3          # commit every Nth cycle (30 min)
@@ -93,8 +99,11 @@ jobs:
                   except Exception: continue
                   if k>now and (nxt is None or k<nxt): nxt=k
               hrs=((nxt-now).total_seconds()/3600) if nxt else 999
+              close=hrs<=CLOSE_H
               near=hrs<=NEAR_H
-              CYCLE=CYCLE_NEAR if near else CYCLE_FAR
+              CYCLE=CYCLE_CLOSE if close else (CYCLE_NEAR if near else CYCLE_FAR)
+              # never let the run expire while a kickoff is imminent
+              if close: RUNFOR=max(RUNFOR, (time.time()-t0)+CLOSE_H*3600+900)
               heavy = (cyc % HEAVY_N == 1) or not near
 
               # every cycle: the signal sources
@@ -164,10 +173,11 @@ jobs:
                          "heavy":heavy,"games":len(games),"rows":len(rows),
                          "props_gz":gz_sz,"pulls_ok":ok,"pulls_fail":fail,
                          "elapsed_min":round((time.time()-t0)/60,1),
-                         "next_kickoff_h":round(hrs,1),"cadence_min":CYCLE//60,"attempts":diag},
+                         "next_kickoff_h":round(hrs,1),"cadence_min":CYCLE//60,
+                         "closing_window":close,"attempts":diag},
                         open("data/_diag.json","w"),indent=1)
               print(f"cyc {cyc:3} {ts} next_kick={hrs:.1f}h cadence={CYCLE//60}m "
-                    f"games={len(games)} rows={len(rows)} gz={gz_sz//1024}KB "
+                    f"{'CLOSE ' if close else ''}games={len(games)} rows={len(rows)} gz={gz_sz//1024}KB "
                     f"ok={ok} fail={fail} heavy={heavy}", flush=True)
 
               if cyc % PUSH_N == 0: commit()
