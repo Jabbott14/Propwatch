@@ -1,0 +1,411 @@
+name: grade
+on:
+  schedule:
+    - cron: "19 */3 * * *"
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: grade
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - name: record and grade
+        run: |
+          python3 - . <<'PY'
+          #!/usr/bin/env python3
+          """Propwatch self-logging + self-grading. Stdlib only.
+
+          Writes, every run:
+            candidates/<gamedate>/<eventId>.json  latest PREGAME signal state per game.
+               Stops updating once the game kicks off, so it freezes as the closing record.
+            graded/<gamedate>.json                those records joined to final scores.
+            graded/summary.json                   hit rates bucketed by signal strength.
+
+          Nothing here is a bet. It records what the SYSTEM said about every game, whether
+          or not anyone acted on it, so the validation set is unbiased and accumulates on
+          its own. That was the point: no manual logging.
+          """
+          import gzip, json, os, sys, glob, collections, datetime as dt
+
+          REPO = sys.argv[1] if len(sys.argv) > 1 else "."
+          P = lambda *a: os.path.join(REPO, *a)
+          SIDE_MK  = {"MATCH_HANDICAP_(2-WAY)": "spread", "MONEY_LINE": "ml",
+                      "FIRST_HALF_HANDICAP": "1H spread", "SECOND_HALF_HANDICAP": "2H spread"}
+          TOTAL_MK = {"TOTAL_POINTS_(OVER/UNDER)": "total", "FIRST_HALF_TOTAL": "1H total",
+                      "SECOND_HALF_TOTAL": "2H total",
+                      "1ST_HALF_HOME_TEAM_TOTAL_POINTS": "1H home TT",
+                      "1ST_HALF_AWAY_TEAM_TOTAL_POINTS": "1H away TT"}
+          REFBOOK, NOSPLIT = "69", {"30"}
+
+          def now_utc(): return dt.datetime.now(dt.timezone.utc)
+
+          def week_anchor(t=None):
+              """In-week opener: the Monday 00:00 UTC that OPENS the week this game is in.
+              For a Monday-night kickoff the same-day Monday is not an opener -- the window
+              would be empty -- so step back a full week."""
+              t = t or now_utc()
+              d = t - dt.timedelta(days=t.weekday() % 7)
+              d = d.replace(hour=0, minute=0, second=0, microsecond=0)
+              if (t - d).total_seconds() < 36 * 3600: d -= dt.timedelta(days=7)
+              return d.strftime("%Y-%m-%dT%H%MZ")
+
+          def kickoffs():
+              out = {}
+              for f in sorted(glob.glob(P("raw/fanduel/*/*.json.gz"))):
+                  try: j = json.load(gzip.open(f, "rt"))
+                  except Exception: continue
+                  for k, v in (j.get("attachments", {}).get("events", {}) or {}).items():
+                      od = str(v.get("openDate") or "")
+                      if od: out[str(v.get("eventId") or k)] = od
+              return out
+
+          def line_series(anchor):
+              S = collections.defaultdict(dict); names = {}
+              for f in sorted(glob.glob(P("props/*/*.jsonl.gz"))):
+                  ts = os.path.basename(f).split(".")[0]
+                  if ts < anchor: continue
+                  for line in gzip.open(f, "rt"):
+                      r = json.loads(line)
+                      mt = r.get("mt")
+                      if mt not in SIDE_MK and mt not in TOTAL_MK: continue
+                      if r.get("o") is None: continue
+                      eid = str(r["e"]); names[eid] = r["g"]
+                      S[(eid, mt, r.get("r"))][ts] = (r.get("h"), r["o"])
+              return S, names
+
+          def split_series():
+              S = collections.defaultdict(dict); meta = {}
+              for f in sorted(glob.glob(P("raw/actionnet/*/*.json.gz"))):
+                  ts = os.path.basename(f).replace(".json.gz", "")
+                  try: j = json.load(gzip.open(f, "rt"))
+                  except Exception: continue
+                  for g in j.get("games", []):
+                      tm = {t["id"]: t["abbr"] for t in g.get("teams", [])}
+                      a, h = tm.get(g.get("away_team_id")), tm.get(g.get("home_team_id"))
+                      if not a or not h or g.get("status") != "scheduled": continue
+                      key = f"{a}@{h}"; meta[key] = {"away": a, "home": h}
+                      mk = g.get("markets") or {}
+                      ref = REFBOOK if REFBOOK in mk else next((b for b in mk if b not in NOSPLIT), None)
+                      if not ref: continue
+                      for m, lst in ((mm, (mk[ref].get("event") or {}).get(mm, []))
+                                     for mm in ("spread", "total", "moneyline")):
+                          for o in lst:
+                              bi = o.get("bet_info") or {}
+                              t_, m_ = (bi.get("tickets") or {}).get("percent"), (bi.get("money") or {}).get("percent")
+                              if t_ is None or m_ is None: continue
+                              S[(key, m, str(o.get("side") or tm.get(o.get("team_id"), "?")))][ts] = (t_, m_)
+              return S, meta
+
+          def coherence(S, eid, gname, cut=None):
+              away, home = (gname.split(" @ ") + ["", ""])[:2]
+              side, total, detail = collections.Counter(), collections.Counter(), []
+              for (e, mt, sd), s in S.items():
+                  if e != eid: continue
+                  ks = sorted(k for k in s if cut is None or k < cut)
+                  if len(ks) < 2: continue
+                  (h0, o0), (h1, o1) = s[ks[0]], s[ks[-1]]
+                  if mt in SIDE_MK:
+                      if h0 is None or h1 is None:
+                          if o0 == o1: continue
+                          d = sd if o1 < o0 else (away if sd == home else home)
+                      elif h0 != h1:
+                          d = (away if sd == home else home) if h1 > h0 else sd
+                      elif abs(o1 - o0) >= 5:
+                          d = sd if o1 < o0 else (away if sd == home else home)
+                      else: continue
+                      side[d] += 1; detail.append({"mkt": SIDE_MK[mt], "axis": "side", "dir": d})
+                  else:
+                      if sd not in ("Over", "Under") or h0 is None or h1 is None: continue
+                      if h0 != h1: d = "MORE" if h1 > h0 else "FEWER"
+                      elif abs(o1 - o0) >= 5:
+                          d = ("MORE" if o1 < o0 else "FEWER") if sd == "Over" else ("FEWER" if o1 < o0 else "MORE")
+                      else: continue
+                      total[d] += 1; detail.append({"mkt": TOTAL_MK[mt], "axis": "total", "dir": d})
+              def top(c):
+                  if not c: return (None, 0, 0)
+                  d, n = c.most_common(1)[0]
+                  return (d, n, sum(c.values()) - n)
+              return top(side), top(total), detail
+
+          def risk(o): return None if not o else (float(-o) if o < 0 else 10000.0 / o)
+
+          def splits_for(SS, key, cut=None):
+              out = {}
+              for (k, mkt, sd), s in SS.items():
+                  if k != key: continue
+                  ks = sorted(k for k in s if cut is None or k < cut)
+                  if not ks: continue
+                  (t0, m0), (t1, m1) = s[ks[0]], s[ks[-1]]
+                  out.setdefault(mkt, {})[sd] = {"tix": t1, "mny": m1, "d_tix": t1 - t0,
+                                                 "d_mny": m1 - m0, "div": (m1 - m0) - (t1 - t0), "n": len(ks)}
+              return out
+
+          def conflict_verdict(sp):
+              lean = {}
+              for m in ("spread", "moneyline"):
+                  d = sp.get(m) or {}
+                  if len(d) < 2: continue
+                  w = max(d.items(), key=lambda kv: kv[1]["mny"])
+                  lean[m] = {"side": w[0], "mny": w[1]["mny"], "d_mny": w[1]["d_mny"]}
+              if len(lean) < 2: return "UNKNOWN", lean
+              if len({v["side"] for v in lean.values()}) == 1: return "AGREE", lean
+              mv = [abs(v["d_mny"]) for v in lean.values()]
+              return ("CONFLICT" if min(mv) >= 4 and max(mv) >= 8 else "SPLIT"), lean
+
+          def current_numbers(S, eid, cut=None):
+              out = {}
+              for (e, mt, sd), s in S.items():
+                  if e != eid: continue
+                  ks = sorted(k for k in s if cut is None or k < cut)
+                  if not ks: continue
+                  (h0, o0), (h1, o1) = s[ks[0]], s[ks[-1]]
+                  out.setdefault(SIDE_MK.get(mt) or TOTAL_MK.get(mt), {})[sd] = {
+                      "open": h0, "open_odds": o0, "now": h1, "now_odds": o1, "n": len(ks)}
+              return out
+
+
+          def suggest_units(coh_side, coh_total, sp, cv):
+              """PROVISIONAL stake sizing from recorded signal values, not from judgement.
+
+              Rice got 2u on a one-point move and a juice tick; Seattle got 1.5u on a
+              conflicted signal. Both numbers came from an impression of strength. These
+              weights are invented and are themselves recorded and graded -- once there is
+              a real sample, fit them to outcomes instead.
+              """
+              (sd, sn, sx) = coh_side; (td, tn, tx) = coh_total
+              out = {"side": 0.0, "total": 0.0, "side_dir": sd, "total_dir": td, "why": []}
+              if cv == "CONFLICT":
+                  out["why"].append("money conflict -> no play"); return out
+              spd = (sp.get("spread") or {})
+              div = max([v["div"] for v in spd.values()], default=0)
+              depth = max([v["n"] for v in spd.values()], default=0)
+              if sn >= 3 and sx == 0:
+                  out["side"] += 1.0; out["why"].append(f"side coherent ({sn} markets)")
+                  if sn >= 5: out["side"] += 0.5; out["why"].append("side coherence 5+")
+              if div >= 10: out["side"] += 0.5; out["why"].append(f"spread money div +{div}")
+              if not spd: out["side"] = max(0.0, out["side"] - 0.5); out["why"].append("no splits yet")
+              if depth and depth < 6: out["side"] = max(0.0, out["side"] - 0.5); out["why"].append("thin split history")
+              if tn >= 3 and tx == 0:
+                  out["total"] += 1.0; out["why"].append(f"total coherent ({tn} markets)")
+                  if tn >= 5: out["total"] += 0.5; out["why"].append("total coherence 5+")
+              out["side"] = round(min(out["side"], 2.0), 1)
+              out["total"] = round(min(out["total"], 2.0), 1)
+              return out
+
+          ABBR = {"Arizona Cardinals":"ARI","Atlanta Falcons":"ATL","Baltimore Ravens":"BAL","Buffalo Bills":"BUF",
+          "Carolina Panthers":"CAR","Chicago Bears":"CHI","Cincinnati Bengals":"CIN","Cleveland Browns":"CLE",
+          "Dallas Cowboys":"DAL","Denver Broncos":"DEN","Detroit Lions":"DET","Green Bay Packers":"GB",
+          "Houston Texans":"HOU","Indianapolis Colts":"IND","Jacksonville Jaguars":"JAC","Kansas City Chiefs":"KC",
+          "Las Vegas Raiders":"LV","Los Angeles Chargers":"LAC","Los Angeles Rams":"LA","Miami Dolphins":"MIA",
+          "Minnesota Vikings":"MIN","New England Patriots":"NE","New Orleans Saints":"NO","New York Giants":"NYG",
+          "New York Jets":"NYJ","Philadelphia Eagles":"PHI","Pittsburgh Steelers":"PIT","San Francisco 49ers":"SF",
+          "Seattle Seahawks":"SEA","Tampa Bay Buccaneers":"TB","Tennessee Titans":"TEN","Washington Commanders":"WSH"}
+
+          def write_candidates():
+              ko = kickoffs(); now = now_utc()
+              S, names = line_series("0000")          # full archive; per-game anchor applied below
+              SS, _ = split_series()
+              wrote = 0
+              for eid, gname in names.items():
+                  od = ko.get(eid)
+                  if not od: continue
+                  try: kt = dt.datetime.fromisoformat(od.replace("Z", "+00:00"))
+                  except Exception: continue
+                  past = kt <= now
+                  cut = kt.strftime("%Y-%m-%dT%H%MZ") if past else None
+                  outp = P("candidates", kt.strftime("%Y-%m-%d"), f"{eid}.json")
+                  if past and os.path.exists(outp): continue   # frozen: never rewrite
+                  away, home = (gname.split(" @ ") + ["", ""])[:2]
+                  akey = f"{ABBR.get(away,'?')}@{ABBR.get(home,'?')}"
+                  ganchor = week_anchor(kt)
+                  lo = ganchor if (cut is None or ganchor < cut) else None
+                  Sg = {k: {t: v for t, v in ser.items() if (lo is None or t >= lo)}
+                        for k, ser in S.items() if k[0] == eid}
+                  (sd, sn, sx), (td, tn, tx), det = coherence(Sg, eid, gname, cut)
+                  sp = splits_for(SS, akey, cut)
+                  cv, lean = conflict_verdict(sp)
+                  rec = {"eventId": eid, "game": gname, "abbr": akey, "kickoff": od,
+                         "recorded_utc": now.strftime("%Y-%m-%dT%H:%M:%SZ"), "anchor": ganchor,
+                         "coherence": {"side_dir": sd, "side_agree": sn, "side_conflict": sx,
+                                       "total_dir": td, "total_agree": tn, "total_conflict": tx,
+                                       "markets": det},
+                         "numbers": current_numbers(Sg, eid, cut),
+                         "splits": sp, "money_conflict": cv, "money_lean": lean,
+                         "suggested": suggest_units((sd, sn, sx), (td, tn, tx), sp, cv),
+                         "gates": {"conflict_clear": cv != "CONFLICT",
+                                   "has_splits": bool(sp),
+                                   "coherent_side": sn >= 3 and sx == 0,
+                                   "coherent_total": tn >= 3 and tx == 0}}
+                  rec["frozen"] = past
+                  os.makedirs(os.path.dirname(outp), exist_ok=True)
+                  json.dump(rec, open(outp, "w"), indent=1)
+                  wrote += 1
+              return wrote
+
+          def finals():
+              out = {}
+              for f in sorted(glob.glob(P("raw/espn/*/*.json.gz"))):
+                  try: j = json.load(gzip.open(f, "rt"))
+                  except Exception: continue
+                  for e in j.get("events", []):
+                      c = e["competitions"][0]
+                      if c["status"]["type"]["description"] != "Final": continue
+                      d = {t["homeAway"]: t for t in c["competitors"]}
+                      try:
+                          a, h = int(d["away"]["score"]), int(d["home"]["score"])
+                          la = [int(float(q.get("value", 0))) for q in (d["away"].get("linescores") or [])]
+                          lh = [int(float(q.get("value", 0))) for q in (d["home"].get("linescores") or [])]
+                      except Exception: continue
+                      key = f"{d['away']['team']['abbreviation']}@{d['home']['team']['abbreviation']}"
+                      out[key] = {"away": a, "home": h, "total": a + h,
+                                  "h1": (sum(la[:2]) + sum(lh[:2])) if len(la) >= 2 and len(lh) >= 2 else None}
+              return out
+
+          def grade():
+              F = finals(); rows = []
+              for f in sorted(glob.glob(P("candidates/*/*.json"))):
+                  try: rec = json.load(open(f))
+                  except Exception: continue
+                  res = F.get(rec["abbr"])
+                  if not res: continue
+                  nums = rec.get("numbers", {})
+                  g = {"game": rec["abbr"], "kickoff": rec["kickoff"],
+                       "final": f"{res['away']}-{res['home']}", "total": res["total"],
+                       "money_conflict": rec["money_conflict"],
+                       "side_dir": rec["coherence"]["side_dir"], "side_agree": rec["coherence"]["side_agree"],
+                       "side_conflict": rec["coherence"]["side_conflict"],
+                       "total_dir": rec["coherence"]["total_dir"], "total_agree": rec["coherence"]["total_agree"],
+                       "suggested_side_u": (rec.get("suggested") or {}).get("side"),
+                       "suggested_total_u": (rec.get("suggested") or {}).get("total")}
+                  away, home = rec["game"].split(" @ ")
+                  spread = nums.get("spread", {})
+                  if spread:
+                      hs = spread.get(home, {}).get("now")
+                      if hs is not None:
+                          margin = res["home"] - res["away"]
+                          cover = margin + hs
+                          g["home_spread"] = hs
+                          g["side_price"] = spread.get(home, {}).get("now_odds")
+                          g["ats_winner"] = home if cover > 0 else (away if cover < 0 else "PUSH")
+                          if rec["coherence"]["side_dir"]:
+                              g["coherence_side_correct"] = (None if g["ats_winner"] == "PUSH"
+                                                             else g["ats_winner"] == rec["coherence"]["side_dir"])
+                  tot = nums.get("total", {})
+                  if tot and tot.get("Over", {}).get("now") is not None:
+                      ln = tot["Over"]["now"]; g["total_line"] = ln
+                      g["total_price"] = tot["Over"].get("now_odds")
+                      g["ou_result"] = "OVER" if res["total"] > ln else ("UNDER" if res["total"] < ln else "PUSH")
+                      if rec["coherence"]["total_dir"]:
+                          want = "OVER" if rec["coherence"]["total_dir"] == "MORE" else "UNDER"
+                          g["coherence_total_correct"] = (None if g["ou_result"] == "PUSH" else g["ou_result"] == want)
+                  sp = rec.get("splits", {}).get("spread") or {}
+                  if sp and g.get("ats_winner"):
+                      w = max(sp.items(), key=lambda kv: kv[1]["mny"])
+                      g["spread_money_side"] = w[0]; g["spread_money_div"] = w[1]["div"]
+                      side = home if w[0] == "home" else away
+                      g["money_side_correct"] = (None if g["ats_winner"] == "PUSH" else g["ats_winner"] == side)
+                  rows.append(g)
+              return rows
+
+          def summarize(rows):
+              def rate(sel, field):
+                  v = [r[field] for r in rows if sel(r) and r.get(field) is not None]
+                  return {"n": len(v), "correct": sum(v), "pct": round(100 * sum(v) / len(v), 1) if v else None}
+              s = {"graded_games": len(rows), "generated": now_utc().strftime("%Y-%m-%dT%H:%M:%SZ"),
+                   "coherence_side": {}, "coherence_total": {}, "money_side": {}, "by_conflict": {}}
+              for lo, hi, lab in ((0, 2, "0-2"), (3, 4, "3-4"), (5, 99, "5+")):
+                  s["coherence_side"][lab] = rate(lambda r: lo <= (r.get("side_agree") or 0) <= hi
+                                                  and not r.get("side_conflict"), "coherence_side_correct")
+                  s["coherence_total"][lab] = rate(lambda r: lo <= (r.get("total_agree") or 0) <= hi,
+                                                   "coherence_total_correct")
+              for lo, hi, lab in ((-999, 4, "<5"), (5, 9, "5-9"), (10, 999, "10+")):
+                  s["money_side"][lab] = rate(lambda r: lo <= (r.get("spread_money_div") or 0) <= hi,
+                                              "money_side_correct")
+              s["by_suggested_units"] = {}
+              for lo, hi, lab in ((0.01, 0.9, "0.5-1u"), (1.0, 1.4, "1u"), (1.5, 9, "1.5u+")):
+                  s["by_suggested_units"][lab] = rate(
+                      lambda r, lo=lo, hi=hi: lo <= (r.get("suggested_side_u") or 0) <= hi,
+                      "coherence_side_correct")
+              for v in ("AGREE", "SPLIT", "CONFLICT"):
+                  s["by_conflict"][v] = rate(lambda r, v=v: r.get("money_conflict") == v, "money_side_correct")
+              return s
+
+
+          def proposals(rows):
+              """Ledger of the system's OWN picks, with units won/lost.
+
+              `suggest_units` forms a pick on every game. Until these are scored, the
+              system cannot learn from its own mistakes -- it only ever knew whether a
+              signal bucket was predictive in aggregate, never whether its stake-weighted
+              recommendations made money. Price is taken from the frozen closing record.
+              """
+              out = []
+              for r in rows:
+                  for axis in ("side", "total"):
+                      u = r.get(f"suggested_{axis}_u") or 0
+                      if u <= 0: continue
+                      correct = r.get(f"coherence_{axis}_correct")
+                      if axis == "side":
+                          pick, num, price = r.get("side_dir"), r.get("home_spread"), r.get("side_price")
+                      else:
+                          pick = "OVER" if r.get("total_dir") == "MORE" else "UNDER"
+                          num, price = r.get("total_line"), r.get("total_price")
+                      price = price if price else -110
+                      if correct is None:
+                          res, pnl = ("PUSH" if correct is None and r.get(
+                              "ats_winner" if axis == "side" else "ou_result") == "PUSH" else "VOID"), 0.0
+                      elif correct:
+                          res = "WIN"; pnl = round(u * (100.0 / abs(price) if price < 0 else price / 100.0), 3)
+                      else:
+                          res = "LOSS"; pnl = -float(u)
+                      out.append({"game": r["game"], "kickoff": r["kickoff"], "axis": axis,
+                                  "pick": pick, "number": num, "price": price, "units": u,
+                                  "result": res, "pnl": pnl, "final": r.get("final"),
+                                  "agree": r.get(f"{axis}_agree"), "conflict": r.get("money_conflict")})
+              out.sort(key=lambda x: x["kickoff"])
+              return out
+
+          def proposal_summary(P):
+              graded = [p for p in P if p["result"] in ("WIN", "LOSS")]
+              staked = sum(p["units"] for p in graded)
+              pnl = round(sum(p["pnl"] for p in graded), 3)
+              by = collections.defaultdict(lambda: {"n": 0, "w": 0, "staked": 0.0, "pnl": 0.0})
+              for p in graded:
+                  for k in (f"axis:{p['axis']}", f"units:{p['units']}", f"agree:{p['agree']}"):
+                      b = by[k]; b["n"] += 1; b["w"] += p["result"] == "WIN"
+                      b["staked"] += p["units"]; b["pnl"] = round(b["pnl"] + p["pnl"], 3)
+              return {"picks_graded": len(graded), "record": f"{sum(p['result']=='WIN' for p in graded)}-"
+                      f"{sum(p['result']=='LOSS' for p in graded)}",
+                      "units_staked": round(staked, 2), "units_pnl": pnl,
+                      "roi_pct": round(100 * pnl / staked, 1) if staked else None,
+                      "by": {k: dict(v, hit_pct=round(100 * v["w"] / v["n"], 1)) for k, v in sorted(by.items())}}
+
+          if __name__ == "__main__":
+              n = write_candidates()
+              rows = grade()
+              os.makedirs(P("graded"), exist_ok=True)
+              by = collections.defaultdict(list)
+              for r in rows: by[r["kickoff"][:10]].append(r)
+              for d, rs in by.items(): json.dump(rs, open(P("graded", f"{d}.json"), "w"), indent=1)
+              s = summarize(rows)
+              pr = proposals(rows)
+              ps = proposal_summary(pr)
+              s["proposals"] = ps
+              json.dump(pr, open(P("graded", "proposals.json"), "w"), indent=1)
+              json.dump(s, open(P("graded", "summary.json"), "w"), indent=1)
+              print(f"candidates written: {n}   graded games: {len(rows)}")
+              print("PROPOSALS:", json.dumps(ps, indent=1)[:700])
+          PY
+      - name: commit
+        if: always()
+        run: |
+          git config user.name propwatch
+          git config user.email propwatch@users.noreply.github.com
+          git add -A candidates/ graded/ || true
+          git diff --staged --quiet || git commit -q -m "grade $(date -u +%FT%TZ)"
+          git pull -q --rebase --autostash || true
+          git push -q
