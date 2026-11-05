@@ -3,32 +3,17 @@
  "game": "Green Bay Packers @ New England Patriots",
  "abbr": "GB@NE",
  "kickoff": "2026-11-08T21:26:00.000Z",
- "recorded_utc": "2026-11-05T21:58:07Z",
+ "recorded_utc": "2026-11-05T22:05:50Z",
  "anchor": "2026-11-02T0000Z",
  "coherence": {
   "side_dir": "New England Patriots",
-  "side_agree": 6,
+  "side_agree": 3,
   "side_conflict": 0,
   "total_dir": "FEWER",
-  "total_agree": 8,
+  "total_agree": 4,
   "total_conflict": 0,
   "markets": [
    {
-    "mkt": "total",
-    "axis": "total",
-    "dir": "FEWER"
-   },
-   {
-    "mkt": "total",
-    "axis": "total",
-    "dir": "FEWER"
-   },
-   {
-    "mkt": "ml",
-    "axis": "side",
-    "dir": "New England Patriots"
-   },
-   {
     "mkt": "ml",
     "axis": "side",
     "dir": "New England Patriots"
@@ -39,9 +24,14 @@
     "dir": "New England Patriots"
    },
    {
-    "mkt": "spread",
+    "mkt": "1H spread",
     "axis": "side",
     "dir": "New England Patriots"
+   },
+   {
+    "mkt": "total",
+    "axis": "total",
+    "dir": "FEWER"
    },
    {
     "mkt": "1H total",
@@ -49,32 +39,7 @@
     "dir": "FEWER"
    },
    {
-    "mkt": "1H total",
-    "axis": "total",
-    "dir": "FEWER"
-   },
-   {
-    "mkt": "1H spread",
-    "axis": "side",
-    "dir": "New England Patriots"
-   },
-   {
-    "mkt": "1H spread",
-    "axis": "side",
-    "dir": "New England Patriots"
-   },
-   {
     "mkt": "1H away TT",
-    "axis": "total",
-    "dir": "FEWER"
-   },
-   {
-    "mkt": "1H away TT",
-    "axis": "total",
-    "dir": "FEWER"
-   },
-   {
-    "mkt": "1H home TT",
     "axis": "total",
     "dir": "FEWER"
    },
@@ -301,15 +266,13 @@
   }
  },
  "suggested": {
-  "side": 1.5,
-  "total": 1.5,
+  "side": 1.0,
+  "total": 1.0,
   "side_dir": "New England Patriots",
   "total_dir": "FEWER",
   "why": [
-   "side coherent (6 markets)",
-   "side coherence 5+",
-   "total coherent (8 markets)",
-   "total coherence 5+"
+   "side coherent (3 markets)",
+   "total coherent (4 markets)"
   ]
  },
  "gates": {

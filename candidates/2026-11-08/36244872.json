@@ -3,32 +3,17 @@
  "game": "Detroit Lions @ Miami Dolphins",
  "abbr": "DET@MIA",
  "kickoff": "2026-11-08T18:01:00.000Z",
- "recorded_utc": "2026-11-05T21:58:07Z",
+ "recorded_utc": "2026-11-05T22:05:50Z",
  "anchor": "2026-11-02T0000Z",
  "coherence": {
   "side_dir": "Miami Dolphins",
-  "side_agree": 4,
-  "side_conflict": 4,
+  "side_agree": 2,
+  "side_conflict": 2,
   "total_dir": "MORE",
-  "total_agree": 4,
-  "total_conflict": 4,
+  "total_agree": 2,
+  "total_conflict": 2,
   "markets": [
    {
-    "mkt": "total",
-    "axis": "total",
-    "dir": "MORE"
-   },
-   {
-    "mkt": "total",
-    "axis": "total",
-    "dir": "MORE"
-   },
-   {
-    "mkt": "ml",
-    "axis": "side",
-    "dir": "Miami Dolphins"
-   },
-   {
     "mkt": "ml",
     "axis": "side",
     "dir": "Miami Dolphins"
@@ -39,14 +24,19 @@
     "dir": "Miami Dolphins"
    },
    {
-    "mkt": "spread",
+    "mkt": "1H spread",
     "axis": "side",
-    "dir": "Miami Dolphins"
+    "dir": "Detroit Lions"
    },
    {
-    "mkt": "1H total",
+    "mkt": "2H spread",
+    "axis": "side",
+    "dir": "Detroit Lions"
+   },
+   {
+    "mkt": "total",
     "axis": "total",
-    "dir": "FEWER"
+    "dir": "MORE"
    },
    {
     "mkt": "1H total",
@@ -59,39 +49,9 @@
     "dir": "FEWER"
    },
    {
-    "mkt": "1H home TT",
-    "axis": "total",
-    "dir": "FEWER"
-   },
-   {
-    "mkt": "1H spread",
-    "axis": "side",
-    "dir": "Detroit Lions"
-   },
-   {
-    "mkt": "1H spread",
-    "axis": "side",
-    "dir": "Detroit Lions"
-   },
-   {
     "mkt": "2H total",
     "axis": "total",
     "dir": "MORE"
-   },
-   {
-    "mkt": "2H total",
-    "axis": "total",
-    "dir": "MORE"
-   },
-   {
-    "mkt": "2H spread",
-    "axis": "side",
-    "dir": "Detroit Lions"
-   },
-   {
-    "mkt": "2H spread",
-    "axis": "side",
-    "dir": "Detroit Lions"
    }
   ]
  },

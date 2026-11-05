@@ -3,15 +3,15 @@
  "game": "Dallas Cowboys @ Indianapolis Colts",
  "abbr": "DAL@IND",
  "kickoff": "2026-11-08T18:01:00.000Z",
- "recorded_utc": "2026-11-05T21:58:07Z",
+ "recorded_utc": "2026-11-05T22:05:50Z",
  "anchor": "2026-11-02T0000Z",
  "coherence": {
   "side_dir": "Indianapolis Colts",
-  "side_agree": 2,
-  "side_conflict": 2,
+  "side_agree": 1,
+  "side_conflict": 1,
   "total_dir": "FEWER",
-  "total_agree": 6,
-  "total_conflict": 2,
+  "total_agree": 3,
+  "total_conflict": 1,
   "markets": [
    {
     "mkt": "ml",
@@ -19,14 +19,9 @@
     "dir": "Indianapolis Colts"
    },
    {
-    "mkt": "ml",
+    "mkt": "1H spread",
     "axis": "side",
-    "dir": "Indianapolis Colts"
-   },
-   {
-    "mkt": "total",
-    "axis": "total",
-    "dir": "FEWER"
+    "dir": "Dallas Cowboys"
    },
    {
     "mkt": "total",
@@ -39,34 +34,9 @@
     "dir": "FEWER"
    },
    {
-    "mkt": "1H total",
-    "axis": "total",
-    "dir": "FEWER"
-   },
-   {
-    "mkt": "1H spread",
-    "axis": "side",
-    "dir": "Dallas Cowboys"
-   },
-   {
-    "mkt": "1H spread",
-    "axis": "side",
-    "dir": "Dallas Cowboys"
-   },
-   {
     "mkt": "1H home TT",
     "axis": "total",
     "dir": "FEWER"
-   },
-   {
-    "mkt": "1H home TT",
-    "axis": "total",
-    "dir": "FEWER"
-   },
-   {
-    "mkt": "2H total",
-    "axis": "total",
-    "dir": "MORE"
    },
    {
     "mkt": "2H total",

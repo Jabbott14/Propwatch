@@ -3,15 +3,15 @@
  "game": "Houston Texans @ Los Angeles Chargers",
  "abbr": "HOU@LAC",
  "kickoff": "2026-11-08T21:06:00.000Z",
- "recorded_utc": "2026-11-05T21:58:07Z",
+ "recorded_utc": "2026-11-05T22:05:50Z",
  "anchor": "2026-11-02T0000Z",
  "coherence": {
   "side_dir": "Houston Texans",
-  "side_agree": 4,
+  "side_agree": 2,
   "side_conflict": 0,
   "total_dir": "FEWER",
-  "total_agree": 8,
-  "total_conflict": 2,
+  "total_agree": 4,
+  "total_conflict": 1,
   "markets": [
    {
     "mkt": "spread",
@@ -19,32 +19,12 @@
     "dir": "Houston Texans"
    },
    {
-    "mkt": "spread",
-    "axis": "side",
-    "dir": "Houston Texans"
-   },
-   {
-    "mkt": "total",
-    "axis": "total",
-    "dir": "FEWER"
-   },
-   {
-    "mkt": "total",
-    "axis": "total",
-    "dir": "FEWER"
-   },
-   {
     "mkt": "ml",
     "axis": "side",
     "dir": "Houston Texans"
    },
    {
-    "mkt": "ml",
-    "axis": "side",
-    "dir": "Houston Texans"
-   },
-   {
-    "mkt": "1H away TT",
+    "mkt": "total",
     "axis": "total",
     "dir": "FEWER"
    },
@@ -59,24 +39,9 @@
     "dir": "FEWER"
    },
    {
-    "mkt": "1H home TT",
-    "axis": "total",
-    "dir": "FEWER"
-   },
-   {
     "mkt": "1H total",
     "axis": "total",
     "dir": "FEWER"
-   },
-   {
-    "mkt": "1H total",
-    "axis": "total",
-    "dir": "FEWER"
-   },
-   {
-    "mkt": "2H total",
-    "axis": "total",
-    "dir": "MORE"
    },
    {
     "mkt": "2H total",
@@ -301,19 +266,18 @@
   }
  },
  "suggested": {
-  "side": 1.5,
+  "side": 0.5,
   "total": 0.0,
   "side_dir": "Houston Texans",
   "total_dir": "FEWER",
   "why": [
-   "side coherent (4 markets)",
    "spread money div +10"
   ]
  },
  "gates": {
   "conflict_clear": true,
   "has_splits": true,
-  "coherent_side": true,
+  "coherent_side": false,
   "coherent_total": false
  },
  "frozen": false

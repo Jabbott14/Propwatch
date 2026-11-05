@@ -3,14 +3,14 @@
  "game": "Cincinnati Bengals @ Atlanta Falcons",
  "abbr": "CIN@ATL",
  "kickoff": "2026-11-08T14:30:00.000Z",
- "recorded_utc": "2026-11-05T21:58:07Z",
+ "recorded_utc": "2026-11-05T22:05:50Z",
  "anchor": "2026-11-02T0000Z",
  "coherence": {
   "side_dir": "Atlanta Falcons",
-  "side_agree": 6,
+  "side_agree": 3,
   "side_conflict": 0,
   "total_dir": "MORE",
-  "total_agree": 9,
+  "total_agree": 5,
   "total_conflict": 0,
   "markets": [
    {
@@ -19,32 +19,17 @@
     "dir": "Atlanta Falcons"
    },
    {
-    "mkt": "ml",
-    "axis": "side",
-    "dir": "Atlanta Falcons"
-   },
-   {
-    "mkt": "total",
-    "axis": "total",
-    "dir": "MORE"
-   },
-   {
-    "mkt": "total",
-    "axis": "total",
-    "dir": "MORE"
-   },
-   {
     "mkt": "spread",
     "axis": "side",
     "dir": "Atlanta Falcons"
    },
    {
-    "mkt": "spread",
+    "mkt": "1H spread",
     "axis": "side",
     "dir": "Atlanta Falcons"
    },
    {
-    "mkt": "2H total",
+    "mkt": "total",
     "axis": "total",
     "dir": "MORE"
    },
@@ -57,29 +42,9 @@
     "mkt": "1H total",
     "axis": "total",
     "dir": "MORE"
-   },
-   {
-    "mkt": "1H total",
-    "axis": "total",
-    "dir": "MORE"
-   },
-   {
-    "mkt": "1H spread",
-    "axis": "side",
-    "dir": "Atlanta Falcons"
-   },
-   {
-    "mkt": "1H spread",
-    "axis": "side",
-    "dir": "Atlanta Falcons"
    },
    {
     "mkt": "1H away TT",
-    "axis": "total",
-    "dir": "MORE"
-   },
-   {
-    "mkt": "1H home TT",
     "axis": "total",
     "dir": "MORE"
    },
@@ -306,14 +271,13 @@
   }
  },
  "suggested": {
-  "side": 1.5,
+  "side": 1.0,
   "total": 1.5,
   "side_dir": "Atlanta Falcons",
   "total_dir": "MORE",
   "why": [
-   "side coherent (6 markets)",
-   "side coherence 5+",
-   "total coherent (9 markets)",
+   "side coherent (3 markets)",
+   "total coherent (5 markets)",
    "total coherence 5+"
   ]
  },

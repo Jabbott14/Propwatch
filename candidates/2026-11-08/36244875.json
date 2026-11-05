@@ -3,50 +3,30 @@
  "game": "Las Vegas Raiders @ San Francisco 49ers",
  "abbr": "LV@SF",
  "kickoff": "2026-11-08T21:06:00.000Z",
- "recorded_utc": "2026-11-05T21:58:07Z",
+ "recorded_utc": "2026-11-05T22:05:50Z",
  "anchor": "2026-11-02T0000Z",
  "coherence": {
   "side_dir": "San Francisco 49ers",
-  "side_agree": 2,
+  "side_agree": 1,
   "side_conflict": 0,
   "total_dir": "MORE",
-  "total_agree": 4,
-  "total_conflict": 2,
+  "total_agree": 2,
+  "total_conflict": 1,
   "markets": [
    {
-    "mkt": "total",
-    "axis": "total",
-    "dir": "MORE"
-   },
-   {
-    "mkt": "total",
-    "axis": "total",
-    "dir": "MORE"
-   },
-   {
     "mkt": "spread",
     "axis": "side",
     "dir": "San Francisco 49ers"
    },
    {
-    "mkt": "spread",
-    "axis": "side",
-    "dir": "San Francisco 49ers"
-   },
-   {
-    "mkt": "1H total",
-    "axis": "total",
-    "dir": "FEWER"
-   },
-   {
-    "mkt": "1H total",
-    "axis": "total",
-    "dir": "FEWER"
-   },
-   {
-    "mkt": "2H total",
+    "mkt": "total",
     "axis": "total",
     "dir": "MORE"
+   },
+   {
+    "mkt": "1H total",
+    "axis": "total",
+    "dir": "FEWER"
    },
    {
     "mkt": "2H total",

@@ -3,68 +3,23 @@
  "game": "New York Jets @ Kansas City Chiefs",
  "abbr": "NYJ@KC",
  "kickoff": "2026-11-08T18:01:00.000Z",
- "recorded_utc": "2026-11-05T21:58:07Z",
+ "recorded_utc": "2026-11-05T22:05:50Z",
  "anchor": "2026-11-02T0000Z",
  "coherence": {
   "side_dir": "Kansas City Chiefs",
-  "side_agree": 8,
+  "side_agree": 4,
   "side_conflict": 0,
   "total_dir": "MORE",
-  "total_agree": 6,
-  "total_conflict": 2,
+  "total_agree": 3,
+  "total_conflict": 1,
   "markets": [
    {
-    "mkt": "total",
-    "axis": "total",
-    "dir": "MORE"
-   },
-   {
-    "mkt": "total",
-    "axis": "total",
-    "dir": "MORE"
-   },
-   {
-    "mkt": "ml",
-    "axis": "side",
-    "dir": "Kansas City Chiefs"
-   },
-   {
     "mkt": "ml",
     "axis": "side",
     "dir": "Kansas City Chiefs"
    },
    {
     "mkt": "spread",
-    "axis": "side",
-    "dir": "Kansas City Chiefs"
-   },
-   {
-    "mkt": "spread",
-    "axis": "side",
-    "dir": "Kansas City Chiefs"
-   },
-   {
-    "mkt": "1H away TT",
-    "axis": "total",
-    "dir": "FEWER"
-   },
-   {
-    "mkt": "1H away TT",
-    "axis": "total",
-    "dir": "FEWER"
-   },
-   {
-    "mkt": "1H home TT",
-    "axis": "total",
-    "dir": "MORE"
-   },
-   {
-    "mkt": "1H home TT",
-    "axis": "total",
-    "dir": "MORE"
-   },
-   {
-    "mkt": "1H spread",
     "axis": "side",
     "dir": "Kansas City Chiefs"
    },
@@ -79,12 +34,17 @@
     "dir": "Kansas City Chiefs"
    },
    {
-    "mkt": "2H spread",
-    "axis": "side",
-    "dir": "Kansas City Chiefs"
+    "mkt": "total",
+    "axis": "total",
+    "dir": "MORE"
    },
    {
-    "mkt": "2H total",
+    "mkt": "1H away TT",
+    "axis": "total",
+    "dir": "FEWER"
+   },
+   {
+    "mkt": "1H home TT",
     "axis": "total",
     "dir": "MORE"
    },
@@ -311,13 +271,12 @@
   }
  },
  "suggested": {
-  "side": 2.0,
+  "side": 1.5,
   "total": 0.0,
   "side_dir": "Kansas City Chiefs",
   "total_dir": "MORE",
   "why": [
-   "side coherent (8 markets)",
-   "side coherence 5+",
+   "side coherent (4 markets)",
    "spread money div +13"
   ]
  },

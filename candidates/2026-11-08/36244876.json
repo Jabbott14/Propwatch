@@ -3,15 +3,15 @@
  "game": "Los Angeles Rams @ Washington Commanders",
  "abbr": "LA@WSH",
  "kickoff": "2026-11-08T18:01:00.000Z",
- "recorded_utc": "2026-11-05T21:58:07Z",
+ "recorded_utc": "2026-11-05T22:05:50Z",
  "anchor": "2026-11-02T0000Z",
  "coherence": {
   "side_dir": "Washington Commanders",
-  "side_agree": 6,
+  "side_agree": 3,
   "side_conflict": 0,
   "total_dir": "FEWER",
-  "total_agree": 4,
-  "total_conflict": 2,
+  "total_agree": 2,
+  "total_conflict": 1,
   "markets": [
    {
     "mkt": "spread",
@@ -19,24 +19,14 @@
     "dir": "Washington Commanders"
    },
    {
-    "mkt": "spread",
-    "axis": "side",
-    "dir": "Washington Commanders"
-   },
-   {
     "mkt": "ml",
     "axis": "side",
     "dir": "Washington Commanders"
    },
    {
-    "mkt": "ml",
+    "mkt": "1H spread",
     "axis": "side",
     "dir": "Washington Commanders"
-   },
-   {
-    "mkt": "1H total",
-    "axis": "total",
-    "dir": "FEWER"
    },
    {
     "mkt": "1H total",
@@ -47,26 +37,6 @@
     "mkt": "1H away TT",
     "axis": "total",
     "dir": "FEWER"
-   },
-   {
-    "mkt": "1H away TT",
-    "axis": "total",
-    "dir": "FEWER"
-   },
-   {
-    "mkt": "1H spread",
-    "axis": "side",
-    "dir": "Washington Commanders"
-   },
-   {
-    "mkt": "1H spread",
-    "axis": "side",
-    "dir": "Washington Commanders"
-   },
-   {
-    "mkt": "2H total",
-    "axis": "total",
-    "dir": "MORE"
    },
    {
     "mkt": "2H total",
@@ -225,13 +195,12 @@
  "money_conflict": "UNKNOWN",
  "money_lean": {},
  "suggested": {
-  "side": 1.0,
+  "side": 0.5,
   "total": 0.0,
   "side_dir": "Washington Commanders",
   "total_dir": "FEWER",
   "why": [
-   "side coherent (6 markets)",
-   "side coherence 5+",
+   "side coherent (3 markets)",
    "no splits yet"
   ]
  },

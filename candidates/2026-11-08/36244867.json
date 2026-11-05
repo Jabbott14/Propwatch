@@ -3,38 +3,23 @@
  "game": "Denver Broncos @ Carolina Panthers",
  "abbr": "DEN@CAR",
  "kickoff": "2026-11-08T18:01:00.000Z",
- "recorded_utc": "2026-11-05T21:58:07Z",
+ "recorded_utc": "2026-11-05T22:05:50Z",
  "anchor": "2026-11-02T0000Z",
  "coherence": {
   "side_dir": "Carolina Panthers",
-  "side_agree": 2,
+  "side_agree": 1,
   "side_conflict": 0,
   "total_dir": "FEWER",
-  "total_agree": 8,
-  "total_conflict": 2,
+  "total_agree": 4,
+  "total_conflict": 1,
   "markets": [
    {
-    "mkt": "total",
-    "axis": "total",
-    "dir": "FEWER"
-   },
-   {
-    "mkt": "total",
-    "axis": "total",
-    "dir": "FEWER"
-   },
-   {
     "mkt": "ml",
     "axis": "side",
     "dir": "Carolina Panthers"
    },
    {
-    "mkt": "ml",
-    "axis": "side",
-    "dir": "Carolina Panthers"
-   },
-   {
-    "mkt": "1H away TT",
+    "mkt": "total",
     "axis": "total",
     "dir": "FEWER"
    },
@@ -49,24 +34,9 @@
     "dir": "FEWER"
    },
    {
-    "mkt": "1H total",
-    "axis": "total",
-    "dir": "FEWER"
-   },
-   {
     "mkt": "1H home TT",
     "axis": "total",
     "dir": "FEWER"
-   },
-   {
-    "mkt": "1H home TT",
-    "axis": "total",
-    "dir": "FEWER"
-   },
-   {
-    "mkt": "2H total",
-    "axis": "total",
-    "dir": "MORE"
    },
    {
     "mkt": "2H total",
