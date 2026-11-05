@@ -1,13 +1,10 @@
 name: collect
 on:
   schedule:
-    - cron: "7 */2 * * *"
+    - cron: "7 * * * *"
   workflow_dispatch:
 permissions:
   contents: write
-concurrency:
-  group: collect
-  cancel-in-progress: false
 jobs:
   snap:
     runs-on: ubuntu-latest
@@ -28,9 +25,13 @@ jobs:
           PIN={"X-API-Key":"CmX2KcMrXuFmNg6YFbmTxE0y9CIrOi0R"}
           AK="FhMFpcPWXMeyZxOx"; FD="https://sbapi.nj.sportsbook.fanduel.com/api"
 
-          CYCLE   = 600        # seconds between snapshots (10 min)
-          RUNFOR  = 320*60     # stay alive ~5h20m, under the 6h job ceiling
-          HEAVY_N = 6          # full raw set every Nth cycle (hourly)
+          # Variable cadence. NFL lines are flat for days and then move fast in the
+          # hours before kickoff, so sample densely only near a kickoff.
+          CYCLE_NEAR = 600     # 10 min when a kickoff is within NEAR_H hours
+          CYCLE_FAR  = 3600    # 60 min otherwise
+          NEAR_H     = 12
+          RUNFOR  = 350*60     # ~5h50m; hourly cron overlaps runs so a dropped firing leaves no hole
+          HEAVY_N = 6          # full raw set every Nth dense cycle; every cycle when sparse
           PUSH_N  = 3          # commit every Nth cycle (30 min)
           TABS    = ["passing-props","receiving-props","rushing-props",
                      "td-scorer-props","1st-half","2nd-half"]
@@ -78,13 +79,23 @@ jobs:
           subprocess.run(["git","config","user.email",
                           "propwatch@users.noreply.github.com"],check=False)
 
+          KO={}
           t0=time.time(); cyc=0
           while time.time()-t0 < RUNFOR:
               cyc+=1
               now=datetime.now(timezone.utc)
               ts=now.strftime("%Y-%m-%dT%H%MZ"); day=now.strftime("%Y-%m-%d")
               horizon=(now+timedelta(days=8)).strftime("%Y-%m-%d")
-              diag=[]; heavy = (cyc % HEAVY_N == 1)
+              diag=[]
+              nxt=None
+              for od in KO.values():
+                  try: k=datetime.fromisoformat(od.replace("Z","+00:00"))
+                  except Exception: continue
+                  if k>now and (nxt is None or k<nxt): nxt=k
+              hrs=((nxt-now).total_seconds()/3600) if nxt else 999
+              near=hrs<=NEAR_H
+              CYCLE=CYCLE_NEAR if near else CYCLE_FAR
+              heavy = (cyc % HEAVY_N == 1) or not near
 
               # every cycle: the signal sources
               archive("actionnet","https://api.actionnetwork.com/web/v2/scoreboard/nfl?period=game",
@@ -111,11 +122,14 @@ jobs:
               try:
                   for k,v in json.loads(lob)["attachments"]["events"].items():
                       nm=str(v.get("name","")); od=str(v.get("openDate",""))
+                      if "@" in nm and od:
+                          KO[str(v.get("eventId") or k)]=od
                       if "@" in nm and day<=od[:10]<=horizon:
                           games.append((od,str(v.get("eventId") or k),nm))
                   games.sort()
               except Exception as e:
                   diag.append({"name":"eventparse","error":str(e)[:100]})
+              games=games or []
 
               seen=set(); rows=[]; ok=fail=0
               for od,eid,nm in games[:16]:
@@ -149,10 +163,12 @@ jobs:
               json.dump({"run_utc":now.strftime("%Y-%m-%dT%H:%M:%SZ"),"cycle":cyc,
                          "heavy":heavy,"games":len(games),"rows":len(rows),
                          "props_gz":gz_sz,"pulls_ok":ok,"pulls_fail":fail,
-                         "elapsed_min":round((time.time()-t0)/60,1),"attempts":diag},
+                         "elapsed_min":round((time.time()-t0)/60,1),
+                         "next_kickoff_h":round(hrs,1),"cadence_min":CYCLE//60,"attempts":diag},
                         open("data/_diag.json","w"),indent=1)
-              print(f"cyc {cyc:3} {ts} games={len(games)} rows={len(rows)} "
-                    f"gz={gz_sz//1024}KB ok={ok} fail={fail} heavy={heavy}", flush=True)
+              print(f"cyc {cyc:3} {ts} next_kick={hrs:.1f}h cadence={CYCLE//60}m "
+                    f"games={len(games)} rows={len(rows)} gz={gz_sz//1024}KB "
+                    f"ok={ok} fail={fail} heavy={heavy}", flush=True)
 
               if cyc % PUSH_N == 0: commit()
               left=RUNFOR-(time.time()-t0)
