@@ -102,7 +102,10 @@ jobs:
 
           def coherence(S, eid, gname, cut=None):
               away, home = (gname.split(" @ ") + ["", ""])[:2]
+              # Count DISTINCT markets, not market-sides. Both sides of one market move
+              # together by construction, so counting each side doubled every score.
               side, total, detail = collections.Counter(), collections.Counter(), []
+              seen_side, seen_total = {}, {}
               for (e, mt, sd), s in S.items():
                   if e != eid: continue
                   ks = sorted(k for k in s if cut is None or k < cut)
@@ -117,14 +120,21 @@ jobs:
                       elif abs(o1 - o0) >= 5:
                           d = sd if o1 < o0 else (away if sd == home else home)
                       else: continue
-                      side[d] += 1; detail.append({"mkt": SIDE_MK[mt], "axis": "side", "dir": d})
+                      seen_side.setdefault((SIDE_MK[mt], d), 0)
+                      seen_side[(SIDE_MK[mt], d)] += 1
                   else:
                       if sd not in ("Over", "Under") or h0 is None or h1 is None: continue
                       if h0 != h1: d = "MORE" if h1 > h0 else "FEWER"
                       elif abs(o1 - o0) >= 5:
                           d = ("MORE" if o1 < o0 else "FEWER") if sd == "Over" else ("FEWER" if o1 < o0 else "MORE")
                       else: continue
-                      total[d] += 1; detail.append({"mkt": TOTAL_MK[mt], "axis": "total", "dir": d})
+                      seen_total.setdefault((TOTAL_MK[mt], d), 0)
+                      seen_total[(TOTAL_MK[mt], d)] += 1
+              for (mkt, d), _ in seen_side.items():
+                  side[d] += 1; detail.append({"mkt": mkt, "axis": "side", "dir": d})
+              for (mkt, d), _ in seen_total.items():
+                  total[d] += 1; detail.append({"mkt": mkt, "axis": "total", "dir": d})
+
               def top(c):
                   if not c: return (None, 0, 0)
                   d, n = c.most_common(1)[0]
