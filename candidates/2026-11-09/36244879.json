@@ -1,0 +1,305 @@
+{
+ "eventId": "36244879",
+ "game": "Tampa Bay Buccaneers @ Chicago Bears",
+ "abbr": "TB@CHI",
+ "kickoff": "2026-11-09T01:21:00.000Z",
+ "recorded_utc": "2026-11-05T21:58:07Z",
+ "anchor": "2026-11-02T0000Z",
+ "coherence": {
+  "side_dir": "Tampa Bay Buccaneers",
+  "side_agree": 2,
+  "side_conflict": 2,
+  "total_dir": "MORE",
+  "total_agree": 7,
+  "total_conflict": 0,
+  "markets": [
+   {
+    "mkt": "total",
+    "axis": "total",
+    "dir": "MORE"
+   },
+   {
+    "mkt": "ml",
+    "axis": "side",
+    "dir": "Tampa Bay Buccaneers"
+   },
+   {
+    "mkt": "ml",
+    "axis": "side",
+    "dir": "Tampa Bay Buccaneers"
+   },
+   {
+    "mkt": "1H total",
+    "axis": "total",
+    "dir": "MORE"
+   },
+   {
+    "mkt": "1H total",
+    "axis": "total",
+    "dir": "MORE"
+   },
+   {
+    "mkt": "1H home TT",
+    "axis": "total",
+    "dir": "MORE"
+   },
+   {
+    "mkt": "1H home TT",
+    "axis": "total",
+    "dir": "MORE"
+   },
+   {
+    "mkt": "2H total",
+    "axis": "total",
+    "dir": "MORE"
+   },
+   {
+    "mkt": "2H total",
+    "axis": "total",
+    "dir": "MORE"
+   },
+   {
+    "mkt": "2H spread",
+    "axis": "side",
+    "dir": "Chicago Bears"
+   },
+   {
+    "mkt": "2H spread",
+    "axis": "side",
+    "dir": "Chicago Bears"
+   }
+  ]
+ },
+ "numbers": {
+  "spread": {
+   "Tampa Bay Buccaneers": {
+    "open": 6.5,
+    "open_odds": -118,
+    "now": 6.5,
+    "now_odds": -115,
+    "n": 271
+   },
+   "Chicago Bears": {
+    "open": -6.5,
+    "open_odds": -104,
+    "now": -6.5,
+    "now_odds": -105,
+    "n": 271
+   }
+  },
+  "total": {
+   "Over": {
+    "open": 47.5,
+    "open_odds": -104,
+    "now": 47.5,
+    "now_odds": -108,
+    "n": 271
+   },
+   "Under": {
+    "open": 47.5,
+    "open_odds": -118,
+    "now": 47.5,
+    "now_odds": -112,
+    "n": 271
+   }
+  },
+  "ml": {
+   "Tampa Bay Buccaneers": {
+    "open": 0,
+    "open_odds": 235,
+    "now": 0,
+    "now_odds": 220,
+    "n": 271
+   },
+   "Chicago Bears": {
+    "open": 0,
+    "open_odds": -290,
+    "now": 0,
+    "now_odds": -270,
+    "n": 271
+   }
+  },
+  "1H away TT": {
+   "Over": {
+    "open": 9.5,
+    "open_odds": -146,
+    "now": 9.5,
+    "now_odds": -142,
+    "n": 268
+   },
+   "Under": {
+    "open": 9.5,
+    "open_odds": 114,
+    "now": 9.5,
+    "now_odds": 112,
+    "n": 268
+   }
+  },
+  "1H total": {
+   "Over": {
+    "open": 23.5,
+    "open_odds": -105,
+    "now": 23.5,
+    "now_odds": -110,
+    "n": 268
+   },
+   "Under": {
+    "open": 23.5,
+    "open_odds": -115,
+    "now": 23.5,
+    "now_odds": -110,
+    "n": 268
+   }
+  },
+  "1H home TT": {
+   "Over": {
+    "open": 13.5,
+    "open_odds": -113,
+    "now": 13.5,
+    "now_odds": -120,
+    "n": 268
+   },
+   "Under": {
+    "open": 13.5,
+    "open_odds": -113,
+    "now": 13.5,
+    "now_odds": -106,
+    "n": 268
+   }
+  },
+  "1H spread": {
+   "Tampa Bay Buccaneers": {
+    "open": 3.5,
+    "open_odds": -110,
+    "now": 3.5,
+    "now_odds": -110,
+    "n": 268
+   },
+   "Chicago Bears": {
+    "open": -3.5,
+    "open_odds": -110,
+    "now": -3.5,
+    "now_odds": -110,
+    "n": 268
+   }
+  },
+  "2H total": {
+   "Over": {
+    "open": 23.5,
+    "open_odds": 100,
+    "now": 23.5,
+    "now_odds": -110,
+    "n": 268
+   },
+   "Under": {
+    "open": 23.5,
+    "open_odds": -120,
+    "now": 23.5,
+    "now_odds": -110,
+    "n": 268
+   }
+  },
+  "2H spread": {
+   "Tampa Bay Buccaneers": {
+    "open": 2.5,
+    "open_odds": 100,
+    "now": 2.5,
+    "now_odds": 105,
+    "n": 268
+   },
+   "Chicago Bears": {
+    "open": -2.5,
+    "open_odds": -120,
+    "now": -2.5,
+    "now_odds": -125,
+    "n": 268
+   }
+  }
+ },
+ "splits": {
+  "spread": {
+   "home": {
+    "tix": 67,
+    "mny": 77,
+    "d_tix": 12,
+    "d_mny": 5,
+    "div": -7,
+    "n": 223
+   },
+   "away": {
+    "tix": 33,
+    "mny": 23,
+    "d_tix": -12,
+    "d_mny": -5,
+    "div": 7,
+    "n": 223
+   }
+  },
+  "total": {
+   "under": {
+    "tix": 42,
+    "mny": 34,
+    "d_tix": -14,
+    "d_mny": -21,
+    "div": -7,
+    "n": 223
+   },
+   "over": {
+    "tix": 58,
+    "mny": 66,
+    "d_tix": 14,
+    "d_mny": 21,
+    "div": 7,
+    "n": 223
+   }
+  },
+  "moneyline": {
+   "home": {
+    "tix": 95,
+    "mny": 95,
+    "d_tix": 3,
+    "d_mny": 5,
+    "div": 2,
+    "n": 223
+   },
+   "away": {
+    "tix": 5,
+    "mny": 5,
+    "d_tix": -3,
+    "d_mny": -5,
+    "div": -2,
+    "n": 223
+   }
+  }
+ },
+ "money_conflict": "AGREE",
+ "money_lean": {
+  "spread": {
+   "side": "home",
+   "mny": 77,
+   "d_mny": 5
+  },
+  "moneyline": {
+   "side": "home",
+   "mny": 95,
+   "d_mny": 5
+  }
+ },
+ "suggested": {
+  "side": 0.0,
+  "total": 1.5,
+  "side_dir": "Tampa Bay Buccaneers",
+  "total_dir": "MORE",
+  "why": [
+   "total coherent (7 markets)",
+   "total coherence 5+"
+  ]
+ },
+ "gates": {
+  "conflict_clear": true,
+  "has_splits": true,
+  "coherent_side": false,
+  "coherent_total": true
+ },
+ "frozen": false
+}

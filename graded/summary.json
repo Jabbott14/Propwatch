@@ -1,0 +1,119 @@
+{
+ "graded_games": 11,
+ "generated": "2026-11-05T21:58:11Z",
+ "coherence_side": {
+  "0-2": {
+   "n": 1,
+   "correct": 1,
+   "pct": 100.0
+  },
+  "3-4": {
+   "n": 0,
+   "correct": 0,
+   "pct": null
+  },
+  "5+": {
+   "n": 1,
+   "correct": 0,
+   "pct": 0.0
+  }
+ },
+ "coherence_total": {
+  "0-2": {
+   "n": 2,
+   "correct": 1,
+   "pct": 50.0
+  },
+  "3-4": {
+   "n": 1,
+   "correct": 0,
+   "pct": 0.0
+  },
+  "5+": {
+   "n": 0,
+   "correct": 0,
+   "pct": null
+  }
+ },
+ "money_side": {
+  "<5": {
+   "n": 9,
+   "correct": 2,
+   "pct": 22.2
+  },
+  "5-9": {
+   "n": 1,
+   "correct": 1,
+   "pct": 100.0
+  },
+  "10+": {
+   "n": 0,
+   "correct": 0,
+   "pct": null
+  }
+ },
+ "by_conflict": {
+  "AGREE": {
+   "n": 6,
+   "correct": 2,
+   "pct": 33.3
+  },
+  "SPLIT": {
+   "n": 3,
+   "correct": 0,
+   "pct": 0.0
+  },
+  "CONFLICT": {
+   "n": 1,
+   "correct": 1,
+   "pct": 100.0
+  }
+ },
+ "by_suggested_units": {
+  "0.5-1u": {
+   "n": 0,
+   "correct": 0,
+   "pct": null
+  },
+  "1u": {
+   "n": 1,
+   "correct": 0,
+   "pct": 0.0
+  },
+  "1.5u+": {
+   "n": 0,
+   "correct": 0,
+   "pct": null
+  }
+ },
+ "proposals": {
+  "picks_graded": 1,
+  "record": "0-1",
+  "units_staked": 1.0,
+  "units_pnl": -1.0,
+  "roi_pct": -100.0,
+  "by": {
+   "agree:8": {
+    "n": 1,
+    "w": 0,
+    "staked": 1.0,
+    "pnl": -1.0,
+    "hit_pct": 0.0
+   },
+   "axis:side": {
+    "n": 1,
+    "w": 0,
+    "staked": 1.0,
+    "pnl": -1.0,
+    "hit_pct": 0.0
+   },
+   "units:1.0": {
+    "n": 1,
+    "w": 0,
+    "staked": 1.0,
+    "pnl": -1.0,
+    "hit_pct": 0.0
+   }
+  }
+ }
+}

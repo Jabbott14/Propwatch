@@ -1,0 +1,248 @@
+{
+ "eventId": "36215315",
+ "game": "Cleveland Browns @ Pittsburgh Steelers",
+ "abbr": "CLE@PIT",
+ "kickoff": "2026-11-01T18:01:00.000Z",
+ "recorded_utc": "2026-11-05T21:58:07Z",
+ "anchor": "2026-10-26T0000Z",
+ "coherence": {
+  "side_dir": null,
+  "side_agree": 0,
+  "side_conflict": 0,
+  "total_dir": null,
+  "total_agree": 0,
+  "total_conflict": 0,
+  "markets": []
+ },
+ "numbers": {
+  "ml": {
+   "Cleveland Browns": {
+    "open": 0,
+    "open_odds": 172,
+    "now": 0,
+    "now_odds": 172,
+    "n": 1
+   },
+   "Pittsburgh Steelers": {
+    "open": 0,
+    "open_odds": -205,
+    "now": 0,
+    "now_odds": -205,
+    "n": 1
+   }
+  },
+  "total": {
+   "Over": {
+    "open": 38.5,
+    "open_odds": -118,
+    "now": 38.5,
+    "now_odds": -118,
+    "n": 1
+   },
+   "Under": {
+    "open": 38.5,
+    "open_odds": -104,
+    "now": 38.5,
+    "now_odds": -104,
+    "n": 1
+   }
+  },
+  "spread": {
+   "Cleveland Browns": {
+    "open": 3.5,
+    "open_odds": -105,
+    "now": 3.5,
+    "now_odds": -105,
+    "n": 1
+   },
+   "Pittsburgh Steelers": {
+    "open": -3.5,
+    "open_odds": -115,
+    "now": -3.5,
+    "now_odds": -115,
+    "n": 1
+   }
+  },
+  "1H total": {
+   "Over": {
+    "open": 19.5,
+    "open_odds": -110,
+    "now": 19.5,
+    "now_odds": -110,
+    "n": 1
+   },
+   "Under": {
+    "open": 19.5,
+    "open_odds": -110,
+    "now": 19.5,
+    "now_odds": -110,
+    "n": 1
+   }
+  },
+  "1H away TT": {
+   "Over": {
+    "open": 7.5,
+    "open_odds": -102,
+    "now": 7.5,
+    "now_odds": -102,
+    "n": 1
+   },
+   "Under": {
+    "open": 7.5,
+    "open_odds": -125,
+    "now": 7.5,
+    "now_odds": -125,
+    "n": 1
+   }
+  },
+  "1H home TT": {
+   "Over": {
+    "open": 10.5,
+    "open_odds": 118,
+    "now": 10.5,
+    "now_odds": 118,
+    "n": 1
+   },
+   "Under": {
+    "open": 10.5,
+    "open_odds": -150,
+    "now": 10.5,
+    "now_odds": -150,
+    "n": 1
+   }
+  },
+  "1H spread": {
+   "Cleveland Browns": {
+    "open": 2.5,
+    "open_odds": 100,
+    "now": 2.5,
+    "now_odds": 100,
+    "n": 1
+   },
+   "Pittsburgh Steelers": {
+    "open": -2.5,
+    "open_odds": -120,
+    "now": -2.5,
+    "now_odds": -120,
+    "n": 1
+   }
+  },
+  "2H spread": {
+   "Cleveland Browns": {
+    "open": 1.5,
+    "open_odds": -110,
+    "now": 1.5,
+    "now_odds": -110,
+    "n": 1
+   },
+   "Pittsburgh Steelers": {
+    "open": -1.5,
+    "open_odds": -110,
+    "now": -1.5,
+    "now_odds": -110,
+    "n": 1
+   }
+  },
+  "2H total": {
+   "Over": {
+    "open": 19.5,
+    "open_odds": -120,
+    "now": 19.5,
+    "now_odds": -120,
+    "n": 1
+   },
+   "Under": {
+    "open": 19.5,
+    "open_odds": 100,
+    "now": 19.5,
+    "now_odds": 100,
+    "n": 1
+   }
+  }
+ },
+ "splits": {
+  "spread": {
+   "home": {
+    "tix": 48,
+    "mny": 55,
+    "d_tix": 0,
+    "d_mny": 0,
+    "div": 0,
+    "n": 3
+   },
+   "away": {
+    "tix": 52,
+    "mny": 45,
+    "d_tix": 0,
+    "d_mny": 0,
+    "div": 0,
+    "n": 3
+   }
+  },
+  "total": {
+   "over": {
+    "tix": 53,
+    "mny": 71,
+    "d_tix": 0,
+    "d_mny": 0,
+    "div": 0,
+    "n": 3
+   },
+   "under": {
+    "tix": 47,
+    "mny": 29,
+    "d_tix": 0,
+    "d_mny": 0,
+    "div": 0,
+    "n": 3
+   }
+  },
+  "moneyline": {
+   "home": {
+    "tix": 82,
+    "mny": 82,
+    "d_tix": 0,
+    "d_mny": 0,
+    "div": 0,
+    "n": 3
+   },
+   "away": {
+    "tix": 18,
+    "mny": 18,
+    "d_tix": 0,
+    "d_mny": 0,
+    "div": 0,
+    "n": 3
+   }
+  }
+ },
+ "money_conflict": "AGREE",
+ "money_lean": {
+  "spread": {
+   "side": "home",
+   "mny": 55,
+   "d_mny": 0
+  },
+  "moneyline": {
+   "side": "home",
+   "mny": 82,
+   "d_mny": 0
+  }
+ },
+ "suggested": {
+  "side": 0.0,
+  "total": 0.0,
+  "side_dir": null,
+  "total_dir": null,
+  "why": [
+   "thin split history"
+  ]
+ },
+ "gates": {
+  "conflict_clear": true,
+  "has_splits": true,
+  "coherent_side": false,
+  "coherent_total": false
+ },
+ "frozen": true
+}

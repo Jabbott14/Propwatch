@@ -1,0 +1,248 @@
+{
+ "eventId": "36215312",
+ "game": "Tennessee Titans @ Cincinnati Bengals",
+ "abbr": "TEN@CIN",
+ "kickoff": "2026-11-01T18:01:00.000Z",
+ "recorded_utc": "2026-11-05T21:58:07Z",
+ "anchor": "2026-10-26T0000Z",
+ "coherence": {
+  "side_dir": null,
+  "side_agree": 0,
+  "side_conflict": 0,
+  "total_dir": null,
+  "total_agree": 0,
+  "total_conflict": 0,
+  "markets": []
+ },
+ "numbers": {
+  "spread": {
+   "Tennessee Titans": {
+    "open": 13.5,
+    "open_odds": -102,
+    "now": 13.5,
+    "now_odds": -102,
+    "n": 1
+   },
+   "Cincinnati Bengals": {
+    "open": -13.5,
+    "open_odds": -120,
+    "now": -13.5,
+    "now_odds": -120,
+    "n": 1
+   }
+  },
+  "total": {
+   "Over": {
+    "open": 45.5,
+    "open_odds": -120,
+    "now": 45.5,
+    "now_odds": -120,
+    "n": 1
+   },
+   "Under": {
+    "open": 45.5,
+    "open_odds": -102,
+    "now": 45.5,
+    "now_odds": -102,
+    "n": 1
+   }
+  },
+  "ml": {
+   "Tennessee Titans": {
+    "open": 0,
+    "open_odds": 700,
+    "now": 0,
+    "now_odds": 700,
+    "n": 1
+   },
+   "Cincinnati Bengals": {
+    "open": 0,
+    "open_odds": -1100,
+    "now": 0,
+    "now_odds": -1100,
+    "n": 1
+   }
+  },
+  "1H home TT": {
+   "Over": {
+    "open": 15.5,
+    "open_odds": -120,
+    "now": 15.5,
+    "now_odds": -120,
+    "n": 1
+   },
+   "Under": {
+    "open": 15.5,
+    "open_odds": -106,
+    "now": 15.5,
+    "now_odds": -106,
+    "n": 1
+   }
+  },
+  "1H away TT": {
+   "Over": {
+    "open": 6.5,
+    "open_odds": -156,
+    "now": 6.5,
+    "now_odds": -156,
+    "n": 1
+   },
+   "Under": {
+    "open": 6.5,
+    "open_odds": 122,
+    "now": 6.5,
+    "now_odds": 122,
+    "n": 1
+   }
+  },
+  "1H spread": {
+   "Tennessee Titans": {
+    "open": 7.5,
+    "open_odds": -110,
+    "now": 7.5,
+    "now_odds": -110,
+    "n": 1
+   },
+   "Cincinnati Bengals": {
+    "open": -7.5,
+    "open_odds": -110,
+    "now": -7.5,
+    "now_odds": -110,
+    "n": 1
+   }
+  },
+  "1H total": {
+   "Over": {
+    "open": 23.5,
+    "open_odds": -110,
+    "now": 23.5,
+    "now_odds": -110,
+    "n": 1
+   },
+   "Under": {
+    "open": 23.5,
+    "open_odds": -110,
+    "now": 23.5,
+    "now_odds": -110,
+    "n": 1
+   }
+  },
+  "2H total": {
+   "Over": {
+    "open": 22.5,
+    "open_odds": -110,
+    "now": 22.5,
+    "now_odds": -110,
+    "n": 1
+   },
+   "Under": {
+    "open": 22.5,
+    "open_odds": -110,
+    "now": 22.5,
+    "now_odds": -110,
+    "n": 1
+   }
+  },
+  "2H spread": {
+   "Tennessee Titans": {
+    "open": 6.5,
+    "open_odds": -105,
+    "now": 6.5,
+    "now_odds": -105,
+    "n": 1
+   },
+   "Cincinnati Bengals": {
+    "open": -6.5,
+    "open_odds": -115,
+    "now": -6.5,
+    "now_odds": -115,
+    "n": 1
+   }
+  }
+ },
+ "splits": {
+  "spread": {
+   "home": {
+    "tix": 71,
+    "mny": 78,
+    "d_tix": 0,
+    "d_mny": 0,
+    "div": 0,
+    "n": 3
+   },
+   "away": {
+    "tix": 29,
+    "mny": 22,
+    "d_tix": 0,
+    "d_mny": 0,
+    "div": 0,
+    "n": 3
+   }
+  },
+  "total": {
+   "over": {
+    "tix": 49,
+    "mny": 59,
+    "d_tix": 0,
+    "d_mny": 0,
+    "div": 0,
+    "n": 3
+   },
+   "under": {
+    "tix": 51,
+    "mny": 41,
+    "d_tix": 0,
+    "d_mny": 0,
+    "div": 0,
+    "n": 3
+   }
+  },
+  "moneyline": {
+   "home": {
+    "tix": 96,
+    "mny": 97,
+    "d_tix": 0,
+    "d_mny": 0,
+    "div": 0,
+    "n": 3
+   },
+   "away": {
+    "tix": 4,
+    "mny": 3,
+    "d_tix": 0,
+    "d_mny": 0,
+    "div": 0,
+    "n": 3
+   }
+  }
+ },
+ "money_conflict": "AGREE",
+ "money_lean": {
+  "spread": {
+   "side": "home",
+   "mny": 78,
+   "d_mny": 0
+  },
+  "moneyline": {
+   "side": "home",
+   "mny": 97,
+   "d_mny": 0
+  }
+ },
+ "suggested": {
+  "side": 0.0,
+  "total": 0.0,
+  "side_dir": null,
+  "total_dir": null,
+  "why": [
+   "thin split history"
+  ]
+ },
+ "gates": {
+  "conflict_clear": true,
+  "has_splits": true,
+  "coherent_side": false,
+  "coherent_total": false
+ },
+ "frozen": true
+}

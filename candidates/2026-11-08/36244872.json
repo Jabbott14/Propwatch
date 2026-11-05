@@ -1,0 +1,327 @@
+{
+ "eventId": "36244872",
+ "game": "Detroit Lions @ Miami Dolphins",
+ "abbr": "DET@MIA",
+ "kickoff": "2026-11-08T18:01:00.000Z",
+ "recorded_utc": "2026-11-05T21:58:07Z",
+ "anchor": "2026-11-02T0000Z",
+ "coherence": {
+  "side_dir": "Miami Dolphins",
+  "side_agree": 4,
+  "side_conflict": 4,
+  "total_dir": "MORE",
+  "total_agree": 4,
+  "total_conflict": 4,
+  "markets": [
+   {
+    "mkt": "total",
+    "axis": "total",
+    "dir": "MORE"
+   },
+   {
+    "mkt": "total",
+    "axis": "total",
+    "dir": "MORE"
+   },
+   {
+    "mkt": "ml",
+    "axis": "side",
+    "dir": "Miami Dolphins"
+   },
+   {
+    "mkt": "ml",
+    "axis": "side",
+    "dir": "Miami Dolphins"
+   },
+   {
+    "mkt": "spread",
+    "axis": "side",
+    "dir": "Miami Dolphins"
+   },
+   {
+    "mkt": "spread",
+    "axis": "side",
+    "dir": "Miami Dolphins"
+   },
+   {
+    "mkt": "1H total",
+    "axis": "total",
+    "dir": "FEWER"
+   },
+   {
+    "mkt": "1H total",
+    "axis": "total",
+    "dir": "FEWER"
+   },
+   {
+    "mkt": "1H home TT",
+    "axis": "total",
+    "dir": "FEWER"
+   },
+   {
+    "mkt": "1H home TT",
+    "axis": "total",
+    "dir": "FEWER"
+   },
+   {
+    "mkt": "1H spread",
+    "axis": "side",
+    "dir": "Detroit Lions"
+   },
+   {
+    "mkt": "1H spread",
+    "axis": "side",
+    "dir": "Detroit Lions"
+   },
+   {
+    "mkt": "2H total",
+    "axis": "total",
+    "dir": "MORE"
+   },
+   {
+    "mkt": "2H total",
+    "axis": "total",
+    "dir": "MORE"
+   },
+   {
+    "mkt": "2H spread",
+    "axis": "side",
+    "dir": "Detroit Lions"
+   },
+   {
+    "mkt": "2H spread",
+    "axis": "side",
+    "dir": "Detroit Lions"
+   }
+  ]
+ },
+ "numbers": {
+  "total": {
+   "Over": {
+    "open": 48.5,
+    "open_odds": -118,
+    "now": 50.5,
+    "now_odds": -105,
+    "n": 290
+   },
+   "Under": {
+    "open": 48.5,
+    "open_odds": -104,
+    "now": 50.5,
+    "now_odds": -115,
+    "n": 290
+   }
+  },
+  "ml": {
+   "Detroit Lions": {
+    "open": 0,
+    "open_odds": -390,
+    "now": 0,
+    "now_odds": -355,
+    "n": 290
+   },
+   "Miami Dolphins": {
+    "open": 0,
+    "open_odds": 310,
+    "now": 0,
+    "now_odds": 285,
+    "n": 290
+   }
+  },
+  "spread": {
+   "Detroit Lions": {
+    "open": -7,
+    "open_odds": -115,
+    "now": -7,
+    "now_odds": -110,
+    "n": 290
+   },
+   "Miami Dolphins": {
+    "open": 7,
+    "open_odds": -105,
+    "now": 7,
+    "now_odds": -110,
+    "n": 290
+   }
+  },
+  "1H away TT": {
+   "Over": {
+    "open": 14.5,
+    "open_odds": 100,
+    "now": 14.5,
+    "now_odds": 104,
+    "n": 287
+   },
+   "Under": {
+    "open": 14.5,
+    "open_odds": -128,
+    "now": 14.5,
+    "now_odds": -132,
+    "n": 287
+   }
+  },
+  "1H total": {
+   "Over": {
+    "open": 25.5,
+    "open_odds": -110,
+    "now": 24.5,
+    "now_odds": -105,
+    "n": 287
+   },
+   "Under": {
+    "open": 25.5,
+    "open_odds": -110,
+    "now": 24.5,
+    "now_odds": -115,
+    "n": 287
+   }
+  },
+  "1H home TT": {
+   "Over": {
+    "open": 10.5,
+    "open_odds": 122,
+    "now": 9.5,
+    "now_odds": -146,
+    "n": 287
+   },
+   "Under": {
+    "open": 10.5,
+    "open_odds": -156,
+    "now": 9.5,
+    "now_odds": 114,
+    "n": 287
+   }
+  },
+  "1H spread": {
+   "Detroit Lions": {
+    "open": -4.5,
+    "open_odds": 100,
+    "now": -4.5,
+    "now_odds": -105,
+    "n": 287
+   },
+   "Miami Dolphins": {
+    "open": 4.5,
+    "open_odds": -120,
+    "now": 4.5,
+    "now_odds": -115,
+    "n": 287
+   }
+  },
+  "2H total": {
+   "Over": {
+    "open": 24.5,
+    "open_odds": 105,
+    "now": 24.5,
+    "now_odds": -105,
+    "n": 287
+   },
+   "Under": {
+    "open": 24.5,
+    "open_odds": -125,
+    "now": 24.5,
+    "now_odds": -115,
+    "n": 287
+   }
+  },
+  "2H spread": {
+   "Detroit Lions": {
+    "open": -3.5,
+    "open_odds": -105,
+    "now": -3.5,
+    "now_odds": -110,
+    "n": 287
+   },
+   "Miami Dolphins": {
+    "open": 3.5,
+    "open_odds": -115,
+    "now": 3.5,
+    "now_odds": -110,
+    "n": 287
+   }
+  }
+ },
+ "splits": {
+  "spread": {
+   "home": {
+    "tix": 22,
+    "mny": 14,
+    "d_tix": 4,
+    "d_mny": -2,
+    "div": -6,
+    "n": 223
+   },
+   "away": {
+    "tix": 78,
+    "mny": 86,
+    "d_tix": -4,
+    "d_mny": 2,
+    "div": 6,
+    "n": 223
+   }
+  },
+  "total": {
+   "over": {
+    "tix": 53,
+    "mny": 82,
+    "d_tix": 10,
+    "d_mny": 4,
+    "div": -6,
+    "n": 223
+   },
+   "under": {
+    "tix": 47,
+    "mny": 18,
+    "d_tix": -10,
+    "d_mny": -4,
+    "div": 6,
+    "n": 223
+   }
+  },
+  "moneyline": {
+   "away": {
+    "tix": 97,
+    "mny": 99,
+    "d_tix": 1,
+    "d_mny": 1,
+    "div": 0,
+    "n": 223
+   },
+   "home": {
+    "tix": 3,
+    "mny": 1,
+    "d_tix": -1,
+    "d_mny": -1,
+    "div": 0,
+    "n": 223
+   }
+  }
+ },
+ "money_conflict": "AGREE",
+ "money_lean": {
+  "spread": {
+   "side": "away",
+   "mny": 86,
+   "d_mny": 2
+  },
+  "moneyline": {
+   "side": "away",
+   "mny": 99,
+   "d_mny": 1
+  }
+ },
+ "suggested": {
+  "side": 0.0,
+  "total": 0.0,
+  "side_dir": "Miami Dolphins",
+  "total_dir": "MORE",
+  "why": []
+ },
+ "gates": {
+  "conflict_clear": true,
+  "has_splits": true,
+  "coherent_side": false,
+  "coherent_total": false
+ },
+ "frozen": false
+}

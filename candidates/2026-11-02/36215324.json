@@ -1,0 +1,265 @@
+{
+ "eventId": "36215324",
+ "game": "Philadelphia Eagles @ Washington Commanders",
+ "abbr": "PHI@WSH",
+ "kickoff": "2026-11-02T01:21:00.000Z",
+ "recorded_utc": "2026-11-05T21:58:07Z",
+ "anchor": "2026-10-26T0000Z",
+ "coherence": {
+  "side_dir": "Philadelphia Eagles",
+  "side_agree": 8,
+  "side_conflict": 0,
+  "total_dir": "MORE",
+  "total_agree": 4,
+  "total_conflict": 4,
+  "markets": [
+   {
+    "mkt": "ml",
+    "axis": "side",
+    "dir": "Philadelphia Eagles"
+   },
+   {
+    "mkt": "ml",
+    "axis": "side",
+    "dir": "Philadelphia Eagles"
+   },
+   {
+    "mkt": "spread",
+    "axis": "side",
+    "dir": "Philadelphia Eagles"
+   },
+   {
+    "mkt": "spread",
+    "axis": "side",
+    "dir": "Philadelphia Eagles"
+   },
+   {
+    "mkt": "1H away TT",
+    "axis": "total",
+    "dir": "MORE"
+   },
+   {
+    "mkt": "1H away TT",
+    "axis": "total",
+    "dir": "MORE"
+   },
+   {
+    "mkt": "1H total",
+    "axis": "total",
+    "dir": "FEWER"
+   },
+   {
+    "mkt": "1H total",
+    "axis": "total",
+    "dir": "FEWER"
+   },
+   {
+    "mkt": "1H home TT",
+    "axis": "total",
+    "dir": "FEWER"
+   },
+   {
+    "mkt": "1H home TT",
+    "axis": "total",
+    "dir": "FEWER"
+   },
+   {
+    "mkt": "1H spread",
+    "axis": "side",
+    "dir": "Philadelphia Eagles"
+   },
+   {
+    "mkt": "1H spread",
+    "axis": "side",
+    "dir": "Philadelphia Eagles"
+   },
+   {
+    "mkt": "2H total",
+    "axis": "total",
+    "dir": "MORE"
+   },
+   {
+    "mkt": "2H total",
+    "axis": "total",
+    "dir": "MORE"
+   },
+   {
+    "mkt": "2H spread",
+    "axis": "side",
+    "dir": "Philadelphia Eagles"
+   },
+   {
+    "mkt": "2H spread",
+    "axis": "side",
+    "dir": "Philadelphia Eagles"
+   }
+  ]
+ },
+ "numbers": {
+  "ml": {
+   "Philadelphia Eagles": {
+    "open": 0,
+    "open_odds": 220,
+    "now": 0,
+    "now_odds": 200,
+    "n": 4
+   },
+   "Washington Commanders": {
+    "open": 0,
+    "open_odds": -270,
+    "now": 0,
+    "now_odds": -245,
+    "n": 4
+   }
+  },
+  "total": {
+   "Over": {
+    "open": 40.5,
+    "open_odds": -105,
+    "now": 40.5,
+    "now_odds": -106,
+    "n": 4
+   },
+   "Under": {
+    "open": 40.5,
+    "open_odds": -115,
+    "now": 40.5,
+    "now_odds": -114,
+    "n": 4
+   }
+  },
+  "spread": {
+   "Philadelphia Eagles": {
+    "open": 5.5,
+    "open_odds": 100,
+    "now": 5.5,
+    "now_odds": -108,
+    "n": 4
+   },
+   "Washington Commanders": {
+    "open": -5.5,
+    "open_odds": -122,
+    "now": -5.5,
+    "now_odds": -112,
+    "n": 4
+   }
+  },
+  "1H away TT": {
+   "Over": {
+    "open": 7.5,
+    "open_odds": 100,
+    "now": 7.5,
+    "now_odds": -106,
+    "n": 3
+   },
+   "Under": {
+    "open": 7.5,
+    "open_odds": -128,
+    "now": 7.5,
+    "now_odds": -120,
+    "n": 3
+   }
+  },
+  "1H total": {
+   "Over": {
+    "open": 20.5,
+    "open_odds": 110,
+    "now": 19.5,
+    "now_odds": -130,
+    "n": 3
+   },
+   "Under": {
+    "open": 20.5,
+    "open_odds": -130,
+    "now": 19.5,
+    "now_odds": 110,
+    "n": 3
+   }
+  },
+  "1H home TT": {
+   "Over": {
+    "open": 11.5,
+    "open_odds": -113,
+    "now": 10.5,
+    "now_odds": -108,
+    "n": 3
+   },
+   "Under": {
+    "open": 11.5,
+    "open_odds": -113,
+    "now": 10.5,
+    "now_odds": -118,
+    "n": 3
+   }
+  },
+  "1H spread": {
+   "Philadelphia Eagles": {
+    "open": 3.5,
+    "open_odds": -110,
+    "now": 3.5,
+    "now_odds": -120,
+    "n": 3
+   },
+   "Washington Commanders": {
+    "open": -3.5,
+    "open_odds": -110,
+    "now": -3.5,
+    "now_odds": 100,
+    "n": 3
+   }
+  },
+  "2H total": {
+   "Over": {
+    "open": 19.5,
+    "open_odds": -115,
+    "now": 19.5,
+    "now_odds": -120,
+    "n": 3
+   },
+   "Under": {
+    "open": 19.5,
+    "open_odds": -105,
+    "now": 19.5,
+    "now_odds": 100,
+    "n": 3
+   }
+  },
+  "2H spread": {
+   "Philadelphia Eagles": {
+    "open": 3.5,
+    "open_odds": -125,
+    "now": 2.5,
+    "now_odds": 100,
+    "n": 3
+   },
+   "Washington Commanders": {
+    "open": -3.5,
+    "open_odds": 105,
+    "now": -2.5,
+    "now_odds": -120,
+    "n": 3
+   }
+  }
+ },
+ "splits": {},
+ "money_conflict": "UNKNOWN",
+ "money_lean": {},
+ "suggested": {
+  "side": 1.0,
+  "total": 0.0,
+  "side_dir": "Philadelphia Eagles",
+  "total_dir": "MORE",
+  "why": [
+   "side coherent (8 markets)",
+   "side coherence 5+",
+   "no splits yet"
+  ]
+ },
+ "gates": {
+  "conflict_clear": true,
+  "has_splits": false,
+  "coherent_side": true,
+  "coherent_total": false
+ },
+ "frozen": true
+}

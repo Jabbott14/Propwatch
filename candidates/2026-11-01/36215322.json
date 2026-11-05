@@ -1,0 +1,269 @@
+{
+ "eventId": "36215322",
+ "game": "New England Patriots @ Miami Dolphins",
+ "abbr": "NE@MIA",
+ "kickoff": "2026-11-01T21:26:00.000Z",
+ "recorded_utc": "2026-11-05T21:58:07Z",
+ "anchor": "2026-10-26T0000Z",
+ "coherence": {
+  "side_dir": "Miami Dolphins",
+  "side_agree": 2,
+  "side_conflict": 0,
+  "total_dir": "FEWER",
+  "total_agree": 2,
+  "total_conflict": 0,
+  "markets": [
+   {
+    "mkt": "ml",
+    "axis": "side",
+    "dir": "Miami Dolphins"
+   },
+   {
+    "mkt": "ml",
+    "axis": "side",
+    "dir": "Miami Dolphins"
+   },
+   {
+    "mkt": "1H away TT",
+    "axis": "total",
+    "dir": "FEWER"
+   },
+   {
+    "mkt": "1H away TT",
+    "axis": "total",
+    "dir": "FEWER"
+   }
+  ]
+ },
+ "numbers": {
+  "spread": {
+   "New England Patriots": {
+    "open": -7.5,
+    "open_odds": 104,
+    "now": -7.5,
+    "now_odds": 104,
+    "n": 3
+   },
+   "Miami Dolphins": {
+    "open": 7.5,
+    "open_odds": -128,
+    "now": 7.5,
+    "now_odds": -128,
+    "n": 3
+   }
+  },
+  "total": {
+   "Over": {
+    "open": 41.5,
+    "open_odds": -108,
+    "now": 41.5,
+    "now_odds": -106,
+    "n": 3
+   },
+   "Under": {
+    "open": 41.5,
+    "open_odds": -112,
+    "now": 41.5,
+    "now_odds": -114,
+    "n": 3
+   }
+  },
+  "ml": {
+   "New England Patriots": {
+    "open": 0,
+    "open_odds": -360,
+    "now": 0,
+    "now_odds": -350,
+    "n": 3
+   },
+   "Miami Dolphins": {
+    "open": 0,
+    "open_odds": 290,
+    "now": 0,
+    "now_odds": 280,
+    "n": 3
+   }
+  },
+  "1H total": {
+   "Over": {
+    "open": 20.5,
+    "open_odds": -110,
+    "now": 20.5,
+    "now_odds": -110,
+    "n": 2
+   },
+   "Under": {
+    "open": 20.5,
+    "open_odds": -110,
+    "now": 20.5,
+    "now_odds": -110,
+    "n": 2
+   }
+  },
+  "1H away TT": {
+   "Over": {
+    "open": 12.5,
+    "open_odds": -130,
+    "now": 12.5,
+    "now_odds": -125,
+    "n": 2
+   },
+   "Under": {
+    "open": 12.5,
+    "open_odds": 102,
+    "now": 12.5,
+    "now_odds": -102,
+    "n": 2
+   }
+  },
+  "1H spread": {
+   "New England Patriots": {
+    "open": -3.5,
+    "open_odds": -120,
+    "now": -3.5,
+    "now_odds": -120,
+    "n": 2
+   },
+   "Miami Dolphins": {
+    "open": 3.5,
+    "open_odds": 100,
+    "now": 3.5,
+    "now_odds": 100,
+    "n": 2
+   }
+  },
+  "1H home TT": {
+   "Over": {
+    "open": 7.5,
+    "open_odds": -106,
+    "now": 7.5,
+    "now_odds": -108,
+    "n": 2
+   },
+   "Under": {
+    "open": 7.5,
+    "open_odds": -120,
+    "now": 7.5,
+    "now_odds": -120,
+    "n": 2
+   }
+  },
+  "2H spread": {
+   "New England Patriots": {
+    "open": -3.5,
+    "open_odds": -110,
+    "now": -3.5,
+    "now_odds": -110,
+    "n": 2
+   },
+   "Miami Dolphins": {
+    "open": 3.5,
+    "open_odds": -110,
+    "now": 3.5,
+    "now_odds": -110,
+    "n": 2
+   }
+  },
+  "2H total": {
+   "Over": {
+    "open": 20.5,
+    "open_odds": 100,
+    "now": 20.5,
+    "now_odds": 100,
+    "n": 2
+   },
+   "Under": {
+    "open": 20.5,
+    "open_odds": -120,
+    "now": 20.5,
+    "now_odds": -120,
+    "n": 2
+   }
+  }
+ },
+ "splits": {
+  "spread": {
+   "away": {
+    "tix": 76,
+    "mny": 78,
+    "d_tix": 1,
+    "d_mny": 0,
+    "div": -1,
+    "n": 5
+   },
+   "home": {
+    "tix": 24,
+    "mny": 22,
+    "d_tix": -1,
+    "d_mny": 0,
+    "div": 1,
+    "n": 5
+   }
+  },
+  "total": {
+   "over": {
+    "tix": 65,
+    "mny": 51,
+    "d_tix": 5,
+    "d_mny": 2,
+    "div": -3,
+    "n": 5
+   },
+   "under": {
+    "tix": 35,
+    "mny": 49,
+    "d_tix": -5,
+    "d_mny": -2,
+    "div": 3,
+    "n": 5
+   }
+  },
+  "moneyline": {
+   "away": {
+    "tix": 96,
+    "mny": 98,
+    "d_tix": 0,
+    "d_mny": -1,
+    "div": -1,
+    "n": 5
+   },
+   "home": {
+    "tix": 4,
+    "mny": 2,
+    "d_tix": 0,
+    "d_mny": 1,
+    "div": 1,
+    "n": 5
+   }
+  }
+ },
+ "money_conflict": "AGREE",
+ "money_lean": {
+  "spread": {
+   "side": "away",
+   "mny": 78,
+   "d_mny": 0
+  },
+  "moneyline": {
+   "side": "away",
+   "mny": 98,
+   "d_mny": -1
+  }
+ },
+ "suggested": {
+  "side": 0.0,
+  "total": 0.0,
+  "side_dir": "Miami Dolphins",
+  "total_dir": "FEWER",
+  "why": [
+   "thin split history"
+  ]
+ },
+ "gates": {
+  "conflict_clear": true,
+  "has_splits": true,
+  "coherent_side": false,
+  "coherent_total": false
+ },
+ "frozen": true
+}

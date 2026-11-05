@@ -1,0 +1,287 @@
+{
+ "eventId": "36244875",
+ "game": "Las Vegas Raiders @ San Francisco 49ers",
+ "abbr": "LV@SF",
+ "kickoff": "2026-11-08T21:06:00.000Z",
+ "recorded_utc": "2026-11-05T21:58:07Z",
+ "anchor": "2026-11-02T0000Z",
+ "coherence": {
+  "side_dir": "San Francisco 49ers",
+  "side_agree": 2,
+  "side_conflict": 0,
+  "total_dir": "MORE",
+  "total_agree": 4,
+  "total_conflict": 2,
+  "markets": [
+   {
+    "mkt": "total",
+    "axis": "total",
+    "dir": "MORE"
+   },
+   {
+    "mkt": "total",
+    "axis": "total",
+    "dir": "MORE"
+   },
+   {
+    "mkt": "spread",
+    "axis": "side",
+    "dir": "San Francisco 49ers"
+   },
+   {
+    "mkt": "spread",
+    "axis": "side",
+    "dir": "San Francisco 49ers"
+   },
+   {
+    "mkt": "1H total",
+    "axis": "total",
+    "dir": "FEWER"
+   },
+   {
+    "mkt": "1H total",
+    "axis": "total",
+    "dir": "FEWER"
+   },
+   {
+    "mkt": "2H total",
+    "axis": "total",
+    "dir": "MORE"
+   },
+   {
+    "mkt": "2H total",
+    "axis": "total",
+    "dir": "MORE"
+   }
+  ]
+ },
+ "numbers": {
+  "ml": {
+   "Las Vegas Raiders": {
+    "open": 0,
+    "open_odds": 385,
+    "now": 0,
+    "now_odds": 385,
+    "n": 290
+   },
+   "San Francisco 49ers": {
+    "open": 0,
+    "open_odds": -500,
+    "now": 0,
+    "now_odds": -500,
+    "n": 290
+   }
+  },
+  "total": {
+   "Over": {
+    "open": 51.5,
+    "open_odds": -110,
+    "now": 51.5,
+    "now_odds": -115,
+    "n": 290
+   },
+   "Under": {
+    "open": 51.5,
+    "open_odds": -110,
+    "now": 51.5,
+    "now_odds": -105,
+    "n": 290
+   }
+  },
+  "spread": {
+   "Las Vegas Raiders": {
+    "open": 9.5,
+    "open_odds": -115,
+    "now": 9.5,
+    "now_odds": -108,
+    "n": 290
+   },
+   "San Francisco 49ers": {
+    "open": -9.5,
+    "open_odds": -105,
+    "now": -9.5,
+    "now_odds": -112,
+    "n": 290
+   }
+  },
+  "1H spread": {
+   "Las Vegas Raiders": {
+    "open": 6.5,
+    "open_odds": -110,
+    "now": 6.5,
+    "now_odds": -110,
+    "n": 287
+   },
+   "San Francisco 49ers": {
+    "open": -6.5,
+    "open_odds": -110,
+    "now": -6.5,
+    "now_odds": -110,
+    "n": 287
+   }
+  },
+  "1H away TT": {
+   "Over": {
+    "open": 9.5,
+    "open_odds": -146,
+    "now": 9.5,
+    "now_odds": -142,
+    "n": 287
+   },
+   "Under": {
+    "open": 9.5,
+    "open_odds": 114,
+    "now": 9.5,
+    "now_odds": 112,
+    "n": 287
+   }
+  },
+  "1H total": {
+   "Over": {
+    "open": 26.5,
+    "open_odds": -120,
+    "now": 26.5,
+    "now_odds": -110,
+    "n": 287
+   },
+   "Under": {
+    "open": 26.5,
+    "open_odds": 100,
+    "now": 26.5,
+    "now_odds": -110,
+    "n": 287
+   }
+  },
+  "1H home TT": {
+   "Over": {
+    "open": 16.5,
+    "open_odds": -122,
+    "now": 16.5,
+    "now_odds": -118,
+    "n": 287
+   },
+   "Under": {
+    "open": 16.5,
+    "open_odds": -104,
+    "now": 16.5,
+    "now_odds": -108,
+    "n": 287
+   }
+  },
+  "2H total": {
+   "Over": {
+    "open": 24.5,
+    "open_odds": -110,
+    "now": 25.5,
+    "now_odds": -110,
+    "n": 287
+   },
+   "Under": {
+    "open": 24.5,
+    "open_odds": -110,
+    "now": 25.5,
+    "now_odds": -110,
+    "n": 287
+   }
+  },
+  "2H spread": {
+   "Las Vegas Raiders": {
+    "open": 4.5,
+    "open_odds": -110,
+    "now": 4.5,
+    "now_odds": -110,
+    "n": 287
+   },
+   "San Francisco 49ers": {
+    "open": -4.5,
+    "open_odds": -110,
+    "now": -4.5,
+    "now_odds": -110,
+    "n": 287
+   }
+  }
+ },
+ "splits": {
+  "spread": {
+   "home": {
+    "tix": 45,
+    "mny": 42,
+    "d_tix": 2,
+    "d_mny": 2,
+    "div": 0,
+    "n": 223
+   },
+   "away": {
+    "tix": 55,
+    "mny": 58,
+    "d_tix": -2,
+    "d_mny": -2,
+    "div": 0,
+    "n": 223
+   }
+  },
+  "total": {
+   "over": {
+    "tix": 68,
+    "mny": 77,
+    "d_tix": 20,
+    "d_mny": 34,
+    "div": 14,
+    "n": 223
+   },
+   "under": {
+    "tix": 32,
+    "mny": 23,
+    "d_tix": -20,
+    "d_mny": -34,
+    "div": -14,
+    "n": 223
+   }
+  },
+  "moneyline": {
+   "away": {
+    "tix": 3,
+    "mny": 4,
+    "d_tix": -1,
+    "d_mny": -1,
+    "div": 0,
+    "n": 223
+   },
+   "home": {
+    "tix": 97,
+    "mny": 96,
+    "d_tix": 1,
+    "d_mny": 1,
+    "div": 0,
+    "n": 223
+   }
+  }
+ },
+ "money_conflict": "SPLIT",
+ "money_lean": {
+  "spread": {
+   "side": "away",
+   "mny": 58,
+   "d_mny": -2
+  },
+  "moneyline": {
+   "side": "home",
+   "mny": 96,
+   "d_mny": 1
+  }
+ },
+ "suggested": {
+  "side": 0.0,
+  "total": 0.0,
+  "side_dir": "San Francisco 49ers",
+  "total_dir": "MORE",
+  "why": []
+ },
+ "gates": {
+  "conflict_clear": true,
+  "has_splits": true,
+  "coherent_side": false,
+  "coherent_total": false
+ },
+ "frozen": false
+}

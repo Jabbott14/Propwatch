@@ -1,0 +1,248 @@
+{
+ "eventId": "36215319",
+ "game": "Atlanta Falcons @ Tampa Bay Buccaneers",
+ "abbr": "ATL@TB",
+ "kickoff": "2026-11-01T18:01:00.000Z",
+ "recorded_utc": "2026-11-05T21:58:07Z",
+ "anchor": "2026-10-26T0000Z",
+ "coherence": {
+  "side_dir": null,
+  "side_agree": 0,
+  "side_conflict": 0,
+  "total_dir": null,
+  "total_agree": 0,
+  "total_conflict": 0,
+  "markets": []
+ },
+ "numbers": {
+  "spread": {
+   "Atlanta Falcons": {
+    "open": 1.5,
+    "open_odds": -105,
+    "now": 1.5,
+    "now_odds": -105,
+    "n": 1
+   },
+   "Tampa Bay Buccaneers": {
+    "open": -1.5,
+    "open_odds": -115,
+    "now": -1.5,
+    "now_odds": -115,
+    "n": 1
+   }
+  },
+  "ml": {
+   "Atlanta Falcons": {
+    "open": 0,
+    "open_odds": 108,
+    "now": 0,
+    "now_odds": 108,
+    "n": 1
+   },
+   "Tampa Bay Buccaneers": {
+    "open": 0,
+    "open_odds": -126,
+    "now": 0,
+    "now_odds": -126,
+    "n": 1
+   }
+  },
+  "total": {
+   "Over": {
+    "open": 43.5,
+    "open_odds": -104,
+    "now": 43.5,
+    "now_odds": -104,
+    "n": 1
+   },
+   "Under": {
+    "open": 43.5,
+    "open_odds": -118,
+    "now": 43.5,
+    "now_odds": -118,
+    "n": 1
+   }
+  },
+  "1H spread": {
+   "Atlanta Falcons": {
+    "open": 1.5,
+    "open_odds": -125,
+    "now": 1.5,
+    "now_odds": -125,
+    "n": 1
+   },
+   "Tampa Bay Buccaneers": {
+    "open": -1.5,
+    "open_odds": 105,
+    "now": -1.5,
+    "now_odds": 105,
+    "n": 1
+   }
+  },
+  "1H away TT": {
+   "Over": {
+    "open": 9.5,
+    "open_odds": -156,
+    "now": 9.5,
+    "now_odds": -156,
+    "n": 1
+   },
+   "Under": {
+    "open": 9.5,
+    "open_odds": 122,
+    "now": 9.5,
+    "now_odds": 122,
+    "n": 1
+   }
+  },
+  "1H total": {
+   "Over": {
+    "open": 21.5,
+    "open_odds": -110,
+    "now": 21.5,
+    "now_odds": -110,
+    "n": 1
+   },
+   "Under": {
+    "open": 21.5,
+    "open_odds": -110,
+    "now": 21.5,
+    "now_odds": -110,
+    "n": 1
+   }
+  },
+  "1H home TT": {
+   "Over": {
+    "open": 10.5,
+    "open_odds": 104,
+    "now": 10.5,
+    "now_odds": 104,
+    "n": 1
+   },
+   "Under": {
+    "open": 10.5,
+    "open_odds": -132,
+    "now": 10.5,
+    "now_odds": -132,
+    "n": 1
+   }
+  },
+  "2H total": {
+   "Over": {
+    "open": 20.5,
+    "open_odds": -115,
+    "now": 20.5,
+    "now_odds": -115,
+    "n": 1
+   },
+   "Under": {
+    "open": 20.5,
+    "open_odds": -105,
+    "now": 20.5,
+    "now_odds": -105,
+    "n": 1
+   }
+  },
+  "2H spread": {
+   "Atlanta Falcons": {
+    "open": 1.5,
+    "open_odds": -140,
+    "now": 1.5,
+    "now_odds": -140,
+    "n": 1
+   },
+   "Tampa Bay Buccaneers": {
+    "open": -1.5,
+    "open_odds": 120,
+    "now": -1.5,
+    "now_odds": 120,
+    "n": 1
+   }
+  }
+ },
+ "splits": {
+  "spread": {
+   "home": {
+    "tix": 36,
+    "mny": 36,
+    "d_tix": 0,
+    "d_mny": 0,
+    "div": 0,
+    "n": 3
+   },
+   "away": {
+    "tix": 64,
+    "mny": 64,
+    "d_tix": 0,
+    "d_mny": 0,
+    "div": 0,
+    "n": 3
+   }
+  },
+  "total": {
+   "over": {
+    "tix": 65,
+    "mny": 54,
+    "d_tix": 0,
+    "d_mny": 0,
+    "div": 0,
+    "n": 3
+   },
+   "under": {
+    "tix": 35,
+    "mny": 46,
+    "d_tix": 0,
+    "d_mny": 0,
+    "div": 0,
+    "n": 3
+   }
+  },
+  "moneyline": {
+   "away": {
+    "tix": 49,
+    "mny": 46,
+    "d_tix": 0,
+    "d_mny": 0,
+    "div": 0,
+    "n": 3
+   },
+   "home": {
+    "tix": 51,
+    "mny": 54,
+    "d_tix": 0,
+    "d_mny": 0,
+    "div": 0,
+    "n": 3
+   }
+  }
+ },
+ "money_conflict": "SPLIT",
+ "money_lean": {
+  "spread": {
+   "side": "away",
+   "mny": 64,
+   "d_mny": 0
+  },
+  "moneyline": {
+   "side": "home",
+   "mny": 54,
+   "d_mny": 0
+  }
+ },
+ "suggested": {
+  "side": 0.0,
+  "total": 0.0,
+  "side_dir": null,
+  "total_dir": null,
+  "why": [
+   "thin split history"
+  ]
+ },
+ "gates": {
+  "conflict_clear": true,
+  "has_splits": true,
+  "coherent_side": false,
+  "coherent_total": false
+ },
+ "frozen": true
+}

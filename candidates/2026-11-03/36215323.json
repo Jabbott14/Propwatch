@@ -1,0 +1,289 @@
+{
+ "eventId": "36215323",
+ "game": "Chicago Bears @ Seattle Seahawks",
+ "abbr": "CHI@SEA",
+ "kickoff": "2026-11-03T01:16:00.000Z",
+ "recorded_utc": "2026-11-05T21:58:07Z",
+ "anchor": "2026-10-26T0000Z",
+ "coherence": {
+  "side_dir": "Seattle Seahawks",
+  "side_agree": 4,
+  "side_conflict": 2,
+  "total_dir": "MORE",
+  "total_agree": 2,
+  "total_conflict": 0,
+  "markets": [
+   {
+    "mkt": "spread",
+    "axis": "side",
+    "dir": "Seattle Seahawks"
+   },
+   {
+    "mkt": "spread",
+    "axis": "side",
+    "dir": "Seattle Seahawks"
+   },
+   {
+    "mkt": "ml",
+    "axis": "side",
+    "dir": "Seattle Seahawks"
+   },
+   {
+    "mkt": "ml",
+    "axis": "side",
+    "dir": "Seattle Seahawks"
+   },
+   {
+    "mkt": "1H total",
+    "axis": "total",
+    "dir": "MORE"
+   },
+   {
+    "mkt": "1H total",
+    "axis": "total",
+    "dir": "MORE"
+   },
+   {
+    "mkt": "2H spread",
+    "axis": "side",
+    "dir": "Chicago Bears"
+   },
+   {
+    "mkt": "2H spread",
+    "axis": "side",
+    "dir": "Chicago Bears"
+   }
+  ]
+ },
+ "numbers": {
+  "spread": {
+   "Chicago Bears": {
+    "open": 3,
+    "open_odds": -102,
+    "now": 3.5,
+    "now_odds": -120,
+    "n": 38
+   },
+   "Seattle Seahawks": {
+    "open": -3,
+    "open_odds": -120,
+    "now": -3.5,
+    "now_odds": -102,
+    "n": 38
+   }
+  },
+  "total": {
+   "Over": {
+    "open": 46.5,
+    "open_odds": -110,
+    "now": 46.5,
+    "now_odds": -110,
+    "n": 38
+   },
+   "Under": {
+    "open": 46.5,
+    "open_odds": -110,
+    "now": 46.5,
+    "now_odds": -110,
+    "n": 38
+   }
+  },
+  "ml": {
+   "Chicago Bears": {
+    "open": 0,
+    "open_odds": 146,
+    "now": 0,
+    "now_odds": 152,
+    "n": 38
+   },
+   "Seattle Seahawks": {
+    "open": 0,
+    "open_odds": -174,
+    "now": 0,
+    "now_odds": -180,
+    "n": 38
+   }
+  },
+  "1H spread": {
+   "Chicago Bears": {
+    "open": 2.5,
+    "open_odds": -110,
+    "now": 2.5,
+    "now_odds": -110,
+    "n": 37
+   },
+   "Seattle Seahawks": {
+    "open": -2.5,
+    "open_odds": -110,
+    "now": -2.5,
+    "now_odds": -110,
+    "n": 37
+   }
+  },
+  "1H home TT": {
+   "Over": {
+    "open": 12.5,
+    "open_odds": -122,
+    "now": 12.5,
+    "now_odds": -125,
+    "n": 37
+   },
+   "Under": {
+    "open": 12.5,
+    "open_odds": -104,
+    "now": 12.5,
+    "now_odds": -102,
+    "n": 37
+   }
+  },
+  "1H away TT": {
+   "Over": {
+    "open": 9.5,
+    "open_odds": -160,
+    "now": 9.5,
+    "now_odds": -158,
+    "n": 37
+   },
+   "Under": {
+    "open": 9.5,
+    "open_odds": 124,
+    "now": 9.5,
+    "now_odds": 124,
+    "n": 37
+   }
+  },
+  "1H total": {
+   "Over": {
+    "open": 22.5,
+    "open_odds": -125,
+    "now": 23.5,
+    "now_odds": 105,
+    "n": 37
+   },
+   "Under": {
+    "open": 22.5,
+    "open_odds": 105,
+    "now": 23.5,
+    "now_odds": -125,
+    "n": 37
+   }
+  },
+  "2H spread": {
+   "Chicago Bears": {
+    "open": 1.5,
+    "open_odds": -110,
+    "now": 1.5,
+    "now_odds": -120,
+    "n": 37
+   },
+   "Seattle Seahawks": {
+    "open": -1.5,
+    "open_odds": -110,
+    "now": -1.5,
+    "now_odds": 100,
+    "n": 37
+   }
+  },
+  "2H total": {
+   "Over": {
+    "open": 23.5,
+    "open_odds": 100,
+    "now": 23.5,
+    "now_odds": 100,
+    "n": 37
+   },
+   "Under": {
+    "open": 23.5,
+    "open_odds": -120,
+    "now": 23.5,
+    "now_odds": -120,
+    "n": 37
+   }
+  }
+ },
+ "splits": {
+  "spread": {
+   "away": {
+    "tix": 58,
+    "mny": 64,
+    "d_tix": -4,
+    "d_mny": 4,
+    "div": 8,
+    "n": 40
+   },
+   "home": {
+    "tix": 42,
+    "mny": 36,
+    "d_tix": 4,
+    "d_mny": -4,
+    "div": -8,
+    "n": 40
+   }
+  },
+  "total": {
+   "over": {
+    "tix": 49,
+    "mny": 55,
+    "d_tix": 13,
+    "d_mny": 15,
+    "div": 2,
+    "n": 40
+   },
+   "under": {
+    "tix": 51,
+    "mny": 45,
+    "d_tix": -13,
+    "d_mny": -15,
+    "div": -2,
+    "n": 40
+   }
+  },
+  "moneyline": {
+   "away": {
+    "tix": 25,
+    "mny": 24,
+    "d_tix": -1,
+    "d_mny": -20,
+    "div": -19,
+    "n": 40
+   },
+   "home": {
+    "tix": 75,
+    "mny": 76,
+    "d_tix": 1,
+    "d_mny": 20,
+    "div": 19,
+    "n": 40
+   }
+  }
+ },
+ "money_conflict": "CONFLICT",
+ "money_lean": {
+  "spread": {
+   "side": "away",
+   "mny": 64,
+   "d_mny": 4
+  },
+  "moneyline": {
+   "side": "home",
+   "mny": 76,
+   "d_mny": 20
+  }
+ },
+ "suggested": {
+  "side": 0.0,
+  "total": 0.0,
+  "side_dir": "Seattle Seahawks",
+  "total_dir": "MORE",
+  "why": [
+   "money conflict -> no play"
+  ]
+ },
+ "gates": {
+  "conflict_clear": false,
+  "has_splits": true,
+  "coherent_side": false,
+  "coherent_total": false
+ },
+ "frozen": true
+}

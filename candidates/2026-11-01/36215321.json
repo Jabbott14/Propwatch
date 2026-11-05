@@ -1,0 +1,248 @@
+{
+ "eventId": "36215321",
+ "game": "Kansas City Chiefs @ Denver Broncos",
+ "abbr": "KC@DEN",
+ "kickoff": "2026-11-01T21:26:00.000Z",
+ "recorded_utc": "2026-11-05T21:58:07Z",
+ "anchor": "2026-10-26T0000Z",
+ "coherence": {
+  "side_dir": null,
+  "side_agree": 0,
+  "side_conflict": 0,
+  "total_dir": null,
+  "total_agree": 0,
+  "total_conflict": 0,
+  "markets": []
+ },
+ "numbers": {
+  "spread": {
+   "Kansas City Chiefs": {
+    "open": -1.5,
+    "open_odds": -102,
+    "now": -1.5,
+    "now_odds": -102,
+    "n": 3
+   },
+   "Denver Broncos": {
+    "open": 1.5,
+    "open_odds": -120,
+    "now": 1.5,
+    "now_odds": -120,
+    "n": 3
+   }
+  },
+  "total": {
+   "Over": {
+    "open": 41.5,
+    "open_odds": -112,
+    "now": 41.5,
+    "now_odds": -112,
+    "n": 3
+   },
+   "Under": {
+    "open": 41.5,
+    "open_odds": -108,
+    "now": 41.5,
+    "now_odds": -108,
+    "n": 3
+   }
+  },
+  "ml": {
+   "Kansas City Chiefs": {
+    "open": 0,
+    "open_odds": -112,
+    "now": 0,
+    "now_odds": -112,
+    "n": 3
+   },
+   "Denver Broncos": {
+    "open": 0,
+    "open_odds": -104,
+    "now": 0,
+    "now_odds": -104,
+    "n": 3
+   }
+  },
+  "1H spread": {
+   "Kansas City Chiefs": {
+    "open": -1.5,
+    "open_odds": 120,
+    "now": -1.5,
+    "now_odds": 120,
+    "n": 2
+   },
+   "Denver Broncos": {
+    "open": 1.5,
+    "open_odds": -140,
+    "now": 1.5,
+    "now_odds": -140,
+    "n": 2
+   }
+  },
+  "1H away TT": {
+   "Over": {
+    "open": 9.5,
+    "open_odds": -158,
+    "now": 9.5,
+    "now_odds": -158,
+    "n": 2
+   },
+   "Under": {
+    "open": 9.5,
+    "open_odds": 124,
+    "now": 9.5,
+    "now_odds": 124,
+    "n": 2
+   }
+  },
+  "1H total": {
+   "Over": {
+    "open": 20.5,
+    "open_odds": 100,
+    "now": 20.5,
+    "now_odds": 100,
+    "n": 2
+   },
+   "Under": {
+    "open": 20.5,
+    "open_odds": -120,
+    "now": 20.5,
+    "now_odds": -120,
+    "n": 2
+   }
+  },
+  "1H home TT": {
+   "Over": {
+    "open": 9.5,
+    "open_odds": -154,
+    "now": 9.5,
+    "now_odds": -154,
+    "n": 2
+   },
+   "Under": {
+    "open": 9.5,
+    "open_odds": 122,
+    "now": 9.5,
+    "now_odds": 122,
+    "n": 2
+   }
+  },
+  "2H total": {
+   "Over": {
+    "open": 20.5,
+    "open_odds": -110,
+    "now": 20.5,
+    "now_odds": -110,
+    "n": 2
+   },
+   "Under": {
+    "open": 20.5,
+    "open_odds": -110,
+    "now": 20.5,
+    "now_odds": -110,
+    "n": 2
+   }
+  },
+  "2H spread": {
+   "Kansas City Chiefs": {
+    "open": -1.5,
+    "open_odds": 120,
+    "now": -1.5,
+    "now_odds": 120,
+    "n": 2
+   },
+   "Denver Broncos": {
+    "open": 1.5,
+    "open_odds": -140,
+    "now": 1.5,
+    "now_odds": -140,
+    "n": 2
+   }
+  }
+ },
+ "splits": {
+  "spread": {
+   "home": {
+    "tix": 46,
+    "mny": 47,
+    "d_tix": -3,
+    "d_mny": -3,
+    "div": 0,
+    "n": 5
+   },
+   "away": {
+    "tix": 54,
+    "mny": 53,
+    "d_tix": 3,
+    "d_mny": 3,
+    "div": 0,
+    "n": 5
+   }
+  },
+  "total": {
+   "over": {
+    "tix": 61,
+    "mny": 69,
+    "d_tix": 2,
+    "d_mny": 4,
+    "div": 2,
+    "n": 5
+   },
+   "under": {
+    "tix": 39,
+    "mny": 31,
+    "d_tix": -2,
+    "d_mny": -4,
+    "div": -2,
+    "n": 5
+   }
+  },
+  "moneyline": {
+   "home": {
+    "tix": 31,
+    "mny": 29,
+    "d_tix": -1,
+    "d_mny": 1,
+    "div": 2,
+    "n": 5
+   },
+   "away": {
+    "tix": 69,
+    "mny": 71,
+    "d_tix": 1,
+    "d_mny": -1,
+    "div": -2,
+    "n": 5
+   }
+  }
+ },
+ "money_conflict": "AGREE",
+ "money_lean": {
+  "spread": {
+   "side": "away",
+   "mny": 53,
+   "d_mny": 3
+  },
+  "moneyline": {
+   "side": "away",
+   "mny": 71,
+   "d_mny": -1
+  }
+ },
+ "suggested": {
+  "side": 0.0,
+  "total": 0.0,
+  "side_dir": null,
+  "total_dir": null,
+  "why": [
+   "thin split history"
+  ]
+ },
+ "gates": {
+  "conflict_clear": true,
+  "has_splits": true,
+  "coherent_side": false,
+  "coherent_total": false
+ },
+ "frozen": true
+}

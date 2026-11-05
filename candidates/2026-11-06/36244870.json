@@ -1,0 +1,342 @@
+{
+ "eventId": "36244870",
+ "game": "Jacksonville Jaguars @ Baltimore Ravens",
+ "abbr": "JAC@BAL",
+ "kickoff": "2026-11-06T01:16:00.000Z",
+ "recorded_utc": "2026-11-05T21:58:07Z",
+ "anchor": "2026-11-02T0000Z",
+ "coherence": {
+  "side_dir": "Jacksonville Jaguars",
+  "side_agree": 8,
+  "side_conflict": 0,
+  "total_dir": "FEWER",
+  "total_agree": 10,
+  "total_conflict": 0,
+  "markets": [
+   {
+    "mkt": "ml",
+    "axis": "side",
+    "dir": "Jacksonville Jaguars"
+   },
+   {
+    "mkt": "ml",
+    "axis": "side",
+    "dir": "Jacksonville Jaguars"
+   },
+   {
+    "mkt": "spread",
+    "axis": "side",
+    "dir": "Jacksonville Jaguars"
+   },
+   {
+    "mkt": "spread",
+    "axis": "side",
+    "dir": "Jacksonville Jaguars"
+   },
+   {
+    "mkt": "total",
+    "axis": "total",
+    "dir": "FEWER"
+   },
+   {
+    "mkt": "total",
+    "axis": "total",
+    "dir": "FEWER"
+   },
+   {
+    "mkt": "1H home TT",
+    "axis": "total",
+    "dir": "FEWER"
+   },
+   {
+    "mkt": "1H home TT",
+    "axis": "total",
+    "dir": "FEWER"
+   },
+   {
+    "mkt": "1H spread",
+    "axis": "side",
+    "dir": "Jacksonville Jaguars"
+   },
+   {
+    "mkt": "1H spread",
+    "axis": "side",
+    "dir": "Jacksonville Jaguars"
+   },
+   {
+    "mkt": "1H total",
+    "axis": "total",
+    "dir": "FEWER"
+   },
+   {
+    "mkt": "1H total",
+    "axis": "total",
+    "dir": "FEWER"
+   },
+   {
+    "mkt": "1H away TT",
+    "axis": "total",
+    "dir": "FEWER"
+   },
+   {
+    "mkt": "1H away TT",
+    "axis": "total",
+    "dir": "FEWER"
+   },
+   {
+    "mkt": "2H spread",
+    "axis": "side",
+    "dir": "Jacksonville Jaguars"
+   },
+   {
+    "mkt": "2H spread",
+    "axis": "side",
+    "dir": "Jacksonville Jaguars"
+   },
+   {
+    "mkt": "2H total",
+    "axis": "total",
+    "dir": "FEWER"
+   },
+   {
+    "mkt": "2H total",
+    "axis": "total",
+    "dir": "FEWER"
+   }
+  ]
+ },
+ "numbers": {
+  "ml": {
+   "Jacksonville Jaguars": {
+    "open": 0,
+    "open_odds": -400,
+    "now": 0,
+    "now_odds": -550,
+    "n": 290
+   },
+   "Baltimore Ravens": {
+    "open": 0,
+    "open_odds": 315,
+    "now": 0,
+    "now_odds": 410,
+    "n": 290
+   }
+  },
+  "spread": {
+   "Jacksonville Jaguars": {
+    "open": -8.5,
+    "open_odds": -104,
+    "now": -9.5,
+    "now_odds": -120,
+    "n": 290
+   },
+   "Baltimore Ravens": {
+    "open": 8.5,
+    "open_odds": -118,
+    "now": 9.5,
+    "now_odds": -102,
+    "n": 290
+   }
+  },
+  "total": {
+   "Over": {
+    "open": 43.5,
+    "open_odds": -105,
+    "now": 39.5,
+    "now_odds": -110,
+    "n": 290
+   },
+   "Under": {
+    "open": 43.5,
+    "open_odds": -115,
+    "now": 39.5,
+    "now_odds": -110,
+    "n": 290
+   }
+  },
+  "1H home TT": {
+   "Over": {
+    "open": 7.5,
+    "open_odds": -106,
+    "now": 6.5,
+    "now_odds": -128,
+    "n": 289
+   },
+   "Under": {
+    "open": 7.5,
+    "open_odds": -120,
+    "now": 6.5,
+    "now_odds": 100,
+    "n": 289
+   }
+  },
+  "1H spread": {
+   "Jacksonville Jaguars": {
+    "open": -5.5,
+    "open_odds": -110,
+    "now": -6.5,
+    "now_odds": -105,
+    "n": 289
+   },
+   "Baltimore Ravens": {
+    "open": 5.5,
+    "open_odds": -110,
+    "now": 6.5,
+    "now_odds": -115,
+    "n": 289
+   }
+  },
+  "1H total": {
+   "Over": {
+    "open": 22.5,
+    "open_odds": -110,
+    "now": 20.5,
+    "now_odds": 110,
+    "n": 289
+   },
+   "Under": {
+    "open": 22.5,
+    "open_odds": -110,
+    "now": 20.5,
+    "now_odds": -130,
+    "n": 289
+   }
+  },
+  "1H away TT": {
+   "Over": {
+    "open": 13.5,
+    "open_odds": -120,
+    "now": 13.5,
+    "now_odds": 102,
+    "n": 289
+   },
+   "Under": {
+    "open": 13.5,
+    "open_odds": -106,
+    "now": 13.5,
+    "now_odds": -130,
+    "n": 289
+   }
+  },
+  "2H spread": {
+   "Jacksonville Jaguars": {
+    "open": -3.5,
+    "open_odds": -120,
+    "now": -4.5,
+    "now_odds": -110,
+    "n": 289
+   },
+   "Baltimore Ravens": {
+    "open": 3.5,
+    "open_odds": 100,
+    "now": 4.5,
+    "now_odds": -110,
+    "n": 289
+   }
+  },
+  "2H total": {
+   "Over": {
+    "open": 20.5,
+    "open_odds": 100,
+    "now": 18.5,
+    "now_odds": -120,
+    "n": 289
+   },
+   "Under": {
+    "open": 20.5,
+    "open_odds": -120,
+    "now": 18.5,
+    "now_odds": 100,
+    "n": 289
+   }
+  }
+ },
+ "splits": {
+  "spread": {
+   "home": {
+    "tix": 30,
+    "mny": 32,
+    "d_tix": -2,
+    "d_mny": 2,
+    "div": 4,
+    "n": 223
+   },
+   "away": {
+    "tix": 70,
+    "mny": 68,
+    "d_tix": 2,
+    "d_mny": -2,
+    "div": -4,
+    "n": 223
+   }
+  },
+  "total": {
+   "under": {
+    "tix": 19,
+    "mny": 21,
+    "d_tix": -12,
+    "d_mny": 4,
+    "div": 16,
+    "n": 223
+   },
+   "over": {
+    "tix": 81,
+    "mny": 79,
+    "d_tix": 12,
+    "d_mny": -4,
+    "div": -16,
+    "n": 223
+   }
+  },
+  "moneyline": {
+   "away": {
+    "tix": 87,
+    "mny": 80,
+    "d_tix": 12,
+    "d_mny": -4,
+    "div": -16,
+    "n": 223
+   },
+   "home": {
+    "tix": 13,
+    "mny": 20,
+    "d_tix": -12,
+    "d_mny": 4,
+    "div": 16,
+    "n": 223
+   }
+  }
+ },
+ "money_conflict": "AGREE",
+ "money_lean": {
+  "spread": {
+   "side": "away",
+   "mny": 68,
+   "d_mny": -2
+  },
+  "moneyline": {
+   "side": "away",
+   "mny": 80,
+   "d_mny": -4
+  }
+ },
+ "suggested": {
+  "side": 1.5,
+  "total": 1.5,
+  "side_dir": "Jacksonville Jaguars",
+  "total_dir": "FEWER",
+  "why": [
+   "side coherent (8 markets)",
+   "side coherence 5+",
+   "total coherent (10 markets)",
+   "total coherence 5+"
+  ]
+ },
+ "gates": {
+  "conflict_clear": true,
+  "has_splits": true,
+  "coherent_side": true,
+  "coherent_total": true
+ },
+ "frozen": false
+}

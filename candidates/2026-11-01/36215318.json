@@ -1,0 +1,248 @@
+{
+ "eventId": "36215318",
+ "game": "Minnesota Vikings @ Detroit Lions",
+ "abbr": "MIN@DET",
+ "kickoff": "2026-11-01T18:01:00.000Z",
+ "recorded_utc": "2026-11-05T21:58:07Z",
+ "anchor": "2026-10-26T0000Z",
+ "coherence": {
+  "side_dir": null,
+  "side_agree": 0,
+  "side_conflict": 0,
+  "total_dir": null,
+  "total_agree": 0,
+  "total_conflict": 0,
+  "markets": []
+ },
+ "numbers": {
+  "spread": {
+   "Minnesota Vikings": {
+    "open": 3.5,
+    "open_odds": -120,
+    "now": 3.5,
+    "now_odds": -120,
+    "n": 1
+   },
+   "Detroit Lions": {
+    "open": -3.5,
+    "open_odds": -102,
+    "now": -3.5,
+    "now_odds": -102,
+    "n": 1
+   }
+  },
+  "total": {
+   "Over": {
+    "open": 46.5,
+    "open_odds": -102,
+    "now": 46.5,
+    "now_odds": -102,
+    "n": 1
+   },
+   "Under": {
+    "open": 46.5,
+    "open_odds": -120,
+    "now": 46.5,
+    "now_odds": -120,
+    "n": 1
+   }
+  },
+  "ml": {
+   "Minnesota Vikings": {
+    "open": 0,
+    "open_odds": 150,
+    "now": 0,
+    "now_odds": 150,
+    "n": 1
+   },
+   "Detroit Lions": {
+    "open": 0,
+    "open_odds": -178,
+    "now": 0,
+    "now_odds": -178,
+    "n": 1
+   }
+  },
+  "1H home TT": {
+   "Over": {
+    "open": 12.5,
+    "open_odds": -120,
+    "now": 12.5,
+    "now_odds": -120,
+    "n": 1
+   },
+   "Under": {
+    "open": 12.5,
+    "open_odds": -106,
+    "now": 12.5,
+    "now_odds": -106,
+    "n": 1
+   }
+  },
+  "1H total": {
+   "Over": {
+    "open": 22.5,
+    "open_odds": -120,
+    "now": 22.5,
+    "now_odds": -120,
+    "n": 1
+   },
+   "Under": {
+    "open": 22.5,
+    "open_odds": 100,
+    "now": 22.5,
+    "now_odds": 100,
+    "n": 1
+   }
+  },
+  "1H away TT": {
+   "Over": {
+    "open": 9.5,
+    "open_odds": -158,
+    "now": 9.5,
+    "now_odds": -158,
+    "n": 1
+   },
+   "Under": {
+    "open": 9.5,
+    "open_odds": 124,
+    "now": 9.5,
+    "now_odds": 124,
+    "n": 1
+   }
+  },
+  "1H spread": {
+   "Minnesota Vikings": {
+    "open": 1.5,
+    "open_odds": -110,
+    "now": 1.5,
+    "now_odds": -110,
+    "n": 1
+   },
+   "Detroit Lions": {
+    "open": -1.5,
+    "open_odds": -110,
+    "now": -1.5,
+    "now_odds": -110,
+    "n": 1
+   }
+  },
+  "2H total": {
+   "Over": {
+    "open": 22.5,
+    "open_odds": -115,
+    "now": 22.5,
+    "now_odds": -115,
+    "n": 1
+   },
+   "Under": {
+    "open": 22.5,
+    "open_odds": -105,
+    "now": 22.5,
+    "now_odds": -105,
+    "n": 1
+   }
+  },
+  "2H spread": {
+   "Minnesota Vikings": {
+    "open": 1.5,
+    "open_odds": -110,
+    "now": 1.5,
+    "now_odds": -110,
+    "n": 1
+   },
+   "Detroit Lions": {
+    "open": -1.5,
+    "open_odds": -110,
+    "now": -1.5,
+    "now_odds": -110,
+    "n": 1
+   }
+  }
+ },
+ "splits": {
+  "spread": {
+   "away": {
+    "tix": 58,
+    "mny": 55,
+    "d_tix": 0,
+    "d_mny": 0,
+    "div": 0,
+    "n": 3
+   },
+   "home": {
+    "tix": 42,
+    "mny": 45,
+    "d_tix": 0,
+    "d_mny": 0,
+    "div": 0,
+    "n": 3
+   }
+  },
+  "total": {
+   "over": {
+    "tix": 56,
+    "mny": 63,
+    "d_tix": 0,
+    "d_mny": 0,
+    "div": 0,
+    "n": 3
+   },
+   "under": {
+    "tix": 44,
+    "mny": 37,
+    "d_tix": 0,
+    "d_mny": 0,
+    "div": 0,
+    "n": 3
+   }
+  },
+  "moneyline": {
+   "away": {
+    "tix": 32,
+    "mny": 28,
+    "d_tix": 0,
+    "d_mny": 0,
+    "div": 0,
+    "n": 3
+   },
+   "home": {
+    "tix": 68,
+    "mny": 72,
+    "d_tix": 0,
+    "d_mny": 0,
+    "div": 0,
+    "n": 3
+   }
+  }
+ },
+ "money_conflict": "SPLIT",
+ "money_lean": {
+  "spread": {
+   "side": "away",
+   "mny": 55,
+   "d_mny": 0
+  },
+  "moneyline": {
+   "side": "home",
+   "mny": 72,
+   "d_mny": 0
+  }
+ },
+ "suggested": {
+  "side": 0.0,
+  "total": 0.0,
+  "side_dir": null,
+  "total_dir": null,
+  "why": [
+   "thin split history"
+  ]
+ },
+ "gates": {
+  "conflict_clear": true,
+  "has_splits": true,
+  "coherent_side": false,
+  "coherent_total": false
+ },
+ "frozen": true
+}

@@ -1,0 +1,327 @@
+{
+ "eventId": "35603243",
+ "game": "Cincinnati Bengals @ Atlanta Falcons",
+ "abbr": "CIN@ATL",
+ "kickoff": "2026-11-08T14:30:00.000Z",
+ "recorded_utc": "2026-11-05T21:58:07Z",
+ "anchor": "2026-11-02T0000Z",
+ "coherence": {
+  "side_dir": "Atlanta Falcons",
+  "side_agree": 6,
+  "side_conflict": 0,
+  "total_dir": "MORE",
+  "total_agree": 9,
+  "total_conflict": 0,
+  "markets": [
+   {
+    "mkt": "ml",
+    "axis": "side",
+    "dir": "Atlanta Falcons"
+   },
+   {
+    "mkt": "ml",
+    "axis": "side",
+    "dir": "Atlanta Falcons"
+   },
+   {
+    "mkt": "total",
+    "axis": "total",
+    "dir": "MORE"
+   },
+   {
+    "mkt": "total",
+    "axis": "total",
+    "dir": "MORE"
+   },
+   {
+    "mkt": "spread",
+    "axis": "side",
+    "dir": "Atlanta Falcons"
+   },
+   {
+    "mkt": "spread",
+    "axis": "side",
+    "dir": "Atlanta Falcons"
+   },
+   {
+    "mkt": "2H total",
+    "axis": "total",
+    "dir": "MORE"
+   },
+   {
+    "mkt": "2H total",
+    "axis": "total",
+    "dir": "MORE"
+   },
+   {
+    "mkt": "1H total",
+    "axis": "total",
+    "dir": "MORE"
+   },
+   {
+    "mkt": "1H total",
+    "axis": "total",
+    "dir": "MORE"
+   },
+   {
+    "mkt": "1H spread",
+    "axis": "side",
+    "dir": "Atlanta Falcons"
+   },
+   {
+    "mkt": "1H spread",
+    "axis": "side",
+    "dir": "Atlanta Falcons"
+   },
+   {
+    "mkt": "1H away TT",
+    "axis": "total",
+    "dir": "MORE"
+   },
+   {
+    "mkt": "1H home TT",
+    "axis": "total",
+    "dir": "MORE"
+   },
+   {
+    "mkt": "1H home TT",
+    "axis": "total",
+    "dir": "MORE"
+   }
+  ]
+ },
+ "numbers": {
+  "ml": {
+   "Cincinnati Bengals": {
+    "open": 0,
+    "open_odds": -180,
+    "now": 0,
+    "now_odds": -166,
+    "n": 290
+   },
+   "Atlanta Falcons": {
+    "open": 0,
+    "open_odds": 150,
+    "now": 0,
+    "now_odds": 140,
+    "n": 290
+   }
+  },
+  "total": {
+   "Over": {
+    "open": 51.5,
+    "open_odds": -105,
+    "now": 52.5,
+    "now_odds": -112,
+    "n": 290
+   },
+   "Under": {
+    "open": 51.5,
+    "open_odds": -115,
+    "now": 52.5,
+    "now_odds": -108,
+    "n": 290
+   }
+  },
+  "spread": {
+   "Cincinnati Bengals": {
+    "open": -3.5,
+    "open_odds": -102,
+    "now": -3,
+    "now_odds": -112,
+    "n": 290
+   },
+   "Atlanta Falcons": {
+    "open": 3.5,
+    "open_odds": -120,
+    "now": 3,
+    "now_odds": -108,
+    "n": 290
+   }
+  },
+  "2H total": {
+   "Over": {
+    "open": 24.5,
+    "open_odds": -110,
+    "now": 26.5,
+    "now_odds": -110,
+    "n": 288
+   },
+   "Under": {
+    "open": 24.5,
+    "open_odds": -110,
+    "now": 26.5,
+    "now_odds": -110,
+    "n": 288
+   }
+  },
+  "2H spread": {
+   "Cincinnati Bengals": {
+    "open": -1.5,
+    "open_odds": 100,
+    "now": -1.5,
+    "now_odds": 100,
+    "n": 288
+   },
+   "Atlanta Falcons": {
+    "open": 1.5,
+    "open_odds": -120,
+    "now": 1.5,
+    "now_odds": -120,
+    "n": 288
+   }
+  },
+  "1H total": {
+   "Over": {
+    "open": 26.5,
+    "open_odds": -110,
+    "now": 26.5,
+    "now_odds": -120,
+    "n": 287
+   },
+   "Under": {
+    "open": 26.5,
+    "open_odds": -110,
+    "now": 26.5,
+    "now_odds": 100,
+    "n": 287
+   }
+  },
+  "1H spread": {
+   "Cincinnati Bengals": {
+    "open": -2.5,
+    "open_odds": -110,
+    "now": -1.5,
+    "now_odds": -110,
+    "n": 287
+   },
+   "Atlanta Falcons": {
+    "open": 2.5,
+    "open_odds": -110,
+    "now": 1.5,
+    "now_odds": -110,
+    "n": 287
+   }
+  },
+  "1H away TT": {
+   "Over": {
+    "open": 13.5,
+    "open_odds": -132,
+    "now": 13.5,
+    "now_odds": -138,
+    "n": 287
+   },
+   "Under": {
+    "open": 13.5,
+    "open_odds": 104,
+    "now": 13.5,
+    "now_odds": 108,
+    "n": 287
+   }
+  },
+  "1H home TT": {
+   "Over": {
+    "open": 12.5,
+    "open_odds": -118,
+    "now": 12.5,
+    "now_odds": -128,
+    "n": 287
+   },
+   "Under": {
+    "open": 12.5,
+    "open_odds": -108,
+    "now": 12.5,
+    "now_odds": 100,
+    "n": 287
+   }
+  }
+ },
+ "splits": {
+  "spread": {
+   "away": {
+    "tix": 38,
+    "mny": 31,
+    "d_tix": 10,
+    "d_mny": 6,
+    "div": -4,
+    "n": 223
+   },
+   "home": {
+    "tix": 62,
+    "mny": 69,
+    "d_tix": -10,
+    "d_mny": -6,
+    "div": 4,
+    "n": 223
+   }
+  },
+  "total": {
+   "under": {
+    "tix": 90,
+    "mny": 92,
+    "d_tix": 0,
+    "d_mny": -1,
+    "div": -1,
+    "n": 223
+   },
+   "over": {
+    "tix": 10,
+    "mny": 8,
+    "d_tix": 0,
+    "d_mny": 1,
+    "div": 1,
+    "n": 223
+   }
+  },
+  "moneyline": {
+   "away": {
+    "tix": 88,
+    "mny": 81,
+    "d_tix": 0,
+    "d_mny": -3,
+    "div": -3,
+    "n": 223
+   },
+   "home": {
+    "tix": 12,
+    "mny": 19,
+    "d_tix": 0,
+    "d_mny": 3,
+    "div": 3,
+    "n": 223
+   }
+  }
+ },
+ "money_conflict": "SPLIT",
+ "money_lean": {
+  "spread": {
+   "side": "home",
+   "mny": 69,
+   "d_mny": -6
+  },
+  "moneyline": {
+   "side": "away",
+   "mny": 81,
+   "d_mny": -3
+  }
+ },
+ "suggested": {
+  "side": 1.5,
+  "total": 1.5,
+  "side_dir": "Atlanta Falcons",
+  "total_dir": "MORE",
+  "why": [
+   "side coherent (6 markets)",
+   "side coherence 5+",
+   "total coherent (9 markets)",
+   "total coherence 5+"
+  ]
+ },
+ "gates": {
+  "conflict_clear": true,
+  "has_splits": true,
+  "coherent_side": true,
+  "coherent_total": true
+ },
+ "frozen": false
+}

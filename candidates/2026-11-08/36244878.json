@@ -1,0 +1,339 @@
+{
+ "eventId": "36244878",
+ "game": "Arizona Cardinals @ Seattle Seahawks",
+ "abbr": "ARI@SEA",
+ "kickoff": "2026-11-08T21:26:00.000Z",
+ "recorded_utc": "2026-11-05T21:58:07Z",
+ "anchor": "2026-11-02T0000Z",
+ "coherence": {
+  "side_dir": "Arizona Cardinals",
+  "side_agree": 8,
+  "side_conflict": 0,
+  "total_dir": "FEWER",
+  "total_agree": 10,
+  "total_conflict": 0,
+  "markets": [
+   {
+    "mkt": "ml",
+    "axis": "side",
+    "dir": "Arizona Cardinals"
+   },
+   {
+    "mkt": "ml",
+    "axis": "side",
+    "dir": "Arizona Cardinals"
+   },
+   {
+    "mkt": "spread",
+    "axis": "side",
+    "dir": "Arizona Cardinals"
+   },
+   {
+    "mkt": "spread",
+    "axis": "side",
+    "dir": "Arizona Cardinals"
+   },
+   {
+    "mkt": "total",
+    "axis": "total",
+    "dir": "FEWER"
+   },
+   {
+    "mkt": "total",
+    "axis": "total",
+    "dir": "FEWER"
+   },
+   {
+    "mkt": "1H spread",
+    "axis": "side",
+    "dir": "Arizona Cardinals"
+   },
+   {
+    "mkt": "1H spread",
+    "axis": "side",
+    "dir": "Arizona Cardinals"
+   },
+   {
+    "mkt": "1H total",
+    "axis": "total",
+    "dir": "FEWER"
+   },
+   {
+    "mkt": "1H total",
+    "axis": "total",
+    "dir": "FEWER"
+   },
+   {
+    "mkt": "1H home TT",
+    "axis": "total",
+    "dir": "FEWER"
+   },
+   {
+    "mkt": "1H home TT",
+    "axis": "total",
+    "dir": "FEWER"
+   },
+   {
+    "mkt": "1H away TT",
+    "axis": "total",
+    "dir": "FEWER"
+   },
+   {
+    "mkt": "1H away TT",
+    "axis": "total",
+    "dir": "FEWER"
+   },
+   {
+    "mkt": "2H spread",
+    "axis": "side",
+    "dir": "Arizona Cardinals"
+   },
+   {
+    "mkt": "2H spread",
+    "axis": "side",
+    "dir": "Arizona Cardinals"
+   },
+   {
+    "mkt": "2H total",
+    "axis": "total",
+    "dir": "FEWER"
+   },
+   {
+    "mkt": "2H total",
+    "axis": "total",
+    "dir": "FEWER"
+   }
+  ]
+ },
+ "numbers": {
+  "ml": {
+   "Arizona Cardinals": {
+    "open": 0,
+    "open_odds": 500,
+    "now": 0,
+    "now_odds": 350,
+    "n": 271
+   },
+   "Seattle Seahawks": {
+    "open": 0,
+    "open_odds": -700,
+    "now": 0,
+    "now_odds": -450,
+    "n": 271
+   }
+  },
+  "spread": {
+   "Arizona Cardinals": {
+    "open": 10.5,
+    "open_odds": -110,
+    "now": 8.5,
+    "now_odds": -110,
+    "n": 271
+   },
+   "Seattle Seahawks": {
+    "open": -10.5,
+    "open_odds": -110,
+    "now": -8.5,
+    "now_odds": -110,
+    "n": 271
+   }
+  },
+  "total": {
+   "Over": {
+    "open": 45.5,
+    "open_odds": -110,
+    "now": 39.5,
+    "now_odds": -114,
+    "n": 271
+   },
+   "Under": {
+    "open": 45.5,
+    "open_odds": -110,
+    "now": 39.5,
+    "now_odds": -106,
+    "n": 271
+   }
+  },
+  "1H spread": {
+   "Arizona Cardinals": {
+    "open": 6.5,
+    "open_odds": 105,
+    "now": 5.5,
+    "now_odds": -105,
+    "n": 268
+   },
+   "Seattle Seahawks": {
+    "open": -6.5,
+    "open_odds": -125,
+    "now": -5.5,
+    "now_odds": -115,
+    "n": 268
+   }
+  },
+  "1H total": {
+   "Over": {
+    "open": 22.5,
+    "open_odds": -120,
+    "now": 19.5,
+    "now_odds": -125,
+    "n": 268
+   },
+   "Under": {
+    "open": 22.5,
+    "open_odds": 100,
+    "now": 19.5,
+    "now_odds": 105,
+    "n": 268
+   }
+  },
+  "1H home TT": {
+   "Over": {
+    "open": 14.5,
+    "open_odds": 104,
+    "now": 12.5,
+    "now_odds": -130,
+    "n": 268
+   },
+   "Under": {
+    "open": 14.5,
+    "open_odds": -132,
+    "now": 12.5,
+    "now_odds": 102,
+    "n": 268
+   }
+  },
+  "1H away TT": {
+   "Over": {
+    "open": 7.5,
+    "open_odds": 112,
+    "now": 6.5,
+    "now_odds": -132,
+    "n": 268
+   },
+   "Under": {
+    "open": 7.5,
+    "open_odds": -142,
+    "now": 6.5,
+    "now_odds": 104,
+    "n": 268
+   }
+  },
+  "2H spread": {
+   "Arizona Cardinals": {
+    "open": 5.5,
+    "open_odds": -110,
+    "now": 4.5,
+    "now_odds": -120,
+    "n": 268
+   },
+   "Seattle Seahawks": {
+    "open": -5.5,
+    "open_odds": -110,
+    "now": -4.5,
+    "now_odds": 100,
+    "n": 268
+   }
+  },
+  "2H total": {
+   "Over": {
+    "open": 21.5,
+    "open_odds": -110,
+    "now": 19.5,
+    "now_odds": -115,
+    "n": 268
+   },
+   "Under": {
+    "open": 21.5,
+    "open_odds": -110,
+    "now": 19.5,
+    "now_odds": -105,
+    "n": 268
+   }
+  }
+ },
+ "splits": {
+  "spread": {
+   "away": {
+    "tix": 58,
+    "mny": 67,
+    "d_tix": 7,
+    "d_mny": -7,
+    "div": -14,
+    "n": 223
+   },
+   "home": {
+    "tix": 42,
+    "mny": 33,
+    "d_tix": -7,
+    "d_mny": 7,
+    "div": 14,
+    "n": 223
+   }
+  },
+  "total": {
+   "over": {
+    "tix": 62,
+    "mny": 19,
+    "d_tix": -3,
+    "d_mny": -63,
+    "div": -60,
+    "n": 223
+   },
+   "under": {
+    "tix": 38,
+    "mny": 81,
+    "d_tix": 3,
+    "d_mny": 63,
+    "div": 60,
+    "n": 223
+   }
+  },
+  "moneyline": {
+   "away": {
+    "tix": 5,
+    "mny": 39,
+    "d_tix": 1,
+    "d_mny": 31,
+    "div": 30,
+    "n": 223
+   },
+   "home": {
+    "tix": 95,
+    "mny": 61,
+    "d_tix": -1,
+    "d_mny": -31,
+    "div": -30,
+    "n": 223
+   }
+  }
+ },
+ "money_conflict": "CONFLICT",
+ "money_lean": {
+  "spread": {
+   "side": "away",
+   "mny": 67,
+   "d_mny": -7
+  },
+  "moneyline": {
+   "side": "home",
+   "mny": 61,
+   "d_mny": -31
+  }
+ },
+ "suggested": {
+  "side": 0.0,
+  "total": 0.0,
+  "side_dir": "Arizona Cardinals",
+  "total_dir": "FEWER",
+  "why": [
+   "money conflict -> no play"
+  ]
+ },
+ "gates": {
+  "conflict_clear": false,
+  "has_splits": true,
+  "coherent_side": true,
+  "coherent_total": true
+ },
+ "frozen": false
+}

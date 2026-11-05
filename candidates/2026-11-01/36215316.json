@@ -1,0 +1,248 @@
+{
+ "eventId": "36215316",
+ "game": "Los Angeles Chargers @ Los Angeles Rams",
+ "abbr": "LAC@LA",
+ "kickoff": "2026-11-01T21:06:00.000Z",
+ "recorded_utc": "2026-11-05T21:58:07Z",
+ "anchor": "2026-10-26T0000Z",
+ "coherence": {
+  "side_dir": null,
+  "side_agree": 0,
+  "side_conflict": 0,
+  "total_dir": null,
+  "total_agree": 0,
+  "total_conflict": 0,
+  "markets": []
+ },
+ "numbers": {
+  "ml": {
+   "Los Angeles Chargers": {
+    "open": 0,
+    "open_odds": 235,
+    "now": 0,
+    "now_odds": 235,
+    "n": 1
+   },
+   "Los Angeles Rams": {
+    "open": 0,
+    "open_odds": -290,
+    "now": 0,
+    "now_odds": -290,
+    "n": 1
+   }
+  },
+  "total": {
+   "Over": {
+    "open": 45.5,
+    "open_odds": -112,
+    "now": 45.5,
+    "now_odds": -112,
+    "n": 1
+   },
+   "Under": {
+    "open": 45.5,
+    "open_odds": -108,
+    "now": 45.5,
+    "now_odds": -108,
+    "n": 1
+   }
+  },
+  "spread": {
+   "Los Angeles Chargers": {
+    "open": 6.5,
+    "open_odds": -108,
+    "now": 6.5,
+    "now_odds": -108,
+    "n": 1
+   },
+   "Los Angeles Rams": {
+    "open": -6.5,
+    "open_odds": -112,
+    "now": -6.5,
+    "now_odds": -112,
+    "n": 1
+   }
+  },
+  "1H total": {
+   "Over": {
+    "open": 22.5,
+    "open_odds": -120,
+    "now": 22.5,
+    "now_odds": -120,
+    "n": 1
+   },
+   "Under": {
+    "open": 22.5,
+    "open_odds": 100,
+    "now": 22.5,
+    "now_odds": 100,
+    "n": 1
+   }
+  },
+  "1H home TT": {
+   "Over": {
+    "open": 13.5,
+    "open_odds": -106,
+    "now": 13.5,
+    "now_odds": -106,
+    "n": 1
+   },
+   "Under": {
+    "open": 13.5,
+    "open_odds": -120,
+    "now": 13.5,
+    "now_odds": -120,
+    "n": 1
+   }
+  },
+  "1H spread": {
+   "Los Angeles Chargers": {
+    "open": 3.5,
+    "open_odds": 100,
+    "now": 3.5,
+    "now_odds": 100,
+    "n": 1
+   },
+   "Los Angeles Rams": {
+    "open": -3.5,
+    "open_odds": -120,
+    "now": -3.5,
+    "now_odds": -120,
+    "n": 1
+   }
+  },
+  "1H away TT": {
+   "Over": {
+    "open": 9.5,
+    "open_odds": -115,
+    "now": 9.5,
+    "now_odds": -115,
+    "n": 1
+   },
+   "Under": {
+    "open": 9.5,
+    "open_odds": -111,
+    "now": 9.5,
+    "now_odds": -111,
+    "n": 1
+   }
+  },
+  "2H total": {
+   "Over": {
+    "open": 22.5,
+    "open_odds": -120,
+    "now": 22.5,
+    "now_odds": -120,
+    "n": 1
+   },
+   "Under": {
+    "open": 22.5,
+    "open_odds": 100,
+    "now": 22.5,
+    "now_odds": 100,
+    "n": 1
+   }
+  },
+  "2H spread": {
+   "Los Angeles Chargers": {
+    "open": 3.5,
+    "open_odds": -120,
+    "now": 3.5,
+    "now_odds": -120,
+    "n": 1
+   },
+   "Los Angeles Rams": {
+    "open": -3.5,
+    "open_odds": 100,
+    "now": -3.5,
+    "now_odds": 100,
+    "n": 1
+   }
+  }
+ },
+ "splits": {
+  "spread": {
+   "away": {
+    "tix": 30,
+    "mny": 36,
+    "d_tix": 0,
+    "d_mny": 0,
+    "div": 0,
+    "n": 3
+   },
+   "home": {
+    "tix": 70,
+    "mny": 64,
+    "d_tix": 0,
+    "d_mny": 0,
+    "div": 0,
+    "n": 3
+   }
+  },
+  "total": {
+   "over": {
+    "tix": 56,
+    "mny": 58,
+    "d_tix": 0,
+    "d_mny": 0,
+    "div": 0,
+    "n": 3
+   },
+   "under": {
+    "tix": 44,
+    "mny": 42,
+    "d_tix": 0,
+    "d_mny": 0,
+    "div": 0,
+    "n": 3
+   }
+  },
+  "moneyline": {
+   "away": {
+    "tix": 5,
+    "mny": 2,
+    "d_tix": 0,
+    "d_mny": 0,
+    "div": 0,
+    "n": 3
+   },
+   "home": {
+    "tix": 95,
+    "mny": 98,
+    "d_tix": 0,
+    "d_mny": 0,
+    "div": 0,
+    "n": 3
+   }
+  }
+ },
+ "money_conflict": "AGREE",
+ "money_lean": {
+  "spread": {
+   "side": "home",
+   "mny": 64,
+   "d_mny": 0
+  },
+  "moneyline": {
+   "side": "home",
+   "mny": 98,
+   "d_mny": 0
+  }
+ },
+ "suggested": {
+  "side": 0.0,
+  "total": 0.0,
+  "side_dir": null,
+  "total_dir": null,
+  "why": [
+   "thin split history"
+  ]
+ },
+ "gates": {
+  "conflict_clear": true,
+  "has_splits": true,
+  "coherent_side": false,
+  "coherent_total": false
+ },
+ "frozen": true
+}
