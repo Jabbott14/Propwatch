@@ -3,14 +3,14 @@
  "game": "Denver Broncos @ Carolina Panthers",
  "abbr": "DEN@CAR",
  "kickoff": "2026-11-08T18:01:00.000Z",
- "recorded_utc": "2026-11-06T01:34:48Z",
+ "recorded_utc": "2026-11-06T10:55:17Z",
  "anchor": "2026-11-02T0000Z",
  "coherence": {
   "side_dir": "Carolina Panthers",
-  "side_agree": 2,
+  "side_agree": 3,
   "side_conflict": 1,
   "total_dir": "FEWER",
-  "total_agree": 3,
+  "total_agree": 1,
   "total_conflict": 1,
   "markets": [
    {
@@ -29,17 +29,12 @@
     "dir": "Carolina Panthers"
    },
    {
+    "mkt": "2H spread",
+    "axis": "side",
+    "dir": "Carolina Panthers"
+   },
+   {
     "mkt": "total",
-    "axis": "total",
-    "dir": "FEWER"
-   },
-   {
-    "mkt": "1H away TT",
-    "axis": "total",
-    "dir": "FEWER"
-   },
-   {
-    "mkt": "1H total",
     "axis": "total",
     "dir": "FEWER"
    },
@@ -55,16 +50,16 @@
    "Over": {
     "open": 44.5,
     "open_odds": -115,
-    "now": 43.5,
-    "now_odds": -120,
-    "n": 317
+    "now": 44.5,
+    "now_odds": -110,
+    "n": 324
    },
    "Under": {
     "open": 44.5,
     "open_odds": -105,
-    "now": 43.5,
-    "now_odds": 100,
-    "n": 317
+    "now": 44.5,
+    "now_odds": -110,
+    "n": 324
    }
   },
   "ml": {
@@ -73,14 +68,14 @@
     "open_odds": -154,
     "now": 0,
     "now_odds": -142,
-    "n": 317
+    "n": 324
    },
    "Carolina Panthers": {
     "open": 0,
     "open_odds": 130,
     "now": 0,
     "now_odds": 120,
-    "n": 317
+    "n": 324
    }
   },
   "spread": {
@@ -89,14 +84,14 @@
     "open_odds": -118,
     "now": -2.5,
     "now_odds": -120,
-    "n": 317
+    "n": 324
    },
    "Carolina Panthers": {
     "open": 2.5,
     "open_odds": -104,
     "now": 2.5,
     "now_odds": 100,
-    "n": 317
+    "n": 324
    }
   },
   "1H away TT": {
@@ -104,31 +99,31 @@
     "open": 10.5,
     "open_odds": -113,
     "now": 10.5,
-    "now_odds": -106,
-    "n": 314
+    "now_odds": -111,
+    "n": 321
    },
    "Under": {
     "open": 10.5,
     "open_odds": -113,
     "now": 10.5,
-    "now_odds": -120,
-    "n": 314
+    "now_odds": -115,
+    "n": 321
    }
   },
   "1H total": {
    "Over": {
     "open": 22.5,
     "open_odds": -110,
-    "now": 21.5,
+    "now": 22.5,
     "now_odds": -110,
-    "n": 314
+    "n": 321
    },
    "Under": {
     "open": 22.5,
     "open_odds": -110,
-    "now": 21.5,
+    "now": 22.5,
     "now_odds": -110,
-    "n": 314
+    "n": 321
    }
   },
   "1H spread": {
@@ -136,15 +131,15 @@
     "open": -1.5,
     "open_odds": -105,
     "now": -1.5,
-    "now_odds": -105,
-    "n": 314
+    "now_odds": 100,
+    "n": 321
    },
    "Carolina Panthers": {
     "open": 1.5,
     "open_odds": -115,
     "now": 1.5,
     "now_odds": -120,
-    "n": 314
+    "n": 321
    }
   },
   "1H home TT": {
@@ -152,31 +147,31 @@
     "open": 9.5,
     "open_odds": -154,
     "now": 9.5,
-    "now_odds": -150,
-    "n": 314
+    "now_odds": -158,
+    "n": 321
    },
    "Under": {
     "open": 9.5,
     "open_odds": 122,
     "now": 9.5,
-    "now_odds": 118,
-    "n": 314
+    "now_odds": 124,
+    "n": 321
    }
   },
   "2H total": {
    "Over": {
     "open": 21.5,
     "open_odds": 100,
-    "now": 21.5,
-    "now_odds": -115,
-    "n": 314
+    "now": 22.5,
+    "now_odds": -110,
+    "n": 321
    },
    "Under": {
     "open": 21.5,
     "open_odds": -120,
-    "now": 21.5,
-    "now_odds": -105,
-    "n": 314
+    "now": 22.5,
+    "now_odds": -110,
+    "n": 321
    }
   },
   "2H spread": {
@@ -185,70 +180,70 @@
     "open_odds": 105,
     "now": -1.5,
     "now_odds": 105,
-    "n": 314
+    "n": 321
    },
    "Carolina Panthers": {
     "open": 1.5,
     "open_odds": -125,
     "now": 1.5,
-    "now_odds": -125,
-    "n": 314
+    "now_odds": -130,
+    "n": 321
    }
   }
  },
  "splits": {
   "spread": {
    "home": {
-    "tix": 26,
-    "mny": 24,
-    "d_tix": 0,
-    "d_mny": 2,
-    "div": 2,
-    "n": 250
+    "tix": 28,
+    "mny": 31,
+    "d_tix": 2,
+    "d_mny": 9,
+    "div": 7,
+    "n": 257
    },
    "away": {
-    "tix": 74,
-    "mny": 76,
-    "d_tix": 0,
-    "d_mny": -2,
-    "div": -2,
-    "n": 250
+    "tix": 72,
+    "mny": 69,
+    "d_tix": -2,
+    "d_mny": -9,
+    "div": -7,
+    "n": 257
    }
   },
   "total": {
    "under": {
     "tix": 31,
-    "mny": 28,
+    "mny": 27,
     "d_tix": 2,
-    "d_mny": 14,
-    "div": 12,
-    "n": 250
+    "d_mny": 13,
+    "div": 11,
+    "n": 257
    },
    "over": {
     "tix": 69,
-    "mny": 72,
+    "mny": 73,
     "d_tix": -2,
-    "d_mny": -14,
-    "div": -12,
-    "n": 250
+    "d_mny": -13,
+    "div": -11,
+    "n": 257
    }
   },
   "moneyline": {
    "home": {
     "tix": 10,
-    "mny": 14,
+    "mny": 12,
     "d_tix": -3,
-    "d_mny": 8,
-    "div": 11,
-    "n": 250
+    "d_mny": 6,
+    "div": 9,
+    "n": 257
    },
    "away": {
     "tix": 90,
-    "mny": 86,
+    "mny": 88,
     "d_tix": 3,
-    "d_mny": -8,
-    "div": -11,
-    "n": 250
+    "d_mny": -6,
+    "div": -9,
+    "n": 257
    }
   }
  },
@@ -256,13 +251,13 @@
  "money_lean": {
   "spread": {
    "side": "away",
-   "mny": 76,
-   "d_mny": -2
+   "mny": 69,
+   "d_mny": -9
   },
   "moneyline": {
    "side": "away",
-   "mny": 86,
-   "d_mny": -8
+   "mny": 88,
+   "d_mny": -6
   }
  },
  "suggested": {

@@ -3,7 +3,7 @@
  "game": "Arizona Cardinals @ Seattle Seahawks",
  "abbr": "ARI@SEA",
  "kickoff": "2026-11-08T21:26:00.000Z",
- "recorded_utc": "2026-11-06T01:34:48Z",
+ "recorded_utc": "2026-11-06T10:55:17Z",
  "anchor": "2026-11-02T0000Z",
  "coherence": {
   "side_dir": "Arizona Cardinals",
@@ -67,14 +67,14 @@
     "open_odds": 500,
     "now": 0,
     "now_odds": 350,
-    "n": 298
+    "n": 305
    },
    "Seattle Seahawks": {
     "open": 0,
     "open_odds": -700,
     "now": 0,
     "now_odds": -450,
-    "n": 298
+    "n": 305
    }
   },
   "spread": {
@@ -83,14 +83,14 @@
     "open_odds": -110,
     "now": 8.5,
     "now_odds": -110,
-    "n": 298
+    "n": 305
    },
    "Seattle Seahawks": {
     "open": -10.5,
     "open_odds": -110,
     "now": -8.5,
     "now_odds": -110,
-    "n": 298
+    "n": 305
    }
   },
   "total": {
@@ -99,14 +99,14 @@
     "open_odds": -110,
     "now": 39.5,
     "now_odds": -110,
-    "n": 298
+    "n": 305
    },
    "Under": {
     "open": 45.5,
     "open_odds": -110,
     "now": 39.5,
     "now_odds": -110,
-    "n": 298
+    "n": 305
    }
   },
   "1H spread": {
@@ -115,14 +115,14 @@
     "open_odds": 105,
     "now": 5.5,
     "now_odds": -105,
-    "n": 295
+    "n": 302
    },
    "Seattle Seahawks": {
     "open": -6.5,
     "open_odds": -125,
     "now": -5.5,
     "now_odds": -115,
-    "n": 295
+    "n": 302
    }
   },
   "1H total": {
@@ -131,14 +131,14 @@
     "open_odds": -120,
     "now": 19.5,
     "now_odds": -125,
-    "n": 295
+    "n": 302
    },
    "Under": {
     "open": 22.5,
     "open_odds": 100,
     "now": 19.5,
     "now_odds": 105,
-    "n": 295
+    "n": 302
    }
   },
   "1H home TT": {
@@ -147,14 +147,14 @@
     "open_odds": 104,
     "now": 12.5,
     "now_odds": -130,
-    "n": 295
+    "n": 302
    },
    "Under": {
     "open": 14.5,
     "open_odds": -132,
     "now": 12.5,
     "now_odds": 102,
-    "n": 295
+    "n": 302
    }
   },
   "1H away TT": {
@@ -163,14 +163,14 @@
     "open_odds": 112,
     "now": 6.5,
     "now_odds": -132,
-    "n": 295
+    "n": 302
    },
    "Under": {
     "open": 7.5,
     "open_odds": -142,
     "now": 6.5,
     "now_odds": 104,
-    "n": 295
+    "n": 302
    }
   },
   "2H spread": {
@@ -179,14 +179,14 @@
     "open_odds": -110,
     "now": 4.5,
     "now_odds": -120,
-    "n": 295
+    "n": 302
    },
    "Seattle Seahawks": {
     "open": -5.5,
     "open_odds": -110,
     "now": -4.5,
     "now_odds": 100,
-    "n": 295
+    "n": 302
    }
   },
   "2H total": {
@@ -195,70 +195,70 @@
     "open_odds": -110,
     "now": 19.5,
     "now_odds": -115,
-    "n": 295
+    "n": 302
    },
    "Under": {
     "open": 21.5,
     "open_odds": -110,
     "now": 19.5,
     "now_odds": -105,
-    "n": 295
+    "n": 302
    }
   }
  },
  "splits": {
   "spread": {
    "away": {
-    "tix": 56,
-    "mny": 65,
-    "d_tix": 5,
-    "d_mny": -9,
-    "div": -14,
-    "n": 250
+    "tix": 53,
+    "mny": 54,
+    "d_tix": 2,
+    "d_mny": -20,
+    "div": -22,
+    "n": 257
    },
    "home": {
-    "tix": 44,
-    "mny": 35,
-    "d_tix": -5,
-    "d_mny": 9,
-    "div": 14,
-    "n": 250
+    "tix": 47,
+    "mny": 46,
+    "d_tix": -2,
+    "d_mny": 20,
+    "div": 22,
+    "n": 257
    }
   },
   "total": {
    "over": {
-    "tix": 62,
-    "mny": 16,
-    "d_tix": -3,
-    "d_mny": -66,
-    "div": -63,
-    "n": 250
+    "tix": 64,
+    "mny": 22,
+    "d_tix": -1,
+    "d_mny": -60,
+    "div": -59,
+    "n": 257
    },
    "under": {
-    "tix": 38,
-    "mny": 84,
-    "d_tix": 3,
-    "d_mny": 66,
-    "div": 63,
-    "n": 250
+    "tix": 36,
+    "mny": 78,
+    "d_tix": 1,
+    "d_mny": 60,
+    "div": 59,
+    "n": 257
    }
   },
   "moneyline": {
    "away": {
     "tix": 5,
-    "mny": 36,
+    "mny": 30,
     "d_tix": 1,
-    "d_mny": 28,
-    "div": 27,
-    "n": 250
+    "d_mny": 22,
+    "div": 21,
+    "n": 257
    },
    "home": {
     "tix": 95,
-    "mny": 64,
+    "mny": 70,
     "d_tix": -1,
-    "d_mny": -28,
-    "div": -27,
-    "n": 250
+    "d_mny": -22,
+    "div": -21,
+    "n": 257
    }
   }
  },
@@ -266,13 +266,13 @@
  "money_lean": {
   "spread": {
    "side": "away",
-   "mny": 65,
-   "d_mny": -9
+   "mny": 54,
+   "d_mny": -20
   },
   "moneyline": {
    "side": "home",
-   "mny": 64,
-   "d_mny": -28
+   "mny": 70,
+   "d_mny": -22
   }
  },
  "suggested": {

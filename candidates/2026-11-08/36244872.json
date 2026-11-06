@@ -3,7 +3,7 @@
  "game": "Detroit Lions @ Miami Dolphins",
  "abbr": "DET@MIA",
  "kickoff": "2026-11-08T18:01:00.000Z",
- "recorded_utc": "2026-11-06T01:34:48Z",
+ "recorded_utc": "2026-11-06T10:55:17Z",
  "anchor": "2026-11-02T0000Z",
  "coherence": {
   "side_dir": "Miami Dolphins",
@@ -62,14 +62,14 @@
     "open_odds": -118,
     "now": 50.5,
     "now_odds": -105,
-    "n": 317
+    "n": 324
    },
    "Under": {
     "open": 48.5,
     "open_odds": -104,
     "now": 50.5,
     "now_odds": -115,
-    "n": 317
+    "n": 324
    }
   },
   "ml": {
@@ -78,14 +78,14 @@
     "open_odds": -390,
     "now": 0,
     "now_odds": -355,
-    "n": 317
+    "n": 324
    },
    "Miami Dolphins": {
     "open": 0,
     "open_odds": 310,
     "now": 0,
     "now_odds": 285,
-    "n": 317
+    "n": 324
    }
   },
   "spread": {
@@ -94,14 +94,14 @@
     "open_odds": -115,
     "now": -7,
     "now_odds": -110,
-    "n": 317
+    "n": 324
    },
    "Miami Dolphins": {
     "open": 7,
     "open_odds": -105,
     "now": 7,
     "now_odds": -110,
-    "n": 317
+    "n": 324
    }
   },
   "1H away TT": {
@@ -110,14 +110,14 @@
     "open_odds": 100,
     "now": 14.5,
     "now_odds": 104,
-    "n": 314
+    "n": 321
    },
    "Under": {
     "open": 14.5,
     "open_odds": -128,
     "now": 14.5,
     "now_odds": -132,
-    "n": 314
+    "n": 321
    }
   },
   "1H total": {
@@ -126,14 +126,14 @@
     "open_odds": -110,
     "now": 24.5,
     "now_odds": -105,
-    "n": 314
+    "n": 321
    },
    "Under": {
     "open": 25.5,
     "open_odds": -110,
     "now": 24.5,
     "now_odds": -115,
-    "n": 314
+    "n": 321
    }
   },
   "1H home TT": {
@@ -142,14 +142,14 @@
     "open_odds": 122,
     "now": 9.5,
     "now_odds": -146,
-    "n": 314
+    "n": 321
    },
    "Under": {
     "open": 10.5,
     "open_odds": -156,
     "now": 9.5,
     "now_odds": 114,
-    "n": 314
+    "n": 321
    }
   },
   "1H spread": {
@@ -158,14 +158,14 @@
     "open_odds": 100,
     "now": -4.5,
     "now_odds": -105,
-    "n": 314
+    "n": 321
    },
    "Miami Dolphins": {
     "open": 4.5,
     "open_odds": -120,
     "now": 4.5,
     "now_odds": -115,
-    "n": 314
+    "n": 321
    }
   },
   "2H total": {
@@ -174,14 +174,14 @@
     "open_odds": 105,
     "now": 24.5,
     "now_odds": -105,
-    "n": 314
+    "n": 321
    },
    "Under": {
     "open": 24.5,
     "open_odds": -125,
     "now": 24.5,
     "now_odds": -115,
-    "n": 314
+    "n": 321
    }
   },
   "2H spread": {
@@ -190,52 +190,52 @@
     "open_odds": -105,
     "now": -3.5,
     "now_odds": -110,
-    "n": 314
+    "n": 321
    },
    "Miami Dolphins": {
     "open": 3.5,
     "open_odds": -115,
     "now": 3.5,
     "now_odds": -110,
-    "n": 314
+    "n": 321
    }
   }
  },
  "splits": {
   "spread": {
    "home": {
-    "tix": 20,
+    "tix": 18,
     "mny": 14,
-    "d_tix": 2,
+    "d_tix": 0,
     "d_mny": -2,
-    "div": -4,
-    "n": 250
+    "div": -2,
+    "n": 257
    },
    "away": {
-    "tix": 80,
+    "tix": 82,
     "mny": 86,
-    "d_tix": -2,
+    "d_tix": 0,
     "d_mny": 2,
-    "div": 4,
-    "n": 250
+    "div": 2,
+    "n": 257
    }
   },
   "total": {
    "over": {
-    "tix": 51,
-    "mny": 78,
-    "d_tix": 8,
-    "d_mny": 0,
-    "div": -8,
-    "n": 250
+    "tix": 54,
+    "mny": 77,
+    "d_tix": 11,
+    "d_mny": -1,
+    "div": -12,
+    "n": 257
    },
    "under": {
-    "tix": 49,
-    "mny": 22,
-    "d_tix": -8,
-    "d_mny": 0,
-    "div": 8,
-    "n": 250
+    "tix": 46,
+    "mny": 23,
+    "d_tix": -11,
+    "d_mny": 1,
+    "div": 12,
+    "n": 257
    }
   },
   "moneyline": {
@@ -245,7 +245,7 @@
     "d_tix": 1,
     "d_mny": 1,
     "div": 0,
-    "n": 250
+    "n": 257
    },
    "home": {
     "tix": 3,
@@ -253,7 +253,7 @@
     "d_tix": -1,
     "d_mny": -1,
     "div": 0,
-    "n": 250
+    "n": 257
    }
   }
  },

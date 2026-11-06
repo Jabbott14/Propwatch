@@ -3,7 +3,7 @@
  "game": "Green Bay Packers @ New England Patriots",
  "abbr": "GB@NE",
  "kickoff": "2026-11-08T21:26:00.000Z",
- "recorded_utc": "2026-11-06T01:34:48Z",
+ "recorded_utc": "2026-11-06T10:55:17Z",
  "anchor": "2026-11-02T0000Z",
  "coherence": {
   "side_dir": "New England Patriots",
@@ -62,14 +62,14 @@
     "open_odds": -104,
     "now": 44.5,
     "now_odds": -110,
-    "n": 317
+    "n": 324
    },
    "Under": {
     "open": 47.5,
     "open_odds": -118,
     "now": 44.5,
     "now_odds": -110,
-    "n": 317
+    "n": 324
    }
   },
   "ml": {
@@ -78,14 +78,14 @@
     "open_odds": 116,
     "now": 0,
     "now_odds": 140,
-    "n": 317
+    "n": 324
    },
    "New England Patriots": {
     "open": 0,
     "open_odds": -136,
     "now": 0,
     "now_odds": -166,
-    "n": 317
+    "n": 324
    }
   },
   "spread": {
@@ -94,14 +94,14 @@
     "open_odds": -110,
     "now": 3,
     "now_odds": -110,
-    "n": 317
+    "n": 324
    },
    "New England Patriots": {
     "open": -2.5,
     "open_odds": -110,
     "now": -3,
     "now_odds": -110,
-    "n": 317
+    "n": 324
    }
   },
   "1H total": {
@@ -110,14 +110,14 @@
     "open_odds": -115,
     "now": 22.5,
     "now_odds": -110,
-    "n": 315
+    "n": 322
    },
    "Under": {
     "open": 23.5,
     "open_odds": -105,
     "now": 22.5,
     "now_odds": -110,
-    "n": 315
+    "n": 322
    }
   },
   "1H spread": {
@@ -126,14 +126,14 @@
     "open_odds": -120,
     "now": 1.5,
     "now_odds": -115,
-    "n": 315
+    "n": 322
    },
    "New England Patriots": {
     "open": -1.5,
     "open_odds": 100,
     "now": -1.5,
     "now_odds": -105,
-    "n": 315
+    "n": 322
    }
   },
   "1H away TT": {
@@ -142,14 +142,14 @@
     "open_odds": -102,
     "now": 9.5,
     "now_odds": -146,
-    "n": 315
+    "n": 322
    },
    "Under": {
     "open": 10.5,
     "open_odds": -125,
     "now": 9.5,
     "now_odds": 114,
-    "n": 315
+    "n": 322
    }
   },
   "1H home TT": {
@@ -158,14 +158,14 @@
     "open_odds": -128,
     "now": 10.5,
     "now_odds": -113,
-    "n": 315
+    "n": 322
    },
    "Under": {
     "open": 12.5,
     "open_odds": 100,
     "now": 10.5,
     "now_odds": -113,
-    "n": 315
+    "n": 322
    }
   },
   "2H total": {
@@ -174,14 +174,14 @@
     "open_odds": -120,
     "now": 22.5,
     "now_odds": -110,
-    "n": 315
+    "n": 322
    },
    "Under": {
     "open": 22.5,
     "open_odds": 100,
     "now": 22.5,
     "now_odds": -110,
-    "n": 315
+    "n": 322
    }
   },
   "2H spread": {
@@ -190,70 +190,70 @@
     "open_odds": -120,
     "now": 1.5,
     "now_odds": -120,
-    "n": 315
+    "n": 322
    },
    "New England Patriots": {
     "open": -1.5,
     "open_odds": 100,
     "now": -1.5,
     "now_odds": 100,
-    "n": 315
+    "n": 322
    }
   }
  },
  "splits": {
   "spread": {
    "away": {
-    "tix": 71,
-    "mny": 72,
-    "d_tix": 1,
-    "d_mny": 9,
-    "div": 8,
-    "n": 250
+    "tix": 72,
+    "mny": 74,
+    "d_tix": 2,
+    "d_mny": 11,
+    "div": 9,
+    "n": 257
    },
    "home": {
-    "tix": 29,
-    "mny": 28,
-    "d_tix": -1,
-    "d_mny": -9,
-    "div": -8,
-    "n": 250
+    "tix": 28,
+    "mny": 26,
+    "d_tix": -2,
+    "d_mny": -11,
+    "div": -9,
+    "n": 257
    }
   },
   "total": {
    "over": {
-    "tix": 63,
-    "mny": 71,
-    "d_tix": 8,
-    "d_mny": -3,
-    "div": -11,
-    "n": 250
+    "tix": 68,
+    "mny": 75,
+    "d_tix": 13,
+    "d_mny": 1,
+    "div": -12,
+    "n": 257
    },
    "under": {
-    "tix": 37,
-    "mny": 29,
-    "d_tix": -8,
-    "d_mny": 3,
-    "div": 11,
-    "n": 250
+    "tix": 32,
+    "mny": 25,
+    "d_tix": -13,
+    "d_mny": -1,
+    "div": 12,
+    "n": 257
    }
   },
   "moneyline": {
    "away": {
-    "tix": 35,
-    "mny": 59,
-    "d_tix": 5,
-    "d_mny": 9,
-    "div": 4,
-    "n": 250
+    "tix": 36,
+    "mny": 58,
+    "d_tix": 6,
+    "d_mny": 8,
+    "div": 2,
+    "n": 257
    },
    "home": {
-    "tix": 65,
-    "mny": 41,
-    "d_tix": -5,
-    "d_mny": -9,
-    "div": -4,
-    "n": 250
+    "tix": 64,
+    "mny": 42,
+    "d_tix": -6,
+    "d_mny": -8,
+    "div": -2,
+    "n": 257
    }
   }
  },
@@ -261,13 +261,13 @@
  "money_lean": {
   "spread": {
    "side": "away",
-   "mny": 72,
-   "d_mny": 9
+   "mny": 74,
+   "d_mny": 11
   },
   "moneyline": {
    "side": "away",
-   "mny": 59,
-   "d_mny": 9
+   "mny": 58,
+   "d_mny": 8
   }
  },
  "suggested": {

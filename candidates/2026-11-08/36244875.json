@@ -3,7 +3,7 @@
  "game": "Las Vegas Raiders @ San Francisco 49ers",
  "abbr": "LV@SF",
  "kickoff": "2026-11-08T21:06:00.000Z",
- "recorded_utc": "2026-11-06T01:34:48Z",
+ "recorded_utc": "2026-11-06T10:55:17Z",
  "anchor": "2026-11-02T0000Z",
  "coherence": {
   "side_dir": "San Francisco 49ers",
@@ -42,14 +42,14 @@
     "open_odds": 385,
     "now": 0,
     "now_odds": 385,
-    "n": 317
+    "n": 324
    },
    "San Francisco 49ers": {
     "open": 0,
     "open_odds": -500,
     "now": 0,
     "now_odds": -500,
-    "n": 317
+    "n": 324
    }
   },
   "total": {
@@ -58,14 +58,14 @@
     "open_odds": -110,
     "now": 51.5,
     "now_odds": -115,
-    "n": 317
+    "n": 324
    },
    "Under": {
     "open": 51.5,
     "open_odds": -110,
     "now": 51.5,
     "now_odds": -105,
-    "n": 317
+    "n": 324
    }
   },
   "spread": {
@@ -74,14 +74,14 @@
     "open_odds": -115,
     "now": 9.5,
     "now_odds": -110,
-    "n": 317
+    "n": 324
    },
    "San Francisco 49ers": {
     "open": -9.5,
     "open_odds": -105,
     "now": -9.5,
     "now_odds": -110,
-    "n": 317
+    "n": 324
    }
   },
   "1H spread": {
@@ -90,14 +90,14 @@
     "open_odds": -110,
     "now": 6.5,
     "now_odds": -110,
-    "n": 314
+    "n": 321
    },
    "San Francisco 49ers": {
     "open": -6.5,
     "open_odds": -110,
     "now": -6.5,
     "now_odds": -110,
-    "n": 314
+    "n": 321
    }
   },
   "1H away TT": {
@@ -106,14 +106,14 @@
     "open_odds": -146,
     "now": 9.5,
     "now_odds": -142,
-    "n": 314
+    "n": 321
    },
    "Under": {
     "open": 9.5,
     "open_odds": 114,
     "now": 9.5,
     "now_odds": 112,
-    "n": 314
+    "n": 321
    }
   },
   "1H total": {
@@ -122,14 +122,14 @@
     "open_odds": -120,
     "now": 26.5,
     "now_odds": -110,
-    "n": 314
+    "n": 321
    },
    "Under": {
     "open": 26.5,
     "open_odds": 100,
     "now": 26.5,
     "now_odds": -110,
-    "n": 314
+    "n": 321
    }
   },
   "1H home TT": {
@@ -138,14 +138,14 @@
     "open_odds": -122,
     "now": 16.5,
     "now_odds": -118,
-    "n": 314
+    "n": 321
    },
    "Under": {
     "open": 16.5,
     "open_odds": -104,
     "now": 16.5,
     "now_odds": -108,
-    "n": 314
+    "n": 321
    }
   },
   "2H total": {
@@ -154,14 +154,14 @@
     "open_odds": -110,
     "now": 25.5,
     "now_odds": -110,
-    "n": 314
+    "n": 321
    },
    "Under": {
     "open": 24.5,
     "open_odds": -110,
     "now": 25.5,
     "now_odds": -110,
-    "n": 314
+    "n": 321
    }
   },
   "2H spread": {
@@ -170,52 +170,52 @@
     "open_odds": -110,
     "now": 4.5,
     "now_odds": -110,
-    "n": 314
+    "n": 321
    },
    "San Francisco 49ers": {
     "open": -4.5,
     "open_odds": -110,
     "now": -4.5,
     "now_odds": -110,
-    "n": 314
+    "n": 321
    }
   }
  },
  "splits": {
   "spread": {
    "home": {
-    "tix": 46,
-    "mny": 42,
-    "d_tix": 3,
-    "d_mny": 2,
-    "div": -1,
-    "n": 250
+    "tix": 48,
+    "mny": 49,
+    "d_tix": 5,
+    "d_mny": 9,
+    "div": 4,
+    "n": 257
    },
    "away": {
-    "tix": 54,
-    "mny": 58,
-    "d_tix": -3,
-    "d_mny": -2,
-    "div": 1,
-    "n": 250
+    "tix": 52,
+    "mny": 51,
+    "d_tix": -5,
+    "d_mny": -9,
+    "div": -4,
+    "n": 257
    }
   },
   "total": {
    "over": {
-    "tix": 66,
-    "mny": 78,
-    "d_tix": 18,
-    "d_mny": 35,
-    "div": 17,
-    "n": 250
+    "tix": 67,
+    "mny": 81,
+    "d_tix": 19,
+    "d_mny": 38,
+    "div": 19,
+    "n": 257
    },
    "under": {
-    "tix": 34,
-    "mny": 22,
-    "d_tix": -18,
-    "d_mny": -35,
-    "div": -17,
-    "n": 250
+    "tix": 33,
+    "mny": 19,
+    "d_tix": -19,
+    "d_mny": -38,
+    "div": -19,
+    "n": 257
    }
   },
   "moneyline": {
@@ -225,7 +225,7 @@
     "d_tix": -1,
     "d_mny": -1,
     "div": 0,
-    "n": 250
+    "n": 257
    },
    "home": {
     "tix": 97,
@@ -233,7 +233,7 @@
     "d_tix": 1,
     "d_mny": 1,
     "div": 0,
-    "n": 250
+    "n": 257
    }
   }
  },
@@ -241,8 +241,8 @@
  "money_lean": {
   "spread": {
    "side": "away",
-   "mny": 58,
-   "d_mny": -2
+   "mny": 51,
+   "d_mny": -9
   },
   "moneyline": {
    "side": "home",
