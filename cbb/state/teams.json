@@ -17,6 +17,12 @@
   "div": "D1",
   "name": "Illinois Fighting Illini"
  },
+ "1005": {
+  "abbr": "MD",
+  "conf": "BIGTEN",
+  "div": "D1",
+  "name": "Maryland Terrapins"
+ },
  "1006": {
   "abbr": "PSU",
   "conf": "BIGTEN",
@@ -70,6 +76,12 @@
   "conf": "BIGTEN",
   "div": "D1",
   "name": "Wisconsin Badgers"
+ },
+ "1015": {
+  "abbr": "NEB",
+  "conf": "BIGTEN",
+  "div": "D1",
+  "name": "Nebraska Cornhuskers"
  },
  "1016": {
   "abbr": "MINN",
@@ -239,6 +251,12 @@
   "div": "D1",
   "name": "Northeastern Huskies"
  },
+ "1052": {
+  "abbr": "UNCW",
+  "conf": "CAA",
+  "div": "D1",
+  "name": "UNC Wilmington Seahawks"
+ },
  "1053": {
   "abbr": "DREX",
   "conf": "CAA",
@@ -262,6 +280,12 @@
   "conf": "WCC",
   "div": "D1",
   "name": "Santa Clara Broncos"
+ },
+ "1057": {
+  "abbr": "GONZ",
+  "conf": "PAC12",
+  "div": "D1",
+  "name": "Gonzaga Bulldogs"
  },
  "1058": {
   "abbr": "LMU",
@@ -287,6 +311,12 @@
   "div": "D1",
   "name": "BYU Cougars"
  },
+ "1062": {
+  "abbr": "PAC",
+  "conf": "WCC",
+  "div": "D1",
+  "name": "Pacific Tigers"
+ },
  "1063": {
   "abbr": "SF",
   "conf": "WCC",
@@ -311,11 +341,23 @@
   "div": "D1",
   "name": "Villanova Wildcats"
  },
+ "1067": {
+  "abbr": "PROV",
+  "conf": "BIGEAST",
+  "div": "D1",
+  "name": "Providence Friars"
+ },
  "1068": {
   "abbr": "CREI",
   "conf": "BIGEAST",
   "div": "D1",
   "name": "Creighton Bluejays"
+ },
+ "1069": {
+  "abbr": "GTWN",
+  "conf": "BIGEAST",
+  "div": "D1",
+  "name": "Georgetown Hoyas"
  },
  "1070": {
   "abbr": "HALL",
@@ -341,6 +383,24 @@
   "div": "D1",
   "name": "Saint Louis Billikens"
  },
+ "1075": {
+  "abbr": "SBON",
+  "conf": "A10",
+  "div": "D1",
+  "name": "St. Bonaventure Bonnies"
+ },
+ "1076": {
+  "abbr": "DAV",
+  "conf": "A10",
+  "div": "D1",
+  "name": "Davidson Wildcats"
+ },
+ "1077": {
+  "abbr": "DAY",
+  "conf": "A10",
+  "div": "D1",
+  "name": "Dayton Flyers"
+ },
  "1078": {
   "abbr": "FOR",
   "conf": "A10",
@@ -358,6 +418,24 @@
   "conf": "MIDAMERICAN",
   "div": "D1",
   "name": "Massachusetts Minutemen"
+ },
+ "1082": {
+  "abbr": "LAS",
+  "conf": "A10",
+  "div": "D1",
+  "name": "La Salle Explorers"
+ },
+ "1083": {
+  "abbr": "VCU",
+  "conf": "A10",
+  "div": "D1",
+  "name": "VCU Rams"
+ },
+ "1084": {
+  "abbr": "GW",
+  "conf": "A10",
+  "div": "D1",
+  "name": "George Washington Colonials"
  },
  "1085": {
   "abbr": "GMU",
@@ -377,6 +455,12 @@
   "div": "D1",
   "name": "Duquesne Dukes"
  },
+ "1088": {
+  "abbr": "CAN",
+  "conf": "MAAC",
+  "div": "D1",
+  "name": "Canisius Golden Griffins"
+ },
  "1089": {
   "abbr": "RID",
   "conf": "MAAC",
@@ -394,6 +478,12 @@
   "conf": "MAAC",
   "div": "D1",
   "name": "Iona Gaels"
+ },
+ "1092": {
+  "abbr": "MONM",
+  "conf": "CAA",
+  "div": "D1",
+  "name": "Monmouth Hawks"
  },
  "1093": {
   "abbr": "QUIN",
@@ -419,6 +509,12 @@
   "div": "D1",
   "name": "St. Peter's Peacocks"
  },
+ "1098": {
+  "abbr": "NIAG",
+  "conf": "MAAC",
+  "div": "D1",
+  "name": "Niagara Purple Eagles"
+ },
  "1401": {
   "abbr": "UWF",
   "conf": "ATLANTICSUN",
@@ -437,6 +533,12 @@
   "div": "D2",
   "name": "Central State Marauders"
  },
+ "1427": {
+  "abbr": "UCSD",
+  "conf": "BIGWEST",
+  "div": "D1",
+  "name": "UC San Diego Tritons"
+ },
  "1439": {
   "abbr": "ERSK",
   "conf": null,
@@ -448,6 +550,12 @@
   "conf": "ATLANTICSUN",
   "div": "D1",
   "name": "Bellarmine Knights"
+ },
+ "1455": {
+  "abbr": "USI",
+  "conf": "OHIOVALLEY",
+  "div": "D1",
+  "name": "Southern Indiana Screaming Eagles"
  },
  "1470": {
   "abbr": "QUC",
@@ -587,6 +695,12 @@
   "div": "D1",
   "name": "Oregon Ducks"
  },
+ "750": {
+  "abbr": "WSU",
+  "conf": "PAC12",
+  "div": "D1",
+  "name": "Washington State Cougars"
+ },
  "752": {
   "abbr": "ORST",
   "conf": "PAC12",
@@ -604,6 +718,12 @@
   "conf": "BIG12",
   "div": "D1",
   "name": "Arizona Wildcats"
+ },
+ "755": {
+  "abbr": "COLO",
+  "conf": "BIG12",
+  "div": "D1",
+  "name": "Colorado Buffaloes"
  },
  "756": {
   "abbr": "CAL",
@@ -641,6 +761,18 @@
   "div": "D1",
   "name": "Southeast Missouri State Redhawks"
  },
+ "763": {
+  "abbr": "MURR",
+  "conf": "MISSOURIVALLEY",
+  "div": "D1",
+  "name": "Murray State Racers"
+ },
+ "765": {
+  "abbr": "UTM",
+  "conf": "OHIOVALLEY",
+  "div": "D1",
+  "name": "Tennessee-Martin Skyhawks"
+ },
  "766": {
   "abbr": "BEL",
   "conf": "MISSOURIVALLEY",
@@ -653,11 +785,29 @@
   "div": "D1",
   "name": "Austin Peay Governors"
  },
+ "768": {
+  "abbr": "MORE",
+  "conf": "OHIOVALLEY",
+  "div": "D1",
+  "name": "Morehead State Eagles"
+ },
+ "769": {
+  "abbr": "SIUE",
+  "conf": "OHIOVALLEY",
+  "div": "D1",
+  "name": "SIU-Edwardsville Cougars"
+ },
  "772": {
   "abbr": "INST",
   "conf": "MISSOURIVALLEY",
   "div": "D1",
   "name": "Indiana State Sycamores"
+ },
+ "773": {
+  "abbr": "UNI",
+  "conf": "MISSOURIVALLEY",
+  "div": "D1",
+  "name": "Northern Iowa Panthers"
  },
  "774": {
   "abbr": "ILST",
@@ -677,11 +827,23 @@
   "div": "D1",
   "name": "Southern Illinois Salukis"
  },
+ "778": {
+  "abbr": "BRAD",
+  "conf": "MISSOURIVALLEY",
+  "div": "D1",
+  "name": "Bradley Braves"
+ },
  "779": {
   "abbr": "MOSU",
   "conf": "CONFERENCEUSA",
   "div": "D1",
   "name": "Missouri State Bears"
+ },
+ "780": {
+  "abbr": "EVAN",
+  "conf": "MISSOURIVALLEY",
+  "div": "D1",
+  "name": "Evansville Purple Aces"
  },
  "781": {
   "abbr": "WICH",
@@ -749,6 +911,12 @@
   "div": "D1",
   "name": "Kansas Jayhawks"
  },
+ "792": {
+  "abbr": "UALR",
+  "conf": "WAC",
+  "div": "D1",
+  "name": "Little Rock Trojans"
+ },
  "793": {
   "abbr": "USA",
   "conf": "SUNBELT",
@@ -809,6 +977,18 @@
   "div": "D1",
   "name": "Northern Arizona Lumberjacks"
  },
+ "805": {
+  "abbr": "SAC",
+  "conf": "BIGWEST",
+  "div": "D1",
+  "name": "Sacramento State Hornets"
+ },
+ "806": {
+  "abbr": "WEB",
+  "conf": "BIGSKY",
+  "div": "D1",
+  "name": "Weber State Wildcats"
+ },
  "807": {
   "abbr": "EWU",
   "conf": "BIGSKY",
@@ -821,11 +1001,29 @@
   "div": "D1",
   "name": "Idaho State Bengals"
  },
+ "809": {
+  "abbr": "PRST",
+  "conf": "BIGSKY",
+  "div": "D1",
+  "name": "Portland State Vikings"
+ },
  "810": {
   "abbr": "UNCO",
   "conf": "BIGSKY",
   "div": "D1",
   "name": "Northern Colorado Bears"
+ },
+ "811": {
+  "abbr": "MTST",
+  "conf": "BIGSKY",
+  "div": "D1",
+  "name": "Montana State Bobcats"
+ },
+ "813": {
+  "abbr": "UND",
+  "conf": "SUMMIT",
+  "div": "D1",
+  "name": "North Dakota Fighting Hawks"
  },
  "815": {
   "abbr": "IDHO",
@@ -838,6 +1036,12 @@
   "conf": "BIG12",
   "div": "D1",
   "name": "UCF Knights"
+ },
+ "817": {
+  "abbr": "MEM",
+  "conf": "AMERICAN",
+  "div": "D1",
+  "name": "Memphis Tigers"
  },
  "819": {
   "abbr": "TLSA",
@@ -869,6 +1073,12 @@
   "div": "D1",
   "name": "Cincinnati Bearcats"
  },
+ "825": {
+  "abbr": "ECU",
+  "conf": "AMERICAN",
+  "div": "D1",
+  "name": "East Carolina Pirates"
+ },
  "826": {
   "abbr": "CONN",
   "conf": "BIGEAST",
@@ -899,6 +1109,12 @@
   "div": "D1",
   "name": "UNC Greensboro Spartans"
  },
+ "831": {
+  "abbr": "WCU",
+  "conf": "SOUTHERN",
+  "div": "D1",
+  "name": "Western Carolina Catamounts"
+ },
  "832": {
   "abbr": "WOF",
   "conf": "SOUTHERN",
@@ -910,6 +1126,18 @@
   "conf": "SOUTHERN",
   "div": "D1",
   "name": "Mercer Bears"
+ },
+ "834": {
+  "abbr": "SAM",
+  "conf": "SOUTHERN",
+  "div": "D1",
+  "name": "Samford Bulldogs"
+ },
+ "835": {
+  "abbr": "FUR",
+  "conf": "SOUTHERN",
+  "div": "D1",
+  "name": "Furman Paladins"
  },
  "836": {
   "abbr": "ETSU",
@@ -935,6 +1163,18 @@
   "div": "D1",
   "name": "South Dakota State Jackrabbits"
  },
+ "841": {
+  "abbr": "DEN",
+  "conf": "WCC",
+  "div": "D1",
+  "name": "Denver Pioneers"
+ },
+ "842": {
+  "abbr": "IUIN",
+  "conf": "HORIZON",
+  "div": "D1",
+  "name": "IU Indianapolis Jaguars"
+ },
  "843": {
   "abbr": "NDSU",
   "conf": "SUMMIT",
@@ -947,11 +1187,41 @@
   "div": "D1",
   "name": "South Dakota Coyotes"
  },
+ "845": {
+  "abbr": "WIU",
+  "conf": "OHIOVALLEY",
+  "div": "D1",
+  "name": "Western Illinois Leathernecks"
+ },
+ "846": {
+  "abbr": "LBSU",
+  "conf": "BIGWEST",
+  "div": "D1",
+  "name": "Long Beach State 49ers"
+ },
+ "847": {
+  "abbr": "UCI",
+  "conf": "BIGWEST",
+  "div": "D1",
+  "name": "UC Irvine Anteaters"
+ },
+ "848": {
+  "abbr": "UCSB",
+  "conf": "BIGWEST",
+  "div": "D1",
+  "name": "UC Santa Barbara Gauchos"
+ },
  "849": {
   "abbr": "CP",
   "conf": "BIGWEST",
   "div": "D1",
   "name": "Cal Poly Mustangs"
+ },
+ "850": {
+  "abbr": "UCRV",
+  "conf": "BIGWEST",
+  "div": "D1",
+  "name": "UC Riverside Highlanders"
  },
  "852": {
   "abbr": "CSF",
@@ -977,6 +1247,12 @@
   "div": "D1",
   "name": "Middle Tennessee Blue Raiders"
  },
+ "858": {
+  "abbr": "MRSH",
+  "conf": "SUNBELT",
+  "div": "D1",
+  "name": "Marshall Thundering Herd"
+ },
  "859": {
   "abbr": "USM",
   "conf": "SUNBELT",
@@ -1001,6 +1277,12 @@
   "div": "D1",
   "name": "Louisiana Tech Bulldogs"
  },
+ "864": {
+  "abbr": "UTSA",
+  "conf": "AMERICAN",
+  "div": "D1",
+  "name": "UTSA Roadrunners"
+ },
  "865": {
   "abbr": "FIU",
   "conf": "CONFERENCEUSA",
@@ -1019,11 +1301,23 @@
   "div": "D1",
   "name": "Florida Atlantic Owls"
  },
+ "868": {
+  "abbr": "ODU",
+  "conf": "SUNBELT",
+  "div": "D1",
+  "name": "Old Dominion Monarchs"
+ },
  "870": {
   "abbr": "CHS",
   "conf": "NORTHEAST",
   "div": "D1",
   "name": "Chicago State Cougars"
+ },
+ "871": {
+  "abbr": "UVU",
+  "conf": "BIGWEST",
+  "div": "D1",
+  "name": "Utah Valley Wolverines"
  },
  "872": {
   "abbr": "NMSU",
@@ -1031,11 +1325,29 @@
   "div": "D1",
   "name": "New Mexico State Aggies"
  },
+ "873": {
+  "abbr": "SEA",
+  "conf": "WCC",
+  "div": "D1",
+  "name": "Seattle Redhawks"
+ },
  "874": {
   "abbr": "UMKC",
   "conf": "SUMMIT",
   "div": "D1",
   "name": "Kansas City Roos"
+ },
+ "875": {
+  "abbr": "UTRGV",
+  "conf": "SOUTHLAND",
+  "div": "D1",
+  "name": "Texas Rio Grande Valley Vaqueros"
+ },
+ "876": {
+  "abbr": "GC",
+  "conf": "MOUNTAINWEST",
+  "div": "D1",
+  "name": "Grand Canyon Antelopes"
  },
  "877": {
   "abbr": "SELA",
@@ -1067,6 +1379,12 @@
   "div": "D1",
   "name": "Houston Christian Huskies"
  },
+ "883": {
+  "abbr": "AC",
+  "conf": "WAC",
+  "div": "D1",
+  "name": "Abilene Christian Wildcats"
+ },
  "884": {
   "abbr": "NICH",
   "conf": "SOUTHLAND",
@@ -1090,6 +1408,12 @@
   "conf": "SOUTHLAND",
   "div": "D1",
   "name": "New Orleans Privateers"
+ },
+ "888": {
+  "abbr": "LAM",
+  "conf": "SOUTHLAND",
+  "div": "D1",
+  "name": "Lamar Cardinals"
  },
  "889": {
   "abbr": "AMCC",
@@ -1120,6 +1444,12 @@
   "conf": "SWAC",
   "div": "D1",
   "name": "Mississippi Valley State Delta Devils"
+ },
+ "895": {
+  "abbr": "PV",
+  "conf": "SWAC",
+  "div": "D1",
+  "name": "Prairie View A&M Panthers"
  },
  "897": {
   "abbr": "SOU",
@@ -1157,6 +1487,18 @@
   "div": "D1",
   "name": "Howard Bison"
  },
+ "904": {
+  "abbr": "NCAT",
+  "conf": "CAA",
+  "div": "D1",
+  "name": "North Carolina A&T Aggies"
+ },
+ "905": {
+  "abbr": "MORG",
+  "conf": "MEAC",
+  "div": "D1",
+  "name": "Morgan State Bears"
+ },
  "906": {
   "abbr": "COPP",
   "conf": "MEAC",
@@ -1180,6 +1522,12 @@
   "conf": "MEAC",
   "div": "D1",
   "name": "Maryland-Eastern Shore Hawks"
+ },
+ "911": {
+  "abbr": "NCCU",
+  "conf": "MEAC",
+  "div": "D1",
+  "name": "North Carolina Central Eagles"
  },
  "912": {
   "abbr": "DSU",
@@ -1246,6 +1594,12 @@
   "conf": "ACC",
   "div": "D1",
   "name": "Syracuse Orange"
+ },
+ "923": {
+  "abbr": "LOU",
+  "conf": "ACC",
+  "div": "D1",
+  "name": "Louisville Cardinals"
  },
  "924": {
   "abbr": "FSU",
@@ -1343,6 +1697,24 @@
   "div": "D1",
   "name": "Lehigh Mountain Hawks"
  },
+ "941": {
+  "abbr": "LAF",
+  "conf": "PATRIOTLEAGUE",
+  "div": "D1",
+  "name": "Lafayette Leopards"
+ },
+ "943": {
+  "abbr": "COLG",
+  "conf": "PATRIOTLEAGUE",
+  "div": "D1",
+  "name": "Colgate Raiders"
+ },
+ "944": {
+  "abbr": "BUCK",
+  "conf": "PATRIOTLEAGUE",
+  "div": "D1",
+  "name": "Bucknell Bison"
+ },
  "945": {
   "abbr": "BU",
   "conf": "PATRIOTLEAGUE",
@@ -1378,6 +1750,12 @@
   "conf": "BIGSOUTH",
   "div": "D1",
   "name": "Presbyterian Blue Hose"
+ },
+ "954": {
+  "abbr": "WIN",
+  "conf": "BIGSOUTH",
+  "div": "D1",
+  "name": "Winthrop Eagles"
  },
  "955": {
   "abbr": "RAD",
@@ -1451,17 +1829,41 @@
   "div": "D1",
   "name": "Colorado State Rams"
  },
+ "967": {
+  "abbr": "UNM",
+  "conf": "MOUNTAINWEST",
+  "div": "D1",
+  "name": "New Mexico Lobos"
+ },
+ "968": {
+  "abbr": "SJSU",
+  "conf": "MOUNTAINWEST",
+  "div": "D1",
+  "name": "San Jose State Spartans"
+ },
  "970": {
   "abbr": "UNLV",
   "conf": "MOUNTAINWEST",
   "div": "D1",
   "name": "UNLV Rebels"
  },
+ "971": {
+  "abbr": "USU",
+  "conf": "PAC12",
+  "div": "D1",
+  "name": "Utah State Aggies"
+ },
  "972": {
   "abbr": "WYO",
   "conf": "MOUNTAINWEST",
   "div": "D1",
   "name": "Wyoming Cowboys"
+ },
+ "975": {
+  "abbr": "FRES",
+  "conf": "PAC12",
+  "div": "D1",
+  "name": "Fresno State Bulldogs"
  },
  "976": {
   "abbr": "SDSU",
@@ -1553,6 +1955,12 @@
   "div": "D1",
   "name": "Texas A&M Aggies"
  },
+ "991": {
+  "abbr": "M-OH",
+  "conf": "MIDAMERICAN",
+  "div": "D1",
+  "name": "Miami (OH) RedHawks"
+ },
  "992": {
   "abbr": "EMU",
   "conf": "MIDAMERICAN",
@@ -1564,6 +1972,12 @@
   "conf": "MIDAMERICAN",
   "div": "D1",
   "name": "Ball State Cardinals"
+ },
+ "994": {
+  "abbr": "OHIO",
+  "conf": "MIDAMERICAN",
+  "div": "D1",
+  "name": "Ohio Bobcats"
  },
  "995": {
   "abbr": "TOL",
