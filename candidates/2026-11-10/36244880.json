@@ -3,7 +3,7 @@
  "game": "Buffalo Bills @ Minnesota Vikings",
  "abbr": "BUF@MIN",
  "kickoff": "2026-11-10T01:16:00.000Z",
- "recorded_utc": "2026-11-06T10:55:17Z",
+ "recorded_utc": "2026-11-06T19:26:15Z",
  "anchor": "2026-11-02T0000Z",
  "coherence": {
   "side_dir": "Buffalo Bills",
@@ -11,7 +11,7 @@
   "side_conflict": 0,
   "total_dir": "FEWER",
   "total_agree": 4,
-  "total_conflict": 0,
+  "total_conflict": 1,
   "markets": [
    {
     "mkt": "ml",
@@ -49,6 +49,11 @@
     "dir": "FEWER"
    },
    {
+    "mkt": "1H away TT",
+    "axis": "total",
+    "dir": "MORE"
+   },
+   {
     "mkt": "2H total",
     "axis": "total",
     "dir": "FEWER"
@@ -61,15 +66,15 @@
     "open": 0,
     "open_odds": -146,
     "now": 0,
-    "now_odds": -174,
-    "n": 323
+    "now_odds": -178,
+    "n": 329
    },
    "Minnesota Vikings": {
     "open": 0,
     "open_odds": 124,
     "now": 0,
-    "now_odds": 146,
-    "n": 323
+    "now_odds": 150,
+    "n": 329
    }
   },
   "spread": {
@@ -78,14 +83,14 @@
     "open_odds": -104,
     "now": -3,
     "now_odds": -115,
-    "n": 323
+    "n": 329
    },
    "Minnesota Vikings": {
     "open": 3,
     "open_odds": -118,
     "now": 3,
     "now_odds": -105,
-    "n": 323
+    "n": 329
    }
   },
   "total": {
@@ -94,14 +99,14 @@
     "open_odds": -104,
     "now": 44.5,
     "now_odds": -110,
-    "n": 323
+    "n": 329
    },
    "Under": {
     "open": 46.5,
     "open_odds": -118,
     "now": 44.5,
     "now_odds": -110,
-    "n": 323
+    "n": 329
    }
   },
   "1H home TT": {
@@ -109,15 +114,15 @@
     "open": 10.5,
     "open_odds": 116,
     "now": 9.5,
-    "now_odds": -154,
-    "n": 321
+    "now_odds": -156,
+    "n": 327
    },
    "Under": {
     "open": 10.5,
     "open_odds": -148,
     "now": 9.5,
-    "now_odds": 120,
-    "n": 321
+    "now_odds": 122,
+    "n": 327
    }
   },
   "1H total": {
@@ -126,30 +131,30 @@
     "open_odds": -120,
     "now": 22.5,
     "now_odds": -110,
-    "n": 321
+    "n": 327
    },
    "Under": {
     "open": 22.5,
     "open_odds": 100,
     "now": 22.5,
     "now_odds": -110,
-    "n": 321
+    "n": 327
    }
   },
   "1H away TT": {
    "Over": {
     "open": 10.5,
     "open_odds": -113,
-    "now": 10.5,
-    "now_odds": -111,
-    "n": 321
+    "now": 11.5,
+    "now_odds": -113,
+    "n": 327
    },
    "Under": {
     "open": 10.5,
     "open_odds": -113,
-    "now": 10.5,
-    "now_odds": -115,
-    "n": 321
+    "now": 11.5,
+    "now_odds": -113,
+    "n": 327
    }
   },
   "1H spread": {
@@ -157,15 +162,15 @@
     "open": -1.5,
     "open_odds": 105,
     "now": -1.5,
-    "now_odds": -105,
-    "n": 321
+    "now_odds": -110,
+    "n": 327
    },
    "Minnesota Vikings": {
     "open": 1.5,
     "open_odds": -125,
     "now": 1.5,
-    "now_odds": -115,
-    "n": 321
+    "now_odds": -110,
+    "n": 327
    }
   },
   "2H total": {
@@ -173,15 +178,15 @@
     "open": 22.5,
     "open_odds": -120,
     "now": 22.5,
-    "now_odds": -105,
-    "n": 321
+    "now_odds": -110,
+    "n": 327
    },
    "Under": {
     "open": 22.5,
     "open_odds": 100,
     "now": 22.5,
-    "now_odds": -115,
-    "n": 321
+    "now_odds": -110,
+    "n": 327
    }
   },
   "2H spread": {
@@ -190,52 +195,52 @@
     "open_odds": 100,
     "now": -1.5,
     "now_odds": -110,
-    "n": 321
+    "n": 327
    },
    "Minnesota Vikings": {
     "open": 1.5,
     "open_odds": -120,
     "now": 1.5,
     "now_odds": -110,
-    "n": 321
+    "n": 327
    }
   }
  },
  "splits": {
   "spread": {
    "away": {
-    "tix": 68,
+    "tix": 67,
     "mny": 80,
-    "d_tix": 8,
+    "d_tix": 7,
     "d_mny": 1,
-    "div": -7,
-    "n": 257
+    "div": -6,
+    "n": 263
    },
    "home": {
-    "tix": 32,
+    "tix": 33,
     "mny": 20,
-    "d_tix": -8,
+    "d_tix": -7,
     "d_mny": -1,
-    "div": 7,
-    "n": 257
+    "div": 6,
+    "n": 263
    }
   },
   "total": {
    "over": {
-    "tix": 60,
-    "mny": 52,
-    "d_tix": 6,
-    "d_mny": 0,
+    "tix": 62,
+    "mny": 54,
+    "d_tix": 8,
+    "d_mny": 2,
     "div": -6,
-    "n": 257
+    "n": 263
    },
    "under": {
-    "tix": 40,
-    "mny": 48,
-    "d_tix": -6,
-    "d_mny": 0,
+    "tix": 38,
+    "mny": 46,
+    "d_tix": -8,
+    "d_mny": -2,
     "div": 6,
-    "n": 257
+    "n": 263
    }
   },
   "moneyline": {
@@ -245,7 +250,7 @@
     "d_tix": -3,
     "d_mny": -6,
     "div": -3,
-    "n": 257
+    "n": 263
    },
    "away": {
     "tix": 90,
@@ -253,7 +258,7 @@
     "d_tix": 3,
     "d_mny": 6,
     "div": 3,
-    "n": 257
+    "n": 263
    }
   }
  },
@@ -272,19 +277,18 @@
  },
  "suggested": {
   "side": 1.0,
-  "total": 1.0,
+  "total": 0.0,
   "side_dir": "Buffalo Bills",
   "total_dir": "FEWER",
   "why": [
-   "side coherent (4 markets)",
-   "total coherent (4 markets)"
+   "side coherent (4 markets)"
   ]
  },
  "gates": {
   "conflict_clear": true,
   "has_splits": true,
   "coherent_side": true,
-  "coherent_total": true
+  "coherent_total": false
  },
  "frozen": false
 }

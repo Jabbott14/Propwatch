@@ -3,7 +3,7 @@
  "game": "Tampa Bay Buccaneers @ Chicago Bears",
  "abbr": "TB@CHI",
  "kickoff": "2026-11-09T01:21:00.000Z",
- "recorded_utc": "2026-11-06T10:55:17Z",
+ "recorded_utc": "2026-11-06T19:26:15Z",
  "anchor": "2026-11-02T0000Z",
  "coherence": {
   "side_dir": "Tampa Bay Buccaneers",
@@ -52,14 +52,14 @@
     "open_odds": -118,
     "now": 6.5,
     "now_odds": -115,
-    "n": 305
+    "n": 311
    },
    "Chicago Bears": {
     "open": -6.5,
     "open_odds": -104,
     "now": -6.5,
     "now_odds": -105,
-    "n": 305
+    "n": 311
    }
   },
   "total": {
@@ -68,14 +68,14 @@
     "open_odds": -104,
     "now": 47.5,
     "now_odds": -110,
-    "n": 305
+    "n": 311
    },
    "Under": {
     "open": 47.5,
     "open_odds": -118,
     "now": 47.5,
     "now_odds": -110,
-    "n": 305
+    "n": 311
    }
   },
   "ml": {
@@ -84,14 +84,14 @@
     "open_odds": 235,
     "now": 0,
     "now_odds": 220,
-    "n": 305
+    "n": 311
    },
    "Chicago Bears": {
     "open": 0,
     "open_odds": -290,
     "now": 0,
     "now_odds": -270,
-    "n": 305
+    "n": 311
    }
   },
   "1H away TT": {
@@ -100,14 +100,14 @@
     "open_odds": -146,
     "now": 9.5,
     "now_odds": -142,
-    "n": 302
+    "n": 308
    },
    "Under": {
     "open": 9.5,
     "open_odds": 114,
     "now": 9.5,
     "now_odds": 112,
-    "n": 302
+    "n": 308
    }
   },
   "1H total": {
@@ -116,14 +116,14 @@
     "open_odds": -105,
     "now": 23.5,
     "now_odds": -110,
-    "n": 302
+    "n": 308
    },
    "Under": {
     "open": 23.5,
     "open_odds": -115,
     "now": 23.5,
     "now_odds": -110,
-    "n": 302
+    "n": 308
    }
   },
   "1H home TT": {
@@ -132,14 +132,14 @@
     "open_odds": -113,
     "now": 13.5,
     "now_odds": -122,
-    "n": 302
+    "n": 308
    },
    "Under": {
     "open": 13.5,
     "open_odds": -113,
     "now": 13.5,
     "now_odds": -104,
-    "n": 302
+    "n": 308
    }
   },
   "1H spread": {
@@ -148,14 +148,14 @@
     "open_odds": -110,
     "now": 3.5,
     "now_odds": -110,
-    "n": 302
+    "n": 308
    },
    "Chicago Bears": {
     "open": -3.5,
     "open_odds": -110,
     "now": -3.5,
     "now_odds": -110,
-    "n": 302
+    "n": 308
    }
   },
   "2H total": {
@@ -164,30 +164,30 @@
     "open_odds": 100,
     "now": 23.5,
     "now_odds": -110,
-    "n": 302
+    "n": 308
    },
    "Under": {
     "open": 23.5,
     "open_odds": -120,
     "now": 23.5,
     "now_odds": -110,
-    "n": 302
+    "n": 308
    }
   },
   "2H spread": {
    "Tampa Bay Buccaneers": {
     "open": 2.5,
     "open_odds": 100,
-    "now": 2.5,
-    "now_odds": 105,
-    "n": 302
+    "now": 3.5,
+    "now_odds": -125,
+    "n": 308
    },
    "Chicago Bears": {
     "open": -2.5,
     "open_odds": -120,
-    "now": -2.5,
-    "now_odds": -125,
-    "n": 302
+    "now": -3.5,
+    "now_odds": 105,
+    "n": 308
    }
   }
  },
@@ -195,37 +195,37 @@
   "spread": {
    "home": {
     "tix": 68,
-    "mny": 78,
+    "mny": 77,
     "d_tix": 13,
-    "d_mny": 6,
-    "div": -7,
-    "n": 257
+    "d_mny": 5,
+    "div": -8,
+    "n": 263
    },
    "away": {
     "tix": 32,
-    "mny": 22,
+    "mny": 23,
     "d_tix": -13,
-    "d_mny": -6,
-    "div": 7,
-    "n": 257
+    "d_mny": -5,
+    "div": 8,
+    "n": 263
    }
   },
   "total": {
    "under": {
-    "tix": 41,
-    "mny": 32,
-    "d_tix": -15,
-    "d_mny": -23,
-    "div": -8,
-    "n": 257
+    "tix": 39,
+    "mny": 29,
+    "d_tix": -17,
+    "d_mny": -26,
+    "div": -9,
+    "n": 263
    },
    "over": {
-    "tix": 59,
-    "mny": 68,
-    "d_tix": 15,
-    "d_mny": 23,
-    "div": 8,
-    "n": 257
+    "tix": 61,
+    "mny": 71,
+    "d_tix": 17,
+    "d_mny": 26,
+    "div": 9,
+    "n": 263
    }
   },
   "moneyline": {
@@ -235,7 +235,7 @@
     "d_tix": 3,
     "d_mny": 5,
     "div": 2,
-    "n": 257
+    "n": 263
    },
    "away": {
     "tix": 5,
@@ -243,7 +243,7 @@
     "d_tix": -3,
     "d_mny": -5,
     "div": -2,
-    "n": 257
+    "n": 263
    }
   }
  },
@@ -251,8 +251,8 @@
  "money_lean": {
   "spread": {
    "side": "home",
-   "mny": 78,
-   "d_mny": 6
+   "mny": 77,
+   "d_mny": 5
   },
   "moneyline": {
    "side": "home",

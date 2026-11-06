@@ -3,7 +3,7 @@
  "game": "Las Vegas Raiders @ San Francisco 49ers",
  "abbr": "LV@SF",
  "kickoff": "2026-11-08T21:06:00.000Z",
- "recorded_utc": "2026-11-06T10:55:17Z",
+ "recorded_utc": "2026-11-06T19:26:15Z",
  "anchor": "2026-11-02T0000Z",
  "coherence": {
   "side_dir": "San Francisco 49ers",
@@ -42,14 +42,14 @@
     "open_odds": 385,
     "now": 0,
     "now_odds": 385,
-    "n": 324
+    "n": 330
    },
    "San Francisco 49ers": {
     "open": 0,
     "open_odds": -500,
     "now": 0,
     "now_odds": -500,
-    "n": 324
+    "n": 330
    }
   },
   "total": {
@@ -58,14 +58,14 @@
     "open_odds": -110,
     "now": 51.5,
     "now_odds": -115,
-    "n": 324
+    "n": 330
    },
    "Under": {
     "open": 51.5,
     "open_odds": -110,
     "now": 51.5,
     "now_odds": -105,
-    "n": 324
+    "n": 330
    }
   },
   "spread": {
@@ -74,14 +74,14 @@
     "open_odds": -115,
     "now": 9.5,
     "now_odds": -110,
-    "n": 324
+    "n": 330
    },
    "San Francisco 49ers": {
     "open": -9.5,
     "open_odds": -105,
     "now": -9.5,
     "now_odds": -110,
-    "n": 324
+    "n": 330
    }
   },
   "1H spread": {
@@ -90,14 +90,14 @@
     "open_odds": -110,
     "now": 6.5,
     "now_odds": -110,
-    "n": 321
+    "n": 327
    },
    "San Francisco 49ers": {
     "open": -6.5,
     "open_odds": -110,
     "now": -6.5,
     "now_odds": -110,
-    "n": 321
+    "n": 327
    }
   },
   "1H away TT": {
@@ -106,14 +106,14 @@
     "open_odds": -146,
     "now": 9.5,
     "now_odds": -142,
-    "n": 321
+    "n": 327
    },
    "Under": {
     "open": 9.5,
     "open_odds": 114,
     "now": 9.5,
     "now_odds": 112,
-    "n": 321
+    "n": 327
    }
   },
   "1H total": {
@@ -122,14 +122,14 @@
     "open_odds": -120,
     "now": 26.5,
     "now_odds": -110,
-    "n": 321
+    "n": 327
    },
    "Under": {
     "open": 26.5,
     "open_odds": 100,
     "now": 26.5,
     "now_odds": -110,
-    "n": 321
+    "n": 327
    }
   },
   "1H home TT": {
@@ -138,14 +138,14 @@
     "open_odds": -122,
     "now": 16.5,
     "now_odds": -118,
-    "n": 321
+    "n": 327
    },
    "Under": {
     "open": 16.5,
     "open_odds": -104,
     "now": 16.5,
     "now_odds": -108,
-    "n": 321
+    "n": 327
    }
   },
   "2H total": {
@@ -154,14 +154,14 @@
     "open_odds": -110,
     "now": 25.5,
     "now_odds": -110,
-    "n": 321
+    "n": 327
    },
    "Under": {
     "open": 24.5,
     "open_odds": -110,
     "now": 25.5,
     "now_odds": -110,
-    "n": 321
+    "n": 327
    }
   },
   "2H spread": {
@@ -170,84 +170,84 @@
     "open_odds": -110,
     "now": 4.5,
     "now_odds": -110,
-    "n": 321
+    "n": 327
    },
    "San Francisco 49ers": {
     "open": -4.5,
     "open_odds": -110,
     "now": -4.5,
     "now_odds": -110,
-    "n": 321
+    "n": 327
    }
   }
  },
  "splits": {
   "spread": {
    "home": {
-    "tix": 48,
-    "mny": 49,
-    "d_tix": 5,
-    "d_mny": 9,
-    "div": 4,
-    "n": 257
+    "tix": 50,
+    "mny": 52,
+    "d_tix": 7,
+    "d_mny": 12,
+    "div": 5,
+    "n": 263
    },
    "away": {
-    "tix": 52,
-    "mny": 51,
-    "d_tix": -5,
-    "d_mny": -9,
-    "div": -4,
-    "n": 257
+    "tix": 50,
+    "mny": 48,
+    "d_tix": -7,
+    "d_mny": -12,
+    "div": -5,
+    "n": 263
    }
   },
   "total": {
    "over": {
     "tix": 67,
-    "mny": 81,
+    "mny": 80,
     "d_tix": 19,
-    "d_mny": 38,
-    "div": 19,
-    "n": 257
+    "d_mny": 37,
+    "div": 18,
+    "n": 263
    },
    "under": {
     "tix": 33,
-    "mny": 19,
+    "mny": 20,
     "d_tix": -19,
-    "d_mny": -38,
-    "div": -19,
-    "n": 257
+    "d_mny": -37,
+    "div": -18,
+    "n": 263
    }
   },
   "moneyline": {
    "away": {
     "tix": 3,
-    "mny": 4,
+    "mny": 3,
     "d_tix": -1,
-    "d_mny": -1,
-    "div": 0,
-    "n": 257
+    "d_mny": -2,
+    "div": -1,
+    "n": 263
    },
    "home": {
     "tix": 97,
-    "mny": 96,
+    "mny": 97,
     "d_tix": 1,
-    "d_mny": 1,
-    "div": 0,
-    "n": 257
+    "d_mny": 2,
+    "div": 1,
+    "n": 263
    }
   }
  },
- "money_conflict": "SPLIT",
+ "money_conflict": "AGREE",
  "money_lean": {
   "spread": {
-   "side": "away",
-   "mny": 51,
-   "d_mny": -9
+   "side": "home",
+   "mny": 52,
+   "d_mny": 12
   },
   "moneyline": {
    "side": "home",
-   "mny": 96,
-   "d_mny": 1
+   "mny": 97,
+   "d_mny": 2
   }
  },
  "suggested": {
