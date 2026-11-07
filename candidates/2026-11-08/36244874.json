@@ -3,11 +3,11 @@
  "game": "Houston Texans @ Los Angeles Chargers",
  "abbr": "HOU@LAC",
  "kickoff": "2026-11-08T21:06:00.000Z",
- "recorded_utc": "2026-11-06T19:26:15Z",
+ "recorded_utc": "2026-11-07T00:57:10Z",
  "anchor": "2026-11-02T0000Z",
  "coherence": {
   "side_dir": "Houston Texans",
-  "side_agree": 2,
+  "side_agree": 4,
   "side_conflict": 0,
   "total_dir": "FEWER",
   "total_agree": 4,
@@ -20,6 +20,16 @@
    },
    {
     "mkt": "ml",
+    "axis": "side",
+    "dir": "Houston Texans"
+   },
+   {
+    "mkt": "1H spread",
+    "axis": "side",
+    "dir": "Houston Texans"
+   },
+   {
+    "mkt": "2H spread",
     "axis": "side",
     "dir": "Houston Texans"
    },
@@ -56,15 +66,15 @@
     "open": -3.5,
     "open_odds": -115,
     "now": -5.5,
-    "now_odds": -105,
-    "n": 330
+    "now_odds": -110,
+    "n": 336
    },
    "Los Angeles Chargers": {
     "open": 3.5,
     "open_odds": -105,
     "now": 5.5,
-    "now_odds": -115,
-    "n": 330
+    "now_odds": -110,
+    "n": 336
    }
   },
   "total": {
@@ -73,14 +83,14 @@
     "open_odds": -115,
     "now": 40.5,
     "now_odds": -115,
-    "n": 330
+    "n": 336
    },
    "Under": {
     "open": 41.5,
     "open_odds": -105,
     "now": 40.5,
     "now_odds": -105,
-    "n": 330
+    "n": 336
    }
   },
   "ml": {
@@ -88,15 +98,15 @@
     "open": 0,
     "open_odds": -198,
     "now": 0,
-    "now_odds": -225,
-    "n": 330
+    "now_odds": -240,
+    "n": 336
    },
    "Los Angeles Chargers": {
     "open": 0,
     "open_odds": 166,
     "now": 0,
-    "now_odds": 188,
-    "n": 330
+    "now_odds": 198,
+    "n": 336
    }
   },
   "1H away TT": {
@@ -104,47 +114,47 @@
     "open": 10.5,
     "open_odds": -113,
     "now": 10.5,
-    "now_odds": -104,
-    "n": 327
+    "now_odds": -106,
+    "n": 333
    },
    "Under": {
     "open": 10.5,
     "open_odds": -113,
     "now": 10.5,
-    "now_odds": -122,
-    "n": 327
+    "now_odds": -120,
+    "n": 333
    }
   },
   "1H home TT": {
    "Over": {
     "open": 9.5,
     "open_odds": -106,
-    "now": 8.5,
-    "now_odds": -113,
-    "n": 327
+    "now": 7.5,
+    "now_odds": -111,
+    "n": 333
    },
    "Under": {
     "open": 9.5,
     "open_odds": -120,
-    "now": 8.5,
-    "now_odds": -113,
-    "n": 327
+    "now": 7.5,
+    "now_odds": -115,
+    "n": 333
    }
   },
   "1H spread": {
    "Houston Texans": {
     "open": -2.5,
     "open_odds": -125,
-    "now": -2.5,
-    "now_odds": -125,
-    "n": 327
+    "now": -3.5,
+    "now_odds": 100,
+    "n": 333
    },
    "Los Angeles Chargers": {
     "open": 2.5,
     "open_odds": 105,
-    "now": 2.5,
-    "now_odds": 105,
-    "n": 327
+    "now": 3.5,
+    "now_odds": -120,
+    "n": 333
    }
   },
   "1H total": {
@@ -153,14 +163,14 @@
     "open_odds": 100,
     "now": 20.5,
     "now_odds": 110,
-    "n": 327
+    "n": 333
    },
    "Under": {
     "open": 20.5,
     "open_odds": -120,
     "now": 20.5,
     "now_odds": -130,
-    "n": 327
+    "n": 333
    }
   },
   "2H spread": {
@@ -168,15 +178,15 @@
     "open": -2.5,
     "open_odds": -110,
     "now": -2.5,
-    "now_odds": -110,
-    "n": 327
+    "now_odds": -120,
+    "n": 333
    },
    "Los Angeles Chargers": {
     "open": 2.5,
     "open_odds": -110,
     "now": 2.5,
-    "now_odds": -110,
-    "n": 327
+    "now_odds": 100,
+    "n": 333
    }
   },
   "2H total": {
@@ -185,70 +195,70 @@
     "open_odds": -120,
     "now": 20.5,
     "now_odds": 100,
-    "n": 327
+    "n": 333
    },
    "Under": {
     "open": 19.5,
     "open_odds": 100,
     "now": 20.5,
     "now_odds": -120,
-    "n": 327
+    "n": 333
    }
   }
  },
  "splits": {
   "spread": {
    "away": {
-    "tix": 64,
+    "tix": 65,
     "mny": 76,
-    "d_tix": -7,
+    "d_tix": -6,
     "d_mny": -15,
-    "div": -8,
-    "n": 263
+    "div": -9,
+    "n": 269
    },
    "home": {
-    "tix": 36,
+    "tix": 35,
     "mny": 24,
-    "d_tix": 7,
+    "d_tix": 6,
     "d_mny": 15,
-    "div": 8,
-    "n": 263
+    "div": 9,
+    "n": 269
    }
   },
   "total": {
    "under": {
-    "tix": 31,
-    "mny": 40,
-    "d_tix": 1,
-    "d_mny": -8,
-    "div": -9,
-    "n": 263
+    "tix": 30,
+    "mny": 43,
+    "d_tix": 0,
+    "d_mny": -5,
+    "div": -5,
+    "n": 269
    },
    "over": {
-    "tix": 69,
-    "mny": 60,
-    "d_tix": -1,
-    "d_mny": 8,
-    "div": 9,
-    "n": 263
+    "tix": 70,
+    "mny": 57,
+    "d_tix": 0,
+    "d_mny": 5,
+    "div": 5,
+    "n": 269
    }
   },
   "moneyline": {
    "away": {
     "tix": 87,
-    "mny": 74,
+    "mny": 73,
     "d_tix": 0,
-    "d_mny": -9,
-    "div": -9,
-    "n": 263
+    "d_mny": -10,
+    "div": -10,
+    "n": 269
    },
    "home": {
     "tix": 13,
-    "mny": 26,
+    "mny": 27,
     "d_tix": 0,
-    "d_mny": 9,
-    "div": 9,
-    "n": 263
+    "d_mny": 10,
+    "div": 10,
+    "n": 269
    }
   }
  },
@@ -261,21 +271,23 @@
   },
   "moneyline": {
    "side": "away",
-   "mny": 74,
-   "d_mny": -9
+   "mny": 73,
+   "d_mny": -10
   }
  },
  "suggested": {
-  "side": 0.0,
+  "side": 1.0,
   "total": 0.0,
   "side_dir": "Houston Texans",
   "total_dir": "FEWER",
-  "why": []
+  "why": [
+   "side coherent (4 markets)"
+  ]
  },
  "gates": {
   "conflict_clear": true,
   "has_splits": true,
-  "coherent_side": false,
+  "coherent_side": true,
   "coherent_total": false
  },
  "frozen": false

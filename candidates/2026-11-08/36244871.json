@@ -3,7 +3,7 @@
  "game": "New York Jets @ Kansas City Chiefs",
  "abbr": "NYJ@KC",
  "kickoff": "2026-11-08T18:01:00.000Z",
- "recorded_utc": "2026-11-06T19:26:15Z",
+ "recorded_utc": "2026-11-07T00:57:10Z",
  "anchor": "2026-11-02T0000Z",
  "coherence": {
   "side_dir": "Kansas City Chiefs",
@@ -62,14 +62,14 @@
     "open_odds": -105,
     "now": 47.5,
     "now_odds": -110,
-    "n": 330
+    "n": 336
    },
    "Under": {
     "open": 46.5,
     "open_odds": -115,
     "now": 47.5,
     "now_odds": -110,
-    "n": 330
+    "n": 336
    }
   },
   "ml": {
@@ -78,14 +78,14 @@
     "open_odds": 400,
     "now": 0,
     "now_odds": 420,
-    "n": 330
+    "n": 336
    },
    "Kansas City Chiefs": {
     "open": 0,
     "open_odds": -520,
     "now": 0,
     "now_odds": -560,
-    "n": 330
+    "n": 336
    }
   },
   "spread": {
@@ -94,14 +94,14 @@
     "open_odds": -110,
     "now": 9.5,
     "now_odds": 100,
-    "n": 330
+    "n": 336
    },
    "Kansas City Chiefs": {
     "open": -9.5,
     "open_odds": -110,
     "now": -9.5,
     "now_odds": -120,
-    "n": 330
+    "n": 336
    }
   },
   "1H total": {
@@ -110,14 +110,14 @@
     "open_odds": -110,
     "now": 23.5,
     "now_odds": -120,
-    "n": 327
+    "n": 333
    },
    "Under": {
     "open": 23.5,
     "open_odds": -110,
     "now": 23.5,
     "now_odds": 100,
-    "n": 327
+    "n": 333
    }
   },
   "1H away TT": {
@@ -126,14 +126,14 @@
     "open_odds": -118,
     "now": 8.5,
     "now_odds": -120,
-    "n": 327
+    "n": 333
    },
    "Under": {
     "open": 8.5,
     "open_odds": -108,
     "now": 8.5,
     "now_odds": -106,
-    "n": 327
+    "n": 333
    }
   },
   "1H home TT": {
@@ -142,14 +142,14 @@
     "open_odds": 104,
     "now": 14.5,
     "now_odds": -106,
-    "n": 327
+    "n": 333
    },
    "Under": {
     "open": 14.5,
     "open_odds": -132,
     "now": 14.5,
     "now_odds": -120,
-    "n": 327
+    "n": 333
    }
   },
   "1H spread": {
@@ -158,14 +158,14 @@
     "open_odds": -110,
     "now": 6.5,
     "now_odds": -105,
-    "n": 327
+    "n": 333
    },
    "Kansas City Chiefs": {
     "open": -6.5,
     "open_odds": -110,
     "now": -6.5,
     "now_odds": -115,
-    "n": 327
+    "n": 333
    }
   },
   "2H spread": {
@@ -174,14 +174,14 @@
     "open_odds": -115,
     "now": 4.5,
     "now_odds": -110,
-    "n": 327
+    "n": 333
    },
    "Kansas City Chiefs": {
     "open": -4.5,
     "open_odds": -105,
     "now": -4.5,
     "now_odds": -110,
-    "n": 327
+    "n": 333
    }
   },
   "2H total": {
@@ -190,52 +190,52 @@
     "open_odds": -110,
     "now": 23.5,
     "now_odds": -110,
-    "n": 327
+    "n": 333
    },
    "Under": {
     "open": 21.5,
     "open_odds": -110,
     "now": 23.5,
     "now_odds": -110,
-    "n": 327
+    "n": 333
    }
   }
  },
  "splits": {
   "spread": {
    "away": {
-    "tix": 30,
-    "mny": 31,
-    "d_tix": -6,
-    "d_mny": -21,
+    "tix": 29,
+    "mny": 30,
+    "d_tix": -7,
+    "d_mny": -22,
     "div": -15,
-    "n": 263
+    "n": 269
    },
    "home": {
-    "tix": 70,
-    "mny": 69,
-    "d_tix": 6,
-    "d_mny": 21,
+    "tix": 71,
+    "mny": 70,
+    "d_tix": 7,
+    "d_mny": 22,
     "div": 15,
-    "n": 263
+    "n": 269
    }
   },
   "total": {
    "over": {
-    "tix": 61,
-    "mny": 68,
-    "d_tix": -2,
-    "d_mny": 2,
+    "tix": 62,
+    "mny": 69,
+    "d_tix": -1,
+    "d_mny": 3,
     "div": 4,
-    "n": 263
+    "n": 269
    },
    "under": {
-    "tix": 39,
-    "mny": 32,
-    "d_tix": 2,
-    "d_mny": -2,
+    "tix": 38,
+    "mny": 31,
+    "d_tix": 1,
+    "d_mny": -3,
     "div": -4,
-    "n": 263
+    "n": 269
    }
   },
   "moneyline": {
@@ -245,7 +245,7 @@
     "d_tix": 2,
     "d_mny": 1,
     "div": -1,
-    "n": 263
+    "n": 269
    },
    "away": {
     "tix": 2,
@@ -253,7 +253,7 @@
     "d_tix": -2,
     "d_mny": -1,
     "div": 1,
-    "n": 263
+    "n": 269
    }
   }
  },
@@ -261,8 +261,8 @@
  "money_lean": {
   "spread": {
    "side": "home",
-   "mny": 69,
-   "d_mny": 21
+   "mny": 70,
+   "d_mny": 22
   },
   "moneyline": {
    "side": "home",

@@ -3,11 +3,11 @@
  "game": "Cleveland Browns @ New Orleans Saints",
  "abbr": "CLE@NO",
  "kickoff": "2026-11-08T18:01:00.000Z",
- "recorded_utc": "2026-11-06T19:26:15Z",
+ "recorded_utc": "2026-11-07T00:57:10Z",
  "anchor": "2026-11-02T0000Z",
  "coherence": {
   "side_dir": "New Orleans Saints",
-  "side_agree": 2,
+  "side_agree": 4,
   "side_conflict": 0,
   "total_dir": "FEWER",
   "total_agree": 5,
@@ -19,7 +19,17 @@
     "dir": "New Orleans Saints"
    },
    {
+    "mkt": "ml",
+    "axis": "side",
+    "dir": "New Orleans Saints"
+   },
+   {
     "mkt": "1H spread",
+    "axis": "side",
+    "dir": "New Orleans Saints"
+   },
+   {
+    "mkt": "2H spread",
     "axis": "side",
     "dir": "New Orleans Saints"
    },
@@ -56,15 +66,15 @@
     "open": 2.5,
     "open_odds": -104,
     "now": 3,
-    "now_odds": -120,
-    "n": 330
+    "now_odds": -105,
+    "n": 336
    },
    "New Orleans Saints": {
     "open": -2.5,
     "open_odds": -118,
     "now": -3,
-    "now_odds": 100,
-    "n": 330
+    "now_odds": -115,
+    "n": 336
    }
   },
   "total": {
@@ -73,14 +83,14 @@
     "open_odds": -105,
     "now": 42.5,
     "now_odds": -110,
-    "n": 330
+    "n": 336
    },
    "Under": {
     "open": 43.5,
     "open_odds": -115,
     "now": 42.5,
     "now_odds": -110,
-    "n": 330
+    "n": 336
    }
   },
   "ml": {
@@ -88,15 +98,15 @@
     "open": 0,
     "open_odds": 124,
     "now": 0,
-    "now_odds": 126,
-    "n": 330
+    "now_odds": 140,
+    "n": 336
    },
    "New Orleans Saints": {
     "open": 0,
     "open_odds": -146,
     "now": 0,
-    "now_odds": -148,
-    "n": 330
+    "now_odds": -166,
+    "n": 336
    }
   },
   "1H away TT": {
@@ -104,15 +114,15 @@
     "open": 9.5,
     "open_odds": -158,
     "now": 9.5,
-    "now_odds": -132,
-    "n": 327
+    "now_odds": -125,
+    "n": 333
    },
    "Under": {
     "open": 9.5,
     "open_odds": 124,
     "now": 9.5,
-    "now_odds": 104,
-    "n": 327
+    "now_odds": -102,
+    "n": 333
    }
   },
   "1H total": {
@@ -121,14 +131,14 @@
     "open_odds": -110,
     "now": 20.5,
     "now_odds": 100,
-    "n": 327
+    "n": 333
    },
    "Under": {
     "open": 21.5,
     "open_odds": -110,
     "now": 20.5,
     "now_odds": -120,
-    "n": 327
+    "n": 333
    }
   },
   "1H home TT": {
@@ -136,15 +146,15 @@
     "open": 10.5,
     "open_odds": 100,
     "now": 10.5,
-    "now_odds": 112,
-    "n": 327
+    "now_odds": 108,
+    "n": 333
    },
    "Under": {
     "open": 10.5,
     "open_odds": -128,
     "now": 10.5,
-    "now_odds": -142,
-    "n": 327
+    "now_odds": -138,
+    "n": 333
    }
   },
   "1H spread": {
@@ -152,15 +162,15 @@
     "open": 1.5,
     "open_odds": -125,
     "now": 1.5,
-    "now_odds": -120,
-    "n": 327
+    "now_odds": -115,
+    "n": 333
    },
    "New Orleans Saints": {
     "open": -1.5,
     "open_odds": 105,
     "now": -1.5,
-    "now_odds": 100,
-    "n": 327
+    "now_odds": -105,
+    "n": 333
    }
   },
   "2H total": {
@@ -168,15 +178,15 @@
     "open": 20.5,
     "open_odds": -120,
     "now": 20.5,
-    "now_odds": -115,
-    "n": 327
+    "now_odds": -110,
+    "n": 333
    },
    "Under": {
     "open": 20.5,
     "open_odds": 100,
     "now": 20.5,
-    "now_odds": -105,
-    "n": 327
+    "now_odds": -110,
+    "n": 333
    }
   },
   "2H spread": {
@@ -184,15 +194,15 @@
     "open": 1.5,
     "open_odds": -120,
     "now": 1.5,
-    "now_odds": -120,
-    "n": 327
+    "now_odds": -110,
+    "n": 333
    },
    "New Orleans Saints": {
     "open": -1.5,
     "open_odds": 100,
     "now": -1.5,
-    "now_odds": 100,
-    "n": 327
+    "now_odds": -110,
+    "n": 333
    }
   }
  },
@@ -200,84 +210,86 @@
   "spread": {
    "away": {
     "tix": 64,
-    "mny": 63,
+    "mny": 59,
     "d_tix": -1,
-    "d_mny": 4,
-    "div": 5,
-    "n": 263
+    "d_mny": 0,
+    "div": 1,
+    "n": 269
    },
    "home": {
     "tix": 36,
-    "mny": 37,
+    "mny": 41,
     "d_tix": 1,
-    "d_mny": -4,
-    "div": -5,
-    "n": 263
+    "d_mny": 0,
+    "div": -1,
+    "n": 269
    }
   },
   "total": {
    "under": {
-    "tix": 36,
-    "mny": 43,
-    "d_tix": 3,
-    "d_mny": 14,
-    "div": 11,
-    "n": 263
+    "tix": 35,
+    "mny": 41,
+    "d_tix": 2,
+    "d_mny": 12,
+    "div": 10,
+    "n": 269
    },
    "over": {
-    "tix": 64,
-    "mny": 57,
-    "d_tix": -3,
-    "d_mny": -14,
-    "div": -11,
-    "n": 263
+    "tix": 65,
+    "mny": 59,
+    "d_tix": -2,
+    "d_mny": -12,
+    "div": -10,
+    "n": 269
    }
   },
   "moneyline": {
    "home": {
     "tix": 59,
-    "mny": 66,
+    "mny": 72,
     "d_tix": -7,
-    "d_mny": 24,
-    "div": 31,
-    "n": 263
+    "d_mny": 30,
+    "div": 37,
+    "n": 269
    },
    "away": {
     "tix": 41,
-    "mny": 34,
+    "mny": 28,
     "d_tix": 7,
-    "d_mny": -24,
-    "div": -31,
-    "n": 263
+    "d_mny": -30,
+    "div": -37,
+    "n": 269
    }
   }
  },
- "money_conflict": "CONFLICT",
+ "money_conflict": "SPLIT",
  "money_lean": {
   "spread": {
    "side": "away",
-   "mny": 63,
-   "d_mny": 4
+   "mny": 59,
+   "d_mny": 0
   },
   "moneyline": {
    "side": "home",
-   "mny": 66,
-   "d_mny": 24
+   "mny": 72,
+   "d_mny": 30
   }
  },
  "suggested": {
-  "side": 0.0,
-  "total": 0.0,
+  "side": 1.0,
+  "total": 1.5,
   "side_dir": "New Orleans Saints",
   "total_dir": "FEWER",
   "why": [
-   "money conflict -> no play"
+   "side coherent (4 markets)",
+   "total coherent (5 markets)",
+   "total coherence 5+"
   ]
  },
  "gates": {
-  "conflict_clear": false,
+  "conflict_clear": true,
   "has_splits": true,
-  "coherent_side": false,
+  "coherent_side": true,
   "coherent_total": true
  },
  "frozen": false
