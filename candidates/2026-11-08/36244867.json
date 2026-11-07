@@ -3,7 +3,7 @@
  "game": "Denver Broncos @ Carolina Panthers",
  "abbr": "DEN@CAR",
  "kickoff": "2026-11-08T18:01:00.000Z",
- "recorded_utc": "2026-11-07T00:57:10Z",
+ "recorded_utc": "2026-11-07T10:14:07Z",
  "anchor": "2026-11-02T0000Z",
  "coherence": {
   "side_dir": "Carolina Panthers",
@@ -52,14 +52,14 @@
     "open_odds": -115,
     "now": 44.5,
     "now_odds": -110,
-    "n": 336
+    "n": 339
    },
    "Under": {
     "open": 44.5,
     "open_odds": -105,
     "now": 44.5,
     "now_odds": -110,
-    "n": 336
+    "n": 339
    }
   },
   "ml": {
@@ -68,14 +68,14 @@
     "open_odds": -154,
     "now": 0,
     "now_odds": -142,
-    "n": 336
+    "n": 339
    },
    "Carolina Panthers": {
     "open": 0,
     "open_odds": 130,
     "now": 0,
     "now_odds": 120,
-    "n": 336
+    "n": 339
    }
   },
   "spread": {
@@ -84,14 +84,14 @@
     "open_odds": -118,
     "now": -2.5,
     "now_odds": -120,
-    "n": 336
+    "n": 339
    },
    "Carolina Panthers": {
     "open": 2.5,
     "open_odds": -104,
     "now": 2.5,
     "now_odds": 100,
-    "n": 336
+    "n": 339
    }
   },
   "1H away TT": {
@@ -100,14 +100,14 @@
     "open_odds": -113,
     "now": 10.5,
     "now_odds": -111,
-    "n": 333
+    "n": 336
    },
    "Under": {
     "open": 10.5,
     "open_odds": -113,
     "now": 10.5,
     "now_odds": -115,
-    "n": 333
+    "n": 336
    }
   },
   "1H total": {
@@ -116,14 +116,14 @@
     "open_odds": -110,
     "now": 22.5,
     "now_odds": -110,
-    "n": 333
+    "n": 336
    },
    "Under": {
     "open": 22.5,
     "open_odds": -110,
     "now": 22.5,
     "now_odds": -110,
-    "n": 333
+    "n": 336
    }
   },
   "1H spread": {
@@ -132,14 +132,14 @@
     "open_odds": -105,
     "now": -1.5,
     "now_odds": 100,
-    "n": 333
+    "n": 336
    },
    "Carolina Panthers": {
     "open": 1.5,
     "open_odds": -115,
     "now": 1.5,
     "now_odds": -120,
-    "n": 333
+    "n": 336
    }
   },
   "1H home TT": {
@@ -148,14 +148,14 @@
     "open_odds": -154,
     "now": 9.5,
     "now_odds": -158,
-    "n": 333
+    "n": 336
    },
    "Under": {
     "open": 9.5,
     "open_odds": 122,
     "now": 9.5,
     "now_odds": 124,
-    "n": 333
+    "n": 336
    }
   },
   "2H total": {
@@ -164,14 +164,14 @@
     "open_odds": 100,
     "now": 22.5,
     "now_odds": -110,
-    "n": 333
+    "n": 336
    },
    "Under": {
     "open": 21.5,
     "open_odds": -120,
     "now": 22.5,
     "now_odds": -110,
-    "n": 333
+    "n": 336
    }
   },
   "2H spread": {
@@ -180,14 +180,14 @@
     "open_odds": 105,
     "now": -1.5,
     "now_odds": 105,
-    "n": 333
+    "n": 336
    },
    "Carolina Panthers": {
     "open": 1.5,
     "open_odds": -125,
     "now": 1.5,
     "now_odds": -130,
-    "n": 333
+    "n": 336
    }
   }
  },
@@ -195,19 +195,19 @@
   "spread": {
    "home": {
     "tix": 27,
-    "mny": 35,
+    "mny": 34,
     "d_tix": 1,
-    "d_mny": 13,
-    "div": 12,
-    "n": 269
+    "d_mny": 12,
+    "div": 11,
+    "n": 272
    },
    "away": {
     "tix": 73,
-    "mny": 65,
+    "mny": 66,
     "d_tix": -1,
-    "d_mny": -13,
-    "div": -12,
-    "n": 269
+    "d_mny": -12,
+    "div": -11,
+    "n": 272
    }
   },
   "total": {
@@ -217,7 +217,7 @@
     "d_tix": -1,
     "d_mny": 12,
     "div": 13,
-    "n": 269
+    "n": 272
    },
    "over": {
     "tix": 72,
@@ -225,7 +225,7 @@
     "d_tix": 1,
     "d_mny": -12,
     "div": -13,
-    "n": 269
+    "n": 272
    }
   },
   "moneyline": {
@@ -235,7 +235,7 @@
     "d_tix": -3,
     "d_mny": 3,
     "div": 6,
-    "n": 269
+    "n": 272
    },
    "away": {
     "tix": 90,
@@ -243,7 +243,7 @@
     "d_tix": 3,
     "d_mny": -3,
     "div": -6,
-    "n": 269
+    "n": 272
    }
   }
  },
@@ -251,8 +251,8 @@
  "money_lean": {
   "spread": {
    "side": "away",
-   "mny": 65,
-   "d_mny": -13
+   "mny": 66,
+   "d_mny": -12
   },
   "moneyline": {
    "side": "away",
@@ -266,7 +266,7 @@
   "side_dir": "Carolina Panthers",
   "total_dir": "FEWER",
   "why": [
-   "spread money div +12"
+   "spread money div +11"
   ]
  },
  "gates": {

@@ -3,7 +3,7 @@
  "game": "Green Bay Packers @ New England Patriots",
  "abbr": "GB@NE",
  "kickoff": "2026-11-08T21:26:00.000Z",
- "recorded_utc": "2026-11-07T00:57:10Z",
+ "recorded_utc": "2026-11-07T10:14:07Z",
  "anchor": "2026-11-02T0000Z",
  "coherence": {
   "side_dir": "New England Patriots",
@@ -62,14 +62,14 @@
     "open_odds": -104,
     "now": 44.5,
     "now_odds": -110,
-    "n": 336
+    "n": 339
    },
    "Under": {
     "open": 47.5,
     "open_odds": -118,
     "now": 44.5,
     "now_odds": -110,
-    "n": 336
+    "n": 339
    }
   },
   "ml": {
@@ -78,14 +78,14 @@
     "open_odds": 116,
     "now": 0,
     "now_odds": 140,
-    "n": 336
+    "n": 339
    },
    "New England Patriots": {
     "open": 0,
     "open_odds": -136,
     "now": 0,
     "now_odds": -166,
-    "n": 336
+    "n": 339
    }
   },
   "spread": {
@@ -94,14 +94,14 @@
     "open_odds": -110,
     "now": 3,
     "now_odds": -110,
-    "n": 336
+    "n": 339
    },
    "New England Patriots": {
     "open": -2.5,
     "open_odds": -110,
     "now": -3,
     "now_odds": -110,
-    "n": 336
+    "n": 339
    }
   },
   "1H total": {
@@ -110,14 +110,14 @@
     "open_odds": -115,
     "now": 22.5,
     "now_odds": -110,
-    "n": 334
+    "n": 337
    },
    "Under": {
     "open": 23.5,
     "open_odds": -105,
     "now": 22.5,
     "now_odds": -110,
-    "n": 334
+    "n": 337
    }
   },
   "1H spread": {
@@ -126,14 +126,14 @@
     "open_odds": -120,
     "now": 1.5,
     "now_odds": -115,
-    "n": 334
+    "n": 337
    },
    "New England Patriots": {
     "open": -1.5,
     "open_odds": 100,
     "now": -1.5,
     "now_odds": -105,
-    "n": 334
+    "n": 337
    }
   },
   "1H away TT": {
@@ -142,14 +142,14 @@
     "open_odds": -102,
     "now": 9.5,
     "now_odds": -146,
-    "n": 334
+    "n": 337
    },
    "Under": {
     "open": 10.5,
     "open_odds": -125,
     "now": 9.5,
     "now_odds": 114,
-    "n": 334
+    "n": 337
    }
   },
   "1H home TT": {
@@ -158,14 +158,14 @@
     "open_odds": -128,
     "now": 10.5,
     "now_odds": -113,
-    "n": 334
+    "n": 337
    },
    "Under": {
     "open": 12.5,
     "open_odds": 100,
     "now": 10.5,
     "now_odds": -113,
-    "n": 334
+    "n": 337
    }
   },
   "2H total": {
@@ -174,14 +174,14 @@
     "open_odds": -120,
     "now": 22.5,
     "now_odds": -110,
-    "n": 334
+    "n": 337
    },
    "Under": {
     "open": 22.5,
     "open_odds": 100,
     "now": 22.5,
     "now_odds": -110,
-    "n": 334
+    "n": 337
    }
   },
   "2H spread": {
@@ -190,14 +190,14 @@
     "open_odds": -120,
     "now": 1.5,
     "now_odds": -120,
-    "n": 334
+    "n": 337
    },
    "New England Patriots": {
     "open": -1.5,
     "open_odds": 100,
     "now": -1.5,
     "now_odds": 100,
-    "n": 334
+    "n": 337
    }
   }
  },
@@ -209,7 +209,7 @@
     "d_tix": 2,
     "d_mny": 11,
     "div": 9,
-    "n": 269
+    "n": 272
    },
    "home": {
     "tix": 28,
@@ -217,43 +217,43 @@
     "d_tix": -2,
     "d_mny": -11,
     "div": -9,
-    "n": 269
+    "n": 272
    }
   },
   "total": {
    "over": {
-    "tix": 66,
+    "tix": 68,
     "mny": 66,
-    "d_tix": 11,
+    "d_tix": 13,
     "d_mny": -8,
-    "div": -19,
-    "n": 269
+    "div": -21,
+    "n": 272
    },
    "under": {
-    "tix": 34,
+    "tix": 32,
     "mny": 34,
-    "d_tix": -11,
+    "d_tix": -13,
     "d_mny": 8,
-    "div": 19,
-    "n": 269
+    "div": 21,
+    "n": 272
    }
   },
   "moneyline": {
    "away": {
     "tix": 36,
-    "mny": 39,
+    "mny": 40,
     "d_tix": 6,
-    "d_mny": -11,
-    "div": -17,
-    "n": 269
+    "d_mny": -10,
+    "div": -16,
+    "n": 272
    },
    "home": {
     "tix": 64,
-    "mny": 61,
+    "mny": 60,
     "d_tix": -6,
-    "d_mny": 11,
-    "div": 17,
-    "n": 269
+    "d_mny": 10,
+    "div": 16,
+    "n": 272
    }
   }
  },
@@ -266,8 +266,8 @@
   },
   "moneyline": {
    "side": "home",
-   "mny": 61,
-   "d_mny": 11
+   "mny": 60,
+   "d_mny": 10
   }
  },
  "suggested": {
