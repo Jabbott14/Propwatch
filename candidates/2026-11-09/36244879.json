@@ -3,7 +3,7 @@
  "game": "Tampa Bay Buccaneers @ Chicago Bears",
  "abbr": "TB@CHI",
  "kickoff": "2026-11-09T01:21:00.000Z",
- "recorded_utc": "2026-11-07T17:45:21Z",
+ "recorded_utc": "2026-11-07T21:52:51Z",
  "anchor": "2026-11-02T0000Z",
  "coherence": {
   "side_dir": "Tampa Bay Buccaneers",
@@ -52,14 +52,14 @@
     "open_odds": -118,
     "now": 6.5,
     "now_odds": -115,
-    "n": 329
+    "n": 332
    },
    "Chicago Bears": {
     "open": -6.5,
     "open_odds": -104,
     "now": -6.5,
     "now_odds": -105,
-    "n": 329
+    "n": 332
    }
   },
   "total": {
@@ -68,14 +68,14 @@
     "open_odds": -104,
     "now": 47.5,
     "now_odds": -110,
-    "n": 329
+    "n": 332
    },
    "Under": {
     "open": 47.5,
     "open_odds": -118,
     "now": 47.5,
     "now_odds": -110,
-    "n": 329
+    "n": 332
    }
   },
   "ml": {
@@ -84,14 +84,14 @@
     "open_odds": 235,
     "now": 0,
     "now_odds": 220,
-    "n": 329
+    "n": 332
    },
    "Chicago Bears": {
     "open": 0,
     "open_odds": -290,
     "now": 0,
     "now_odds": -270,
-    "n": 329
+    "n": 332
    }
   },
   "1H away TT": {
@@ -100,14 +100,14 @@
     "open_odds": -146,
     "now": 9.5,
     "now_odds": -142,
-    "n": 326
+    "n": 329
    },
    "Under": {
     "open": 9.5,
     "open_odds": 114,
     "now": 9.5,
     "now_odds": 112,
-    "n": 326
+    "n": 329
    }
   },
   "1H total": {
@@ -116,14 +116,14 @@
     "open_odds": -105,
     "now": 23.5,
     "now_odds": -110,
-    "n": 326
+    "n": 329
    },
    "Under": {
     "open": 23.5,
     "open_odds": -115,
     "now": 23.5,
     "now_odds": -110,
-    "n": 326
+    "n": 329
    }
   },
   "1H home TT": {
@@ -132,14 +132,14 @@
     "open_odds": -113,
     "now": 13.5,
     "now_odds": -122,
-    "n": 326
+    "n": 329
    },
    "Under": {
     "open": 13.5,
     "open_odds": -113,
     "now": 13.5,
     "now_odds": -104,
-    "n": 326
+    "n": 329
    }
   },
   "1H spread": {
@@ -148,14 +148,14 @@
     "open_odds": -110,
     "now": 3.5,
     "now_odds": -110,
-    "n": 326
+    "n": 329
    },
    "Chicago Bears": {
     "open": -3.5,
     "open_odds": -110,
     "now": -3.5,
     "now_odds": -110,
-    "n": 326
+    "n": 329
    }
   },
   "2H total": {
@@ -164,14 +164,14 @@
     "open_odds": 100,
     "now": 23.5,
     "now_odds": -110,
-    "n": 326
+    "n": 329
    },
    "Under": {
     "open": 23.5,
     "open_odds": -120,
     "now": 23.5,
     "now_odds": -110,
-    "n": 326
+    "n": 329
    }
   },
   "2H spread": {
@@ -180,52 +180,52 @@
     "open_odds": 100,
     "now": 3.5,
     "now_odds": -125,
-    "n": 326
+    "n": 329
    },
    "Chicago Bears": {
     "open": -2.5,
     "open_odds": -120,
     "now": -3.5,
     "now_odds": 105,
-    "n": 326
+    "n": 329
    }
   }
  },
  "splits": {
   "spread": {
    "home": {
-    "tix": 67,
-    "mny": 72,
-    "d_tix": 12,
-    "d_mny": 0,
+    "tix": 66,
+    "mny": 71,
+    "d_tix": 11,
+    "d_mny": -1,
     "div": -12,
-    "n": 281
+    "n": 284
    },
    "away": {
-    "tix": 33,
-    "mny": 28,
-    "d_tix": -12,
-    "d_mny": 0,
+    "tix": 34,
+    "mny": 29,
+    "d_tix": -11,
+    "d_mny": 1,
     "div": 12,
-    "n": 281
+    "n": 284
    }
   },
   "total": {
    "under": {
     "tix": 34,
-    "mny": 24,
+    "mny": 25,
     "d_tix": -22,
-    "d_mny": -31,
-    "div": -9,
-    "n": 281
+    "d_mny": -30,
+    "div": -8,
+    "n": 284
    },
    "over": {
     "tix": 66,
-    "mny": 76,
+    "mny": 75,
     "d_tix": 22,
-    "d_mny": 31,
-    "div": 9,
-    "n": 281
+    "d_mny": 30,
+    "div": 8,
+    "n": 284
    }
   },
   "moneyline": {
@@ -235,7 +235,7 @@
     "d_tix": 4,
     "d_mny": 5,
     "div": 1,
-    "n": 281
+    "n": 284
    },
    "away": {
     "tix": 4,
@@ -243,7 +243,7 @@
     "d_tix": -4,
     "d_mny": -5,
     "div": -1,
-    "n": 281
+    "n": 284
    }
   }
  },
@@ -251,8 +251,8 @@
  "money_lean": {
   "spread": {
    "side": "home",
-   "mny": 72,
-   "d_mny": 0
+   "mny": 71,
+   "d_mny": -1
   },
   "moneyline": {
    "side": "home",
