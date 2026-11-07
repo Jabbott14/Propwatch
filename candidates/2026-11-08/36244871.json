@@ -3,7 +3,7 @@
  "game": "New York Jets @ Kansas City Chiefs",
  "abbr": "NYJ@KC",
  "kickoff": "2026-11-08T18:01:00.000Z",
- "recorded_utc": "2026-11-07T10:14:07Z",
+ "recorded_utc": "2026-11-07T17:45:21Z",
  "anchor": "2026-11-02T0000Z",
  "coherence": {
   "side_dir": "Kansas City Chiefs",
@@ -47,14 +47,14 @@
     "open_odds": -105,
     "now": 47.5,
     "now_odds": -110,
-    "n": 339
+    "n": 348
    },
    "Under": {
     "open": 46.5,
     "open_odds": -115,
     "now": 47.5,
     "now_odds": -110,
-    "n": 339
+    "n": 348
    }
   },
   "ml": {
@@ -63,14 +63,14 @@
     "open_odds": 400,
     "now": 0,
     "now_odds": 400,
-    "n": 339
+    "n": 348
    },
    "Kansas City Chiefs": {
     "open": 0,
     "open_odds": -520,
     "now": 0,
     "now_odds": -520,
-    "n": 339
+    "n": 348
    }
   },
   "spread": {
@@ -79,14 +79,14 @@
     "open_odds": -110,
     "now": 9.5,
     "now_odds": -105,
-    "n": 339
+    "n": 348
    },
    "Kansas City Chiefs": {
     "open": -9.5,
     "open_odds": -110,
     "now": -9.5,
     "now_odds": -115,
-    "n": 339
+    "n": 348
    }
   },
   "1H total": {
@@ -95,14 +95,14 @@
     "open_odds": -110,
     "now": 23.5,
     "now_odds": -120,
-    "n": 336
+    "n": 345
    },
    "Under": {
     "open": 23.5,
     "open_odds": -110,
     "now": 23.5,
     "now_odds": 100,
-    "n": 336
+    "n": 345
    }
   },
   "1H away TT": {
@@ -111,14 +111,14 @@
     "open_odds": -118,
     "now": 8.5,
     "now_odds": -122,
-    "n": 336
+    "n": 345
    },
    "Under": {
     "open": 8.5,
     "open_odds": -108,
     "now": 8.5,
     "now_odds": -104,
-    "n": 336
+    "n": 345
    }
   },
   "1H home TT": {
@@ -127,14 +127,14 @@
     "open_odds": 104,
     "now": 14.5,
     "now_odds": -104,
-    "n": 336
+    "n": 345
    },
    "Under": {
     "open": 14.5,
     "open_odds": -132,
     "now": 14.5,
     "now_odds": -122,
-    "n": 336
+    "n": 345
    }
   },
   "1H spread": {
@@ -143,14 +143,14 @@
     "open_odds": -110,
     "now": 6.5,
     "now_odds": -110,
-    "n": 336
+    "n": 345
    },
    "Kansas City Chiefs": {
     "open": -6.5,
     "open_odds": -110,
     "now": -6.5,
     "now_odds": -110,
-    "n": 336
+    "n": 345
    }
   },
   "2H spread": {
@@ -159,14 +159,14 @@
     "open_odds": -115,
     "now": 4.5,
     "now_odds": -115,
-    "n": 336
+    "n": 345
    },
    "Kansas City Chiefs": {
     "open": -4.5,
     "open_odds": -105,
     "now": -4.5,
     "now_odds": -105,
-    "n": 336
+    "n": 345
    }
   },
   "2H total": {
@@ -175,14 +175,14 @@
     "open_odds": -110,
     "now": 23.5,
     "now_odds": 100,
-    "n": 336
+    "n": 345
    },
    "Under": {
     "open": 21.5,
     "open_odds": -110,
     "now": 23.5,
     "now_odds": -120,
-    "n": 336
+    "n": 345
    }
   }
  },
@@ -190,37 +190,37 @@
   "spread": {
    "away": {
     "tix": 28,
-    "mny": 30,
+    "mny": 29,
     "d_tix": -8,
-    "d_mny": -22,
-    "div": -14,
-    "n": 272
+    "d_mny": -23,
+    "div": -15,
+    "n": 281
    },
    "home": {
     "tix": 72,
-    "mny": 70,
+    "mny": 71,
     "d_tix": 8,
-    "d_mny": 22,
-    "div": 14,
-    "n": 272
+    "d_mny": 23,
+    "div": 15,
+    "n": 281
    }
   },
   "total": {
    "over": {
-    "tix": 62,
-    "mny": 67,
-    "d_tix": -1,
-    "d_mny": 1,
-    "div": 2,
-    "n": 272
+    "tix": 64,
+    "mny": 71,
+    "d_tix": 1,
+    "d_mny": 5,
+    "div": 4,
+    "n": 281
    },
    "under": {
-    "tix": 38,
-    "mny": 33,
-    "d_tix": 1,
-    "d_mny": -1,
-    "div": -2,
-    "n": 272
+    "tix": 36,
+    "mny": 29,
+    "d_tix": -1,
+    "d_mny": -5,
+    "div": -4,
+    "n": 281
    }
   },
   "moneyline": {
@@ -230,7 +230,7 @@
     "d_tix": 2,
     "d_mny": 1,
     "div": -1,
-    "n": 272
+    "n": 281
    },
    "away": {
     "tix": 2,
@@ -238,7 +238,7 @@
     "d_tix": -2,
     "d_mny": -1,
     "div": 1,
-    "n": 272
+    "n": 281
    }
   }
  },
@@ -246,8 +246,8 @@
  "money_lean": {
   "spread": {
    "side": "home",
-   "mny": 70,
-   "d_mny": 22
+   "mny": 71,
+   "d_mny": 23
   },
   "moneyline": {
    "side": "home",
@@ -261,7 +261,7 @@
   "side_dir": "Kansas City Chiefs",
   "total_dir": "MORE",
   "why": [
-   "spread money div +14",
+   "spread money div +15",
    "total coherent (4 markets)"
   ]
  },

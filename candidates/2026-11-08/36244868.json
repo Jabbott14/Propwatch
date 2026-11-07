@@ -3,7 +3,7 @@
  "game": "Dallas Cowboys @ Indianapolis Colts",
  "abbr": "DAL@IND",
  "kickoff": "2026-11-08T18:01:00.000Z",
- "recorded_utc": "2026-11-07T10:14:07Z",
+ "recorded_utc": "2026-11-07T17:45:21Z",
  "anchor": "2026-11-02T0000Z",
  "coherence": {
   "side_dir": "Indianapolis Colts",
@@ -65,16 +65,16 @@
    "Dallas Cowboys": {
     "open": -5.5,
     "open_odds": -110,
-    "now": -5.5,
-    "now_odds": -105,
-    "n": 339
+    "now": -4.5,
+    "now_odds": -110,
+    "n": 348
    },
    "Indianapolis Colts": {
     "open": 5.5,
     "open_odds": -110,
-    "now": 5.5,
-    "now_odds": -115,
-    "n": 339
+    "now": 4.5,
+    "now_odds": -110,
+    "n": 348
    }
   },
   "ml": {
@@ -82,15 +82,15 @@
     "open": 0,
     "open_odds": -270,
     "now": 0,
-    "now_odds": -230,
-    "n": 339
+    "now_odds": -220,
+    "n": 348
    },
    "Indianapolis Colts": {
     "open": 0,
     "open_odds": 220,
     "now": 0,
-    "now_odds": 190,
-    "n": 339
+    "now_odds": 184,
+    "n": 348
    }
   },
   "total": {
@@ -99,14 +99,14 @@
     "open_odds": -110,
     "now": 51.5,
     "now_odds": -110,
-    "n": 339
+    "n": 348
    },
    "Under": {
     "open": 52.5,
     "open_odds": -110,
     "now": 51.5,
     "now_odds": -110,
-    "n": 339
+    "n": 348
    }
   },
   "1H away TT": {
@@ -114,15 +114,15 @@
     "open": 14.5,
     "open_odds": 110,
     "now": 13.5,
-    "now_odds": -154,
-    "n": 336
+    "now_odds": -146,
+    "n": 345
    },
    "Under": {
     "open": 14.5,
     "open_odds": -140,
     "now": 13.5,
-    "now_odds": 120,
-    "n": 336
+    "now_odds": 114,
+    "n": 345
    }
   },
   "1H total": {
@@ -130,15 +130,15 @@
     "open": 26.5,
     "open_odds": -110,
     "now": 25.5,
-    "now_odds": -110,
-    "n": 336
+    "now_odds": -115,
+    "n": 345
    },
    "Under": {
     "open": 26.5,
     "open_odds": -110,
     "now": 25.5,
-    "now_odds": -110,
-    "n": 336
+    "now_odds": -105,
+    "n": 345
    }
   },
   "1H spread": {
@@ -147,14 +147,14 @@
     "open_odds": -105,
     "now": -3.5,
     "now_odds": 100,
-    "n": 336
+    "n": 345
    },
    "Indianapolis Colts": {
     "open": 3.5,
     "open_odds": -115,
     "now": 3.5,
     "now_odds": -120,
-    "n": 336
+    "n": 345
    }
   },
   "1H home TT": {
@@ -162,15 +162,15 @@
     "open": 10.5,
     "open_odds": -106,
     "now": 10.5,
-    "now_odds": 102,
-    "n": 336
+    "now_odds": 100,
+    "n": 345
    },
    "Under": {
     "open": 10.5,
     "open_odds": -120,
     "now": 10.5,
-    "now_odds": -130,
-    "n": 336
+    "now_odds": -128,
+    "n": 345
    }
   },
   "2H spread": {
@@ -179,14 +179,14 @@
     "open_odds": -120,
     "now": -2.5,
     "now_odds": -110,
-    "n": 336
+    "n": 345
    },
    "Indianapolis Colts": {
     "open": 2.5,
     "open_odds": 100,
     "now": 2.5,
     "now_odds": -110,
-    "n": 336
+    "n": 345
    }
   },
   "2H total": {
@@ -194,71 +194,71 @@
     "open": 24.5,
     "open_odds": -110,
     "now": 25.5,
-    "now_odds": -115,
-    "n": 336
+    "now_odds": -110,
+    "n": 345
    },
    "Under": {
     "open": 24.5,
     "open_odds": -110,
     "now": 25.5,
-    "now_odds": -105,
-    "n": 336
+    "now_odds": -110,
+    "n": 345
    }
   }
  },
  "splits": {
   "spread": {
    "home": {
-    "tix": 31,
-    "mny": 21,
-    "d_tix": 6,
-    "d_mny": 7,
-    "div": 1,
-    "n": 272
+    "tix": 30,
+    "mny": 33,
+    "d_tix": 5,
+    "d_mny": 19,
+    "div": 14,
+    "n": 281
    },
    "away": {
-    "tix": 69,
-    "mny": 79,
-    "d_tix": -6,
-    "d_mny": -7,
-    "div": -1,
-    "n": 272
+    "tix": 70,
+    "mny": 67,
+    "d_tix": -5,
+    "d_mny": -19,
+    "div": -14,
+    "n": 281
    }
   },
   "total": {
    "under": {
-    "tix": 39,
+    "tix": 37,
     "mny": 23,
-    "d_tix": -16,
+    "d_tix": -18,
     "d_mny": -9,
-    "div": 7,
-    "n": 272
+    "div": 9,
+    "n": 281
    },
    "over": {
-    "tix": 61,
+    "tix": 63,
     "mny": 77,
-    "d_tix": 16,
+    "d_tix": 18,
     "d_mny": 9,
-    "div": -7,
-    "n": 272
+    "div": -9,
+    "n": 281
    }
   },
   "moneyline": {
    "away": {
     "tix": 89,
-    "mny": 76,
+    "mny": 80,
     "d_tix": 1,
-    "d_mny": -8,
-    "div": -9,
-    "n": 272
+    "d_mny": -4,
+    "div": -5,
+    "n": 281
    },
    "home": {
     "tix": 11,
-    "mny": 24,
+    "mny": 20,
     "d_tix": -1,
-    "d_mny": 8,
-    "div": 9,
-    "n": 272
+    "d_mny": 4,
+    "div": 5,
+    "n": 281
    }
   }
  },
@@ -266,22 +266,23 @@
  "money_lean": {
   "spread": {
    "side": "away",
-   "mny": 79,
-   "d_mny": -7
+   "mny": 67,
+   "d_mny": -19
   },
   "moneyline": {
    "side": "away",
-   "mny": 76,
-   "d_mny": -8
+   "mny": 80,
+   "d_mny": -4
   }
  },
  "suggested": {
-  "side": 1.0,
+  "side": 1.5,
   "total": 0.0,
   "side_dir": "Indianapolis Colts",
   "total_dir": "FEWER",
   "why": [
-   "side coherent (4 markets)"
+   "side coherent (4 markets)",
+   "spread money div +14"
   ]
  },
  "gates": {
