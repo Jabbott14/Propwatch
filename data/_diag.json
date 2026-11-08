@@ -1,21 +1,21 @@
 {
- "run_utc": "2026-11-08T12:50:58Z",
- "cycle": 33,
+ "run_utc": "2026-11-08T13:00:41Z",
+ "cycle": 36,
  "heavy": false,
  "games": 26,
- "rows": 5395,
- "props_gz": 56134,
+ "rows": 5397,
+ "props_gz": 56144,
  "pulls_ok": 112,
  "pulls_fail": 0,
- "elapsed_min": 336.6,
- "next_kickoff_h": 1.7,
+ "elapsed_min": 346.3,
+ "next_kickoff_h": 1.5,
  "cadence_min": 3,
  "closing_window": true,
  "attempts": [
   {
    "name": "actionnet",
-   "bytes": 477264,
-   "gz": 25911
+   "bytes": 477261,
+   "gz": 25926
   }
  ]
 }
