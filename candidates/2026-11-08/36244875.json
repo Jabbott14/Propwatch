@@ -3,7 +3,7 @@
  "game": "Las Vegas Raiders @ San Francisco 49ers",
  "abbr": "LV@SF",
  "kickoff": "2026-11-08T21:26:00.000Z",
- "recorded_utc": "2026-11-07T21:52:51Z",
+ "recorded_utc": "2026-11-08T06:04:16Z",
  "anchor": "2026-11-02T0000Z",
  "coherence": {
   "side_dir": "Las Vegas Raiders",
@@ -47,14 +47,14 @@
     "open_odds": 385,
     "now": 0,
     "now_odds": 370,
-    "n": 351
+    "n": 369
    },
    "San Francisco 49ers": {
     "open": 0,
     "open_odds": -500,
     "now": 0,
     "now_odds": -480,
-    "n": 351
+    "n": 369
    }
   },
   "total": {
@@ -63,14 +63,14 @@
     "open_odds": -110,
     "now": 51.5,
     "now_odds": -120,
-    "n": 351
+    "n": 369
    },
    "Under": {
     "open": 51.5,
     "open_odds": -110,
     "now": 51.5,
     "now_odds": 100,
-    "n": 351
+    "n": 369
    }
   },
   "spread": {
@@ -79,14 +79,14 @@
     "open_odds": -115,
     "now": 9.5,
     "now_odds": -110,
-    "n": 351
+    "n": 369
    },
    "San Francisco 49ers": {
     "open": -9.5,
     "open_odds": -105,
     "now": -9.5,
     "now_odds": -110,
-    "n": 351
+    "n": 369
    }
   },
   "1H spread": {
@@ -95,14 +95,14 @@
     "open_odds": -110,
     "now": 6.5,
     "now_odds": -110,
-    "n": 348
+    "n": 366
    },
    "San Francisco 49ers": {
     "open": -6.5,
     "open_odds": -110,
     "now": -6.5,
     "now_odds": -110,
-    "n": 348
+    "n": 366
    }
   },
   "1H away TT": {
@@ -111,14 +111,14 @@
     "open_odds": -146,
     "now": 9.5,
     "now_odds": -146,
-    "n": 348
+    "n": 366
    },
    "Under": {
     "open": 9.5,
     "open_odds": 114,
     "now": 9.5,
     "now_odds": 114,
-    "n": 348
+    "n": 366
    }
   },
   "1H total": {
@@ -127,14 +127,14 @@
     "open_odds": -120,
     "now": 26.5,
     "now_odds": -120,
-    "n": 348
+    "n": 366
    },
    "Under": {
     "open": 26.5,
     "open_odds": 100,
     "now": 26.5,
     "now_odds": 100,
-    "n": 348
+    "n": 366
    }
   },
   "1H home TT": {
@@ -143,14 +143,14 @@
     "open_odds": -122,
     "now": 16.5,
     "now_odds": -120,
-    "n": 348
+    "n": 366
    },
    "Under": {
     "open": 16.5,
     "open_odds": -104,
     "now": 16.5,
     "now_odds": -106,
-    "n": 348
+    "n": 366
    }
   },
   "2H total": {
@@ -159,14 +159,14 @@
     "open_odds": -110,
     "now": 25.5,
     "now_odds": -110,
-    "n": 348
+    "n": 366
    },
    "Under": {
     "open": 24.5,
     "open_odds": -110,
     "now": 25.5,
     "now_odds": -110,
-    "n": 348
+    "n": 366
    }
   },
   "2H spread": {
@@ -175,52 +175,52 @@
     "open_odds": -110,
     "now": 4.5,
     "now_odds": -115,
-    "n": 348
+    "n": 366
    },
    "San Francisco 49ers": {
     "open": -4.5,
     "open_odds": -110,
     "now": -4.5,
     "now_odds": -105,
-    "n": 348
+    "n": 366
    }
   }
  },
  "splits": {
   "spread": {
    "home": {
-    "tix": 53,
-    "mny": 55,
-    "d_tix": 10,
-    "d_mny": 15,
+    "tix": 56,
+    "mny": 58,
+    "d_tix": 13,
+    "d_mny": 18,
     "div": 5,
-    "n": 284
+    "n": 302
    },
    "away": {
-    "tix": 47,
-    "mny": 45,
-    "d_tix": -10,
-    "d_mny": -15,
+    "tix": 44,
+    "mny": 42,
+    "d_tix": -13,
+    "d_mny": -18,
     "div": -5,
-    "n": 284
+    "n": 302
    }
   },
   "total": {
    "over": {
-    "tix": 71,
-    "mny": 78,
-    "d_tix": 23,
-    "d_mny": 35,
+    "tix": 72,
+    "mny": 79,
+    "d_tix": 24,
+    "d_mny": 36,
     "div": 12,
-    "n": 284
+    "n": 302
    },
    "under": {
-    "tix": 29,
-    "mny": 22,
-    "d_tix": -23,
-    "d_mny": -35,
+    "tix": 28,
+    "mny": 21,
+    "d_tix": -24,
+    "d_mny": -36,
     "div": -12,
-    "n": 284
+    "n": 302
    }
   },
   "moneyline": {
@@ -230,7 +230,7 @@
     "d_tix": -1,
     "d_mny": -1,
     "div": 0,
-    "n": 284
+    "n": 302
    },
    "home": {
     "tix": 97,
@@ -238,7 +238,7 @@
     "d_tix": 1,
     "d_mny": 1,
     "div": 0,
-    "n": 284
+    "n": 302
    }
   }
  },
@@ -246,8 +246,8 @@
  "money_lean": {
   "spread": {
    "side": "home",
-   "mny": 55,
-   "d_mny": 15
+   "mny": 58,
+   "d_mny": 18
   },
   "moneyline": {
    "side": "home",

@@ -3,7 +3,7 @@
  "game": "Buffalo Bills @ Minnesota Vikings",
  "abbr": "BUF@MIN",
  "kickoff": "2026-11-10T01:16:00.000Z",
- "recorded_utc": "2026-11-07T21:52:51Z",
+ "recorded_utc": "2026-11-08T06:04:16Z",
  "anchor": "2026-11-02T0000Z",
  "coherence": {
   "side_dir": "Buffalo Bills",
@@ -67,14 +67,14 @@
     "open_odds": -146,
     "now": 0,
     "now_odds": -178,
-    "n": 350
+    "n": 368
    },
    "Minnesota Vikings": {
     "open": 0,
     "open_odds": 124,
     "now": 0,
     "now_odds": 150,
-    "n": 350
+    "n": 368
    }
   },
   "spread": {
@@ -83,14 +83,14 @@
     "open_odds": -104,
     "now": -3,
     "now_odds": -115,
-    "n": 350
+    "n": 368
    },
    "Minnesota Vikings": {
     "open": 3,
     "open_odds": -118,
     "now": 3,
     "now_odds": -105,
-    "n": 350
+    "n": 368
    }
   },
   "total": {
@@ -99,14 +99,14 @@
     "open_odds": -104,
     "now": 44.5,
     "now_odds": -110,
-    "n": 350
+    "n": 368
    },
    "Under": {
     "open": 46.5,
     "open_odds": -118,
     "now": 44.5,
     "now_odds": -110,
-    "n": 350
+    "n": 368
    }
   },
   "1H home TT": {
@@ -115,14 +115,14 @@
     "open_odds": 116,
     "now": 9.5,
     "now_odds": -156,
-    "n": 348
+    "n": 366
    },
    "Under": {
     "open": 10.5,
     "open_odds": -148,
     "now": 9.5,
     "now_odds": 122,
-    "n": 348
+    "n": 366
    }
   },
   "1H total": {
@@ -131,14 +131,14 @@
     "open_odds": -120,
     "now": 22.5,
     "now_odds": -110,
-    "n": 348
+    "n": 366
    },
    "Under": {
     "open": 22.5,
     "open_odds": 100,
     "now": 22.5,
     "now_odds": -110,
-    "n": 348
+    "n": 366
    }
   },
   "1H away TT": {
@@ -147,14 +147,14 @@
     "open_odds": -113,
     "now": 11.5,
     "now_odds": -113,
-    "n": 348
+    "n": 366
    },
    "Under": {
     "open": 10.5,
     "open_odds": -113,
     "now": 11.5,
     "now_odds": -113,
-    "n": 348
+    "n": 366
    }
   },
   "1H spread": {
@@ -163,14 +163,14 @@
     "open_odds": 105,
     "now": -1.5,
     "now_odds": -110,
-    "n": 348
+    "n": 366
    },
    "Minnesota Vikings": {
     "open": 1.5,
     "open_odds": -125,
     "now": 1.5,
     "now_odds": -110,
-    "n": 348
+    "n": 366
    }
   },
   "2H total": {
@@ -179,14 +179,14 @@
     "open_odds": -120,
     "now": 22.5,
     "now_odds": -110,
-    "n": 348
+    "n": 366
    },
    "Under": {
     "open": 22.5,
     "open_odds": 100,
     "now": 22.5,
     "now_odds": -110,
-    "n": 348
+    "n": 366
    }
   },
   "2H spread": {
@@ -195,14 +195,14 @@
     "open_odds": 100,
     "now": -1.5,
     "now_odds": -110,
-    "n": 348
+    "n": 366
    },
    "Minnesota Vikings": {
     "open": 1.5,
     "open_odds": -120,
     "now": 1.5,
     "now_odds": -110,
-    "n": 348
+    "n": 366
    }
   }
  },
@@ -210,55 +210,55 @@
   "spread": {
    "away": {
     "tix": 68,
-    "mny": 79,
+    "mny": 78,
     "d_tix": 8,
-    "d_mny": 0,
-    "div": -8,
-    "n": 284
+    "d_mny": -1,
+    "div": -9,
+    "n": 302
    },
    "home": {
     "tix": 32,
-    "mny": 21,
+    "mny": 22,
     "d_tix": -8,
-    "d_mny": 0,
-    "div": 8,
-    "n": 284
+    "d_mny": 1,
+    "div": 9,
+    "n": 302
    }
   },
   "total": {
    "over": {
     "tix": 67,
-    "mny": 63,
+    "mny": 50,
     "d_tix": 13,
-    "d_mny": 11,
-    "div": -2,
-    "n": 284
+    "d_mny": -2,
+    "div": -15,
+    "n": 302
    },
    "under": {
     "tix": 33,
-    "mny": 37,
+    "mny": 50,
     "d_tix": -13,
-    "d_mny": -11,
-    "div": 2,
-    "n": 284
+    "d_mny": 2,
+    "div": 15,
+    "n": 302
    }
   },
   "moneyline": {
    "home": {
     "tix": 9,
-    "mny": 6,
+    "mny": 7,
     "d_tix": -4,
-    "d_mny": -6,
-    "div": -2,
-    "n": 284
+    "d_mny": -5,
+    "div": -1,
+    "n": 302
    },
    "away": {
     "tix": 91,
-    "mny": 94,
+    "mny": 93,
     "d_tix": 4,
-    "d_mny": 6,
-    "div": 2,
-    "n": 284
+    "d_mny": 5,
+    "div": 1,
+    "n": 302
    }
   }
  },
@@ -266,13 +266,13 @@
  "money_lean": {
   "spread": {
    "side": "away",
-   "mny": 79,
-   "d_mny": 0
+   "mny": 78,
+   "d_mny": -1
   },
   "moneyline": {
    "side": "away",
-   "mny": 94,
-   "d_mny": 6
+   "mny": 93,
+   "d_mny": 5
   }
  },
  "suggested": {

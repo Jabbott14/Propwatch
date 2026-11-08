@@ -3,7 +3,7 @@
  "game": "Green Bay Packers @ New England Patriots",
  "abbr": "GB@NE",
  "kickoff": "2026-11-08T21:26:00.000Z",
- "recorded_utc": "2026-11-07T21:52:51Z",
+ "recorded_utc": "2026-11-08T06:04:16Z",
  "anchor": "2026-11-02T0000Z",
  "coherence": {
   "side_dir": "New England Patriots",
@@ -62,14 +62,14 @@
     "open_odds": -104,
     "now": 44.5,
     "now_odds": -110,
-    "n": 351
+    "n": 369
    },
    "Under": {
     "open": 47.5,
     "open_odds": -118,
     "now": 44.5,
     "now_odds": -110,
-    "n": 351
+    "n": 369
    }
   },
   "ml": {
@@ -78,14 +78,14 @@
     "open_odds": 116,
     "now": 0,
     "now_odds": 138,
-    "n": 351
+    "n": 369
    },
    "New England Patriots": {
     "open": 0,
     "open_odds": -136,
     "now": 0,
     "now_odds": -164,
-    "n": 351
+    "n": 369
    }
   },
   "spread": {
@@ -94,14 +94,14 @@
     "open_odds": -110,
     "now": 3,
     "now_odds": -110,
-    "n": 351
+    "n": 369
    },
    "New England Patriots": {
     "open": -2.5,
     "open_odds": -110,
     "now": -3,
     "now_odds": -110,
-    "n": 351
+    "n": 369
    }
   },
   "1H total": {
@@ -110,14 +110,14 @@
     "open_odds": -115,
     "now": 22.5,
     "now_odds": -110,
-    "n": 349
+    "n": 367
    },
    "Under": {
     "open": 23.5,
     "open_odds": -105,
     "now": 22.5,
     "now_odds": -110,
-    "n": 349
+    "n": 367
    }
   },
   "1H spread": {
@@ -126,14 +126,14 @@
     "open_odds": -120,
     "now": 1.5,
     "now_odds": -120,
-    "n": 349
+    "n": 367
    },
    "New England Patriots": {
     "open": -1.5,
     "open_odds": 100,
     "now": -1.5,
     "now_odds": 100,
-    "n": 349
+    "n": 367
    }
   },
   "1H away TT": {
@@ -142,14 +142,14 @@
     "open_odds": -102,
     "now": 9.5,
     "now_odds": -146,
-    "n": 349
+    "n": 367
    },
    "Under": {
     "open": 10.5,
     "open_odds": -125,
     "now": 9.5,
     "now_odds": 114,
-    "n": 349
+    "n": 367
    }
   },
   "1H home TT": {
@@ -158,14 +158,14 @@
     "open_odds": -128,
     "now": 10.5,
     "now_odds": -108,
-    "n": 349
+    "n": 367
    },
    "Under": {
     "open": 12.5,
     "open_odds": 100,
     "now": 10.5,
     "now_odds": -118,
-    "n": 349
+    "n": 367
    }
   },
   "2H total": {
@@ -174,14 +174,14 @@
     "open_odds": -120,
     "now": 22.5,
     "now_odds": -110,
-    "n": 349
+    "n": 367
    },
    "Under": {
     "open": 22.5,
     "open_odds": 100,
     "now": 22.5,
     "now_odds": -110,
-    "n": 349
+    "n": 367
    }
   },
   "2H spread": {
@@ -190,14 +190,14 @@
     "open_odds": -120,
     "now": 1.5,
     "now_odds": -115,
-    "n": 349
+    "n": 367
    },
    "New England Patriots": {
     "open": -1.5,
     "open_odds": 100,
     "now": -1.5,
     "now_odds": -105,
-    "n": 349
+    "n": 367
    }
   }
  },
@@ -205,82 +205,85 @@
   "spread": {
    "away": {
     "tix": 72,
-    "mny": 76,
+    "mny": 75,
     "d_tix": 2,
-    "d_mny": 13,
-    "div": 11,
-    "n": 284
+    "d_mny": 12,
+    "div": 10,
+    "n": 302
    },
    "home": {
     "tix": 28,
-    "mny": 24,
+    "mny": 25,
     "d_tix": -2,
-    "d_mny": -13,
-    "div": -11,
-    "n": 284
+    "d_mny": -12,
+    "div": -10,
+    "n": 302
    }
   },
   "total": {
    "over": {
-    "tix": 72,
+    "tix": 75,
     "mny": 69,
-    "d_tix": 17,
+    "d_tix": 20,
     "d_mny": -5,
-    "div": -22,
-    "n": 284
+    "div": -25,
+    "n": 302
    },
    "under": {
-    "tix": 28,
+    "tix": 25,
     "mny": 31,
-    "d_tix": -17,
+    "d_tix": -20,
     "d_mny": 5,
-    "div": 22,
-    "n": 284
+    "div": 25,
+    "n": 302
    }
   },
   "moneyline": {
    "away": {
-    "tix": 36,
-    "mny": 45,
-    "d_tix": 6,
-    "d_mny": -5,
-    "div": -11,
-    "n": 284
+    "tix": 37,
+    "mny": 49,
+    "d_tix": 7,
+    "d_mny": -1,
+    "div": -8,
+    "n": 302
    },
    "home": {
-    "tix": 64,
-    "mny": 55,
-    "d_tix": -6,
-    "d_mny": 5,
-    "div": 11,
-    "n": 284
+    "tix": 63,
+    "mny": 51,
+    "d_tix": -7,
+    "d_mny": 1,
+    "div": 8,
+    "n": 302
    }
   }
  },
- "money_conflict": "CONFLICT",
+ "money_conflict": "SPLIT",
  "money_lean": {
   "spread": {
    "side": "away",
-   "mny": 76,
-   "d_mny": 13
+   "mny": 75,
+   "d_mny": 12
   },
   "moneyline": {
    "side": "home",
-   "mny": 55,
-   "d_mny": 5
+   "mny": 51,
+   "d_mny": 1
   }
  },
  "suggested": {
-  "side": 0.0,
-  "total": 0.0,
+  "side": 1.5,
+  "total": 1.5,
   "side_dir": "New England Patriots",
   "total_dir": "FEWER",
   "why": [
-   "money conflict -> no play"
+   "side coherent (3 markets)",
+   "spread money div +10",
+   "total coherent (5 markets)",
+   "total coherence 5+"
   ]
  },
  "gates": {
-  "conflict_clear": false,
+  "conflict_clear": true,
   "has_splits": true,
   "coherent_side": true,
   "coherent_total": true

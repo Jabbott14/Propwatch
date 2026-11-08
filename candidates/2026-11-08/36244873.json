@@ -3,12 +3,12 @@
  "game": "New York Giants @ Philadelphia Eagles",
  "abbr": "NYG@PHI",
  "kickoff": "2026-11-08T18:01:00.000Z",
- "recorded_utc": "2026-11-07T21:52:51Z",
+ "recorded_utc": "2026-11-08T06:04:16Z",
  "anchor": "2026-11-02T0000Z",
  "coherence": {
   "side_dir": "New York Giants",
-  "side_agree": 3,
-  "side_conflict": 0,
+  "side_agree": 2,
+  "side_conflict": 1,
   "total_dir": "FEWER",
   "total_agree": 5,
   "total_conflict": 0,
@@ -24,9 +24,9 @@
     "dir": "New York Giants"
    },
    {
-    "mkt": "2H spread",
+    "mkt": "1H spread",
     "axis": "side",
-    "dir": "New York Giants"
+    "dir": "Philadelphia Eagles"
    },
    {
     "mkt": "total",
@@ -61,15 +61,15 @@
     "open": -2.5,
     "open_odds": -115,
     "now": -3,
-    "now_odds": -120,
-    "n": 351
+    "now_odds": -110,
+    "n": 369
    },
    "Philadelphia Eagles": {
     "open": 2.5,
     "open_odds": -105,
     "now": 3,
-    "now_odds": 100,
-    "n": 351
+    "now_odds": -110,
+    "n": 369
    }
   },
   "ml": {
@@ -77,15 +77,15 @@
     "open": 0,
     "open_odds": -144,
     "now": 0,
-    "now_odds": -172,
-    "n": 351
+    "now_odds": -162,
+    "n": 369
    },
    "Philadelphia Eagles": {
     "open": 0,
     "open_odds": 122,
     "now": 0,
-    "now_odds": 144,
-    "n": 351
+    "now_odds": 136,
+    "n": 369
    }
   },
   "total": {
@@ -93,15 +93,15 @@
     "open": 39.5,
     "open_odds": -110,
     "now": 38.5,
-    "now_odds": -110,
-    "n": 351
+    "now_odds": -105,
+    "n": 369
    },
    "Under": {
     "open": 39.5,
     "open_odds": -110,
     "now": 38.5,
-    "now_odds": -110,
-    "n": 351
+    "now_odds": -115,
+    "n": 369
    }
   },
   "1H total": {
@@ -109,15 +109,15 @@
     "open": 19.5,
     "open_odds": -125,
     "now": 19.5,
-    "now_odds": -120,
-    "n": 348
+    "now_odds": -110,
+    "n": 366
    },
    "Under": {
     "open": 19.5,
     "open_odds": 105,
     "now": 19.5,
-    "now_odds": 100,
-    "n": 348
+    "now_odds": -110,
+    "n": 366
    }
   },
   "1H home TT": {
@@ -126,30 +126,30 @@
     "open_odds": -113,
     "now": 8.5,
     "now_odds": -120,
-    "n": 348
+    "n": 366
    },
    "Under": {
     "open": 9.5,
     "open_odds": -113,
     "now": 8.5,
-    "now_odds": -106,
-    "n": 348
+    "now_odds": -104,
+    "n": 366
    }
   },
   "1H away TT": {
    "Over": {
     "open": 10.5,
     "open_odds": 116,
-    "now": 10.5,
-    "now_odds": 120,
-    "n": 348
+    "now": 9.5,
+    "now_odds": -148,
+    "n": 366
    },
    "Under": {
     "open": 10.5,
     "open_odds": -148,
-    "now": 10.5,
-    "now_odds": -154,
-    "n": 348
+    "now": 9.5,
+    "now_odds": 116,
+    "n": 366
    }
   },
   "1H spread": {
@@ -157,15 +157,15 @@
     "open": -1.5,
     "open_odds": -110,
     "now": -1.5,
-    "now_odds": -110,
-    "n": 348
+    "now_odds": -105,
+    "n": 366
    },
    "Philadelphia Eagles": {
     "open": 1.5,
     "open_odds": -110,
     "now": 1.5,
-    "now_odds": -110,
-    "n": 348
+    "now_odds": -115,
+    "n": 366
    }
   },
   "2H total": {
@@ -173,15 +173,15 @@
     "open": 19.5,
     "open_odds": -110,
     "now": 18.5,
-    "now_odds": -115,
-    "n": 348
+    "now_odds": -110,
+    "n": 366
    },
    "Under": {
     "open": 19.5,
     "open_odds": -110,
     "now": 18.5,
-    "now_odds": -105,
-    "n": 348
+    "now_odds": -110,
+    "n": 366
    }
   },
   "2H spread": {
@@ -189,15 +189,15 @@
     "open": -1.5,
     "open_odds": 100,
     "now": -1.5,
-    "now_odds": -105,
-    "n": 348
+    "now_odds": 100,
+    "n": 366
    },
    "Philadelphia Eagles": {
     "open": 1.5,
     "open_odds": -120,
     "now": 1.5,
-    "now_odds": -115,
-    "n": 348
+    "now_odds": -120,
+    "n": 366
    }
   }
  },
@@ -205,55 +205,55 @@
   "spread": {
    "home": {
     "tix": 34,
-    "mny": 27,
+    "mny": 44,
     "d_tix": -5,
-    "d_mny": 7,
-    "div": 12,
-    "n": 284
+    "d_mny": 24,
+    "div": 29,
+    "n": 302
    },
    "away": {
     "tix": 66,
-    "mny": 73,
+    "mny": 56,
     "d_tix": 5,
-    "d_mny": -7,
-    "div": -12,
-    "n": 284
+    "d_mny": -24,
+    "div": -29,
+    "n": 302
    }
   },
   "total": {
    "under": {
-    "tix": 23,
-    "mny": 29,
-    "d_tix": -2,
-    "d_mny": 4,
-    "div": 6,
-    "n": 284
+    "tix": 22,
+    "mny": 27,
+    "d_tix": -3,
+    "d_mny": 2,
+    "div": 5,
+    "n": 302
    },
    "over": {
-    "tix": 77,
-    "mny": 71,
-    "d_tix": 2,
-    "d_mny": -4,
-    "div": -6,
-    "n": 284
+    "tix": 78,
+    "mny": 73,
+    "d_tix": 3,
+    "d_mny": -2,
+    "div": -5,
+    "n": 302
    }
   },
   "moneyline": {
    "away": {
     "tix": 81,
-    "mny": 55,
+    "mny": 59,
     "d_tix": 5,
-    "d_mny": -13,
-    "div": -18,
-    "n": 284
+    "d_mny": -9,
+    "div": -14,
+    "n": 302
    },
    "home": {
     "tix": 19,
-    "mny": 45,
+    "mny": 41,
     "d_tix": -5,
-    "d_mny": 13,
-    "div": 18,
-    "n": 284
+    "d_mny": 9,
+    "div": 14,
+    "n": 302
    }
   }
  },
@@ -261,23 +261,22 @@
  "money_lean": {
   "spread": {
    "side": "away",
-   "mny": 73,
-   "d_mny": -7
+   "mny": 56,
+   "d_mny": -24
   },
   "moneyline": {
    "side": "away",
-   "mny": 55,
-   "d_mny": -13
+   "mny": 59,
+   "d_mny": -9
   }
  },
  "suggested": {
-  "side": 1.5,
+  "side": 0.5,
   "total": 1.5,
   "side_dir": "New York Giants",
   "total_dir": "FEWER",
   "why": [
-   "side coherent (3 markets)",
-   "spread money div +12",
+   "spread money div +29",
    "total coherent (5 markets)",
    "total coherence 5+"
   ]
@@ -285,7 +284,7 @@
  "gates": {
   "conflict_clear": true,
   "has_splits": true,
-  "coherent_side": true,
+  "coherent_side": false,
   "coherent_total": true
  },
  "frozen": false
