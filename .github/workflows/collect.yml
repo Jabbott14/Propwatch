@@ -67,6 +67,68 @@ jobs:
               if diag is not None: diag.append(rec)
               return txt
 
+
+          # ---- Pinnacle as fair value -------------------------------------
+          # Pinnacle takes $10k-$100k a bet and does not limit winners, so its
+          # number is where sharp money already went; retail follows it.
+          #   PIN_LEADING  Pinnacle moved, retail has not -> retail is about to.
+          #   RETAIL_SOFT  the two disagree right now -> take the better side.
+          # Lives here, not in the grader: this is live market data and needs the
+          # collector's cadence, not a 3-hourly batch.
+          def pin_parse(mtxt, ptxt):
+              out = {}
+              try:
+                  mj = json.loads(mtxt); pj = json.loads(ptxt)
+              except Exception:
+                  return out
+              gm = {}
+              for m in mj:
+                  if not isinstance(m, dict) or m.get("special") or not m.get("participants"): continue
+                  al = {x["alignment"]: x["name"] for x in m["participants"] if x.get("alignment")}
+                  if "home" in al and "away" in al: gm[m["id"]] = al
+              for r in pj:
+                  if not isinstance(r, dict) or r.get("period") != 0 or r.get("isAlternate"): continue
+                  al = gm.get(r.get("matchupId"))
+                  if not al: continue
+                  d = out.setdefault(f"{al['away']} @ {al['home']}", {})
+                  lim = max([l.get("amount", 0) for l in (r.get("limits") or [])] or [0])
+                  pr = {x.get("designation"): x for x in (r.get("prices") or [])}
+                  if r.get("type") == "total" and "over" in pr:
+                      d["total"] = [pr["over"].get("points"), pr["over"].get("price"), lim]
+                  elif r.get("type") == "spread" and "home" in pr:
+                      d["spread"] = [pr["home"].get("points"), pr["home"].get("price"), lim]
+              return out
+
+          def pin_signals(pin_now, rows, hist):
+              """rows = this cycle's retail rows; hist = {game:{mkt:first_seen_number}}"""
+              retail = {}
+              for r in rows:
+                  g = r["g"]; home = g.split(" @ ")[-1]
+                  if r["mt"] == "TOTAL_POINTS_(OVER/UNDER)" and r["r"] == "Over" and r["h"] is not None:
+                      retail.setdefault(g, {})["total"] = r["h"]
+                  if r["mt"] == "MATCH_HANDICAP_(2-WAY)" and r["r"] == home and r["h"] is not None:
+                      retail.setdefault(g, {})["spread"] = r["h"]
+              sig = {}
+              for g, mks in pin_now.items():
+                  rt = retail.get(g)
+                  if not rt: continue
+                  for mkt, v in mks.items():
+                      pn = v[0]; rn = rt.get(mkt)
+                      if pn is None or rn is None: continue
+                      h = hist.setdefault(g, {})
+                      po = h.setdefault("pin_" + mkt, pn)
+                      ro = h.setdefault("ret_" + mkt, rn)
+                      pm = pn - po; rm = rn - ro; gap = rn - pn
+                      fl = []
+                      if abs(pm) >= 0.5 and abs(rm) < 0.5: fl.append("PIN_LEADING")
+                      if abs(gap) >= 0.5: fl.append("RETAIL_SOFT")
+                      if fl:
+                          sig.setdefault(g, {})[mkt] = {
+                              "pin_open": po, "pin_now": pn, "pin_moved": round(pm, 1),
+                              "retail_open": ro, "retail_now": rn, "retail_moved": round(rm, 1),
+                              "gap": round(gap, 1), "limit": v[2], "flags": fl}
+              return sig
+
           def od_of(r):
               try: return r["winRunnerOdds"]["americanDisplayOdds"]["americanOdds"]
               except Exception: return None
@@ -85,7 +147,7 @@ jobs:
           subprocess.run(["git","config","user.email",
                           "propwatch@users.noreply.github.com"],check=False)
 
-          KO={}
+          KO={}; PINHIST={}; LASTPIN={}
           t0=time.time(); cyc=0
           while time.time()-t0 < RUNFOR:
               cyc+=1
@@ -116,10 +178,11 @@ jobs:
                   except Exception: lob=None
 
               if heavy:
-                  archive("pin_prices","https://guest.api.arcadia.pinnacle.com/0.1/leagues/889/markets/straight",
+                  PPX=archive("pin_prices","https://guest.api.arcadia.pinnacle.com/0.1/leagues/889/markets/straight",
                           PIN,ts=ts,day=day,diag=diag)
-                  archive("pin_matchups","https://guest.api.arcadia.pinnacle.com/0.1/leagues/889/matchups",
+                  PMX=archive("pin_matchups","https://guest.api.arcadia.pinnacle.com/0.1/leagues/889/matchups",
                           PIN,ts=ts,day=day,diag=diag)
+                  if PPX and PMX: LASTPIN=pin_parse(PMX,PPX)
                   archive("vsin","https://data.vsin.com/betting-splits/?sport=NFL",ts=ts,day=day,diag=diag)
                   archive("sbr","https://www.sportsbookreview.com/betting-odds/nfl-football/",
                           ts=ts,day=day,diag=diag)
@@ -168,13 +231,17 @@ jobs:
                       for r in rows: f.write(json.dumps(r,separators=(",",":"))+"\n")
                   gz_sz=os.path.getsize(p)
 
+              SIG = pin_signals(LASTPIN, rows, PINHIST) if LASTPIN and rows else {}
+              if SIG:
+                  d=f"signals/{day}"; os.makedirs(d,exist_ok=True)
+                  json.dump({"ts":ts,"signals":SIG}, open(f"{d}/{ts}.json","w"), indent=1)
               os.makedirs("data",exist_ok=True)
               json.dump({"run_utc":now.strftime("%Y-%m-%dT%H:%M:%SZ"),"cycle":cyc,
                          "heavy":heavy,"games":len(games),"rows":len(rows),
                          "props_gz":gz_sz,"pulls_ok":ok,"pulls_fail":fail,
                          "elapsed_min":round((time.time()-t0)/60,1),
                          "next_kickoff_h":round(hrs,1),"cadence_min":CYCLE//60,
-                         "closing_window":close,"attempts":diag},
+                         "closing_window":close,"pin_signals":sum(len(v) for v in SIG.values()),"attempts":diag},
                         open("data/_diag.json","w"),indent=1)
               print(f"cyc {cyc:3} {ts} next_kick={hrs:.1f}h cadence={CYCLE//60}m "
                     f"{'CLOSE ' if close else ''}games={len(games)} rows={len(rows)} gz={gz_sz//1024}KB "
