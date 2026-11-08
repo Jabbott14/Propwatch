@@ -1,24 +1,18 @@
 {
  "an_rows": 346,
- "cycle": 9,
- "cycle_sec": 8.0,
+ "cycle": 12,
+ "cycle_sec": 8.9,
  "deferred_events": 0,
- "elapsed_min": 80.1,
+ "elapsed_min": 110.1,
  "errors": [],
  "event_rows": 352,
  "events_with_props": 118,
  "gz": {
   "pin": 0,
-  "props": 865,
-  "raw_actionnet_d0": 40142,
-  "raw_actionnet_d1": 7523,
-  "raw_fanduel": 34234,
-  "raw_pin_matchups": 3560,
-  "raw_pin_prices": 17571,
-  "raw_vsin": 18689,
-  "splits": 616
+  "props": 844,
+  "splits": 305
  },
- "gz_kb_total": 120.3,
+ "gz_kb_total": 1.1,
  "keyframe": false,
  "lobby_events": 26,
  "lobby_rows": 156,
@@ -26,13 +20,13 @@
  "pin_rows": 442,
  "pulls_fail": 0,
  "pulls_ok": 48,
- "raw": true,
+ "raw": false,
  "rows_written": {
   "pin": 0,
-  "props": 42,
-  "splits": 22
+  "props": 46,
+  "splits": 6
  },
- "run_utc": "2026-11-08T15:09:53Z",
+ "run_utc": "2026-11-08T15:39:53Z",
  "tiers": {
   "A": 16,
   "B": 0,
