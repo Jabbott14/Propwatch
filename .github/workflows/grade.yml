@@ -10,12 +10,13 @@ concurrency:
 jobs:
   run:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 25
     steps:
       - uses: actions/checkout@v4
-      - name: record and grade
+      - name: record, grade and learn
         run: |
           python3 - . <<'PY'
+
           #!/usr/bin/env python3
           """Propwatch self-logging + self-grading. Stdlib only.
 
@@ -30,6 +31,7 @@ jobs:
           its own. That was the point: no manual logging.
           """
           import gzip, json, os, sys, glob, collections, datetime as dt
+          import statistics as st
 
           REPO = sys.argv[1] if len(sys.argv) > 1 else "."
           P = lambda *a: os.path.join(REPO, *a)
@@ -155,14 +157,28 @@ jobs:
               return out
 
           def conflict_verdict(sp):
+              """Compare which way money is MOVING, not which side holds the most.
+
+              Level and direction are different questions. CIN@ATL 2026-11-08: spread money
+              sat on Atlanta (55%) while moneyline money sat on Cincinnati (89%) -- opposite
+              LEVELS -- but money was moving toward Cincinnati in BOTH (+20 spread, +5 ML).
+              That is the ordinary public-favourite / sharp-dog split, not a conflict, and
+              the level test suppressed a legitimate play.
+
+              CHI@SEA 2026-11-02, the loss this rule was built for, was a real conflict:
+              spread money moving to Chicago (+3), moneyline money moving to Seattle (+17).
+              DIRECTION is what separates the two cases.
+              """
               lean = {}
               for m in ("spread", "moneyline"):
                   d = sp.get(m) or {}
                   if len(d) < 2: continue
-                  w = max(d.items(), key=lambda kv: kv[1]["mny"])
-                  lean[m] = {"side": w[0], "mny": w[1]["mny"], "d_mny": w[1]["d_mny"]}
+                  mv = max(d.items(), key=lambda kv: kv[1].get("d_mny", 0))
+                  lv = max(d.items(), key=lambda kv: kv[1]["mny"])
+                  lean[m] = {"moving": mv[0], "d_mny": mv[1].get("d_mny", 0),
+                             "level": lv[0], "mny": lv[1]["mny"]}
               if len(lean) < 2: return "UNKNOWN", lean
-              if len({v["side"] for v in lean.values()}) == 1: return "AGREE", lean
+              if len({v["moving"] for v in lean.values()}) == 1: return "AGREE", lean
               mv = [abs(v["d_mny"]) for v in lean.values()]
               return ("CONFLICT" if min(mv) >= 4 and max(mv) >= 8 else "SPLIT"), lean
 
@@ -173,8 +189,12 @@ jobs:
                   ks = sorted(k for k in s if cut is None or k < cut)
                   if not ks: continue
                   (h0, o0), (h1, o1) = s[ks[0]], s[ks[-1]]
+                  step = max(1, len(ks) // 10)
+                  path = [[k, s[k][0], s[k][1]] for k in ks[::step]]
+                  if path and path[-1][0] != ks[-1]: path.append([ks[-1], h1, o1])
                   out.setdefault(SIDE_MK.get(mt) or TOTAL_MK.get(mt), {})[sd] = {
-                      "open": h0, "open_odds": o0, "now": h1, "now_odds": o1, "n": len(ks)}
+                      "open": h0, "open_odds": o0, "now": h1, "now_odds": o1, "n": len(ks),
+                      "path": path}
               return out
 
 
@@ -189,7 +209,16 @@ jobs:
               (sd, sn, sx) = coh_side; (td, tn, tx) = coh_total
               out = {"side": 0.0, "total": 0.0, "side_dir": sd, "total_dir": td, "why": []}
               if cv == "CONFLICT":
-                  out["why"].append("money conflict -> no play"); return out
+                  # A conflict is a SIDE verdict (spread vs moneyline). It says nothing about
+                  # the total. Zeroing both suppressed CIN@ATL over 52.5 on 2026-11-08, where
+                  # 90% of money sat on the under and the number still went up.
+                  out["why"].append("money conflict -> no SIDE play")
+                  out["side"] = 0.0
+                  if tn >= 3 and tx == 0:
+                      out["total"] += 1.0; out["why"].append(f"total coherent ({tn} markets)")
+                      if tn >= 5: out["total"] += 0.5
+                  out["total"] = round(min(out["total"], 2.0), 1)
+                  return out
               spd = (sp.get("spread") or {})
               div = max([v["div"] for v in spd.values()], default=0)
               depth = max([v["n"] for v in spd.values()], default=0)
@@ -394,6 +423,141 @@ jobs:
                       "roi_pct": round(100 * pnl / staked, 1) if staked else None,
                       "by": {k: dict(v, hit_pct=round(100 * v["w"] / v["n"], 1)) for k, v in sorted(by.items())}}
 
+          # ------------------------------------------------- learner
+
+
+          MIN_N = 30            # below this, report but never propose a weight change
+
+          def _learn_finals():
+              import gzip
+              out = {}
+              for f in sorted(glob.glob(P("raw/espn/*/*.json.gz"))):
+                  try: j = json.load(gzip.open(f, "rt"))
+                  except Exception: continue
+                  for e in j.get("events", []):
+                      c = e["competitions"][0]
+                      if c["status"]["type"]["description"] != "Final": continue
+                      d = {t["homeAway"]: t for t in c["competitors"]}
+                      try: a, h = int(d["away"]["score"]), int(d["home"]["score"])
+                      except Exception: continue
+                      out[f"{d['away']['team']['abbreviation']}@{d['home']['team']['abbreviation']}"] = {
+                          "away": a, "home": h, "total": a + h, "margin": h - a}
+              return out
+
+          def near_key(n, keys=(3, 7, 10, 14)):
+              return min(abs(abs(n) - k) for k in keys) if n is not None else None
+
+          def learn_rows():
+              """One row per game-market, with every feature we can currently see."""
+              F = _learn_finals(); out = []
+              for f in sorted(glob.glob(P("candidates/*/*.json"))):
+                  try: r = json.load(open(f))
+                  except Exception: continue
+                  res = F.get(r["abbr"])
+                  if not res: continue
+                  away, home = r["game"].split(" @ ")
+                  nums = r.get("numbers") or {}
+                  sp = r.get("splits") or {}
+                  pin = r.get("pinnacle") or {}
+                  coh = r.get("coherence") or {}
+                  base = {"game": r["abbr"], "kickoff": r["kickoff"],
+                          "conflict": r.get("money_conflict"), "frozen": r.get("frozen")}
+
+                  # ---- spread ----
+                  hs = (nums.get("spread") or {}).get(home) or {}
+                  if hs.get("open") is not None and hs.get("now") is not None:
+                      close = hs["now"]; opened = hs["open"]
+                      cover = res["margin"] + close
+                      s = dict(base, market="spread",
+                               open=opened, close=close, moved=round(close - opened, 1),
+                               juice_open=hs.get("open_odds"), juice_close=hs.get("now_odds"),
+                               juice_drift=(hs.get("now_odds") or 0) - (hs.get("open_odds") or 0),
+                               n_snaps=hs.get("n"), near_key=near_key(close),
+                               coh_dir=coh.get("side_dir"), coh_n=coh.get("side_agree"),
+                               coh_conflict=coh.get("side_conflict"),
+                               winner=(home if cover > 0 else away if cover < 0 else "PUSH"))
+                      d = sp.get("spread") or {}
+                      if len(d) == 2:
+                          hm = d.get("home", {}); aw = d.get("away", {})
+                          s.update(mny_home=hm.get("mny"), dmny_home=hm.get("d_mny"),
+                                   tix_home=hm.get("tix"), div_home=hm.get("div"),
+                                   money_lean=home if (hm.get("mny", 0) >= 50) else away,
+                                   money_moving=home if (hm.get("d_mny", 0) > aw.get("d_mny", 0)) else away)
+                      pv = pin.get("spread")
+                      if pv: s.update(pin_gap=pv.get("gap"), pin_moved=pv.get("pin_moved"),
+                                      pin_limit=pv.get("limit"), pin_flags=",".join(pv.get("flags") or []))
+                      # CLV: did the close move toward or away from each side?
+                      s["clv_home"] = round(opened - close, 1)      # + = home number got worse, early home bet won CLV
+                      out.append(s)
+
+                  # ---- total ----
+                  tv = (nums.get("total") or {}).get("Over") or {}
+                  if tv.get("open") is not None and tv.get("now") is not None:
+                      close = tv["now"]; opened = tv["open"]
+                      t = dict(base, market="total",
+                               open=opened, close=close, moved=round(close - opened, 1),
+                               juice_open=tv.get("open_odds"), juice_close=tv.get("now_odds"),
+                               juice_drift=(tv.get("now_odds") or 0) - (tv.get("open_odds") or 0),
+                               n_snaps=tv.get("n"), near_key=None,
+                               coh_dir=coh.get("total_dir"), coh_n=coh.get("total_agree"),
+                               coh_conflict=coh.get("total_conflict"),
+                               winner=("OVER" if res["total"] > close else "UNDER" if res["total"] < close else "PUSH"))
+                      d = sp.get("total") or {}
+                      if len(d) == 2:
+                          ov = d.get("over", {}); un = d.get("under", {})
+                          t.update(mny_over=ov.get("mny"), dmny_over=ov.get("d_mny"),
+                                   tix_over=ov.get("tix"), div_over=ov.get("div"),
+                                   money_lean=("OVER" if ov.get("mny", 0) >= 50 else "UNDER"),
+                                   money_moving=("OVER" if ov.get("d_mny", 0) > un.get("d_mny", 0) else "UNDER"))
+                      pv = pin.get("total")
+                      if pv: t.update(pin_gap=pv.get("gap"), pin_moved=pv.get("pin_moved"),
+                                      pin_limit=pv.get("limit"), pin_flags=",".join(pv.get("flags") or []))
+                      t["clv_over"] = round(close - opened, 1)
+                      out.append(t)
+              return out
+
+          def learn_hit(rs, pick_key):
+              """Did the feature's implied side win?"""
+              w = [r for r in rs if r.get(pick_key) and r.get("winner") not in (None, "PUSH")]
+              if not w: return None
+              c = sum(1 for r in w if r[pick_key] == r["winner"])
+              return {"n": len(w), "won": c, "pct": round(100 * c / len(w), 1)}
+
+          def learn_report(R):
+              out = {"generated_rows": len(R), "min_n_to_propose": MIN_N, "tests": {}, "proposals": []}
+              def add(name, sel, pick):
+                  rs = [r for r in R if sel(r)]
+                  h = learn_hit(rs, pick)
+                  if h: out["tests"][name] = h
+              # does the line-movement direction predict the winner?
+              add("coherence_dir (all)", lambda r: r.get("coh_dir"), "coh_dir")
+              for lo, hi, lab in ((1, 2, "1-2"), (3, 4, "3-4"), (5, 9, "5+")):
+                  add(f"coherence_dir, {lab} markets",
+                      lambda r, lo=lo, hi=hi: r.get("coh_dir") and lo <= (r.get("coh_n") or 0) <= hi, "coh_dir")
+              # money level vs money direction -- the thing that was wrong in the conflict rule
+              add("money LEVEL majority", lambda r: r.get("money_lean"), "money_lean")
+              add("money MOVING toward", lambda r: r.get("money_moving"), "money_moving")
+              add("money level, spread only", lambda r: r.get("money_lean") and r["market"] == "spread", "money_lean")
+              add("money moving, spread only", lambda r: r.get("money_moving") and r["market"] == "spread", "money_moving")
+              # conflict verdict
+              for v in ("AGREE", "SPLIT", "CONFLICT"):
+                  add(f"conflict={v}", lambda r, v=v: r.get("conflict") == v and r.get("coh_dir"), "coh_dir")
+              # pinnacle
+              add("PIN_LEADING present", lambda r: "PIN_LEADING" in (r.get("pin_flags") or ""), "coh_dir")
+              # CLV summary -- works even with no result
+              clv = [abs(r.get("clv_home") if r["market"] == "spread" else r.get("clv_over") or 0)
+                     for r in R if (r.get("clv_home") is not None or r.get("clv_over") is not None)]
+              if clv:
+                  out["clv"] = {"markets": len(clv), "median_abs_move": st.median(clv),
+                                "pct_that_moved": round(100 * sum(1 for x in clv if x) / len(clv), 1)}
+              for name, h in out["tests"].items():
+                  if h["n"] >= MIN_N:
+                      out["proposals"].append({"feature": name, "n": h["n"], "hit_pct": h["pct"],
+                          "action": "increase weight" if h["pct"] >= 55 else
+                                    "DROP or invert" if h["pct"] <= 45 else "no edge -- zero weight"})
+              return out
+
+
           if __name__ == "__main__":
               n = write_candidates()
               rows = grade()
@@ -408,14 +572,23 @@ jobs:
               json.dump(pr, open(P("graded", "proposals.json"), "w"), indent=1)
               json.dump(s, open(P("graded", "summary.json"), "w"), indent=1)
               print(f"candidates written: {n}   graded games: {len(rows)}")
-              print("PROPOSALS:", json.dumps(ps, indent=1)[:700])
+              print("PROPOSALS:", json.dumps(ps, indent=1)[:500])
+              LR = learn_rows(); LP = learn_report(LR)
+              os.makedirs(P("learning"), exist_ok=True)
+              json.dump(LR, open(P("learning", "features.json"), "w"), indent=1)
+              json.dump(LP, open(P("learning", "findings.json"), "w"), indent=1)
+              print(f"\nLEARNER: {len(LR)} feature rows, min n to propose = {MIN_N}")
+              for k, v in sorted(LP["tests"].items(), key=lambda x: -x[1]["n"])[:8]:
+                  tag = "" if v["n"] >= MIN_N else " [too small]"
+                  print(f"   {k:32} n={v['n']:>3} {v['pct']:>5}%{tag}")
+              print("   proposals:", LP["proposals"] or "none - insufficient sample")
           PY
       - name: commit
         if: always()
         run: |
           git config user.name propwatch
           git config user.email propwatch@users.noreply.github.com
-          git add -A candidates/ graded/ || true
+          git add -A candidates/ graded/ learning/ || true
           git diff --staged --quiet || git commit -q -m "grade $(date -u +%FT%TZ)"
           git pull -q --rebase --autostash || true
           git push -q
