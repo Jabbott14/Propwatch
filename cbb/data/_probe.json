@@ -10,21 +10,21 @@
  "pin_leagues": [
   {
    "id": 493,
-   "n": 19,
+   "n": 35,
    "name": "NCAA"
   },
   {
    "id": 228036,
-   "n": 3,
+   "n": 1,
    "name": "Philippines - NCAA"
   }
  ],
- "run_utc": "2026-11-09T07:05:43Z",
+ "run_utc": "2026-11-09T19:03:57Z",
  "tried": [
   {
-   "bytes": 429841,
+   "bytes": 459103,
    "kind": "fd_lobby",
-   "score": 32,
+   "score": 38,
    "url": "https://sbapi.nj.sportsbook.fanduel.com/api/content-managed-page?page=CUSTOM&customPageId=ncaab&_ak=<ak>"
   },
   {
@@ -46,21 +46,21 @@
    "url": "https://sbapi.nj.sportsbook.fanduel.com/api/content-managed-page?page=CUSTOM&customPageId=ncaa-basketball-men&_ak=<ak>"
   },
   {
-   "bytes": 94266,
+   "bytes": 116557,
    "kind": "actionnet",
    "score": 5,
    "url": "https://api.actionnetwork.com/web/v2/scoreboard/ncaab?period=game&date=20261109"
   },
   {
-   "bytes": 723079,
+   "bytes": 843387,
    "kind": "actionnet",
    "score": 34,
    "url": "https://api.actionnetwork.com/web/v2/scoreboard/ncaab?period=game&division=D1&date=20261109"
   },
   {
-   "bytes": 110605,
+   "bytes": 109833,
    "kind": "vsin",
-   "score": 110605,
+   "score": 109833,
    "url": "https://data.vsin.com/betting-splits/?sport=CBB"
   },
   {
