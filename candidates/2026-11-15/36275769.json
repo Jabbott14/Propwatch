@@ -1,0 +1,264 @@
+{
+ "eventId": "36275769",
+ "game": "Seattle Seahawks @ Las Vegas Raiders",
+ "abbr": "SEA@LV",
+ "kickoff": "2026-11-15T21:06:00.000Z",
+ "recorded_utc": "2026-11-09T00:56:01Z",
+ "anchor": "2026-11-09T0000Z",
+ "coherence": {
+  "side_dir": "Las Vegas Raiders",
+  "side_agree": 2,
+  "side_conflict": 0,
+  "total_dir": "FEWER",
+  "total_agree": 1,
+  "total_conflict": 0,
+  "markets": [
+   {
+    "mkt": "spread",
+    "axis": "side",
+    "dir": "Las Vegas Raiders"
+   },
+   {
+    "mkt": "ml",
+    "axis": "side",
+    "dir": "Las Vegas Raiders"
+   },
+   {
+    "mkt": "total",
+    "axis": "total",
+    "dir": "FEWER"
+   }
+  ]
+ },
+ "numbers": {
+  "spread": {
+   "Seattle Seahawks": {
+    "open": -3.5,
+    "open_odds": -110,
+    "now": -3.5,
+    "now_odds": 100,
+    "n": 5,
+    "path": [
+     [
+      "2026-11-09T0039Z",
+      -3.5,
+      -110
+     ],
+     [
+      "2026-11-09T0042Z",
+      -3.5,
+      -110
+     ],
+     [
+      "2026-11-09T0045Z",
+      -3.5,
+      -110
+     ],
+     [
+      "2026-11-09T0049Z",
+      -3.5,
+      -110
+     ],
+     [
+      "2026-11-09T0052Z",
+      -3.5,
+      100
+     ]
+    ]
+   },
+   "Las Vegas Raiders": {
+    "open": 3.5,
+    "open_odds": -110,
+    "now": 3.5,
+    "now_odds": -120,
+    "n": 5,
+    "path": [
+     [
+      "2026-11-09T0039Z",
+      3.5,
+      -110
+     ],
+     [
+      "2026-11-09T0042Z",
+      3.5,
+      -110
+     ],
+     [
+      "2026-11-09T0045Z",
+      3.5,
+      -110
+     ],
+     [
+      "2026-11-09T0049Z",
+      3.5,
+      -110
+     ],
+     [
+      "2026-11-09T0052Z",
+      3.5,
+      -120
+     ]
+    ]
+   }
+  },
+  "total": {
+   "Over": {
+    "open": 44.5,
+    "open_odds": 100,
+    "now": 43.5,
+    "now_odds": -110,
+    "n": 5,
+    "path": [
+     [
+      "2026-11-09T0039Z",
+      44.5,
+      100
+     ],
+     [
+      "2026-11-09T0042Z",
+      44.5,
+      100
+     ],
+     [
+      "2026-11-09T0045Z",
+      44.5,
+      100
+     ],
+     [
+      "2026-11-09T0049Z",
+      44.5,
+      100
+     ],
+     [
+      "2026-11-09T0052Z",
+      43.5,
+      -110
+     ]
+    ]
+   },
+   "Under": {
+    "open": 44.5,
+    "open_odds": -120,
+    "now": 43.5,
+    "now_odds": -110,
+    "n": 5,
+    "path": [
+     [
+      "2026-11-09T0039Z",
+      44.5,
+      -120
+     ],
+     [
+      "2026-11-09T0042Z",
+      44.5,
+      -120
+     ],
+     [
+      "2026-11-09T0045Z",
+      44.5,
+      -120
+     ],
+     [
+      "2026-11-09T0049Z",
+      44.5,
+      -120
+     ],
+     [
+      "2026-11-09T0052Z",
+      43.5,
+      -110
+     ]
+    ]
+   }
+  },
+  "ml": {
+   "Seattle Seahawks": {
+    "open": 0,
+    "open_odds": -190,
+    "now": 0,
+    "now_odds": -174,
+    "n": 5,
+    "path": [
+     [
+      "2026-11-09T0039Z",
+      0,
+      -190
+     ],
+     [
+      "2026-11-09T0042Z",
+      0,
+      -190
+     ],
+     [
+      "2026-11-09T0045Z",
+      0,
+      -190
+     ],
+     [
+      "2026-11-09T0049Z",
+      0,
+      -190
+     ],
+     [
+      "2026-11-09T0052Z",
+      0,
+      -174
+     ]
+    ]
+   },
+   "Las Vegas Raiders": {
+    "open": 0,
+    "open_odds": 160,
+    "now": 0,
+    "now_odds": 146,
+    "n": 5,
+    "path": [
+     [
+      "2026-11-09T0039Z",
+      0,
+      160
+     ],
+     [
+      "2026-11-09T0042Z",
+      0,
+      160
+     ],
+     [
+      "2026-11-09T0045Z",
+      0,
+      160
+     ],
+     [
+      "2026-11-09T0049Z",
+      0,
+      160
+     ],
+     [
+      "2026-11-09T0052Z",
+      0,
+      146
+     ]
+    ]
+   }
+  }
+ },
+ "splits": {},
+ "money_conflict": "UNKNOWN",
+ "money_lean": {},
+ "suggested": {
+  "side": 0.0,
+  "total": 0.0,
+  "side_dir": "Las Vegas Raiders",
+  "total_dir": "FEWER",
+  "why": [
+   "no splits yet"
+  ]
+ },
+ "gates": {
+  "conflict_clear": true,
+  "has_splits": false,
+  "coherent_side": false,
+  "coherent_total": false
+ },
+ "frozen": false
+}

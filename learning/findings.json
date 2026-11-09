@@ -1,62 +1,80 @@
 {
- "generated_rows": 24,
+ "generated_rows": 36,
  "min_n_to_propose": 30,
  "tests": {
   "coherence_dir (all)": {
-   "n": 8,
-   "won": 1,
-   "pct": 12.5
+   "n": 20,
+   "won": 2,
+   "pct": 10.0
   },
   "coherence_dir, 1-2 markets": {
-   "n": 4,
+   "n": 7,
    "won": 1,
-   "pct": 25.0
+   "pct": 14.3
   },
   "coherence_dir, 3-4 markets": {
-   "n": 3,
-   "won": 0,
-   "pct": 0.0
+   "n": 9,
+   "won": 1,
+   "pct": 11.1
   },
   "coherence_dir, 5+ markets": {
-   "n": 1,
+   "n": 4,
    "won": 0,
    "pct": 0.0
   },
   "money LEVEL majority": {
-   "n": 22,
-   "won": 10,
-   "pct": 45.5
+   "n": 34,
+   "won": 18,
+   "pct": 52.9
   },
   "money MOVING toward": {
-   "n": 22,
-   "won": 12,
-   "pct": 54.5
+   "n": 34,
+   "won": 15,
+   "pct": 44.1
   },
   "money level, spread only": {
-   "n": 11,
-   "won": 3,
-   "pct": 27.3
+   "n": 17,
+   "won": 9,
+   "pct": 52.9
   },
   "money moving, spread only": {
-   "n": 11,
-   "won": 5,
-   "pct": 45.5
+   "n": 17,
+   "won": 7,
+   "pct": 41.2
   },
   "conflict=AGREE": {
-   "n": 4,
+   "n": 12,
    "won": 1,
-   "pct": 25.0
+   "pct": 8.3
   },
-  "conflict=CONFLICT": {
+  "conflict=SPLIT": {
    "n": 2,
    "won": 0,
    "pct": 0.0
+  },
+  "conflict=CONFLICT": {
+   "n": 4,
+   "won": 1,
+   "pct": 25.0
   }
  },
- "proposals": [],
+ "proposals": [
+  {
+   "feature": "money LEVEL majority",
+   "n": 34,
+   "hit_pct": 52.9,
+   "action": "no edge -- zero weight"
+  },
+  {
+   "feature": "money MOVING toward",
+   "n": 34,
+   "hit_pct": 44.1,
+   "action": "DROP or invert"
+  }
+ ],
  "clv": {
-  "markets": 24,
+  "markets": 36,
   "median_abs_move": 0.0,
-  "pct_that_moved": 12.5
+  "pct_that_moved": 33.3
  }
 }
