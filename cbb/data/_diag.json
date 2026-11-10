@@ -1,32 +1,32 @@
 {
- "an_rows": 639,
- "cycle": 32,
- "cycle_sec": 10.7,
+ "an_rows": 660,
+ "cycle": 3,
+ "cycle_sec": 5.5,
  "deferred_events": 0,
- "elapsed_min": 310.2,
+ "elapsed_min": 20.1,
  "errors": [],
- "event_rows": 778,
+ "event_rows": 899,
  "events_with_props": 83,
  "gz": {
-  "pin": 1416,
-  "props": 966,
-  "splits": 350
+  "pin": 2483,
+  "props": 504,
+  "splits": 355
  },
- "gz_kb_total": 2.7,
+ "gz_kb_total": 3.3,
  "keyframe": false,
- "lobby_events": 55,
- "lobby_rows": 330,
+ "lobby_events": 61,
+ "lobby_rows": 366,
  "new_openers_caught": 0,
  "pin_rows": 870,
  "pulls_fail": 0,
- "pulls_ok": 97,
+ "pulls_ok": 100,
  "raw": false,
  "rows_written": {
-  "pin": 101,
-  "props": 45,
-  "splits": 6
+  "pin": 228,
+  "props": 19,
+  "splits": 8
  },
- "run_utc": "2026-11-10T18:05:07Z",
+ "run_utc": "2026-11-10T21:18:18Z",
  "tiers": {
   "A": 31,
   "B": 0,
