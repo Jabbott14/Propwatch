@@ -1,0 +1,462 @@
+name: grade-cbb
+# College basketball grader. Every 3 hours it rebuilds, from the collector's archive:
+#   cbb/SCORECARD.md         each signal's record, ROI and closing-line value
+#   cbb/BOARD.md             upcoming games and what each signal says, beside its record
+#   cbb/graded/games.json    every graded game with the system's read at EARLY and CLOSE
+#   cbb/graded/summary.json  the scorecard as data
+# It never changes its own rules. Proposals appear on the scorecard once a signal has
+# 30 graded games; a person approves any change.
+on:
+  schedule:
+    - cron: "49 */3 * * *"
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: grade-cbb
+  cancel-in-progress: false
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - name: grade and build board
+        run: |
+          python3 - . <<'PY'
+          #!/usr/bin/env python3
+          """Propwatch CBB grader + board. Stdlib only. Runs on a GitHub Actions runner.
+
+          Every run it rebuilds, from the collector's archive:
+
+            cbb/graded/games.json      every finished game: the system's read at two checkpoints
+                                       (EARLY = first hour after the line was first seen, CLOSE =
+                                       last number before tip) and how each signal did.
+            cbb/graded/summary.json    each signal's record: W-L, hit %, ROI at the actual price,
+                                       closing-line value, split by market depth.
+            cbb/SCORECARD.md           the same, readable on GitHub.
+            cbb/BOARD.md               upcoming games: what each signal says now, next to that
+                                       signal's graded record so far.
+
+          Nothing here is a bet. It grades what every signal said on every game, so the record
+          is complete and unbiased whether or not anyone bet. It never changes its own rules:
+          it reports which signals are earning and proposes changes once a signal has
+          MIN_N graded games. A person approves the change.
+
+          Reads are built only from rows timestamped BEFORE tip, so history has no look-ahead.
+
+          Signals (each picks a side of the spread or the total):
+            follow_move   the side the line has moved toward since the opener (AN book 30)
+            money_level   the side with the larger share of money
+            sharp_gap     the side whose money% most exceeds its tickets%
+            money_moving  the side whose money% rose faster than its tickets% since first seen
+            pin_value     the side FanDuel prices better than Pinnacle (Pinnacle = fair value)
+          """
+          import gzip, json, os, sys, glob, math, collections, datetime as dt
+
+          REPO = sys.argv[1] if len(sys.argv) > 1 else "."
+          C = lambda *a: os.path.join(REPO, "cbb", *a)
+          FD, OPEN = "69", "30"
+          EARLY_MIN = 60
+          MIN_N = 30
+          BREAKEVEN = 0.524            # -110
+          SIGNALS = ("follow_move", "money_level", "sharp_gap", "money_moving", "pin_value")
+          NB_BUCKETS = ((0, 1000, "<1k bets"), (1000, 3000, "1-3k bets"), (3000, 10**9, "3k+ bets"))
+          LIM_BUCKETS = ((0, 1000, "pin limit <$1k"), (1000, 2000, "pin $1-2k"), (2000, 10**9, "pin $2k+"))
+
+
+          def now_utc(): return dt.datetime.now(dt.timezone.utc)
+          def tsfmt(t): return t.strftime("%Y-%m-%dT%H%MZ")
+          def parse_ts(s): return dt.datetime.strptime(s, "%Y-%m-%dT%H%MZ").replace(tzinfo=dt.timezone.utc)
+          def iso_to_ts(s): return s[:13] + s[14:16] + "Z"          # 2026-11-04T00:00:00.000Z -> ...T0000Z
+          def jload(p, d):
+              try: return json.load(open(p))
+              except Exception: return d
+
+
+          def rows(pattern):
+              for f in sorted(glob.glob(pattern)):
+                  try:
+                      for line in gzip.open(f, "rt"):
+                          yield json.loads(line)
+                  except Exception:
+                      continue
+
+
+          # ------------------------------------------------------------------ load
+          def load():
+              teams = jload(C("state", "teams.json"), {})
+              openers = {}
+              for f in sorted(glob.glob(C("openers", "*.json"))):
+                  openers.update(jload(f, {}).get("an", {}))
+              openers.update(jload(C("state", "collector.json"), {}).get("openers", {}).get("an", {}))
+
+              ser = collections.defaultdict(list)           # (gid, mkt, side) -> [(t, v, o, tx, mn, nb)]
+              games = {}
+              for r in rows(C("splits", "*", "*.jsonl.gz")):
+                  if r.get("b") != FD or r.get("m") not in ("spread", "total"): continue
+                  gid = str(r["gid"])
+                  ser[(gid, r["m"], r["sd"])].append((r["t"], r.get("v"), r.get("o"), r.get("tx"),
+                                                      r.get("mn"), r.get("nb")))
+                  g = games.setdefault(gid, {"gid": gid, "g": r["g"], "tip": r["st"], "ac": r.get("ac"),
+                                             "hc": r.get("hc")})
+                  if r["m"] == "spread" and r.get("tid") is not None:
+                      g[r["sd"] + "_name"] = (teams.get(str(r["tid"])) or {}).get("name")
+              for v in ser.values(): v.sort()
+
+              pin = collections.defaultdict(list)           # (pin game, kickoff) -> rows
+              for r in rows(C("pin", "*", "*.jsonl.gz")):
+                  if r.get("per") != 0 or r.get("ty") not in ("spread", "total"): continue
+                  pin[(r["g"], r["k"])].append((r["t"], r["ty"], r["d"], r.get("pts"), r.get("lim")))
+              for v in pin.values(): v.sort()
+
+              finals = []
+              for f in sorted(glob.glob(C("finals", "*.json"))):
+                  finals += list(jload(f, {}).values())
+              return games, ser, openers, pin, finals
+
+
+          # ------------------------------------------------------------------ joins
+          def norm(s): return "".join(ch for ch in (s or "").lower() if ch.isalnum())
+
+
+          def match_final(g, finals):
+              a, h = g.get("away_name"), g.get("home_name")
+              if not a or not h: return None
+              tip = g["tip"][:10]
+              near = [f for f in finals
+                      if abs((dt.date.fromisoformat(f["date"][:10]) - dt.date.fromisoformat(tip)).days) <= 1]
+              for f in near:
+                  if f["away"] == a and f["home"] == h:
+                      return {"as": f["as"], "hs": f["hs"]}
+                  if f["away"] == h and f["home"] == a:            # neutral site listed the other way
+                      return {"as": f["hs"], "hs": f["as"]}
+              # Fallback: ESPN and Action Network spell some schools differently ("SMU Mustangs" vs
+              # "Southern Methodist Mustangs"). Match on BOTH mascots, accept only a unique hit.
+              ma, mh = a.split()[-1].lower(), h.split()[-1].lower()
+              hits = [(f, False) for f in near if f["away"].split()[-1].lower() == ma
+                      and f["home"].split()[-1].lower() == mh]
+              hits += [(f, True) for f in near if f["away"].split()[-1].lower() == mh
+                       and f["home"].split()[-1].lower() == ma]
+              if len(hits) == 1:
+                  f, swap = hits[0]
+                  return {"as": f["hs"], "hs": f["as"]} if swap else {"as": f["as"], "hs": f["hs"]}
+              return None
+
+
+          def match_pin(g, pin_keys):
+              """Pinnacle uses school names without mascots ('Kentucky' vs 'Kentucky Wildcats').
+              Match when both school names are prefixes of AN's full names and tip is within 90 min."""
+              a, h = norm(g.get("away_name")), norm(g.get("home_name"))
+              if not a or not h: return None
+              tip = dt.datetime.fromisoformat(g["tip"].replace("Z", "+00:00"))
+              best = None
+              for name, k in pin_keys:
+                  try: pk = dt.datetime.fromisoformat(str(k).replace("Z", "+00:00"))
+                  except Exception: continue
+                  if abs((pk - tip).total_seconds()) > 5400: continue
+                  parts = name.split(" @ ")
+                  if len(parts) != 2: continue
+                  pa, ph = norm(parts[0]), norm(parts[1])
+                  if len(pa) >= 4 and len(ph) >= 4 and a.startswith(pa) and h.startswith(ph):
+                      if best is None or len(pa) + len(ph) > best[0]: best = (len(pa) + len(ph), (name, k))
+              return best[1] if best else None
+
+
+          # ------------------------------------------------------------------ reads
+          def at(series, t):
+              """last row at or before t (series sorted), else None"""
+              out = None
+              for row in series:
+                  if row[0] <= t: out = row
+                  else: break
+              return out
+
+
+          def pin_at(prow, ty, desig, t):
+              out = None
+              for row in prow:
+                  if row[0] > t: break
+                  if row[1] == ty and row[2] == desig: out = row
+              return out
+
+
+          SIDES = {"spread": ("home", "away"), "total": ("over", "under")}
+
+
+          def read(gid, mkt, t, ser, openers, prow):
+              """The system's read on one market at time t. Returns None if no FanDuel line yet."""
+              s0, s1 = SIDES[mkt]
+              A, B = ser.get((gid, mkt, s0), []), ser.get((gid, mkt, s1), [])
+              a, b = at(A, t), at(B, t)
+              if not a or not b or a[1] is None or b[1] is None: return None
+              fa = next((x for x in A if x[3] is not None), None)
+              fb = next((x for x in B if x[3] is not None), None)
+              side = {s0: {"v": a[1], "o": a[2], "tx": a[3], "mn": a[4]},
+                      s1: {"v": b[1], "o": b[2], "tx": b[3], "mn": b[4]}}
+              r = {"t": a[0], "nb": a[5], "line": {s0: a[1], s1: b[1]}, "odds": {s0: a[2], s1: b[2]},
+                   "tix": {s0: a[3], s1: b[3]}, "mny": {s0: a[4], s1: b[4]}, "calls": {}}
+              op = ((openers.get(gid) or {}).get("open") or {}).get(f"{mkt}|{s0}")
+              r["open"] = op[0] if op else None
+
+              # follow_move: spread home value falling = moving toward home; total rising = toward over
+              if r["open"] is not None and a[1] != r["open"]:
+                  up = a[1] > r["open"]
+                  r["calls"]["follow_move"] = (s1 if up else s0) if mkt == "spread" else (s0 if up else s1)
+              if a[4] is not None and b[4] is not None and a[4] != b[4]:
+                  r["calls"]["money_level"] = s0 if a[4] > b[4] else s1
+              if None not in (a[3], a[4], b[3], b[4]):
+                  ga, gb = a[4] - a[3], b[4] - b[3]
+                  if max(ga, gb) > 0 and ga != gb:
+                      r["calls"]["sharp_gap"] = s0 if ga > gb else s1
+                  r["gap"] = {s0: ga, s1: gb}
+              if fa and fb and None not in (a[3], a[4], b[3], b[4]) and fa[0] < a[0]:
+                  da = (a[4] - fa[4]) - (a[3] - fa[3])
+                  db = (b[4] - fb[4]) - (b[3] - fb[3])
+                  if max(da, db) > 0 and da != db:
+                      r["calls"]["money_moving"] = s0 if da > db else s1
+                  r["div"] = {s0: da, s1: db}
+              if prow:
+                  p = pin_at(prow, mkt, s0, t)
+                  if p and p[3] is not None:
+                      r["pin"], r["pin_lim"] = p[3], p[4]
+                      if a[1] != p[3]:
+                          if mkt == "spread":        # FD gives home more points than Pinnacle -> home
+                              r["calls"]["pin_value"] = s0 if a[1] > p[3] else s1
+                          else:                      # FD total above Pinnacle -> under
+                              r["calls"]["pin_value"] = s1 if a[1] > p[3] else s0
+              return r
+
+
+          def result(mkt, side, line, fin):
+              if mkt == "spread":
+                  m = fin["hs"] - fin["as"] if side == "home" else fin["as"] - fin["hs"]
+                  x = m + line
+              else:
+                  tot = fin["hs"] + fin["as"]
+                  x = tot - line if side == "over" else line - tot
+              return "W" if x > 0 else ("L" if x < 0 else "P")
+
+
+          def profit(odds, res):
+              if res == "P" or odds is None: return 0.0
+              if res == "L": return -1.0
+              return 100.0 / -odds if odds < 0 else odds / 100.0
+
+
+          def clv(mkt, side, v_then, v_close):
+              """points of closing-line value for a bet taken at v_then"""
+              if mkt == "spread": return v_then - v_close
+              return (v_close - v_then) if side == "over" else (v_then - v_close)
+
+
+          def bucket(x, table):
+              if x is None: return None
+              for lo, hi, lab in table:
+                  if lo <= x < hi: return lab
+              return None
+
+
+          # ------------------------------------------------------------------ build
+          def build():
+              games, ser, openers, pin, finals = load()
+              pin_keys = list(pin.keys())
+              now = now_utc(); nowts = tsfmt(now)
+              graded, upcoming = [], []
+              unmatched = 0
+              for gid, g in games.items():
+                  tipts = iso_to_ts(g["tip"])
+                  before = lambda t: t < tipts
+                  pk = match_pin(g, pin_keys)
+                  prow = pin.get(pk, []) if pk else []
+                  firsts = [s[0][0] for (gg, m, sd), s in ser.items() if gg == gid and s]
+                  if not firsts: continue
+                  first = min(firsts)
+                  e_t = tsfmt(parse_ts(first) + dt.timedelta(minutes=EARLY_MIN))
+                  rec = {"gid": gid, "game": g["g"], "away": g.get("away_name"), "home": g.get("home_name"),
+                         "tip": g["tip"], "conf": [g.get("ac"), g.get("hc")], "first_seen": first,
+                         "caught": (openers.get(gid) or {}).get("caught"), "pin_match": pk[0] if pk else None,
+                         "markets": {}}
+                  if tipts > nowts:
+                      for mkt in ("spread", "total"):
+                          r = read(gid, mkt, nowts, ser, openers, prow)
+                          if r: rec["markets"][mkt] = {"now": r}
+                      if rec["markets"]: upcoming.append(rec)
+                      continue
+                  fin = match_final(g, finals)
+                  if not fin:
+                      unmatched += 1; continue
+                  rec["final"] = fin
+                  last_pre = tsfmt(parse_ts(tipts) - dt.timedelta(minutes=1))
+                  for mkt in ("spread", "total"):
+                      cl = read(gid, mkt, last_pre, ser, openers, prow)
+                      if not cl: continue
+                      ea = read(gid, mkt, e_t, ser, openers, prow) if before(e_t) else None
+                      out = {"close": cl}
+                      if ea: out["early"] = ea
+                      for cp, r in (("early", ea), ("close", cl)):
+                          if not r: continue
+                          gr = {}
+                          for sig, side in r["calls"].items():
+                              res = result(mkt, side, r["line"][side], fin)
+                              gr[sig] = {"side": side, "line": r["line"][side], "odds": r["odds"][side],
+                                         "res": res, "units": round(profit(r["odds"][side], res), 3)}
+                              if cp == "early":
+                                  gr[sig]["clv"] = clv(mkt, side, r["line"][side], cl["line"][side])
+                          out[cp + "_graded"] = gr
+                      rec["markets"][mkt] = out
+                  if rec["markets"]: graded.append(rec)
+              graded.sort(key=lambda r: r["tip"]); upcoming.sort(key=lambda r: r["tip"])
+              return graded, upcoming, unmatched
+
+
+          def summarize(graded):
+              def blank(): return {"n": 0, "W": 0, "L": 0, "P": 0, "units": 0.0, "clv": []}
+              S = collections.defaultdict(blank)
+              for g in graded:
+                  for mkt, m in g["markets"].items():
+                      for cp in ("early", "close"):
+                          gr = m.get(cp + "_graded") or {}
+                          r = m.get(cp) or {}
+                          tags = ["all", bucket(r.get("nb"), NB_BUCKETS), bucket(r.get("pin_lim"), LIM_BUCKETS)]
+                          for sig, x in gr.items():
+                              for tag in tags:
+                                  if not tag: continue
+                                  for mk in (mkt, "both"):
+                                      s = S[(sig, cp, mk, tag)]
+                                      s["n"] += 1; s[x["res"]] += 1; s["units"] += x["units"]
+                                      if "clv" in x: s["clv"].append(x["clv"])
+              out = []
+              for (sig, cp, mk, tag), s in S.items():
+                  dec = s["W"] + s["L"]
+                  hit = s["W"] / dec if dec else None
+                  z = (s["W"] - dec * BREAKEVEN) / math.sqrt(dec * 0.25) if dec else None
+                  z50 = (s["W"] - dec * 0.5) / math.sqrt(dec * 0.25) if dec else None
+                  row = {"signal": sig, "checkpoint": cp, "market": mk, "slice": tag, "n": s["n"],
+                         "W": s["W"], "L": s["L"], "P": s["P"],
+                         "hit_pct": round(100 * hit, 1) if hit is not None else None,
+                         "units": round(s["units"], 2), "roi_pct": round(100 * s["units"] / s["n"], 1) if s["n"] else None,
+                         "z_vs_breakeven": round(z, 2) if z is not None else None}
+                  if s["clv"]:
+                      c = sorted(s["clv"])
+                      row["clv_avg"] = round(sum(c) / len(c), 2)
+                      row["clv_pos_pct"] = round(100 * sum(1 for x in c if x > 0) / len(c), 1)
+                  if dec >= MIN_N:
+                      row["proposal"] = ("PROMOTE: beating break-even" if z >= 1.5 else
+                                         "INVERT candidate: wrong more than chance" if z50 <= -2.0 else
+                                         "DROP: below break-even" if z <= -1.5 else
+                                         "no edge shown yet")
+                  else:
+                      row["proposal"] = f"keep collecting ({dec}/{MIN_N})"
+                  out.append(row)
+              order = {s: i for i, s in enumerate(SIGNALS)}
+              out.sort(key=lambda r: (r["slice"] != "all", r["market"] != "both", r["checkpoint"],
+                                      order.get(r["signal"], 9), r["market"], r["slice"]))
+              return out
+
+
+          def fmt_rec(r):
+              return f"{r['W']}-{r['L']}" + (f"-{r['P']}" if r["P"] else "")
+
+
+          def scorecard_md(summary, graded, unmatched, gen):
+              L = [f"# CBB scorecard", "",
+                   f"Generated {gen}. {len(graded)} graded games"
+                   f" ({unmatched} finished games had no final score matched and are not graded).", "",
+                   "Each signal is graded on **every** game it had an opinion on, at the FanDuel price",
+                   "available at that moment. EARLY = one hour after the line was first seen. CLOSE =",
+                   "last number before tip. Break-even at -110 is 52.4%. CLV = points of closing-line",
+                   "value; positive means the number you would have taken beat the close.", "",
+                   f"Proposals appear once a signal has {MIN_N} decided games. Nothing changes",
+                   "automatically.", ""]
+              for cp in ("early", "close"):
+                  L += [f"## {cp.upper()}", "",
+                        "| signal | market | record | hit % | units | ROI % | CLV avg | CLV + % | status |",
+                        "|---|---|---|---|---|---|---|---|---|"]
+                  for r in summary:
+                      if r["slice"] != "all" or r["checkpoint"] != cp: continue
+                      L.append(f"| {r['signal']} | {r['market']} | {fmt_rec(r)} | {r['hit_pct']} | "
+                               f"{r['units']:+} | {r['roi_pct']} | {r.get('clv_avg', '')} | "
+                               f"{r.get('clv_pos_pct', '')} | {r['proposal']} |")
+                  L.append("")
+              L += ["## By market depth (both markets)", "",
+                    "| signal | checkpoint | slice | record | hit % | ROI % | CLV avg |",
+                    "|---|---|---|---|---|---|---|"]
+              for r in summary:
+                  if r["slice"] == "all" or r["market"] != "both": continue
+                  L.append(f"| {r['signal']} | {r['checkpoint']} | {r['slice']} | {fmt_rec(r)} | "
+                           f"{r['hit_pct']} | {r['roi_pct']} | {r.get('clv_avg', '')} |")
+              return "\n".join(L) + "\n"
+
+
+          def board_md(upcoming, summary, gen):
+              rec = {(r["signal"], r["market"]): r for r in summary
+                     if r["slice"] == "all" and r["checkpoint"] == "close"}
+              L = ["# CBB board", "",
+                   f"Generated {gen}. Upcoming games with a FanDuel line, grouped by how many signals",
+                   "agree on each market. Every game is listed; nothing is cut. Each call shows that",
+                   "signal's graded CLOSE record so far, so you can see which ones are earning.", "",
+                   "This is analysis, not picks.", ""]
+              groups = collections.defaultdict(list)
+              for g in upcoming:
+                  for mkt, m in g["markets"].items():
+                      r = m["now"]
+                      calls = r["calls"]
+                      if not calls: continue
+                      tally = collections.Counter(calls.values())
+                      side, n = tally.most_common(1)[0]
+                      groups[(n, len(calls) - n)].append((g, mkt, r, side))
+              for (agree, against) in sorted(groups, key=lambda k: (-k[0], k[1])):
+                  L += [f"## {agree} signal{'s' if agree != 1 else ''} agree, {against} against", "",
+                        "| tip (ET) | game | market | lean | FD now | open | Pin | tix / money (lean side) | bets | calls |",
+                        "|---|---|---|---|---|---|---|---|---|---|"]
+                  for g, mkt, r, side in sorted(groups[(agree, against)], key=lambda x: x[0]["tip"]):
+                      tip = (dt.datetime.fromisoformat(g["tip"].replace("Z", "+00:00"))
+                             - dt.timedelta(hours=5)).strftime("%a %H:%M")
+                      parts = []
+                      for sig, sd in r["calls"].items():
+                          s = rec.get((sig, mkt))
+                          parts.append(f"{sig}->{sd} ({fmt_rec(s) if s else '0-0'})")
+                      pin = f"{r['pin']:g} (${r['pin_lim']:,.0f})" if r.get("pin") is not None and r.get("pin_lim") else ""
+                      op = f"{r['open']:g}" if r.get("open") is not None else ""
+                      odds = f" ({r['odds'][side]:+d})" if r["odds"][side] is not None else ""
+                      tm = (f"{r['tix'][side]}% / {r['mny'][side]}%" if r["tix"][side] is not None
+                            and r["mny"][side] is not None else "")
+                      L.append(f"| {tip} | {g['game']} | {mkt} | {side} | {r['line'][side]:g}{odds} | "
+                               f"{op} | {pin} | {tm} | {r['nb'] or ''} | "
+                               f"{'; '.join(parts)} |")
+                  L.append("")
+              if not groups: L.append("No upcoming games with signals yet.")
+              return "\n".join(L) + "\n"
+
+
+          if __name__ == "__main__":
+              graded, upcoming, unmatched = build()
+              summary = summarize(graded)
+              gen = now_utc().strftime("%Y-%m-%d %H:%M UTC")
+              os.makedirs(C("graded"), exist_ok=True)
+              json.dump(graded, open(C("graded", "games.json"), "w"), indent=1)
+              json.dump({"generated": gen, "graded_games": len(graded), "unmatched_finals": unmatched,
+                         "min_n_to_propose": MIN_N, "signals": summary},
+                        open(C("graded", "summary.json"), "w"), indent=1)
+              open(C("SCORECARD.md"), "w").write(scorecard_md(summary, graded, unmatched, gen))
+              open(C("BOARD.md"), "w").write(board_md(upcoming, summary, gen))
+              print(f"graded games: {len(graded)}   upcoming on board: {len(upcoming)}   "
+                    f"finished but no final matched: {unmatched}")
+              for r in summary:
+                  if r["slice"] == "all" and r["market"] == "both":
+                      print(f"  {r['checkpoint']:5} {r['signal']:13} {fmt_rec(r):>9}  hit {r['hit_pct']}  "
+                            f"roi {r['roi_pct']}  clv {r.get('clv_avg', '-')}  {r['proposal']}")
+          PY
+      - name: commit
+        run: |
+          git config user.name propwatch
+          git config user.email propwatch@users.noreply.github.com
+          git add cbb/graded cbb/SCORECARD.md cbb/BOARD.md
+          git diff --staged --quiet && exit 0
+          git commit -q -m "grade-cbb $(date -u +%FT%TZ)"
+          for i in 1 2 3 4; do
+            git pull -q --rebase --autostash && git push -q && exit 0
+            sleep 9
+          done
+          exit 1
