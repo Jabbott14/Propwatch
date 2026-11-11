@@ -1,13 +1,16 @@
 name: collect-cbb
-# College basketball collector. Same self-hosting loop as collect.yml: each job stays
-# alive ~5h20m snapshotting every 10 min, and the 2-hourly cron keeps one queued behind
-# it so coverage is continuous. Offset to :37 so it never starts with the NFL job.
+# College basketball collector. Each job snapshots every 10 min for ~5h20m.
+# Continuity: when a job finishes it immediately dispatches the next one, so there is
+# no gap waiting for a cron firing. The hourly cron is only a backstop in case a
+# dispatch fails; the concurrency group keeps a single runner at a time (overlapping
+# runs would fight over cbb/state/collector.json).
 on:
   schedule:
-    - cron: "37 */2 * * *"
+    - cron: "37 * * * *"
   workflow_dispatch:
 permissions:
   contents: write
+  actions: write
 concurrency:
   group: collect-cbb
   cancel-in-progress: false
@@ -20,3 +23,8 @@ jobs:
       - name: collect loop
         continue-on-error: true
         run: python3 cbb/collect.py .
+      - name: start the next run
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run collect_cbb.yml --ref "${{ github.ref_name }}"
