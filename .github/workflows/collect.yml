@@ -191,6 +191,16 @@ jobs:
               PMX=archive("pin_matchups","https://guest.api.arcadia.pinnacle.com/0.1/leagues/889/matchups",
                       PIN,ts=ts,day=day,diag=diag)
               if PPX and PMX: LASTPIN=pin_parse(PMX,PPX)
+              # SBR every cycle. Its `openingLineViews` are the TRUE market opener --
+              # measured 2026-11-11, 19 of 28 games had an opener different from the
+              # first value in our own archive (mean 0.71 pts, worst 3.0 on TEN@CIN), and
+              # follow_move/rlm take their DIRECTION from it. It also carries 8 books'
+              # current numbers, and the cross-book lag read ("most books moved, FanDuel
+              # has not") is the literal form of "find lines before they move" -- at the
+              # heavy tick that was 4 snapshots in the 6 hours before MNF, by which point
+              # FanDuel had already followed. ~52KB/cycle.
+              archive("sbr","https://www.sportsbookreview.com/betting-odds/nfl-football/",
+                      ts=ts,day=day,diag=diag)
 
               if heavy:
                   # VSiN. The old URL had no `view` param, so it returned only the
@@ -205,7 +215,9 @@ jobs:
                           ts=ts,day=day,diag=diag)
                   archive("vsin_circa","https://data.vsin.com/betting-splits/?source=CIRCA&sport=NFL&view=all",
                           ts=ts,day=day,diag=diag)
-                  archive("sbr","https://www.sportsbookreview.com/betting-odds/nfl-football/",
+                  # SBR's default view is spreads + moneylines; totals sit on a
+                  # separate view. Openers do not change, so the heavy tick is enough.
+                  archive("sbr_totals","https://www.sportsbookreview.com/betting-odds/nfl-football/totals/",
                           ts=ts,day=day,diag=diag)
                   archive("espn","https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard",
                           ts=ts,day=day,diag=diag)

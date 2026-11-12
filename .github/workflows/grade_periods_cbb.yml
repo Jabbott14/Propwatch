@@ -84,7 +84,50 @@ jobs:
                       "team_total": "tt"}
 
 
-          def nm(s): return re.sub(r"[^a-z0-9 ]", "", (s or "").lower()).strip()
+          # Hyphens and periods become SPACES, not nothing: "Maryland-Eastern Shore" has to
+          # tokenise the same way ESPN's "Maryland Eastern Shore Hawks" does.
+          ALIAS = {"csu": "cal state", "ualbany": "albany", "uconn": "connecticut",
+                   "umass": "massachusetts", "umbc": "maryland baltimore county",
+                   "unlv": "nevada las vegas", "utep": "texas el paso",
+                   "ucf": "central florida", "usc": "southern california",
+                   "saint": "st", "mt": "mount"}
+          # "state" is NEVER filler. It is the only thing separating Michigan from Michigan State,
+          # Kansas from Kansas State, North Carolina from North Carolina State. Treating it as
+          # noise matched all three pairs to the wrong school.
+          FILLER = {"university", "the", "of", "at"}
+
+
+          def nm(s):
+              s = re.sub(r"[^a-z0-9]+", " ", (s or "").lower()).strip()
+              return " ".join(ALIAS.get(w, w) for w in s.split())
+
+
+          def toks(s):
+              return [w for w in nm(s).split() if w not in FILLER]
+
+
+          def name_match(short, long_, relaxed=False):
+              """Is `short` (FanDuel's school) the same school as `long_` (ESPN's 'School
+              Nickname')? FanDuel always gives the shorter form, so every identifying token of
+              the short name must appear in the long one.
+
+              Pure prefix matching dropped 27 of 262 games -- 'Sam Houston State' vs 'Sam Houston
+              Bearkats', 'CSU Fullerton' vs 'Cal State Fullerton Titans' -- and the drops were not
+              random, they were low-major programs, which is where the softest lines are.
+
+              But loosening it has a worse failure mode than dropping a game: 'Michigan' is a true
+              prefix and a true token-subset of 'Michigan State Spartans'. So `state` must appear
+              on BOTH sides or NEITHER. `relaxed` lifts only that rule, and the caller uses it as
+              a second pass that still requires a unique hit -- which is what rescues Sam Houston
+              without letting Michigan match Michigan State.
+              """
+              a, b = toks(short), toks(long_)
+              if not a or not b: return False
+              if not relaxed and (("state" in a) != ("state" in b)): return False
+              if relaxed:
+                  a = [t for t in a if t != "state"]; b = [t for t in b if t != "state"]
+                  if not a: return False
+              return all(t in b for t in a)
           def T(s): return dt.datetime.strptime(s, "%Y-%m-%dT%H%MZ").replace(tzinfo=dt.timezone.utc)
           def iso(s):
               try: return dt.datetime.fromisoformat(str(s).replace("Z", "+00:00"))
@@ -119,17 +162,24 @@ jobs:
               """FanDuel says 'La Salle @ Villanova'; ESPN says 'La Salle Explorers'. Match on
               both school names being prefixes of the ESPN names, same calendar day, unique hit."""
               if " @ " not in (gname or ""): return None
-              a, h = (nm(x) for x in gname.split(" @ ", 1))
-              if len(a) < 3 or len(h) < 3: return None
+              a, h = gname.split(" @ ", 1)
+              if len(nm(a)) < 3 or len(nm(h)) < 3: return None
               day = (tip or "")[:10]
-              hits = []
+              near = []
               for f in finals:
                   fd_ = (f.get("date") or "")[:10]
                   if fd_ and day and abs((dt.date.fromisoformat(fd_) - dt.date.fromisoformat(day)).days) > 1:
                       continue
-                  fa, fh = nm(f.get("away")), nm(f.get("home"))
-                  if fa.startswith(a) and fh.startswith(h): hits.append((f, False))
-                  elif fa.startswith(h) and fh.startswith(a): hits.append((f, True))
+                  near.append(f)
+              hits = []
+              for rx in (False, True):
+                  hits = []
+                  for f in near:
+                      if name_match(a, f.get("away"), rx) and name_match(h, f.get("home"), rx):
+                          hits.append((f, False))
+                      elif name_match(h, f.get("away"), rx) and name_match(a, f.get("home"), rx):
+                          hits.append((f, True))
+                  if len(hits) == 1: break
               if len(hits) != 1: return None
               f, swap = hits[0]
               ot = bool(f.get("ot"))
@@ -205,14 +255,15 @@ jobs:
           def match_pin(gname, pin_games):
               """FanDuel 'La Salle @ Villanova' vs Pinnacle 'La Salle @ Villanova Wildcats'."""
               if " @ " not in (gname or ""): return None
-              a, h = (nm(x) for x in gname.split(" @ ", 1))
+              a, h = gname.split(" @ ", 1)
               best = None
               for pg in pin_games:
                   if " @ " not in pg: continue
-                  pa, ph = (nm(x) for x in pg.split(" @ ", 1))
-                  if len(pa) < 3 or len(ph) < 3: continue
-                  if (pa.startswith(a) or a.startswith(pa)) and (ph.startswith(h) or h.startswith(ph)):
-                      sc = len(pa) + len(ph)
+                  pa, ph = pg.split(" @ ", 1)
+                  if len(nm(pa)) < 3 or len(nm(ph)) < 3: continue
+                  if ((name_match(a, pa) or name_match(pa, a))
+                          and (name_match(h, ph) or name_match(ph, h))):
+                      sc = len(nm(pa)) + len(nm(ph))
                       if best is None or sc > best[0]: best = (sc, pg)
               return best[1] if best else None
 
