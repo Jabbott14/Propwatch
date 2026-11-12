@@ -1,6 +1,6 @@
 # NFL board
 
-Generated 2026-11-12 18:16 UTC. Upcoming games with a FanDuel line, grouped by how many signals
+Generated 2026-11-12 18:17 UTC. Upcoming games with a FanDuel line, grouped by how many signals
 agree on each market. Every game is listed; nothing is cut. Each call shows that
 signal's graded CLOSE record so far, so you can see which ones are earning.
 
