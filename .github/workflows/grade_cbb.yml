@@ -53,7 +53,7 @@ jobs:
             money_moving  the side whose money% rose faster than its tickets% since first seen
             pin_value     the side FanDuel prices better than Pinnacle (Pinnacle = fair value)
           """
-          import gzip, json, os, sys, glob, math, collections, datetime as dt
+          import gzip, itertools, json, os, sys, glob, math, collections, datetime as dt
 
           REPO = sys.argv[1] if len(sys.argv) > 1 else "."
           C = lambda *a: os.path.join(REPO, "cbb", *a)
@@ -61,8 +61,16 @@ jobs:
           EARLY_MIN = 60
           MIN_N = 30
           BREAKEVEN = 0.524            # -110
-          SIGNALS = ("follow_move", "money_level", "sharp_gap", "money_moving", "pin_value",
-                     "book_lag", "consensus_gap")
+          SIGNALS = ("follow_move", "rlm_ratio", "money_level", "sharp_gap", "money_moving",
+                     "pin_value", "book_lag", "consensus_gap")
+          # rlm_ratio is a conjunction, not a single variable. Measured on 1,862 CBB
+          # side-observations: a minority-ticket side wins 42.9% alone, and 37.6% if you add a high
+          # money/ticket ratio WITHOUT line confirmation -- "few tickets, big money" is a LOSING
+          # pattern by itself. Require the line to have moved toward it anyway and the same
+          # population goes to 52.7%, a ~14 point swing. The ratio means nothing until the number
+          # moves against the crowd to confirm it.
+          RLM_TIX_MAX = 45      # that side holds under this share of tickets
+          RLM_RATIO_MIN = 1.2   # its money share is at least this multiple of its ticket share
           LAG_BOOKS = 4        # books that must have moved before FanDuel counts as stale
           NB_BUCKETS = ((0, 1000, "<1k bets"), (1000, 3000, "1-3k bets"), (3000, 10**9, "3k+ bets"))
           LIM_BUCKETS = ((0, 1000, "pin limit <$1k"), (1000, 2000, "pin $1-2k"), (2000, 10**9, "pin $2k+"))
@@ -267,6 +275,15 @@ jobs:
                   else:
                       up = a[1] > r["open"]
                       r["calls"]["follow_move"] = (s1 if up else s0) if mkt == "spread" else (s0 if up else s1)
+                  moved_to = r["calls"].get("follow_move")
+                  if moved_to and None not in (a[3], b[3], a[4], b[4]):
+                      t_ = {s0: a[3], s1: b[3]}.get(moved_to)
+                      m_ = {s0: a[4], s1: b[4]}.get(moved_to)
+                      if t_ and m_ is not None:
+                          ratio = m_ / t_
+                          r["mny_ratio"] = round(ratio, 2)
+                          if t_ < RLM_TIX_MAX and ratio >= RLM_RATIO_MIN:
+                              r["calls"]["rlm_ratio"] = moved_to
               if a[4] is not None and b[4] is not None and a[4] != b[4]:
                   r["calls"]["money_level"] = s0 if a[4] > b[4] else s1
               if None not in (a[3], a[4], b[3], b[4]):
@@ -444,7 +461,14 @@ jobs:
                           rate = (br["spread_fav_rate"] if mkt == "spread" else
                                   br["ml_fav_rate"] if mkt == "moneyline" else
                                   br["total_over_rate"])
-                          for sig, x in gr.items():
+                          # singles, then every PAIR of signals that agree on a side. Signals are
+                          # evidence, not independent bets, and evidence combines: minority tickets
+                          # is 42.9% alone and line-moved-toward is 49.8%, but together 52.7%.
+                          items = list(gr.items())
+                          pairs = [(f"{p}+{q}", gr[p])
+                                   for p, q in itertools.combinations(sorted(gr), 2)
+                                   if gr[p]["side"] == gr[q]["side"]]
+                          for sig, x in items + pairs:
                               for tag in tags:
                                   if not tag: continue
                                   for mk in (mkt, "both"):
@@ -486,9 +510,23 @@ jobs:
                   else:
                       row["proposal"] = f"keep collecting ({dec}/{MIN_N})"
                   out.append(row)
+              # mark pairs that merely restate a component: same W-L as one of its own halves
+              single = {(r["signal"], r["checkpoint"], r.get("market"), r["slice"]): (r["W"], r["L"])
+                        for r in out if "+" not in r["signal"]}
+              for r in out:
+                  if "+" not in r["signal"]: continue
+                  a, b = r["signal"].split("+", 1)
+                  rec_ = (r["W"], r["L"])
+                  for comp in (a, b):
+                      if single.get((comp, r["checkpoint"], r.get("market"), r["slice"])) == rec_:
+                          r["redundant_with"] = comp
+                          r["proposal"] = f"redundant -- identical record to {comp} alone, not independent confirmation"
+                          break
+
               order = {s: i for i, s in enumerate(SIGNALS)}
               out.sort(key=lambda r: (r["slice"] != "all", r["market"] != "both", r["checkpoint"],
-                                      order.get(r["signal"], 9), r["market"], r["slice"]))
+                                      "+" in r["signal"], order.get(r["signal"], 9),
+                                      r["market"], r["slice"]))
               return out
 
 
@@ -592,7 +630,8 @@ jobs:
               print(f"graded games: {len(graded)}   upcoming on board: {len(upcoming)}   "
                     f"finished but no final matched: {unmatched}")
               for r in summary:
-                  if r["slice"] == "all" and r["market"] == "both":
+                  if r["slice"] == "all" and r["market"] == "both" and (
+                          "+" not in r["signal"] or (r["W"] + r["L"]) >= 40):
                       print(f"  {r['checkpoint']:5} {r['signal']:13} {fmt_rec(r):>9}  hit {r['hit_pct']}"
                             f"  exp {r.get('expected_pct')}  edge {r.get('edge_pts')}"
                             f"  roi {r['roi_pct']}  clv {r.get('clv_avg', '-')}  {r['proposal']}")
