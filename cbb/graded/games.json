@@ -35,6 +35,7 @@
      },
      "calls": {
       "follow_move": "away",
+      "rlm_ratio": "away",
       "money_level": "home",
       "sharp_gap": "away",
       "money_moving": "away",
@@ -42,6 +43,7 @@
       "pin_value": "away"
      },
      "open": -27.5,
+     "mny_ratio": 3.0,
      "gap": {
       "home": -30,
       "away": 30
@@ -80,6 +82,7 @@
      },
      "calls": {
       "follow_move": "away",
+      "rlm_ratio": "away",
       "money_level": "home",
       "sharp_gap": "away",
       "money_moving": "home",
@@ -87,6 +90,7 @@
       "pin_value": "home"
      },
      "open": -27.5,
+     "mny_ratio": 3.08,
      "gap": {
       "home": -25,
       "away": 25
@@ -106,6 +110,15 @@
     },
     "early_graded": {
      "follow_move": {
+      "side": "away",
+      "line": 24.5,
+      "odds": -102,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": false,
+      "clv": -1.0
+     },
+     "rlm_ratio": {
       "side": "away",
       "line": 24.5,
       "odds": -102,
@@ -162,6 +175,14 @@
     },
     "close_graded": {
      "follow_move": {
+      "side": "away",
+      "line": 25.5,
+      "odds": -114,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": false
+     },
+     "rlm_ratio": {
       "side": "away",
       "line": 25.5,
       "odds": -114,
@@ -238,6 +259,7 @@
       "money_moving": "under"
      },
      "open": 152.5,
+     "mny_ratio": 0.88,
      "gap": {
       "over": -6,
       "under": 6
@@ -281,6 +303,7 @@
       "money_moving": "under"
      },
      "open": 152.5,
+     "mny_ratio": 0.88,
      "gap": {
       "over": -5,
       "under": 5
@@ -559,6 +582,7 @@
      },
      "calls": {
       "follow_move": "away",
+      "rlm_ratio": "away",
       "money_level": "away",
       "sharp_gap": "away",
       "money_moving": "home",
@@ -566,6 +590,7 @@
       "pin_value": "home"
      },
      "open": -14.5,
+     "mny_ratio": 1.94,
      "gap": {
       "home": -29,
       "away": 29
@@ -673,6 +698,14 @@
       "units": -1.0,
       "took_fav": false
      },
+     "rlm_ratio": {
+      "side": "away",
+      "line": 13.5,
+      "odds": -105,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": false
+     },
      "money_level": {
       "side": "away",
       "line": 13.5,
@@ -744,6 +777,7 @@
       "pin_value": "over"
      },
      "open": 149.5,
+     "mny_ratio": 1.02,
      "gap": {
       "over": -1,
       "under": 1
@@ -1114,6 +1148,7 @@
       "pin_value": "home"
      },
      "open": -16.5,
+     "mny_ratio": 1.25,
      "gap": {
       "home": 17,
       "away": -17
@@ -1158,6 +1193,7 @@
       "pin_value": "home"
      },
      "open": -16.5,
+     "mny_ratio": 1.21,
      "gap": {
       "home": 14,
       "away": -14
@@ -1300,6 +1336,7 @@
       "money_moving": "over"
      },
      "open": 147.5,
+     "mny_ratio": 1.18,
      "gap": {
       "over": -6,
       "under": 6
@@ -1338,12 +1375,14 @@
      },
      "calls": {
       "follow_move": "under",
+      "rlm_ratio": "under",
       "money_level": "under",
       "sharp_gap": "under",
       "money_moving": "over",
       "pin_value": "under"
      },
      "open": 147.5,
+     "mny_ratio": 1.49,
      "gap": {
       "over": -20,
       "under": 20
@@ -1363,6 +1402,15 @@
     },
     "early_graded": {
      "follow_move": {
+      "side": "under",
+      "line": 143.5,
+      "odds": -110,
+      "res": "W",
+      "units": 0.909,
+      "took_fav": false,
+      "clv": 0.0
+     },
+     "rlm_ratio": {
       "side": "under",
       "line": 143.5,
       "odds": -110,
@@ -1648,6 +1696,7 @@
       "pin_value": "home"
      },
      "open": -30.5,
+     "mny_ratio": 0.95,
      "gap": {
       "home": -4,
       "away": 4
@@ -1692,6 +1741,7 @@
       "pin_value": "home"
      },
      "open": -30.5,
+     "mny_ratio": 0.93,
      "gap": {
       "home": -6,
       "away": 6
@@ -1978,6 +2028,7 @@
       "pin_value": "home"
      },
      "open": -17.5,
+     "mny_ratio": 1.14,
      "gap": {
       "home": 7,
       "away": -7
@@ -2023,6 +2074,7 @@
       "pin_value": "home"
      },
      "open": -17.5,
+     "mny_ratio": 0.76,
      "gap": {
       "home": -9,
       "away": 9
@@ -2175,6 +2227,7 @@
       "pin_value": "under"
      },
      "open": 149.5,
+     "mny_ratio": 1.46,
      "gap": {
       "over": -23,
       "under": 23
@@ -2219,6 +2272,7 @@
       "pin_value": "under"
      },
      "open": 149.5,
+     "mny_ratio": 1.25,
      "gap": {
       "over": -14,
       "under": 14
@@ -2521,6 +2575,7 @@
       "pin_value": "home"
      },
      "open": -29.5,
+     "mny_ratio": 0.63,
      "gap": {
       "home": -31,
       "away": 31
@@ -2566,6 +2621,7 @@
       "pin_value": "home"
      },
      "open": -29.5,
+     "mny_ratio": 0.5,
      "gap": {
       "home": -43,
       "away": 43
@@ -2918,6 +2974,7 @@
       "pin_value": "away"
      },
      "open": -15.5,
+     "mny_ratio": 0.89,
      "gap": {
       "home": -8,
       "away": 8
@@ -2961,6 +3018,7 @@
       "money_moving": "home"
      },
      "open": -15.5,
+     "mny_ratio": 0.82,
      "gap": {
       "home": -13,
       "away": 13
@@ -3096,6 +3154,7 @@
       "pin_value": "over"
      },
      "open": 150.5,
+     "mny_ratio": 0.83,
      "gap": {
       "over": 7,
       "under": -7
@@ -3134,6 +3193,7 @@
      },
      "calls": {
       "follow_move": "under",
+      "rlm_ratio": "under",
       "money_level": "under",
       "sharp_gap": "under",
       "money_moving": "under",
@@ -3141,6 +3201,7 @@
       "pin_value": "over"
      },
      "open": 150.5,
+     "mny_ratio": 1.23,
      "gap": {
       "over": -10,
       "under": 10
@@ -3160,6 +3221,15 @@
     },
     "early_graded": {
      "follow_move": {
+      "side": "under",
+      "line": 148.5,
+      "odds": -110,
+      "res": "W",
+      "units": 0.909,
+      "took_fav": false,
+      "clv": 0.0
+     },
+     "rlm_ratio": {
       "side": "under",
       "line": 148.5,
       "odds": -110,
@@ -3444,11 +3514,13 @@
      },
      "calls": {
       "follow_move": "away",
+      "rlm_ratio": "away",
       "money_level": "home",
       "sharp_gap": "away",
       "money_moving": "home"
      },
      "open": -10.5,
+     "mny_ratio": 1.26,
      "gap": {
       "home": -9,
       "away": 9
@@ -3485,11 +3557,13 @@
      },
      "calls": {
       "follow_move": "away",
+      "rlm_ratio": "away",
       "money_level": "away",
       "sharp_gap": "away",
       "money_moving": "away"
      },
      "open": -10.5,
+     "mny_ratio": 1.43,
      "gap": {
       "home": -16,
       "away": 16
@@ -3507,6 +3581,15 @@
     },
     "early_graded": {
      "follow_move": {
+      "side": "away",
+      "line": 9.5,
+      "odds": -105,
+      "res": "W",
+      "units": 0.952,
+      "took_fav": false,
+      "clv": 0.0
+     },
+     "rlm_ratio": {
       "side": "away",
       "line": 9.5,
       "odds": -105,
@@ -3545,6 +3628,14 @@
     },
     "close_graded": {
      "follow_move": {
+      "side": "away",
+      "line": 9.5,
+      "odds": -105,
+      "res": "W",
+      "units": 0.952,
+      "took_fav": false
+     },
+     "rlm_ratio": {
       "side": "away",
       "line": 9.5,
       "odds": -105,
@@ -3605,6 +3696,7 @@
       "money_moving": "over"
      },
      "open": 152.5,
+     "mny_ratio": 1.02,
      "gap": {
       "over": 1,
       "under": -1
@@ -3646,6 +3738,7 @@
       "money_moving": "over"
      },
      "open": 152.5,
+     "mny_ratio": 0.91,
      "gap": {
       "over": -5,
       "under": 5
@@ -3918,6 +4011,7 @@
       "pin_value": "home"
      },
      "open": -26.5,
+     "mny_ratio": 0.75,
      "gap": {
       "home": -21,
       "away": 21
@@ -3962,6 +4056,7 @@
       "pin_value": "home"
      },
      "open": -26.5,
+     "mny_ratio": 0.65,
      "gap": {
       "home": -29,
       "away": 29
@@ -4258,6 +4353,7 @@
       "consensus_gap": "home"
      },
      "open": -25.5,
+     "mny_ratio": 0.98,
      "gap": {
       "home": -2,
       "away": 2
@@ -4300,6 +4396,7 @@
       "consensus_gap": "home"
      },
      "open": -25.5,
+     "mny_ratio": 1.02,
      "gap": {
       "home": 2,
       "away": -2
@@ -4433,6 +4530,7 @@
       "consensus_gap": "over"
      },
      "open": 168.5,
+     "mny_ratio": 1.14,
      "gap": {
       "over": 5,
       "under": -5
@@ -4474,6 +4572,7 @@
       "money_moving": "under"
      },
      "open": 168.5,
+     "mny_ratio": 0.88,
      "gap": {
       "over": -3,
       "under": 3
@@ -4617,6 +4716,7 @@
       "consensus_gap": "home"
      },
      "open": -20.5,
+     "mny_ratio": 1.0,
      "gap": {
       "home": 0,
       "away": 0
@@ -4658,6 +4758,7 @@
       "money_moving": "home"
      },
      "open": -20.5,
+     "mny_ratio": 0.9,
      "gap": {
       "home": -7,
       "away": 7
@@ -4925,12 +5026,14 @@
      },
      "calls": {
       "follow_move": "away",
+      "rlm_ratio": "away",
       "money_level": "home",
       "sharp_gap": "away",
       "money_moving": "home",
       "consensus_gap": "home"
      },
      "open": -11.5,
+     "mny_ratio": 1.48,
      "gap": {
       "home": -16,
       "away": 16
@@ -4969,12 +5072,14 @@
      },
      "calls": {
       "follow_move": "away",
+      "rlm_ratio": "away",
       "money_level": "away",
       "sharp_gap": "away",
       "consensus_gap": "home",
       "pin_value": "home"
      },
      "open": -11.5,
+     "mny_ratio": 1.79,
      "gap": {
       "home": -27,
       "away": 27
@@ -4994,6 +5099,15 @@
     },
     "early_graded": {
      "follow_move": {
+      "side": "away",
+      "line": 10.5,
+      "odds": -102,
+      "res": "W",
+      "units": 0.98,
+      "took_fav": false,
+      "clv": 0.0
+     },
+     "rlm_ratio": {
       "side": "away",
       "line": 10.5,
       "odds": -102,
@@ -5041,6 +5155,14 @@
     },
     "close_graded": {
      "follow_move": {
+      "side": "away",
+      "line": 10.5,
+      "odds": -102,
+      "res": "W",
+      "units": 0.98,
+      "took_fav": false
+     },
+     "rlm_ratio": {
       "side": "away",
       "line": 10.5,
       "odds": -102,
@@ -5111,6 +5233,7 @@
       "pin_value": "under"
      },
      "open": 158.5,
+     "mny_ratio": 0.59,
      "gap": {
       "over": -20,
       "under": 20
@@ -5155,6 +5278,7 @@
       "pin_value": "under"
      },
      "open": 158.5,
+     "mny_ratio": 0.26,
      "gap": {
       "over": -31,
       "under": 31
@@ -5479,6 +5603,7 @@
       "money_moving": "home"
      },
      "open": -23.5,
+     "mny_ratio": 1.23,
      "gap": {
       "home": 16,
       "away": -16
@@ -5522,6 +5647,7 @@
       "money_moving": "home"
      },
      "open": -23.5,
+     "mny_ratio": 1.19,
      "gap": {
       "home": 13,
       "away": -13
@@ -5639,6 +5765,7 @@
       "money_moving": "under"
      },
      "open": 159.5,
+     "mny_ratio": 1.12,
      "gap": {
       "over": 4,
       "under": -4
@@ -5811,6 +5938,7 @@
       "pin_value": "home"
      },
      "open": -18.5,
+     "mny_ratio": 1.2,
      "gap": {
       "home": 15,
       "away": -15
@@ -5854,6 +5982,7 @@
       "consensus_gap": "home"
      },
      "open": -18.5,
+     "mny_ratio": 1.25,
      "gap": {
       "home": 19,
       "away": -19
@@ -5988,6 +6117,7 @@
       "pin_value": "over"
      },
      "open": 149.5,
+     "mny_ratio": 1.0,
      "gap": {
       "over": 0,
       "under": 0
@@ -6031,6 +6161,7 @@
       "pin_value": "under"
      },
      "open": 149.5,
+     "mny_ratio": 1.59,
      "gap": {
       "over": -34,
       "under": 34
@@ -6331,6 +6462,7 @@
       "sharp_gap": "home"
      },
      "open": -27.5,
+     "mny_ratio": 1.02,
      "gap": {
       "home": 1,
       "away": -1
@@ -6374,6 +6506,7 @@
       "pin_value": "away"
      },
      "open": -27.5,
+     "mny_ratio": 1.02,
      "gap": {
       "home": 1,
       "away": -1
@@ -6527,6 +6660,7 @@
       "pin_value": "under"
      },
      "open": 163.5,
+     "mny_ratio": 1.05,
      "gap": {
       "over": -3,
       "under": 3
@@ -6673,6 +6807,7 @@
       "pin_value": "home"
      },
      "open": -40.5,
+     "mny_ratio": 0.96,
      "gap": {
       "home": -2,
       "away": 2
@@ -6716,6 +6851,7 @@
       "pin_value": "home"
      },
      "open": -40.5,
+     "mny_ratio": 0.98,
      "gap": {
       "home": -1,
       "away": 1
@@ -6841,6 +6977,7 @@
       "money_moving": "under"
      },
      "open": 161.5,
+     "mny_ratio": 0.84,
      "gap": {
       "over": -7,
       "under": 7
@@ -6884,6 +7021,7 @@
       "money_moving": "under"
      },
      "open": 161.5,
+     "mny_ratio": 1.39,
      "gap": {
       "over": 19,
       "under": -19
@@ -7023,6 +7161,7 @@
       "pin_value": "away"
      },
      "open": -20.5,
+     "mny_ratio": 0.65,
      "gap": {
       "home": -22,
       "away": 22
@@ -7065,6 +7204,7 @@
       "sharp_gap": "away"
      },
      "open": -20.5,
+     "mny_ratio": 0.39,
      "gap": {
       "home": -39,
       "away": 39
@@ -7189,6 +7329,7 @@
       "money_moving": "over"
      },
      "open": 149.5,
+     "mny_ratio": 1.15,
      "gap": {
       "over": 8,
       "under": -8
@@ -7233,6 +7374,7 @@
       "pin_value": "over"
      },
      "open": 149.5,
+     "mny_ratio": 1.09,
      "gap": {
       "over": 4,
       "under": -4
@@ -7528,6 +7670,7 @@
       "pin_value": "away"
      },
      "open": -9.5,
+     "mny_ratio": 0.94,
      "gap": {
       "home": -3,
       "away": 3
@@ -7570,6 +7713,7 @@
       "money_moving": "away"
      },
      "open": -9.5,
+     "mny_ratio": 0.82,
      "gap": {
       "home": -11,
       "away": 11
@@ -7696,6 +7840,7 @@
       "pin_value": "over"
      },
      "open": 155.5,
+     "mny_ratio": 1.06,
      "gap": {
       "over": -4,
       "under": 4
@@ -7734,12 +7879,14 @@
      },
      "calls": {
       "follow_move": "over",
+      "rlm_ratio": "over",
       "money_level": "under",
       "sharp_gap": "over",
       "money_moving": "over",
       "pin_value": "over"
      },
      "open": 155.5,
+     "mny_ratio": 1.6,
      "gap": {
       "over": 15,
       "under": -15
@@ -7759,6 +7906,15 @@
     },
     "early_graded": {
      "follow_move": {
+      "side": "over",
+      "line": 157.5,
+      "odds": -115,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": true,
+      "clv": -3.0
+     },
+     "rlm_ratio": {
       "side": "over",
       "line": 157.5,
       "odds": -115,
@@ -8068,12 +8224,14 @@
      },
      "calls": {
       "follow_move": "away",
+      "rlm_ratio": "away",
       "money_level": "away",
       "sharp_gap": "away",
       "money_moving": "away",
       "consensus_gap": "away"
      },
      "open": -15.5,
+     "mny_ratio": 2.05,
      "gap": {
       "home": -46,
       "away": 46
@@ -8110,12 +8268,14 @@
      },
      "calls": {
       "follow_move": "away",
+      "rlm_ratio": "away",
       "money_level": "away",
       "sharp_gap": "away",
       "money_moving": "home",
       "consensus_gap": "home"
      },
      "open": -15.5,
+     "mny_ratio": 1.79,
      "gap": {
       "home": -34,
       "away": 34
@@ -8133,6 +8293,15 @@
     },
     "early_graded": {
      "follow_move": {
+      "side": "away",
+      "line": 14.5,
+      "odds": -102,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": false,
+      "clv": 0.0
+     },
+     "rlm_ratio": {
       "side": "away",
       "line": 14.5,
       "odds": -102,
@@ -8180,6 +8349,14 @@
     },
     "close_graded": {
      "follow_move": {
+      "side": "away",
+      "line": 14.5,
+      "odds": -120,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": false
+     },
+     "rlm_ratio": {
       "side": "away",
       "line": 14.5,
       "odds": -120,
@@ -8248,6 +8425,7 @@
       "money_moving": "under"
      },
      "open": 155.5,
+     "mny_ratio": 0.9,
      "gap": {
       "over": 5,
       "under": -5
@@ -8289,6 +8467,7 @@
       "money_moving": "under"
      },
      "open": 155.5,
+     "mny_ratio": 0.85,
      "gap": {
       "over": 8,
       "under": -8
@@ -8581,6 +8760,7 @@
       "pin_value": "home"
      },
      "open": -20.5,
+     "mny_ratio": 1.09,
      "gap": {
       "home": 7,
       "away": -7
@@ -8624,6 +8804,7 @@
       "consensus_gap": "home"
      },
      "open": -20.5,
+     "mny_ratio": 1.03,
      "gap": {
       "home": 3,
       "away": -3
@@ -8749,6 +8930,7 @@
       "pin_value": "over"
      },
      "open": 151.5,
+     "mny_ratio": 0.81,
      "gap": {
       "over": -7,
       "under": 7
@@ -9038,6 +9220,7 @@
       "money_level": "home"
      },
      "open": -8.5,
+     "mny_ratio": 1.0,
      "gap": {
       "home": 0,
       "away": 0
@@ -9148,6 +9331,7 @@
       "money_moving": "over"
      },
      "open": 151.5,
+     "mny_ratio": 1.46,
      "gap": {
       "over": 23,
       "under": -23
@@ -9431,6 +9615,7 @@
       "money_moving": "home"
      },
      "open": -28.5,
+     "mny_ratio": 1.17,
      "gap": {
       "home": 10,
       "away": -10
@@ -9557,6 +9742,7 @@
       "money_moving": "under"
      },
      "open": 151.5,
+     "mny_ratio": 1.98,
      "gap": {
       "over": -46,
       "under": 46
@@ -9713,6 +9899,7 @@
       "money_moving": "home"
      },
      "open": -14.5,
+     "mny_ratio": 1.25,
      "gap": {
       "home": 17,
       "away": -17
@@ -9824,6 +10011,7 @@
      },
      "calls": {
       "follow_move": "over",
+      "rlm_ratio": "over",
       "money_level": "over",
       "sharp_gap": "over",
       "money_moving": "over",
@@ -9831,6 +10019,7 @@
       "pin_value": "over"
      },
      "open": 161,
+     "mny_ratio": 1.7,
      "gap": {
       "over": 23,
       "under": -23
@@ -9909,6 +10098,14 @@
     },
     "close_graded": {
      "follow_move": {
+      "side": "over",
+      "line": 161.5,
+      "odds": -115,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": true
+     },
+     "rlm_ratio": {
       "side": "over",
       "line": 161.5,
       "odds": -115,
@@ -10143,6 +10340,7 @@
       "money_moving": "away"
      },
      "open": 1.5,
+     "mny_ratio": 1.22,
      "gap": {
       "home": -12,
       "away": 12
@@ -10266,11 +10464,13 @@
      },
      "calls": {
       "follow_move": "over",
+      "rlm_ratio": "over",
       "sharp_gap": "over",
       "money_moving": "over",
       "pin_value": "under"
      },
      "open": 158.5,
+     "mny_ratio": 1.72,
      "gap": {
       "over": 21,
       "under": -21
@@ -10349,6 +10549,14 @@
     },
     "close_graded": {
      "follow_move": {
+      "side": "over",
+      "line": 163.5,
+      "odds": -110,
+      "res": "W",
+      "units": 0.909,
+      "took_fav": true
+     },
+     "rlm_ratio": {
       "side": "over",
       "line": 163.5,
       "odds": -110,
@@ -10559,6 +10767,7 @@
       "consensus_gap": "home"
      },
      "open": -26.5,
+     "mny_ratio": 1.11,
      "gap": {
       "home": 9,
       "away": -9
@@ -10681,6 +10890,7 @@
       "money_moving": "under"
      },
      "open": 152.5,
+     "mny_ratio": 1.16,
      "gap": {
       "over": -10,
       "under": 10
@@ -10827,6 +11037,7 @@
       "money_moving": "away"
      },
      "open": -14.5,
+     "mny_ratio": 0.86,
      "gap": {
       "home": -11,
       "away": 11
@@ -10957,6 +11168,7 @@
       "pin_value": "over"
      },
      "open": 157.5,
+     "mny_ratio": 0.81,
      "gap": {
       "over": 10,
       "under": -10
@@ -11383,6 +11595,7 @@
       "consensus_gap": "over"
      },
      "open": 149.5,
+     "mny_ratio": 0.68,
      "gap": {
       "over": 14,
       "under": -14
@@ -11772,11 +11985,13 @@
      },
      "calls": {
       "follow_move": "over",
+      "rlm_ratio": "over",
       "money_level": "over",
       "sharp_gap": "over",
       "money_moving": "over"
      },
      "open": 159.5,
+     "mny_ratio": 1.66,
      "gap": {
       "over": 21,
       "under": -21
@@ -11831,6 +12046,14 @@
     "early_graded": {},
     "close_graded": {
      "follow_move": {
+      "side": "over",
+      "line": 162.5,
+      "odds": -115,
+      "res": "W",
+      "units": 0.87,
+      "took_fav": true
+     },
+     "rlm_ratio": {
       "side": "over",
       "line": 162.5,
       "odds": -115,
@@ -12165,6 +12388,7 @@
       "money_moving": "over"
      },
      "open": 157.5,
+     "mny_ratio": 1.16,
      "gap": {
       "over": 7,
       "under": -7
@@ -12432,6 +12656,7 @@
       "pin_value": "home"
      },
      "open": 1.5,
+     "mny_ratio": 1.31,
      "gap": {
       "home": -17,
       "away": 17
@@ -12559,6 +12784,7 @@
       "pin_value": "over"
      },
      "open": 143.5,
+     "mny_ratio": 1.15,
      "gap": {
       "over": -6,
       "under": 6
@@ -12810,6 +13036,7 @@
       "pin_value": "home"
      },
      "open": -14.5,
+     "mny_ratio": 0.75,
      "gap": {
       "home": -12,
       "away": 12
@@ -12949,6 +13176,7 @@
       "pin_value": "under"
      },
      "open": 153.5,
+     "mny_ratio": 1.16,
      "gap": {
       "over": 9,
       "under": -9
@@ -13190,12 +13418,14 @@
      },
      "calls": {
       "follow_move": "away",
+      "rlm_ratio": "away",
       "money_level": "away",
       "sharp_gap": "away",
       "money_moving": "away",
       "pin_value": "away"
      },
      "open": -15.5,
+     "mny_ratio": 1.77,
      "gap": {
       "home": -23,
       "away": 23
@@ -13246,6 +13476,14 @@
     "early_graded": {},
     "close_graded": {
      "follow_move": {
+      "side": "away",
+      "line": 12.5,
+      "odds": -114,
+      "res": "W",
+      "units": 0.877,
+      "took_fav": false
+     },
+     "rlm_ratio": {
       "side": "away",
       "line": 12.5,
       "odds": -114,
@@ -13314,6 +13552,7 @@
       "money_moving": "over"
      },
      "open": 156.5,
+     "mny_ratio": 1.1,
      "gap": {
       "over": 5,
       "under": -5
@@ -13557,6 +13796,7 @@
       "pin_value": "home"
      },
      "open": -26.5,
+     "mny_ratio": 1.11,
      "gap": {
       "home": 9,
       "away": -9
@@ -13907,11 +14147,13 @@
      },
      "calls": {
       "follow_move": "under",
+      "rlm_ratio": "under",
       "money_level": "under",
       "sharp_gap": "under",
       "money_moving": "under"
      },
      "open": 141.5,
+     "mny_ratio": 1.51,
      "gap": {
       "over": -20,
       "under": 20
@@ -13972,6 +14214,14 @@
     },
     "close_graded": {
      "follow_move": {
+      "side": "under",
+      "line": 135.5,
+      "odds": -110,
+      "res": "W",
+      "units": 0.909,
+      "took_fav": false
+     },
+     "rlm_ratio": {
       "side": "under",
       "line": 135.5,
       "odds": -110,
@@ -14279,6 +14529,7 @@
       "money_moving": "under"
      },
      "open": 151.5,
+     "mny_ratio": 0.95,
      "gap": {
       "over": -2,
       "under": 2
@@ -14517,6 +14768,7 @@
       "money_moving": "home"
      },
      "open": -21.5,
+     "mny_ratio": 1.05,
      "gap": {
       "home": 4,
       "away": -4
@@ -14625,6 +14877,7 @@
       "money_moving": "under"
      },
      "open": 148.5,
+     "mny_ratio": 0.79,
      "gap": {
       "over": -7,
       "under": 7
@@ -14861,6 +15114,7 @@
       "money_moving": "away"
      },
      "open": -16.5,
+     "mny_ratio": 0.58,
      "gap": {
       "home": -23,
       "away": 23
@@ -15210,6 +15464,7 @@
       "pin_value": "home"
      },
      "open": -1.5,
+     "mny_ratio": 1.08,
      "gap": {
       "home": 5,
       "away": -5
@@ -15323,6 +15578,7 @@
      },
      "calls": {
       "follow_move": "under",
+      "rlm_ratio": "under",
       "money_level": "over",
       "sharp_gap": "under",
       "money_moving": "under",
@@ -15330,6 +15586,7 @@
       "pin_value": "over"
      },
      "open": 141.5,
+     "mny_ratio": 1.34,
      "gap": {
       "over": -12,
       "under": 12
@@ -15380,6 +15637,14 @@
     "early_graded": {},
     "close_graded": {
      "follow_move": {
+      "side": "under",
+      "line": 137.5,
+      "odds": -110,
+      "res": "W",
+      "units": 0.909,
+      "took_fav": false
+     },
+     "rlm_ratio": {
       "side": "under",
       "line": 137.5,
       "odds": -110,
@@ -15692,6 +15957,7 @@
       "money_moving": "over"
      },
      "open": 149.5,
+     "mny_ratio": 0.61,
      "gap": {
       "over": 20,
       "under": -20
@@ -15921,6 +16187,7 @@
       "pin_value": "away"
      },
      "open": -1.5,
+     "mny_ratio": 1.08,
      "gap": {
       "home": -4,
       "away": 4
@@ -16048,6 +16315,7 @@
       "consensus_gap": "under"
      },
      "open": 142.5,
+     "mny_ratio": 1.04,
      "gap": {
       "over": -2,
       "under": 2
@@ -16304,11 +16572,13 @@
      },
      "calls": {
       "follow_move": "away",
+      "rlm_ratio": "away",
       "money_level": "away",
       "sharp_gap": "away",
       "money_moving": "away"
      },
      "open": -1.5,
+     "mny_ratio": 1.5,
      "gap": {
       "home": -21,
       "away": 21
@@ -16359,6 +16629,14 @@
     "early_graded": {},
     "close_graded": {
      "follow_move": {
+      "side": "away",
+      "line": -1.5,
+      "odds": -110,
+      "res": "W",
+      "units": 0.909,
+      "took_fav": true
+     },
+     "rlm_ratio": {
       "side": "away",
       "line": -1.5,
       "odds": -110,
@@ -16417,6 +16695,7 @@
       "money_level": "over"
      },
      "open": 141.5,
+     "mny_ratio": 1.0,
      "gap": {
       "over": 0,
       "under": 0
@@ -16642,6 +16921,7 @@
       "money_moving": "away"
      },
      "open": -3.5,
+     "mny_ratio": 0.84,
      "gap": {
       "home": -11,
       "away": 11
@@ -16757,11 +17037,13 @@
      },
      "calls": {
       "follow_move": "under",
+      "rlm_ratio": "under",
       "money_level": "under",
       "sharp_gap": "under",
       "money_moving": "under"
      },
      "open": 142.5,
+     "mny_ratio": 1.54,
      "gap": {
       "over": -22,
       "under": 22
@@ -16810,6 +17092,14 @@
     "early_graded": {},
     "close_graded": {
      "follow_move": {
+      "side": "under",
+      "line": 136.5,
+      "odds": -105,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": false
+     },
+     "rlm_ratio": {
       "side": "under",
       "line": 136.5,
       "odds": -105,
@@ -17340,6 +17630,7 @@
       "money_moving": "home"
      },
      "open": -2.5,
+     "mny_ratio": 1.55,
      "gap": {
       "home": 29,
       "away": -29
@@ -17449,6 +17740,7 @@
       "consensus_gap": "over"
      },
      "open": 151.5,
+     "mny_ratio": 1.06,
      "gap": {
       "over": -4,
       "under": 4
@@ -17695,6 +17987,7 @@
       "pin_value": "home"
      },
      "open": -21.5,
+     "mny_ratio": 1.12,
      "gap": {
       "home": 10,
       "away": -10
@@ -17822,6 +18115,7 @@
       "consensus_gap": "over"
      },
      "open": 138.5,
+     "mny_ratio": 1.05,
      "gap": {
       "over": -3,
       "under": 3
@@ -18068,6 +18362,7 @@
       "money_moving": "home"
      },
      "open": -19.5,
+     "mny_ratio": 1.02,
      "gap": {
       "home": 2,
       "away": -2
@@ -18173,12 +18468,14 @@
      },
      "calls": {
       "follow_move": "under",
+      "rlm_ratio": "under",
       "money_level": "over",
       "sharp_gap": "under",
       "money_moving": "under",
       "consensus_gap": "over"
      },
      "open": 141.5,
+     "mny_ratio": 2.0,
      "gap": {
       "over": -21,
       "under": 21
@@ -18229,6 +18526,14 @@
     "early_graded": {},
     "close_graded": {
      "follow_move": {
+      "side": "under",
+      "line": 136.5,
+      "odds": -105,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": false
+     },
+     "rlm_ratio": {
       "side": "under",
       "line": 136.5,
       "odds": -105,
@@ -18416,6 +18721,7 @@
       "money_moving": "away"
      },
      "open": 6.5,
+     "mny_ratio": 1.39,
      "gap": {
       "home": -22,
       "away": 22
@@ -18776,6 +19082,7 @@
       "money_moving": "home"
      },
      "open": -5.5,
+     "mny_ratio": 1.16,
      "gap": {
       "home": 9,
       "away": -9
@@ -18900,6 +19207,7 @@
       "pin_value": "over"
      },
      "open": 150.5,
+     "mny_ratio": 0.98,
      "gap": {
       "over": 1,
       "under": -1
@@ -19159,6 +19467,7 @@
       "pin_value": "away"
      },
      "open": 1.5,
+     "mny_ratio": 0.91,
      "gap": {
       "home": -2,
       "away": 2
@@ -19287,6 +19596,7 @@
       "pin_value": "over"
      },
      "open": 156.5,
+     "mny_ratio": 1.28,
      "gap": {
       "over": 14,
       "under": -14
@@ -19664,6 +19974,7 @@
       "pin_value": "over"
      },
      "open": 143.5,
+     "mny_ratio": 1.09,
      "gap": {
       "over": -4,
       "under": 4
@@ -20016,6 +20327,7 @@
       "pin_value": "over"
      },
      "open": 139.5,
+     "mny_ratio": 1.3,
      "gap": {
       "over": -16,
       "under": 16
@@ -20274,6 +20586,7 @@
       "consensus_gap": "away"
      },
      "open": -8.5,
+     "mny_ratio": 1.46,
      "gap": {
       "home": 25,
       "away": -25
@@ -20392,6 +20705,7 @@
       "money_moving": "under"
      },
      "open": 139.5,
+     "mny_ratio": 1.33,
      "gap": {
       "over": -15,
       "under": 15
@@ -20642,6 +20956,7 @@
       "money_moving": "away"
      },
      "open": -6.5,
+     "mny_ratio": 0.44,
      "gap": {
       "home": -23,
       "away": 23
@@ -20747,6 +21062,7 @@
      },
      "calls": {
       "follow_move": "under",
+      "rlm_ratio": "under",
       "money_level": "under",
       "sharp_gap": "under",
       "money_moving": "under",
@@ -20754,6 +21070,7 @@
       "pin_value": "over"
      },
      "open": 144.5,
+     "mny_ratio": 3.04,
      "gap": {
       "over": -53,
       "under": 53
@@ -20804,6 +21121,14 @@
     "early_graded": {},
     "close_graded": {
      "follow_move": {
+      "side": "under",
+      "line": 139.5,
+      "odds": -105,
+      "res": "W",
+      "units": 0.952,
+      "took_fav": false
+     },
+     "rlm_ratio": {
       "side": "under",
       "line": 139.5,
       "odds": -105,
@@ -21020,6 +21345,7 @@
       "money_moving": "home"
      },
      "open": -7.5,
+     "mny_ratio": 1.24,
      "gap": {
       "home": 14,
       "away": -14
@@ -21160,6 +21486,7 @@
       "money_moving": "over"
      },
      "open": 145.5,
+     "mny_ratio": 0.9,
      "gap": {
       "over": 4,
       "under": -4
@@ -21204,6 +21531,7 @@
       "consensus_gap": "over"
      },
      "open": 145.5,
+     "mny_ratio": 0.91,
      "gap": {
       "over": 5,
       "under": -5
@@ -21493,6 +21821,7 @@
       "pin_value": "away"
      },
      "open": -11.5,
+     "mny_ratio": 1.01,
      "gap": {
       "home": 1,
       "away": -1
@@ -21612,6 +21941,7 @@
       "consensus_gap": "over"
      },
      "open": 153.5,
+     "mny_ratio": 1.53,
      "gap": {
       "over": -27,
       "under": 27
@@ -21863,6 +22193,7 @@
       "pin_value": "home"
      },
      "open": -17.5,
+     "mny_ratio": 0.92,
      "gap": {
       "home": -4,
       "away": 4
@@ -21989,6 +22320,7 @@
       "money_moving": "under"
      },
      "open": 143.5,
+     "mny_ratio": 1.15,
      "gap": {
       "over": -6,
       "under": 6
@@ -22348,6 +22680,7 @@
       "pin_value": "over"
      },
      "open": 151.5,
+     "mny_ratio": 0.74,
      "gap": {
       "over": 12,
       "under": -12
@@ -22594,6 +22927,7 @@
       "pin_value": "home"
      },
      "open": -38.5,
+     "mny_ratio": 0.87,
      "gap": {
       "home": -9,
       "away": 9
@@ -22712,6 +23046,7 @@
       "money_moving": "over"
      },
      "open": 146.5,
+     "mny_ratio": 1.23,
      "gap": {
       "over": 16,
       "under": -16
@@ -22842,6 +23177,7 @@
       "money_moving": "home"
      },
      "open": -23.5,
+     "mny_ratio": 1.18,
      "gap": {
       "home": 13,
       "away": -13
@@ -22951,12 +23287,14 @@
      },
      "calls": {
       "follow_move": "over",
+      "rlm_ratio": "over",
       "money_level": "under",
       "sharp_gap": "over",
       "money_moving": "over",
       "consensus_gap": "over"
      },
      "open": 156.5,
+     "mny_ratio": 1.33,
      "gap": {
       "over": 11,
       "under": -11
@@ -23005,6 +23343,14 @@
     "early_graded": {},
     "close_graded": {
      "follow_move": {
+      "side": "over",
+      "line": 159.5,
+      "odds": -115,
+      "res": "W",
+      "units": 0.87,
+      "took_fav": true
+     },
+     "rlm_ratio": {
       "side": "over",
       "line": 159.5,
       "odds": -115,
@@ -23187,6 +23533,7 @@
      },
      "calls": {
       "follow_move": "away",
+      "rlm_ratio": "away",
       "money_level": "home",
       "sharp_gap": "away",
       "money_moving": "away",
@@ -23194,6 +23541,7 @@
       "pin_value": "home"
      },
      "open": -15.5,
+     "mny_ratio": 1.21,
      "gap": {
       "home": -8,
       "away": 8
@@ -23250,6 +23598,14 @@
     "early_graded": {},
     "close_graded": {
      "follow_move": {
+      "side": "away",
+      "line": 13.5,
+      "odds": -102,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": false
+     },
+     "rlm_ratio": {
       "side": "away",
       "line": 13.5,
       "odds": -102,
@@ -23326,6 +23682,7 @@
       "money_moving": "over"
      },
      "open": 155.5,
+     "mny_ratio": 0.46,
      "gap": {
       "over": 19,
       "under": -19
@@ -23715,6 +24072,7 @@
       "pin_value": "over"
      },
      "open": 151.5,
+     "mny_ratio": 0.95,
      "gap": {
       "over": -3,
       "under": 3
@@ -23943,6 +24301,7 @@
       "money_moving": "home"
      },
      "open": -15.5,
+     "mny_ratio": 1.07,
      "gap": {
       "home": 5,
       "away": -5
@@ -24052,6 +24411,7 @@
       "consensus_gap": "over"
      },
      "open": 142.5,
+     "mny_ratio": 0.88,
      "gap": {
       "over": -8,
       "under": 8
@@ -24297,6 +24657,7 @@
       "pin_value": "home"
      },
      "open": -1.5,
+     "mny_ratio": 1.1,
      "gap": {
       "home": 5,
       "away": -5
@@ -24416,6 +24777,7 @@
       "consensus_gap": "over"
      },
      "open": 142.5,
+     "mny_ratio": 1.13,
      "gap": {
       "over": -8,
       "under": 8
@@ -24658,6 +25020,7 @@
       "pin_value": "home"
      },
      "open": -37.5,
+     "mny_ratio": 0.97,
      "gap": {
       "home": -2,
       "away": 2
@@ -24796,6 +25159,7 @@
       "money_moving": "under"
      },
      "open": 153.5,
+     "mny_ratio": 0.98,
      "gap": {
       "over": -1,
       "under": 1
@@ -24927,6 +25291,7 @@
       "pin_value": "home"
      },
      "open": -32.5,
+     "mny_ratio": 1.08,
      "gap": {
       "home": 7,
       "away": -7
@@ -25040,12 +25405,14 @@
      },
      "calls": {
       "follow_move": "over",
+      "rlm_ratio": "over",
       "money_level": "over",
       "sharp_gap": "over",
       "money_moving": "over",
       "pin_value": "over"
      },
      "open": 152.5,
+     "mny_ratio": 1.65,
      "gap": {
       "over": 22,
       "under": -22
@@ -25096,6 +25463,14 @@
     "early_graded": {},
     "close_graded": {
      "follow_move": {
+      "side": "over",
+      "line": 155.5,
+      "odds": -110,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": true
+     },
+     "rlm_ratio": {
       "side": "over",
       "line": 155.5,
       "odds": -110,
@@ -25185,6 +25560,7 @@
       "pin_value": "away"
      },
      "open": -26.5,
+     "mny_ratio": 1.12,
      "gap": {
       "home": 8,
       "away": -8
@@ -25536,6 +25912,7 @@
       "pin_value": "over"
      },
      "open": 145.5,
+     "mny_ratio": 1.06,
      "gap": {
       "over": -3,
       "under": 3
@@ -25795,6 +26172,7 @@
       "pin_value": "home"
      },
      "open": -27.5,
+     "mny_ratio": 1.1,
      "gap": {
       "home": 8,
       "away": -8
@@ -25928,11 +26306,13 @@
      },
      "calls": {
       "follow_move": "over",
+      "rlm_ratio": "over",
       "money_level": "over",
       "sharp_gap": "over",
       "money_moving": "over"
      },
      "open": 162.5,
+     "mny_ratio": 1.59,
      "gap": {
       "over": 24,
       "under": -24
@@ -25983,6 +26363,14 @@
     "early_graded": {},
     "close_graded": {
      "follow_move": {
+      "side": "over",
+      "line": 172.5,
+      "odds": -115,
+      "res": "W",
+      "units": 0.87,
+      "took_fav": true
+     },
+     "rlm_ratio": {
       "side": "over",
       "line": 172.5,
       "odds": -115,
@@ -26063,6 +26451,7 @@
       "money_moving": "away"
      },
      "open": -5.5,
+     "mny_ratio": 0.81,
      "gap": {
       "home": -7,
       "away": 7
@@ -26174,6 +26563,7 @@
       "pin_value": "over"
      },
      "open": 147.5,
+     "mny_ratio": 0.77,
      "gap": {
       "over": -13,
       "under": 13
@@ -26418,6 +26808,7 @@
      },
      "calls": {
       "follow_move": "away",
+      "rlm_ratio": "away",
       "money_level": "away",
       "sharp_gap": "away",
       "money_moving": "away",
@@ -26425,6 +26816,7 @@
       "pin_value": "home"
      },
      "open": -10.5,
+     "mny_ratio": 1.63,
      "gap": {
       "home": -27,
       "away": 27
@@ -26481,6 +26873,14 @@
     "early_graded": {},
     "close_graded": {
      "follow_move": {
+      "side": "away",
+      "line": 7.5,
+      "odds": -102,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": false
+     },
+     "rlm_ratio": {
       "side": "away",
       "line": 7.5,
       "odds": -102,
@@ -26552,6 +26952,7 @@
      },
      "calls": {
       "follow_move": "under",
+      "rlm_ratio": "under",
       "money_level": "over",
       "sharp_gap": "under",
       "money_moving": "under",
@@ -26559,6 +26960,7 @@
       "pin_value": "over"
      },
      "open": 140.5,
+     "mny_ratio": 1.96,
      "gap": {
       "over": -24,
       "under": 24
@@ -26609,6 +27011,14 @@
     "early_graded": {},
     "close_graded": {
      "follow_move": {
+      "side": "under",
+      "line": 136.5,
+      "odds": -105,
+      "res": "W",
+      "units": 0.952,
+      "took_fav": false
+     },
+     "rlm_ratio": {
       "side": "under",
       "line": 136.5,
       "odds": -105,
@@ -26827,6 +27237,7 @@
       "pin_value": "away"
      },
      "open": -26.5,
+     "mny_ratio": 1.13,
      "gap": {
       "home": 11,
       "away": -11
@@ -26954,6 +27365,7 @@
       "consensus_gap": "over"
      },
      "open": 151.5,
+     "mny_ratio": 0.91,
      "gap": {
       "over": 3,
       "under": -3
@@ -27092,6 +27504,7 @@
       "money_moving": "home"
      },
      "open": -28.5,
+     "mny_ratio": 1.07,
      "gap": {
       "home": 6,
       "away": -6
@@ -27207,6 +27620,7 @@
       "consensus_gap": "over"
      },
      "open": 168.5,
+     "mny_ratio": 1.44,
      "gap": {
       "over": 26,
       "under": -26
@@ -27351,6 +27765,7 @@
       "pin_value": "home"
      },
      "open": -5.5,
+     "mny_ratio": 0.87,
      "gap": {
       "home": 7,
       "away": -7
@@ -27478,12 +27893,14 @@
      },
      "calls": {
       "follow_move": "under",
+      "rlm_ratio": "under",
       "money_level": "under",
       "sharp_gap": "under",
       "money_moving": "under",
       "pin_value": "under"
      },
      "open": 146.5,
+     "mny_ratio": 1.87,
      "gap": {
       "over": -34,
       "under": 34
@@ -27546,6 +27963,14 @@
     },
     "close_graded": {
      "follow_move": {
+      "side": "under",
+      "line": 143.5,
+      "odds": -110,
+      "res": "W",
+      "units": 0.909,
+      "took_fav": false
+     },
+     "rlm_ratio": {
       "side": "under",
       "line": 143.5,
       "odds": -110,
@@ -27747,6 +28172,7 @@
       "pin_value": "away"
      },
      "open": -30.5,
+     "mny_ratio": 0.72,
      "gap": {
       "home": -17,
       "away": 17
@@ -27902,6 +28328,7 @@
       "pin_value": "under"
      },
      "open": 157.5,
+     "mny_ratio": 1.08,
      "gap": {
       "over": 4,
       "under": -4
@@ -28059,6 +28486,7 @@
       "consensus_gap": "home"
      },
      "open": -33.5,
+     "mny_ratio": 1.3,
      "gap": {
       "home": 18,
       "away": -18
@@ -28189,6 +28617,7 @@
       "money_moving": "over"
      },
      "open": 155.5,
+     "mny_ratio": 1.26,
      "gap": {
       "over": 15,
       "under": -15
@@ -28333,6 +28762,7 @@
       "pin_value": "home"
      },
      "open": -14.5,
+     "mny_ratio": 1.12,
      "gap": {
       "home": 9,
       "away": -9
@@ -28461,6 +28891,7 @@
       "pin_value": "over"
      },
      "open": 152.5,
+     "mny_ratio": 1.04,
      "gap": {
       "over": -2,
       "under": 2
@@ -28727,6 +29158,7 @@
       "money_moving": "home"
      },
      "open": -24.5,
+     "mny_ratio": 1.27,
      "gap": {
       "home": 17,
       "away": -17
@@ -28856,6 +29288,7 @@
       "pin_value": "under"
      },
      "open": 153.5,
+     "mny_ratio": 1.18,
      "gap": {
       "over": 9,
       "under": -9
@@ -29108,6 +29541,7 @@
       "money_moving": "home"
      },
      "open": -17.5,
+     "mny_ratio": 1.12,
      "gap": {
       "home": 9,
       "away": -9
@@ -29238,6 +29672,7 @@
       "pin_value": "over"
      },
      "open": 146.5,
+     "mny_ratio": 1.22,
      "gap": {
       "over": -12,
       "under": 12
@@ -29498,6 +29933,7 @@
       "money_moving": "home"
      },
      "open": -8,
+     "mny_ratio": 0.77,
      "gap": {
       "home": 11,
       "away": -11
@@ -29648,6 +30084,7 @@
       "money_moving": "over"
      },
      "open": 149,
+     "mny_ratio": 0.96,
      "gap": {
       "over": 2,
       "under": -2
@@ -29691,6 +30128,7 @@
       "money_moving": "under"
      },
      "open": 149,
+     "mny_ratio": 1.1,
      "gap": {
       "over": -3,
       "under": 3
@@ -29990,6 +30428,7 @@
       "money_moving": "home"
      },
      "open": -18.5,
+     "mny_ratio": 1.09,
      "gap": {
       "home": 7,
       "away": -7
@@ -30113,11 +30552,13 @@
      },
      "calls": {
       "follow_move": "under",
+      "rlm_ratio": "under",
       "money_level": "under",
       "sharp_gap": "under",
       "money_moving": "under"
      },
      "open": 155.5,
+     "mny_ratio": 1.85,
      "gap": {
       "over": -34,
       "under": 34
@@ -30186,6 +30627,14 @@
     },
     "close_graded": {
      "follow_move": {
+      "side": "under",
+      "line": 151.5,
+      "odds": -115,
+      "res": "W",
+      "units": 0.87,
+      "took_fav": false
+     },
+     "rlm_ratio": {
       "side": "under",
       "line": 151.5,
       "odds": -115,
@@ -30376,6 +30825,7 @@
       "pin_value": "home"
      },
      "open": -3.5,
+     "mny_ratio": 1.4,
      "gap": {
       "home": -19,
       "away": 19
@@ -30780,6 +31230,7 @@
       "money_moving": "home"
      },
      "open": -15.5,
+     "mny_ratio": 1.11,
      "gap": {
       "home": 9,
       "away": -9
@@ -30907,6 +31358,7 @@
       "consensus_gap": "over"
      },
      "open": 150.5,
+     "mny_ratio": 1.05,
      "gap": {
       "over": 2,
       "under": -2
@@ -31536,11 +31988,13 @@
      },
      "calls": {
       "follow_move": "home",
+      "rlm_ratio": "home",
       "money_level": "home",
       "sharp_gap": "home",
       "money_moving": "home"
      },
      "open": -7.5,
+     "mny_ratio": 1.23,
      "gap": {
       "home": 10,
       "away": -10
@@ -31602,6 +32056,14 @@
       "units": 0.847,
       "took_fav": true
      },
+     "rlm_ratio": {
+      "side": "home",
+      "line": -8.5,
+      "odds": -118,
+      "res": "W",
+      "units": 0.847,
+      "took_fav": true
+     },
      "money_level": {
       "side": "home",
       "line": -8.5,
@@ -31656,6 +32118,7 @@
       "consensus_gap": "over"
      },
      "open": 154.5,
+     "mny_ratio": 0.82,
      "gap": {
       "over": 4,
       "under": -4
@@ -31908,6 +32371,7 @@
       "pin_value": "home"
      },
      "open": -15.5,
+     "mny_ratio": 0.42,
      "gap": {
       "home": -38,
       "away": 38
@@ -32035,6 +32499,7 @@
      },
      "calls": {
       "follow_move": "over",
+      "rlm_ratio": "over",
       "money_level": "over",
       "sharp_gap": "over",
       "money_moving": "over",
@@ -32042,6 +32507,7 @@
       "pin_value": "over"
      },
      "open": 153.5,
+     "mny_ratio": 2.02,
      "gap": {
       "over": 44,
       "under": -44
@@ -32092,6 +32558,14 @@
     "early_graded": {},
     "close_graded": {
      "follow_move": {
+      "side": "over",
+      "line": 159.5,
+      "odds": -114,
+      "res": "W",
+      "units": 0.877,
+      "took_fav": true
+     },
+     "rlm_ratio": {
       "side": "over",
       "line": 159.5,
       "odds": -114,
@@ -32622,6 +33096,7 @@
       "money_moving": "home"
      },
      "open": -18.5,
+     "mny_ratio": 1.23,
      "gap": {
       "home": 16,
       "away": -16
@@ -32739,6 +33214,7 @@
      },
      "calls": {
       "follow_move": "over",
+      "rlm_ratio": "over",
       "money_level": "over",
       "sharp_gap": "over",
       "money_moving": "over",
@@ -32746,6 +33222,7 @@
       "pin_value": "over"
      },
      "open": 154.5,
+     "mny_ratio": 1.6,
      "gap": {
       "over": 26,
       "under": -26
@@ -32808,6 +33285,14 @@
     },
     "close_graded": {
      "follow_move": {
+      "side": "over",
+      "line": 157.5,
+      "odds": -115,
+      "res": "W",
+      "units": 0.87,
+      "took_fav": true
+     },
+     "rlm_ratio": {
       "side": "over",
       "line": 157.5,
       "odds": -115,
@@ -33007,11 +33492,13 @@
      },
      "calls": {
       "follow_move": "away",
+      "rlm_ratio": "away",
       "money_level": "home",
       "sharp_gap": "away",
       "money_moving": "away"
      },
      "open": -22.5,
+     "mny_ratio": 1.84,
      "gap": {
       "home": -21,
       "away": 21
@@ -33062,6 +33549,14 @@
     "early_graded": {},
     "close_graded": {
      "follow_move": {
+      "side": "away",
+      "line": 20.5,
+      "odds": -105,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": false
+     },
+     "rlm_ratio": {
       "side": "away",
       "line": 20.5,
       "odds": -105,
@@ -33124,6 +33619,7 @@
       "pin_value": "under"
      },
      "open": 155.5,
+     "mny_ratio": 0.96,
      "gap": {
       "over": -2,
       "under": 2
@@ -33497,6 +33993,7 @@
       "money_moving": "over"
      },
      "open": 162.5,
+     "mny_ratio": 0.81,
      "gap": {
       "over": 10,
       "under": -10
@@ -33861,6 +34358,7 @@
       "pin_value": "under"
      },
      "open": 157.5,
+     "mny_ratio": 1.4,
      "gap": {
       "over": 23,
       "under": -23
@@ -34111,6 +34609,7 @@
      },
      "calls": {
       "follow_move": "away",
+      "rlm_ratio": "away",
       "money_level": "home",
       "sharp_gap": "away",
       "money_moving": "away",
@@ -34118,6 +34617,7 @@
       "pin_value": "home"
      },
      "open": -17.5,
+     "mny_ratio": 2.0,
      "gap": {
       "home": -11,
       "away": 11
@@ -34174,6 +34674,14 @@
     "early_graded": {},
     "close_graded": {
      "follow_move": {
+      "side": "away",
+      "line": 15.5,
+      "odds": -110,
+      "res": "W",
+      "units": 0.909,
+      "took_fav": false
+     },
+     "rlm_ratio": {
       "side": "away",
       "line": 15.5,
       "odds": -110,
@@ -34250,6 +34758,7 @@
       "money_moving": "under"
      },
      "open": 144.5,
+     "mny_ratio": 1.14,
      "gap": {
       "over": -4,
       "under": 4
@@ -34484,6 +34993,7 @@
       "pin_value": "home"
      },
      "open": -30.5,
+     "mny_ratio": 1.44,
      "gap": {
       "home": 27,
       "away": -27
@@ -34627,6 +35137,7 @@
       "pin_value": "under"
      },
      "open": 150.5,
+     "mny_ratio": 1.0,
      "gap": {
       "over": 0,
       "under": 0
@@ -34768,6 +35279,7 @@
       "pin_value": "away"
      },
      "open": -24.5,
+     "mny_ratio": 1.15,
      "gap": {
       "home": 9,
       "away": -9
@@ -34919,6 +35431,7 @@
      },
      "calls": {
       "follow_move": "under",
+      "rlm_ratio": "under",
       "money_level": "under",
       "sharp_gap": "under",
       "money_moving": "under",
@@ -34926,6 +35439,7 @@
       "pin_value": "over"
      },
      "open": 143.5,
+     "mny_ratio": 2.96,
      "gap": {
       "over": -45,
       "under": 45
@@ -34994,6 +35508,14 @@
     },
     "close_graded": {
      "follow_move": {
+      "side": "under",
+      "line": 139.5,
+      "odds": -105,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": false
+     },
+     "rlm_ratio": {
       "side": "under",
       "line": 139.5,
       "odds": -105,
@@ -35218,6 +35740,7 @@
       "pin_value": "away"
      },
      "open": -20.5,
+     "mny_ratio": 0.68,
      "gap": {
       "home": -22,
       "away": 22
@@ -35385,6 +35908,7 @@
       "pin_value": "over"
      },
      "open": 155.5,
+     "mny_ratio": 0.8,
      "gap": {
       "over": -13,
       "under": 13
@@ -35686,6 +36210,7 @@
       "consensus_gap": "home"
      },
      "open": -26.5,
+     "mny_ratio": 1.35,
      "gap": {
       "home": 18,
       "away": -18
@@ -35827,12 +36352,14 @@
      },
      "calls": {
       "follow_move": "under",
+      "rlm_ratio": "under",
       "money_level": "over",
       "sharp_gap": "under",
       "money_moving": "under",
       "pin_value": "under"
      },
      "open": 142.5,
+     "mny_ratio": 1.31,
      "gap": {
       "over": -9,
       "under": 9
@@ -35911,6 +36438,14 @@
     },
     "close_graded": {
      "follow_move": {
+      "side": "under",
+      "line": 140.5,
+      "odds": -110,
+      "res": "W",
+      "units": 0.909,
+      "took_fav": false
+     },
+     "rlm_ratio": {
       "side": "under",
       "line": 140.5,
       "odds": -110,
@@ -36000,6 +36535,7 @@
       "pin_value": "away"
      },
      "open": -5,
+     "mny_ratio": 1.21,
      "gap": {
       "home": -16,
       "away": 16
@@ -36148,6 +36684,7 @@
       "pin_value": "over"
      },
      "open": 160,
+     "mny_ratio": 0.84,
      "gap": {
       "over": 5,
       "under": -5
@@ -36192,6 +36729,7 @@
       "consensus_gap": "over"
      },
      "open": 160,
+     "mny_ratio": 1.13,
      "gap": {
       "over": -11,
       "under": 11
@@ -36598,6 +37136,7 @@
       "money_moving": "over"
      },
      "open": 150.5,
+     "mny_ratio": 0.88,
      "gap": {
       "over": 3,
       "under": -3
@@ -37025,6 +37564,7 @@
      },
      "calls": {
       "follow_move": "under",
+      "rlm_ratio": "under",
       "money_level": "over",
       "sharp_gap": "under",
       "money_moving": "under",
@@ -37032,6 +37572,7 @@
       "pin_value": "over"
      },
      "open": 142.5,
+     "mny_ratio": 1.62,
      "gap": {
       "over": -16,
       "under": 16
@@ -37112,6 +37653,14 @@
     },
     "close_graded": {
      "follow_move": {
+      "side": "under",
+      "line": 137.5,
+      "odds": -110,
+      "res": "W",
+      "units": 0.909,
+      "took_fav": false
+     },
+     "rlm_ratio": {
       "side": "under",
       "line": 137.5,
       "odds": -110,
@@ -37491,6 +38040,7 @@
       "pin_value": "under"
      },
      "open": 152.5,
+     "mny_ratio": 1.15,
      "gap": {
       "over": 9,
       "under": 1
@@ -37851,6 +38401,7 @@
       "pin_value": "under"
      },
      "open": 168.5,
+     "mny_ratio": 1.33,
      "gap": {
       "over": 19,
       "under": -19
@@ -38469,6 +39020,7 @@
       "consensus_gap": "home"
      },
      "open": -12.5,
+     "mny_ratio": 1.1,
      "gap": {
       "home": 6,
       "away": -6
@@ -38598,11 +39150,13 @@
      },
      "calls": {
       "follow_move": "over",
+      "rlm_ratio": "over",
       "money_level": "over",
       "sharp_gap": "over",
       "money_moving": "over"
      },
      "open": 155.5,
+     "mny_ratio": 1.86,
      "gap": {
       "over": 25,
       "under": -25
@@ -38657,6 +39211,14 @@
     "early_graded": {},
     "close_graded": {
      "follow_move": {
+      "side": "over",
+      "line": 157.5,
+      "odds": -110,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": true
+     },
+     "rlm_ratio": {
       "side": "over",
       "line": 157.5,
       "odds": -110,
@@ -38883,6 +39445,7 @@
       "money_moving": "away"
      },
      "open": -5.5,
+     "mny_ratio": 1.32,
      "gap": {
       "home": 18,
       "away": -18
@@ -39016,12 +39579,14 @@
      },
      "calls": {
       "follow_move": "under",
+      "rlm_ratio": "under",
       "money_level": "under",
       "sharp_gap": "under",
       "money_moving": "under",
       "pin_value": "over"
      },
      "open": 146.5,
+     "mny_ratio": 1.59,
      "gap": {
       "over": -23,
       "under": 23
@@ -39100,6 +39665,14 @@
     },
     "close_graded": {
      "follow_move": {
+      "side": "under",
+      "line": 142.5,
+      "odds": -110,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": false
+     },
+     "rlm_ratio": {
       "side": "under",
       "line": 142.5,
       "odds": -110,
@@ -39342,11 +39915,13 @@
      },
      "calls": {
       "follow_move": "away",
+      "rlm_ratio": "away",
       "money_level": "home",
       "sharp_gap": "away",
       "money_moving": "away"
      },
      "open": -13.5,
+     "mny_ratio": 1.2,
      "gap": {
       "home": -6,
       "away": 6
@@ -39397,6 +39972,14 @@
     "early_graded": {},
     "close_graded": {
      "follow_move": {
+      "side": "away",
+      "line": 12.5,
+      "odds": -115,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": false
+     },
+     "rlm_ratio": {
       "side": "away",
       "line": 12.5,
       "odds": -115,
@@ -39691,6 +40274,7 @@
       "pin_value": "away"
      },
      "open": -25.5,
+     "mny_ratio": 1.08,
      "gap": {
       "home": 4,
       "away": -4
@@ -39818,6 +40402,7 @@
       "pin_value": "under"
      },
      "open": 166.5,
+     "mny_ratio": 1.62,
      "gap": {
       "over": 28,
       "under": -28
@@ -40039,6 +40624,7 @@
       "pin_value": "home"
      },
      "open": -29.5,
+     "mny_ratio": 1.38,
      "gap": {
       "home": 24,
       "away": -24
@@ -40160,6 +40746,7 @@
      },
      "calls": {
       "follow_move": "under",
+      "rlm_ratio": "under",
       "money_level": "under",
       "sharp_gap": "under",
       "money_moving": "under",
@@ -40167,6 +40754,7 @@
       "pin_value": "over"
      },
      "open": 151.5,
+     "mny_ratio": 1.66,
      "gap": {
       "over": -25,
       "under": 25
@@ -40229,6 +40817,14 @@
     },
     "close_graded": {
      "follow_move": {
+      "side": "under",
+      "line": 144.5,
+      "odds": -110,
+      "res": "W",
+      "units": 0.909,
+      "took_fav": false
+     },
+     "rlm_ratio": {
       "side": "under",
       "line": 144.5,
       "odds": -110,
@@ -40327,6 +40923,7 @@
       "pin_value": "home"
      },
      "open": -30.5,
+     "mny_ratio": 1.29,
      "gap": {
       "home": 15,
       "away": -15
@@ -40461,6 +41058,7 @@
       "pin_value": "over"
      },
      "open": 155.5,
+     "mny_ratio": 1.01,
      "gap": {
       "over": -1,
       "under": 1
@@ -40967,6 +41565,7 @@
       "money_moving": "away"
      },
      "open": -9.5,
+     "mny_ratio": 0.36,
      "gap": {
       "home": -28,
       "away": 28
@@ -41082,12 +41681,14 @@
      },
      "calls": {
       "follow_move": "under",
+      "rlm_ratio": "under",
       "money_level": "over",
       "sharp_gap": "under",
       "money_moving": "under",
       "consensus_gap": "over"
      },
      "open": 143.5,
+     "mny_ratio": 1.41,
      "gap": {
       "over": -12,
       "under": 12
@@ -41136,6 +41737,14 @@
     "early_graded": {},
     "close_graded": {
      "follow_move": {
+      "side": "under",
+      "line": 142.5,
+      "odds": -105,
+      "res": "W",
+      "units": 0.952,
+      "took_fav": false
+     },
+     "rlm_ratio": {
       "side": "under",
       "line": 142.5,
       "odds": -105,
@@ -41333,6 +41942,7 @@
       "consensus_gap": "home"
      },
      "open": -30.5,
+     "mny_ratio": 1.18,
      "gap": {
       "home": 13,
       "away": -13
@@ -41478,6 +42088,7 @@
       "consensus_gap": "over"
      },
      "open": 159.5,
+     "mny_ratio": 1.07,
      "gap": {
       "over": 2,
       "under": -2
@@ -41642,6 +42253,7 @@
       "money_moving": "home"
      },
      "open": -23.5,
+     "mny_ratio": 1.17,
      "gap": {
       "home": 11,
       "away": -11
@@ -41779,6 +42391,7 @@
       "consensus_gap": "under"
      },
      "open": 152.5,
+     "mny_ratio": 1.24,
      "gap": {
       "over": 12,
       "under": -12
@@ -42077,6 +42690,7 @@
       "money_moving": "home"
      },
      "open": -1.5,
+     "mny_ratio": 1.37,
      "gap": {
       "home": 25,
       "away": -25
@@ -42208,11 +42822,13 @@
      },
      "calls": {
       "follow_move": "under",
+      "rlm_ratio": "under",
       "sharp_gap": "under",
       "money_moving": "under",
       "consensus_gap": "over"
      },
      "open": 134.5,
+     "mny_ratio": 2.17,
      "gap": {
       "over": -27,
       "under": 27
@@ -42289,6 +42905,14 @@
     },
     "close_graded": {
      "follow_move": {
+      "side": "under",
+      "line": 129.5,
+      "odds": -108,
+      "res": "W",
+      "units": 0.926,
+      "took_fav": false
+     },
+     "rlm_ratio": {
       "side": "under",
       "line": 129.5,
       "odds": -108,
@@ -42497,6 +43121,7 @@
       "pin_value": "away"
      },
      "open": -38.5,
+     "mny_ratio": 0.49,
      "gap": {
       "home": -29,
       "away": 29
@@ -42654,6 +43279,7 @@
       "pin_value": "under"
      },
      "open": 148.5,
+     "mny_ratio": 1.41,
      "gap": {
       "over": 19,
       "under": -19
@@ -42905,6 +43531,7 @@
       "pin_value": "over"
      },
      "open": 146.5,
+     "mny_ratio": 1.25,
      "gap": {
       "over": -18,
       "under": 18
@@ -43152,6 +43779,7 @@
       "consensus_gap": "away"
      },
      "open": 3.5,
+     "mny_ratio": 0.69,
      "gap": {
       "home": -16,
       "away": 16
@@ -43268,6 +43896,7 @@
       "money_moving": "under"
      },
      "open": 145.5,
+     "mny_ratio": 1.26,
      "gap": {
       "over": -13,
       "under": 13
@@ -43505,6 +44134,7 @@
       "pin_value": "home"
      },
      "open": -35.5,
+     "mny_ratio": 0.79,
      "gap": {
       "home": 11,
       "away": -11
@@ -43631,6 +44261,7 @@
       "pin_value": "over"
      },
      "open": 137.5,
+     "mny_ratio": 1.49,
      "gap": {
       "over": -28,
       "under": 28
@@ -43800,11 +44431,13 @@
      },
      "calls": {
       "follow_move": "away",
+      "rlm_ratio": "away",
       "money_level": "home",
       "sharp_gap": "away",
       "money_moving": "away"
      },
      "open": -18.5,
+     "mny_ratio": 1.47,
      "gap": {
       "home": -9,
       "away": 9
@@ -43853,6 +44486,14 @@
     "early_graded": {},
     "close_graded": {
      "follow_move": {
+      "side": "away",
+      "line": 17.5,
+      "odds": -118,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": false
+     },
+     "rlm_ratio": {
       "side": "away",
       "line": 17.5,
       "odds": -118,
@@ -43913,6 +44554,7 @@
       "money_moving": "over"
      },
      "open": 149.5,
+     "mny_ratio": 1.42,
      "gap": {
       "over": 22,
       "under": -22
@@ -44132,6 +44774,7 @@
       "consensus_gap": "home"
      },
      "open": -29.5,
+     "mny_ratio": 1.31,
      "gap": {
       "home": 22,
       "away": -22
@@ -44249,12 +44892,14 @@
      },
      "calls": {
       "follow_move": "over",
+      "rlm_ratio": "over",
       "money_level": "under",
       "sharp_gap": "over",
       "money_moving": "over",
       "consensus_gap": "over"
      },
      "open": 159.5,
+     "mny_ratio": 1.27,
      "gap": {
       "over": 10,
       "under": -10
@@ -44303,6 +44948,14 @@
     "early_graded": {},
     "close_graded": {
      "follow_move": {
+      "side": "over",
+      "line": 160.5,
+      "odds": -115,
+      "res": "W",
+      "units": 0.87,
+      "took_fav": true
+     },
+     "rlm_ratio": {
       "side": "over",
       "line": 160.5,
       "odds": -115,
@@ -44492,6 +45145,7 @@
       "money_moving": "over"
      },
      "open": 148.5,
+     "mny_ratio": 1.2,
      "gap": {
       "over": 10,
       "under": -10
@@ -44743,6 +45397,7 @@
       "pin_value": "away"
      },
      "open": -14.5,
+     "mny_ratio": 0.94,
      "gap": {
       "home": -4,
       "away": 4
@@ -44856,12 +45511,14 @@
      },
      "calls": {
       "follow_move": "under",
+      "rlm_ratio": "under",
       "money_level": "over",
       "sharp_gap": "under",
       "money_moving": "under",
       "pin_value": "over"
      },
      "open": 150.5,
+     "mny_ratio": 1.47,
      "gap": {
       "over": -7,
       "under": 7
@@ -44912,6 +45569,14 @@
     "early_graded": {},
     "close_graded": {
      "follow_move": {
+      "side": "under",
+      "line": 143.5,
+      "odds": -110,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": false
+     },
+     "rlm_ratio": {
       "side": "under",
       "line": 143.5,
       "odds": -110,
@@ -45204,6 +45869,7 @@
      },
      "calls": {
       "follow_move": "over",
+      "rlm_ratio": "over",
       "money_level": "over",
       "sharp_gap": "over",
       "money_moving": "over",
@@ -45211,6 +45877,7 @@
       "pin_value": "over"
      },
      "open": 159.5,
+     "mny_ratio": 1.37,
      "gap": {
       "over": 15,
       "under": -15
@@ -45261,6 +45928,14 @@
     "early_graded": {},
     "close_graded": {
      "follow_move": {
+      "side": "over",
+      "line": 163.5,
+      "odds": -114,
+      "res": "W",
+      "units": 0.877,
+      "took_fav": true
+     },
+     "rlm_ratio": {
       "side": "over",
       "line": 163.5,
       "odds": -114,
@@ -45459,6 +46134,7 @@
       "money_moving": "away"
      },
      "open": -27.5,
+     "mny_ratio": 0.94,
      "gap": {
       "home": -4,
       "away": 4
@@ -45568,6 +46244,7 @@
       "consensus_gap": "over"
      },
      "open": 150.5,
+     "mny_ratio": 1.13,
      "gap": {
       "over": 9,
       "under": -9
@@ -45704,6 +46381,7 @@
       "money_moving": "home"
      },
      "open": -32.5,
+     "mny_ratio": 1.12,
      "gap": {
       "home": 6,
       "away": -6
@@ -45825,12 +46503,14 @@
      },
      "calls": {
       "follow_move": "under",
+      "rlm_ratio": "under",
       "money_level": "over",
       "sharp_gap": "under",
       "money_moving": "under",
       "consensus_gap": "under"
      },
      "open": 146.5,
+     "mny_ratio": 2.4,
      "gap": {
       "over": -21,
       "under": 21
@@ -45907,6 +46587,14 @@
     },
     "close_graded": {
      "follow_move": {
+      "side": "under",
+      "line": 145.5,
+      "odds": -115,
+      "res": "W",
+      "units": 0.87,
+      "took_fav": false
+     },
+     "rlm_ratio": {
       "side": "under",
       "line": 145.5,
       "odds": -115,
@@ -45995,6 +46683,7 @@
       "money_moving": "home"
      },
      "open": -18.5,
+     "mny_ratio": 0.59,
      "gap": {
       "home": 17,
       "away": -17
@@ -46118,6 +46807,7 @@
      },
      "calls": {
       "follow_move": "over",
+      "rlm_ratio": "over",
       "money_level": "over",
       "sharp_gap": "over",
       "money_moving": "over",
@@ -46125,6 +46815,7 @@
       "pin_value": "over"
      },
      "open": 173.5,
+     "mny_ratio": 2.0,
      "gap": {
       "over": 34,
       "under": -34
@@ -46193,6 +46884,14 @@
     },
     "close_graded": {
      "follow_move": {
+      "side": "over",
+      "line": 177.5,
+      "odds": -115,
+      "res": "W",
+      "units": 0.87,
+      "took_fav": true
+     },
+     "rlm_ratio": {
       "side": "over",
       "line": 177.5,
       "odds": -115,
@@ -46445,6 +47144,7 @@
       "money_moving": "home"
      },
      "open": -16.5,
+     "mny_ratio": 1.01,
      "gap": {
       "home": 1,
       "away": -1
@@ -46556,11 +47256,13 @@
      },
      "calls": {
       "follow_move": "over",
+      "rlm_ratio": "over",
       "money_level": "over",
       "sharp_gap": "over",
       "money_moving": "over"
      },
      "open": 150.5,
+     "mny_ratio": 1.39,
      "gap": {
       "over": 16,
       "under": -16
@@ -46611,6 +47313,14 @@
     "early_graded": {},
     "close_graded": {
      "follow_move": {
+      "side": "over",
+      "line": 157.5,
+      "odds": -110,
+      "res": "W",
+      "units": 0.909,
+      "took_fav": true
+     },
+     "rlm_ratio": {
       "side": "over",
       "line": 157.5,
       "odds": -110,
@@ -46892,6 +47602,7 @@
       "pin_value": "under"
      },
      "open": 150.5,
+     "mny_ratio": 1.11,
      "gap": {
       "over": -7,
       "under": 7
@@ -47446,6 +48157,7 @@
       "money_moving": "home"
      },
      "open": -6.5,
+     "mny_ratio": 1.39,
      "gap": {
       "home": 21,
       "away": -21
@@ -47809,6 +48521,7 @@
       "money_moving": "away"
      },
      "open": -14.5,
+     "mny_ratio": 1.19,
      "gap": {
       "home": -7,
       "away": 7
@@ -47927,6 +48640,7 @@
       "pin_value": "over"
      },
      "open": 151.5,
+     "mny_ratio": 1.74,
      "gap": {
       "over": -34,
       "under": 34
@@ -48194,6 +48908,7 @@
       "pin_value": "away"
      },
      "open": -31.5,
+     "mny_ratio": 1.15,
      "gap": {
       "home": 9,
       "away": -9
@@ -48319,6 +49034,7 @@
       "pin_value": "over"
      },
      "open": 154.5,
+     "mny_ratio": 0.3,
      "gap": {
       "over": -39,
       "under": 39
@@ -48487,6 +49203,7 @@
       "pin_value": "away"
      },
      "open": -35.5,
+     "mny_ratio": 0.64,
      "gap": {
       "home": -16,
       "away": 16
@@ -48633,6 +49350,7 @@
       "pin_value": "under"
      },
      "open": 149.5,
+     "mny_ratio": 1.08,
      "gap": {
       "over": 6,
       "under": -6
@@ -49178,6 +49896,7 @@
       "money_moving": "home"
      },
      "open": -13.5,
+     "mny_ratio": 1.16,
      "gap": {
       "home": 11,
       "away": -11
@@ -49527,6 +50246,7 @@
       "pin_value": "home"
      },
      "open": -3.5,
+     "mny_ratio": 0.67,
      "gap": {
       "home": 13,
       "away": -13
@@ -49664,6 +50384,7 @@
       "pin_value": "under"
      },
      "open": 154.5,
+     "mny_ratio": 1.03,
      "gap": {
       "over": 2,
       "under": -2
@@ -50065,6 +50786,7 @@
       "consensus_gap": "under"
      },
      "open": 168.5,
+     "mny_ratio": 1.13,
      "gap": {
       "over": 5,
       "under": -5
@@ -50465,12 +51187,14 @@
      },
      "calls": {
       "follow_move": "under",
+      "rlm_ratio": "under",
       "money_level": "over",
       "sharp_gap": "under",
       "money_moving": "under",
       "pin_value": "over"
      },
      "open": 146.5,
+     "mny_ratio": 1.71,
      "gap": {
       "over": -17,
       "under": 17
@@ -50527,6 +51251,14 @@
     "early_graded": {},
     "close_graded": {
      "follow_move": {
+      "side": "under",
+      "line": 140.5,
+      "odds": -110,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": false
+     },
+     "rlm_ratio": {
       "side": "under",
       "line": 140.5,
       "odds": -110,
@@ -50745,6 +51477,7 @@
       "pin_value": "away"
      },
      "open": -2.5,
+     "mny_ratio": 1.19,
      "gap": {
       "home": -13,
       "away": 13
@@ -50870,6 +51603,7 @@
       "pin_value": "over"
      },
      "open": 142.5,
+     "mny_ratio": 1.14,
      "gap": {
       "over": 11,
       "under": -11
@@ -50912,6 +51646,7 @@
       "sharp_gap": "over"
      },
      "open": 142.5,
+     "mny_ratio": 1.04,
      "gap": {
       "over": 4,
       "under": -4
@@ -51196,6 +51931,7 @@
       "consensus_gap": "home"
      },
      "open": 2.5,
+     "mny_ratio": 1.08,
      "gap": {
       "home": -5,
       "away": 5
@@ -51237,6 +51973,7 @@
       "money_moving": "away"
      },
      "open": 2.5,
+     "mny_ratio": 1.22,
      "gap": {
       "home": -15,
       "away": 15
@@ -51361,6 +52098,7 @@
       "consensus_gap": "under"
      },
      "open": 149.5,
+     "mny_ratio": 0.86,
      "gap": {
       "over": -11,
       "under": 11
@@ -51402,6 +52140,7 @@
       "money_moving": "over"
      },
      "open": 149.5,
+     "mny_ratio": 1.07,
      "gap": {
       "over": 5,
       "under": -5
@@ -51686,12 +52425,14 @@
      },
      "calls": {
       "follow_move": "away",
+      "rlm_ratio": "away",
       "money_level": "home",
       "sharp_gap": "away",
       "money_moving": "away",
       "consensus_gap": "home"
      },
      "open": -1.5,
+     "mny_ratio": 1.44,
      "gap": {
       "home": -14,
       "away": 14
@@ -51775,6 +52516,14 @@
       "units": -1.0,
       "took_fav": true
      },
+     "rlm_ratio": {
+      "side": "away",
+      "line": -2.5,
+      "odds": -102,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": true
+     },
      "money_level": {
       "side": "home",
       "line": 2.5,
@@ -51836,6 +52585,7 @@
       "money_moving": "over"
      },
      "open": 158.5,
+     "mny_ratio": 1.25,
      "gap": {
       "over": 18,
       "under": -18
@@ -52109,6 +52859,7 @@
       "consensus_gap": "home"
      },
      "open": -11.5,
+     "mny_ratio": 1.39,
      "gap": {
       "home": 25,
       "away": -25
@@ -52228,6 +52979,7 @@
       "pin_value": "under"
      },
      "open": 147.5,
+     "mny_ratio": 0.99,
      "gap": {
       "over": -1,
       "under": 1
@@ -52606,12 +53358,14 @@
      },
      "calls": {
       "follow_move": "under",
+      "rlm_ratio": "under",
       "money_level": "over",
       "sharp_gap": "under",
       "money_moving": "under",
       "consensus_gap": "under"
      },
      "open": 155.5,
+     "mny_ratio": 1.25,
      "gap": {
       "over": -7,
       "under": 7
@@ -52690,6 +53444,14 @@
     },
     "close_graded": {
      "follow_move": {
+      "side": "under",
+      "line": 152.5,
+      "odds": -115,
+      "res": "W",
+      "units": 0.87,
+      "took_fav": false
+     },
+     "rlm_ratio": {
       "side": "under",
       "line": 152.5,
       "odds": -115,
@@ -52917,6 +53679,7 @@
       "consensus_gap": "away"
      },
      "open": -4.5,
+     "mny_ratio": 1.26,
      "gap": {
       "home": 17,
       "away": -17
@@ -53034,6 +53797,7 @@
       "consensus_gap": "over"
      },
      "open": 144.5,
+     "mny_ratio": 1.09,
      "gap": {
       "over": 7,
       "under": -7
@@ -53278,6 +54042,7 @@
       "money_moving": "home"
      },
      "open": -11.5,
+     "mny_ratio": 1.21,
      "gap": {
       "home": 13,
       "away": -13
@@ -53396,6 +54161,7 @@
       "pin_value": "over"
      },
      "open": 151.5,
+     "mny_ratio": 1.56,
      "gap": {
       "over": -30,
       "under": 30
@@ -53662,6 +54428,7 @@
       "money_moving": "away"
      },
      "open": -17.5,
+     "mny_ratio": 1.25,
      "gap": {
       "home": -12,
       "away": 12
@@ -53768,6 +54535,7 @@
       "money_level": "over"
      },
      "open": 146.5,
+     "mny_ratio": 1.0,
      "gap": {
       "over": 0,
       "under": 0
@@ -53989,6 +54757,7 @@
       "pin_value": "away"
      },
      "open": -11.5,
+     "mny_ratio": 1.03,
      "gap": {
       "home": 2,
       "away": -2
@@ -54115,6 +54884,7 @@
       "pin_value": "over"
      },
      "open": 156.5,
+     "mny_ratio": 0.93,
      "gap": {
       "over": -5,
       "under": 5
@@ -54427,6 +55197,7 @@
       "money_moving": "home"
      },
      "open": -25.5,
+     "mny_ratio": 1.24,
      "gap": {
       "home": 17,
       "away": -17
@@ -54547,6 +55318,7 @@
       "money_moving": "over"
      },
      "open": 148.5,
+     "mny_ratio": 1.05,
      "gap": {
       "over": 4,
       "under": -4
@@ -54786,6 +55558,7 @@
       "money_moving": "home"
      },
      "open": -5.5,
+     "mny_ratio": 1.16,
      "gap": {
       "home": 10,
       "away": -10
@@ -55230,6 +56003,7 @@
       "pin_value": "away"
      },
      "open": -11.5,
+     "mny_ratio": 0.85,
      "gap": {
       "home": -12,
       "away": 12
@@ -55354,6 +56128,7 @@
       "money_moving": "under"
      },
      "open": 153.5,
+     "mny_ratio": 0.72,
      "gap": {
       "over": -22,
       "under": 22
@@ -55776,6 +56551,7 @@
       "pin_value": "over"
      },
      "open": 148.5,
+     "mny_ratio": 1.03,
      "gap": {
       "over": 2,
       "under": -2
@@ -56038,6 +56814,7 @@
       "pin_value": "away"
      },
      "open": -27.5,
+     "mny_ratio": 1.17,
      "gap": {
       "home": 12,
       "away": -12
@@ -56186,6 +56963,7 @@
       "pin_value": "under"
      },
      "open": 148.5,
+     "mny_ratio": 1.08,
      "gap": {
       "over": 7,
       "under": -7
@@ -56447,6 +57225,7 @@
       "money_moving": "home"
      },
      "open": -20.5,
+     "mny_ratio": 0.76,
      "gap": {
       "home": 9,
       "away": -9
@@ -56561,6 +57340,7 @@
       "money_moving": "over"
      },
      "open": 159.5,
+     "mny_ratio": 0.9,
      "gap": {
       "over": 3,
       "under": -3
@@ -56822,6 +57602,7 @@
       "pin_value": "away"
      },
      "open": 4.5,
+     "mny_ratio": 0.61,
      "gap": {
       "home": 27,
       "away": -27
@@ -56941,12 +57722,14 @@
      },
      "calls": {
       "follow_move": "under",
+      "rlm_ratio": "under",
       "money_level": "under",
       "sharp_gap": "under",
       "money_moving": "under",
       "pin_value": "over"
      },
      "open": 144.5,
+     "mny_ratio": 2.38,
      "gap": {
       "over": -40,
       "under": 40
@@ -57003,6 +57786,14 @@
     "early_graded": {},
     "close_graded": {
      "follow_move": {
+      "side": "under",
+      "line": 140.5,
+      "odds": -110,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": false
+     },
+     "rlm_ratio": {
       "side": "under",
       "line": 140.5,
       "odds": -110,
@@ -57215,11 +58006,13 @@
      },
      "calls": {
       "follow_move": "away",
+      "rlm_ratio": "away",
       "money_level": "away",
       "sharp_gap": "away",
       "money_moving": "away"
      },
      "open": -6.5,
+     "mny_ratio": 1.24,
      "gap": {
       "home": -10,
       "away": 10
@@ -57293,6 +58086,14 @@
       "units": 0.893,
       "took_fav": false
      },
+     "rlm_ratio": {
+      "side": "away",
+      "line": 5.5,
+      "odds": -112,
+      "res": "W",
+      "units": 0.893,
+      "took_fav": false
+     },
      "money_level": {
       "side": "away",
       "line": 5.5,
@@ -57347,6 +58148,7 @@
       "consensus_gap": "over"
      },
      "open": 161.5,
+     "mny_ratio": 1.19,
      "gap": {
       "over": 11,
       "under": -11
@@ -57617,6 +58419,7 @@
       "pin_value": "home"
      },
      "open": -5.5,
+     "mny_ratio": 1.1,
      "gap": {
       "home": 8,
       "away": -8
@@ -58116,6 +58919,7 @@
       "pin_value": "under"
      },
      "open": 156.5,
+     "mny_ratio": 1.5,
      "gap": {
       "over": 30,
       "under": -30
@@ -58497,6 +59301,7 @@
       "money_moving": "over"
      },
      "open": 149.5,
+     "mny_ratio": 1.09,
      "gap": {
       "over": 7,
       "under": -7
@@ -58834,6 +59639,7 @@
       "consensus_gap": "under"
      },
      "open": 149.5,
+     "mny_ratio": 1.04,
      "gap": {
       "over": 4,
       "under": -4
@@ -59102,6 +59908,7 @@
       "money_moving": "home"
      },
      "open": -24.5,
+     "mny_ratio": 1.53,
      "gap": {
       "home": 33,
       "away": -33
@@ -59230,6 +60037,7 @@
       "money_moving": "under"
      },
      "open": 154.5,
+     "mny_ratio": 0.76,
      "gap": {
       "over": -10,
       "under": 10
@@ -59567,12 +60375,14 @@
      },
      "calls": {
       "follow_move": "under",
+      "rlm_ratio": "under",
       "money_level": "under",
       "sharp_gap": "under",
       "money_moving": "under",
       "pin_value": "under"
      },
      "open": 150.5,
+     "mny_ratio": 1.82,
      "gap": {
       "over": -33,
       "under": 33
@@ -59629,6 +60439,14 @@
     "early_graded": {},
     "close_graded": {
      "follow_move": {
+      "side": "under",
+      "line": 148.5,
+      "odds": -112,
+      "res": "W",
+      "units": 0.893,
+      "took_fav": false
+     },
+     "rlm_ratio": {
       "side": "under",
       "line": 148.5,
       "odds": -112,
@@ -59846,6 +60664,7 @@
       "money_moving": "home"
      },
      "open": -4.5,
+     "mny_ratio": 0.81,
      "gap": {
       "home": 6,
       "away": -6
@@ -59985,6 +60804,7 @@
       "pin_value": "under"
      },
      "open": 155.5,
+     "mny_ratio": 1.17,
      "gap": {
       "over": 13,
       "under": -13
@@ -60271,6 +61091,7 @@
       "pin_value": "home"
      },
      "open": 7.5,
+     "mny_ratio": 1.16,
      "gap": {
       "home": -13,
       "away": 13
@@ -60390,6 +61211,7 @@
       "consensus_gap": "over"
      },
      "open": 147.5,
+     "mny_ratio": 1.03,
      "gap": {
       "over": 2,
       "under": -2
@@ -60630,6 +61452,7 @@
       "money_moving": "away"
      },
      "open": -22.5,
+     "mny_ratio": 1.18,
      "gap": {
       "home": -7,
       "away": 7
@@ -60742,6 +61565,7 @@
       "pin_value": "over"
      },
      "open": 151.5,
+     "mny_ratio": 0.76,
      "gap": {
       "over": 7,
       "under": -7
@@ -61066,6 +61890,7 @@
       "money_level": "over"
      },
      "open": 139.5,
+     "mny_ratio": 1.0,
      "gap": {
       "over": 0,
       "under": 0
@@ -61394,6 +62219,7 @@
       "pin_value": "over"
      },
      "open": 150.5,
+     "mny_ratio": 1.09,
      "gap": {
       "over": -6,
       "under": 6
@@ -61651,6 +62477,7 @@
       "money_moving": "away"
      },
      "open": -1.5,
+     "mny_ratio": 1.35,
      "gap": {
       "home": -16,
       "away": 16
@@ -61784,6 +62611,7 @@
      },
      "calls": {
       "follow_move": "under",
+      "rlm_ratio": "under",
       "money_level": "over",
       "sharp_gap": "under",
       "money_moving": "under",
@@ -61791,6 +62619,7 @@
       "pin_value": "over"
      },
      "open": 147.5,
+     "mny_ratio": 1.36,
      "gap": {
       "over": -10,
       "under": 10
@@ -61847,6 +62676,14 @@
     "early_graded": {},
     "close_graded": {
      "follow_move": {
+      "side": "under",
+      "line": 145.5,
+      "odds": -105,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": false
+     },
+     "rlm_ratio": {
       "side": "under",
       "line": 145.5,
       "odds": -105,
@@ -62154,6 +62991,7 @@
       "consensus_gap": "under"
      },
      "open": 154.5,
+     "mny_ratio": 1.09,
      "gap": {
       "over": 7,
       "under": -7
@@ -62423,6 +63261,7 @@
       "pin_value": "away"
      },
      "open": -2,
+     "mny_ratio": 1.38,
      "gap": {
       "home": -24,
       "away": 24
@@ -62554,12 +63393,14 @@
      },
      "calls": {
       "follow_move": "under",
+      "rlm_ratio": "under",
       "money_level": "over",
       "sharp_gap": "under",
       "money_moving": "under",
       "pin_value": "over"
      },
      "open": 142.5,
+     "mny_ratio": 3.31,
      "gap": {
       "over": -30,
       "under": 30
@@ -62638,6 +63479,14 @@
     },
     "close_graded": {
      "follow_move": {
+      "side": "under",
+      "line": 139.5,
+      "odds": -110,
+      "res": "W",
+      "units": 0.909,
+      "took_fav": false
+     },
+     "rlm_ratio": {
       "side": "under",
       "line": 139.5,
       "odds": -110,
@@ -62846,6 +63695,7 @@
       "money_moving": "away"
      },
      "open": -20.5,
+     "mny_ratio": 0.89,
      "gap": {
       "home": -6,
       "away": 6
@@ -62969,11 +63819,13 @@
      },
      "calls": {
       "follow_move": "over",
+      "rlm_ratio": "over",
       "money_level": "under",
       "sharp_gap": "over",
       "money_moving": "over"
      },
      "open": 153.5,
+     "mny_ratio": 1.7,
      "gap": {
       "over": 7,
       "under": -7
@@ -63030,6 +63882,14 @@
     "early_graded": {},
     "close_graded": {
      "follow_move": {
+      "side": "over",
+      "line": 155.5,
+      "odds": -110,
+      "res": "W",
+      "units": 0.909,
+      "took_fav": true
+     },
+     "rlm_ratio": {
       "side": "over",
       "line": 155.5,
       "odds": -110,
@@ -63237,6 +64097,7 @@
       "consensus_gap": "home"
      },
      "open": -5.5,
+     "mny_ratio": 1.29,
      "gap": {
       "home": 19,
       "away": -19
@@ -63359,6 +64220,7 @@
       "money_moving": "under"
      },
      "open": 147.5,
+     "mny_ratio": 1.35,
      "gap": {
       "over": -23,
       "under": 23
@@ -64139,6 +65001,7 @@
       "pin_value": "over"
      },
      "open": 153.5,
+     "mny_ratio": 1.15,
      "gap": {
       "over": 12,
       "under": -12
@@ -64508,6 +65371,7 @@
       "pin_value": "under"
      },
      "open": 152.5,
+     "mny_ratio": 1.01,
      "gap": {
       "over": -1,
       "under": 1
@@ -64883,6 +65747,7 @@
       "money_moving": "over"
      },
      "open": 143.5,
+     "mny_ratio": 1.15,
      "gap": {
       "over": 7,
       "under": -7
@@ -65120,6 +65985,7 @@
       "pin_value": "home"
      },
      "open": -16.5,
+     "mny_ratio": 1.2,
      "gap": {
       "home": 15,
       "away": -15
@@ -65238,6 +66104,7 @@
       "money_moving": "over"
      },
      "open": 163.5,
+     "mny_ratio": 1.02,
      "gap": {
       "over": 1,
       "under": -1
@@ -65558,6 +66425,7 @@
       "consensus_gap": "over"
      },
      "open": 144.5,
+     "mny_ratio": 1.03,
      "gap": {
       "over": 1,
       "under": -1
@@ -65804,6 +66672,7 @@
       "pin_value": "home"
      },
      "open": -25.5,
+     "mny_ratio": 0.48,
      "gap": {
       "home": -26,
       "away": 26
@@ -65960,6 +66829,7 @@
       "pin_value": "under"
      },
      "open": 143.5,
+     "mny_ratio": 0.94,
      "gap": {
       "over": -4,
       "under": 4
@@ -66235,6 +67105,7 @@
       "pin_value": "home"
      },
      "open": -2.5,
+     "mny_ratio": 0.74,
      "gap": {
       "home": -9,
       "away": 9
@@ -66381,6 +67252,7 @@
       "pin_value": "over"
      },
      "open": 158.5,
+     "mny_ratio": 0.98,
      "gap": {
       "over": -1,
       "under": 1
@@ -66661,6 +67533,7 @@
       "consensus_gap": "away"
      },
      "open": 2.5,
+     "mny_ratio": 1.0,
      "gap": {
       "home": 0,
       "away": 0
@@ -66805,6 +67678,7 @@
       "pin_value": "over"
      },
      "open": 149.5,
+     "mny_ratio": 0.98,
      "gap": {
       "over": -2,
       "under": 2
@@ -67143,6 +68017,7 @@
       "money_moving": "home"
      },
      "open": -16.5,
+     "mny_ratio": 1.12,
      "gap": {
       "home": 8,
       "away": -8
@@ -67670,12 +68545,14 @@
      },
      "calls": {
       "follow_move": "under",
+      "rlm_ratio": "under",
       "money_level": "over",
       "sharp_gap": "under",
       "money_moving": "under",
       "pin_value": "under"
      },
      "open": 137.5,
+     "mny_ratio": 1.35,
      "gap": {
       "over": -9,
       "under": 9
@@ -67766,6 +68643,14 @@
     },
     "close_graded": {
      "follow_move": {
+      "side": "under",
+      "line": 136.5,
+      "odds": -105,
+      "res": "W",
+      "units": 0.952,
+      "took_fav": false
+     },
+     "rlm_ratio": {
       "side": "under",
       "line": 136.5,
       "odds": -105,
@@ -68117,6 +69002,7 @@
       "pin_value": "over"
      },
      "open": 143.5,
+     "mny_ratio": 0.76,
      "gap": {
       "over": -16,
       "under": 16
@@ -68408,6 +69294,7 @@
       "pin_value": "home"
      },
      "open": -4.5,
+     "mny_ratio": 0.65,
      "gap": {
       "home": 6,
       "away": -6
@@ -68452,6 +69339,7 @@
       "pin_value": "away"
      },
      "open": -4.5,
+     "mny_ratio": 0.57,
      "gap": {
       "home": 3,
       "away": -3
@@ -68588,6 +69476,7 @@
       "pin_value": "over"
      },
      "open": 144.5,
+     "mny_ratio": 1.18,
      "gap": {
       "over": -6,
       "under": 6
@@ -68987,6 +69876,7 @@
       "consensus_gap": "under"
      },
      "open": 142.5,
+     "mny_ratio": 0.67,
      "gap": {
       "over": -24,
       "under": 24
@@ -69435,6 +70325,7 @@
       "pin_value": "under"
      },
      "open": 151.5,
+     "mny_ratio": 0.95,
      "gap": {
       "over": -5,
       "under": 5
@@ -69835,6 +70726,7 @@
       "money_level": "over"
      },
      "open": 151.5,
+     "mny_ratio": 1.0,
      "gap": {
       "over": 0,
       "under": 0
@@ -70116,6 +71008,7 @@
      },
      "calls": {
       "follow_move": "away",
+      "rlm_ratio": "away",
       "money_level": "away",
       "sharp_gap": "away",
       "money_moving": "away",
@@ -70123,6 +71016,7 @@
       "pin_value": "away"
      },
      "open": -5.5,
+     "mny_ratio": 1.57,
      "gap": {
       "home": -23,
       "away": 23
@@ -70181,6 +71075,14 @@
     "early_graded": {},
     "close_graded": {
      "follow_move": {
+      "side": "away",
+      "line": 4.5,
+      "odds": -114,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": false
+     },
+     "rlm_ratio": {
       "side": "away",
       "line": 4.5,
       "odds": -114,
@@ -70258,6 +71160,7 @@
       "pin_value": "over"
      },
      "open": 148.5,
+     "mny_ratio": 0.94,
      "gap": {
       "over": -6,
       "under": 6
@@ -70598,6 +71501,7 @@
       "money_moving": "home"
      },
      "open": -6.5,
+     "mny_ratio": 1.07,
      "gap": {
       "home": 6,
       "away": -6
@@ -70749,6 +71653,7 @@
       "pin_value": "over"
      },
      "open": 137.5,
+     "mny_ratio": 0.99,
      "gap": {
       "over": -1,
       "under": 1
@@ -71040,6 +71945,7 @@
       "money_moving": "home"
      },
      "open": -6.5,
+     "mny_ratio": 1.16,
      "gap": {
       "home": 12,
       "away": -12
@@ -71492,6 +72398,7 @@
       "consensus_gap": "home"
      },
      "open": 1.5,
+     "mny_ratio": 0.8,
      "gap": {
       "home": 11,
       "away": -11
@@ -71636,6 +72543,7 @@
       "money_moving": "over"
      },
      "open": 132.5,
+     "mny_ratio": 1.13,
      "gap": {
       "over": 10,
       "under": -10
@@ -71919,6 +72827,7 @@
       "pin_value": "away"
      },
      "open": -3.5,
+     "mny_ratio": 1.23,
      "gap": {
       "home": 17,
       "away": -17
@@ -72078,6 +72987,7 @@
       "pin_value": "under"
      },
      "open": 135.5,
+     "mny_ratio": 0.86,
      "gap": {
       "over": -14,
       "under": 14
@@ -72534,6 +73444,7 @@
       "pin_value": "under"
      },
      "open": 159.5,
+     "mny_ratio": 0.94,
      "gap": {
       "over": -3,
       "under": 3
@@ -72958,6 +73869,7 @@
       "pin_value": "over"
      },
      "open": 156.5,
+     "mny_ratio": 0.84,
      "gap": {
       "over": -7,
       "under": 7
@@ -73408,6 +74320,7 @@
       "pin_value": "under"
      },
      "open": 149.5,
+     "mny_ratio": 1.13,
      "gap": {
       "over": 9,
       "under": -9
@@ -73841,11 +74754,13 @@
      },
      "calls": {
       "follow_move": "under",
+      "rlm_ratio": "under",
       "money_level": "over",
       "sharp_gap": "under",
       "money_moving": "under"
      },
      "open": 139.5,
+     "mny_ratio": 11.33,
      "gap": {
       "over": -31,
       "under": 31
@@ -73926,6 +74841,14 @@
     },
     "close_graded": {
      "follow_move": {
+      "side": "under",
+      "line": 138.5,
+      "odds": -105,
+      "res": "W",
+      "units": 0.952,
+      "took_fav": false
+     },
+     "rlm_ratio": {
       "side": "under",
       "line": 138.5,
       "odds": -105,
@@ -74637,6 +75560,7 @@
       "consensus_gap": "over"
      },
      "open": 142.5,
+     "mny_ratio": 0.99,
      "gap": {
       "over": -1,
       "under": 1
@@ -75032,6 +75956,7 @@
      },
      "calls": {
       "follow_move": "under",
+      "rlm_ratio": "under",
       "money_level": "over",
       "sharp_gap": "under",
       "money_moving": "under",
@@ -75039,6 +75964,7 @@
       "pin_value": "over"
      },
      "open": 151.5,
+     "mny_ratio": 1.45,
      "gap": {
       "over": -15,
       "under": 15
@@ -75117,6 +76043,14 @@
     },
     "close_graded": {
      "follow_move": {
+      "side": "under",
+      "line": 150.5,
+      "odds": -105,
+      "res": "W",
+      "units": 0.952,
+      "took_fav": false
+     },
+     "rlm_ratio": {
       "side": "under",
       "line": 150.5,
       "odds": -105,
@@ -75444,6 +76378,7 @@
       "pin_value": "over"
      },
      "open": 155.5,
+     "mny_ratio": 1.22,
      "gap": {
       "over": -16,
       "under": 16
@@ -76601,6 +77536,7 @@
       "pin_value": "under"
      },
      "open": 154.5,
+     "mny_ratio": 1.02,
      "gap": {
       "over": -1,
       "under": 1
@@ -76897,6 +77833,7 @@
       "pin_value": "away"
      },
      "open": 17.5,
+     "mny_ratio": 1.17,
      "gap": {
       "home": -12,
       "away": 12
@@ -77022,6 +77959,7 @@
       "pin_value": "under"
      },
      "open": 145.5,
+     "mny_ratio": 0.92,
      "gap": {
       "over": 2,
       "under": -2
@@ -77302,6 +78240,7 @@
       "money_moving": "home"
      },
      "open": -9.5,
+     "mny_ratio": 0.77,
      "gap": {
       "home": 11,
       "away": -11
@@ -77433,12 +78372,14 @@
      },
      "calls": {
       "follow_move": "under",
+      "rlm_ratio": "under",
       "money_level": "under",
       "sharp_gap": "under",
       "money_moving": "under",
       "consensus_gap": "over"
      },
      "open": 150.5,
+     "mny_ratio": 1.66,
      "gap": {
       "over": -21,
       "under": 21
@@ -77515,6 +78456,14 @@
     },
     "close_graded": {
      "follow_move": {
+      "side": "under",
+      "line": 145.5,
+      "odds": -105,
+      "res": "W",
+      "units": 0.952,
+      "took_fav": false
+     },
+     "rlm_ratio": {
       "side": "under",
       "line": 145.5,
       "odds": -105,
@@ -77729,6 +78678,7 @@
       "money_moving": "home"
      },
      "open": -5.5,
+     "mny_ratio": 1.1,
      "gap": {
       "home": 7,
       "away": -7
@@ -77856,6 +78806,7 @@
       "consensus_gap": "over"
      },
      "open": 156.5,
+     "mny_ratio": 0.77,
      "gap": {
       "over": 8,
       "under": -8
@@ -78237,6 +79188,7 @@
       "consensus_gap": "under"
      },
      "open": 158.5,
+     "mny_ratio": 1.11,
      "gap": {
       "over": 8,
       "under": -8
@@ -78543,6 +79495,7 @@
       "pin_value": "home"
      },
      "open": -6.5,
+     "mny_ratio": 0.86,
      "gap": {
       "home": 7,
       "away": -7
@@ -78682,6 +79635,7 @@
      },
      "calls": {
       "follow_move": "under",
+      "rlm_ratio": "under",
       "money_level": "under",
       "sharp_gap": "under",
       "money_moving": "under",
@@ -78689,6 +79643,7 @@
       "pin_value": "under"
      },
      "open": 156.5,
+     "mny_ratio": 2.17,
      "gap": {
       "over": -28,
       "under": 28
@@ -78767,6 +79722,14 @@
     },
     "close_graded": {
      "follow_move": {
+      "side": "under",
+      "line": 155.5,
+      "odds": -105,
+      "res": "W",
+      "units": 0.952,
+      "took_fav": false
+     },
+     "rlm_ratio": {
       "side": "under",
       "line": 155.5,
       "odds": -105,
@@ -78992,6 +79955,7 @@
       "money_moving": "home"
      },
      "open": -4.5,
+     "mny_ratio": 1.08,
      "gap": {
       "home": 4,
       "away": -4
@@ -79117,11 +80081,13 @@
      },
      "calls": {
       "follow_move": "under",
+      "rlm_ratio": "under",
       "money_level": "over",
       "sharp_gap": "under",
       "money_moving": "under"
      },
      "open": 147.5,
+     "mny_ratio": 2.13,
      "gap": {
       "over": -26,
       "under": 26
@@ -79192,6 +80158,14 @@
     },
     "close_graded": {
      "follow_move": {
+      "side": "under",
+      "line": 146.5,
+      "odds": -110,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": false
+     },
+     "rlm_ratio": {
       "side": "under",
       "line": 146.5,
       "odds": -110,
@@ -79435,6 +80409,7 @@
       "money_moving": "home"
      },
      "open": -6.5,
+     "mny_ratio": 1.23,
      "gap": {
       "home": 11,
       "away": -11
@@ -79893,11 +80868,13 @@
      },
      "calls": {
       "follow_move": "home",
+      "rlm_ratio": "home",
       "money_level": "away",
       "sharp_gap": "home",
       "money_moving": "home"
      },
      "open": -21.5,
+     "mny_ratio": 6.0,
      "gap": {
       "home": 40,
       "away": -40
@@ -79948,6 +80925,14 @@
     "early_graded": {},
     "close_graded": {
      "follow_move": {
+      "side": "home",
+      "line": -22.5,
+      "odds": -110,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": true
+     },
+     "rlm_ratio": {
       "side": "home",
       "line": -22.5,
       "odds": -110,
@@ -80010,6 +80995,7 @@
       "pin_value": "over"
      },
      "open": 157.5,
+     "mny_ratio": 1.44,
      "gap": {
       "over": 27,
       "under": -27
@@ -80262,11 +81248,13 @@
      },
      "calls": {
       "follow_move": "home",
+      "rlm_ratio": "home",
       "money_level": "home",
       "sharp_gap": "home",
       "money_moving": "home"
      },
      "open": -12.5,
+     "mny_ratio": 17.4,
      "gap": {
       "home": 82,
       "away": -82
@@ -80344,6 +81332,14 @@
       "units": 0.909,
       "took_fav": true
      },
+     "rlm_ratio": {
+      "side": "home",
+      "line": -13.5,
+      "odds": -110,
+      "res": "W",
+      "units": 0.909,
+      "took_fav": true
+     },
      "money_level": {
       "side": "home",
       "line": -13.5,
@@ -80392,12 +81388,14 @@
      },
      "calls": {
       "follow_move": "under",
+      "rlm_ratio": "under",
       "money_level": "over",
       "sharp_gap": "under",
       "money_moving": "under",
       "pin_value": "under"
      },
      "open": 157.5,
+     "mny_ratio": 1.8,
      "gap": {
       "over": -12,
       "under": 12
@@ -80488,6 +81486,14 @@
     },
     "close_graded": {
      "follow_move": {
+      "side": "under",
+      "line": 154.5,
+      "odds": -110,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": false
+     },
+     "rlm_ratio": {
       "side": "under",
       "line": 154.5,
       "odds": -110,
@@ -80712,12 +81718,14 @@
      },
      "calls": {
       "follow_move": "home",
+      "rlm_ratio": "home",
       "money_level": "home",
       "sharp_gap": "home",
       "money_moving": "home",
       "pin_value": "away"
      },
      "open": -28.5,
+     "mny_ratio": 3.67,
      "gap": {
       "home": 56,
       "away": -56
@@ -80768,6 +81776,14 @@
     "early_graded": {},
     "close_graded": {
      "follow_move": {
+      "side": "home",
+      "line": -29.5,
+      "odds": -114,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": true
+     },
+     "rlm_ratio": {
       "side": "home",
       "line": -29.5,
       "odds": -114,
@@ -80836,6 +81852,7 @@
       "money_moving": "under"
      },
      "open": 152.5,
+     "mny_ratio": 0.69,
      "gap": {
       "over": -26,
       "under": 26
@@ -80973,11 +81990,13 @@
      },
      "calls": {
       "follow_move": "home",
+      "rlm_ratio": "home",
       "money_level": "home",
       "sharp_gap": "home",
       "money_moving": "home"
      },
      "open": -34.5,
+     "mny_ratio": 6.25,
      "gap": {
       "home": 63,
       "away": -63
@@ -81053,6 +82072,14 @@
       "units": -1.0,
       "took_fav": true
      },
+     "rlm_ratio": {
+      "side": "home",
+      "line": -37.5,
+      "odds": -110,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": true
+     },
      "money_level": {
       "side": "home",
       "line": -37.5,
@@ -81108,6 +82135,7 @@
       "pin_value": "over"
      },
      "open": 150.5,
+     "mny_ratio": 1.4,
      "gap": {
       "over": 25,
       "under": -25
@@ -81284,6 +82312,7 @@
       "pin_value": "away"
      },
      "open": -9.5,
+     "mny_ratio": 0.69,
      "gap": {
       "home": -14,
       "away": 14
@@ -81405,12 +82434,14 @@
      },
      "calls": {
       "follow_move": "under",
+      "rlm_ratio": "under",
       "money_level": "over",
       "sharp_gap": "under",
       "money_moving": "under",
       "pin_value": "under"
      },
      "open": 150.5,
+     "mny_ratio": 1.8,
      "gap": {
       "over": -8,
       "under": 8
@@ -81461,6 +82492,14 @@
     "early_graded": {},
     "close_graded": {
      "follow_move": {
+      "side": "under",
+      "line": 149.5,
+      "odds": -110,
+      "res": "W",
+      "units": 0.909,
+      "took_fav": false
+     },
+     "rlm_ratio": {
       "side": "under",
       "line": 149.5,
       "odds": -110,
@@ -81637,11 +82676,13 @@
      },
      "calls": {
       "follow_move": "home",
+      "rlm_ratio": "home",
       "money_level": "home",
       "sharp_gap": "home",
       "money_moving": "home"
      },
      "open": -21.5,
+     "mny_ratio": 5.33,
      "gap": {
       "home": 65,
       "away": -65
@@ -81719,6 +82760,14 @@
       "units": -1.0,
       "took_fav": true
      },
+     "rlm_ratio": {
+      "side": "home",
+      "line": -23.5,
+      "odds": -112,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": true
+     },
      "money_level": {
       "side": "home",
       "line": -23.5,
@@ -81773,6 +82822,7 @@
       "pin_value": "under"
      },
      "open": 153.5,
+     "mny_ratio": 1.02,
      "gap": {
       "over": 2,
       "under": -2
@@ -82079,6 +83129,7 @@
       "pin_value": "home"
      },
      "open": -10.5,
+     "mny_ratio": 1.2,
      "gap": {
       "home": 14,
       "away": -14
@@ -82206,10 +83257,12 @@
      },
      "calls": {
       "follow_move": "under",
+      "rlm_ratio": "under",
       "sharp_gap": "under",
       "money_moving": "under"
      },
      "open": 147.5,
+     "mny_ratio": 3.33,
      "gap": {
       "over": -35,
       "under": 35
@@ -82266,6 +83319,14 @@
     "early_graded": {},
     "close_graded": {
      "follow_move": {
+      "side": "under",
+      "line": 143.5,
+      "odds": -105,
+      "res": "W",
+      "units": 0.952,
+      "took_fav": false
+     },
+     "rlm_ratio": {
       "side": "under",
       "line": 143.5,
       "odds": -105,
@@ -82462,12 +83523,14 @@
      },
      "calls": {
       "follow_move": "home",
+      "rlm_ratio": "home",
       "money_level": "away",
       "sharp_gap": "home",
       "money_moving": "home",
       "pin_value": "home"
      },
      "open": -35.5,
+     "mny_ratio": 3.5,
      "gap": {
       "home": 20,
       "away": -20
@@ -82537,6 +83600,14 @@
       "units": 0.909,
       "took_fav": true
      },
+     "rlm_ratio": {
+      "side": "home",
+      "line": -39.5,
+      "odds": -110,
+      "res": "W",
+      "units": 0.909,
+      "took_fav": true
+     },
      "money_level": {
       "side": "away",
       "line": 39.5,
@@ -82593,6 +83664,7 @@
      },
      "calls": {
       "follow_move": "under",
+      "rlm_ratio": "under",
       "money_level": "over",
       "sharp_gap": "under",
       "money_moving": "under",
@@ -82600,6 +83672,7 @@
       "pin_value": "over"
      },
      "open": 142.5,
+     "mny_ratio": 2.57,
      "gap": {
       "over": -11,
       "under": 11
@@ -82662,6 +83735,14 @@
     },
     "close_graded": {
      "follow_move": {
+      "side": "under",
+      "line": 139.5,
+      "odds": -110,
+      "res": "W",
+      "units": 0.909,
+      "took_fav": false
+     },
+     "rlm_ratio": {
       "side": "under",
       "line": 139.5,
       "odds": -110,
@@ -82758,6 +83839,7 @@
       "money_moving": "home"
      },
      "open": -5.5,
+     "mny_ratio": 1.62,
      "gap": {
       "home": 31,
       "away": -31
@@ -82867,10 +83949,12 @@
      },
      "calls": {
       "follow_move": "under",
+      "rlm_ratio": "under",
       "sharp_gap": "under",
       "money_moving": "under"
      },
      "open": 141.5,
+     "mny_ratio": 1.52,
      "gap": {
       "over": -17,
       "under": 17
@@ -82925,6 +84009,14 @@
     "early_graded": {},
     "close_graded": {
      "follow_move": {
+      "side": "under",
+      "line": 140.5,
+      "odds": -110,
+      "res": "W",
+      "units": 0.909,
+      "took_fav": false
+     },
+     "rlm_ratio": {
       "side": "under",
       "line": 140.5,
       "odds": -110,
@@ -83113,6 +84205,7 @@
       "pin_value": "home"
      },
      "open": -5.5,
+     "mny_ratio": 1.88,
      "gap": {
       "home": -42,
       "away": 42
@@ -83246,11 +84339,13 @@
      },
      "calls": {
       "follow_move": "under",
+      "rlm_ratio": "under",
       "money_level": "over",
       "sharp_gap": "under",
       "money_moving": "under"
      },
      "open": 150.5,
+     "mny_ratio": 1.23,
      "gap": {
       "over": -6,
       "under": 6
@@ -83301,6 +84396,14 @@
     "early_graded": {},
     "close_graded": {
      "follow_move": {
+      "side": "under",
+      "line": 144.5,
+      "odds": -110,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": false
+     },
+     "rlm_ratio": {
       "side": "under",
       "line": 144.5,
       "odds": -110,
@@ -83492,6 +84595,7 @@
       "money_moving": "home"
      },
      "open": -5.5,
+     "mny_ratio": 0.9,
      "gap": {
       "home": 3,
       "away": -3
@@ -83846,6 +84950,7 @@
       "pin_value": "away"
      },
      "open": -27.5,
+     "mny_ratio": 1.2,
      "gap": {
       "home": 13,
       "away": -13
@@ -83989,12 +85094,14 @@
      },
      "calls": {
       "follow_move": "under",
+      "rlm_ratio": "under",
       "money_level": "over",
       "sharp_gap": "under",
       "money_moving": "under",
       "consensus_gap": "over"
      },
      "open": 140.5,
+     "mny_ratio": 2.18,
      "gap": {
       "over": -13,
       "under": 13
@@ -84075,6 +85182,14 @@
     },
     "close_graded": {
      "follow_move": {
+      "side": "under",
+      "line": 139.5,
+      "odds": -110,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": false
+     },
+     "rlm_ratio": {
       "side": "under",
       "line": 139.5,
       "odds": -110,
@@ -84164,6 +85279,7 @@
       "consensus_gap": "home"
      },
      "open": -17.5,
+     "mny_ratio": 1.23,
      "gap": {
       "home": 11,
       "away": -11
@@ -84303,11 +85419,13 @@
      },
      "calls": {
       "follow_move": "under",
+      "rlm_ratio": "under",
       "money_level": "over",
       "sharp_gap": "under",
       "money_moving": "under"
      },
      "open": 149.5,
+     "mny_ratio": 2.82,
      "gap": {
       "over": -20,
       "under": 20
@@ -84362,6 +85480,14 @@
     "early_graded": {},
     "close_graded": {
      "follow_move": {
+      "side": "under",
+      "line": 148.5,
+      "odds": -115,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": false
+     },
+     "rlm_ratio": {
       "side": "under",
       "line": 148.5,
       "odds": -115,
@@ -84563,11 +85689,13 @@
      },
      "calls": {
       "follow_move": "home",
+      "rlm_ratio": "home",
       "money_level": "away",
       "sharp_gap": "home",
       "money_moving": "home"
      },
      "open": -30.5,
+     "mny_ratio": 1.4,
      "gap": {
       "home": 2,
       "away": -2
@@ -84641,6 +85769,14 @@
       "units": 0.909,
       "took_fav": true
      },
+     "rlm_ratio": {
+      "side": "home",
+      "line": -35.5,
+      "odds": -110,
+      "res": "W",
+      "units": 0.909,
+      "took_fav": true
+     },
      "money_level": {
       "side": "away",
       "line": 35.5,
@@ -84695,6 +85831,7 @@
       "consensus_gap": "over"
      },
      "open": 159.5,
+     "mny_ratio": 1.28,
      "gap": {
       "over": 17,
       "under": -17
@@ -84844,11 +85981,13 @@
      },
      "calls": {
       "follow_move": "home",
+      "rlm_ratio": "home",
       "money_level": "away",
       "sharp_gap": "home",
       "money_moving": "home"
      },
      "open": -16.5,
+     "mny_ratio": 7.33,
      "gap": {
       "home": 19,
       "away": -19
@@ -84909,6 +86048,14 @@
     },
     "close_graded": {
      "follow_move": {
+      "side": "home",
+      "line": -18.5,
+      "odds": -110,
+      "res": "W",
+      "units": 0.909,
+      "took_fav": true
+     },
+     "rlm_ratio": {
       "side": "home",
       "line": -18.5,
       "odds": -110,
@@ -85191,12 +86338,14 @@
      },
      "calls": {
       "follow_move": "home",
+      "rlm_ratio": "home",
       "money_level": "away",
       "sharp_gap": "home",
       "money_moving": "home",
       "pin_value": "away"
      },
      "open": -31.5,
+     "mny_ratio": 2.67,
      "gap": {
       "home": 15,
       "away": -15
@@ -85240,6 +86389,7 @@
       "pin_value": "home"
      },
      "open": -31.5,
+     "mny_ratio": 1.05,
      "gap": {
       "home": 5,
       "away": -5
@@ -85297,6 +86447,14 @@
     },
     "close_graded": {
      "follow_move": {
+      "side": "home",
+      "line": -32.5,
+      "odds": -110,
+      "res": "W",
+      "units": 0.909,
+      "took_fav": true
+     },
+     "rlm_ratio": {
       "side": "home",
       "line": -32.5,
       "odds": -110,
@@ -85366,6 +86524,7 @@
       "pin_value": "over"
      },
      "open": 169.5,
+     "mny_ratio": 1.1,
      "gap": {
       "over": 8,
       "under": -8
@@ -85539,6 +86698,7 @@
      },
      "calls": {
       "follow_move": "home",
+      "rlm_ratio": "home",
       "money_level": "home",
       "sharp_gap": "home",
       "money_moving": "home",
@@ -85546,6 +86706,7 @@
       "pin_value": "home"
      },
      "open": -21.5,
+     "mny_ratio": 12.57,
      "gap": {
       "home": 81,
       "away": -81
@@ -85602,6 +86763,14 @@
     "early_graded": {},
     "close_graded": {
      "follow_move": {
+      "side": "home",
+      "line": -23.5,
+      "odds": -120,
+      "res": "W",
+      "units": 0.833,
+      "took_fav": true
+     },
+     "rlm_ratio": {
       "side": "home",
       "line": -23.5,
       "odds": -120,
@@ -85673,12 +86842,14 @@
      },
      "calls": {
       "follow_move": "under",
+      "rlm_ratio": "under",
       "money_level": "under",
       "sharp_gap": "under",
       "money_moving": "under",
       "consensus_gap": "over"
      },
      "open": 156.5,
+     "mny_ratio": 6.07,
      "gap": {
       "over": -71,
       "under": 71
@@ -85735,6 +86906,14 @@
     "early_graded": {},
     "close_graded": {
      "follow_move": {
+      "side": "under",
+      "line": 153.5,
+      "odds": -105,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": false
+     },
+     "rlm_ratio": {
       "side": "under",
       "line": 153.5,
       "odds": -105,
@@ -85938,6 +87117,7 @@
       "money_level": "away"
      },
      "open": -35.5,
+     "mny_ratio": 1.0,
      "gap": {
       "home": 0,
       "away": 0
@@ -86043,11 +87223,13 @@
      },
      "calls": {
       "follow_move": "over",
+      "rlm_ratio": "over",
       "money_level": "over",
       "sharp_gap": "over",
       "money_moving": "over"
      },
      "open": 168.5,
+     "mny_ratio": 2.22,
      "gap": {
       "over": 45,
       "under": -45
@@ -86131,6 +87313,14 @@
       "units": 0.909,
       "took_fav": true
      },
+     "rlm_ratio": {
+      "side": "over",
+      "line": 169.5,
+      "odds": -110,
+      "res": "W",
+      "units": 0.909,
+      "took_fav": true
+     },
      "money_level": {
       "side": "over",
       "line": 169.5,
@@ -86204,6 +87394,7 @@
       "money_moving": "away"
      },
      "open": -17.5,
+     "mny_ratio": 1.06,
      "gap": {
       "home": -4,
       "away": 4
@@ -86309,12 +87500,14 @@
      },
      "calls": {
       "follow_move": "under",
+      "rlm_ratio": "under",
       "money_level": "over",
       "sharp_gap": "under",
       "money_moving": "under",
       "pin_value": "under"
      },
      "open": 147.5,
+     "mny_ratio": 2.0,
      "gap": {
       "over": -8,
       "under": 8
@@ -86365,6 +87558,14 @@
     "early_graded": {},
     "close_graded": {
      "follow_move": {
+      "side": "under",
+      "line": 143.5,
+      "odds": -110,
+      "res": "W",
+      "units": 0.909,
+      "took_fav": false
+     },
+     "rlm_ratio": {
       "side": "under",
       "line": 143.5,
       "odds": -110,
@@ -86541,6 +87742,7 @@
      },
      "calls": {
       "follow_move": "home",
+      "rlm_ratio": "home",
       "money_level": "home",
       "sharp_gap": "home",
       "money_moving": "home",
@@ -86548,6 +87750,7 @@
       "pin_value": "home"
      },
      "open": -26.5,
+     "mny_ratio": 12.75,
      "gap": {
       "home": 47,
       "away": -47
@@ -86645,6 +87848,14 @@
       "units": -1.0,
       "took_fav": true
      },
+     "rlm_ratio": {
+      "side": "home",
+      "line": -27.5,
+      "odds": -120,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": true
+     },
      "money_level": {
       "side": "home",
       "line": -27.5,
@@ -86716,6 +87927,7 @@
       "pin_value": "over"
      },
      "open": 147.5,
+     "mny_ratio": 1.09,
      "gap": {
       "over": -3,
       "under": 3
@@ -86979,6 +88191,7 @@
       "pin_value": "away"
      },
      "open": -28.5,
+     "mny_ratio": 0.78,
      "gap": {
       "home": -8,
       "away": 8
@@ -87100,12 +88313,14 @@
      },
      "calls": {
       "follow_move": "under",
+      "rlm_ratio": "under",
       "money_level": "over",
       "sharp_gap": "under",
       "money_moving": "under",
       "consensus_gap": "over"
      },
      "open": 149.5,
+     "mny_ratio": 1.25,
      "gap": {
       "over": -1,
       "under": 1
@@ -87203,6 +88418,14 @@
       "units": -1.0,
       "took_fav": false
      },
+     "rlm_ratio": {
+      "side": "under",
+      "line": 148.5,
+      "odds": -105,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": false
+     },
      "money_level": {
       "side": "over",
       "line": 148.5,
@@ -87279,11 +88502,13 @@
      },
      "calls": {
       "follow_move": "home",
+      "rlm_ratio": "home",
       "money_level": "home",
       "sharp_gap": "home",
       "money_moving": "home"
      },
      "open": -28.5,
+     "mny_ratio": 14.25,
      "gap": {
       "home": 53,
       "away": -53
@@ -87367,6 +88592,14 @@
       "units": 0.909,
       "took_fav": true
      },
+     "rlm_ratio": {
+      "side": "home",
+      "line": -29.5,
+      "odds": -110,
+      "res": "W",
+      "units": 0.909,
+      "took_fav": true
+     },
      "money_level": {
       "side": "home",
       "line": -29.5,
@@ -87421,6 +88654,7 @@
       "consensus_gap": "over"
      },
      "open": 151.5,
+     "mny_ratio": 0.93,
      "gap": {
       "over": 1,
       "under": -1
@@ -87970,6 +89204,7 @@
       "pin_value": "away"
      },
      "open": -24.5,
+     "mny_ratio": 0.99,
      "gap": {
       "home": 1,
       "away": -1
@@ -88111,11 +89346,13 @@
      },
      "calls": {
       "follow_move": "under",
+      "rlm_ratio": "under",
       "money_level": "under",
       "sharp_gap": "under",
       "money_moving": "under"
      },
      "open": 146.5,
+     "mny_ratio": 1.93,
      "gap": {
       "over": -25,
       "under": 25
@@ -88194,6 +89431,14 @@
     },
     "close_graded": {
      "follow_move": {
+      "side": "under",
+      "line": 143.5,
+      "odds": -110,
+      "res": "W",
+      "units": 0.909,
+      "took_fav": false
+     },
+     "rlm_ratio": {
       "side": "under",
       "line": 143.5,
       "odds": -110,
@@ -88488,10 +89733,12 @@
      },
      "calls": {
       "follow_move": "under",
+      "rlm_ratio": "under",
       "sharp_gap": "under",
       "money_moving": "under"
      },
      "open": 135.5,
+     "mny_ratio": 1.28,
      "gap": {
       "over": -11,
       "under": 11
@@ -88558,6 +89805,14 @@
     },
     "close_graded": {
      "follow_move": {
+      "side": "under",
+      "line": 130.5,
+      "odds": -110,
+      "res": "W",
+      "units": 0.909,
+      "took_fav": false
+     },
+     "rlm_ratio": {
       "side": "under",
       "line": 130.5,
       "odds": -110,
@@ -88733,11 +89988,13 @@
      },
      "calls": {
       "follow_move": "home",
+      "rlm_ratio": "home",
       "money_level": "away",
       "sharp_gap": "home",
       "money_moving": "home"
      },
      "open": -21.5,
+     "mny_ratio": 1.43,
      "gap": {
       "home": 6,
       "away": -6
@@ -88781,6 +90038,7 @@
       "pin_value": "away"
      },
      "open": -21.5,
+     "mny_ratio": 1.0,
      "gap": {
       "home": 0,
       "away": 0
@@ -88845,6 +90103,14 @@
       "units": 0.833,
       "took_fav": true
      },
+     "rlm_ratio": {
+      "side": "home",
+      "line": -23.5,
+      "odds": -120,
+      "res": "W",
+      "units": 0.833,
+      "took_fav": true
+     },
      "money_level": {
       "side": "away",
       "line": 23.5,
@@ -88893,12 +90159,14 @@
      },
      "calls": {
       "follow_move": "under",
+      "rlm_ratio": "under",
       "money_level": "under",
       "sharp_gap": "under",
       "money_moving": "under",
       "pin_value": "over"
      },
      "open": 142.5,
+     "mny_ratio": 2.92,
      "gap": {
       "over": -50,
       "under": 50
@@ -88937,6 +90205,7 @@
      },
      "calls": {
       "follow_move": "under",
+      "rlm_ratio": "under",
       "money_level": "under",
       "sharp_gap": "under",
       "money_moving": "under",
@@ -88944,6 +90213,7 @@
       "pin_value": "over"
      },
      "open": 142.5,
+     "mny_ratio": 2.52,
      "gap": {
       "over": -47,
       "under": 47
@@ -88963,6 +90233,15 @@
     },
     "early_graded": {
      "follow_move": {
+      "side": "under",
+      "line": 139.5,
+      "odds": -105,
+      "res": "W",
+      "units": 0.952,
+      "took_fav": false,
+      "clv": 0.0
+     },
+     "rlm_ratio": {
       "side": "under",
       "line": 139.5,
       "odds": -105,
@@ -89019,6 +90298,14 @@
     },
     "close_graded": {
      "follow_move": {
+      "side": "under",
+      "line": 139.5,
+      "odds": -105,
+      "res": "W",
+      "units": 0.952,
+      "took_fav": false
+     },
+     "rlm_ratio": {
       "side": "under",
       "line": 139.5,
       "odds": -105,
@@ -89248,6 +90535,7 @@
      },
      "calls": {
       "follow_move": "home",
+      "rlm_ratio": "home",
       "money_level": "away",
       "sharp_gap": "home",
       "money_moving": "home",
@@ -89255,6 +90543,7 @@
       "pin_value": "away"
      },
      "open": -15.5,
+     "mny_ratio": 1.73,
      "gap": {
       "home": 19,
       "away": -19
@@ -89340,6 +90629,14 @@
       "units": -1.0,
       "took_fav": true
      },
+     "rlm_ratio": {
+      "side": "home",
+      "line": -17.5,
+      "odds": -110,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": true
+     },
      "money_level": {
       "side": "away",
       "line": 17.5,
@@ -89404,6 +90701,7 @@
      },
      "calls": {
       "follow_move": "over",
+      "rlm_ratio": "over",
       "money_level": "under",
       "sharp_gap": "over",
       "money_moving": "over",
@@ -89411,6 +90709,7 @@
       "pin_value": "over"
      },
      "open": 160.5,
+     "mny_ratio": 1.96,
      "gap": {
       "over": 24,
       "under": -24
@@ -89489,6 +90788,14 @@
     },
     "close_graded": {
      "follow_move": {
+      "side": "over",
+      "line": 161.5,
+      "odds": -110,
+      "res": "W",
+      "units": 0.909,
+      "took_fav": true
+     },
+     "rlm_ratio": {
       "side": "over",
       "line": 161.5,
       "odds": -110,
@@ -89711,6 +91018,7 @@
       "money_moving": "away"
      },
      "open": -19.5,
+     "mny_ratio": 1.01,
      "gap": {
       "home": -1,
       "away": 1
@@ -89850,6 +91158,7 @@
       "pin_value": "under"
      },
      "open": 145.5,
+     "mny_ratio": 0.96,
      "gap": {
       "over": -3,
       "under": 3
@@ -90142,6 +91451,7 @@
       "money_moving": "away"
      },
      "open": -33.5,
+     "mny_ratio": 1.36,
      "gap": {
       "home": -16,
       "away": 16
@@ -90271,6 +91581,7 @@
       "pin_value": "under"
      },
      "open": 151.5,
+     "mny_ratio": 1.08,
      "gap": {
       "over": 4,
       "under": -4
@@ -90416,6 +91727,7 @@
       "pin_value": "home"
      },
      "open": -6.5,
+     "mny_ratio": 1.13,
      "gap": {
       "home": 7,
       "away": -7
@@ -90547,12 +91859,14 @@
      },
      "calls": {
       "follow_move": "over",
+      "rlm_ratio": "over",
       "money_level": "over",
       "sharp_gap": "over",
       "money_moving": "over",
       "pin_value": "over"
      },
      "open": 155.5,
+     "mny_ratio": 1.34,
      "gap": {
       "over": 14,
       "under": -14
@@ -90621,6 +91935,14 @@
     },
     "close_graded": {
      "follow_move": {
+      "side": "over",
+      "line": 157.5,
+      "odds": -110,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": true
+     },
+     "rlm_ratio": {
       "side": "over",
       "line": 157.5,
       "odds": -110,
@@ -90806,12 +92128,14 @@
      },
      "calls": {
       "follow_move": "home",
+      "rlm_ratio": "home",
       "money_level": "home",
       "sharp_gap": "home",
       "money_moving": "home",
       "consensus_gap": "away"
      },
      "open": 9.5,
+     "mny_ratio": 1.57,
      "gap": {
       "home": 23,
       "away": -23
@@ -90890,6 +92214,14 @@
     },
     "close_graded": {
      "follow_move": {
+      "side": "home",
+      "line": 8.5,
+      "odds": -104,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": false
+     },
+     "rlm_ratio": {
       "side": "home",
       "line": 8.5,
       "odds": -104,
@@ -91233,6 +92565,7 @@
       "pin_value": "away"
      },
      "open": -27.5,
+     "mny_ratio": 1.25,
      "gap": {
       "home": 13,
       "away": -13
@@ -91346,12 +92679,14 @@
      },
      "calls": {
       "follow_move": "under",
+      "rlm_ratio": "under",
       "money_level": "over",
       "sharp_gap": "under",
       "money_moving": "under",
       "pin_value": "under"
      },
      "open": 145.5,
+     "mny_ratio": 4.4,
      "gap": {
       "over": -34,
       "under": 34
@@ -91402,6 +92737,14 @@
     "early_graded": {},
     "close_graded": {
      "follow_move": {
+      "side": "under",
+      "line": 143.5,
+      "odds": -110,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": false
+     },
+     "rlm_ratio": {
       "side": "under",
       "line": 143.5,
       "odds": -110,
@@ -91492,6 +92835,7 @@
       "pin_value": "home"
      },
      "open": -23.5,
+     "mny_ratio": 1.32,
      "gap": {
       "home": 19,
       "away": -19
@@ -91615,6 +92959,7 @@
       "consensus_gap": "over"
      },
      "open": 145.5,
+     "mny_ratio": 1.53,
      "gap": {
       "over": -24,
       "under": 24
@@ -91853,6 +93198,7 @@
       "money_moving": "away"
      },
      "open": 6.5,
+     "mny_ratio": 1.2,
      "gap": {
       "home": -10,
       "away": 10
@@ -91984,11 +93330,13 @@
      },
      "calls": {
       "follow_move": "under",
+      "rlm_ratio": "under",
       "money_level": "over",
       "sharp_gap": "under",
       "money_moving": "under"
      },
      "open": 148.5,
+     "mny_ratio": 2.05,
      "gap": {
       "over": -21,
       "under": 21
@@ -92031,6 +93379,7 @@
       "consensus_gap": "over"
      },
      "open": 148.5,
+     "mny_ratio": 0.69,
      "gap": {
       "over": 17,
       "under": -17
@@ -92095,6 +93444,14 @@
     },
     "close_graded": {
      "follow_move": {
+      "side": "under",
+      "line": 147.5,
+      "odds": -110,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": false
+     },
+     "rlm_ratio": {
       "side": "under",
       "line": 147.5,
       "odds": -110,
@@ -92460,6 +93817,7 @@
       "pin_value": "under"
      },
      "open": 143.5,
+     "mny_ratio": 0.94,
      "gap": {
       "over": 1,
       "under": -1
@@ -92829,12 +94187,14 @@
      },
      "calls": {
       "follow_move": "under",
+      "rlm_ratio": "under",
       "money_level": "over",
       "sharp_gap": "under",
       "money_moving": "under",
       "pin_value": "over"
      },
      "open": 143.5,
+     "mny_ratio": 1.8,
      "gap": {
       "over": -8,
       "under": 8
@@ -92885,6 +94245,14 @@
     "early_graded": {},
     "close_graded": {
      "follow_move": {
+      "side": "under",
+      "line": 141.5,
+      "odds": -105,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": false
+     },
+     "rlm_ratio": {
       "side": "under",
       "line": 141.5,
       "odds": -105,
@@ -93185,6 +94553,7 @@
       "money_moving": "under"
      },
      "open": 159.5,
+     "mny_ratio": 1.18,
      "gap": {
       "over": -11,
       "under": 11
@@ -93435,6 +94804,7 @@
       "money_moving": "home"
      },
      "open": -17.5,
+     "mny_ratio": 0.84,
      "gap": {
       "home": 7,
       "away": -7
@@ -93765,12 +95135,14 @@
      },
      "calls": {
       "follow_move": "home",
+      "rlm_ratio": "home",
       "money_level": "away",
       "sharp_gap": "home",
       "money_moving": "home",
       "pin_value": "away"
      },
      "open": 3.5,
+     "mny_ratio": 1.22,
      "gap": {
       "home": 6,
       "away": -6
@@ -93821,6 +95193,14 @@
     "early_graded": {},
     "close_graded": {
      "follow_move": {
+      "side": "home",
+      "line": 1.5,
+      "odds": -110,
+      "res": "W",
+      "units": 0.909,
+      "took_fav": false
+     },
+     "rlm_ratio": {
       "side": "home",
       "line": 1.5,
       "odds": -110,
@@ -93891,6 +95271,7 @@
       "pin_value": "under"
      },
      "open": 147.5,
+     "mny_ratio": 1.06,
      "gap": {
       "over": -1,
       "under": 1
@@ -94155,6 +95536,7 @@
      },
      "calls": {
       "follow_move": "away",
+      "rlm_ratio": "away",
       "money_level": "home",
       "sharp_gap": "away",
       "money_moving": "away",
@@ -94162,6 +95544,7 @@
       "pin_value": "home"
      },
      "open": -14.5,
+     "mny_ratio": 1.9,
      "gap": {
       "home": -19,
       "away": 19
@@ -94230,6 +95613,14 @@
     },
     "close_graded": {
      "follow_move": {
+      "side": "away",
+      "line": 11.5,
+      "odds": -102,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": false
+     },
+     "rlm_ratio": {
       "side": "away",
       "line": 11.5,
       "odds": -102,
@@ -94306,6 +95697,7 @@
       "pin_value": "over"
      },
      "open": 153.5,
+     "mny_ratio": 1.0,
      "gap": {
       "over": 0,
       "under": 0
@@ -94691,6 +96083,7 @@
       "pin_value": "over"
      },
      "open": 151.5,
+     "mny_ratio": 0.91,
      "gap": {
       "over": -4,
       "under": 4
@@ -94944,11 +96337,13 @@
      },
      "calls": {
       "follow_move": "away",
+      "rlm_ratio": "away",
       "money_level": "away",
       "sharp_gap": "away",
       "money_moving": "away"
      },
      "open": -5.5,
+     "mny_ratio": 2.2,
      "gap": {
       "home": -30,
       "away": 30
@@ -95024,6 +96419,14 @@
       "units": 0.952,
       "took_fav": false
      },
+     "rlm_ratio": {
+      "side": "away",
+      "line": 3.5,
+      "odds": -105,
+      "res": "W",
+      "units": 0.952,
+      "took_fav": false
+     },
      "money_level": {
       "side": "away",
       "line": 3.5,
@@ -95079,6 +96482,7 @@
       "pin_value": "over"
      },
      "open": 148.5,
+     "mny_ratio": 0.52,
      "gap": {
       "over": 22,
       "under": -22
@@ -95367,6 +96771,7 @@
      },
      "calls": {
       "follow_move": "away",
+      "rlm_ratio": "away",
       "money_level": "home",
       "sharp_gap": "away",
       "money_moving": "away",
@@ -95374,6 +96779,7 @@
       "pin_value": "home"
      },
      "open": -1.5,
+     "mny_ratio": 1.23,
      "gap": {
       "home": -7,
       "away": 7
@@ -95424,6 +96830,14 @@
     "early_graded": {},
     "close_graded": {
      "follow_move": {
+      "side": "away",
+      "line": 0.5,
+      "odds": -104,
+      "res": "W",
+      "units": 0.962,
+      "took_fav": false
+     },
+     "rlm_ratio": {
       "side": "away",
       "line": 0.5,
       "odds": -104,
@@ -95500,6 +96914,7 @@
       "money_moving": "over"
      },
      "open": 160.5,
+     "mny_ratio": 1.19,
      "gap": {
       "over": 10,
       "under": -10
@@ -95742,6 +97157,7 @@
       "consensus_gap": "away"
      },
      "open": -2.5,
+     "mny_ratio": 0.79,
      "gap": {
       "home": -15,
       "away": 15
@@ -95867,6 +97283,7 @@
       "consensus_gap": "over"
      },
      "open": 153.5,
+     "mny_ratio": 1.02,
      "gap": {
       "over": -1,
       "under": 1
@@ -96123,11 +97540,13 @@
      },
      "calls": {
       "follow_move": "away",
+      "rlm_ratio": "away",
       "money_level": "home",
       "sharp_gap": "away",
       "money_moving": "away"
      },
      "open": -16.5,
+     "mny_ratio": 1.28,
      "gap": {
       "home": -9,
       "away": 9
@@ -96191,6 +97610,14 @@
       "units": 0.909,
       "took_fav": false
      },
+     "rlm_ratio": {
+      "side": "away",
+      "line": 15.5,
+      "odds": -110,
+      "res": "W",
+      "units": 0.909,
+      "took_fav": false
+     },
      "money_level": {
       "side": "home",
       "line": -15.5,
@@ -96244,6 +97671,7 @@
       "money_moving": "over"
      },
      "open": 159.5,
+     "mny_ratio": 1.17,
      "gap": {
       "over": 3,
       "under": -3
@@ -96496,6 +97924,7 @@
       "pin_value": "home"
      },
      "open": -23.5,
+     "mny_ratio": 0.77,
      "gap": {
       "home": 8,
       "away": -8
@@ -96651,6 +98080,7 @@
       "pin_value": "over"
      },
      "open": 156.5,
+     "mny_ratio": 1.09,
      "gap": {
       "over": 2,
       "under": -2
@@ -96943,6 +98373,7 @@
       "money_moving": "home"
      },
      "open": -31.5,
+     "mny_ratio": 1.77,
      "gap": {
       "home": 36,
       "away": -36
@@ -97055,6 +98486,7 @@
       "pin_value": "over"
      },
      "open": 158.5,
+     "mny_ratio": 1.09,
      "gap": {
       "over": -8,
       "under": 8
@@ -97285,12 +98717,14 @@
      },
      "calls": {
       "follow_move": "under",
+      "rlm_ratio": "under",
       "money_level": "under",
       "sharp_gap": "under",
       "money_moving": "under",
       "pin_value": "under"
      },
      "open": 148.5,
+     "mny_ratio": 7.8,
      "gap": {
       "over": -68,
       "under": 68
@@ -97347,6 +98781,14 @@
     "early_graded": {},
     "close_graded": {
      "follow_move": {
+      "side": "under",
+      "line": 145.5,
+      "odds": -110,
+      "res": "W",
+      "units": 0.909,
+      "took_fav": false
+     },
+     "rlm_ratio": {
       "side": "under",
       "line": 145.5,
       "odds": -110,
@@ -97546,6 +98988,7 @@
       "money_moving": "home"
      },
      "open": -11.5,
+     "mny_ratio": 0.61,
      "gap": {
       "home": 15,
       "away": -15
@@ -97676,6 +99119,7 @@
       "pin_value": "over"
      },
      "open": 141.5,
+     "mny_ratio": 0.92,
      "gap": {
       "over": 3,
       "under": -3
@@ -97952,6 +99396,7 @@
       "pin_value": "away"
      },
      "open": -18.5,
+     "mny_ratio": 1.51,
      "gap": {
       "home": 28,
       "away": -28
@@ -98093,12 +99538,14 @@
      },
      "calls": {
       "follow_move": "under",
+      "rlm_ratio": "under",
       "money_level": "over",
       "sharp_gap": "under",
       "money_moving": "under",
       "consensus_gap": "under"
      },
      "open": 142.5,
+     "mny_ratio": 1.6,
      "gap": {
       "over": -3,
       "under": 3
@@ -98155,6 +99602,14 @@
     "early_graded": {},
     "close_graded": {
      "follow_move": {
+      "side": "under",
+      "line": 140.5,
+      "odds": -110,
+      "res": "W",
+      "units": 0.909,
+      "took_fav": false
+     },
+     "rlm_ratio": {
       "side": "under",
       "line": 140.5,
       "odds": -110,
@@ -98346,6 +99801,7 @@
      },
      "calls": {
       "follow_move": "home",
+      "rlm_ratio": "home",
       "money_level": "away",
       "sharp_gap": "home",
       "money_moving": "home",
@@ -98353,6 +99809,7 @@
       "pin_value": "away"
      },
      "open": -29.5,
+     "mny_ratio": 1.41,
      "gap": {
       "home": 14,
       "away": -14
@@ -98403,6 +99860,14 @@
     "early_graded": {},
     "close_graded": {
      "follow_move": {
+      "side": "home",
+      "line": -31.5,
+      "odds": -105,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": true
+     },
+     "rlm_ratio": {
       "side": "home",
       "line": -31.5,
       "odds": -105,
@@ -98618,6 +100083,7 @@
       "money_moving": "home"
      },
      "open": -16.5,
+     "mny_ratio": 1.12,
      "gap": {
       "home": 9,
       "away": -9
@@ -98751,6 +100217,7 @@
      },
      "calls": {
       "follow_move": "over",
+      "rlm_ratio": "over",
       "money_level": "under",
       "sharp_gap": "over",
       "money_moving": "over",
@@ -98758,6 +100225,7 @@
       "pin_value": "over"
      },
      "open": 155.5,
+     "mny_ratio": 3.62,
      "gap": {
       "over": 34,
       "under": -34
@@ -98814,6 +100282,14 @@
     "early_graded": {},
     "close_graded": {
      "follow_move": {
+      "side": "over",
+      "line": 157.5,
+      "odds": -115,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": true
+     },
+     "rlm_ratio": {
       "side": "over",
       "line": 157.5,
       "odds": -115,
@@ -99036,6 +100512,7 @@
       "money_moving": "home"
      },
      "open": -24.5,
+     "mny_ratio": 1.54,
      "gap": {
       "home": 29,
       "away": -29
@@ -99145,12 +100622,14 @@
      },
      "calls": {
       "follow_move": "under",
+      "rlm_ratio": "under",
       "money_level": "under",
       "sharp_gap": "under",
       "money_moving": "under",
       "consensus_gap": "over"
      },
      "open": 134.5,
+     "mny_ratio": 2.42,
      "gap": {
       "over": -47,
       "under": 47
@@ -99217,6 +100696,14 @@
     },
     "close_graded": {
      "follow_move": {
+      "side": "under",
+      "line": 127.5,
+      "odds": -105,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": false
+     },
+     "rlm_ratio": {
       "side": "under",
       "line": 127.5,
       "odds": -105,
@@ -99408,12 +100895,14 @@
      },
      "calls": {
       "follow_move": "away",
+      "rlm_ratio": "away",
       "money_level": "away",
       "sharp_gap": "away",
       "money_moving": "away",
       "consensus_gap": "home"
      },
      "open": -18.5,
+     "mny_ratio": 1.68,
      "gap": {
       "home": -21,
       "away": 21
@@ -99474,6 +100963,14 @@
     },
     "close_graded": {
      "follow_move": {
+      "side": "away",
+      "line": 17.5,
+      "odds": -102,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": false
+     },
+     "rlm_ratio": {
       "side": "away",
       "line": 17.5,
       "odds": -102,
@@ -99543,6 +101040,7 @@
       "consensus_gap": "over"
      },
      "open": 145.5,
+     "mny_ratio": 1.01,
      "gap": {
       "over": 1,
       "under": -1
@@ -99785,12 +101283,14 @@
      },
      "calls": {
       "follow_move": "home",
+      "rlm_ratio": "home",
       "money_level": "home",
       "sharp_gap": "home",
       "money_moving": "home",
       "pin_value": "away"
      },
      "open": -9.5,
+     "mny_ratio": 1.2,
      "gap": {
       "home": 9,
       "away": -9
@@ -99847,6 +101347,14 @@
     "early_graded": {},
     "close_graded": {
      "follow_move": {
+      "side": "home",
+      "line": -10.5,
+      "odds": -106,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": true
+     },
+     "rlm_ratio": {
       "side": "home",
       "line": -10.5,
       "odds": -106,
@@ -99917,6 +101425,7 @@
       "pin_value": "under"
      },
      "open": 167.5,
+     "mny_ratio": 1.31,
      "gap": {
       "over": 15,
       "under": -15
@@ -100183,6 +101692,7 @@
       "money_moving": "home"
      },
      "open": -1.5,
+     "mny_ratio": 0.95,
      "gap": {
       "home": 4,
       "away": -4
@@ -100288,6 +101798,7 @@
      },
      "calls": {
       "follow_move": "under",
+      "rlm_ratio": "under",
       "money_level": "over",
       "sharp_gap": "under",
       "money_moving": "under",
@@ -100295,6 +101806,7 @@
       "pin_value": "over"
      },
      "open": 137.5,
+     "mny_ratio": 6.0,
      "gap": {
       "over": -25,
       "under": 25
@@ -100357,6 +101869,14 @@
     },
     "close_graded": {
      "follow_move": {
+      "side": "under",
+      "line": 133.5,
+      "odds": -108,
+      "res": "W",
+      "units": 0.926,
+      "took_fav": false
+     },
+     "rlm_ratio": {
       "side": "under",
       "line": 133.5,
       "odds": -108,
@@ -100564,6 +102084,7 @@
       "money_moving": "away"
      },
      "open": -16.5,
+     "mny_ratio": 1.11,
      "gap": {
       "home": -8,
       "away": 8
@@ -100697,12 +102218,14 @@
      },
      "calls": {
       "follow_move": "over",
+      "rlm_ratio": "over",
       "money_level": "under",
       "sharp_gap": "over",
       "money_moving": "over",
       "pin_value": "under"
      },
      "open": 158.5,
+     "mny_ratio": 1.29,
      "gap": {
       "over": 6,
       "under": -6
@@ -100759,6 +102282,14 @@
     "early_graded": {},
     "close_graded": {
      "follow_move": {
+      "side": "over",
+      "line": 161.5,
+      "odds": -110,
+      "res": "W",
+      "units": 0.909,
+      "took_fav": true
+     },
+     "rlm_ratio": {
       "side": "over",
       "line": 161.5,
       "odds": -110,
@@ -100967,6 +102498,7 @@
       "money_moving": "away"
      },
      "open": -7.5,
+     "mny_ratio": 0.94,
      "gap": {
       "home": -4,
       "away": 4
@@ -101070,12 +102602,14 @@
      },
      "calls": {
       "follow_move": "under",
+      "rlm_ratio": "under",
       "money_level": "over",
       "sharp_gap": "under",
       "money_moving": "under",
       "consensus_gap": "over"
      },
      "open": 144.5,
+     "mny_ratio": 9.0,
      "gap": {
       "over": -40,
       "under": 40
@@ -101124,6 +102658,14 @@
     "early_graded": {},
     "close_graded": {
      "follow_move": {
+      "side": "under",
+      "line": 142.5,
+      "odds": -110,
+      "res": "W",
+      "units": 0.909,
+      "took_fav": false
+     },
+     "rlm_ratio": {
       "side": "under",
       "line": 142.5,
       "odds": -110,
@@ -101315,10 +102857,12 @@
      },
      "calls": {
       "follow_move": "home",
+      "rlm_ratio": "home",
       "sharp_gap": "home",
       "money_moving": "home"
      },
      "open": 7.5,
+     "mny_ratio": 1.35,
      "gap": {
       "home": 13,
       "away": -13
@@ -101386,6 +102930,14 @@
       "units": -1.0,
       "took_fav": false
      },
+     "rlm_ratio": {
+      "side": "home",
+      "line": 5.5,
+      "odds": -120,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": false
+     },
      "sharp_gap": {
       "side": "home",
       "line": 5.5,
@@ -101426,12 +102978,14 @@
      },
      "calls": {
       "follow_move": "under",
+      "rlm_ratio": "under",
       "money_level": "under",
       "sharp_gap": "under",
       "money_moving": "under",
       "consensus_gap": "over"
      },
      "open": 149.5,
+     "mny_ratio": 15.2,
      "gap": {
       "over": -71,
       "under": 71
@@ -101492,6 +103046,14 @@
     },
     "close_graded": {
      "follow_move": {
+      "side": "under",
+      "line": 137.5,
+      "odds": -110,
+      "res": "W",
+      "units": 0.909,
+      "took_fav": false
+     },
+     "rlm_ratio": {
       "side": "under",
       "line": 137.5,
       "odds": -110,
@@ -101690,6 +103252,7 @@
       "pin_value": "away"
      },
      "open": -8.5,
+     "mny_ratio": 1.13,
      "gap": {
       "home": 9,
       "away": -9
@@ -101848,6 +103411,7 @@
       "pin_value": "over"
      },
      "open": 151.5,
+     "mny_ratio": 0.99,
      "gap": {
       "over": -1,
       "under": 1
@@ -102185,6 +103749,7 @@
       "money_moving": "home"
      },
      "open": 1.5,
+     "mny_ratio": 0.97,
      "gap": {
       "home": 2,
       "away": -2
@@ -102301,6 +103866,7 @@
       "money_moving": "over"
      },
      "open": 161.5,
+     "mny_ratio": 1.09,
      "gap": {
       "over": 5,
       "under": -5
@@ -102581,12 +104147,14 @@
      },
      "calls": {
       "follow_move": "away",
+      "rlm_ratio": "away",
       "money_level": "home",
       "sharp_gap": "away",
       "money_moving": "away",
       "consensus_gap": "home"
      },
      "open": -7.5,
+     "mny_ratio": 1.26,
      "gap": {
       "home": -8,
       "away": 8
@@ -102643,6 +104211,14 @@
     "early_graded": {},
     "close_graded": {
      "follow_move": {
+      "side": "away",
+      "line": 5.5,
+      "odds": -106,
+      "res": "W",
+      "units": 0.943,
+      "took_fav": false
+     },
+     "rlm_ratio": {
       "side": "away",
       "line": 5.5,
       "odds": -106,
@@ -102713,6 +104289,7 @@
       "pin_value": "over"
      },
      "open": 151.5,
+     "mny_ratio": 1.01,
      "gap": {
       "over": 1,
       "under": -1
@@ -102976,6 +104553,7 @@
       "money_moving": "home"
      },
      "open": -20.5,
+     "mny_ratio": 0.98,
      "gap": {
       "home": 1,
       "away": -1
@@ -103093,12 +104671,14 @@
      },
      "calls": {
       "follow_move": "over",
+      "rlm_ratio": "over",
       "money_level": "over",
       "sharp_gap": "over",
       "money_moving": "over",
       "consensus_gap": "over"
      },
      "open": 156.5,
+     "mny_ratio": 2.81,
      "gap": {
       "over": 56,
       "under": -56
@@ -103149,6 +104729,14 @@
     "early_graded": {},
     "close_graded": {
      "follow_move": {
+      "side": "over",
+      "line": 157.5,
+      "odds": -115,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": true
+     },
+     "rlm_ratio": {
       "side": "over",
       "line": 157.5,
       "odds": -115,
@@ -103456,6 +105044,7 @@
      },
      "calls": {
       "follow_move": "over",
+      "rlm_ratio": "over",
       "money_level": "under",
       "sharp_gap": "over",
       "money_moving": "over",
@@ -103463,6 +105052,7 @@
       "pin_value": "over"
      },
      "open": 166.5,
+     "mny_ratio": 1.53,
      "gap": {
       "over": 16,
       "under": -16
@@ -103531,6 +105121,14 @@
     },
     "close_graded": {
      "follow_move": {
+      "side": "over",
+      "line": 167.5,
+      "odds": -115,
+      "res": "W",
+      "units": 0.87,
+      "took_fav": true
+     },
+     "rlm_ratio": {
       "side": "over",
       "line": 167.5,
       "odds": -115,
@@ -104065,12 +105663,14 @@
      },
      "calls": {
       "follow_move": "home",
+      "rlm_ratio": "home",
       "money_level": "away",
       "sharp_gap": "home",
       "money_moving": "home",
       "pin_value": "away"
      },
      "open": 4.5,
+     "mny_ratio": 2.35,
      "gap": {
       "home": 27,
       "away": -27
@@ -104127,6 +105727,14 @@
     "early_graded": {},
     "close_graded": {
      "follow_move": {
+      "side": "home",
+      "line": 3.5,
+      "odds": -110,
+      "res": "W",
+      "units": 0.909,
+      "took_fav": false
+     },
+     "rlm_ratio": {
       "side": "home",
       "line": 3.5,
       "odds": -110,
@@ -104196,6 +105804,7 @@
       "pin_value": "over"
      },
      "open": 159.5,
+     "mny_ratio": 1.09,
      "gap": {
       "over": -1,
       "under": 1
@@ -104446,6 +106055,7 @@
       "consensus_gap": "home"
      },
      "open": -23.5,
+     "mny_ratio": 1.41,
      "gap": {
       "home": 21,
       "away": -21
@@ -104590,6 +106200,7 @@
       "money_moving": "over"
      },
      "open": 159.5,
+     "mny_ratio": 1.07,
      "gap": {
       "over": 1,
       "under": -1
@@ -104821,6 +106432,7 @@
      },
      "calls": {
       "follow_move": "home",
+      "rlm_ratio": "home",
       "money_level": "home",
       "sharp_gap": "home",
       "money_moving": "home",
@@ -104828,6 +106440,7 @@
       "pin_value": "home"
      },
      "open": -25.5,
+     "mny_ratio": 1.77,
      "gap": {
       "home": 31,
       "away": -31
@@ -104890,6 +106503,14 @@
     },
     "close_graded": {
      "follow_move": {
+      "side": "home",
+      "line": -30.5,
+      "odds": -120,
+      "res": "W",
+      "units": 0.833,
+      "took_fav": true
+     },
+     "rlm_ratio": {
       "side": "home",
       "line": -30.5,
       "odds": -120,
@@ -104961,12 +106582,14 @@
      },
      "calls": {
       "follow_move": "over",
+      "rlm_ratio": "over",
       "money_level": "under",
       "sharp_gap": "over",
       "money_moving": "over",
       "consensus_gap": "over"
      },
      "open": 162.5,
+     "mny_ratio": 1.8,
      "gap": {
       "over": 4,
       "under": -4
@@ -105017,6 +106640,14 @@
     "early_graded": {},
     "close_graded": {
      "follow_move": {
+      "side": "over",
+      "line": 165.5,
+      "odds": -115,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": true
+     },
+     "rlm_ratio": {
       "side": "over",
       "line": 165.5,
       "odds": -115,
@@ -105213,6 +106844,7 @@
       "money_moving": "home"
      },
      "open": -32.5,
+     "mny_ratio": 1.34,
      "gap": {
       "home": 19,
       "away": -19
@@ -105330,11 +106962,13 @@
      },
      "calls": {
       "follow_move": "under",
+      "rlm_ratio": "under",
       "money_level": "over",
       "sharp_gap": "under",
       "money_moving": "under"
      },
      "open": 147.5,
+     "mny_ratio": 2.15,
      "gap": {
       "over": -15,
       "under": 15
@@ -105385,6 +107019,14 @@
     "early_graded": {},
     "close_graded": {
      "follow_move": {
+      "side": "under",
+      "line": 146.5,
+      "odds": -110,
+      "res": "W",
+      "units": 0.909,
+      "took_fav": false
+     },
+     "rlm_ratio": {
       "side": "under",
       "line": 146.5,
       "odds": -110,
@@ -105467,6 +107109,7 @@
       "pin_value": "home"
      },
      "open": -2.5,
+     "mny_ratio": 0.88,
      "gap": {
       "home": -9,
       "away": 9
@@ -105826,6 +107469,7 @@
       "pin_value": "home"
      },
      "open": -23.5,
+     "mny_ratio": 1.52,
      "gap": {
       "home": 25,
       "away": -25
@@ -105946,6 +107590,7 @@
       "pin_value": "over"
      },
      "open": 148.5,
+     "mny_ratio": 0.94,
      "gap": {
       "over": -5,
       "under": 5
@@ -106637,6 +108282,7 @@
      },
      "calls": {
       "follow_move": "over",
+      "rlm_ratio": "over",
       "money_level": "over",
       "sharp_gap": "over",
       "money_moving": "over",
@@ -106644,6 +108290,7 @@
       "pin_value": "over"
      },
      "open": 156.5,
+     "mny_ratio": 4.1,
      "gap": {
       "over": 62,
       "under": -62
@@ -106700,6 +108347,14 @@
     "early_graded": {},
     "close_graded": {
      "follow_move": {
+      "side": "over",
+      "line": 158.5,
+      "odds": -115,
+      "res": "W",
+      "units": 0.87,
+      "took_fav": true
+     },
+     "rlm_ratio": {
       "side": "over",
       "line": 158.5,
       "odds": -115,
@@ -106927,6 +108582,7 @@
       "pin_value": "home"
      },
      "open": -12.5,
+     "mny_ratio": 0.59,
      "gap": {
       "home": 16,
       "away": -16
@@ -107053,6 +108709,7 @@
       "money_moving": "under"
      },
      "open": 151.5,
+     "mny_ratio": 1.03,
      "gap": {
       "over": -2,
       "under": 2
@@ -107399,12 +109056,14 @@
      },
      "calls": {
       "follow_move": "over",
+      "rlm_ratio": "over",
       "money_level": "over",
       "sharp_gap": "over",
       "money_moving": "over",
       "pin_value": "under"
      },
      "open": 155.5,
+     "mny_ratio": 2.66,
      "gap": {
       "over": 48,
       "under": -48
@@ -107455,6 +109114,14 @@
     "early_graded": {},
     "close_graded": {
      "follow_move": {
+      "side": "over",
+      "line": 156.5,
+      "odds": -110,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": true
+     },
+     "rlm_ratio": {
       "side": "over",
       "line": 156.5,
       "odds": -110,
@@ -107648,6 +109315,7 @@
       "money_moving": "under"
      },
      "open": 159.5,
+     "mny_ratio": 0.93,
      "gap": {
       "over": -3,
       "under": 3
@@ -107892,6 +109560,7 @@
       "money_moving": "under"
      },
      "open": 152.5,
+     "mny_ratio": 0.95,
      "gap": {
       "over": -1,
       "under": 1
@@ -108142,6 +109811,7 @@
       "money_moving": "away"
      },
      "open": -18.5,
+     "mny_ratio": 1.06,
      "gap": {
       "home": -2,
       "away": 2
@@ -108252,6 +109922,7 @@
       "money_moving": "under"
      },
      "open": 153.5,
+     "mny_ratio": 0.93,
      "gap": {
       "over": -3,
       "under": 3
@@ -108485,6 +110156,7 @@
       "consensus_gap": "home"
      },
      "open": -20.5,
+     "mny_ratio": 1.52,
      "gap": {
       "home": 31,
       "away": -31
@@ -108619,6 +110291,7 @@
       "money_moving": "under"
      },
      "open": 156.5,
+     "mny_ratio": 0.65,
      "gap": {
       "over": -8,
       "under": 8
@@ -108880,6 +110553,7 @@
       "pin_value": "home"
      },
      "open": -15.5,
+     "mny_ratio": 0.8,
      "gap": {
       "home": -11,
       "away": 11
@@ -108993,11 +110667,13 @@
      },
      "calls": {
       "follow_move": "under",
+      "rlm_ratio": "under",
       "money_level": "over",
       "sharp_gap": "under",
       "money_moving": "under"
      },
      "open": 134.5,
+     "mny_ratio": 2.27,
      "gap": {
       "over": -14,
       "under": 14
@@ -109048,6 +110724,14 @@
     "early_graded": {},
     "close_graded": {
      "follow_move": {
+      "side": "under",
+      "line": 133.5,
+      "odds": -110,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": false
+     },
+     "rlm_ratio": {
       "side": "under",
       "line": 133.5,
       "odds": -110,
@@ -109369,6 +111053,7 @@
      },
      "calls": {
       "follow_move": "under",
+      "rlm_ratio": "under",
       "money_level": "under",
       "sharp_gap": "under",
       "money_moving": "under",
@@ -109376,6 +111061,7 @@
       "pin_value": "under"
      },
      "open": 149.5,
+     "mny_ratio": 2.93,
      "gap": {
       "over": -54,
       "under": 54
@@ -109444,6 +111130,14 @@
     },
     "close_graded": {
      "follow_move": {
+      "side": "under",
+      "line": 146.5,
+      "odds": -114,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": false
+     },
+     "rlm_ratio": {
       "side": "under",
       "line": 146.5,
       "odds": -114,
@@ -109669,6 +111363,7 @@
       "money_moving": "home"
      },
      "open": -36.5,
+     "mny_ratio": 1.22,
      "gap": {
       "home": 13,
       "away": -13
@@ -109808,6 +111503,7 @@
       "pin_value": "under"
      },
      "open": 148.5,
+     "mny_ratio": 0.94,
      "gap": {
       "over": -1,
       "under": 1
@@ -109952,6 +111648,7 @@
       "money_moving": "away"
      },
      "open": -25.5,
+     "mny_ratio": 0.71,
      "gap": {
       "home": -20,
       "away": 20
@@ -110067,11 +111764,13 @@
      },
      "calls": {
       "follow_move": "over",
+      "rlm_ratio": "over",
       "money_level": "over",
       "sharp_gap": "over",
       "money_moving": "over"
      },
      "open": 178.5,
+     "mny_ratio": 2.41,
      "gap": {
       "over": 45,
       "under": -45
@@ -110132,6 +111831,14 @@
     },
     "close_graded": {
      "follow_move": {
+      "side": "over",
+      "line": 181.5,
+      "odds": -110,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": true
+     },
+     "rlm_ratio": {
       "side": "over",
       "line": 181.5,
       "odds": -110,
@@ -110412,6 +112119,7 @@
       "pin_value": "over"
      },
      "open": 155.5,
+     "mny_ratio": 0.99,
      "gap": {
       "over": -1,
       "under": 1
@@ -110746,6 +112454,7 @@
       "money_moving": "away"
      },
      "open": -10.5,
+     "mny_ratio": 0.5,
      "gap": {
       "home": -21,
       "away": 21
@@ -110863,11 +112572,13 @@
      },
      "calls": {
       "follow_move": "under",
+      "rlm_ratio": "under",
       "money_level": "over",
       "sharp_gap": "under",
       "money_moving": "under"
      },
      "open": 148.5,
+     "mny_ratio": 2.35,
      "gap": {
       "over": -27,
       "under": 27
@@ -110918,6 +112629,14 @@
     "early_graded": {},
     "close_graded": {
      "follow_move": {
+      "side": "under",
+      "line": 147.5,
+      "odds": -110,
+      "res": "W",
+      "units": 0.909,
+      "took_fav": false
+     },
+     "rlm_ratio": {
       "side": "under",
       "line": 147.5,
       "odds": -110,
@@ -111109,6 +112828,7 @@
       "money_moving": "away"
      },
      "open": -10.5,
+     "mny_ratio": 0.81,
      "gap": {
       "home": -11,
       "away": 11
@@ -111214,6 +112934,7 @@
      },
      "calls": {
       "follow_move": "under",
+      "rlm_ratio": "under",
       "money_level": "over",
       "sharp_gap": "under",
       "money_moving": "under",
@@ -111221,6 +112942,7 @@
       "pin_value": "over"
      },
      "open": 141.5,
+     "mny_ratio": 2.11,
      "gap": {
       "over": -20,
       "under": 20
@@ -111283,6 +113005,14 @@
     },
     "close_graded": {
      "follow_move": {
+      "side": "under",
+      "line": 137.5,
+      "odds": -105,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": false
+     },
+     "rlm_ratio": {
       "side": "under",
       "line": 137.5,
       "odds": -105,
@@ -111481,6 +113211,7 @@
       "money_moving": "home"
      },
      "open": -6.5,
+     "mny_ratio": 1.36,
      "gap": {
       "home": 21,
       "away": -21
@@ -111590,12 +113321,14 @@
      },
      "calls": {
       "follow_move": "under",
+      "rlm_ratio": "under",
       "money_level": "under",
       "sharp_gap": "under",
       "money_moving": "under",
       "consensus_gap": "over"
      },
      "open": 152.5,
+     "mny_ratio": 2.43,
      "gap": {
       "over": -43,
       "under": 43
@@ -111632,12 +113365,14 @@
      },
      "calls": {
       "follow_move": "under",
+      "rlm_ratio": "under",
       "money_level": "over",
       "sharp_gap": "under",
       "money_moving": "over",
       "consensus_gap": "under"
      },
      "open": 152.5,
+     "mny_ratio": 1.54,
      "gap": {
       "over": -7,
       "under": 7
@@ -111655,6 +113390,15 @@
     },
     "early_graded": {
      "follow_move": {
+      "side": "under",
+      "line": 146.5,
+      "odds": -110,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": false,
+      "clv": 1.0
+     },
+     "rlm_ratio": {
       "side": "under",
       "line": 146.5,
       "odds": -110,
@@ -111702,6 +113446,14 @@
     },
     "close_graded": {
      "follow_move": {
+      "side": "under",
+      "line": 145.5,
+      "odds": -110,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": false
+     },
+     "rlm_ratio": {
       "side": "under",
       "line": 145.5,
       "odds": -110,
@@ -111946,6 +113698,7 @@
       "money_moving": "away"
      },
      "open": 2.5,
+     "mny_ratio": 0.74,
      "gap": {
       "home": -15,
       "away": 15
@@ -112055,6 +113808,7 @@
       "consensus_gap": "under"
      },
      "open": 145.5,
+     "mny_ratio": 1.13,
      "gap": {
       "over": -2,
       "under": 2
@@ -112299,6 +114053,7 @@
       "money_moving": "home"
      },
      "open": -12.5,
+     "mny_ratio": 0.56,
      "gap": {
       "home": 12,
       "away": -12
@@ -112422,6 +114177,7 @@
      },
      "calls": {
       "follow_move": "under",
+      "rlm_ratio": "under",
       "money_level": "over",
       "sharp_gap": "under",
       "money_moving": "under",
@@ -112429,6 +114185,7 @@
       "pin_value": "under"
      },
      "open": 145.5,
+     "mny_ratio": 1.52,
      "gap": {
       "over": -15,
       "under": 15
@@ -112517,6 +114274,14 @@
     },
     "close_graded": {
      "follow_move": {
+      "side": "under",
+      "line": 143.5,
+      "odds": -110,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": false
+     },
+     "rlm_ratio": {
       "side": "under",
       "line": 143.5,
       "odds": -110,
@@ -112870,6 +114635,7 @@
       "consensus_gap": "under"
      },
      "open": 150.5,
+     "mny_ratio": 0.73,
      "gap": {
       "over": -19,
       "under": 19
@@ -113150,6 +114916,7 @@
       "money_moving": "home"
      },
      "open": 8.5,
+     "mny_ratio": 0.91,
      "gap": {
       "home": 6,
       "away": -6
@@ -113264,6 +115031,7 @@
       "consensus_gap": "under"
      },
      "open": 155.5,
+     "mny_ratio": 0.77,
      "gap": {
       "over": -15,
       "under": 15
@@ -113528,6 +115296,7 @@
       "money_moving": "away"
      },
      "open": -10.5,
+     "mny_ratio": 0.98,
      "gap": {
       "home": -1,
       "away": 1
@@ -113645,6 +115414,7 @@
       "pin_value": "under"
      },
      "open": 151.5,
+     "mny_ratio": 1.04,
      "gap": {
       "over": 3,
       "under": -3
@@ -114031,6 +115801,7 @@
       "pin_value": "over"
      },
      "open": 152.5,
+     "mny_ratio": 1.0,
      "gap": {
       "over": 0,
       "under": 0
@@ -114261,6 +116032,7 @@
       "money_moving": "away"
      },
      "open": 10.5,
+     "mny_ratio": 0.78,
      "gap": {
       "home": -12,
       "away": 12
@@ -114371,6 +116143,7 @@
       "money_moving": "under"
      },
      "open": 148.5,
+     "mny_ratio": 1.13,
      "gap": {
       "over": -5,
       "under": 5
@@ -114603,6 +116376,7 @@
       "money_moving": "away"
      },
      "open": -4.5,
+     "mny_ratio": 0.8,
      "gap": {
       "home": -10,
       "away": 10
@@ -114718,11 +116492,13 @@
      },
      "calls": {
       "follow_move": "under",
+      "rlm_ratio": "under",
       "money_level": "over",
       "sharp_gap": "under",
       "money_moving": "under"
      },
      "open": 151.5,
+     "mny_ratio": 1.72,
      "gap": {
       "over": -18,
       "under": 18
@@ -114771,6 +116547,14 @@
     "early_graded": {},
     "close_graded": {
      "follow_move": {
+      "side": "under",
+      "line": 147.5,
+      "odds": -105,
+      "res": "W",
+      "units": 0.952,
+      "took_fav": false
+     },
+     "rlm_ratio": {
       "side": "under",
       "line": 147.5,
       "odds": -105,
@@ -114941,6 +116725,7 @@
       "pin_value": "away"
      },
      "open": -5.5,
+     "mny_ratio": 1.02,
      "gap": {
       "home": 1,
       "away": -1
@@ -115069,6 +116854,7 @@
       "money_moving": "over"
      },
      "open": 160.5,
+     "mny_ratio": 1.1,
      "gap": {
       "over": 5,
       "under": -5
@@ -115325,6 +117111,7 @@
       "money_moving": "away"
      },
      "open": -1.5,
+     "mny_ratio": 1.48,
      "gap": {
       "home": -23,
       "away": 23
@@ -115461,6 +117248,7 @@
       "money_moving": "over"
      },
      "open": 153.5,
+     "mny_ratio": 1.28,
      "gap": {
       "over": 19,
       "under": -19
@@ -115707,6 +117495,7 @@
      },
      "calls": {
       "follow_move": "away",
+      "rlm_ratio": "away",
       "money_level": "home",
       "sharp_gap": "away",
       "money_moving": "away",
@@ -115714,6 +117503,7 @@
       "pin_value": "home"
      },
      "open": -4.5,
+     "mny_ratio": 1.53,
      "gap": {
       "home": -17,
       "away": 17
@@ -115770,6 +117560,14 @@
     "early_graded": {},
     "close_graded": {
      "follow_move": {
+      "side": "away",
+      "line": 2.5,
+      "odds": -106,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": false
+     },
+     "rlm_ratio": {
       "side": "away",
       "line": 2.5,
       "odds": -106,
@@ -115847,6 +117645,7 @@
       "consensus_gap": "over"
      },
      "open": 153.5,
+     "mny_ratio": 1.01,
      "gap": {
       "over": 1,
       "under": -1
@@ -116122,6 +117921,7 @@
       "pin_value": "home"
      },
      "open": -5.5,
+     "mny_ratio": 1.31,
      "gap": {
       "home": -17,
       "away": 17
@@ -116271,12 +118071,14 @@
      },
      "calls": {
       "follow_move": "over",
+      "rlm_ratio": "over",
       "money_level": "over",
       "sharp_gap": "over",
       "money_moving": "over",
       "pin_value": "under"
      },
      "open": 162.5,
+     "mny_ratio": 1.43,
      "gap": {
       "over": 18,
       "under": -18
@@ -116355,6 +118157,14 @@
     },
     "close_graded": {
      "follow_move": {
+      "side": "over",
+      "line": 165.5,
+      "odds": -115,
+      "res": "W",
+      "units": 0.87,
+      "took_fav": true
+     },
+     "rlm_ratio": {
       "side": "over",
       "line": 165.5,
       "odds": -115,
@@ -116684,6 +118494,7 @@
       "pin_value": "under"
      },
      "open": 128.5,
+     "mny_ratio": 1.16,
      "gap": {
       "over": -6,
       "under": 6
@@ -117064,6 +118875,7 @@
       "money_moving": "over"
      },
      "open": 147.5,
+     "mny_ratio": 1.32,
      "gap": {
       "over": 17,
       "under": -17
@@ -117315,11 +119127,13 @@
      },
      "calls": {
       "follow_move": "home",
+      "rlm_ratio": "home",
       "money_level": "home",
       "sharp_gap": "home",
       "money_moving": "home"
      },
      "open": -28.5,
+     "mny_ratio": 1.78,
      "gap": {
       "home": 32,
       "away": -32
@@ -117368,6 +119182,14 @@
     "early_graded": {},
     "close_graded": {
      "follow_move": {
+      "side": "home",
+      "line": -33.5,
+      "odds": -110,
+      "res": "W",
+      "units": 0.909,
+      "took_fav": true
+     },
+     "rlm_ratio": {
       "side": "home",
       "line": -33.5,
       "odds": -110,
@@ -117428,6 +119250,7 @@
       "money_moving": "over"
      },
      "open": 148.5,
+     "mny_ratio": 1.11,
      "gap": {
       "over": 8,
       "under": -8
@@ -117558,6 +119381,7 @@
       "pin_value": "home"
      },
      "open": 12.5,
+     "mny_ratio": 1.2,
      "gap": {
       "home": -15,
       "away": 15
@@ -117686,6 +119510,7 @@
       "pin_value": "over"
      },
      "open": 148.5,
+     "mny_ratio": 1.16,
      "gap": {
       "over": 9,
       "under": -9
@@ -117964,6 +119789,7 @@
       "money_moving": "away"
      },
      "open": -10.5,
+     "mny_ratio": 1.24,
      "gap": {
       "home": -16,
       "away": 16
@@ -118092,6 +119918,7 @@
       "money_moving": "over"
      },
      "open": 145.5,
+     "mny_ratio": 1.28,
      "gap": {
       "over": 20,
       "under": -20
@@ -118134,6 +119961,7 @@
       "sharp_gap": "over"
      },
      "open": 145.5,
+     "mny_ratio": 1.01,
      "gap": {
       "over": 1,
       "under": -1
@@ -118525,6 +120353,7 @@
       "consensus_gap": "over"
      },
      "open": 147.5,
+     "mny_ratio": 1.43,
      "gap": {
       "over": 27,
       "under": -27
@@ -118794,6 +120623,7 @@
       "pin_value": "home"
      },
      "open": 5.5,
+     "mny_ratio": 1.37,
      "gap": {
       "home": -23,
       "away": 23
@@ -118925,12 +120755,14 @@
      },
      "calls": {
       "follow_move": "under",
+      "rlm_ratio": "under",
       "money_level": "over",
       "sharp_gap": "under",
       "money_moving": "under",
       "pin_value": "under"
      },
      "open": 144.5,
+     "mny_ratio": 1.65,
      "gap": {
       "over": -13,
       "under": 13
@@ -118973,6 +120805,7 @@
       "sharp_gap": "under"
      },
      "open": 144.5,
+     "mny_ratio": 1.09,
      "gap": {
       "over": -1,
       "under": 1
@@ -119019,6 +120852,14 @@
     },
     "close_graded": {
      "follow_move": {
+      "side": "under",
+      "line": 136.5,
+      "odds": -105,
+      "res": "W",
+      "units": 0.952,
+      "took_fav": false
+     },
+     "rlm_ratio": {
       "side": "under",
       "line": 136.5,
       "odds": -105,
@@ -119222,12 +121063,14 @@
      },
      "calls": {
       "follow_move": "away",
+      "rlm_ratio": "away",
       "money_level": "away",
       "sharp_gap": "away",
       "money_moving": "away",
       "pin_value": "home"
      },
      "open": -8.5,
+     "mny_ratio": 2.0,
      "gap": {
       "home": -39,
       "away": 39
@@ -119286,6 +121129,14 @@
     "early_graded": {},
     "close_graded": {
      "follow_move": {
+      "side": "away",
+      "line": 7.5,
+      "odds": -102,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": false
+     },
+     "rlm_ratio": {
       "side": "away",
       "line": 7.5,
       "odds": -102,
@@ -119356,6 +121207,7 @@
       "pin_value": "under"
      },
      "open": 154.5,
+     "mny_ratio": 1.59,
      "gap": {
       "over": 35,
       "under": -35
@@ -119400,6 +121252,7 @@
       "pin_value": "under"
      },
      "open": 154.5,
+     "mny_ratio": 0.99,
      "gap": {
       "over": -1,
       "under": 1
@@ -119734,6 +121587,7 @@
       "money_moving": "away"
      },
      "open": -5.5,
+     "mny_ratio": 1.52,
      "gap": {
       "home": -26,
       "away": 26
@@ -119861,6 +121715,7 @@
       "consensus_gap": "under"
      },
      "open": 151.5,
+     "mny_ratio": 1.03,
      "gap": {
       "over": 2,
       "under": -2
@@ -119903,6 +121758,7 @@
       "consensus_gap": "under"
      },
      "open": 151.5,
+     "mny_ratio": 0.93,
      "gap": {
       "over": -6,
       "under": 6
@@ -120303,12 +122159,14 @@
      },
      "calls": {
       "follow_move": "under",
+      "rlm_ratio": "under",
       "money_level": "under",
       "sharp_gap": "under",
       "money_moving": "under",
       "consensus_gap": "over"
      },
      "open": 146.5,
+     "mny_ratio": 1.8,
      "gap": {
       "over": -28,
       "under": 28
@@ -120350,6 +122208,7 @@
       "money_moving": "over"
      },
      "open": 146.5,
+     "mny_ratio": 1.02,
      "gap": {
       "over": 2,
       "under": -2
@@ -120405,6 +122264,14 @@
     },
     "close_graded": {
      "follow_move": {
+      "side": "under",
+      "line": 144.5,
+      "odds": -110,
+      "res": "W",
+      "units": 0.909,
+      "took_fav": false
+     },
+     "rlm_ratio": {
       "side": "under",
       "line": 144.5,
       "odds": -110,
@@ -120639,6 +122506,7 @@
       "money_moving": "home"
      },
      "open": -6.5,
+     "mny_ratio": 1.04,
      "gap": {
       "home": 2,
       "away": -2
@@ -120765,6 +122633,7 @@
       "money_moving": "over"
      },
      "open": 154.5,
+     "mny_ratio": 1.21,
      "gap": {
       "over": 16,
       "under": -16
@@ -120805,6 +122674,7 @@
       "sharp_gap": "under"
      },
      "open": 154.5,
+     "mny_ratio": 0.88,
      "gap": {
       "over": -11,
       "under": 11
@@ -121087,6 +122957,7 @@
       "money_moving": "away"
      },
      "open": -25.5,
+     "mny_ratio": 1.14,
      "gap": {
       "home": 10,
       "away": -10
@@ -121130,6 +123001,7 @@
       "consensus_gap": "home"
      },
      "open": -25.5,
+     "mny_ratio": 1.19,
      "gap": {
       "home": 15,
       "away": -15
@@ -121246,6 +123118,7 @@
       "pin_value": "over"
      },
      "open": 156.5,
+     "mny_ratio": 1.17,
      "gap": {
       "over": 8,
       "under": -8
@@ -121391,6 +123264,7 @@
       "pin_value": "home"
      },
      "open": -3.5,
+     "mny_ratio": 1.18,
      "gap": {
       "home": 8,
       "away": -8
@@ -121540,6 +123414,7 @@
       "pin_value": "over"
      },
      "open": 137.5,
+     "mny_ratio": 1.27,
      "gap": {
       "over": 19,
       "under": -19
@@ -121872,6 +123747,7 @@
       "pin_value": "away"
      },
      "open": -25.5,
+     "mny_ratio": 1.2,
      "gap": {
       "home": 10,
       "away": -10
@@ -122028,6 +123904,7 @@
       "pin_value": "over"
      },
      "open": 147.5,
+     "mny_ratio": 1.1,
      "gap": {
       "over": 7,
       "under": -7
@@ -122071,6 +123948,7 @@
       "money_moving": "under"
      },
      "open": 147.5,
+     "mny_ratio": 0.92,
      "gap": {
       "over": -6,
       "under": 6
@@ -122499,12 +124377,14 @@
      },
      "calls": {
       "follow_move": "under",
+      "rlm_ratio": "under",
       "money_level": "under",
       "sharp_gap": "under",
       "money_moving": "over",
       "pin_value": "under"
      },
      "open": 140.5,
+     "mny_ratio": 2.08,
      "gap": {
       "over": -27,
       "under": 27
@@ -122543,11 +124423,13 @@
      },
      "calls": {
       "follow_move": "under",
+      "rlm_ratio": "under",
       "money_level": "under",
       "sharp_gap": "under",
       "pin_value": "under"
      },
      "open": 140.5,
+     "mny_ratio": 1.77,
      "gap": {
       "over": -31,
       "under": 31
@@ -122563,6 +124445,15 @@
     },
     "early_graded": {
      "follow_move": {
+      "side": "under",
+      "line": 139.5,
+      "odds": -110,
+      "res": "W",
+      "units": 0.909,
+      "took_fav": false,
+      "clv": 1.0
+     },
+     "rlm_ratio": {
       "side": "under",
       "line": 139.5,
       "odds": -110,
@@ -122601,6 +124492,14 @@
     },
     "close_graded": {
      "follow_move": {
+      "side": "under",
+      "line": 138.5,
+      "odds": -110,
+      "res": "W",
+      "units": 0.909,
+      "took_fav": false
+     },
+     "rlm_ratio": {
       "side": "under",
       "line": 138.5,
       "odds": -110,
@@ -122838,6 +124737,7 @@
       "consensus_gap": "home"
      },
      "open": -1.5,
+     "mny_ratio": 1.21,
      "gap": {
       "home": -11,
       "away": 11
@@ -123011,6 +124911,7 @@
       "sharp_gap": "over"
      },
      "open": 159.5,
+     "mny_ratio": 1.02,
      "gap": {
       "over": 2,
       "under": -2
@@ -123371,6 +125272,7 @@
       "money_moving": "under"
      },
      "open": 154.5,
+     "mny_ratio": 0.84,
      "gap": {
       "over": -9,
       "under": 9
@@ -123519,6 +125421,7 @@
       "money_moving": "home"
      },
      "open": -35.5,
+     "mny_ratio": 0.82,
      "gap": {
       "home": 7,
       "away": -7
@@ -123658,6 +125561,7 @@
       "pin_value": "under"
      },
      "open": 138.5,
+     "mny_ratio": 0.33,
      "gap": {
       "over": 10,
       "under": -10
@@ -123815,6 +125719,7 @@
       "pin_value": "home"
      },
      "open": 3.5,
+     "mny_ratio": 1.27,
      "gap": {
       "home": -18,
       "away": 18
@@ -123953,6 +125858,7 @@
       "pin_value": "over"
      },
      "open": 143.5,
+     "mny_ratio": 0.75,
      "gap": {
       "over": 3,
       "under": -3
@@ -123994,6 +125900,7 @@
       "money_level": "over"
      },
      "open": 143.5,
+     "mny_ratio": 1.0,
      "gap": {
       "over": 0,
       "under": 0
@@ -124265,6 +126172,7 @@
       "money_moving": "away"
      },
      "open": 2.5,
+     "mny_ratio": 0.91,
      "gap": {
       "home": -4,
       "away": 4
@@ -124400,12 +126308,14 @@
      },
      "calls": {
       "follow_move": "under",
+      "rlm_ratio": "under",
       "money_level": "under",
       "sharp_gap": "under",
       "money_moving": "under",
       "pin_value": "under"
      },
      "open": 142.5,
+     "mny_ratio": 1.68,
      "gap": {
       "over": -28,
       "under": 28
@@ -124476,6 +126386,14 @@
     },
     "close_graded": {
      "follow_move": {
+      "side": "under",
+      "line": 141.5,
+      "odds": -110,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": false
+     },
+     "rlm_ratio": {
       "side": "under",
       "line": 141.5,
       "odds": -110,
@@ -124812,6 +126730,7 @@
      },
      "calls": {
       "follow_move": "over",
+      "rlm_ratio": "over",
       "money_level": "over",
       "sharp_gap": "over",
       "money_moving": "over",
@@ -124819,6 +126738,7 @@
       "pin_value": "over"
      },
      "open": 150.5,
+     "mny_ratio": 1.94,
      "gap": {
       "over": 30,
       "under": -30
@@ -124919,6 +126839,14 @@
     },
     "close_graded": {
      "follow_move": {
+      "side": "over",
+      "line": 154.5,
+      "odds": -115,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": true
+     },
+     "rlm_ratio": {
       "side": "over",
       "line": 154.5,
       "odds": -115,
@@ -125145,6 +127073,7 @@
       "pin_value": "away"
      },
      "open": -19.5,
+     "mny_ratio": 0.51,
      "gap": {
       "home": 22,
       "away": -22
@@ -125293,6 +127222,7 @@
       "money_moving": "over"
      },
      "open": 153.5,
+     "mny_ratio": 1.36,
      "gap": {
       "over": 23,
       "under": -23
@@ -125336,6 +127266,7 @@
       "pin_value": "under"
      },
      "open": 153.5,
+     "mny_ratio": 1.08,
      "gap": {
       "over": 7,
       "under": -7
@@ -125583,6 +127514,7 @@
       "pin_value": "home"
      },
      "open": -9.5,
+     "mny_ratio": 1.24,
      "gap": {
       "home": -12,
       "away": 12
@@ -125722,6 +127654,7 @@
      },
      "calls": {
       "follow_move": "under",
+      "rlm_ratio": "under",
       "money_level": "under",
       "sharp_gap": "under",
       "money_moving": "under",
@@ -125729,6 +127662,7 @@
       "pin_value": "over"
      },
      "open": 150.5,
+     "mny_ratio": 3.41,
      "gap": {
       "over": -53,
       "under": 53
@@ -125772,6 +127706,7 @@
       "money_moving": "over"
      },
      "open": 150.5,
+     "mny_ratio": 1.01,
      "gap": {
       "over": 1,
       "under": -1
@@ -125827,6 +127762,14 @@
     },
     "close_graded": {
      "follow_move": {
+      "side": "under",
+      "line": 147.5,
+      "odds": -105,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": false
+     },
+     "rlm_ratio": {
       "side": "under",
       "line": 147.5,
       "odds": -105,
@@ -126191,6 +128134,7 @@
       "pin_value": "over"
      },
      "open": 144.5,
+     "mny_ratio": 1.1,
      "gap": {
       "over": 9,
       "under": -9
@@ -126484,6 +128428,7 @@
       "money_moving": "home"
      },
      "open": -15,
+     "mny_ratio": 1.18,
      "gap": {
       "home": 13,
       "away": -13
@@ -126635,6 +128580,7 @@
       "pin_value": "under"
      },
      "open": 147.5,
+     "mny_ratio": 1.09,
      "gap": {
       "over": 7,
       "under": -7
@@ -126678,6 +128624,7 @@
       "pin_value": "over"
      },
      "open": 147.5,
+     "mny_ratio": 1.05,
      "gap": {
       "over": 5,
       "under": -5
@@ -127135,6 +129082,7 @@
       "pin_value": "over"
      },
      "open": 151.5,
+     "mny_ratio": 0.9,
      "gap": {
       "over": -7,
       "under": 7
@@ -127335,6 +129283,7 @@
       "pin_value": "home"
      },
      "open": -18.5,
+     "mny_ratio": 0.81,
      "gap": {
       "home": 3,
       "away": -3
@@ -127493,6 +129442,7 @@
       "pin_value": "over"
      },
      "open": 163.5,
+     "mny_ratio": 1.81,
      "gap": {
       "over": -39,
       "under": 39
@@ -127536,6 +129486,7 @@
       "pin_value": "under"
      },
      "open": 163.5,
+     "mny_ratio": 1.0,
      "gap": {
       "over": 0,
       "under": 0
@@ -127841,6 +129792,7 @@
       "consensus_gap": "home"
      },
      "open": -43.5,
+     "mny_ratio": 1.26,
      "gap": {
       "home": 18,
       "away": -18
@@ -127884,6 +129836,7 @@
       "money_moving": "home"
      },
      "open": -43.5,
+     "mny_ratio": 1.36,
      "gap": {
       "home": 24,
       "away": -24
@@ -128050,6 +130003,7 @@
       "consensus_gap": "over"
      },
      "open": 156.5,
+     "mny_ratio": 0.78,
      "gap": {
       "over": 4,
       "under": -4
@@ -128185,6 +130139,7 @@
       "money_moving": "home"
      },
      "open": -10.5,
+     "mny_ratio": 1.12,
      "gap": {
       "home": 9,
       "away": -9
@@ -128296,6 +130251,7 @@
      },
      "calls": {
       "follow_move": "under",
+      "rlm_ratio": "under",
       "money_level": "under",
       "sharp_gap": "under",
       "money_moving": "under",
@@ -128303,6 +130259,7 @@
       "pin_value": "over"
      },
      "open": 141.5,
+     "mny_ratio": 2.93,
      "gap": {
       "over": -58,
       "under": 58
@@ -128381,6 +130338,14 @@
     },
     "close_graded": {
      "follow_move": {
+      "side": "under",
+      "line": 136.5,
+      "odds": -110,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": false
+     },
+     "rlm_ratio": {
       "side": "under",
       "line": 136.5,
       "odds": -110,
@@ -128617,6 +130582,7 @@
       "consensus_gap": "home"
      },
      "open": -13.5,
+     "mny_ratio": 1.32,
      "gap": {
       "home": 18,
       "away": -18
@@ -128751,6 +130717,7 @@
       "money_moving": "under"
      },
      "open": 150.5,
+     "mny_ratio": 1.05,
      "gap": {
       "over": -4,
       "under": 4
@@ -129043,6 +131010,7 @@
       "money_moving": "away"
      },
      "open": -36.5,
+     "mny_ratio": 1.22,
      "gap": {
       "home": -11,
       "away": 11
@@ -129173,6 +131141,7 @@
       "pin_value": "under"
      },
      "open": 148.5,
+     "mny_ratio": 1.1,
      "gap": {
       "over": 6,
       "under": -6
@@ -129356,6 +131325,7 @@
       "consensus_gap": "home"
      },
      "open": 7.5,
+     "mny_ratio": 1.0,
      "gap": {
       "home": 0,
       "away": 0
@@ -129460,6 +131430,7 @@
       "money_level": "under"
      },
      "open": 160.5,
+     "mny_ratio": 1.0,
      "gap": {
       "over": 0,
       "under": 0
