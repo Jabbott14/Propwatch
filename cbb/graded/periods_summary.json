@@ -1,27 +1,27 @@
 {
- "generated": "2026-11-12 06:34 UTC",
+ "generated": "2026-11-12 06:42 UTC",
  "graded": 722,
  "unmatched_finals": 156,
  "base_rates": {
   "spread": {
-   "rate": 0.5317460317460317,
-   "n": 126
+   "rate": 0.49504950495049505,
+   "n": 202
   },
   "total": {
-   "rate": 0.5824175824175825,
-   "n": 91
+   "rate": 0.5138888888888888,
+   "n": 144
   },
   "ml": {
-   "rate": 0.7291666666666666,
-   "n": 48
+   "rate": 0.752,
+   "n": 125
   },
   "tt_home": {
-   "rate": 0.46511627906976744,
-   "n": 43
+   "rate": 0.6048387096774194,
+   "n": 124
   },
   "tt_away": {
-   "rate": 0.48333333333333334,
-   "n": 60
+   "rate": 0.5819672131147541,
+   "n": 122
   }
  },
  "min_n_to_propose": 50,
@@ -39,8 +39,8 @@
    "roi_pct": 16.2,
    "z_vs_breakeven": 2.31,
    "picked_default_pct": 62.1,
-   "expected_pct": 51.2,
-   "edge_pts": 10.2,
+   "expected_pct": 50.1,
+   "edge_pts": 11.4,
    "proposal": "PROMOTE: beats break-even and its own base rate"
   },
   {
@@ -56,8 +56,8 @@
    "roi_pct": 48.1,
    "z_vs_breakeven": -3.34,
    "picked_default_pct": 5.1,
-   "expected_pct": 28.4,
-   "edge_pts": -2.8,
+   "expected_pct": 26.1,
+   "edge_pts": -0.4,
    "proposal": "keep collecting (39/50)"
   },
   {
@@ -73,8 +73,8 @@
    "roi_pct": -8.4,
    "z_vs_breakeven": -2.46,
    "picked_default_pct": 43.9,
-   "expected_pct": 49.4,
-   "edge_pts": -2.4,
+   "expected_pct": 48.8,
+   "edge_pts": -1.8,
    "proposal": "DROP: below break-even"
   },
   {
@@ -90,9 +90,9 @@
    "roi_pct": -35.9,
    "z_vs_breakeven": -3.35,
    "picked_default_pct": 43.6,
-   "expected_pct": 50.3,
-   "edge_pts": -15.2,
-   "proposal": "INVERT candidate: wrong well beyond its base rate"
+   "expected_pct": 48.8,
+   "edge_pts": -13.7,
+   "proposal": "DROP: below break-even"
   },
   {
    "signal": "pin_value",
@@ -107,8 +107,8 @@
    "roi_pct": 7.5,
    "z_vs_breakeven": 1.03,
    "picked_default_pct": 65.7,
-   "expected_pct": 51.7,
-   "edge_pts": 5.9,
+   "expected_pct": 50.1,
+   "edge_pts": 7.5,
    "clv_avg": 0.22,
    "proposal": "no edge shown yet"
   },
@@ -125,8 +125,8 @@
    "roi_pct": 65.4,
    "z_vs_breakeven": -2.37,
    "picked_default_pct": 3.7,
-   "expected_pct": 28.8,
-   "edge_pts": 0.8,
+   "expected_pct": 26.7,
+   "edge_pts": 3.0,
    "clv_avg": 0.53,
    "proposal": "keep collecting (27/50)"
   },
@@ -143,8 +143,8 @@
    "roi_pct": 8.9,
    "z_vs_breakeven": 1.71,
    "picked_default_pct": 54.3,
-   "expected_pct": 52.4,
-   "edge_pts": 6.4,
+   "expected_pct": 51.7,
+   "edge_pts": 7.1,
    "clv_avg": 0.01,
    "proposal": "PROMOTE: beats break-even and its own base rate"
   },
@@ -161,8 +161,8 @@
    "roi_pct": -39.3,
    "z_vs_breakeven": -2.09,
    "picked_default_pct": 40.0,
-   "expected_pct": 50.7,
-   "edge_pts": -17.4,
+   "expected_pct": 48.1,
+   "edge_pts": -14.7,
    "clv_avg": 0.1,
    "proposal": "keep collecting (30/50)"
   },
@@ -179,8 +179,8 @@
    "roi_pct": 16.2,
    "z_vs_breakeven": 2.31,
    "picked_default_pct": 62.1,
-   "expected_pct": 51.2,
-   "edge_pts": 10.2,
+   "expected_pct": 50.1,
+   "edge_pts": 11.4,
    "proposal": "PROMOTE: beats break-even and its own base rate"
   },
   {
@@ -196,8 +196,8 @@
    "roi_pct": 11.5,
    "z_vs_breakeven": 1.16,
    "picked_default_pct": 65.4,
-   "expected_pct": 51.0,
-   "edge_pts": 8.0,
+   "expected_pct": 49.8,
+   "edge_pts": 9.1,
    "proposal": "no edge shown yet"
   },
   {
@@ -213,8 +213,8 @@
    "roi_pct": 20.5,
    "z_vs_breakeven": 2.09,
    "picked_default_pct": 59.0,
-   "expected_pct": 51.5,
-   "edge_pts": 12.4,
+   "expected_pct": 50.3,
+   "edge_pts": 13.6,
    "proposal": "PROMOTE: beats break-even and its own base rate"
   },
   {
@@ -230,8 +230,8 @@
    "roi_pct": 48.1,
    "z_vs_breakeven": -3.34,
    "picked_default_pct": 5.1,
-   "expected_pct": 28.4,
-   "edge_pts": -2.8,
+   "expected_pct": 26.1,
+   "edge_pts": -0.4,
    "proposal": "keep collecting (39/50)"
   },
   {
@@ -247,8 +247,8 @@
    "roi_pct": 50.7,
    "z_vs_breakeven": -3.42,
    "picked_default_pct": 0.0,
-   "expected_pct": 27.1,
-   "edge_pts": -2.8,
+   "expected_pct": 24.8,
+   "edge_pts": -0.5,
    "proposal": "keep collecting (37/50)"
   },
   {
@@ -264,8 +264,8 @@
    "roi_pct": -1.0,
    "z_vs_breakeven": -0.07,
    "picked_default_pct": 100.0,
-   "expected_pct": 53.2,
-   "edge_pts": -3.2,
+   "expected_pct": 49.5,
+   "edge_pts": 0.5,
    "proposal": "keep collecting (2/50)"
   },
   {
@@ -281,8 +281,8 @@
    "roi_pct": 0.2,
    "z_vs_breakeven": -0.49,
    "picked_default_pct": 44.7,
-   "expected_pct": 48.6,
-   "edge_pts": 2.3,
+   "expected_pct": 48.8,
+   "edge_pts": 2.1,
    "proposal": "no edge shown yet"
   },
   {
@@ -298,8 +298,8 @@
    "roi_pct": -3.4,
    "z_vs_breakeven": -1.27,
    "picked_default_pct": 44.4,
-   "expected_pct": 47.5,
-   "edge_pts": -1.2,
+   "expected_pct": 47.2,
+   "edge_pts": -0.9,
    "proposal": "no edge shown yet"
   },
   {
@@ -315,8 +315,8 @@
    "roi_pct": 7.8,
    "z_vs_breakeven": 0.68,
    "picked_default_pct": 46.4,
-   "expected_pct": 49.8,
-   "edge_pts": 6.8,
+   "expected_pct": 50.0,
+   "edge_pts": 6.5,
    "proposal": "no edge shown yet"
   },
   {
@@ -332,8 +332,8 @@
    "roi_pct": -0.9,
    "z_vs_breakeven": -0.06,
    "picked_default_pct": 43.8,
-   "expected_pct": 49.0,
-   "edge_pts": 3.1,
+   "expected_pct": 49.8,
+   "edge_pts": 2.3,
    "proposal": "no edge shown yet"
   },
   {
@@ -349,8 +349,8 @@
    "roi_pct": -18.4,
    "z_vs_breakeven": -3.07,
    "picked_default_pct": 42.9,
-   "expected_pct": 50.3,
-   "edge_pts": -7.8,
+   "expected_pct": 48.7,
+   "edge_pts": -6.2,
    "proposal": "DROP: below break-even"
   },
   {
@@ -366,8 +366,8 @@
    "roi_pct": -7.8,
    "z_vs_breakeven": -0.76,
    "picked_default_pct": 47.9,
-   "expected_pct": 49.9,
-   "edge_pts": -1.9,
+   "expected_pct": 50.0,
+   "edge_pts": -2.1,
    "proposal": "no edge shown yet"
   },
   {
@@ -383,8 +383,8 @@
    "roi_pct": -27.0,
    "z_vs_breakeven": -2.62,
    "picked_default_pct": 44.0,
-   "expected_pct": 50.2,
-   "edge_pts": -12.1,
+   "expected_pct": 49.0,
+   "edge_pts": -10.9,
    "proposal": "DROP: below break-even"
   },
   {
@@ -400,8 +400,8 @@
    "roi_pct": -19.1,
    "z_vs_breakeven": -1.86,
    "picked_default_pct": 37.3,
-   "expected_pct": 50.9,
-   "edge_pts": -8.7,
+   "expected_pct": 47.3,
+   "edge_pts": -5.2,
    "proposal": "DROP: below break-even"
   },
   {
@@ -417,8 +417,8 @@
    "roi_pct": -69.5,
    "z_vs_breakeven": -1.75,
    "picked_default_pct": 33.3,
-   "expected_pct": 47.3,
-   "edge_pts": -30.6,
+   "expected_pct": 49.5,
+   "edge_pts": -32.9,
    "proposal": "keep collecting (6/50)"
   },
   {
@@ -451,8 +451,8 @@
    "roi_pct": -8.4,
    "z_vs_breakeven": -0.07,
    "picked_default_pct": 0.0,
-   "expected_pct": 41.8,
-   "edge_pts": 8.2,
+   "expected_pct": 48.6,
+   "edge_pts": 1.4,
    "proposal": "keep collecting (2/50)"
   },
   {
@@ -468,8 +468,8 @@
    "roi_pct": -33.6,
    "z_vs_breakeven": -3.01,
    "picked_default_pct": 44.3,
-   "expected_pct": 50.5,
-   "edge_pts": -14.1,
+   "expected_pct": 48.7,
+   "edge_pts": -12.4,
    "proposal": "DROP: below break-even"
   },
   {
@@ -485,8 +485,8 @@
    "roi_pct": -18.2,
    "z_vs_breakeven": -0.48,
    "picked_default_pct": 44.4,
-   "expected_pct": 49.6,
-   "edge_pts": -5.2,
+   "expected_pct": 50.1,
+   "edge_pts": -5.6,
    "proposal": "keep collecting (9/50)"
   },
   {
@@ -502,8 +502,8 @@
    "roi_pct": -18.3,
    "z_vs_breakeven": -0.94,
    "picked_default_pct": 60.5,
-   "expected_pct": 49.6,
-   "edge_pts": -4.9,
+   "expected_pct": 51.7,
+   "edge_pts": -7.0,
    "proposal": "keep collecting (38/50)"
   },
   {
@@ -519,8 +519,8 @@
    "roi_pct": -51.3,
    "z_vs_breakeven": -3.27,
    "picked_default_pct": 29.3,
-   "expected_pct": 51.4,
-   "edge_pts": -24.6,
+   "expected_pct": 45.7,
+   "edge_pts": -18.8,
    "proposal": "keep collecting (41/50)"
   },
   {
@@ -536,8 +536,8 @@
    "roi_pct": 7.5,
    "z_vs_breakeven": 1.03,
    "picked_default_pct": 65.7,
-   "expected_pct": 51.7,
-   "edge_pts": 5.9,
+   "expected_pct": 50.1,
+   "edge_pts": 7.5,
    "clv_avg": 0.22,
    "proposal": "no edge shown yet"
   },
@@ -554,8 +554,8 @@
    "roi_pct": -6.6,
    "z_vs_breakeven": -0.32,
    "picked_default_pct": 70.5,
-   "expected_pct": 51.3,
-   "edge_pts": -1.3,
+   "expected_pct": 49.8,
+   "edge_pts": 0.2,
    "clv_avg": 0.18,
    "proposal": "keep collecting (44/50)"
   },
@@ -572,8 +572,8 @@
    "roi_pct": 18.8,
    "z_vs_breakeven": 1.67,
    "picked_default_pct": 61.8,
-   "expected_pct": 51.9,
-   "edge_pts": 11.7,
+   "expected_pct": 50.3,
+   "edge_pts": 13.3,
    "clv_avg": 0.25,
    "proposal": "PROMOTE: beats break-even and its own base rate"
   },
@@ -590,8 +590,8 @@
    "roi_pct": 65.4,
    "z_vs_breakeven": -2.37,
    "picked_default_pct": 3.7,
-   "expected_pct": 28.8,
-   "edge_pts": 0.8,
+   "expected_pct": 26.7,
+   "edge_pts": 3.0,
    "clv_avg": 0.53,
    "proposal": "keep collecting (27/50)"
   },
@@ -608,8 +608,8 @@
    "roi_pct": 78.6,
    "z_vs_breakeven": -2.04,
    "picked_default_pct": 0.0,
-   "expected_pct": 27.1,
-   "edge_pts": 4.9,
+   "expected_pct": 24.8,
+   "edge_pts": 7.2,
    "clv_avg": 0.62,
    "proposal": "keep collecting (25/50)"
   },
@@ -644,8 +644,8 @@
    "roi_pct": 18.2,
    "z_vs_breakeven": 2.65,
    "picked_default_pct": 57.7,
-   "expected_pct": 53.4,
-   "edge_pts": 12.0,
+   "expected_pct": 54.0,
+   "edge_pts": 11.4,
    "clv_avg": 0.08,
    "proposal": "PROMOTE: beats break-even and its own base rate"
   },
@@ -662,8 +662,8 @@
    "roi_pct": 7.3,
    "z_vs_breakeven": 1.48,
    "picked_default_pct": 66.7,
-   "expected_pct": 57.6,
-   "edge_pts": 5.1,
+   "expected_pct": 58.4,
+   "edge_pts": 4.3,
    "clv_avg": 0.06,
    "proposal": "no edge shown yet"
   },
@@ -680,8 +680,8 @@
    "roi_pct": 58.1,
    "z_vs_breakeven": 2.9,
    "picked_default_pct": 60.9,
-   "expected_pct": 50.7,
-   "edge_pts": 31.9,
+   "expected_pct": 49.9,
+   "edge_pts": 32.7,
    "clv_avg": 0.13,
    "proposal": "keep collecting (23/50)"
   },
@@ -698,8 +698,8 @@
    "roi_pct": 6.9,
    "z_vs_breakeven": 0.47,
    "picked_default_pct": 40.0,
-   "expected_pct": 48.4,
-   "edge_pts": 8.3,
+   "expected_pct": 49.7,
+   "edge_pts": 6.9,
    "clv_avg": 0.07,
    "proposal": "keep collecting (30/50)"
   },
@@ -716,8 +716,8 @@
    "roi_pct": -5.0,
    "z_vs_breakeven": -0.52,
    "picked_default_pct": 49.3,
-   "expected_pct": 50.9,
-   "edge_pts": -1.6,
+   "expected_pct": 48.3,
+   "edge_pts": 1.0,
    "clv_avg": -0.08,
    "proposal": "no edge shown yet"
   },
@@ -734,8 +734,8 @@
    "roi_pct": 0.4,
    "z_vs_breakeven": -0.0,
    "picked_default_pct": 76.2,
-   "expected_pct": 51.7,
-   "edge_pts": 0.7,
+   "expected_pct": 49.7,
+   "edge_pts": 2.6,
    "clv_avg": 0.19,
    "proposal": "keep collecting (21/50)"
   },
@@ -752,8 +752,8 @@
    "roi_pct": -12.0,
    "z_vs_breakeven": -0.64,
    "picked_default_pct": 37.5,
-   "expected_pct": 50.4,
-   "edge_pts": -4.6,
+   "expected_pct": 48.0,
+   "edge_pts": -2.1,
    "clv_avg": -0.04,
    "proposal": "keep collecting (24/50)"
   },
@@ -770,8 +770,8 @@
    "roi_pct": -2.8,
    "z_vs_breakeven": -0.24,
    "picked_default_pct": 38.5,
-   "expected_pct": 50.8,
-   "edge_pts": -0.8,
+   "expected_pct": 47.6,
+   "edge_pts": 2.4,
    "clv_avg": -0.35,
    "proposal": "keep collecting (26/50)"
   },
@@ -788,8 +788,8 @@
    "roi_pct": 83.3,
    "z_vs_breakeven": 0.95,
    "picked_default_pct": 100.0,
-   "expected_pct": 58.2,
-   "edge_pts": 41.8,
+   "expected_pct": 51.4,
+   "edge_pts": 48.6,
    "clv_avg": -1.0,
    "proposal": "keep collecting (1/50)"
   },
@@ -806,8 +806,8 @@
    "roi_pct": 83.3,
    "z_vs_breakeven": 0.95,
    "picked_default_pct": 100.0,
-   "expected_pct": 58.2,
-   "edge_pts": 41.8,
+   "expected_pct": 51.4,
+   "edge_pts": 48.6,
    "clv_avg": -1.0,
    "proposal": "keep collecting (1/50)"
   },
@@ -824,8 +824,8 @@
    "roi_pct": -43.5,
    "z_vs_breakeven": -2.3,
    "picked_default_pct": 37.9,
-   "expected_pct": 50.5,
-   "edge_pts": -19.4,
+   "expected_pct": 47.9,
+   "edge_pts": -16.9,
    "clv_avg": 0.14,
    "proposal": "keep collecting (29/50)"
   },
@@ -860,8 +860,8 @@
    "roi_pct": -24.9,
    "z_vs_breakeven": -0.74,
    "picked_default_pct": 25.0,
-   "expected_pct": 50.8,
-   "edge_pts": -9.2,
+   "expected_pct": 45.9,
+   "edge_pts": -4.2,
    "clv_avg": 0.25,
    "proposal": "keep collecting (12/50)"
   },
@@ -878,8 +878,8 @@
    "roi_pct": -50.9,
    "z_vs_breakeven": -1.99,
    "picked_default_pct": 46.7,
-   "expected_pct": 50.2,
-   "edge_pts": -23.6,
+   "expected_pct": 49.3,
+   "edge_pts": -22.6,
    "clv_avg": 0.2,
    "proposal": "keep collecting (15/50)"
   }
