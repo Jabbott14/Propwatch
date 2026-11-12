@@ -191,17 +191,23 @@ jobs:
               PMX=archive("pin_matchups","https://guest.api.arcadia.pinnacle.com/0.1/leagues/889/matchups",
                       PIN,ts=ts,day=day,diag=diag)
               if PPX and PMX: LASTPIN=pin_parse(PMX,PPX)
+              # SBR every cycle, for two reasons. Its `openingLineViews` are the TRUE
+              # market opener -- measured 2026-11-11, 19 of 28 games had an opener
+              # different from the first value in our own archive (mean 0.71 pts, worst
+              # 3.0 on TEN@CIN). follow_move and rlm take their DIRECTION from the
+              # opener, so a wrong one can reverse the signal. It also carries 8 books'
+              # current numbers, and the cross-book lag read ("most books moved, FanDuel
+              # has not") is the literal form of "find lines before they move" -- at the
+              # heavy tick that was 4 snapshots in the 6 hours before MNF, by which point
+              # FanDuel had already followed. ~52KB/cycle.
+              archive("sbr","https://www.sportsbookreview.com/betting-odds/nfl-football/",
+                      ts=ts,day=day,diag=diag)
 
               if heavy:
                   archive("vsin","https://data.vsin.com/betting-splits/?sport=NFL",ts=ts,day=day,diag=diag)
-                  archive("sbr","https://www.sportsbookreview.com/betting-odds/nfl-football/",
-                          ts=ts,day=day,diag=diag)
-                  # SBR's default view is spreads + moneylines, and its openingLineViews
-                  # are the TRUE market opener -- measured 2026-11-11, 19 of 28 games had
-                  # an opener different from the first value in our own archive (mean 0.71
-                  # pts, worst 3.0). follow_move and rlm take their DIRECTION from the
-                  # opener, so a wrong one can reverse the signal. Totals live on a
-                  # separate view, so pull it too; a bad URL just lands in diag.
+                  # SBR's default view is spreads + moneylines. Its totals sit on a
+                  # separate view; openers do not change, so the heavy tick is enough.
+                  # A bad URL just lands in diag.
                   archive("sbr_totals","https://www.sportsbookreview.com/betting-odds/nfl-football/totals/",
                           ts=ts,day=day,diag=diag)
                   archive("espn","https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard",

@@ -91,7 +91,9 @@ jobs:
           MIN_N = 30
           BREAKEVEN = 0.524            # -110
           PUBLIC_MIN = 60              # tickets% needed before a side counts as "the public side"
-          SIGNALS = ("follow_move", "rlm", "money_level", "sharp_gap", "money_moving", "pin_value")
+          SIGNALS = ("follow_move", "rlm", "money_level", "sharp_gap", "money_moving", "pin_value",
+                     "book_lag", "consensus_gap")
+          LAG_BOOKS = 5        # of 8 SBR books that must have moved before FanDuel counts as stale
           # NFL volumes run 2k-120k bets a game, and Pinnacle NFL limits run $3k-$75k.
           NB_BUCKETS = ((0, 10000, "<10k bets"), (10000, 40000, "10-40k bets"), (40000, 10**9, "40k+ bets"))
           LIM_BUCKETS = ((0, 10000, "pin limit <$10k"), (10000, 50000, "pin $10-50k"),
@@ -224,8 +226,9 @@ jobs:
               SBR's archived page is the spread/moneyline view, so totals have no opener here yet;
               those fall back to first-seen and are flagged `open_src: "first_seen"`.
               """
-              out = {}
+              out, cur = {}, collections.defaultdict(dict)
               for p in sorted(glob.glob(R("raw", "sbr", "*", "*"))):
+                  t = os.path.basename(p).split(".")[0]
                   try:
                       o = gzip.open if p.endswith(".gz") else open
                       with o(p, "rt", errors="replace") as fh: txt = fh.read()
@@ -246,7 +249,19 @@ jobs:
                           if ol.get("homeSpread") is not None: rec.setdefault("spread", ol["homeSpread"])
                           if ol.get("homeOdds") is not None:   rec.setdefault("moneyline", ol["homeOdds"])
                           if ol.get("total") is not None:      rec.setdefault("total", ol["total"])
-              return out
+                          # every book's CURRENT number at this snapshot, for consensus and lag
+                          snap = {}
+                          for ov in (gr.get("oddsViews") or []):
+                              if not ov: continue
+                              bk = ov.get("sportsbook") or str(ov.get("sportsbookId"))
+                              cl = ov.get("currentLine") or {}
+                              op = ov.get("openingLine") or {}
+                              snap[bk] = {"spread": cl.get("homeSpread"), "total": cl.get("total"),
+                                          "moneyline": cl.get("homeOdds"),
+                                          "o_spread": op.get("homeSpread"), "o_total": op.get("total"),
+                                          "o_moneyline": op.get("homeOdds")}
+                          if snap: cur[k][t] = snap
+              return out, cur
 
 
           def match_pin(g, pin_keys):
@@ -281,7 +296,50 @@ jobs:
               return out
 
 
-          def read(gid, mkt, t, ser, prow, true_open=None):
+          def book_read(books, mkt, t, fd_line, fd_open, s0, s1):
+              """Cross-book consensus and lag from SBR's 8 books. No splits involved.
+
+              consensus_gap  FanDuel's number is off the 8-book median -- take the side FanDuel
+                             is giving away.
+              book_lag       at least LAG_BOOKS of them have moved off their own opener in one
+                             direction and FanDuel has NOT. FanDuel's number is stale and about to
+                             follow, so the side they moved toward is available cheap. This is the
+                             literal form of "find lines before they move", and it only works if
+                             SBR is sampled at the same cadence as FanDuel.
+              """
+              if not books: return {}, {}
+              ks = [k for k in books if k <= t]
+              if not ks: return {}, {}
+              snap = books[max(ks)]
+              vals = [b.get(mkt) for b in snap.values() if b.get(mkt) is not None]
+              if len(vals) < 4: return {}, {}
+              vals.sort()
+              med = vals[len(vals) // 2] if len(vals) % 2 else (vals[len(vals)//2 - 1] + vals[len(vals)//2]) / 2
+              calls, info = {}, {"books": len(vals), "median": med,
+                                 "spread_of_books": round(vals[-1] - vals[0], 1)}
+              if fd_line is not None and fd_line != med:
+                  if mkt == "spread":      calls["consensus_gap"] = s0 if fd_line > med else s1
+                  elif mkt == "total":     calls["consensus_gap"] = s1 if fd_line > med else s0
+                  else:
+                      i_fd, i_md = imp(fd_line), imp(med)
+                      if i_fd and i_md: calls["consensus_gap"] = s1 if i_fd > i_md else s0
+                  info["fd_vs_median"] = round(fd_line - med, 1) if mkt != "moneyline" else None
+              up = dn = 0
+              for b in snap.values():
+                  c, o = b.get(mkt), b.get("o_" + mkt)
+                  if c is None or o is None or c == o: continue
+                  up += c > o; dn += c < o
+              info["books_up"], info["books_dn"] = up, dn
+              fd_moved = fd_line is not None and fd_open is not None and fd_line != fd_open
+              if not fd_moved and max(up, dn) >= LAG_BOOKS and min(up, dn) == 0:
+                  d = 1 if up > dn else -1
+                  if mkt == "spread":    calls["book_lag"] = s1 if d > 0 else s0
+                  elif mkt == "total":   calls["book_lag"] = s0 if d > 0 else s1
+                  else:                  calls["book_lag"] = s0 if d > 0 else s1
+              return calls, info
+
+
+          def read(gid, mkt, t, ser, prow, true_open=None, books=None):
               """The system's read on one market at time t. None if no FanDuel line yet."""
               s0, s1 = SIDES[mkt]
               A, B = ser.get((gid, mkt, s0), []), ser.get((gid, mkt, s1), [])
@@ -338,6 +396,10 @@ jobs:
                   if max(da, db) > 0 and da != db:
                       r["calls"]["money_moving"] = s0 if da > db else s1
                   r["div"] = {s0: da, s1: db}
+
+              bc, bi = book_read(books, mkt, t, a[1], r["open"], s0, s1)
+              r["calls"].update(bc)
+              if bi: r["books"] = bi
 
               # --- Gate A. Pinnacle's number and the size it will take. A floor, never a veto.
               if prow:
@@ -423,7 +485,7 @@ jobs:
           # ------------------------------------------------------------------ build
           def build():
               games, ser, pin, finals = load()
-              SBR = load_sbr_openers()
+              SBR, SBRCUR = load_sbr_openers()
               pin_keys = list(pin.keys())
               now = now_utc(); nowts = tsfmt(now)
               graded, upcoming, unmatched = [], [], 0
@@ -434,6 +496,7 @@ jobs:
                   pk = match_pin(g, pin_keys)
                   prow = pin.get(pk, []) if pk else []
                   topen = SBR.get(g["game"], {})
+                  bks = SBRCUR.get(g["game"], {})
                   firsts = [s[0][0] for (gg, m, sd), s in ser.items() if gg == gid and s]
                   if not firsts: continue
                   first = min(firsts)
@@ -443,7 +506,7 @@ jobs:
                          "pin_matched": bool(pk), "markets": {}}
                   if kots > nowts:
                       for mkt in MARKETS:
-                          r = read(gid, mkt, nowts, ser, prow, topen.get(mkt))
+                          r = read(gid, mkt, nowts, ser, prow, topen.get(mkt), bks)
                           if r: rec["markets"][mkt] = {"now": r}
                       if rec["markets"]: upcoming.append(rec)
                       continue
@@ -454,9 +517,9 @@ jobs:
                   rec["total_pts"] = fin["as"] + fin["hs"]
                   last_pre = tsfmt(ko - dt.timedelta(minutes=1))
                   for mkt in MARKETS:
-                      cl = read(gid, mkt, last_pre, ser, prow, topen.get(mkt))
+                      cl = read(gid, mkt, last_pre, ser, prow, topen.get(mkt), bks)
                       if not cl: continue
-                      ea = read(gid, mkt, e_t, ser, prow, topen.get(mkt)) if e_t < kots else None
+                      ea = read(gid, mkt, e_t, ser, prow, topen.get(mkt), bks) if e_t < kots else None
                       out = {"close": cl}
                       if ea: out["early"] = ea
                       for cp, r in (("early", ea), ("close", cl)):
