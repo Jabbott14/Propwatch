@@ -89,6 +89,7 @@ jobs:
           FD = 69
           EARLY_MIN = 60
           MIN_N = 30
+          SHRINK_K = 25         # a signal's edge is shrunk toward zero by n/(n+K)
           BREAKEVEN = 0.524            # -110
           PUBLIC_MIN = 60              # tickets% needed before a side counts as "the public side"
           SIGNALS = ("pin_rlm", "follow_move", "rlm", "rlm_ratio", "money_level", "sharp_gap",
@@ -840,6 +841,62 @@ jobs:
                               lambda sig: (lambda q: f"{q['W']}-{q['L']}" if q else "0-0")(
                                   rec.get((sig, "both"))),
                               lambda x: x["game"])
+              # WEIGHT BY RECORD, NOT BY HEADCOUNT.
+              # Ranking by "how many signals agree" treats a 147-180 signal as equal evidence to a
+              # 56-37 one, so a market can show "7 agree, 0 against" while four of the seven have
+              # never earned anything. That is engine defect 3 in a new costume: counting
+              # restatements instead of independent confirmation.
+              #
+              # Each signal contributes its own base-rate-corrected edge in points, and only once
+              # it has MIN_N decided outcomes -- an unproven signal contributes ZERO rather than
+              # borrowing credibility from the ones beside it. Signals that oppose the lean
+              # subtract. Pairs already flagged `redundant_with` identify signals that are not
+              # independent (rlm_ratio REQUIRES follow_move, so counting both counts one thing
+              # twice); the subsumed one is dropped from the score.
+              # Weights are PER MARKET where the sample allows, falling back to the all-market
+              # number otherwise. pin_value is +36 on spreads and 18-18 on team totals -- one
+              # pooled weight would carry its spread record into markets where it has none.
+              W, SUB = {}, {}
+              for row in summary:
+                  if row["slice"] != "all" or row["checkpoint"] != "close": continue
+                  sig, mk = row["signal"], row.get("market")
+                  if "+" in sig:
+                      if row.get("redundant_with") and mk == "both":
+                          a_, b_ = sig.split("+", 1)
+                          SUB[b_ if row["redundant_with"] == a_ else a_] = row["redundant_with"]
+                      continue
+                  W[(sig, mk)] = (round(row.get("edge_pts") or 0.0, 1), row["W"] + row["L"])
+
+              def wt(sig, mkt):
+                  """A signal's weight is its base-rate-corrected edge IN THIS MARKET, shrunk toward
+                  zero by n/(n+K).
+
+                  Two failures this avoids. A hard cutoff creates a cliff: pin_value is 10-1 on
+                  NFL spreads, edge +36, and at any cutoff of 10 or less that single thin record
+                  dominates every other input on the board. And using one pooled weight carries a
+                  signal's record from the market where it works into markets where it does not --
+                  pin_value is +36 on spreads and 18-18 on team totals.
+
+                  Shrinkage handles both without an arbitrary line: 10-1 keeps about a third of its
+                  apparent edge, a 66-game record keeps about three quarters, and a market with no
+                  record of its own borrows the pooled number under the same discount."""
+                  e_m, n_m = W.get((sig, mkt), (0.0, 0))
+                  if n_m == 0:
+                      e_m, n_m = W.get((sig, "both"), (0.0, 0))
+                  return round(e_m * n_m / (n_m + SHRINK_K), 1) if n_m else 0.0
+
+              def score(calls, side, mkt):
+                  keep = {g_ for g_ in calls if SUB.get(g_) not in calls}
+                  pos = sum(wt(g_, mkt) for g_ in keep if calls[g_] == side)
+                  neg = sum(wt(g_, mkt) for g_ in keep if calls[g_] != side)
+                  return round(pos - neg, 1)
+
+              def band(sc):
+                  return ("A  weighted edge >= +10" if sc >= 10 else
+                          "B  weighted edge +5 to +10" if sc >= 5 else
+                          "C  weighted edge 0 to +5" if sc > 0 else
+                          "D  no weighted edge (agreement is all unproven or negative signals)")
+
               groups = collections.defaultdict(list)
               for g in upcoming:
                   for mkt, m in g["markets"].items():
@@ -847,13 +904,20 @@ jobs:
                       if not r["calls"]: continue
                       tally = collections.Counter(r["calls"].values())
                       side, n = tally.most_common(1)[0]
-                      groups[(n, len(r["calls"]) - n)].append((g, mkt, r, side))
-              for (agree, against) in sorted(groups, key=lambda k: (-k[0], k[1])):
-                  L += [f"## {agree} signal{'s' if agree != 1 else ''} agree, {against} against", "",
-                        "| kickoff (ET) | game | market | lean | FD now | open | move | Pin | gap | "
-                        "public | tix / money (lean) | bets | calls |",
-                        "|---|---|---|---|---|---|---|---|---|---|---|---|---|"]
-                  for g, mkt, r, side in sorted(groups[(agree, against)], key=lambda x: x[0]["kickoff"]):
+                      sc = score(r["calls"], side, mkt)
+                      groups[band(sc)].append((g, mkt, r, side, sc, n, len(r["calls"]) - n))
+              L += ["Ranked by **weighted edge**: each agreeing signal contributes its own",
+                    f"base-rate-corrected edge, and contributes nothing until it has {MIN_N} decided",
+                    "outcomes. Raw agreement count is shown too, but it is the weaker number — a",
+                    "market can have seven signals agreeing where four of them have losing records.",
+                    ""]
+              for b in sorted(groups):
+                  L += [f"## {b}", "",
+                        "| kickoff (ET) | game | market | lean | wt edge | raw | FD now | open | move | "
+                        "Pin | gap | public | tix / money (lean) | bets | calls |",
+                        "|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|"]
+                  for g, mkt, r, side, sc, nag, nag_ag in sorted(
+                          groups[b], key=lambda x: (-x[4], x[0]["kickoff"])):
                       k = iso_dt(g["kickoff"])
                       ko = (k - dt.timedelta(hours=5)).strftime("%a %H:%M") if k else ""
                       parts = []
@@ -869,7 +933,8 @@ jobs:
                       odds = f" ({r['odds'][side]:+d})" if r["odds"][side] is not None else ""
                       tm = (f"{r['tix'][side]}% / {r['mny'][side]}%"
                             if r["tix"][side] is not None and r["mny"][side] is not None else "")
-                      L.append(f"| {ko} | {g['game']} | {mkt} | {side} | {r['line'][side]:g}{odds} | "
+                      L.append(f"| {ko} | {g['game']} | {mkt} | {side} | {sc:+g} | {nag}-{nag_ag} | "
+                               f"{r['line'][side]:g}{odds} | "
                                f"{op} | {mv} | {pin} | {gap} | {pub} | {tm} | {r['nb'] or ''} | "
                                f"{'; '.join(parts)} |")
                   L.append("")
