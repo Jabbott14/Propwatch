@@ -1,6 +1,6 @@
 # NFL scorecard
 
-Generated 2026-11-12 06:16 UTC. 28 graded games (0 finished games had no final score and are not graded).
+Generated 2026-11-12 06:21 UTC. 28 graded games (0 finished games had no final score and are not graded).
 
 Each signal is graded on **every** game it had an opinion on, at the FanDuel price
 available at that moment. EARLY = one hour after the line was first seen. CLOSE =
@@ -35,6 +35,8 @@ signal this system exists to find. See fault 4 in propwatch-news-vs-coherence.md
 | sharp_gap | both | 30-29 | 50.8 | 51.3 | -0.5 | -5.24 | -8.9 | -0.1 | 28.8 | no edge shown yet |
 | money_moving | both | 10-6 | 62.5 | 57.4 | 5.1 | +1.61 | 10.1 | -0.23 | 25.0 | keep collecting (16/30) |
 | pin_value | both | 12-11 | 52.2 | 46.1 | 6.1 | -0.32 | -1.4 | 0.3 | 30.4 | keep collecting (23/30) |
+| book_lag | both | 0-2 | 0.0 | 50.0 | -50.0 | -2.0 | -100.0 | -0.75 | 50.0 | keep collecting (2/30) |
+| consensus_gap | both | 10-19 | 34.5 | 31.7 | 2.8 | -10.09 | -34.8 | 0.24 | 44.8 | keep collecting (29/30) |
 | follow_move | moneyline | 17-3 | 85.0 | 82.1 | 2.9 | +3.68 | 18.4 | -0.28 | 35.0 | keep collecting (20/30) |
 | follow_move | spread | 7-5 | 58.3 | 53.0 | 5.4 | +1.24 | 10.3 | 0.25 | 25.0 | keep collecting (12/30) |
 | follow_move | total | 0-1 | 0.0 | 50.0 | -50.0 | -1.0 | -100.0 | -3.0 | 0.0 | keep collecting (1/30) |
@@ -51,6 +53,9 @@ signal this system exists to find. See fault 4 in propwatch-news-vs-coherence.md
 | pin_value | moneyline | 0-5 | 0.0 | 17.9 | -17.9 | -5.0 | -100.0 | 2.28 | 100.0 | keep collecting (5/30) |
 | pin_value | spread | 9-1 | 90.0 | 57.1 | 32.9 | +6.94 | 69.4 | -0.25 | 10.0 | keep collecting (10/30) |
 | pin_value | total | 3-5 | 37.5 | 50.0 | -12.5 | -2.26 | -28.2 | -0.25 | 12.5 | keep collecting (8/30) |
+| book_lag | spread | 0-2 | 0.0 | 50.0 | -50.0 | -2.0 | -100.0 | -0.75 | 50.0 | keep collecting (2/30) |
+| consensus_gap | moneyline | 5-15 | 25.0 | 24.3 | 0.7 | -10.36 | -51.8 | 0.3 | 55.0 | keep collecting (20/30) |
+| consensus_gap | spread | 5-4 | 55.6 | 48.0 | 7.5 | +0.27 | 3.0 | 0.11 | 22.2 | keep collecting (9/30) |
 
 ## CLOSE
 
@@ -62,6 +67,8 @@ signal this system exists to find. See fault 4 in propwatch-news-vs-coherence.md
 | sharp_gap | both | 36-45 | 44.4 | 49.2 | -4.7 | -15.76 | -19.5 |  |  | no edge shown yet |
 | money_moving | both | 24-31 | 43.6 | 43.0 | 0.6 | -11.31 | -20.6 |  |  | no edge shown yet |
 | pin_value | both | 19-11 | 63.3 | 46.4 | 16.9 | +5.14 | 17.1 |  |  | no edge shown yet |
+| book_lag | both | 4-0 | 100.0 | 58.9 | 41.1 | +3.29 | 82.4 |  |  | keep collecting (4/30) |
+| consensus_gap | both | 12-23 | 34.3 | 30.3 | 4.0 | -10.23 | -29.2 |  |  | DROP: below break-even |
 | follow_move | moneyline | 23-5 | 82.1 | 82.1 | -0.0 | +4.45 | 15.9 |  |  | keep collecting (28/30) |
 | follow_move | spread | 9-14 | 39.1 | 55.4 | -16.3 | -5.79 | -25.2 |  |  | keep collecting (23/30) |
 | follow_move | total | 5-4 | 55.6 | 50.0 | 5.6 | +0.47 | 5.2 |  |  | keep collecting (9/30) |
@@ -80,6 +87,9 @@ signal this system exists to find. See fault 4 in propwatch-news-vs-coherence.md
 | pin_value | moneyline | 2-5 | 28.6 | 27.0 | 1.5 | -3.59 | -51.3 |  |  | keep collecting (7/30) |
 | pin_value | spread | 10-1 | 90.9 | 54.9 | 36.0 | +7.72 | 70.2 |  |  | keep collecting (11/30) |
 | pin_value | total | 7-5 | 58.3 | 50.0 | 8.3 | +1.02 | 8.5 |  |  | keep collecting (12/30) |
+| book_lag | spread | 4-0 | 100.0 | 58.9 | 41.1 | +3.29 | 82.4 |  |  | keep collecting (4/30) |
+| consensus_gap | moneyline | 8-20 | 28.6 | 24.7 | 3.8 | -10.52 | -37.6 |  |  | keep collecting (28/30) |
+| consensus_gap | spread | 4-3 | 57.1 | 52.6 | 4.6 | +0.29 | 4.2 |  |  | keep collecting (7/30) |
 
 ## By ticket volume and Pinnacle limit (both markets)
 
@@ -103,6 +113,11 @@ signal this system exists to find. See fault 4 in propwatch-news-vs-coherence.md
 | pin_value | close | 40k+ bets | 19-11 | 63.3 | 16.9 | 17.1 |  |
 | pin_value | close | pin $10-50k | 7-7 | 50.0 | 4.6 | -7.0 |  |
 | pin_value | close | pin $50k+ | 12-4 | 75.0 | 27.7 | 38.3 |  |
+| book_lag | close | 40k+ bets | 4-0 | 100.0 | 41.1 | 82.4 |  |
+| book_lag | close | pin $50k+ | 4-0 | 100.0 | 41.1 | 82.4 |  |
+| consensus_gap | close | 40k+ bets | 12-23 | 34.3 | 4.0 | -29.2 |  |
+| consensus_gap | close | pin $10-50k | 1-4 | 20.0 | -10.7 | -74.3 |  |
+| consensus_gap | close | pin $50k+ | 11-19 | 36.7 | 6.4 | -21.7 |  |
 | follow_move | early | 10-40k bets | 2-1 | 66.7 | -10.7 | 6.3 | -0.4 |
 | follow_move | early | 40k+ bets | 3-2 | 60.0 | -2.1 | -10.9 | -0.1 |
 | follow_move | early | <10k bets | 19-6 | 76.0 | 4.6 | 17.1 | -0.15 |
@@ -134,3 +149,11 @@ signal this system exists to find. See fault 4 in propwatch-news-vs-coherence.md
 | pin_value | early | pin $10-50k | 6-2 | 75.0 | 13.8 | 43.8 | -0.31 |
 | pin_value | early | pin $50k+ | 3-0 | 100.0 | 56.0 | 81.1 | 0.0 |
 | pin_value | early | pin limit <$10k | 3-9 | 25.0 | -11.6 | -52.1 | 0.78 |
+| book_lag | early | <10k bets | 0-2 | 0.0 | -50.0 | -100.0 | -0.75 |
+| book_lag | early | pin $10-50k | 0-2 | 0.0 | -50.0 | -100.0 | -0.75 |
+| consensus_gap | early | 10-40k bets | 2-2 | 50.0 | 7.1 | 7.0 | 0.4 |
+| consensus_gap | early | 40k+ bets | 2-2 | 50.0 | 28.6 | -6.4 | 0.17 |
+| consensus_gap | early | <10k bets | 6-15 | 28.6 | -2.9 | -48.2 | 0.22 |
+| consensus_gap | early | pin $10-50k | 3-4 | 42.9 | 4.6 | -10.9 | 0.03 |
+| consensus_gap | early | pin $50k+ | 3-3 | 50.0 | 13.1 | -7.3 | 0.43 |
+| consensus_gap | early | pin limit <$10k | 4-12 | 25.0 | -1.8 | -55.6 | 0.26 |

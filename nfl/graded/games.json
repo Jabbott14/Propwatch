@@ -50,6 +50,13 @@
       "home": 0,
       "away": 0
      },
+     "books": {
+      "books": 8,
+      "median": -1.5,
+      "spread_of_books": 1.0,
+      "books_up": 0,
+      "books_dn": 3
+     },
      "pin": -1.0,
      "pin_price": -122,
      "pin_lim": 100000,
@@ -185,7 +192,8 @@
       "follow_move": "home",
       "rlm": "home",
       "money_level": "away",
-      "sharp_gap": "home"
+      "sharp_gap": "home",
+      "consensus_gap": "away"
      },
      "move_pts": 4.1,
      "public_side": "away",
@@ -197,6 +205,14 @@
      "div": {
       "home": 0,
       "away": 0
+     },
+     "books": {
+      "books": 8,
+      "median": -114.5,
+      "spread_of_books": 9,
+      "fd_vs_median": null,
+      "books_up": 1,
+      "books_dn": 7
      },
      "pin": -130,
      "pin_price": -130,
@@ -236,6 +252,14 @@
       "res": "L",
       "units": -1.0,
       "took_fav": true
+     },
+     "consensus_gap": {
+      "side": "away",
+      "line": 110,
+      "odds": 110,
+      "res": "W",
+      "units": 1.1,
+      "took_fav": false
      }
     }
    }
@@ -289,6 +313,13 @@
      "div": {
       "home": 0,
       "away": 0
+     },
+     "books": {
+      "books": 8,
+      "median": -7.5,
+      "spread_of_books": 0.0,
+      "books_up": 2,
+      "books_dn": 6
      },
      "pin": -7.5,
      "pin_price": -105,
@@ -407,7 +438,8 @@
      "calls": {
       "follow_move": "home",
       "money_level": "home",
-      "sharp_gap": "away"
+      "sharp_gap": "away",
+      "consensus_gap": "away"
      },
      "move_pts": 25.9,
      "gap": {
@@ -417,6 +449,14 @@
      "div": {
       "home": 0,
       "away": 0
+     },
+     "books": {
+      "books": 8,
+      "median": -105.0,
+      "spread_of_books": 4,
+      "fd_vs_median": null,
+      "books_up": 8,
+      "books_dn": 0
      },
      "pin": -345,
      "pin_price": -345,
@@ -442,6 +482,14 @@
       "took_fav": true
      },
      "sharp_gap": {
+      "side": "away",
+      "line": 290,
+      "odds": 290,
+      "res": "W",
+      "units": 2.9,
+      "took_fav": false
+     },
+     "consensus_gap": {
       "side": "away",
       "line": 290,
       "odds": 290,
@@ -504,6 +552,13 @@
      "div": {
       "home": 0,
       "away": 0
+     },
+     "books": {
+      "books": 8,
+      "median": -1.5,
+      "spread_of_books": 1.0,
+      "books_up": 2,
+      "books_dn": 4
      },
      "pin": -2.5,
      "pin_price": -100,
@@ -641,7 +696,8 @@
      "calls": {
       "follow_move": "home",
       "money_level": "home",
-      "sharp_gap": "home"
+      "sharp_gap": "home",
+      "consensus_gap": "away"
      },
      "move_pts": 3.4,
      "gap": {
@@ -651,6 +707,14 @@
      "div": {
       "home": 0,
       "away": 0
+     },
+     "books": {
+      "books": 8,
+      "median": -113.5,
+      "spread_of_books": 17,
+      "fd_vs_median": null,
+      "books_up": 2,
+      "books_dn": 5
      },
      "pin": -129,
      "pin_price": -129,
@@ -682,6 +746,14 @@
       "res": "W",
       "units": 0.794,
       "took_fav": true
+     },
+     "consensus_gap": {
+      "side": "away",
+      "line": 108,
+      "odds": 108,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": false
      }
     }
    }
@@ -735,6 +807,13 @@
      "div": {
       "home": 0,
       "away": 0
+     },
+     "books": {
+      "books": 8,
+      "median": -3.5,
+      "spread_of_books": 0.0,
+      "books_up": 7,
+      "books_dn": 0
      },
      "pin": -3.5,
      "pin_price": -107,
@@ -852,7 +931,8 @@
      "open_src": "sbr_open",
      "calls": {
       "follow_move": "home",
-      "money_level": "home"
+      "money_level": "home",
+      "consensus_gap": "away"
      },
      "move_pts": 14.4,
      "gap": {
@@ -862,6 +942,14 @@
      "div": {
       "home": 0,
       "away": 0
+     },
+     "books": {
+      "books": 8,
+      "median": -114.5,
+      "spread_of_books": 10,
+      "fd_vs_median": null,
+      "books_up": 1,
+      "books_dn": 4
      },
      "pin": -204,
      "pin_price": -204,
@@ -885,6 +973,14 @@
       "res": "W",
       "units": 0.488,
       "took_fav": true
+     },
+     "consensus_gap": {
+      "side": "away",
+      "line": 172,
+      "odds": 172,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": false
      }
     }
    }
@@ -928,7 +1024,8 @@
      "calls": {
       "follow_move": "home",
       "money_level": "home",
-      "sharp_gap": "away"
+      "sharp_gap": "away",
+      "consensus_gap": "away"
      },
      "move_pts": 3.0,
      "gap": {
@@ -938,6 +1035,14 @@
      "div": {
       "home": 0,
       "away": 0
+     },
+     "books": {
+      "books": 8,
+      "median": -10.0,
+      "spread_of_books": 1.0,
+      "fd_vs_median": -0.5,
+      "books_up": 0,
+      "books_dn": 8
      },
      "pin": -10.5,
      "pin_price": 107,
@@ -962,6 +1067,14 @@
       "took_fav": true
      },
      "sharp_gap": {
+      "side": "away",
+      "line": 10.5,
+      "odds": -122,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": false
+     },
+     "consensus_gap": {
       "side": "away",
       "line": 10.5,
       "odds": -122,
@@ -1057,6 +1170,7 @@
       "follow_move": "home",
       "money_level": "home",
       "sharp_gap": "away",
+      "consensus_gap": "away",
       "pin_value": "away"
      },
      "move_pts": 31.9,
@@ -1067,6 +1181,14 @@
      "div": {
       "home": 0,
       "away": 0
+     },
+     "books": {
+      "books": 8,
+      "median": -114.5,
+      "spread_of_books": 26,
+      "fd_vs_median": null,
+      "books_up": 3,
+      "books_dn": 4
      },
      "pin": -464,
      "pin_price": -464,
@@ -1093,6 +1215,14 @@
       "took_fav": true
      },
      "sharp_gap": {
+      "side": "away",
+      "line": 400,
+      "odds": 400,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": false
+     },
+     "consensus_gap": {
       "side": "away",
       "line": 400,
       "odds": 400,
@@ -1149,7 +1279,9 @@
      "open_src": "sbr_open",
      "calls": {
       "money_level": "away",
-      "sharp_gap": "away"
+      "sharp_gap": "away",
+      "consensus_gap": "home",
+      "book_lag": "home"
      },
      "gap": {
       "home": -15,
@@ -1158,6 +1290,14 @@
      "div": {
       "home": 0,
       "away": 0
+     },
+     "books": {
+      "books": 8,
+      "median": -3.5,
+      "spread_of_books": 0.0,
+      "fd_vs_median": 0.5,
+      "books_up": 0,
+      "books_dn": 6
      },
      "pin": -3.0,
      "pin_price": -113,
@@ -1180,6 +1320,22 @@
       "res": "L",
       "units": -1.0,
       "took_fav": false
+     },
+     "consensus_gap": {
+      "side": "home",
+      "line": -3,
+      "odds": -118,
+      "res": "W",
+      "units": 0.847,
+      "took_fav": true
+     },
+     "book_lag": {
+      "side": "home",
+      "line": -3,
+      "odds": -118,
+      "res": "W",
+      "units": 0.847,
+      "took_fav": true
      }
     }
    },
@@ -1268,7 +1424,8 @@
      "calls": {
       "follow_move": "home",
       "money_level": "home",
-      "sharp_gap": "away"
+      "sharp_gap": "away",
+      "consensus_gap": "away"
      },
      "move_pts": 9.6,
      "gap": {
@@ -1278,6 +1435,14 @@
      "div": {
       "home": 0,
       "away": 0
+     },
+     "books": {
+      "books": 8,
+      "median": 100.0,
+      "spread_of_books": 208,
+      "fd_vs_median": null,
+      "books_up": 7,
+      "books_dn": 0
      },
      "pin": -170,
      "pin_price": -170,
@@ -1303,6 +1468,14 @@
       "took_fav": true
      },
      "sharp_gap": {
+      "side": "away",
+      "line": 148,
+      "odds": 148,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": false
+     },
+     "consensus_gap": {
       "side": "away",
       "line": 148,
       "odds": 148,
@@ -1362,6 +1535,13 @@
      "div": {
       "home": 0,
       "away": 0
+     },
+     "books": {
+      "books": 8,
+      "median": -3.5,
+      "spread_of_books": 0.0,
+      "books_up": 2,
+      "books_dn": 6
      },
      "pin": -3.5,
      "pin_price": 103,
@@ -1490,7 +1670,8 @@
      "calls": {
       "follow_move": "home",
       "money_level": "home",
-      "sharp_gap": "home"
+      "sharp_gap": "home",
+      "consensus_gap": "away"
      },
      "move_pts": 13.5,
      "gap": {
@@ -1500,6 +1681,14 @@
      "div": {
       "home": 0,
       "away": 0
+     },
+     "books": {
+      "books": 8,
+      "median": -102.5,
+      "spread_of_books": 205,
+      "fd_vs_median": null,
+      "books_up": 7,
+      "books_dn": 1
      },
      "pin": -181,
      "pin_price": -181,
@@ -1531,6 +1720,14 @@
       "res": "W",
       "units": 0.562,
       "took_fav": true
+     },
+     "consensus_gap": {
+      "side": "away",
+      "line": 150,
+      "odds": 150,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": false
      }
     }
    }
@@ -1585,6 +1782,13 @@
      "div": {
       "home": 0,
       "away": 0
+     },
+     "books": {
+      "books": 8,
+      "median": -13.5,
+      "spread_of_books": 0.0,
+      "books_up": 0,
+      "books_dn": 8
      },
      "pin": -14.0,
      "pin_price": -104,
@@ -1723,6 +1927,7 @@
       "follow_move": "home",
       "money_level": "home",
       "sharp_gap": "home",
+      "consensus_gap": "away",
       "pin_value": "away"
      },
      "move_pts": 40.4,
@@ -1733,6 +1938,14 @@
      "div": {
       "home": 0,
       "away": 0
+     },
+     "books": {
+      "books": 8,
+      "median": -114.5,
+      "spread_of_books": 9,
+      "fd_vs_median": null,
+      "books_up": 1,
+      "books_dn": 7
      },
      "pin": -912,
      "pin_price": -912,
@@ -1765,6 +1978,14 @@
       "res": "W",
       "units": 0.091,
       "took_fav": true
+     },
+     "consensus_gap": {
+      "side": "away",
+      "line": 700,
+      "odds": 700,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": false
      },
      "pin_value": {
       "side": "away",
@@ -1830,6 +2051,13 @@
       "home": 0,
       "away": 0
      },
+     "books": {
+      "books": 8,
+      "median": -6.5,
+      "spread_of_books": 0.0,
+      "books_up": 6,
+      "books_dn": 2
+     },
      "pin": -6.5,
      "pin_price": -110,
      "pin_lim": 100000,
@@ -1873,6 +2101,13 @@
      "div": {
       "home": 0,
       "away": 0
+     },
+     "books": {
+      "books": 8,
+      "median": -6.5,
+      "spread_of_books": 0.0,
+      "books_up": 6,
+      "books_dn": 2
      },
      "pin": -6.5,
      "pin_price": -110,
@@ -2117,7 +2352,8 @@
      "calls": {
       "follow_move": "home",
       "money_level": "home",
-      "sharp_gap": "home"
+      "sharp_gap": "home",
+      "consensus_gap": "away"
      },
      "move_pts": 23.1,
      "gap": {
@@ -2127,6 +2363,14 @@
      "div": {
       "home": 0,
       "away": 0
+     },
+     "books": {
+      "books": 8,
+      "median": -114.0,
+      "spread_of_books": 13,
+      "fd_vs_median": null,
+      "books_up": 1,
+      "books_dn": 7
      },
      "pin": -302,
      "pin_price": -302,
@@ -2159,7 +2403,8 @@
      "calls": {
       "follow_move": "home",
       "money_level": "home",
-      "sharp_gap": "home"
+      "sharp_gap": "home",
+      "consensus_gap": "away"
      },
      "move_pts": 23.1,
      "gap": {
@@ -2169,6 +2414,14 @@
      "div": {
       "home": 0,
       "away": 0
+     },
+     "books": {
+      "books": 8,
+      "median": -114.0,
+      "spread_of_books": 13,
+      "fd_vs_median": null,
+      "books_up": 1,
+      "books_dn": 7
      },
      "pin": -302,
      "pin_price": -302,
@@ -2203,6 +2456,15 @@
       "units": 0.345,
       "took_fav": true,
       "clv": 0.0
+     },
+     "consensus_gap": {
+      "side": "away",
+      "line": 235,
+      "odds": 235,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": false,
+      "clv": 0.0
      }
     },
     "close_graded": {
@@ -2229,6 +2491,14 @@
       "res": "W",
       "units": 0.345,
       "took_fav": true
+     },
+     "consensus_gap": {
+      "side": "away",
+      "line": 235,
+      "odds": 235,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": false
      }
     }
    }
@@ -2273,6 +2543,8 @@
       "money_level": "away",
       "sharp_gap": "away",
       "money_moving": "home",
+      "consensus_gap": "home",
+      "book_lag": "home",
       "pin_value": "home"
      },
      "gap": {
@@ -2282,6 +2554,14 @@
      "div": {
       "home": 1,
       "away": -1
+     },
+     "books": {
+      "books": 8,
+      "median": 6.5,
+      "spread_of_books": 1.0,
+      "fd_vs_median": 1.0,
+      "books_up": 0,
+      "books_dn": 7
      },
      "pin": 6.5,
      "pin_price": 100,
@@ -2314,6 +2594,7 @@
      "calls": {
       "money_level": "away",
       "sharp_gap": "away",
+      "consensus_gap": "home",
       "pin_value": "home"
      },
      "gap": {
@@ -2323,6 +2604,14 @@
      "div": {
       "home": 0,
       "away": 0
+     },
+     "books": {
+      "books": 8,
+      "median": 6.5,
+      "spread_of_books": 1.0,
+      "fd_vs_median": 1.0,
+      "books_up": 1,
+      "books_dn": 7
      },
      "pin": 6.5,
      "pin_price": 105,
@@ -2347,6 +2636,15 @@
       "res": "L",
       "units": -1.0,
       "took_fav": true,
+      "clv": 0.0
+     },
+     "consensus_gap": {
+      "side": "home",
+      "line": 7.5,
+      "odds": -128,
+      "res": "W",
+      "units": 0.781,
+      "took_fav": false,
       "clv": 0.0
      },
      "pin_value": {
@@ -2377,6 +2675,22 @@
       "took_fav": true
      },
      "money_moving": {
+      "side": "home",
+      "line": 7.5,
+      "odds": -128,
+      "res": "W",
+      "units": 0.781,
+      "took_fav": false
+     },
+     "consensus_gap": {
+      "side": "home",
+      "line": 7.5,
+      "odds": -128,
+      "res": "W",
+      "units": 0.781,
+      "took_fav": false
+     },
+     "book_lag": {
       "side": "home",
       "line": 7.5,
       "odds": -128,
@@ -2548,7 +2862,8 @@
       "follow_move": "away",
       "money_level": "away",
       "sharp_gap": "away",
-      "money_moving": "home"
+      "money_moving": "home",
+      "consensus_gap": "away"
      },
      "move_pts": 26.5,
      "gap": {
@@ -2558,6 +2873,14 @@
      "div": {
       "home": 1,
       "away": -1
+     },
+     "books": {
+      "books": 8,
+      "median": -1.0,
+      "spread_of_books": 222,
+      "fd_vs_median": null,
+      "books_up": 7,
+      "books_dn": 1
      },
      "pin": 291,
      "pin_price": 291,
@@ -2590,7 +2913,8 @@
      "calls": {
       "follow_move": "away",
       "money_level": "away",
-      "sharp_gap": "away"
+      "sharp_gap": "away",
+      "consensus_gap": "home"
      },
      "move_pts": 27.2,
      "gap": {
@@ -2600,6 +2924,14 @@
      "div": {
       "home": 0,
       "away": 0
+     },
+     "books": {
+      "books": 8,
+      "median": 100.0,
+      "spread_of_books": 235,
+      "fd_vs_median": null,
+      "books_up": 7,
+      "books_dn": 1
      },
      "pin": 302,
      "pin_price": 302,
@@ -2634,6 +2966,15 @@
       "units": 0.278,
       "took_fav": true,
       "clv": -0.5
+     },
+     "consensus_gap": {
+      "side": "home",
+      "line": 290,
+      "odds": 290,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": false,
+      "clv": 0.7
      }
     },
     "close_graded": {
@@ -2668,6 +3009,14 @@
       "res": "L",
       "units": -1.0,
       "took_fav": false
+     },
+     "consensus_gap": {
+      "side": "away",
+      "line": -350,
+      "odds": -350,
+      "res": "W",
+      "units": 0.286,
+      "took_fav": true
      }
     }
    }
@@ -2723,6 +3072,13 @@
       "home": 0,
       "away": 0
      },
+     "books": {
+      "books": 8,
+      "median": 1.5,
+      "spread_of_books": 3.0,
+      "books_up": 0,
+      "books_dn": 4
+     },
      "pin": 1.0,
      "pin_price": -119,
      "pin_lim": 100000,
@@ -2764,6 +3120,13 @@
      "div": {
       "home": 0,
       "away": 0
+     },
+     "books": {
+      "books": 8,
+      "median": 1.5,
+      "spread_of_books": 3.0,
+      "books_up": 2,
+      "books_dn": 3
      },
      "pin": 1.0,
      "pin_price": -114,
@@ -3000,6 +3363,7 @@
       "money_level": "away",
       "sharp_gap": "away",
       "money_moving": "home",
+      "consensus_gap": "home",
       "pin_value": "home"
      },
      "move_pts": 0.9,
@@ -3010,6 +3374,14 @@
      "div": {
       "home": 2,
       "away": -2
+     },
+     "books": {
+      "books": 8,
+      "median": -116.5,
+      "spread_of_books": 233,
+      "fd_vs_median": null,
+      "books_up": 3,
+      "books_dn": 5
      },
      "pin": -110,
      "pin_price": -110,
@@ -3043,7 +3415,8 @@
      "calls": {
       "follow_move": "away",
       "money_level": "away",
-      "sharp_gap": "away"
+      "sharp_gap": "away",
+      "consensus_gap": "home"
      },
      "move_pts": 0.9,
      "gap": {
@@ -3053,6 +3426,14 @@
      "div": {
       "home": 0,
       "away": 0
+     },
+     "books": {
+      "books": 8,
+      "median": -117.5,
+      "spread_of_books": 230,
+      "fd_vs_median": null,
+      "books_up": 1,
+      "books_dn": 6
      },
      "pin": -105,
      "pin_price": -105,
@@ -3087,6 +3468,15 @@
       "units": -1.0,
       "took_fav": true,
       "clv": 0.0
+     },
+     "consensus_gap": {
+      "side": "home",
+      "line": -104,
+      "odds": -104,
+      "res": "W",
+      "units": 0.962,
+      "took_fav": false,
+      "clv": 0.0
      }
     },
     "close_graded": {
@@ -3115,6 +3505,14 @@
       "took_fav": true
      },
      "money_moving": {
+      "side": "home",
+      "line": -104,
+      "odds": -104,
+      "res": "W",
+      "units": 0.962,
+      "took_fav": false
+     },
+     "consensus_gap": {
       "side": "home",
       "line": -104,
       "odds": -104,
@@ -3185,6 +3583,13 @@
       "home": -2,
       "away": 2
      },
+     "books": {
+      "books": 8,
+      "median": -5.5,
+      "spread_of_books": 1.0,
+      "books_up": 0,
+      "books_dn": 8
+     },
      "pin": -6.0,
      "pin_price": 102,
      "pin_lim": 100000,
@@ -3217,6 +3622,7 @@
       "follow_move": "home",
       "money_level": "home",
       "sharp_gap": "home",
+      "consensus_gap": "home",
       "pin_value": "home"
      },
      "move_pts": 1.5,
@@ -3227,6 +3633,14 @@
      "div": {
       "home": 0,
       "away": 0
+     },
+     "books": {
+      "books": 8,
+      "median": -6.5,
+      "spread_of_books": 1.0,
+      "fd_vs_median": 1.0,
+      "books_up": 0,
+      "books_dn": 8
      },
      "pin": -6.0,
      "pin_price": -103,
@@ -3254,6 +3668,15 @@
       "clv": 0.0
      },
      "sharp_gap": {
+      "side": "home",
+      "line": -5.5,
+      "odds": -122,
+      "res": "W",
+      "units": 0.82,
+      "took_fav": true,
+      "clv": 0.0
+     },
+     "consensus_gap": {
       "side": "home",
       "line": -5.5,
       "odds": -122,
@@ -3469,7 +3892,8 @@
       "follow_move": "home",
       "money_level": "away",
       "sharp_gap": "away",
-      "money_moving": "away"
+      "money_moving": "away",
+      "consensus_gap": "away"
      },
      "move_pts": 18.6,
      "gap": {
@@ -3479,6 +3903,14 @@
      "div": {
       "home": -31,
       "away": 31
+     },
+     "books": {
+      "books": 8,
+      "median": -111.0,
+      "spread_of_books": 12,
+      "fd_vs_median": null,
+      "books_up": 4,
+      "books_dn": 2
      },
      "pin": -244,
      "pin_price": -244,
@@ -3511,7 +3943,8 @@
      "calls": {
       "follow_move": "home",
       "money_level": "home",
-      "sharp_gap": "away"
+      "sharp_gap": "away",
+      "consensus_gap": "away"
      },
      "move_pts": 20.6,
      "gap": {
@@ -3521,6 +3954,14 @@
      "div": {
       "home": 0,
       "away": 0
+     },
+     "books": {
+      "books": 8,
+      "median": -113.5,
+      "spread_of_books": 9,
+      "fd_vs_median": null,
+      "books_up": 2,
+      "books_dn": 2
      },
      "pin": -252,
      "pin_price": -252,
@@ -3548,6 +3989,15 @@
       "clv": -2.0
      },
      "sharp_gap": {
+      "side": "away",
+      "line": 220,
+      "odds": 220,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": false,
+      "clv": 2.1
+     },
+     "consensus_gap": {
       "side": "away",
       "line": 220,
       "odds": 220,
@@ -3583,6 +4033,14 @@
       "took_fav": false
      },
      "money_moving": {
+      "side": "away",
+      "line": 200,
+      "odds": 200,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": false
+     },
+     "consensus_gap": {
       "side": "away",
       "line": 200,
       "odds": 200,
@@ -3644,6 +4102,13 @@
       "home": -8,
       "away": 8
      },
+     "books": {
+      "books": 8,
+      "median": -3.5,
+      "spread_of_books": 0.0,
+      "books_up": 1,
+      "books_dn": 6
+     },
      "pin": -3.5,
      "pin_price": 104,
      "pin_lim": 75000,
@@ -3673,7 +4138,8 @@
      "open_src": "sbr_open",
      "calls": {
       "money_level": "away",
-      "sharp_gap": "home"
+      "sharp_gap": "home",
+      "consensus_gap": "home"
      },
      "gap": {
       "home": 2,
@@ -3682,6 +4148,14 @@
      "div": {
       "home": 0,
       "away": 0
+     },
+     "books": {
+      "books": 8,
+      "median": -3.5,
+      "spread_of_books": 1.0,
+      "fd_vs_median": 0.5,
+      "books_up": 2,
+      "books_dn": 5
      },
      "pin": -3.0,
      "pin_price": -108,
@@ -3699,6 +4173,15 @@
       "clv": -0.5
      },
      "sharp_gap": {
+      "side": "home",
+      "line": -3,
+      "odds": -120,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": true,
+      "clv": 0.5
+     },
+     "consensus_gap": {
       "side": "home",
       "line": -3,
       "odds": -120,
@@ -3897,7 +4380,8 @@
       "follow_move": "home",
       "money_level": "home",
       "sharp_gap": "home",
-      "money_moving": "home"
+      "money_moving": "home",
+      "consensus_gap": "away"
      },
      "move_pts": 12.4,
      "gap": {
@@ -3907,6 +4391,14 @@
      "div": {
       "home": 19,
       "away": -19
+     },
+     "books": {
+      "books": 8,
+      "median": -1.0,
+      "spread_of_books": 209,
+      "fd_vs_median": null,
+      "books_up": 7,
+      "books_dn": 0
      },
      "pin": -173,
      "pin_price": -173,
@@ -3939,7 +4431,8 @@
      "calls": {
       "follow_move": "home",
       "money_level": "home",
-      "sharp_gap": "away"
+      "sharp_gap": "away",
+      "consensus_gap": "away"
      },
      "move_pts": 11.6,
      "gap": {
@@ -3949,6 +4442,14 @@
      "div": {
       "home": 0,
       "away": 0
+     },
+     "books": {
+      "books": 8,
+      "median": -2.0,
+      "spread_of_books": 232,
+      "fd_vs_median": null,
+      "books_up": 7,
+      "books_dn": 1
      },
      "pin": -167,
      "pin_price": -167,
@@ -3976,6 +4477,15 @@
       "clv": 0.8
      },
      "sharp_gap": {
+      "side": "away",
+      "line": 146,
+      "odds": 146,
+      "res": "W",
+      "units": 1.46,
+      "took_fav": false,
+      "clv": -1.0
+     },
+     "consensus_gap": {
       "side": "away",
       "line": 146,
       "odds": 146,
@@ -4017,6 +4527,14 @@
       "res": "L",
       "units": -1.0,
       "took_fav": true
+     },
+     "consensus_gap": {
+      "side": "away",
+      "line": 152,
+      "odds": 152,
+      "res": "W",
+      "units": 1.52,
+      "took_fav": false
      }
     }
    }
@@ -4073,6 +4591,13 @@
       "home": 18,
       "away": -18
      },
+     "books": {
+      "books": 8,
+      "median": 9.5,
+      "spread_of_books": 1.0,
+      "books_up": 8,
+      "books_dn": 0
+     },
      "pin": 10.0,
      "pin_price": -127,
      "pin_lim": 100000,
@@ -4106,6 +4631,7 @@
       "money_level": "away",
       "sharp_gap": "away",
       "money_moving": "away",
+      "consensus_gap": "home",
       "pin_value": "away"
      },
      "move_pts": 2.0,
@@ -4116,6 +4642,14 @@
      "div": {
       "home": -1,
       "away": 1
+     },
+     "books": {
+      "books": 8,
+      "median": 8.5,
+      "spread_of_books": 1.0,
+      "fd_vs_median": 1.0,
+      "books_up": 8,
+      "books_dn": 0
      },
      "pin": 10.0,
      "pin_price": -125,
@@ -4158,6 +4692,15 @@
       "res": "W",
       "units": 0.98,
       "took_fav": true,
+      "clv": 0.0
+     },
+     "consensus_gap": {
+      "side": "home",
+      "line": 9.5,
+      "odds": -120,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": false,
       "clv": 0.0
      },
      "pin_value": {
@@ -4410,6 +4953,7 @@
       "money_level": "away",
       "sharp_gap": "home",
       "money_moving": "home",
+      "consensus_gap": "home",
       "pin_value": "home"
      },
      "move_pts": 30.2,
@@ -4420,6 +4964,14 @@
      "div": {
       "home": 28,
       "away": -28
+     },
+     "books": {
+      "books": 8,
+      "median": -110.0,
+      "spread_of_books": 11,
+      "fd_vs_median": null,
+      "books_up": 4,
+      "books_dn": 3
      },
      "pin": 313,
      "pin_price": 313,
@@ -4453,7 +5005,8 @@
      "calls": {
       "follow_move": "away",
       "money_level": "away",
-      "sharp_gap": "away"
+      "sharp_gap": "away",
+      "consensus_gap": "home"
      },
      "move_pts": 30.6,
      "gap": {
@@ -4463,6 +5016,14 @@
      "div": {
       "home": 0,
       "away": 0
+     },
+     "books": {
+      "books": 8,
+      "median": -111.0,
+      "spread_of_books": 10,
+      "fd_vs_median": null,
+      "books_up": 3,
+      "books_dn": 4
      },
      "pin": 352,
      "pin_price": 352,
@@ -4497,6 +5058,15 @@
       "units": 0.217,
       "took_fav": true,
       "clv": -0.3
+     },
+     "consensus_gap": {
+      "side": "home",
+      "line": 360,
+      "odds": 360,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": false,
+      "clv": 0.5
      }
     },
     "close_graded": {
@@ -4525,6 +5095,14 @@
       "took_fav": false
      },
      "money_moving": {
+      "side": "home",
+      "line": 350,
+      "odds": 350,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": false
+     },
+     "consensus_gap": {
       "side": "home",
       "line": 350,
       "odds": 350,
@@ -4582,7 +5160,8 @@
      "calls": {
       "follow_move": "home",
       "money_level": "home",
-      "sharp_gap": "home"
+      "sharp_gap": "home",
+      "consensus_gap": "away"
      },
      "move_pts": 0.5,
      "gap": {
@@ -4592,6 +5171,14 @@
      "div": {
       "home": 0,
       "away": 0
+     },
+     "books": {
+      "books": 8,
+      "median": 3.5,
+      "spread_of_books": 0.0,
+      "fd_vs_median": -0.5,
+      "books_up": 1,
+      "books_dn": 2
      },
      "pin": 3.0,
      "pin_price": 109,
@@ -4623,7 +5210,8 @@
      "calls": {
       "follow_move": "home",
       "money_level": "home",
-      "sharp_gap": "home"
+      "sharp_gap": "home",
+      "consensus_gap": "away"
      },
      "move_pts": 0.5,
      "gap": {
@@ -4633,6 +5221,14 @@
      "div": {
       "home": 0,
       "away": 0
+     },
+     "books": {
+      "books": 8,
+      "median": 3.5,
+      "spread_of_books": 1.0,
+      "fd_vs_median": -0.5,
+      "books_up": 1,
+      "books_dn": 3
      },
      "pin": 3.0,
      "pin_price": -104,
@@ -4666,6 +5262,15 @@
       "units": -1.0,
       "took_fav": false,
       "clv": 0
+     },
+     "consensus_gap": {
+      "side": "away",
+      "line": -3,
+      "odds": -110,
+      "res": "W",
+      "units": 0.909,
+      "took_fav": true,
+      "clv": 0
      }
     },
     "close_graded": {
@@ -4692,6 +5297,14 @@
       "res": "L",
       "units": -1.0,
       "took_fav": false
+     },
+     "consensus_gap": {
+      "side": "away",
+      "line": -3,
+      "odds": -120,
+      "res": "W",
+      "units": 0.833,
+      "took_fav": true
      }
     }
    },
@@ -4891,7 +5504,8 @@
       "follow_move": "away",
       "money_level": "away",
       "sharp_gap": "away",
-      "money_moving": "away"
+      "money_moving": "away",
+      "consensus_gap": "home"
      },
      "move_pts": 10.0,
      "gap": {
@@ -4901,6 +5515,14 @@
      "div": {
       "home": -5,
       "away": 5
+     },
+     "books": {
+      "books": 8,
+      "median": -120.0,
+      "spread_of_books": 18,
+      "fd_vs_median": null,
+      "books_up": 1,
+      "books_dn": 6
      },
      "pin": 160,
      "pin_price": 160,
@@ -4934,7 +5556,8 @@
       "follow_move": "away",
       "money_level": "away",
       "sharp_gap": "home",
-      "money_moving": "away"
+      "money_moving": "away",
+      "consensus_gap": "home"
      },
      "move_pts": 7.6,
      "gap": {
@@ -4944,6 +5567,14 @@
      "div": {
       "home": -2,
       "away": 2
+     },
+     "books": {
+      "books": 8,
+      "median": -127.5,
+      "spread_of_books": 236,
+      "fd_vs_median": null,
+      "books_up": 1,
+      "books_dn": 6
      },
      "pin": 141,
      "pin_price": 141,
@@ -4987,6 +5618,15 @@
       "units": 0.617,
       "took_fav": true,
       "clv": 2.2
+     },
+     "consensus_gap": {
+      "side": "home",
+      "line": 136,
+      "odds": 136,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": false,
+      "clv": -2.4
      }
     },
     "close_graded": {
@@ -5021,6 +5661,14 @@
       "res": "W",
       "units": 0.562,
       "took_fav": true
+     },
+     "consensus_gap": {
+      "side": "home",
+      "line": 150,
+      "odds": 150,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": false
      }
     }
    }
@@ -5065,6 +5713,7 @@
       "money_level": "home",
       "sharp_gap": "home",
       "money_moving": "home",
+      "book_lag": "away",
       "pin_value": "away"
      },
      "gap": {
@@ -5074,6 +5723,13 @@
      "div": {
       "home": 34,
       "away": -34
+     },
+     "books": {
+      "books": 8,
+      "median": 2.5,
+      "spread_of_books": 1.0,
+      "books_up": 6,
+      "books_dn": 0
      },
      "pin": 3.0,
      "pin_price": -120,
@@ -5118,6 +5774,13 @@
      "div": {
       "home": 1,
       "away": -1
+     },
+     "books": {
+      "books": 8,
+      "median": 3.5,
+      "spread_of_books": 1.0,
+      "books_up": 8,
+      "books_dn": 0
      },
      "pin": 3.0,
      "pin_price": 104,
@@ -5196,6 +5859,14 @@
       "res": "L",
       "units": -1.0,
       "took_fav": false
+     },
+     "book_lag": {
+      "side": "away",
+      "line": -2.5,
+      "odds": -120,
+      "res": "W",
+      "units": 0.833,
+      "took_fav": true
      },
      "pin_value": {
       "side": "away",
@@ -5383,7 +6054,8 @@
       "follow_move": "away",
       "money_level": "away",
       "sharp_gap": "home",
-      "money_moving": "home"
+      "money_moving": "home",
+      "consensus_gap": "away"
      },
      "move_pts": 8.8,
      "gap": {
@@ -5393,6 +6065,14 @@
      "div": {
       "home": 1,
       "away": -1
+     },
+     "books": {
+      "books": 8,
+      "median": -0.5,
+      "spread_of_books": 236,
+      "fd_vs_median": null,
+      "books_up": 7,
+      "books_dn": 1
      },
      "pin": 131,
      "pin_price": 131,
@@ -5426,7 +6106,8 @@
       "follow_move": "away",
       "money_level": "away",
       "sharp_gap": "home",
-      "money_moving": "away"
+      "money_moving": "away",
+      "consensus_gap": "home"
      },
      "move_pts": 11.9,
      "gap": {
@@ -5436,6 +6117,14 @@
      "div": {
       "home": -1,
       "away": 1
+     },
+     "books": {
+      "books": 8,
+      "median": -117.5,
+      "spread_of_books": 221,
+      "fd_vs_median": null,
+      "books_up": 1,
+      "books_dn": 7
      },
      "pin": 158,
      "pin_price": 158,
@@ -5479,6 +6168,15 @@
       "units": 0.562,
       "took_fav": true,
       "clv": -3.1
+     },
+     "consensus_gap": {
+      "side": "home",
+      "line": 150,
+      "odds": 150,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": false,
+      "clv": 3.1
      }
     },
     "close_graded": {
@@ -5513,6 +6211,14 @@
       "res": "L",
       "units": -1.0,
       "took_fav": false
+     },
+     "consensus_gap": {
+      "side": "away",
+      "line": -156,
+      "odds": -156,
+      "res": "W",
+      "units": 0.641,
+      "took_fav": true
      }
     }
    }
@@ -5568,6 +6274,13 @@
       "home": 17,
       "away": -17
      },
+     "books": {
+      "books": 8,
+      "median": 3.0,
+      "spread_of_books": 1.0,
+      "books_up": 4,
+      "books_dn": 0
+     },
      "pin": 3.0,
      "pin_price": -103,
      "pin_lim": 100000,
@@ -5598,7 +6311,8 @@
      "calls": {
       "follow_move": "away",
       "money_level": "away",
-      "sharp_gap": "away"
+      "sharp_gap": "away",
+      "consensus_gap": "home"
      },
      "move_pts": 0.5,
      "gap": {
@@ -5608,6 +6322,14 @@
      "div": {
       "home": 0,
       "away": 0
+     },
+     "books": {
+      "books": 8,
+      "median": 2.5,
+      "spread_of_books": 0.0,
+      "fd_vs_median": 0.5,
+      "books_up": 0,
+      "books_dn": 1
      },
      "pin": 3.0,
      "pin_price": -114,
@@ -5640,6 +6362,15 @@
       "res": "W",
       "units": 0.943,
       "took_fav": true,
+      "clv": 0
+     },
+     "consensus_gap": {
+      "side": "home",
+      "line": 3,
+      "odds": -114,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": false,
       "clv": 0
      }
     },
@@ -5842,7 +6573,8 @@
       "follow_move": "away",
       "money_level": "away",
       "sharp_gap": "away",
-      "money_moving": "home"
+      "money_moving": "home",
+      "consensus_gap": "away"
      },
      "move_pts": 8.5,
      "gap": {
@@ -5852,6 +6584,14 @@
      "div": {
       "home": 2,
       "away": -2
+     },
+     "books": {
+      "books": 8,
+      "median": -9.0,
+      "spread_of_books": 243,
+      "fd_vs_median": null,
+      "books_up": 4,
+      "books_dn": 4
      },
      "pin": 145,
      "pin_price": 145,
@@ -5885,7 +6625,8 @@
       "follow_move": "away",
       "money_level": "away",
       "sharp_gap": "away",
-      "money_moving": "home"
+      "money_moving": "home",
+      "consensus_gap": "away"
      },
      "move_pts": 7.0,
      "gap": {
@@ -5895,6 +6636,14 @@
      "div": {
       "home": 1,
       "away": -1
+     },
+     "books": {
+      "books": 8,
+      "median": -1.5,
+      "spread_of_books": 211,
+      "fd_vs_median": null,
+      "books_up": 7,
+      "books_dn": 1
      },
      "pin": 137,
      "pin_price": 137,
@@ -5938,6 +6687,15 @@
       "units": -1.0,
       "took_fav": false,
       "clv": -1.5
+     },
+     "consensus_gap": {
+      "side": "away",
+      "line": -154,
+      "odds": -154,
+      "res": "W",
+      "units": 0.649,
+      "took_fav": true,
+      "clv": 1.5
      }
     },
     "close_graded": {
@@ -5972,6 +6730,14 @@
       "res": "L",
       "units": -1.0,
       "took_fav": false
+     },
+     "consensus_gap": {
+      "side": "away",
+      "line": -164,
+      "odds": -164,
+      "res": "W",
+      "units": 0.61,
+      "took_fav": true
      }
     }
    }
@@ -6030,6 +6796,13 @@
       "home": 4,
       "away": -4
      },
+     "books": {
+      "books": 8,
+      "median": 6.5,
+      "spread_of_books": 0.0,
+      "books_up": 0,
+      "books_dn": 6
+     },
      "pin": 6.5,
      "pin_price": -105,
      "pin_lim": 100000,
@@ -6060,6 +6833,8 @@
      "calls": {
       "money_level": "away",
       "sharp_gap": "away",
+      "consensus_gap": "home",
+      "book_lag": "home",
       "pin_value": "away"
      },
      "gap": {
@@ -6069,6 +6844,14 @@
      "div": {
       "home": 0,
       "away": 0
+     },
+     "books": {
+      "books": 8,
+      "median": 6.5,
+      "spread_of_books": 1.0,
+      "fd_vs_median": 0.5,
+      "books_up": 0,
+      "books_dn": 5
      },
      "pin": 7.5,
      "pin_price": -124,
@@ -6094,6 +6877,24 @@
       "units": 0.952,
       "took_fav": true,
       "clv": -0.5
+     },
+     "consensus_gap": {
+      "side": "home",
+      "line": 7,
+      "odds": -115,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": false,
+      "clv": 0.5
+     },
+     "book_lag": {
+      "side": "home",
+      "line": 7,
+      "odds": -115,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": false,
+      "clv": 0.5
      },
      "pin_value": {
       "side": "away",
@@ -6323,7 +7124,8 @@
       "follow_move": "away",
       "money_level": "away",
       "sharp_gap": "away",
-      "money_moving": "home"
+      "money_moving": "home",
+      "consensus_gap": "home"
      },
      "move_pts": 21.9,
      "gap": {
@@ -6333,6 +7135,14 @@
      "div": {
       "home": 1,
       "away": -1
+     },
+     "books": {
+      "books": 8,
+      "median": -108.5,
+      "spread_of_books": 210,
+      "fd_vs_median": null,
+      "books_up": 6,
+      "books_dn": 2
      },
      "pin": 254,
      "pin_price": 254,
@@ -6366,6 +7176,7 @@
       "follow_move": "away",
       "money_level": "away",
       "sharp_gap": "away",
+      "consensus_gap": "away",
       "pin_value": "home"
      },
      "move_pts": 23.8,
@@ -6376,6 +7187,14 @@
      "div": {
       "home": 0,
       "away": 0
+     },
+     "books": {
+      "books": 8,
+      "median": -1.0,
+      "spread_of_books": 223,
+      "fd_vs_median": null,
+      "books_up": 7,
+      "books_dn": 1
      },
      "pin": 255,
      "pin_price": 255,
@@ -6404,6 +7223,15 @@
       "clv": -2.2
      },
      "sharp_gap": {
+      "side": "away",
+      "line": -350,
+      "odds": -350,
+      "res": "W",
+      "units": 0.286,
+      "took_fav": true,
+      "clv": -2.2
+     },
+     "consensus_gap": {
       "side": "away",
       "line": -350,
       "odds": -350,
@@ -6448,6 +7276,14 @@
       "took_fav": true
      },
      "money_moving": {
+      "side": "home",
+      "line": 250,
+      "odds": 250,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": false
+     },
+     "consensus_gap": {
       "side": "home",
       "line": 250,
       "odds": 250,
@@ -6508,6 +7344,13 @@
       "home": 11,
       "away": -11
      },
+     "books": {
+      "books": 8,
+      "median": -9.5,
+      "spread_of_books": 1.0,
+      "books_up": 4,
+      "books_dn": 2
+     },
      "pin": -10.0,
      "pin_price": 106,
      "pin_lim": 100000,
@@ -6549,6 +7392,13 @@
      "div": {
       "home": 1,
       "away": -1
+     },
+     "books": {
+      "books": 8,
+      "median": -9.5,
+      "spread_of_books": 1.0,
+      "books_up": 3,
+      "books_dn": 1
      },
      "pin": -10.0,
      "pin_price": 102,
@@ -6805,6 +7655,7 @@
       "money_level": "home",
       "sharp_gap": "home",
       "money_moving": "away",
+      "consensus_gap": "away",
       "pin_value": "away"
      },
      "move_pts": 30.7,
@@ -6815,6 +7666,14 @@
      "div": {
       "home": -1,
       "away": 1
+     },
+     "books": {
+      "books": 8,
+      "median": -110.0,
+      "spread_of_books": 9,
+      "fd_vs_median": null,
+      "books_up": 3,
+      "books_dn": 2
      },
      "pin": -425,
      "pin_price": -425,
@@ -6849,6 +7708,7 @@
       "follow_move": "home",
       "money_level": "home",
       "sharp_gap": "home",
+      "consensus_gap": "away",
       "pin_value": "away"
      },
      "move_pts": 31.2,
@@ -6859,6 +7719,14 @@
      "div": {
       "home": 0,
       "away": 0
+     },
+     "books": {
+      "books": 8,
+      "median": -111.0,
+      "spread_of_books": 10,
+      "fd_vs_median": null,
+      "books_up": 4,
+      "books_dn": 3
      },
      "pin": -437,
      "pin_price": -437,
@@ -6894,6 +7762,15 @@
       "units": 0.196,
       "took_fav": true,
       "clv": -0.6
+     },
+     "consensus_gap": {
+      "side": "away",
+      "line": 390,
+      "odds": 390,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": false,
+      "clv": 0.4
      },
      "pin_value": {
       "side": "away",
@@ -6931,6 +7808,14 @@
       "took_fav": true
      },
      "money_moving": {
+      "side": "away",
+      "line": 380,
+      "odds": 380,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": false
+     },
+     "consensus_gap": {
       "side": "away",
       "line": 380,
       "odds": 380,
@@ -7003,6 +7888,13 @@
       "home": 22,
       "away": -22
      },
+     "books": {
+      "books": 8,
+      "median": -4.5,
+      "spread_of_books": 0.0,
+      "books_up": 0,
+      "books_dn": 8
+     },
      "pin": -4.5,
      "pin_price": -113,
      "pin_lim": 100000,
@@ -7042,6 +7934,13 @@
      "div": {
       "home": -1,
       "away": 1
+     },
+     "books": {
+      "books": 8,
+      "median": -2.5,
+      "spread_of_books": 0.0,
+      "books_up": 3,
+      "books_dn": 0
      },
      "pin": -2.5,
      "pin_price": -110,
@@ -7296,6 +8195,7 @@
       "money_level": "home",
       "sharp_gap": "home",
       "money_moving": "home",
+      "consensus_gap": "away",
       "pin_value": "home"
      },
      "move_pts": 15.7,
@@ -7306,6 +8206,14 @@
      "div": {
       "home": 25,
       "away": -25
+     },
+     "books": {
+      "books": 8,
+      "median": -112.0,
+      "spread_of_books": 9,
+      "fd_vs_median": null,
+      "books_up": 5,
+      "books_dn": 1
      },
      "pin": -248,
      "pin_price": -248,
@@ -7339,7 +8247,8 @@
      "calls": {
       "follow_move": "home",
       "money_level": "away",
-      "sharp_gap": "away"
+      "sharp_gap": "away",
+      "consensus_gap": "away"
      },
      "move_pts": 5.5,
      "gap": {
@@ -7349,6 +8258,14 @@
      "div": {
       "home": 0,
       "away": 0
+     },
+     "books": {
+      "books": 8,
+      "median": -114.0,
+      "spread_of_books": 10,
+      "fd_vs_median": null,
+      "books_up": 5,
+      "books_dn": 2
      },
      "pin": -144,
      "pin_price": -144,
@@ -7376,6 +8293,15 @@
       "clv": -10.6
      },
      "sharp_gap": {
+      "side": "away",
+      "line": 122,
+      "odds": 122,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": false,
+      "clv": -10.6
+     },
+     "consensus_gap": {
       "side": "away",
       "line": 122,
       "odds": 122,
@@ -7417,6 +8343,14 @@
       "res": "W",
       "units": 0.444,
       "took_fav": true
+     },
+     "consensus_gap": {
+      "side": "away",
+      "line": 190,
+      "odds": 190,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": false
      },
      "pin_value": {
       "side": "home",
@@ -7483,6 +8417,13 @@
       "home": 19,
       "away": -19
      },
+     "books": {
+      "books": 8,
+      "median": 4.5,
+      "spread_of_books": 1.0,
+      "books_up": 1,
+      "books_dn": 6
+     },
      "pin": 4.5,
      "pin_price": -113,
      "pin_lim": 100000,
@@ -7527,6 +8468,13 @@
      "div": {
       "home": 0,
       "away": 0
+     },
+     "books": {
+      "books": 8,
+      "median": 5.5,
+      "spread_of_books": 1.0,
+      "books_up": 4,
+      "books_dn": 1
      },
      "pin": 6.0,
      "pin_price": -106,
@@ -7809,7 +8757,8 @@
       "follow_move": "away",
       "money_level": "away",
       "sharp_gap": "away",
-      "money_moving": "away"
+      "money_moving": "away",
+      "consensus_gap": "home"
      },
      "move_pts": 15.5,
      "gap": {
@@ -7819,6 +8768,14 @@
      "div": {
       "home": -4,
       "away": 4
+     },
+     "books": {
+      "books": 8,
+      "median": -113.0,
+      "spread_of_books": 10,
+      "fd_vs_median": null,
+      "books_up": 2,
+      "books_dn": 3
      },
      "pin": 195,
      "pin_price": 195,
@@ -7852,7 +8809,8 @@
       "follow_move": "away",
       "money_level": "away",
       "sharp_gap": "away",
-      "money_moving": "away"
+      "money_moving": "away",
+      "consensus_gap": "home"
      },
      "move_pts": 20.6,
      "gap": {
@@ -7862,6 +8820,14 @@
      "div": {
       "home": -2,
       "away": 2
+     },
+     "books": {
+      "books": 8,
+      "median": -107.5,
+      "spread_of_books": 11,
+      "fd_vs_median": null,
+      "books_up": 6,
+      "books_dn": 1
      },
      "pin": 216,
      "pin_price": 216,
@@ -7905,6 +8871,15 @@
       "units": 0.392,
       "took_fav": true,
       "clv": -3.6
+     },
+     "consensus_gap": {
+      "side": "home",
+      "line": 210,
+      "odds": 210,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": false,
+      "clv": 5.1
      }
     },
     "close_graded": {
@@ -7939,6 +8914,14 @@
       "res": "W",
       "units": 0.465,
       "took_fav": true
+     },
+     "consensus_gap": {
+      "side": "home",
+      "line": 168,
+      "odds": 168,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": false
      }
     }
    }
@@ -7997,6 +8980,13 @@
       "home": 35,
       "away": -35
      },
+     "books": {
+      "books": 8,
+      "median": 3.5,
+      "spread_of_books": 1.0,
+      "books_up": 4,
+      "books_dn": 3
+     },
      "pin": 3.5,
      "pin_price": -107,
      "pin_lim": 100000,
@@ -8027,7 +9017,8 @@
      "calls": {
       "money_level": "away",
       "sharp_gap": "away",
-      "money_moving": "away"
+      "money_moving": "away",
+      "book_lag": "away"
      },
      "gap": {
       "home": -12,
@@ -8036,6 +9027,13 @@
      "div": {
       "home": -1,
       "away": 1
+     },
+     "books": {
+      "books": 8,
+      "median": 5.5,
+      "spread_of_books": 1.0,
+      "books_up": 7,
+      "books_dn": 0
      },
      "pin": 5.5,
      "pin_price": 101,
@@ -8062,6 +9060,15 @@
       "clv": -2.0
      },
      "money_moving": {
+      "side": "away",
+      "line": -5.5,
+      "odds": -114,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": true,
+      "clv": -2.0
+     },
+     "book_lag": {
       "side": "away",
       "line": -5.5,
       "odds": -114,
@@ -8289,7 +9296,8 @@
       "follow_move": "away",
       "money_level": "away",
       "sharp_gap": "away",
-      "money_moving": "away"
+      "money_moving": "away",
+      "consensus_gap": "home"
      },
      "move_pts": 14.3,
      "gap": {
@@ -8299,6 +9307,14 @@
      "div": {
       "home": -10,
       "away": 10
+     },
+     "books": {
+      "books": 8,
+      "median": -105.0,
+      "spread_of_books": 13,
+      "fd_vs_median": null,
+      "books_up": 5,
+      "books_dn": 2
      },
      "pin": 171,
      "pin_price": 171,
@@ -8331,7 +9347,8 @@
      "calls": {
       "follow_move": "away",
       "money_level": "away",
-      "sharp_gap": "home"
+      "sharp_gap": "home",
+      "consensus_gap": "home"
      },
      "move_pts": 20.2,
      "gap": {
@@ -8341,6 +9358,14 @@
      "div": {
       "home": 0,
       "away": 0
+     },
+     "books": {
+      "books": 8,
+      "median": -108.0,
+      "spread_of_books": 15,
+      "fd_vs_median": null,
+      "books_up": 3,
+      "books_dn": 3
      },
      "pin": 210,
      "pin_price": 210,
@@ -8368,6 +9393,15 @@
       "clv": -5.8
      },
      "sharp_gap": {
+      "side": "home",
+      "line": 215,
+      "odds": 215,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": false,
+      "clv": 5.8
+     },
+     "consensus_gap": {
       "side": "home",
       "line": 215,
       "odds": 215,
@@ -8409,6 +9443,14 @@
       "res": "W",
       "units": 0.505,
       "took_fav": true
+     },
+     "consensus_gap": {
+      "side": "home",
+      "line": 166,
+      "odds": 166,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": false
      }
     }
    }
@@ -8464,6 +9506,13 @@
       "home": 21,
       "away": -21
      },
+     "books": {
+      "books": 8,
+      "median": 5.5,
+      "spread_of_books": 0.0,
+      "books_up": 8,
+      "books_dn": 0
+     },
      "pin": 5.5,
      "pin_price": -108,
      "pin_lim": 75000,
@@ -8504,6 +9553,13 @@
      "div": {
       "home": 0,
       "away": 0
+     },
+     "books": {
+      "books": 8,
+      "median": 4.5,
+      "spread_of_books": 1.0,
+      "books_up": 8,
+      "books_dn": 0
      },
      "pin": 4.5,
      "pin_price": -105,
@@ -8728,7 +9784,8 @@
       "follow_move": "away",
       "money_level": "away",
       "sharp_gap": "home",
-      "money_moving": "home"
+      "money_moving": "home",
+      "consensus_gap": "home"
      },
      "move_pts": 18.4,
      "gap": {
@@ -8738,6 +9795,14 @@
      "div": {
       "home": 4,
       "away": -4
+     },
+     "books": {
+      "books": 8,
+      "median": -111.5,
+      "spread_of_books": 5,
+      "fd_vs_median": null,
+      "books_up": 2,
+      "books_dn": 2
      },
      "pin": 201,
      "pin_price": 201,
@@ -8771,7 +9836,8 @@
       "follow_move": "away",
       "money_level": "away",
       "sharp_gap": "home",
-      "money_moving": "away"
+      "money_moving": "away",
+      "consensus_gap": "home"
      },
      "move_pts": 17.7,
      "gap": {
@@ -8781,6 +9847,14 @@
      "div": {
       "home": -2,
       "away": 2
+     },
+     "books": {
+      "books": 8,
+      "median": -108.0,
+      "spread_of_books": 12,
+      "fd_vs_median": null,
+      "books_up": 5,
+      "books_dn": 1
      },
      "pin": 189,
      "pin_price": 189,
@@ -8824,6 +9898,15 @@
       "units": 0.444,
       "took_fav": true,
       "clv": 1.4
+     },
+     "consensus_gap": {
+      "side": "home",
+      "line": 188,
+      "odds": 188,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": false,
+      "clv": -0.7
      }
     },
     "close_graded": {
@@ -8852,6 +9935,14 @@
       "took_fav": false
      },
      "money_moving": {
+      "side": "home",
+      "line": 194,
+      "odds": 194,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": false
+     },
+     "consensus_gap": {
       "side": "home",
       "line": 194,
       "odds": 194,
@@ -8903,6 +9994,7 @@
       "money_level": "home",
       "sharp_gap": "home",
       "money_moving": "home",
+      "consensus_gap": "away",
       "pin_value": "home"
      },
      "move_pts": 1.0,
@@ -8913,6 +10005,14 @@
      "div": {
       "home": 4,
       "away": -4
+     },
+     "books": {
+      "books": 8,
+      "median": -9.0,
+      "spread_of_books": 1.0,
+      "fd_vs_median": -0.5,
+      "books_up": 5,
+      "books_dn": 2
      },
      "pin": -10.0,
      "pin_price": 111,
@@ -8957,6 +10057,13 @@
      "div": {
       "home": 1,
       "away": -1
+     },
+     "books": {
+      "books": 8,
+      "median": -9.5,
+      "spread_of_books": 1.0,
+      "books_up": 0,
+      "books_dn": 3
      },
      "pin": -10.0,
      "pin_price": -102,
@@ -9043,6 +10150,14 @@
       "res": "W",
       "units": 0.909,
       "took_fav": true
+     },
+     "consensus_gap": {
+      "side": "away",
+      "line": 9.5,
+      "odds": -110,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": false
      },
      "pin_value": {
       "side": "home",
@@ -9217,7 +10332,8 @@
      "calls": {
       "follow_move": "home",
       "money_level": "home",
-      "money_moving": "home"
+      "money_moving": "home",
+      "consensus_gap": "away"
      },
      "move_pts": 31.1,
      "gap": {
@@ -9227,6 +10343,14 @@
      "div": {
       "home": 1,
       "away": -1
+     },
+     "books": {
+      "books": 8,
+      "median": -112.0,
+      "spread_of_books": 15,
+      "fd_vs_median": null,
+      "books_up": 2,
+      "books_dn": 6
      },
      "pin": -466,
      "pin_price": -466,
@@ -9260,6 +10384,7 @@
       "follow_move": "home",
       "money_level": "home",
       "sharp_gap": "away",
+      "consensus_gap": "away",
       "pin_value": "away"
      },
      "move_pts": 33.6,
@@ -9270,6 +10395,14 @@
      "div": {
       "home": 0,
       "away": 0
+     },
+     "books": {
+      "books": 8,
+      "median": -113.5,
+      "spread_of_books": 17,
+      "fd_vs_median": null,
+      "books_up": 1,
+      "books_dn": 6
      },
      "pin": -460,
      "pin_price": -460,
@@ -9298,6 +10431,15 @@
       "clv": -2.5
      },
      "sharp_gap": {
+      "side": "away",
+      "line": 440,
+      "odds": 440,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": false,
+      "clv": 2.3
+     },
+     "consensus_gap": {
       "side": "away",
       "line": 440,
       "odds": 440,
@@ -9340,6 +10482,14 @@
       "res": "W",
       "units": 0.204,
       "took_fav": true
+     },
+     "consensus_gap": {
+      "side": "away",
+      "line": 380,
+      "odds": 380,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": false
      }
     }
    }
@@ -9398,6 +10548,13 @@
       "home": 20,
       "away": -20
      },
+     "books": {
+      "books": 8,
+      "median": -8.5,
+      "spread_of_books": 1.0,
+      "books_up": 8,
+      "books_dn": 0
+     },
      "pin": -8.5,
      "pin_price": -109,
      "pin_lim": 75000,
@@ -9439,6 +10596,13 @@
      "div": {
       "home": 0,
       "away": 0
+     },
+     "books": {
+      "books": 8,
+      "median": -10.5,
+      "spread_of_books": 1.0,
+      "books_up": 4,
+      "books_dn": 2
      },
      "pin": -11.0,
      "pin_price": -106,
@@ -9703,6 +10867,7 @@
       "money_level": "home",
       "sharp_gap": "away",
       "money_moving": "away",
+      "consensus_gap": "away",
       "pin_value": "away"
      },
      "move_pts": 29.8,
@@ -9713,6 +10878,14 @@
      "div": {
       "home": -5,
       "away": 5
+     },
+     "books": {
+      "books": 8,
+      "median": -110.5,
+      "spread_of_books": 7,
+      "fd_vs_median": null,
+      "books_up": 2,
+      "books_dn": 3
      },
      "pin": -402,
      "pin_price": -402,
@@ -9748,6 +10921,7 @@
       "money_level": "home",
       "sharp_gap": "away",
       "money_moving": "away",
+      "consensus_gap": "away",
       "pin_value": "away"
      },
      "move_pts": 34.3,
@@ -9758,6 +10932,14 @@
      "div": {
       "home": -3,
       "away": 3
+     },
+     "books": {
+      "books": 8,
+      "median": -110.0,
+      "spread_of_books": 10,
+      "fd_vs_median": null,
+      "books_up": 1,
+      "books_dn": 2
      },
      "pin": -600,
      "pin_price": -600,
@@ -9803,6 +10985,15 @@
       "took_fav": false,
       "clv": 5.0
      },
+     "consensus_gap": {
+      "side": "away",
+      "line": 480,
+      "odds": 480,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": false,
+      "clv": 5.0
+     },
      "pin_value": {
       "side": "away",
       "line": 480,
@@ -9839,6 +11030,14 @@
       "took_fav": false
      },
      "money_moving": {
+      "side": "away",
+      "line": 350,
+      "odds": 350,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": false
+     },
+     "consensus_gap": {
       "side": "away",
       "line": 350,
       "odds": 350,
@@ -9898,7 +11097,8 @@
       "rlm": "home",
       "money_level": "away",
       "sharp_gap": "away",
-      "money_moving": "away"
+      "money_moving": "away",
+      "consensus_gap": "home"
      },
      "move_pts": 0.5,
      "public_side": "away",
@@ -9910,6 +11110,14 @@
      "div": {
       "home": -20,
       "away": 20
+     },
+     "books": {
+      "books": 8,
+      "median": -3.5,
+      "spread_of_books": 0.0,
+      "fd_vs_median": 0.5,
+      "books_up": 0,
+      "books_dn": 8
      },
      "pin": -3.0,
      "pin_price": -122,
@@ -9949,6 +11157,13 @@
      "div": {
       "home": 0,
       "away": 0
+     },
+     "books": {
+      "books": 8,
+      "median": -2.5,
+      "spread_of_books": 1.0,
+      "books_up": 1,
+      "books_dn": 2
      },
      "pin": -2.5,
      "pin_price": -126,
@@ -10015,6 +11230,14 @@
       "res": "W",
       "units": 1.0,
       "took_fav": false
+     },
+     "consensus_gap": {
+      "side": "home",
+      "line": -3,
+      "odds": -120,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": true
      }
     }
    },
@@ -10193,7 +11416,8 @@
       "follow_move": "home",
       "money_level": "away",
       "sharp_gap": "away",
-      "money_moving": "away"
+      "money_moving": "away",
+      "consensus_gap": "away"
      },
      "move_pts": 11.1,
      "gap": {
@@ -10203,6 +11427,14 @@
      "div": {
       "home": -1,
       "away": 1
+     },
+     "books": {
+      "books": 8,
+      "median": -103.5,
+      "spread_of_books": 216,
+      "fd_vs_median": null,
+      "books_up": 8,
+      "books_dn": 0
      },
      "pin": -178,
      "pin_price": -178,
@@ -10234,7 +11466,8 @@
      "open_src": "sbr_open",
      "calls": {
       "follow_move": "home",
-      "sharp_gap": "away"
+      "sharp_gap": "away",
+      "consensus_gap": "away"
      },
      "move_pts": 7.9,
      "gap": {
@@ -10244,6 +11477,14 @@
      "div": {
       "home": 0,
       "away": 0
+     },
+     "books": {
+      "books": 8,
+      "median": -123.5,
+      "spread_of_books": 240,
+      "fd_vs_median": null,
+      "books_up": 1,
+      "books_dn": 7
      },
      "pin": -160,
      "pin_price": -160,
@@ -10262,6 +11503,15 @@
       "clv": 3.2
      },
      "sharp_gap": {
+      "side": "away",
+      "line": 128,
+      "odds": 128,
+      "res": "W",
+      "units": 1.28,
+      "took_fav": false,
+      "clv": -3.2
+     },
+     "consensus_gap": {
       "side": "away",
       "line": 128,
       "odds": 128,
@@ -10297,6 +11547,14 @@
       "took_fav": false
      },
      "money_moving": {
+      "side": "away",
+      "line": 146,
+      "odds": 146,
+      "res": "W",
+      "units": 1.46,
+      "took_fav": false
+     },
+     "consensus_gap": {
       "side": "away",
       "line": 146,
       "odds": 146,
@@ -10359,6 +11617,13 @@
       "home": -22,
       "away": 22
      },
+     "books": {
+      "books": 8,
+      "median": -6.5,
+      "spread_of_books": 1.0,
+      "books_up": 1,
+      "books_dn": 5
+     },
      "pin": -6.0,
      "pin_price": -110,
      "pin_lim": 100000,
@@ -10391,7 +11656,8 @@
       "follow_move": "home",
       "money_level": "home",
       "sharp_gap": "home",
-      "money_moving": "home"
+      "money_moving": "home",
+      "consensus_gap": "away"
      },
      "move_pts": 0.5,
      "gap": {
@@ -10401,6 +11667,14 @@
      "div": {
       "home": 1,
       "away": -1
+     },
+     "books": {
+      "books": 8,
+      "median": -6.25,
+      "spread_of_books": 1.0,
+      "fd_vs_median": -0.2,
+      "books_up": 2,
+      "books_dn": 2
      },
      "pin": -6.5,
      "pin_price": 101,
@@ -10442,6 +11716,15 @@
       "res": "L",
       "units": -1.0,
       "took_fav": true,
+      "clv": 0.0
+     },
+     "consensus_gap": {
+      "side": "away",
+      "line": 6.5,
+      "odds": -112,
+      "res": "W",
+      "units": 0.893,
+      "took_fav": false,
       "clv": 0.0
      }
     },
@@ -10652,7 +11935,8 @@
       "follow_move": "home",
       "money_level": "home",
       "sharp_gap": "away",
-      "money_moving": "away"
+      "money_moving": "away",
+      "consensus_gap": "away"
      },
      "move_pts": 20.6,
      "gap": {
@@ -10662,6 +11946,14 @@
      "div": {
       "home": -22,
       "away": 22
+     },
+     "books": {
+      "books": 8,
+      "median": -107.5,
+      "spread_of_books": 225,
+      "fd_vs_median": null,
+      "books_up": 5,
+      "books_dn": 2
      },
      "pin": -270,
      "pin_price": -270,
@@ -10695,6 +11987,7 @@
       "follow_move": "home",
       "money_level": "home",
       "sharp_gap": "away",
+      "consensus_gap": "away",
       "pin_value": "away"
      },
      "move_pts": 22.3,
@@ -10705,6 +11998,14 @@
      "div": {
       "home": 0,
       "away": 0
+     },
+     "books": {
+      "books": 8,
+      "median": -108.5,
+      "spread_of_books": 15,
+      "fd_vs_median": null,
+      "books_up": 7,
+      "books_dn": 1
      },
      "pin": -268,
      "pin_price": -268,
@@ -10733,6 +12034,15 @@
       "clv": -1.7
      },
      "sharp_gap": {
+      "side": "away",
+      "line": 240,
+      "odds": 240,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": false,
+      "clv": 1.8
+     },
+     "consensus_gap": {
       "side": "away",
       "line": 240,
       "odds": 240,
@@ -10783,6 +12093,14 @@
       "res": "L",
       "units": -1.0,
       "took_fav": false
+     },
+     "consensus_gap": {
+      "side": "away",
+      "line": 220,
+      "odds": 220,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": false
      }
     }
    }
@@ -10826,7 +12144,9 @@
      "calls": {
       "money_level": "away",
       "sharp_gap": "home",
-      "money_moving": "home"
+      "money_moving": "home",
+      "consensus_gap": "away",
+      "book_lag": "away"
      },
      "gap": {
       "home": 12,
@@ -10835,6 +12155,14 @@
      "div": {
       "home": 31,
       "away": -31
+     },
+     "books": {
+      "books": 8,
+      "median": 3.5,
+      "spread_of_books": 0.0,
+      "fd_vs_median": -0.5,
+      "books_up": 7,
+      "books_dn": 0
      },
      "pin": 3.0,
      "pin_price": 108,
@@ -10865,7 +12193,8 @@
      "open_src": "sbr_open",
      "calls": {
       "money_level": "away",
-      "sharp_gap": "away"
+      "sharp_gap": "away",
+      "consensus_gap": "away"
      },
      "gap": {
       "home": -19,
@@ -10874,6 +12203,14 @@
      "div": {
       "home": 0,
       "away": 0
+     },
+     "books": {
+      "books": 8,
+      "median": 3.5,
+      "spread_of_books": 3.5,
+      "fd_vs_median": -0.5,
+      "books_up": 6,
+      "books_dn": 1
      },
      "pin": 3.0,
      "pin_price": 104,
@@ -10891,6 +12228,15 @@
       "clv": 0
      },
      "sharp_gap": {
+      "side": "away",
+      "line": -3,
+      "odds": -115,
+      "res": "W",
+      "units": 0.87,
+      "took_fav": true,
+      "clv": 0
+     },
+     "consensus_gap": {
       "side": "away",
       "line": -3,
       "odds": -115,
@@ -10924,6 +12270,22 @@
       "res": "L",
       "units": -1.0,
       "took_fav": false
+     },
+     "consensus_gap": {
+      "side": "away",
+      "line": -3,
+      "odds": -120,
+      "res": "W",
+      "units": 0.833,
+      "took_fav": true
+     },
+     "book_lag": {
+      "side": "away",
+      "line": -3,
+      "odds": -120,
+      "res": "W",
+      "units": 0.833,
+      "took_fav": true
      }
     }
    },
@@ -11122,7 +12484,8 @@
       "follow_move": "away",
       "money_level": "away",
       "sharp_gap": "home",
-      "money_moving": "home"
+      "money_moving": "home",
+      "consensus_gap": "home"
      },
      "move_pts": 14.1,
      "gap": {
@@ -11132,6 +12495,14 @@
      "div": {
       "home": 2,
       "away": -2
+     },
+     "books": {
+      "books": 8,
+      "median": -118.0,
+      "spread_of_books": 7,
+      "fd_vs_median": null,
+      "books_up": 1,
+      "books_dn": 6
      },
      "pin": 165,
      "pin_price": 165,
@@ -11164,7 +12535,8 @@
      "calls": {
       "follow_move": "away",
       "money_level": "away",
-      "sharp_gap": "away"
+      "sharp_gap": "away",
+      "consensus_gap": "home"
      },
      "move_pts": 11.8,
      "gap": {
@@ -11174,6 +12546,14 @@
      "div": {
       "home": 0,
       "away": 0
+     },
+     "books": {
+      "books": 8,
+      "median": -118.0,
+      "spread_of_books": 268,
+      "fd_vs_median": null,
+      "books_up": 2,
+      "books_dn": 5
      },
      "pin": 157,
      "pin_price": 157,
@@ -11208,6 +12588,15 @@
       "units": 0.581,
       "took_fav": true,
       "clv": 2.0
+     },
+     "consensus_gap": {
+      "side": "home",
+      "line": 144,
+      "odds": 144,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": false,
+      "clv": -2.2
      }
     },
     "close_graded": {
@@ -11236,6 +12625,14 @@
       "took_fav": false
      },
      "money_moving": {
+      "side": "home",
+      "line": 158,
+      "odds": 158,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": false
+     },
+     "consensus_gap": {
       "side": "home",
       "line": 158,
       "odds": 158,
