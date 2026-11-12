@@ -60,7 +60,7 @@ jobs:
             pin_value    FanDuel's handicap sits on the better side of Pinnacle's (1st half only)
             pin_price    same handicap, FanDuel's price beats Pinnacle's no-vig fair (1st half)
           """
-          import gzip, json, os, sys, glob, math, re, collections, datetime as dt
+          import gzip, itertools, json, os, sys, glob, math, re, collections, datetime as dt
 
           REPO = sys.argv[1] if len(sys.argv) > 1 else "."
           C = lambda *a: os.path.join(REPO, "cbb", *a)
@@ -433,10 +433,19 @@ jobs:
               for g in graded:
                   rate = br[g["kind"]]["rate"]
                   for cp in ("early", "close"):
-                      for sig, x in (g.get(cp + "_graded") or {}).items():
-                          tags = ["all", g["period"], f"{g['period']}|{g['kind']}"]
-                          if g["period"] == "2h":
-                              tags.append("2h OT game" if g.get("ot") else "2h no OT")
+                      # singles, then every PAIR of signals agreeing on a side. Signals are
+                      # evidence, not independent bets, and evidence combines -- measured on 1,862
+                      # CBB side-observations, minority tickets alone is 42.9% and line-moved-toward
+                      # alone is 49.8%, but the two together are 52.7%. Grading components in
+                      # isolation hides exactly that.
+                      gr = g.get(cp + "_graded") or {}
+                      pairs = [(f"{p}+{q}", gr[p])
+                               for p, q in itertools.combinations(sorted(gr), 2)
+                               if gr[p]["side"] == gr[q]["side"]]
+                      tags = ["all", g["period"], f"{g['period']}|{g['kind']}"]
+                      if g["period"] == "2h":
+                          tags.append("2h OT game" if g.get("ot") else "2h no OT")
+                      for sig, x in list(gr.items()) + pairs:
                           for tag in tags:
                               s = S[(sig, cp, tag)]
                               s["n"] += 1; s[x["res"]] += 1; s["units"] += x["units"]
@@ -470,6 +479,18 @@ jobs:
                       "INVERT candidate: wrong well beyond its base rate" if (e or 0) <= -15 else
                       "DROP: below break-even" if z <= -1.5 else "no edge shown yet")
                   out.append(row)
+              # mark pairs that merely restate a component: same W-L as one of its own halves
+              single = {(r["signal"], r["checkpoint"], r["slice"]): (r["W"], r["L"])
+                        for r in out if "+" not in r["signal"]}
+              for r in out:
+                  if "+" not in r["signal"]: continue
+                  a_, b_ = r["signal"].split("+", 1)
+                  for comp in (a_, b_):
+                      if single.get((comp, r["checkpoint"], r["slice"])) == (r["W"], r["L"]):
+                          r["redundant_with"] = comp
+                          r["proposal"] = f"redundant -- identical record to {comp} alone, not independent confirmation"
+                          break
+
               order = {s: i for i, s in enumerate(SIGNALS)}
               out.sort(key=lambda r: (r["slice"] != "all", r["checkpoint"],
                                       order.get(r["signal"], 9), r["slice"]))
