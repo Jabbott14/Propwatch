@@ -99,8 +99,10 @@ jobs:
           LIM_BUCKETS = ((0, 10000, "pin limit <$10k"), (10000, 50000, "pin $10-50k"),
                          (50000, 10**9, "pin $50k+"))
           SIDES = {"spread": ("home", "away"), "total": ("over", "under"),
-                   "moneyline": ("home", "away")}
-          MARKETS = ("spread", "total", "moneyline")
+                   "moneyline": ("home", "away"),
+                   "tt_home": ("over", "under"), "tt_away": ("over", "under")}
+          MARKETS = ("spread", "total", "moneyline", "tt_home", "tt_away")
+          AN_TT = "core_bet_type_6_team_score"   # Action Network's team-total block
 
 
           def dec(p): return (100 / -p + 1) if p < 0 else (p / 100 + 1)
@@ -159,7 +161,7 @@ jobs:
                       bm = (g.get("markets") or {}).get(str(FD)) or {}
                       ev = bm.get("event") or {}
                       nb = g.get("num_bets")
-                      for mkt in MARKETS:
+                      for mkt in ("spread", "total", "moneyline"):
                           for o in (ev.get(mkt) or []):
                               if o.get("is_live") or o.get("period") not in (None, "event"): continue
                               side = o.get("side")
@@ -171,6 +173,19 @@ jobs:
                                   (t, val, o.get("odds"),
                                    (bi.get("tickets") or {}).get("percent"),
                                    (bi.get("money") or {}).get("percent"), nb))
+                      # team totals sit in their own block and carry splits like any other market
+                      for o in (ev.get(AN_TT) or []):
+                          if o.get("is_live") or o.get("period") not in (None, "event"): continue
+                          side = o.get("side")
+                          if side not in ("over", "under") or o.get("value") is None: continue
+                          al = ("home" if o.get("team_id") == g.get("home_team_id")
+                                else "away" if o.get("team_id") == g.get("away_team_id") else None)
+                          if not al: continue
+                          bi = o.get("bet_info") or {}
+                          ser[(gid, "tt_" + al, side)].append(
+                              (t, o.get("value"), o.get("odds"),
+                               (bi.get("tickets") or {}).get("percent"),
+                               (bi.get("money") or {}).get("percent"), nb))
               for v in ser.values():
                   v.sort()
                   # collapse duplicate timestamps, keep last
@@ -202,6 +217,10 @@ jobs:
                       if key.startswith("s;0;s;"): ty = "spread"
                       elif key.startswith("s;0;ou"): ty = "total"
                       elif key == "s;0;m": ty = "moneyline"
+                      elif key.startswith("s;0;tt;"):
+                          al = key.rsplit(";", 1)[-1]
+                          if al not in ("home", "away"): continue
+                          ty = "tt_" + al
                       else: continue
                       lim = max([l.get("amount", 0) for l in (r.get("limits") or [])] or [0])
                       for pr in (r.get("prices") or []):
@@ -397,7 +416,8 @@ jobs:
                       r["calls"]["money_moving"] = s0 if da > db else s1
                   r["div"] = {s0: da, s1: db}
 
-              bc, bi = book_read(books, mkt, t, a[1], r["open"], s0, s1)
+              bc, bi = ((({}, {})) if mkt.startswith("tt_")
+                        else book_read(books, mkt, t, a[1], r["open"], s0, s1))
               r["calls"].update(bc)
               if bi: r["books"] = bi
 
@@ -429,6 +449,10 @@ jobs:
 
 
           def result(mkt, side, line, fin):
+              if mkt.startswith("tt_"):
+                  pts = fin["hs"] if mkt == "tt_home" else fin["as"]
+                  x = pts - line if side == "over" else line - pts
+                  return "W" if x > 0 else ("L" if x < 0 else "P")
               if mkt == "moneyline":
                   d = fin["hs"] - fin["as"] if side == "home" else fin["as"] - fin["hs"]
                   return "W" if d > 0 else ("L" if d < 0 else "P")
@@ -448,6 +472,8 @@ jobs:
 
 
           def clv(mkt, side, v_then, v_close):
+              if mkt.startswith("tt_"):
+                  return round((v_close - v_then) if side == "over" else (v_then - v_close), 1)
               """closing-line value for a bet taken at v_then. Points for spread/total; for a
               moneyline there is no handicap, so it is percentage points of implied probability --
               positive means the market moved toward your side after you took it."""
@@ -470,7 +496,7 @@ jobs:
               over on a total. Needed so a signal is scored against the base rate of the sides it
               actually picked, not against a coin flip. A model that is 73% dogs looks like genius
               in a week dogs cover."""
-              if mkt == "total": return side == "over"
+              if mkt == "total" or mkt.startswith("tt_"): return side == "over"
               home_line = r["line"].get("home")
               if home_line is None: return None
               if mkt == "moneyline":
@@ -545,7 +571,7 @@ jobs:
           def base_rates(graded):
               """How often the default side (favourite / over) actually won, measured on this
               sample. This is what a signal's hit rate has to beat, not 50%."""
-              nf = nw = no = ow = nm_ = mw = 0
+              nf = nw = no = ow = nm_ = mw = nt = tw = 0
               for g in graded:
                   for mkt, m in g["markets"].items():
                       cl = m.get("close")
@@ -563,11 +589,14 @@ jobs:
                               nf += 1; nw += (res == "W")
                           elif mkt == "moneyline":
                               nm_ += 1; mw += (res == "W")
+                          elif mkt.startswith("tt_"):
+                              nt += 1; tw += (res == "W")
                           else:
                               no += 1; ow += (res == "W")
               return {"spread_fav_rate": (nw / nf) if nf else 0.5, "spread_n": nf,
                       "total_over_rate": (ow / no) if no else 0.5, "total_n": no,
-                      "ml_fav_rate": (mw / nm_) if nm_ else 0.5, "ml_n": nm_}
+                      "ml_fav_rate": (mw / nm_) if nm_ else 0.5, "ml_n": nm_,
+                      "tt_over_rate": (tw / nt) if nt else 0.5, "tt_n": nt}
 
 
           def summarize(graded, br):
@@ -582,6 +611,7 @@ jobs:
                           tags = ["all", bucket(r.get("nb"), NB_BUCKETS), bucket(r.get("pin_lim"), LIM_BUCKETS)]
                           rate = (br["spread_fav_rate"] if mkt == "spread" else
                                   br["ml_fav_rate"] if mkt == "moneyline" else
+                                  br["tt_over_rate"] if mkt.startswith("tt_") else
                                   br["total_over_rate"])
                           for sig, x in gr.items():
                               for tag in tags:
@@ -649,7 +679,8 @@ jobs:
                    "unders will beat 50% in any week dogs or unders run, which is not an edge --",
                    f"this sample ran **{100*br['spread_fav_rate']:.1f}% favourites** (n={br['spread_n']})",
                    f"**{100*br['total_over_rate']:.1f}% overs** (n={br['total_n']}) and "
-                   f"**{100*br['ml_fav_rate']:.1f}% moneyline favourites** (n={br['ml_n']}).", "",
+                   f"**{100*br['ml_fav_rate']:.1f}% moneyline favourites** (n={br['ml_n']}) and "
+                   f"**{100*br['tt_over_rate']:.1f}% team-total overs** (n={br['tt_n']}).", "",
                    "Moneyline has no handicap, so its `follow_move` reads price, its CLV is",
                    "percentage points of implied probability, and `pin_value` is a pure price",
                    "comparison against Pinnacle's no-vig fair -- no half-points involved.", "",
@@ -748,7 +779,8 @@ jobs:
                     f"finished but no final: {unmatched}")
               print(f"base rates: {100*br['spread_fav_rate']:.1f}% favourites (n={br['spread_n']}), "
                     f"{100*br['total_over_rate']:.1f}% overs (n={br['total_n']}), "
-                    f"{100*br['ml_fav_rate']:.1f}% ML favs (n={br['ml_n']})")
+                    f"{100*br['ml_fav_rate']:.1f}% ML favs (n={br['ml_n']}), "
+                    f"{100*br['tt_over_rate']:.1f}% TT overs (n={br['tt_n']})")
               for r in summary:
                   if r["slice"] == "all" and r["market"] == "both":
                       print(f"  {r['checkpoint']:5} {r['signal']:13} {fmt_rec(r):>9}  hit {r['hit_pct']}"
