@@ -196,6 +196,14 @@ jobs:
                   archive("vsin","https://data.vsin.com/betting-splits/?sport=NFL",ts=ts,day=day,diag=diag)
                   archive("sbr","https://www.sportsbookreview.com/betting-odds/nfl-football/",
                           ts=ts,day=day,diag=diag)
+                  # SBR's default view is spreads + moneylines, and its openingLineViews
+                  # are the TRUE market opener -- measured 2026-11-11, 19 of 28 games had
+                  # an opener different from the first value in our own archive (mean 0.71
+                  # pts, worst 3.0). follow_move and rlm take their DIRECTION from the
+                  # opener, so a wrong one can reverse the signal. Totals live on a
+                  # separate view, so pull it too; a bad URL just lands in diag.
+                  archive("sbr_totals","https://www.sportsbookreview.com/betting-odds/nfl-football/totals/",
+                          ts=ts,day=day,diag=diag)
                   archive("espn","https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard",
                           ts=ts,day=day,diag=diag)
 

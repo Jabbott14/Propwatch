@@ -81,7 +81,7 @@ jobs:
             money_moving  the side whose money% rose faster than its tickets% since first seen
             pin_value     the side FanDuel prices better than Pinnacle (Pinnacle = fair value)
           """
-          import gzip, json, os, sys, glob, math, collections, datetime as dt
+          import gzip, json, os, re, sys, glob, math, collections, datetime as dt
 
           REPO = sys.argv[1] if len(sys.argv) > 1 else "."
           C = lambda *a: os.path.join(REPO, "nfl", *a)      # outputs, namespaced like cbb/
@@ -211,6 +211,44 @@ jobs:
               return games, ser, pin, finals
 
 
+          def load_sbr_openers():
+              """The TRUE market opener, from SportsbookReview's archived page.
+
+              Until now `open` was the first value in OUR archive, which for a Sunday slate meant
+              the previous Tuesday's number, not the opener. Measured against SBR on 2026-11-11:
+              19 of 28 games had a different opener, mean absolute error 0.71 points, worst 3.0
+              (TEN@CIN opened -10.5, our archive said -13.5). Both `follow_move` and `rlm` derive
+              their DIRECTION from the opener, so a wrong opener does not just scale the move --
+              it can reverse it.
+
+              SBR's archived page is the spread/moneyline view, so totals have no opener here yet;
+              those fall back to first-seen and are flagged `open_src: "first_seen"`.
+              """
+              out = {}
+              for p in sorted(glob.glob(R("raw", "sbr", "*", "*"))):
+                  try:
+                      o = gzip.open if p.endswith(".gz") else open
+                      with o(p, "rt", errors="replace") as fh: txt = fh.read()
+                      m = re.search(r"__NEXT_DATA__[^>]*>(\{.*?\})</script>", txt, re.S)
+                      if not m: continue
+                      d = json.loads(m.group(1))
+                  except Exception:
+                      continue
+                  for tb in (d.get("props", {}).get("pageProps", {}).get("oddsTables") or []):
+                      for gr in (tb.get("oddsTableModel", {}).get("gameRows") or []):
+                          gv = gr.get("gameView") or {}
+                          a = (gv.get("awayTeam") or {}).get("fullName")
+                          h = (gv.get("homeTeam") or {}).get("fullName")
+                          ol = ((gr.get("openingLineViews") or [{}])[0] or {}).get("openingLine") or {}
+                          if not (a and h): continue
+                          k = f"{a} @ {h}"
+                          rec = out.setdefault(k, {})
+                          if ol.get("homeSpread") is not None: rec.setdefault("spread", ol["homeSpread"])
+                          if ol.get("homeOdds") is not None:   rec.setdefault("moneyline", ol["homeOdds"])
+                          if ol.get("total") is not None:      rec.setdefault("total", ol["total"])
+              return out
+
+
           def match_pin(g, pin_keys):
               """NFL names are identical between Action Network and Pinnacle, so this is an exact
               match on both full names plus a kickoff inside 3 hours. No fuzzy matching needed --
@@ -243,7 +281,7 @@ jobs:
               return out
 
 
-          def read(gid, mkt, t, ser, prow):
+          def read(gid, mkt, t, ser, prow, true_open=None):
               """The system's read on one market at time t. None if no FanDuel line yet."""
               s0, s1 = SIDES[mkt]
               A, B = ser.get((gid, mkt, s0), []), ser.get((gid, mkt, s1), [])
@@ -254,7 +292,10 @@ jobs:
               fb = next((x for x in B if x[3] is not None), None)
               r = {"t": a[0], "nb": a[5], "line": {s0: a[1], s1: b[1]}, "odds": {s0: a[2], s1: b[2]},
                    "tix": {s0: a[3], s1: b[3]}, "mny": {s0: a[4], s1: b[4]},
-                   "open": f0[1] if f0 else None, "first_seen": f0[0] if f0 else None, "calls": {}}
+                   "open": f0[1] if f0 else None, "first_seen": f0[0] if f0 else None,
+                   "open_src": "first_seen", "calls": {}}
+              if true_open is not None:
+                  r["open"], r["open_src"] = true_open, "sbr_open"
 
               # --- follow_move. spread: s0 (home) value FALLING = market moving toward home.
               #     total: value RISING = moving toward over.
@@ -382,6 +423,7 @@ jobs:
           # ------------------------------------------------------------------ build
           def build():
               games, ser, pin, finals = load()
+              SBR = load_sbr_openers()
               pin_keys = list(pin.keys())
               now = now_utc(); nowts = tsfmt(now)
               graded, upcoming, unmatched = [], [], 0
@@ -391,6 +433,7 @@ jobs:
                   kots = tsfmt(ko)
                   pk = match_pin(g, pin_keys)
                   prow = pin.get(pk, []) if pk else []
+                  topen = SBR.get(g["game"], {})
                   firsts = [s[0][0] for (gg, m, sd), s in ser.items() if gg == gid and s]
                   if not firsts: continue
                   first = min(firsts)
@@ -400,7 +443,7 @@ jobs:
                          "pin_matched": bool(pk), "markets": {}}
                   if kots > nowts:
                       for mkt in MARKETS:
-                          r = read(gid, mkt, nowts, ser, prow)
+                          r = read(gid, mkt, nowts, ser, prow, topen.get(mkt))
                           if r: rec["markets"][mkt] = {"now": r}
                       if rec["markets"]: upcoming.append(rec)
                       continue
@@ -411,9 +454,9 @@ jobs:
                   rec["total_pts"] = fin["as"] + fin["hs"]
                   last_pre = tsfmt(ko - dt.timedelta(minutes=1))
                   for mkt in MARKETS:
-                      cl = read(gid, mkt, last_pre, ser, prow)
+                      cl = read(gid, mkt, last_pre, ser, prow, topen.get(mkt))
                       if not cl: continue
-                      ea = read(gid, mkt, e_t, ser, prow) if e_t < kots else None
+                      ea = read(gid, mkt, e_t, ser, prow, topen.get(mkt)) if e_t < kots else None
                       out = {"close": cl}
                       if ea: out["early"] = ea
                       for cp, r in (("early", ea), ("close", cl)):
@@ -430,6 +473,9 @@ jobs:
                       rec["markets"][mkt] = out
                   if rec["markets"]: graded.append(rec)
               graded.sort(key=lambda r: r["kickoff"]); upcoming.sort(key=lambda r: r["kickoff"])
+              src = collections.Counter(m.get("close", {}).get("open_src")
+                                        for g in graded for m in g["markets"].values())
+              print(f"openers: {dict(src)}  (sbr_open = true market opener, first_seen = our archive)")
               return graded, upcoming, unmatched
 
 
