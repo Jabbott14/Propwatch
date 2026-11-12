@@ -1,6 +1,6 @@
 # NFL board
 
-Generated 2026-11-12 18:17 UTC. Upcoming games with a FanDuel line, grouped by how many signals
+Generated 2026-11-12 18:22 UTC. Upcoming games with a FanDuel line, grouped by how many signals
 agree on each market. Every game is listed; nothing is cut. Each call shows that
 signal's graded CLOSE record so far, so you can see which ones are earning.
 
@@ -11,17 +11,39 @@ moved the other way, `rlm` fires.
 
 This is analysis, not picks.
 
+## FLAGGED — reverse line movement with split confirmation
+
+The crowd holds the tickets on the other side, the money on this side is
+outsized relative to its ticket count (>= 1.2x), and the number moved
+here anyway. Pinnacle tier first: that is the sharp book moving, not a retail
+book reacting to its own flow.
+
+| tier | game | market | side | line | moved from | tickets | money/tix | record |
+|---|---|---|---|---|---|---|---|---|
+| PINNACLE moved vs public | Los Angeles Chargers @ Baltimore Ravens | spread | home | -4.5 | -3.5 | 30% | 2.27 | 3-8 |
+| PINNACLE moved vs public | Minnesota Vikings @ Green Bay Packers | moneyline | away | 138 | -221 | 14% | 1.79 | 3-8 |
+| PINNACLE moved vs public | Pittsburgh Steelers @ Cincinnati Bengals | moneyline | away | 154 | -190 | 15% | 1.87 | 3-8 |
+| PINNACLE moved vs public | Seattle Seahawks @ Las Vegas Raiders | total | under | 40.5 | 43.5 | 24% | 1.21 | 3-8 |
+| PINNACLE moved vs public | Washington Commanders @ New York Giants | total | under | 41.5 | 43.0 | 40% | 1.32 | 3-8 |
+| PINNACLE moved vs public | Washington Commanders @ New York Giants | moneyline | away | 112 | -132 | 23% | 1.78 | 3-8 |
+| FanDuel moved vs public | Buffalo Bills @ New York Jets | spread | home | 7.5 | 8.5 | 8% | 2.0 | 3-6 |
+| FanDuel moved vs public | Los Angeles Chargers @ Baltimore Ravens | spread | home | -4.5 | -2.5 | 30% | 2.27 | 3-6 |
+| FanDuel moved vs public | New England Patriots @ Detroit Lions | spread | home | -2.5 | -1.5 | 24% | 1.79 | 3-6 |
+| FanDuel moved vs public | Pittsburgh Steelers @ Cincinnati Bengals | spread | away | 3.5 | -4 | 30% | 1.27 | 3-6 |
+| FanDuel moved vs public | Seattle Seahawks @ Las Vegas Raiders | total | under | 40.5 | 43.5 | 24% | 1.21 | 3-6 |
+| FanDuel moved vs public | Washington Commanders @ New York Giants | total | under | 41.5 | 42.5 | 40% | 1.32 | 3-6 |
+
+## 8 signals agree, 0 against
+
+| kickoff (ET) | game | market | lean | FD now | open | move | Pin | gap | public | tix / money (lean) | bets | calls |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| Thu 20:15 | Washington Commanders @ New York Giants | total | under | 41.5 (-120) | 42.5 | 1 | 40.5 ($5,000) | +1 | over 60% | 40% / 53% | 38718 | follow_move->under (5-4); rlm->under (3-3); rlm_ratio->under (3-1); money_level->under (14-14); sharp_gap->under (13-15); money_moving->under (10-9); pin_value->under (7-5); pin_rlm->under (3-1) |
+
 ## 7 signals agree, 0 against
 
 | kickoff (ET) | game | market | lean | FD now | open | move | Pin | gap | public | tix / money (lean) | bets | calls |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
-| Thu 20:15 | Washington Commanders @ New York Giants | total | under | 41.5 (-120) | 42.5 | 1 | 40.5 ($5,000) | +1 | over 60% | 40% / 53% | 38718 | follow_move->under (5-4); rlm->under (3-3); rlm_ratio->under (3-1); money_level->under (14-14); sharp_gap->under (13-15); money_moving->under (10-9); pin_value->under (7-5) |
-
-## 6 signals agree, 0 against
-
-| kickoff (ET) | game | market | lean | FD now | open | move | Pin | gap | public | tix / money (lean) | bets | calls |
-|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| Mon 20:15 | Los Angeles Chargers @ Baltimore Ravens | spread | home | -4.5 (-110) | -2.5 | 2 | -4.5 ($10,000) |  | away 70% | 30% / 68% | 4387 | follow_move->home (9-14); rlm->home (1-8); rlm_ratio->home (0-4); money_level->home (16-12); sharp_gap->home (9-18); money_moving->home (7-10) |
+| Mon 20:15 | Los Angeles Chargers @ Baltimore Ravens | spread | home | -4.5 (-110) | -2.5 | 2 | -4.5 ($10,000) |  | away 70% | 30% / 68% | 4387 | follow_move->home (9-14); rlm->home (1-8); rlm_ratio->home (0-4); money_level->home (16-12); sharp_gap->home (9-18); money_moving->home (7-10); pin_rlm->home (0-2) |
 
 ## 5 signals agree, 0 against
 
@@ -40,6 +62,7 @@ This is analysis, not picks.
 | kickoff (ET) | game | market | lean | FD now | open | move | Pin | gap | public | tix / money (lean) | bets | calls |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
 | Sun 13:00 | Buffalo Bills @ New York Jets | spread | home | 7.5 (-105) | 8.5 | 1 | 8.5 ($20,000) | -1 | away 92% | 8% / 16% | 8683 | follow_move->home (9-14); rlm->home (1-8); rlm_ratio->home (0-4); money_level->away (16-12); sharp_gap->home (9-18); money_moving->home (7-10); pin_value->away (10-1) |
+| Sun 16:05 | Seattle Seahawks @ Las Vegas Raiders | total | under | 40.5 (-110) | 43.5 | 3 | 40.5 ($5,000) |  | over 76% | 24% / 29% | 8592 | follow_move->under (5-4); rlm->under (3-3); rlm_ratio->under (3-1); money_level->over (14-14); sharp_gap->under (13-15); money_moving->over (10-9); pin_rlm->under (3-1) |
 
 ## 4 signals agree, 0 against
 
@@ -61,9 +84,11 @@ This is analysis, not picks.
 
 | kickoff (ET) | game | market | lean | FD now | open | move | Pin | gap | public | tix / money (lean) | bets | calls |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
+| Thu 20:15 | Washington Commanders @ New York Giants | moneyline | away | 112 (+112) | -110 | 4.5 | -126 ($20,000) |  |  | 23% / 41% | 38718 | follow_move->home (23-5); money_level->home (24-4); sharp_gap->away (14-12); money_moving->away (7-12); consensus_gap->away (8-20); pin_rlm->away (0-5) |
 | Sun 09:30 | New England Patriots @ Detroit Lions | spread | home | -2.5 (-120) | -1.5 | 1 | -2.5 ($20,000) |  | away 76% | 24% / 43% | 9905 | follow_move->home (9-14); rlm->home (1-8); rlm_ratio->home (0-4); money_level->away (16-12); sharp_gap->home (9-18); money_moving->away (7-10) |
+| Sun 13:00 | Minnesota Vikings @ Green Bay Packers | moneyline | away | 138 (+138) | -108 | 10.2 | -167 ($6,000) |  |  | 14% / 25% | 8436 | follow_move->home (23-5); money_level->home (24-4); sharp_gap->away (14-12); money_moving->away (7-12); consensus_gap->away (8-20); pin_rlm->away (0-5) |
 | Sun 16:05 | Los Angeles Rams @ Arizona Cardinals | moneyline | home | 410 (+410) | -108 | 32.3 | 354 ($10,000) |  |  | 2% / 4% | 7345 | follow_move->away (23-5); money_level->away (24-4); sharp_gap->home (14-12); money_moving->home (7-12); consensus_gap->home (8-20); pin_value->home (2-5) |
-| Sun 16:05 | Seattle Seahawks @ Las Vegas Raiders | total | under | 40.5 (-110) | 43.5 | 3 | 40.5 ($5,000) |  | over 76% | 24% / 29% | 8592 | follow_move->under (5-4); rlm->under (3-3); rlm_ratio->under (3-1); money_level->over (14-14); sharp_gap->under (13-15); money_moving->over (10-9) |
+| Sun 20:20 | Pittsburgh Steelers @ Cincinnati Bengals | moneyline | away | 154 (+154) | -108 | 12.9 | -187 ($20,000) |  |  | 15% / 28% | 7875 | follow_move->home (23-5); money_level->home (24-4); sharp_gap->away (14-12); money_moving->away (7-12); consensus_gap->away (8-20); pin_rlm->away (0-5) |
 | Mon 20:15 | Los Angeles Chargers @ Baltimore Ravens | moneyline | away | 188 (+188) | -112 | 15.9 | -206 ($5,000) |  |  | 17% / 32% | 4387 | follow_move->home (23-5); money_level->home (24-4); sharp_gap->away (14-12); money_moving->away (7-12); consensus_gap->away (8-20); pin_value->away (2-5) |
 
 ## 3 signals agree, 0 against
@@ -89,13 +114,10 @@ This is analysis, not picks.
 
 | kickoff (ET) | game | market | lean | FD now | open | move | Pin | gap | public | tix / money (lean) | bets | calls |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
-| Thu 20:15 | Washington Commanders @ New York Giants | moneyline | away | 112 (+112) | -110 | 4.5 | -126 ($20,000) |  |  | 23% / 41% | 38718 | follow_move->home (23-5); money_level->home (24-4); sharp_gap->away (14-12); money_moving->away (7-12); consensus_gap->away (8-20) |
 | Sun 09:30 | New England Patriots @ Detroit Lions | moneyline | home | -152 (-152) | -105 | 9.1 | -153 ($10,000) |  |  | 78% / 95% | 9905 | follow_move->home (23-5); money_level->home (24-4); sharp_gap->home (14-12); money_moving->away (7-12); consensus_gap->away (8-20) |
 | Sun 13:00 | Minnesota Vikings @ Green Bay Packers | total | under | 42.5 (-115) | 40.5 | 2 | 42 ($3,000) | +0.5 |  | 49% / 51% | 8436 | follow_move->over (5-4); money_level->under (14-14); sharp_gap->under (13-15); money_moving->over (10-9); pin_value->under (7-5) |
-| Sun 13:00 | Minnesota Vikings @ Green Bay Packers | moneyline | away | 138 (+138) | -108 | 10.2 | -167 ($6,000) |  |  | 14% / 25% | 8436 | follow_move->home (23-5); money_level->home (24-4); sharp_gap->away (14-12); money_moving->away (7-12); consensus_gap->away (8-20) |
 | Sun 13:00 | Buffalo Bills @ New York Jets | moneyline | away | -480 (-480) | -108 | 30.6 | 339 ($10,000) |  |  | 99% / 100% | 8683 | follow_move->away (23-5); money_level->away (24-4); sharp_gap->away (14-12); consensus_gap->home (8-20); pin_value->home (2-5) |
 | Sun 20:20 | Pittsburgh Steelers @ Cincinnati Bengals | total | under | 49.5 (-110) | 48.5 | 1 | 48.5 ($5,000) | +1 |  | 25% / 26% | 7875 | follow_move->over (5-4); money_level->over (14-14); sharp_gap->under (13-15); money_moving->under (10-9); pin_value->under (7-5) |
-| Sun 20:20 | Pittsburgh Steelers @ Cincinnati Bengals | moneyline | away | 154 (+154) | -108 | 12.9 | -187 ($20,000) |  |  | 15% / 28% | 7875 | follow_move->home (23-5); money_level->home (24-4); sharp_gap->away (14-12); money_moving->away (7-12); consensus_gap->away (8-20) |
 
 ## 3 signals agree, 3 against
 

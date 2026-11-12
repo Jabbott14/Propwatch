@@ -3876,7 +3876,9 @@
      "pin_price": 291,
      "pin_lim": 20000,
      "pin_price_other": -343,
-     "fair": 24.8
+     "fair": 24.8,
+     "pin_open": 302,
+     "pin_moved_to": "home"
     },
     "early": {
      "t": "2026-11-01T1743Z",
@@ -4434,7 +4436,9 @@
      "pin_price": -102,
      "pin_lim": 20000,
      "pin_price_other": -110,
-     "pin_gap": -1.0
+     "pin_gap": -1.0,
+     "pin_open": 41.5,
+     "pin_moved_to": "over"
     },
     "early": {
      "t": "2026-11-01T1743Z",
@@ -4584,7 +4588,9 @@
      "pin_lim": 75000,
      "pin_price_other": -100,
      "fair": 51.2,
-     "edge_pct": 0.36
+     "edge_pct": 0.36,
+     "pin_open": -105,
+     "pin_moved_to": "home"
     },
     "early": {
      "t": "2026-11-01T1743Z",
@@ -5244,7 +5250,8 @@
       "money_level": "away",
       "sharp_gap": "away",
       "money_moving": "away",
-      "consensus_gap": "away"
+      "consensus_gap": "away",
+      "pin_rlm": "away"
      },
      "move_pts": 18.6,
      "mny_ratio": 0.34,
@@ -5268,7 +5275,11 @@
      "pin_price": -244,
      "pin_lim": 75000,
      "pin_price_other": 214,
-     "fair": 69.0
+     "fair": 69.0,
+     "pin_open": -252,
+     "pin_moved_to": "away",
+     "pin_rlm_tix": 18,
+     "pin_rlm_ratio": 4.0
     },
     "early": {
      "t": "2026-11-01T1743Z",
@@ -5394,6 +5405,14 @@
       "took_fav": false
      },
      "consensus_gap": {
+      "side": "away",
+      "line": 200,
+      "odds": 200,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": false
+     },
+     "pin_rlm": {
       "side": "away",
       "line": 200,
       "odds": 200,
@@ -5668,7 +5687,9 @@
      "pin": -3.5,
      "pin_price": 104,
      "pin_lim": 75000,
-     "pin_price_other": -115
+     "pin_price_other": -115,
+     "pin_open": -3.0,
+     "pin_moved_to": "home"
     },
     "early": {
      "t": "2026-11-01T1743Z",
@@ -5961,7 +5982,9 @@
      "pin_price": -173,
      "pin_lim": 50000,
      "pin_price_other": 155,
-     "fair": 61.8
+     "fair": 61.8,
+     "pin_open": -167,
+     "pin_moved_to": "home"
     },
     "early": {
      "t": "2026-11-01T1743Z",
@@ -6498,7 +6521,8 @@
       "money_level": "over",
       "sharp_gap": "under",
       "money_moving": "under",
-      "pin_value": "under"
+      "pin_value": "under",
+      "pin_rlm": "under"
      },
      "move_pts": 2.0,
      "public_side": "over",
@@ -6516,7 +6540,11 @@
      "pin_price": -110,
      "pin_lim": 25000,
      "pin_price_other": -102,
-     "pin_gap": 1.0
+     "pin_gap": 1.0,
+     "pin_open": 43.0,
+     "pin_moved_to": "under",
+     "pin_rlm_tix": 19,
+     "pin_rlm_ratio": 1.37
     },
     "early": {
      "t": "2026-11-03T1243Z",
@@ -6644,6 +6672,14 @@
       "res": "L",
       "units": -1.0,
       "took_fav": false
+     },
+     "pin_rlm": {
+      "side": "under",
+      "line": 40.5,
+      "odds": -115,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": false
      }
     }
    },
@@ -6676,7 +6712,8 @@
       "sharp_gap": "home",
       "money_moving": "home",
       "consensus_gap": "home",
-      "pin_value": "home"
+      "pin_value": "home",
+      "pin_rlm": "home"
      },
      "move_pts": 30.2,
      "mny_ratio": 0.78,
@@ -6701,7 +6738,11 @@
      "pin_lim": 75000,
      "pin_price_other": -373,
      "fair": 23.5,
-     "edge_pct": 5.71
+     "edge_pct": 5.71,
+     "pin_open": 350,
+     "pin_moved_to": "home",
+     "pin_rlm_tix": 13,
+     "pin_rlm_ratio": 2.46
     },
     "early": {
      "t": "2026-11-03T1243Z",
@@ -6753,7 +6794,9 @@
      "pin_price": 352,
      "pin_lim": 5000,
      "pin_price_other": -443,
-     "fair": 21.3
+     "fair": 21.3,
+     "pin_open": 350,
+     "pin_moved_to": "away"
     },
     "early_graded": {
      "follow_move": {
@@ -6835,6 +6878,14 @@
       "took_fav": false
      },
      "pin_value": {
+      "side": "home",
+      "line": 350,
+      "odds": 350,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": false
+     },
+     "pin_rlm": {
       "side": "home",
       "line": 350,
       "odds": 350,
@@ -7277,7 +7328,9 @@
      "pin_price": -101,
      "pin_lim": 15000,
      "pin_price_other": -112,
-     "pin_gap": -0.5
+     "pin_gap": -0.5,
+     "pin_open": 51.0,
+     "pin_moved_to": "over"
     },
     "early": {
      "t": "2026-11-03T1243Z",
@@ -7318,7 +7371,9 @@
      "pin_price": -103,
      "pin_lim": 3000,
      "pin_price_other": -111,
-     "pin_gap": -0.5
+     "pin_gap": -0.5,
+     "pin_open": 51.0,
+     "pin_moved_to": "over"
     },
     "early_graded": {
      "money_level": {
@@ -7452,7 +7507,9 @@
      "pin_price": 160,
      "pin_lim": 40000,
      "pin_price_other": -179,
-     "fair": 37.5
+     "fair": 37.5,
+     "pin_open": 150,
+     "pin_moved_to": "away"
     },
     "early": {
      "t": "2026-11-03T1243Z",
@@ -7505,7 +7562,9 @@
      "pin_price": 141,
      "pin_lim": 5000,
      "pin_price_other": -164,
-     "fair": 40.0
+     "fair": 40.0,
+     "pin_open": 150,
+     "pin_moved_to": "home"
     },
     "early_graded": {
      "follow_move": {
@@ -8032,7 +8091,8 @@
       "rlm_ratio": "under",
       "money_level": "over",
       "sharp_gap": "under",
-      "money_moving": "under"
+      "money_moving": "under",
+      "pin_rlm": "under"
      },
      "move_pts": 2.0,
      "public_side": "over",
@@ -8049,7 +8109,11 @@
      "pin": 37.5,
      "pin_price": -103,
      "pin_lim": 20000,
-     "pin_price_other": -109
+     "pin_price_other": -109,
+     "pin_open": 40.5,
+     "pin_moved_to": "under",
+     "pin_rlm_tix": 22,
+     "pin_rlm_ratio": 2.05
     },
     "early": {
      "t": "2026-11-03T1243Z",
@@ -8160,6 +8224,14 @@
       "res": "W",
       "units": 0.909,
       "took_fav": false
+     },
+     "pin_rlm": {
+      "side": "under",
+      "line": 37.5,
+      "odds": -110,
+      "res": "W",
+      "units": 0.909,
+      "took_fav": false
      }
     }
    },
@@ -8191,7 +8263,8 @@
       "money_level": "away",
       "sharp_gap": "home",
       "money_moving": "home",
-      "consensus_gap": "away"
+      "consensus_gap": "away",
+      "pin_rlm": "home"
      },
      "move_pts": 8.8,
      "mny_ratio": 0.89,
@@ -8215,7 +8288,11 @@
      "pin_price": 131,
      "pin_lim": 100000,
      "pin_price_other": -145,
-     "fair": 42.2
+     "fair": 42.2,
+     "pin_open": 158,
+     "pin_moved_to": "home",
+     "pin_rlm_tix": 20,
+     "pin_rlm_ratio": 1.45
     },
     "early": {
      "t": "2026-11-03T1243Z",
@@ -8357,6 +8434,14 @@
       "res": "W",
       "units": 0.641,
       "took_fav": true
+     },
+     "pin_rlm": {
+      "side": "home",
+      "line": 132,
+      "odds": 132,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": false
      }
     }
    },
@@ -8787,7 +8872,9 @@
      "pin": 44.5,
      "pin_price": -105,
      "pin_lim": 20000,
-     "pin_price_other": -107
+     "pin_price_other": -107,
+     "pin_open": 43.5,
+     "pin_moved_to": "over"
     },
     "early": {
      "t": "2026-11-03T1243Z",
@@ -8935,7 +9022,9 @@
      "pin_price": 145,
      "pin_lim": 75000,
      "pin_price_other": -161,
-     "fair": 39.8
+     "fair": 39.8,
+     "pin_open": 137,
+     "pin_moved_to": "away"
     },
     "early": {
      "t": "2026-11-03T1243Z",
@@ -9298,7 +9387,9 @@
      "pin": 6.5,
      "pin_price": -105,
      "pin_lim": 100000,
-     "pin_price_other": -105
+     "pin_price_other": -105,
+     "pin_open": 7.5,
+     "pin_moved_to": "home"
     },
     "early": {
      "t": "2026-11-03T1243Z",
@@ -9482,7 +9573,9 @@
      "pin_price": 104,
      "pin_lim": 20000,
      "pin_price_other": -117,
-     "pin_gap": -1.0
+     "pin_gap": -1.0,
+     "pin_open": 49.5,
+     "pin_moved_to": "over"
     },
     "early": {
      "t": "2026-11-03T1243Z",
@@ -9641,7 +9734,9 @@
      "pin_price": 254,
      "pin_lim": 75000,
      "pin_price_other": -294,
-     "fair": 27.5
+     "fair": 27.5,
+     "pin_open": 259,
+     "pin_moved_to": "home"
     },
     "early": {
      "t": "2026-11-03T1243Z",
@@ -9695,7 +9790,9 @@
      "pin_lim": 5000,
      "pin_price_other": -316,
      "fair": 27.1,
-     "edge_pct": 1.44
+     "edge_pct": 1.44,
+     "pin_open": 259,
+     "pin_moved_to": "home"
     },
     "early_graded": {
      "follow_move": {
@@ -10217,7 +10314,9 @@
      "pin": 47.5,
      "pin_price": -104,
      "pin_lim": 20000,
-     "pin_price_other": -108
+     "pin_price_other": -108,
+     "pin_open": 46.0,
+     "pin_moved_to": "over"
     },
     "early": {
      "t": "2026-11-03T1243Z",
@@ -10378,7 +10477,9 @@
      "pin_lim": 75000,
      "pin_price_other": 351,
      "fair": 78.5,
-     "edge_pct": 3.2
+     "edge_pct": 3.2,
+     "pin_open": -460,
+     "pin_moved_to": "away"
     },
     "early": {
      "t": "2026-11-03T1243Z",
@@ -10432,7 +10533,9 @@
      "pin_lim": 5000,
      "pin_price_other": 336,
      "fair": 78.0,
-     "edge_pct": 7.74
+     "edge_pct": 7.74,
+     "pin_open": -460,
+     "pin_moved_to": "away"
     },
     "early_graded": {
      "follow_move": {
@@ -10774,7 +10877,8 @@
       "rlm_ratio": "home",
       "money_level": "home",
       "sharp_gap": "home",
-      "money_moving": "home"
+      "money_moving": "home",
+      "pin_rlm": "home"
      },
      "move_pts": 2.0,
      "public_side": "away",
@@ -10798,7 +10902,11 @@
      "pin": -4.5,
      "pin_price": -113,
      "pin_lim": 100000,
-     "pin_price_other": 102
+     "pin_price_other": 102,
+     "pin_open": -3.0,
+     "pin_moved_to": "home",
+     "pin_rlm_tix": 39,
+     "pin_rlm_ratio": 1.72
     },
     "early": {
      "t": "2026-11-03T1243Z",
@@ -10845,7 +10953,9 @@
      "pin": -2.5,
      "pin_price": -110,
      "pin_lim": 10000,
-     "pin_price_other": -102
+     "pin_price_other": -102,
+     "pin_open": -3.0,
+     "pin_moved_to": "away"
     },
     "early_graded": {
      "money_level": {
@@ -10924,6 +11034,14 @@
       "res": "L",
       "units": -1.0,
       "took_fav": true
+     },
+     "pin_rlm": {
+      "side": "home",
+      "line": -4.5,
+      "odds": -110,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": true
      }
     }
    },
@@ -10966,7 +11084,9 @@
      "pin": 43.5,
      "pin_price": -108,
      "pin_lim": 50000,
-     "pin_price_other": -104
+     "pin_price_other": -104,
+     "pin_open": 43.0,
+     "pin_moved_to": "over"
     },
     "early": {
      "t": "2026-11-03T1243Z",
@@ -11129,7 +11249,9 @@
      "pin_lim": 100000,
      "pin_price_other": 217,
      "fair": 69.3,
-     "edge_pct": 0.12
+     "edge_pct": 0.12,
+     "pin_open": -149,
+     "pin_moved_to": "home"
     },
     "early": {
      "t": "2026-11-03T1243Z",
@@ -11157,7 +11279,8 @@
       "follow_move": "home",
       "money_level": "away",
       "sharp_gap": "away",
-      "consensus_gap": "away"
+      "consensus_gap": "away",
+      "pin_rlm": "away"
      },
      "move_pts": 5.5,
      "mny_ratio": 0.64,
@@ -11181,7 +11304,11 @@
      "pin_price": -144,
      "pin_lim": 5000,
      "pin_price_other": 125,
-     "fair": 57.0
+     "fair": 57.0,
+     "pin_open": -149,
+     "pin_moved_to": "away",
+     "pin_rlm_tix": 34,
+     "pin_rlm_ratio": 1.71
     },
     "early_graded": {
      "follow_move": {
@@ -11212,6 +11339,15 @@
       "clv": -10.6
      },
      "consensus_gap": {
+      "side": "away",
+      "line": 122,
+      "odds": 122,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": false,
+      "clv": -10.6
+     },
+     "pin_rlm": {
       "side": "away",
       "line": 122,
       "odds": 122,
@@ -11547,7 +11683,9 @@
      "pin": 4.5,
      "pin_price": -113,
      "pin_lim": 100000,
-     "pin_price_other": 102
+     "pin_price_other": 102,
+     "pin_open": 6.0,
+     "pin_moved_to": "home"
     },
     "early": {
      "t": "2026-11-03T1243Z",
@@ -11734,7 +11872,9 @@
      "pin_price": -114,
      "pin_lim": 20000,
      "pin_price_other": 102,
-     "pin_gap": -0.5
+     "pin_gap": -0.5,
+     "pin_open": 47.0,
+     "pin_moved_to": "over"
     },
     "early": {
      "t": "2026-11-03T1243Z",
@@ -11903,7 +12043,9 @@
      "pin_price": 195,
      "pin_lim": 50000,
      "pin_price_other": -221,
-     "fair": 33.0
+     "fair": 33.0,
+     "pin_open": 216,
+     "pin_moved_to": "home"
     },
     "early": {
      "t": "2026-11-03T1243Z",
@@ -12265,7 +12407,8 @@
       "rlm_ratio": "home",
       "money_level": "home",
       "sharp_gap": "home",
-      "money_moving": "home"
+      "money_moving": "home",
+      "pin_rlm": "home"
      },
      "move_pts": 2.0,
      "public_side": "away",
@@ -12289,7 +12432,11 @@
      "pin": 3.5,
      "pin_price": -107,
      "pin_lim": 100000,
-     "pin_price_other": -103
+     "pin_price_other": -103,
+     "pin_open": 5.5,
+     "pin_moved_to": "home",
+     "pin_rlm_tix": 31,
+     "pin_rlm_ratio": 1.77
     },
     "early": {
      "t": "2026-11-03T1243Z",
@@ -12425,6 +12572,14 @@
       "res": "L",
       "units": -1.0,
       "took_fav": false
+     },
+     "pin_rlm": {
+      "side": "home",
+      "line": 3.5,
+      "odds": -105,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": false
      }
     }
    },
@@ -12469,7 +12624,9 @@
      "pin_price": -113,
      "pin_lim": 20000,
      "pin_price_other": 100,
-     "pin_gap": 0.5
+     "pin_gap": 0.5,
+     "pin_open": 52.0,
+     "pin_moved_to": "under"
     },
     "early": {
      "t": "2026-11-03T1243Z",
@@ -12628,7 +12785,9 @@
      "pin_price": 171,
      "pin_lim": 75000,
      "pin_price_other": -192,
-     "fair": 35.9
+     "fair": 35.9,
+     "pin_open": 201,
+     "pin_moved_to": "home"
     },
     "early": {
      "t": "2026-11-03T1243Z",
@@ -12680,7 +12839,9 @@
      "pin_price": 210,
      "pin_lim": 5000,
      "pin_price_other": -253,
-     "fair": 31.0
+     "fair": 31.0,
+     "pin_open": 201,
+     "pin_moved_to": "away"
     },
     "early_graded": {
      "follow_move": {
@@ -13000,7 +13161,9 @@
      "pin": 5.5,
      "pin_price": -108,
      "pin_lim": 75000,
-     "pin_price_other": -102
+     "pin_price_other": -102,
+     "pin_open": 4.5,
+     "pin_moved_to": "away"
     },
     "early": {
      "t": "2026-11-03T1243Z",
@@ -13294,7 +13457,9 @@
      "pin_price": 201,
      "pin_lim": 50000,
      "pin_price_other": -228,
-     "fair": 32.3
+     "fair": 32.3,
+     "pin_open": 187,
+     "pin_moved_to": "away"
     },
     "early": {
      "t": "2026-11-03T1243Z",
@@ -13347,7 +13512,9 @@
      "pin_price": 189,
      "pin_lim": 5000,
      "pin_price_other": -224,
-     "fair": 33.4
+     "fair": 33.4,
+     "pin_open": 187,
+     "pin_moved_to": "away"
     },
     "early_graded": {
      "follow_move": {
@@ -13898,7 +14065,9 @@
      "pin_price": 105,
      "pin_lim": 20000,
      "pin_price_other": -118,
-     "pin_gap": -1.0
+     "pin_gap": -1.0,
+     "pin_open": 51.5,
+     "pin_moved_to": "over"
     },
     "early": {
      "t": "2026-11-03T1243Z",
@@ -14045,7 +14214,9 @@
      "pin_price": -466,
      "pin_lim": 10000,
      "pin_price_other": 381,
-     "fair": 79.8
+     "fair": 79.8,
+     "pin_open": -440,
+     "pin_moved_to": "home"
     },
     "early": {
      "t": "2026-11-03T1243Z",
@@ -14099,7 +14270,9 @@
      "pin_lim": 5000,
      "pin_price_other": 350,
      "fair": 78.7,
-     "edge_pct": 14.98
+     "edge_pct": 14.98,
+     "pin_open": -440,
+     "pin_moved_to": "home"
     },
     "early_graded": {
      "follow_move": {
@@ -14426,7 +14599,9 @@
      "pin": -8.5,
      "pin_price": -109,
      "pin_lim": 75000,
-     "pin_price_other": -101
+     "pin_price_other": -101,
+     "pin_open": -11.0,
+     "pin_moved_to": "away"
     },
     "early": {
      "t": "2026-11-03T1243Z",
@@ -14589,7 +14764,8 @@
       "rlm_ratio": "under",
       "money_level": "over",
       "sharp_gap": "under",
-      "money_moving": "under"
+      "money_moving": "under",
+      "pin_rlm": "under"
      },
      "move_pts": 5.0,
      "public_side": "over",
@@ -14606,7 +14782,11 @@
      "pin": 39.5,
      "pin_price": -111,
      "pin_lim": 20000,
-     "pin_price_other": -101
+     "pin_price_other": -101,
+     "pin_open": 44.5,
+     "pin_moved_to": "under",
+     "pin_rlm_tix": 22,
+     "pin_rlm_ratio": 1.23
     },
     "early": {
      "t": "2026-11-03T1243Z",
@@ -14715,6 +14895,14 @@
       "res": "W",
       "units": 0.909,
       "took_fav": false
+     },
+     "pin_rlm": {
+      "side": "under",
+      "line": 39.5,
+      "odds": -110,
+      "res": "W",
+      "units": 0.909,
+      "took_fav": false
      }
     }
    },
@@ -14747,7 +14935,8 @@
       "sharp_gap": "away",
       "money_moving": "away",
       "consensus_gap": "away",
-      "pin_value": "away"
+      "pin_value": "away",
+      "pin_rlm": "away"
      },
      "move_pts": 29.8,
      "mny_ratio": 0.91,
@@ -14772,7 +14961,11 @@
      "pin_lim": 30000,
      "pin_price_other": 334,
      "fair": 77.7,
-     "edge_pct": 0.55
+     "edge_pct": 0.55,
+     "pin_open": -600,
+     "pin_moved_to": "away",
+     "pin_rlm_tix": 5,
+     "pin_rlm_ratio": 2.8
     },
     "early": {
      "t": "2026-11-03T1243Z",
@@ -14933,6 +15126,14 @@
       "res": "L",
       "units": -1.0,
       "took_fav": false
+     },
+     "pin_rlm": {
+      "side": "away",
+      "line": 350,
+      "odds": 350,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": false
      }
     }
    },
@@ -14976,7 +15177,9 @@
      "pin_price": -131,
      "pin_lim": 3000,
      "pin_price_other": 112,
-     "pin_gap": 1.0
+     "pin_gap": 1.0,
+     "pin_open": 27.5,
+     "pin_moved_to": "under"
     },
     "early": {
      "t": "2026-11-03T1243Z",
@@ -15072,7 +15275,9 @@
      "pin": 14.5,
      "pin_price": 102,
      "pin_lim": 3000,
-     "pin_price_other": -119
+     "pin_price_other": -119,
+     "pin_open": 16.5,
+     "pin_moved_to": "under"
     },
     "early": {
      "t": "2026-11-03T1243Z",
@@ -15190,7 +15395,9 @@
      "pin": -3.0,
      "pin_price": -122,
      "pin_lim": 100000,
-     "pin_price_other": 111
+     "pin_price_other": 111,
+     "pin_open": -2.5,
+     "pin_moved_to": "home"
     },
     "early": {
      "t": "2026-11-03T1243Z",
@@ -15354,7 +15561,9 @@
      "pin": 44.5,
      "pin_price": -111,
      "pin_lim": 20000,
-     "pin_price_other": -101
+     "pin_price_other": -101,
+     "pin_open": 47.5,
+     "pin_moved_to": "under"
     },
     "early": {
      "t": "2026-11-03T1243Z",
@@ -15393,7 +15602,9 @@
      "pin": 46.5,
      "pin_price": -110,
      "pin_lim": 3000,
-     "pin_price_other": -104
+     "pin_price_other": -104,
+     "pin_open": 47.5,
+     "pin_moved_to": "under"
     },
     "early_graded": {
      "money_level": {
@@ -15510,7 +15721,9 @@
      "pin_price": -178,
      "pin_lim": 75000,
      "pin_price_other": 160,
-     "fair": 62.5
+     "fair": 62.5,
+     "pin_open": -146,
+     "pin_moved_to": "home"
     },
     "early": {
      "t": "2026-11-03T1243Z",
@@ -15561,7 +15774,9 @@
      "pin_price": -160,
      "pin_lim": 5000,
      "pin_price_other": 138,
-     "fair": 59.4
+     "fair": 59.4,
+     "pin_open": -146,
+     "pin_moved_to": "home"
     },
     "early_graded": {
      "follow_move": {
@@ -15896,7 +16111,9 @@
      "pin_price": -110,
      "pin_lim": 100000,
      "pin_price_other": -100,
-     "pin_gap": -0.5
+     "pin_gap": -0.5,
+     "pin_open": -6.5,
+     "pin_moved_to": "away"
     },
     "early": {
      "t": "2026-11-03T1243Z",
@@ -16082,7 +16299,9 @@
      "pin": 47.5,
      "pin_price": -104,
      "pin_lim": 30000,
-     "pin_price_other": -108
+     "pin_price_other": -108,
+     "pin_open": 46.5,
+     "pin_moved_to": "over"
     },
     "early": {
      "t": "2026-11-03T1243Z",
@@ -16206,7 +16425,8 @@
       "money_level": "home",
       "sharp_gap": "away",
       "money_moving": "away",
-      "consensus_gap": "away"
+      "consensus_gap": "away",
+      "pin_rlm": "away"
      },
      "move_pts": 20.6,
      "mny_ratio": 0.74,
@@ -16230,7 +16450,11 @@
      "pin_price": -270,
      "pin_lim": 75000,
      "pin_price_other": 235,
-     "fair": 71.0
+     "fair": 71.0,
+     "pin_open": -281,
+     "pin_moved_to": "away",
+     "pin_rlm_tix": 7,
+     "pin_rlm_ratio": 4.43
     },
     "early": {
      "t": "2026-11-03T1243Z",
@@ -16259,7 +16483,8 @@
       "money_level": "home",
       "sharp_gap": "away",
       "consensus_gap": "away",
-      "pin_value": "away"
+      "pin_value": "away",
+      "pin_rlm": "away"
      },
      "move_pts": 22.3,
      "mny_ratio": 0.98,
@@ -16284,7 +16509,11 @@
      "pin_lim": 5000,
      "pin_price_other": 221,
      "fair": 70.0,
-     "edge_pct": 1.87
+     "edge_pct": 1.87,
+     "pin_open": -281,
+     "pin_moved_to": "away",
+     "pin_rlm_tix": 8,
+     "pin_rlm_ratio": 1.25
     },
     "early_graded": {
      "follow_move": {
@@ -16331,6 +16560,15 @@
       "units": -1.0,
       "took_fav": false,
       "clv": 1.8
+     },
+     "pin_rlm": {
+      "side": "away",
+      "line": 240,
+      "odds": 240,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": false,
+      "clv": 1.8
      }
     },
     "close_graded": {
@@ -16367,6 +16605,14 @@
       "took_fav": false
      },
      "consensus_gap": {
+      "side": "away",
+      "line": 220,
+      "odds": 220,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": false
+     },
+     "pin_rlm": {
       "side": "away",
       "line": 220,
       "odds": 220,
@@ -16790,7 +17036,8 @@
       "money_level": "over",
       "sharp_gap": "under",
       "money_moving": "under",
-      "pin_value": "under"
+      "pin_value": "under",
+      "pin_rlm": "under"
      },
      "move_pts": 1.0,
      "public_side": "over",
@@ -16808,7 +17055,11 @@
      "pin_price": -109,
      "pin_lim": 20000,
      "pin_price_other": -103,
-     "pin_gap": 0.5
+     "pin_gap": 0.5,
+     "pin_open": 46.5,
+     "pin_moved_to": "under",
+     "pin_rlm_tix": 35,
+     "pin_rlm_ratio": 1.23
     },
     "early": {
      "t": "2026-11-03T1243Z",
@@ -16935,6 +17186,14 @@
       "res": "W",
       "units": 0.87,
       "took_fav": false
+     },
+     "pin_rlm": {
+      "side": "under",
+      "line": 45.5,
+      "odds": -115,
+      "res": "W",
+      "units": 0.87,
+      "took_fav": false
      }
     }
    },
@@ -16990,7 +17249,9 @@
      "pin_price": 165,
      "pin_lim": 50000,
      "pin_price_other": -185,
-     "fair": 36.8
+     "fair": 36.8,
+     "pin_open": 136,
+     "pin_moved_to": "away"
     },
     "early": {
      "t": "2026-11-03T1243Z",
@@ -17042,7 +17303,9 @@
      "pin_price": 157,
      "pin_lim": 5000,
      "pin_price_other": -184,
-     "fair": 37.5
+     "fair": 37.5,
+     "pin_open": 136,
+     "pin_moved_to": "away"
     },
     "early_graded": {
      "follow_move": {

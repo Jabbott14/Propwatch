@@ -1,6 +1,6 @@
 # NFL scorecard
 
-Generated 2026-11-12 18:17 UTC. 28 graded games (0 finished games had no final score and are not graded).
+Generated 2026-11-12 18:22 UTC. 28 graded games (0 finished games had no final score and are not graded).
 
 Each signal is graded on **every** game it had an opinion on, at the FanDuel price
 available at that moment. EARLY = one hour after the line was first seen. CLOSE =
@@ -29,6 +29,7 @@ signal this system exists to find. See fault 4 in propwatch-news-vs-coherence.md
 
 | signal | market | record | hit % | expected % | edge | units | ROI % | CLV avg | CLV + % | status |
 |---|---|---|---|---|---|---|---|---|---|---|
+| pin_rlm | both | 0-2 | 0.0 | 17.9 | -17.9 | -2.0 | -100.0 | -4.4 | 50.0 | keep collecting (2/30) |
 | follow_move | both | 24-9 | 72.7 | 70.6 | 2.2 | +3.92 | 11.9 | -0.17 | 30.3 | beats break-even but not its base rate -- directional bias, not signal |
 | rlm | both | 0-2 | 0.0 | 32.1 | -32.1 | -2.0 | -100.0 | 0.5 | 50.0 | keep collecting (2/30) |
 | rlm_ratio | both | 0-1 | 0.0 | 32.1 | -32.1 | -1.0 | -100.0 | 0.0 | 0.0 | keep collecting (1/30) |
@@ -58,10 +59,15 @@ signal this system exists to find. See fault 4 in propwatch-news-vs-coherence.md
 | money_moving+pin_value | both | 4-2 | 66.7 | 50.6 | 16.1 | +1.69 | 28.2 | 1.0 | 33.3 | keep collecting (6/30) |
 | money_moving+sharp_gap | both | 4-3 | 57.1 | 57.7 | -0.5 | +0.25 | 3.6 | -0.09 | 14.3 | keep collecting (7/30) |
 | book_lag+consensus_gap | both | 0-1 | 0.0 | 32.1 | -32.1 | -1.0 | -100.0 | 0.5 | 100.0 | keep collecting (1/30) |
+| consensus_gap+pin_rlm | both | 0-2 | 0.0 | 17.9 | -17.9 | -2.0 | -100.0 | -4.4 | 50.0 | redundant -- identical record to pin_rlm alone, not independent confirmation |
+| money_level+pin_rlm | both | 0-1 | 0.0 | 17.9 | -17.9 | -1.0 | -100.0 | -10.6 | 0.0 | keep collecting (1/30) |
+| pin_rlm+sharp_gap | both | 0-2 | 0.0 | 17.9 | -17.9 | -2.0 | -100.0 | -4.4 | 50.0 | redundant -- identical record to pin_rlm alone, not independent confirmation |
 | book_lag+money_level | both | 0-1 | 0.0 | 67.9 | -67.9 | -1.0 | -100.0 | -2.0 | 0.0 | keep collecting (1/30) |
 | book_lag+money_moving | both | 0-1 | 0.0 | 67.9 | -67.9 | -1.0 | -100.0 | -2.0 | 0.0 | keep collecting (1/30) |
 | book_lag+sharp_gap | both | 0-1 | 0.0 | 67.9 | -67.9 | -1.0 | -100.0 | -2.0 | 0.0 | keep collecting (1/30) |
 | consensus_gap+money_moving | both | 0-1 | 0.0 | 17.9 | -17.9 | -1.0 | -100.0 | 5.0 | 100.0 | keep collecting (1/30) |
+| pin_rlm+pin_value | both | 0-1 | 0.0 | 17.9 | -17.9 | -1.0 | -100.0 | 1.8 | 100.0 | keep collecting (1/30) |
+| pin_rlm | moneyline | 0-2 | 0.0 | 17.9 | -17.9 | -2.0 | -100.0 | -4.4 | 50.0 | keep collecting (2/30) |
 | follow_move | moneyline | 17-3 | 85.0 | 82.1 | 2.9 | +3.68 | 18.4 | -0.28 | 35.0 | keep collecting (20/30) |
 | follow_move | spread | 7-5 | 58.3 | 53.0 | 5.4 | +1.24 | 10.3 | 0.25 | 25.0 | keep collecting (12/30) |
 | follow_move | total | 0-1 | 0.0 | 50.0 | -50.0 | -1.0 | -100.0 | -3.0 | 0.0 | keep collecting (1/30) |
@@ -93,10 +99,14 @@ signal this system exists to find. See fault 4 in propwatch-news-vs-coherence.md
 | consensus_gap+follow_move | moneyline | 2-0 | 100.0 | 82.1 | 17.9 | +0.94 | 46.8 | -0.35 | 50.0 | keep collecting (2/30) |
 | consensus_gap+money_level | moneyline | 2-1 | 66.7 | 60.7 | 6.0 | -0.06 | -2.2 | -3.77 | 33.3 | keep collecting (3/30) |
 | consensus_gap+pin_value | moneyline | 0-4 | 0.0 | 17.9 | -17.9 | -4.0 | -100.0 | 2.38 | 100.0 | keep collecting (4/30) |
+| consensus_gap+pin_rlm | moneyline | 0-2 | 0.0 | 17.9 | -17.9 | -2.0 | -100.0 | -4.4 | 50.0 | redundant -- identical record to pin_rlm alone, not independent confirmation |
+| money_level+pin_rlm | moneyline | 0-1 | 0.0 | 17.9 | -17.9 | -1.0 | -100.0 | -10.6 | 0.0 | keep collecting (1/30) |
+| pin_rlm+sharp_gap | moneyline | 0-2 | 0.0 | 17.9 | -17.9 | -2.0 | -100.0 | -4.4 | 50.0 | redundant -- identical record to pin_rlm alone, not independent confirmation |
 | money_moving+sharp_gap | moneyline | 1-1 | 50.0 | 50.0 | 0.0 | -0.61 | -30.4 | 0.7 | 50.0 | keep collecting (2/30) |
 | pin_value+sharp_gap | moneyline | 0-3 | 0.0 | 17.9 | -17.9 | -3.0 | -100.0 | 3.03 | 100.0 | keep collecting (3/30) |
 | consensus_gap+money_moving | moneyline | 0-1 | 0.0 | 17.9 | -17.9 | -1.0 | -100.0 | 5.0 | 100.0 | keep collecting (1/30) |
 | money_moving+pin_value | moneyline | 0-1 | 0.0 | 17.9 | -17.9 | -1.0 | -100.0 | 5.0 | 100.0 | keep collecting (1/30) |
+| pin_rlm+pin_value | moneyline | 0-1 | 0.0 | 17.9 | -17.9 | -1.0 | -100.0 | 1.8 | 100.0 | keep collecting (1/30) |
 | follow_move+rlm | spread | 0-2 | 0.0 | 32.1 | -32.1 | -2.0 | -100.0 | 0.5 | 50.0 | redundant -- identical record to rlm alone, not independent confirmation |
 | follow_move+rlm_ratio | spread | 0-1 | 0.0 | 32.1 | -32.1 | -1.0 | -100.0 | 0.0 | 0.0 | redundant -- identical record to rlm_ratio alone, not independent confirmation |
 | follow_move+sharp_gap | spread | 6-4 | 60.0 | 53.6 | 6.4 | +1.41 | 14.1 | 0.2 | 20.0 | keep collecting (10/30) |
@@ -132,6 +142,7 @@ signal this system exists to find. See fault 4 in propwatch-news-vs-coherence.md
 
 | signal | market | record | hit % | expected % | edge | units | ROI % | CLV avg | CLV + % | status |
 |---|---|---|---|---|---|---|---|---|---|---|
+| pin_rlm | both | 3-8 | 27.3 | 35.4 | -8.1 | -5.31 | -48.3 |  |  | keep collecting (11/30) |
 | follow_move | both | 48-32 | 60.0 | 63.2 | -3.2 | -0.21 | -0.3 |  |  | no edge shown yet |
 | rlm | both | 4-12 | 25.0 | 50.9 | -25.9 | -8.44 | -52.8 |  |  | keep collecting (16/30) |
 | rlm_ratio | both | 3-6 | 33.3 | 53.6 | -20.2 | -3.31 | -36.8 |  |  | keep collecting (9/30) |
@@ -164,14 +175,25 @@ signal this system exists to find. See fault 4 in propwatch-news-vs-coherence.md
 | money_moving+sharp_gap | both | 16-24 | 40.0 | 43.6 | -3.6 | -10.72 | -26.8 |  |  | DROP: below break-even |
 | consensus_gap+follow_move | both | 3-1 | 75.0 | 78.6 | -3.6 | +0.54 | 13.4 |  |  | keep collecting (4/30) |
 | money_level+money_moving | both | 16-8 | 66.7 | 55.4 | 11.3 | +4.65 | 19.4 |  |  | keep collecting (24/30) |
+| consensus_gap+pin_rlm | both | 0-4 | 0.0 | 17.9 | -17.9 | -4.0 | -100.0 |  |  | keep collecting (4/30) |
+| money_level+pin_rlm | both | 0-3 | 0.0 | 39.3 | -39.3 | -3.0 | -100.0 |  |  | keep collecting (3/30) |
+| money_moving+pin_rlm | both | 3-8 | 27.3 | 35.4 | -8.1 | -5.31 | -48.3 |  |  | redundant -- identical record to pin_rlm alone, not independent confirmation |
+| pin_rlm+sharp_gap | both | 3-8 | 27.3 | 35.4 | -8.1 | -5.31 | -48.3 |  |  | redundant -- identical record to pin_rlm alone, not independent confirmation |
 | follow_move+money_moving | both | 9-9 | 50.0 | 59.7 | -9.7 | -3.22 | -17.9 |  |  | keep collecting (18/30) |
+| follow_move+pin_rlm | both | 3-3 | 50.0 | 50.0 | 0.0 | -0.31 | -5.2 |  |  | keep collecting (6/30) |
 | money_moving+rlm | both | 3-7 | 30.0 | 46.4 | -16.4 | -4.31 | -43.1 |  |  | keep collecting (10/30) |
 | money_moving+rlm_ratio | both | 3-3 | 50.0 | 50.0 | 0.0 | -0.31 | -5.2 |  |  | keep collecting (6/30) |
+| pin_rlm+pin_value | both | 1-3 | 25.0 | 33.9 | -8.9 | -2.13 | -53.2 |  |  | keep collecting (4/30) |
+| pin_rlm+rlm | both | 3-3 | 50.0 | 50.0 | 0.0 | -0.31 | -5.2 |  |  | keep collecting (6/30) |
+| pin_rlm+rlm_ratio | both | 3-3 | 50.0 | 50.0 | 0.0 | -0.31 | -5.2 |  |  | keep collecting (6/30) |
 | pin_value+rlm_ratio | both | 1-1 | 50.0 | 50.0 | 0.0 | -0.13 | -6.5 |  |  | keep collecting (2/30) |
 | money_level+rlm | both | 0-2 | 0.0 | 50.0 | -50.0 | -2.0 | -100.0 |  |  | keep collecting (2/30) |
 | money_level+rlm_ratio | both | 0-2 | 0.0 | 50.0 | -50.0 | -2.0 | -100.0 |  |  | keep collecting (2/30) |
 | consensus_gap+rlm | both | 0-1 | 0.0 | 67.9 | -67.9 | -1.0 | -100.0 |  |  | keep collecting (1/30) |
 | book_lag+money_level | both | 1-0 | 100.0 | 67.9 | 32.1 | +0.83 | 83.3 |  |  | keep collecting (1/30) |
+| pin_rlm | moneyline | 0-5 | 0.0 | 17.9 | -17.9 | -5.0 | -100.0 |  |  | keep collecting (5/30) |
+| pin_rlm | spread | 0-2 | 0.0 | 50.0 | -50.0 | -2.0 | -100.0 |  |  | keep collecting (2/30) |
+| pin_rlm | total | 3-1 | 75.0 | 50.0 | 25.0 | +1.69 | 42.2 |  |  | keep collecting (4/30) |
 | follow_move | moneyline | 23-5 | 82.1 | 82.1 | -0.0 | +4.45 | 15.9 |  |  | keep collecting (28/30) |
 | follow_move | spread | 9-14 | 39.1 | 55.4 | -16.3 | -5.79 | -25.2 |  |  | keep collecting (23/30) |
 | follow_move | total | 5-4 | 55.6 | 50.0 | 5.6 | +0.47 | 5.2 |  |  | keep collecting (9/30) |
@@ -215,9 +237,14 @@ signal this system exists to find. See fault 4 in propwatch-news-vs-coherence.md
 | consensus_gap+follow_move | moneyline | 3-0 | 100.0 | 82.1 | 17.9 | +1.54 | 51.2 |  |  | keep collecting (3/30) |
 | consensus_gap+money_moving | moneyline | 2-8 | 20.0 | 17.9 | 2.1 | -5.58 | -55.8 |  |  | keep collecting (10/30) |
 | money_moving+pin_value | moneyline | 2-3 | 40.0 | 30.7 | 9.3 | -1.59 | -31.9 |  |  | keep collecting (5/30) |
+| consensus_gap+pin_rlm | moneyline | 0-4 | 0.0 | 17.9 | -17.9 | -4.0 | -100.0 |  |  | keep collecting (4/30) |
 | money_level+money_moving | moneyline | 6-2 | 75.0 | 66.1 | 8.9 | +1.64 | 20.5 |  |  | keep collecting (8/30) |
+| money_level+pin_rlm | moneyline | 0-1 | 0.0 | 17.9 | -17.9 | -1.0 | -100.0 |  |  | keep collecting (1/30) |
+| money_moving+pin_rlm | moneyline | 0-5 | 0.0 | 17.9 | -17.9 | -5.0 | -100.0 |  |  | redundant -- identical record to pin_rlm alone, not independent confirmation |
 | money_moving+sharp_gap | moneyline | 5-8 | 38.5 | 42.6 | -4.1 | -4.56 | -35.1 |  |  | keep collecting (13/30) |
+| pin_rlm+sharp_gap | moneyline | 0-5 | 0.0 | 17.9 | -17.9 | -5.0 | -100.0 |  |  | redundant -- identical record to pin_rlm alone, not independent confirmation |
 | follow_move+money_moving | moneyline | 5-1 | 83.3 | 82.1 | 1.2 | +1.18 | 19.7 |  |  | keep collecting (6/30) |
+| pin_rlm+pin_value | moneyline | 0-2 | 0.0 | 17.9 | -17.9 | -2.0 | -100.0 |  |  | keep collecting (2/30) |
 | follow_move+pin_value | moneyline | 1-0 | 100.0 | 82.1 | 17.9 | +0.44 | 44.4 |  |  | keep collecting (1/30) |
 | money_level+pin_value | moneyline | 1-0 | 100.0 | 82.1 | 17.9 | +0.44 | 44.4 |  |  | keep collecting (1/30) |
 | follow_move+rlm | spread | 1-8 | 11.1 | 48.0 | -36.9 | -7.13 | -79.2 |  |  | redundant -- identical record to rlm alone, not independent confirmation |
@@ -243,9 +270,15 @@ signal this system exists to find. See fault 4 in propwatch-news-vs-coherence.md
 | money_moving+sharp_gap | spread | 4-9 | 30.8 | 37.6 | -6.9 | -5.42 | -41.7 |  |  | keep collecting (13/30) |
 | follow_move+money_moving | spread | 1-4 | 20.0 | 46.4 | -26.4 | -3.09 | -61.8 |  |  | keep collecting (5/30) |
 | money_moving+rlm | spread | 0-4 | 0.0 | 41.1 | -41.1 | -4.0 | -100.0 |  |  | keep collecting (4/30) |
+| follow_move+pin_rlm | spread | 0-2 | 0.0 | 50.0 | -50.0 | -2.0 | -100.0 |  |  | redundant -- identical record to pin_rlm alone, not independent confirmation |
+| money_level+pin_rlm | spread | 0-2 | 0.0 | 50.0 | -50.0 | -2.0 | -100.0 |  |  | redundant -- identical record to pin_rlm alone, not independent confirmation |
 | money_level+rlm | spread | 0-2 | 0.0 | 50.0 | -50.0 | -2.0 | -100.0 |  |  | keep collecting (2/30) |
 | money_level+rlm_ratio | spread | 0-2 | 0.0 | 50.0 | -50.0 | -2.0 | -100.0 |  |  | keep collecting (2/30) |
+| money_moving+pin_rlm | spread | 0-2 | 0.0 | 50.0 | -50.0 | -2.0 | -100.0 |  |  | redundant -- identical record to pin_rlm alone, not independent confirmation |
 | money_moving+rlm_ratio | spread | 0-2 | 0.0 | 50.0 | -50.0 | -2.0 | -100.0 |  |  | keep collecting (2/30) |
+| pin_rlm+rlm | spread | 0-2 | 0.0 | 50.0 | -50.0 | -2.0 | -100.0 |  |  | redundant -- identical record to pin_rlm alone, not independent confirmation |
+| pin_rlm+rlm_ratio | spread | 0-2 | 0.0 | 50.0 | -50.0 | -2.0 | -100.0 |  |  | redundant -- identical record to pin_rlm alone, not independent confirmation |
+| pin_rlm+sharp_gap | spread | 0-2 | 0.0 | 50.0 | -50.0 | -2.0 | -100.0 |  |  | redundant -- identical record to pin_rlm alone, not independent confirmation |
 | consensus_gap+follow_move | spread | 0-1 | 0.0 | 67.9 | -67.9 | -1.0 | -100.0 |  |  | keep collecting (1/30) |
 | consensus_gap+rlm | spread | 0-1 | 0.0 | 67.9 | -67.9 | -1.0 | -100.0 |  |  | keep collecting (1/30) |
 | book_lag+money_level | spread | 1-0 | 100.0 | 67.9 | 32.1 | +0.83 | 83.3 |  |  | keep collecting (1/30) |
@@ -257,12 +290,18 @@ signal this system exists to find. See fault 4 in propwatch-news-vs-coherence.md
 | money_level+money_moving | total | 5-3 | 62.5 | 50.0 | 12.5 | +1.49 | 18.6 |  |  | keep collecting (8/30) |
 | money_moving+pin_value | total | 4-3 | 57.1 | 50.0 | 7.1 | +0.5 | 7.2 |  |  | keep collecting (7/30) |
 | follow_move+money_moving | total | 3-4 | 42.9 | 50.0 | -7.1 | -1.31 | -18.7 |  |  | keep collecting (7/30) |
+| follow_move+pin_rlm | total | 3-1 | 75.0 | 50.0 | 25.0 | +1.69 | 42.2 |  |  | redundant -- identical record to pin_rlm alone, not independent confirmation |
 | follow_move+pin_value | total | 1-2 | 33.3 | 50.0 | -16.7 | -1.13 | -37.7 |  |  | keep collecting (3/30) |
 | follow_move+rlm | total | 3-3 | 50.0 | 50.0 | 0.0 | -0.31 | -5.2 |  |  | redundant -- identical record to rlm alone, not independent confirmation |
 | follow_move+rlm_ratio | total | 3-1 | 75.0 | 50.0 | 25.0 | +1.69 | 42.2 |  |  | redundant -- identical record to rlm_ratio alone, not independent confirmation |
 | follow_move+sharp_gap | total | 3-3 | 50.0 | 50.0 | 0.0 | -0.31 | -5.2 |  |  | keep collecting (6/30) |
+| money_moving+pin_rlm | total | 3-1 | 75.0 | 50.0 | 25.0 | +1.69 | 42.2 |  |  | redundant -- identical record to pin_rlm alone, not independent confirmation |
 | money_moving+rlm | total | 3-3 | 50.0 | 50.0 | 0.0 | -0.31 | -5.2 |  |  | redundant -- identical record to rlm alone, not independent confirmation |
 | money_moving+rlm_ratio | total | 3-1 | 75.0 | 50.0 | 25.0 | +1.69 | 42.2 |  |  | redundant -- identical record to rlm_ratio alone, not independent confirmation |
+| pin_rlm+pin_value | total | 1-1 | 50.0 | 50.0 | 0.0 | -0.13 | -6.5 |  |  | keep collecting (2/30) |
+| pin_rlm+rlm | total | 3-1 | 75.0 | 50.0 | 25.0 | +1.69 | 42.2 |  |  | redundant -- identical record to pin_rlm alone, not independent confirmation |
+| pin_rlm+rlm_ratio | total | 3-1 | 75.0 | 50.0 | 25.0 | +1.69 | 42.2 |  |  | redundant -- identical record to pin_rlm alone, not independent confirmation |
+| pin_rlm+sharp_gap | total | 3-1 | 75.0 | 50.0 | 25.0 | +1.69 | 42.2 |  |  | redundant -- identical record to pin_rlm alone, not independent confirmation |
 | pin_value+rlm | total | 1-2 | 33.3 | 50.0 | -16.7 | -1.13 | -37.7 |  |  | keep collecting (3/30) |
 | pin_value+rlm_ratio | total | 1-1 | 50.0 | 50.0 | 0.0 | -0.13 | -6.5 |  |  | keep collecting (2/30) |
 | rlm+rlm_ratio | total | 3-1 | 75.0 | 50.0 | 25.0 | +1.69 | 42.2 |  |  | redundant -- identical record to rlm_ratio alone, not independent confirmation |
@@ -275,6 +314,9 @@ signal this system exists to find. See fault 4 in propwatch-news-vs-coherence.md
 
 | signal | checkpoint | slice | record | hit % | edge | ROI % | CLV avg |
 |---|---|---|---|---|---|---|---|
+| pin_rlm | close | 40k+ bets | 3-8 | 27.3 | -8.1 | -48.3 |  |
+| pin_rlm | close | pin $10-50k | 3-2 | 60.0 | 16.4 | 13.8 |  |
+| pin_rlm | close | pin $50k+ | 0-6 | 0.0 | -28.6 | -100.0 |  |
 | follow_move | close | 40k+ bets | 48-32 | 60.0 | -3.2 | -0.3 |  |
 | follow_move | close | pin $10-50k | 10-4 | 71.4 | 9.9 | 13.0 |  |
 | follow_move | close | pin $50k+ | 27-19 | 58.7 | -10.1 | -5.9 |  |
@@ -326,9 +368,17 @@ signal this system exists to find. See fault 4 in propwatch-news-vs-coherence.md
 | money_moving+sharp_gap | close | 40k+ bets | 16-24 | 40.0 | -3.6 | -26.8 |  |
 | consensus_gap+follow_move | close | 40k+ bets | 3-1 | 75.0 | -3.6 | 13.4 |  |
 | money_level+money_moving | close | 40k+ bets | 16-8 | 66.7 | 11.3 | 19.4 |  |
+| consensus_gap+pin_rlm | close | 40k+ bets | 0-4 | 0.0 | -17.9 | -100.0 |  |
+| money_level+pin_rlm | close | 40k+ bets | 0-3 | 0.0 | -39.3 | -100.0 |  |
+| money_moving+pin_rlm | close | 40k+ bets | 3-8 | 27.3 | -8.1 | -48.3 |  |
+| pin_rlm+sharp_gap | close | 40k+ bets | 3-8 | 27.3 | -8.1 | -48.3 |  |
 | follow_move+money_moving | close | 40k+ bets | 9-9 | 50.0 | -9.7 | -17.9 |  |
+| follow_move+pin_rlm | close | 40k+ bets | 3-3 | 50.0 | 0.0 | -5.2 |  |
 | money_moving+rlm | close | 40k+ bets | 3-7 | 30.0 | -16.4 | -43.1 |  |
 | money_moving+rlm_ratio | close | 40k+ bets | 3-3 | 50.0 | 0.0 | -5.2 |  |
+| pin_rlm+pin_value | close | 40k+ bets | 1-3 | 25.0 | -8.9 | -53.2 |  |
+| pin_rlm+rlm | close | 40k+ bets | 3-3 | 50.0 | 0.0 | -5.2 |  |
+| pin_rlm+rlm_ratio | close | 40k+ bets | 3-3 | 50.0 | 0.0 | -5.2 |  |
 | pin_value+rlm_ratio | close | 40k+ bets | 1-1 | 50.0 | 0.0 | -6.5 |  |
 | money_level+rlm | close | 40k+ bets | 0-2 | 0.0 | -50.0 | -100.0 |  |
 | money_level+rlm_ratio | close | 40k+ bets | 0-2 | 0.0 | -50.0 | -100.0 |  |
@@ -347,17 +397,24 @@ signal this system exists to find. See fault 4 in propwatch-news-vs-coherence.md
 | money_level+money_moving | close | pin $10-50k | 6-3 | 66.7 | 9.5 | 15.0 |  |
 | money_moving+pin_value | close | pin $10-50k | 4-4 | 50.0 | 4.0 | -6.2 |  |
 | follow_move+money_moving | close | pin $10-50k | 5-4 | 55.6 | -1.6 | -6.1 |  |
+| follow_move+pin_rlm | close | pin $10-50k | 3-1 | 75.0 | 25.0 | 42.2 |  |
 | follow_move+pin_value | close | pin $10-50k | 1-2 | 33.3 | -16.7 | -37.7 |  |
 | follow_move+rlm | close | pin $10-50k | 3-3 | 50.0 | 0.0 | -5.2 |  |
 | follow_move+rlm_ratio | close | pin $10-50k | 3-1 | 75.0 | 25.0 | 42.2 |  |
+| money_moving+pin_rlm | close | pin $10-50k | 3-2 | 60.0 | 16.4 | 13.8 |  |
 | money_moving+rlm | close | pin $10-50k | 3-3 | 50.0 | 0.0 | -5.2 |  |
 | money_moving+rlm_ratio | close | pin $10-50k | 3-1 | 75.0 | 25.0 | 42.2 |  |
+| pin_rlm+pin_value | close | pin $10-50k | 1-2 | 33.3 | -6.0 | -37.7 |  |
+| pin_rlm+rlm | close | pin $10-50k | 3-1 | 75.0 | 25.0 | 42.2 |  |
+| pin_rlm+rlm_ratio | close | pin $10-50k | 3-1 | 75.0 | 25.0 | 42.2 |  |
+| pin_rlm+sharp_gap | close | pin $10-50k | 3-2 | 60.0 | 16.4 | 13.8 |  |
 | pin_value+rlm | close | pin $10-50k | 1-2 | 33.3 | -16.7 | -37.7 |  |
 | pin_value+rlm_ratio | close | pin $10-50k | 1-1 | 50.0 | 0.0 | -6.5 |  |
 | rlm+rlm_ratio | close | pin $10-50k | 3-1 | 75.0 | 25.0 | 42.2 |  |
 | rlm+sharp_gap | close | pin $10-50k | 3-2 | 60.0 | 10.0 | 13.8 |  |
 | rlm_ratio+sharp_gap | close | pin $10-50k | 3-1 | 75.0 | 25.0 | 42.2 |  |
 | consensus_gap+money_moving | close | pin $10-50k | 0-1 | 0.0 | -17.9 | -100.0 |  |
+| consensus_gap+pin_rlm | close | pin $10-50k | 0-1 | 0.0 | -17.9 | -100.0 |  |
 | follow_move+rlm | close | pin $50k+ | 1-9 | 10.0 | -41.4 | -81.3 |  |
 | follow_move+rlm_ratio | close | pin $50k+ | 0-5 | 0.0 | -56.4 | -100.0 |  |
 | follow_move+sharp_gap | close | pin $50k+ | 13-12 | 52.0 | -12.7 | -16.5 |  |
@@ -378,17 +435,27 @@ signal this system exists to find. See fault 4 in propwatch-news-vs-coherence.md
 | book_lag+pin_value | close | pin $50k+ | 2-0 | 100.0 | 50.0 | 80.7 |  |
 | consensus_gap+money_moving | close | pin $50k+ | 3-7 | 30.0 | 10.7 | -38.0 |  |
 | money_moving+pin_value | close | pin $50k+ | 6-2 | 75.0 | 33.0 | 35.5 |  |
+| consensus_gap+pin_rlm | close | pin $50k+ | 0-3 | 0.0 | -17.9 | -100.0 |  |
 | money_level+money_moving | close | pin $50k+ | 10-5 | 66.7 | 12.4 | 22.0 |  |
+| money_level+pin_rlm | close | pin $50k+ | 0-3 | 0.0 | -39.3 | -100.0 |  |
+| money_moving+pin_rlm | close | pin $50k+ | 0-6 | 0.0 | -28.6 | -100.0 |  |
 | money_moving+sharp_gap | close | pin $50k+ | 9-16 | 36.0 | -3.7 | -34.6 |  |
+| pin_rlm+sharp_gap | close | pin $50k+ | 0-6 | 0.0 | -28.6 | -100.0 |  |
 | follow_move+money_moving | close | pin $50k+ | 4-5 | 44.4 | -17.9 | -29.7 |  |
+| pin_rlm+pin_value | close | pin $50k+ | 0-1 | 0.0 | -17.9 | -100.0 |  |
 | consensus_gap+follow_move | close | pin $50k+ | 2-1 | 66.7 | -10.7 | 8.4 |  |
 | money_moving+rlm | close | pin $50k+ | 0-4 | 0.0 | -41.1 | -100.0 |  |
+| follow_move+pin_rlm | close | pin $50k+ | 0-2 | 0.0 | -50.0 | -100.0 |  |
 | money_level+rlm | close | pin $50k+ | 0-2 | 0.0 | -50.0 | -100.0 |  |
 | money_level+rlm_ratio | close | pin $50k+ | 0-2 | 0.0 | -50.0 | -100.0 |  |
 | money_moving+rlm_ratio | close | pin $50k+ | 0-2 | 0.0 | -50.0 | -100.0 |  |
+| pin_rlm+rlm | close | pin $50k+ | 0-2 | 0.0 | -50.0 | -100.0 |  |
+| pin_rlm+rlm_ratio | close | pin $50k+ | 0-2 | 0.0 | -50.0 | -100.0 |  |
 | consensus_gap+rlm | close | pin $50k+ | 0-1 | 0.0 | -67.9 | -100.0 |  |
 | book_lag+money_level | close | pin $50k+ | 1-0 | 100.0 | 32.1 | 83.3 |  |
 | follow_move+pin_value | close | pin limit <$10k | 1-0 | 100.0 | 44.6 | 88.5 |  |
+| pin_rlm | early | <10k bets | 0-2 | 0.0 | -17.9 | -100.0 | -4.4 |
+| pin_rlm | early | pin limit <$10k | 0-2 | 0.0 | -17.9 | -100.0 | -4.4 |
 | follow_move | early | 10-40k bets | 2-1 | 66.7 | -10.7 | 6.3 | -0.4 |
 | follow_move | early | 40k+ bets | 3-2 | 60.0 | -2.1 | -10.9 | -0.1 |
 | follow_move | early | <10k bets | 19-6 | 76.0 | 4.6 | 17.1 | -0.15 |
@@ -467,11 +534,15 @@ signal this system exists to find. See fault 4 in propwatch-news-vs-coherence.md
 | consensus_gap+money_level | early | <10k bets | 3-1 | 75.0 | 12.5 | 20.1 | -2.83 |
 | book_lag+consensus_gap | early | <10k bets | 0-1 | 0.0 | -32.1 | -100.0 | 0.5 |
 | consensus_gap+pin_value | early | <10k bets | 0-4 | 0.0 | -17.9 | -100.0 | 2.38 |
+| consensus_gap+pin_rlm | early | <10k bets | 0-2 | 0.0 | -17.9 | -100.0 | -4.4 |
+| money_level+pin_rlm | early | <10k bets | 0-1 | 0.0 | -17.9 | -100.0 | -10.6 |
+| pin_rlm+sharp_gap | early | <10k bets | 0-2 | 0.0 | -17.9 | -100.0 | -4.4 |
 | follow_move+rlm | early | <10k bets | 0-1 | 0.0 | -32.1 | -100.0 | 1.0 |
 | book_lag+money_level | early | <10k bets | 0-1 | 0.0 | -67.9 | -100.0 | -2.0 |
 | book_lag+money_moving | early | <10k bets | 0-1 | 0.0 | -67.9 | -100.0 | -2.0 |
 | book_lag+sharp_gap | early | <10k bets | 0-1 | 0.0 | -67.9 | -100.0 | -2.0 |
 | consensus_gap+money_moving | early | <10k bets | 0-1 | 0.0 | -17.9 | -100.0 | 5.0 |
+| pin_rlm+pin_value | early | <10k bets | 0-1 | 0.0 | -17.9 | -100.0 | 1.8 |
 | money_level+pin_value | early | pin $10-50k | 3-1 | 75.0 | 11.6 | 45.2 | -0.38 |
 | money_level+sharp_gap | early | pin $10-50k | 9-8 | 52.9 | -3.2 | -2.2 | -0.12 |
 | pin_value+sharp_gap | early | pin $10-50k | 3-1 | 75.0 | 11.6 | 45.2 | -0.38 |
@@ -516,5 +587,9 @@ signal this system exists to find. See fault 4 in propwatch-news-vs-coherence.md
 | consensus_gap+money_level | early | pin limit <$10k | 2-1 | 66.7 | 6.0 | -2.2 | -3.77 |
 | consensus_gap+pin_value | early | pin limit <$10k | 0-4 | 0.0 | -17.9 | -100.0 | 2.38 |
 | money_moving+sharp_gap | early | pin limit <$10k | 3-2 | 60.0 | 6.4 | 5.4 | 0.28 |
+| consensus_gap+pin_rlm | early | pin limit <$10k | 0-2 | 0.0 | -17.9 | -100.0 | -4.4 |
+| money_level+pin_rlm | early | pin limit <$10k | 0-1 | 0.0 | -17.9 | -100.0 | -10.6 |
+| pin_rlm+sharp_gap | early | pin limit <$10k | 0-2 | 0.0 | -17.9 | -100.0 | -4.4 |
 | money_moving+pin_value | early | pin limit <$10k | 1-1 | 50.0 | 16.1 | -3.7 | 2.5 |
 | consensus_gap+money_moving | early | pin limit <$10k | 0-1 | 0.0 | -17.9 | -100.0 | 5.0 |
+| pin_rlm+pin_value | early | pin limit <$10k | 0-1 | 0.0 | -17.9 | -100.0 | 1.8 |
