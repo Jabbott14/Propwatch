@@ -1,6 +1,6 @@
 # NFL scorecard
 
-Generated 2026-11-12 06:03 UTC. 28 graded games (0 finished games had no final score and are not graded).
+Generated 2026-11-12 06:16 UTC. 28 graded games (0 finished games had no final score and are not graded).
 
 Each signal is graded on **every** game it had an opinion on, at the FanDuel price
 available at that moment. EARLY = one hour after the line was first seen. CLOSE =
@@ -29,15 +29,16 @@ signal this system exists to find. See fault 4 in propwatch-news-vs-coherence.md
 
 | signal | market | record | hit % | expected % | edge | units | ROI % | CLV avg | CLV + % | status |
 |---|---|---|---|---|---|---|---|---|---|---|
-| follow_move | both | 1-2 | 33.3 | 50.0 | -16.7 | -1.44 | -47.9 | -1.87 | 33.3 | keep collecting (3/30) |
-| rlm | both | 0-1 | 0.0 | 17.9 | -17.9 | -1.0 | -100.0 | 0.5 | 100.0 | keep collecting (1/30) |
+| follow_move | both | 24-9 | 72.7 | 70.6 | 2.2 | +3.92 | 11.9 | -0.17 | 30.3 | beats break-even but not its base rate -- directional bias, not signal |
+| rlm | both | 0-2 | 0.0 | 32.1 | -32.1 | -2.0 | -100.0 | 0.5 | 50.0 | keep collecting (2/30) |
 | money_level | both | 37-21 | 63.8 | 61.0 | 2.8 | +4.26 | 7.3 | -0.81 | 15.5 | beats break-even but not its base rate -- directional bias, not signal |
 | sharp_gap | both | 30-29 | 50.8 | 51.3 | -0.5 | -5.24 | -8.9 | -0.1 | 28.8 | no edge shown yet |
 | money_moving | both | 10-6 | 62.5 | 57.4 | 5.1 | +1.61 | 10.1 | -0.23 | 25.0 | keep collecting (16/30) |
 | pin_value | both | 12-11 | 52.2 | 46.1 | 6.1 | -0.32 | -1.4 | 0.3 | 30.4 | keep collecting (23/30) |
-| follow_move | moneyline | 1-1 | 50.0 | 50.0 | 0.0 | -0.44 | -21.9 | -1.3 | 50.0 | keep collecting (2/30) |
+| follow_move | moneyline | 17-3 | 85.0 | 82.1 | 2.9 | +3.68 | 18.4 | -0.28 | 35.0 | keep collecting (20/30) |
+| follow_move | spread | 7-5 | 58.3 | 53.0 | 5.4 | +1.24 | 10.3 | 0.25 | 25.0 | keep collecting (12/30) |
 | follow_move | total | 0-1 | 0.0 | 50.0 | -50.0 | -1.0 | -100.0 | -3.0 | 0.0 | keep collecting (1/30) |
-| rlm | moneyline | 0-1 | 0.0 | 17.9 | -17.9 | -1.0 | -100.0 | 0.5 | 100.0 | keep collecting (1/30) |
+| rlm | spread | 0-2 | 0.0 | 32.1 | -32.1 | -2.0 | -100.0 | 0.5 | 50.0 | keep collecting (2/30) |
 | money_level | moneyline | 16-3 | 84.2 | 78.8 | 5.5 | +2.98 | 15.7 | -1.55 | 26.3 | keep collecting (19/30) |
 | money_level | spread | 12-7 | 63.2 | 54.7 | 8.5 | +4.08 | 21.5 | -0.24 | 10.5 | keep collecting (19/30) |
 | money_level | total | 9-11 | 45.0 | 50.0 | -5.0 | -2.81 | -14.0 | -0.65 | 10.0 | keep collecting (20/30) |
@@ -55,17 +56,17 @@ signal this system exists to find. See fault 4 in propwatch-news-vs-coherence.md
 
 | signal | market | record | hit % | expected % | edge | units | ROI % | CLV avg | CLV + % | status |
 |---|---|---|---|---|---|---|---|---|---|---|
-| follow_move | both | 12-26 | 31.6 | 46.1 | -14.6 | -17.97 | -47.3 |  |  | DROP: below break-even |
-| rlm | both | 3-22 | 12.0 | 32.4 | -20.4 | -19.31 | -77.2 |  |  | keep collecting (25/30) |
+| follow_move | both | 37-23 | 61.7 | 67.1 | -5.4 | -0.87 | -1.5 |  |  | no edge shown yet |
+| rlm | both | 4-12 | 25.0 | 50.9 | -25.9 | -8.44 | -52.8 |  |  | keep collecting (16/30) |
 | money_level | both | 54-30 | 64.3 | 60.5 | 3.7 | +8.81 | 10.5 |  |  | beats break-even but not its base rate -- directional bias, not signal |
 | sharp_gap | both | 36-45 | 44.4 | 49.2 | -4.7 | -15.76 | -19.5 |  |  | no edge shown yet |
 | money_moving | both | 24-31 | 43.6 | 43.0 | 0.6 | -11.31 | -20.6 |  |  | no edge shown yet |
 | pin_value | both | 19-11 | 63.3 | 46.4 | 16.9 | +5.14 | 17.1 |  |  | no edge shown yet |
-| follow_move | moneyline | 6-14 | 30.0 | 43.6 | -13.6 | -11.34 | -56.7 |  |  | keep collecting (20/30) |
-| follow_move | spread | 1-8 | 11.1 | 48.0 | -36.9 | -7.09 | -78.8 |  |  | keep collecting (9/30) |
+| follow_move | moneyline | 23-5 | 82.1 | 82.1 | -0.0 | +4.45 | 15.9 |  |  | keep collecting (28/30) |
+| follow_move | spread | 9-14 | 39.1 | 55.4 | -16.3 | -5.79 | -25.2 |  |  | keep collecting (23/30) |
 | follow_move | total | 5-4 | 55.6 | 50.0 | 5.6 | +0.47 | 5.2 |  |  | keep collecting (9/30) |
-| rlm | moneyline | 0-12 | 0.0 | 17.9 | -17.9 | -12.0 | -100.0 |  |  | keep collecting (12/30) |
-| rlm | spread | 0-7 | 0.0 | 42.3 | -42.3 | -7.0 | -100.0 |  |  | keep collecting (7/30) |
+| rlm | moneyline | 0-1 | 0.0 | 82.1 | -82.1 | -1.0 | -100.0 |  |  | keep collecting (1/30) |
+| rlm | spread | 1-8 | 11.1 | 48.0 | -36.9 | -7.13 | -79.2 |  |  | keep collecting (9/30) |
 | rlm | total | 3-3 | 50.0 | 50.0 | 0.0 | -0.31 | -5.2 |  |  | keep collecting (6/30) |
 | money_level | moneyline | 24-4 | 85.7 | 75.3 | 10.5 | +7.6 | 27.1 |  |  | keep collecting (28/30) |
 | money_level | spread | 16-12 | 57.1 | 56.4 | 0.8 | +2.55 | 9.1 |  |  | keep collecting (28/30) |
@@ -84,12 +85,12 @@ signal this system exists to find. See fault 4 in propwatch-news-vs-coherence.md
 
 | signal | checkpoint | slice | record | hit % | edge | ROI % | CLV avg |
 |---|---|---|---|---|---|---|---|
-| follow_move | close | 40k+ bets | 12-26 | 31.6 | -14.6 | -47.3 |  |
-| follow_move | close | pin $10-50k | 7-7 | 50.0 | 2.3 | -13.4 |  |
-| follow_move | close | pin $50k+ | 5-19 | 20.8 | -24.4 | -67.0 |  |
-| rlm | close | 40k+ bets | 3-22 | 12.0 | -20.4 | -77.2 |  |
-| rlm | close | pin $10-50k | 3-6 | 33.3 | -6.0 | -36.8 |  |
-| rlm | close | pin $50k+ | 0-16 | 0.0 | -28.6 | -100.0 |  |
+| follow_move | close | 40k+ bets | 37-23 | 61.7 | -5.4 | -1.5 |  |
+| follow_move | close | pin $10-50k | 10-4 | 71.4 | 9.9 | 13.0 |  |
+| follow_move | close | pin $50k+ | 27-19 | 58.7 | -10.1 | -5.9 |  |
+| rlm | close | 40k+ bets | 4-12 | 25.0 | -25.9 | -52.8 |  |
+| rlm | close | pin $10-50k | 3-3 | 50.0 | 0.0 | -5.2 |  |
+| rlm | close | pin $50k+ | 1-9 | 10.0 | -41.4 | -81.3 |  |
 | money_level | close | 40k+ bets | 54-30 | 64.3 | 3.7 | 10.5 |  |
 | money_level | close | pin $10-50k | 18-14 | 56.2 | 1.2 | -2.8 |  |
 | money_level | close | pin $50k+ | 36-16 | 69.2 | 5.3 | 18.7 |  |
@@ -102,10 +103,16 @@ signal this system exists to find. See fault 4 in propwatch-news-vs-coherence.md
 | pin_value | close | 40k+ bets | 19-11 | 63.3 | 16.9 | 17.1 |  |
 | pin_value | close | pin $10-50k | 7-7 | 50.0 | 4.6 | -7.0 |  |
 | pin_value | close | pin $50k+ | 12-4 | 75.0 | 27.7 | 38.3 |  |
-| follow_move | early | <10k bets | 1-2 | 33.3 | -16.7 | -47.9 | -1.87 |
-| follow_move | early | pin limit <$10k | 1-2 | 33.3 | -16.7 | -47.9 | -1.87 |
-| rlm | early | <10k bets | 0-1 | 0.0 | -17.9 | -100.0 | 0.5 |
-| rlm | early | pin limit <$10k | 0-1 | 0.0 | -17.9 | -100.0 | 0.5 |
+| follow_move | early | 10-40k bets | 2-1 | 66.7 | -10.7 | 6.3 | -0.4 |
+| follow_move | early | 40k+ bets | 3-2 | 60.0 | -2.1 | -10.9 | -0.1 |
+| follow_move | early | <10k bets | 19-6 | 76.0 | 4.6 | 17.1 | -0.15 |
+| follow_move | early | pin $10-50k | 6-4 | 60.0 | 0.0 | 8.7 | 0.33 |
+| follow_move | early | pin $50k+ | 4-2 | 66.7 | 3.6 | 6.1 | -0.33 |
+| follow_move | early | pin limit <$10k | 14-3 | 82.4 | 2.9 | 15.8 | -0.4 |
+| rlm | early | 40k+ bets | 0-1 | 0.0 | -32.1 | -100.0 | 0.0 |
+| rlm | early | <10k bets | 0-1 | 0.0 | -32.1 | -100.0 | 1.0 |
+| rlm | early | pin $10-50k | 0-1 | 0.0 | -32.1 | -100.0 | 1.0 |
+| rlm | early | pin $50k+ | 0-1 | 0.0 | -32.1 | -100.0 | 0.0 |
 | money_level | early | 10-40k bets | 3-3 | 50.0 | -10.7 | -13.8 | -0.28 |
 | money_level | early | 40k+ bets | 4-4 | 50.0 | -16.5 | -19.9 | -0.06 |
 | money_level | early | <10k bets | 30-14 | 68.2 | 8.2 | 15.2 | -1.02 |

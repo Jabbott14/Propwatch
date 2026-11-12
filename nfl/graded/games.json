@@ -29,13 +29,19 @@
       "home": 24,
       "away": 76
      },
-     "open": -1.5,
+     "open": -1,
      "first_seen": "2026-11-01T1726Z",
+     "open_src": "sbr_open",
      "calls": {
+      "follow_move": "home",
+      "rlm": "home",
       "money_level": "away",
       "sharp_gap": "home",
       "pin_value": "away"
      },
+     "move_pts": 0.5,
+     "public_side": "away",
+     "public_tix": 82,
      "gap": {
       "home": 6,
       "away": -6
@@ -51,6 +57,22 @@
      "pin_gap": -0.5
     },
     "close_graded": {
+     "follow_move": {
+      "side": "home",
+      "line": -1.5,
+      "odds": -115,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": true
+     },
+     "rlm": {
+      "side": "home",
+      "line": -1.5,
+      "odds": -115,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": true
+     },
      "money_level": {
       "side": "away",
       "line": 1.5,
@@ -99,6 +121,7 @@
      },
      "open": 46.5,
      "first_seen": "2026-11-01T1726Z",
+     "open_src": "first_seen",
      "calls": {
       "money_level": "over",
       "sharp_gap": "over"
@@ -155,12 +178,18 @@
       "home": 42,
       "away": 58
      },
-     "open": -130,
+     "open": -110,
      "first_seen": "2026-11-01T1726Z",
+     "open_src": "sbr_open",
      "calls": {
+      "follow_move": "home",
+      "rlm": "home",
       "money_level": "away",
       "sharp_gap": "home"
      },
+     "move_pts": 4.1,
+     "public_side": "away",
+     "public_tix": 70,
      "gap": {
       "home": 12,
       "away": -12
@@ -176,6 +205,22 @@
      "fair": 55.2
     },
     "close_graded": {
+     "follow_move": {
+      "side": "home",
+      "line": -130,
+      "odds": -130,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": true
+     },
+     "rlm": {
+      "side": "home",
+      "line": -130,
+      "odds": -130,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": true
+     },
      "money_level": {
       "side": "away",
       "line": 110,
@@ -228,12 +273,15 @@
       "home": 52,
       "away": 48
      },
-     "open": -7.5,
+     "open": -6,
      "first_seen": "2026-11-01T1726Z",
+     "open_src": "sbr_open",
      "calls": {
+      "follow_move": "home",
       "money_level": "home",
       "sharp_gap": "away"
      },
+     "move_pts": 1.5,
      "gap": {
       "home": -3,
       "away": 3
@@ -248,6 +296,14 @@
      "pin_price_other": -105
     },
     "close_graded": {
+     "follow_move": {
+      "side": "home",
+      "line": -7.5,
+      "odds": -104,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": true
+     },
      "money_level": {
       "side": "home",
       "line": -7.5,
@@ -288,6 +344,7 @@
      },
      "open": 54.5,
      "first_seen": "2026-11-01T1726Z",
+     "open_src": "first_seen",
      "calls": {
       "money_level": "over",
       "sharp_gap": "over"
@@ -344,12 +401,15 @@
       "home": 55,
       "away": 45
      },
-     "open": -360,
+     "open": -110,
      "first_seen": "2026-11-01T1726Z",
+     "open_src": "sbr_open",
      "calls": {
+      "follow_move": "home",
       "money_level": "home",
       "sharp_gap": "away"
      },
+     "move_pts": 25.9,
      "gap": {
       "home": -35,
       "away": 35
@@ -365,6 +425,14 @@
      "fair": 75.2
     },
     "close_graded": {
+     "follow_move": {
+      "side": "home",
+      "line": -360,
+      "odds": -360,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": true
+     },
      "money_level": {
       "side": "home",
       "line": -360,
@@ -417,12 +485,18 @@
       "home": 36,
       "away": 64
      },
-     "open": -1.5,
+     "open": -1,
      "first_seen": "2026-11-01T1726Z",
+     "open_src": "sbr_open",
      "calls": {
+      "follow_move": "home",
+      "rlm": "home",
       "money_level": "away",
       "pin_value": "home"
      },
+     "move_pts": 0.5,
+     "public_side": "away",
+     "public_tix": 64,
      "gap": {
       "home": 0,
       "away": 0
@@ -438,6 +512,22 @@
      "pin_gap": 1.0
     },
     "close_graded": {
+     "follow_move": {
+      "side": "home",
+      "line": -1.5,
+      "odds": -115,
+      "res": "W",
+      "units": 0.87,
+      "took_fav": true
+     },
+     "rlm": {
+      "side": "home",
+      "line": -1.5,
+      "odds": -115,
+      "res": "W",
+      "units": 0.87,
+      "took_fav": true
+     },
      "money_level": {
       "side": "away",
       "line": 1.5,
@@ -478,6 +568,7 @@
      },
      "open": 43.5,
      "first_seen": "2026-11-01T1726Z",
+     "open_src": "first_seen",
      "calls": {
       "money_level": "over",
       "sharp_gap": "under",
@@ -544,12 +635,15 @@
       "home": 54,
       "away": 46
      },
-     "open": -126,
+     "open": -110,
      "first_seen": "2026-11-01T1726Z",
+     "open_src": "sbr_open",
      "calls": {
+      "follow_move": "home",
       "money_level": "home",
       "sharp_gap": "home"
      },
+     "move_pts": 3.4,
      "gap": {
       "home": 3,
       "away": -3
@@ -565,6 +659,14 @@
      "fair": 54.9
     },
     "close_graded": {
+     "follow_move": {
+      "side": "home",
+      "line": -126,
+      "odds": -126,
+      "res": "W",
+      "units": 0.794,
+      "took_fav": true
+     },
      "money_level": {
       "side": "home",
       "line": -126,
@@ -617,12 +719,15 @@
       "home": 55,
       "away": 45
      },
-     "open": -3.5,
+     "open": -4,
      "first_seen": "2026-11-01T1726Z",
+     "open_src": "sbr_open",
      "calls": {
+      "follow_move": "away",
       "money_level": "home",
       "sharp_gap": "home"
      },
+     "move_pts": 0.5,
      "gap": {
       "home": 7,
       "away": -7
@@ -637,6 +742,14 @@
      "pin_price_other": -103
     },
     "close_graded": {
+     "follow_move": {
+      "side": "away",
+      "line": 3.5,
+      "odds": -105,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": false
+     },
      "money_level": {
       "side": "home",
       "line": -3.5,
@@ -677,6 +790,7 @@
      },
      "open": 38.5,
      "first_seen": "2026-11-01T1726Z",
+     "open_src": "first_seen",
      "calls": {
       "money_level": "over",
       "sharp_gap": "over"
@@ -733,16 +847,14 @@
       "home": 82,
       "away": 18
      },
-     "open": -210,
+     "open": -112,
      "first_seen": "2026-11-01T1726Z",
+     "open_src": "sbr_open",
      "calls": {
-      "follow_move": "away",
-      "rlm": "away",
+      "follow_move": "home",
       "money_level": "home"
      },
-     "move_pts": 0.5,
-     "public_side": "home",
-     "public_tix": 82,
+     "move_pts": 14.4,
      "gap": {
       "home": 0,
       "away": 0
@@ -759,20 +871,12 @@
     },
     "close_graded": {
      "follow_move": {
-      "side": "away",
-      "line": 172,
-      "odds": 172,
-      "res": "L",
-      "units": -1.0,
-      "took_fav": false
-     },
-     "rlm": {
-      "side": "away",
-      "line": 172,
-      "odds": 172,
-      "res": "L",
-      "units": -1.0,
-      "took_fav": false
+      "side": "home",
+      "line": -205,
+      "odds": -205,
+      "res": "W",
+      "units": 0.488,
+      "took_fav": true
      },
      "money_level": {
       "side": "home",
@@ -818,12 +922,15 @@
       "home": 60,
       "away": 40
      },
-     "open": -10.5,
+     "open": -7.5,
      "first_seen": "2026-11-01T1726Z",
+     "open_src": "sbr_open",
      "calls": {
+      "follow_move": "home",
       "money_level": "home",
       "sharp_gap": "away"
      },
+     "move_pts": 3.0,
      "gap": {
       "home": -6,
       "away": 6
@@ -838,6 +945,14 @@
      "pin_price_other": -118
     },
     "close_graded": {
+     "follow_move": {
+      "side": "home",
+      "line": -10.5,
+      "odds": -100,
+      "res": "W",
+      "units": 1.0,
+      "took_fav": true
+     },
      "money_level": {
       "side": "home",
       "line": -10.5,
@@ -878,6 +993,7 @@
      },
      "open": 45.5,
      "first_seen": "2026-11-01T1726Z",
+     "open_src": "first_seen",
      "calls": {
       "money_level": "under",
       "sharp_gap": "under"
@@ -934,13 +1050,16 @@
       "home": 84,
       "away": 16
      },
-     "open": -520,
+     "open": -108,
      "first_seen": "2026-11-01T1726Z",
+     "open_src": "sbr_open",
      "calls": {
+      "follow_move": "home",
       "money_level": "home",
       "sharp_gap": "away",
       "pin_value": "away"
      },
+     "move_pts": 31.9,
      "gap": {
       "home": -10,
       "away": 10
@@ -957,6 +1076,14 @@
      "edge_pct": 1.2
     },
     "close_graded": {
+     "follow_move": {
+      "side": "home",
+      "line": -520,
+      "odds": -520,
+      "res": "W",
+      "units": 0.192,
+      "took_fav": true
+     },
      "money_level": {
       "side": "home",
       "line": -520,
@@ -1019,6 +1146,7 @@
      },
      "open": -3,
      "first_seen": "2026-11-01T1726Z",
+     "open_src": "sbr_open",
      "calls": {
       "money_level": "away",
       "sharp_gap": "away"
@@ -1077,6 +1205,7 @@
      },
      "open": 55.5,
      "first_seen": "2026-11-01T1726Z",
+     "open_src": "first_seen",
      "calls": {
       "money_level": "over",
       "sharp_gap": "over"
@@ -1133,12 +1262,15 @@
       "home": 61,
       "away": 39
      },
-     "open": -176,
+     "open": -118,
      "first_seen": "2026-11-01T1726Z",
+     "open_src": "sbr_open",
      "calls": {
+      "follow_move": "home",
       "money_level": "home",
       "sharp_gap": "away"
      },
+     "move_pts": 9.6,
      "gap": {
       "home": -25,
       "away": 25
@@ -1154,6 +1286,14 @@
      "fair": 61.3
     },
     "close_graded": {
+     "follow_move": {
+      "side": "home",
+      "line": -176,
+      "odds": -176,
+      "res": "W",
+      "units": 0.568,
+      "took_fav": true
+     },
      "money_level": {
       "side": "home",
       "line": -176,
@@ -1206,12 +1346,15 @@
       "home": 45,
       "away": 55
      },
-     "open": -3.5,
+     "open": -3,
      "first_seen": "2026-11-01T1726Z",
+     "open_src": "sbr_open",
      "calls": {
+      "follow_move": "home",
       "money_level": "away",
       "sharp_gap": "home"
      },
+     "move_pts": 0.5,
      "gap": {
       "home": 3,
       "away": -3
@@ -1226,6 +1369,14 @@
      "pin_price_other": -114
     },
     "close_graded": {
+     "follow_move": {
+      "side": "home",
+      "line": -3.5,
+      "odds": -102,
+      "res": "W",
+      "units": 0.98,
+      "took_fav": true
+     },
      "money_level": {
       "side": "away",
       "line": 3.5,
@@ -1266,6 +1417,7 @@
      },
      "open": 46.5,
      "first_seen": "2026-11-01T1726Z",
+     "open_src": "first_seen",
      "calls": {
       "money_level": "over",
       "sharp_gap": "over",
@@ -1332,12 +1484,15 @@
       "home": 72,
       "away": 28
      },
-     "open": -178,
+     "open": -102,
      "first_seen": "2026-11-01T1726Z",
+     "open_src": "sbr_open",
      "calls": {
+      "follow_move": "home",
       "money_level": "home",
       "sharp_gap": "home"
      },
+     "move_pts": 13.5,
      "gap": {
       "home": 4,
       "away": -4
@@ -1353,6 +1508,14 @@
      "fair": 62.7
     },
     "close_graded": {
+     "follow_move": {
+      "side": "home",
+      "line": -178,
+      "odds": -178,
+      "res": "W",
+      "units": 0.562,
+      "took_fav": true
+     },
      "money_level": {
       "side": "home",
       "line": -178,
@@ -1405,13 +1568,16 @@
       "home": 78,
       "away": 22
      },
-     "open": -13.5,
+     "open": -10.5,
      "first_seen": "2026-11-01T1726Z",
+     "open_src": "sbr_open",
      "calls": {
+      "follow_move": "home",
       "money_level": "home",
       "sharp_gap": "home",
       "pin_value": "home"
      },
+     "move_pts": 3.0,
      "gap": {
       "home": 7,
       "away": -7
@@ -1427,6 +1593,14 @@
      "pin_gap": 0.5
     },
     "close_graded": {
+     "follow_move": {
+      "side": "home",
+      "line": -13.5,
+      "odds": -120,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": true
+     },
      "money_level": {
       "side": "home",
       "line": -13.5,
@@ -1475,6 +1649,7 @@
      },
      "open": 45.5,
      "first_seen": "2026-11-01T1726Z",
+     "open_src": "first_seen",
      "calls": {
       "money_level": "over",
       "sharp_gap": "over",
@@ -1541,15 +1716,16 @@
       "home": 97,
       "away": 3
      },
-     "open": -1000,
+     "open": -105,
      "first_seen": "2026-11-01T1726Z",
+     "open_src": "sbr_open",
      "calls": {
       "follow_move": "home",
       "money_level": "home",
       "sharp_gap": "home",
       "pin_value": "away"
      },
-     "move_pts": 0.8,
+     "move_pts": 40.4,
      "gap": {
       "home": 1,
       "away": -1
@@ -1634,12 +1810,18 @@
       "home": 64,
       "away": 36
      },
-     "open": -6.5,
+     "open": -7.5,
      "first_seen": "2026-11-01T1726Z",
+     "open_src": "sbr_open",
      "calls": {
+      "follow_move": "away",
+      "rlm": "away",
       "money_level": "home",
       "sharp_gap": "away"
      },
+     "move_pts": 1.0,
+     "public_side": "home",
+     "public_tix": 70,
      "gap": {
       "home": -6,
       "away": 6
@@ -1672,12 +1854,18 @@
       "home": 64,
       "away": 36
      },
-     "open": -6.5,
+     "open": -7.5,
      "first_seen": "2026-11-01T1726Z",
+     "open_src": "sbr_open",
      "calls": {
+      "follow_move": "away",
+      "rlm": "away",
       "money_level": "home",
       "sharp_gap": "away"
      },
+     "move_pts": 1.0,
+     "public_side": "home",
+     "public_tix": 70,
      "gap": {
       "home": -6,
       "away": 6
@@ -1692,6 +1880,24 @@
      "pin_price_other": -100
     },
     "early_graded": {
+     "follow_move": {
+      "side": "away",
+      "line": 6.5,
+      "odds": -108,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": false,
+      "clv": 0.0
+     },
+     "rlm": {
+      "side": "away",
+      "line": 6.5,
+      "odds": -108,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": false,
+      "clv": 0.0
+     },
      "money_level": {
       "side": "home",
       "line": -6.5,
@@ -1712,6 +1918,22 @@
      }
     },
     "close_graded": {
+     "follow_move": {
+      "side": "away",
+      "line": 6.5,
+      "odds": -108,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": false
+     },
+     "rlm": {
+      "side": "away",
+      "line": 6.5,
+      "odds": -108,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": false
+     },
      "money_level": {
       "side": "home",
       "line": -6.5,
@@ -1752,6 +1974,7 @@
      },
      "open": 45.5,
      "first_seen": "2026-11-01T1726Z",
+     "open_src": "first_seen",
      "calls": {
       "money_level": "over",
       "sharp_gap": "over",
@@ -1792,6 +2015,7 @@
      },
      "open": 45.5,
      "first_seen": "2026-11-01T1726Z",
+     "open_src": "first_seen",
      "calls": {
       "money_level": "over",
       "sharp_gap": "over",
@@ -1887,12 +2111,15 @@
       "home": 98,
       "away": 2
      },
-     "open": -290,
+     "open": -105,
      "first_seen": "2026-11-01T1726Z",
+     "open_src": "sbr_open",
      "calls": {
+      "follow_move": "home",
       "money_level": "home",
       "sharp_gap": "home"
      },
+     "move_pts": 23.1,
      "gap": {
       "home": 3,
       "away": -3
@@ -1926,12 +2153,15 @@
       "home": 98,
       "away": 2
      },
-     "open": -290,
+     "open": -105,
      "first_seen": "2026-11-01T1726Z",
+     "open_src": "sbr_open",
      "calls": {
+      "follow_move": "home",
       "money_level": "home",
       "sharp_gap": "home"
      },
+     "move_pts": 23.1,
      "gap": {
       "home": 3,
       "away": -3
@@ -1947,6 +2177,15 @@
      "fair": 73.0
     },
     "early_graded": {
+     "follow_move": {
+      "side": "home",
+      "line": -290,
+      "odds": -290,
+      "res": "W",
+      "units": 0.345,
+      "took_fav": true,
+      "clv": 0.0
+     },
      "money_level": {
       "side": "home",
       "line": -290,
@@ -1967,6 +2206,14 @@
      }
     },
     "close_graded": {
+     "follow_move": {
+      "side": "home",
+      "line": -290,
+      "odds": -290,
+      "res": "W",
+      "units": 0.345,
+      "took_fav": true
+     },
      "money_level": {
       "side": "home",
       "line": -290,
@@ -2021,6 +2268,7 @@
      },
      "open": 7.5,
      "first_seen": "2026-11-01T1726Z",
+     "open_src": "sbr_open",
      "calls": {
       "money_level": "away",
       "sharp_gap": "away",
@@ -2062,6 +2310,7 @@
      },
      "open": 7.5,
      "first_seen": "2026-11-01T1726Z",
+     "open_src": "sbr_open",
      "calls": {
       "money_level": "away",
       "sharp_gap": "away",
@@ -2167,6 +2416,7 @@
      },
      "open": 41.5,
      "first_seen": "2026-11-01T1726Z",
+     "open_src": "first_seen",
      "calls": {
       "money_level": "over",
       "sharp_gap": "under",
@@ -2206,6 +2456,7 @@
      },
      "open": 41.5,
      "first_seen": "2026-11-01T1726Z",
+     "open_src": "first_seen",
      "calls": {
       "money_level": "under",
       "sharp_gap": "under"
@@ -2290,18 +2541,16 @@
       "home": 2,
       "away": 98
      },
-     "open": 290,
+     "open": -112,
      "first_seen": "2026-11-01T1726Z",
+     "open_src": "sbr_open",
      "calls": {
-      "follow_move": "home",
-      "rlm": "home",
+      "follow_move": "away",
       "money_level": "away",
       "sharp_gap": "away",
       "money_moving": "home"
      },
-     "move_pts": 0.7,
-     "public_side": "away",
-     "public_tix": 96,
+     "move_pts": 26.5,
      "gap": {
       "home": -2,
       "away": 2
@@ -2335,12 +2584,15 @@
       "home": 1,
       "away": 99
      },
-     "open": 290,
+     "open": -112,
      "first_seen": "2026-11-01T1726Z",
+     "open_src": "sbr_open",
      "calls": {
+      "follow_move": "away",
       "money_level": "away",
       "sharp_gap": "away"
      },
+     "move_pts": 27.2,
      "gap": {
       "home": -3,
       "away": 3
@@ -2356,6 +2608,15 @@
      "fair": 24.1
     },
     "early_graded": {
+     "follow_move": {
+      "side": "away",
+      "line": -360,
+      "odds": -360,
+      "res": "W",
+      "units": 0.278,
+      "took_fav": true,
+      "clv": -0.5
+     },
      "money_level": {
       "side": "away",
       "line": -360,
@@ -2377,20 +2638,12 @@
     },
     "close_graded": {
      "follow_move": {
-      "side": "home",
-      "line": 280,
-      "odds": 280,
-      "res": "L",
-      "units": -1.0,
-      "took_fav": false
-     },
-     "rlm": {
-      "side": "home",
-      "line": 280,
-      "odds": 280,
-      "res": "L",
-      "units": -1.0,
-      "took_fav": false
+      "side": "away",
+      "line": -350,
+      "odds": -350,
+      "res": "W",
+      "units": 0.286,
+      "took_fav": true
      },
      "money_level": {
       "side": "away",
@@ -2452,13 +2705,16 @@
       "home": 47,
       "away": 53
      },
-     "open": 1.5,
+     "open": 2,
      "first_seen": "2026-11-01T1726Z",
+     "open_src": "sbr_open",
      "calls": {
+      "follow_move": "home",
       "money_level": "away",
       "sharp_gap": "home",
       "pin_value": "home"
      },
+     "move_pts": 0.5,
      "gap": {
       "home": 1,
       "away": -1
@@ -2492,12 +2748,15 @@
       "home": 50,
       "away": 50
      },
-     "open": 1.5,
+     "open": 2,
      "first_seen": "2026-11-01T1726Z",
+     "open_src": "sbr_open",
      "calls": {
+      "follow_move": "home",
       "sharp_gap": "home",
       "pin_value": "home"
      },
+     "move_pts": 0.5,
      "gap": {
       "home": 1,
       "away": -1
@@ -2513,6 +2772,15 @@
      "pin_gap": 0.5
     },
     "early_graded": {
+     "follow_move": {
+      "side": "home",
+      "line": 1.5,
+      "odds": -120,
+      "res": "W",
+      "units": 0.833,
+      "took_fav": false,
+      "clv": 0.0
+     },
      "sharp_gap": {
       "side": "home",
       "line": 1.5,
@@ -2533,6 +2801,14 @@
      }
     },
     "close_graded": {
+     "follow_move": {
+      "side": "home",
+      "line": 1.5,
+      "odds": -120,
+      "res": "W",
+      "units": 0.833,
+      "took_fav": false
+     },
      "money_level": {
       "side": "away",
       "line": -1.5,
@@ -2581,6 +2857,7 @@
      },
      "open": 41.5,
      "first_seen": "2026-11-01T1726Z",
+     "open_src": "first_seen",
      "calls": {
       "money_level": "over",
       "sharp_gap": "over",
@@ -2622,6 +2899,7 @@
      },
      "open": 41.5,
      "first_seen": "2026-11-01T1726Z",
+     "open_src": "first_seen",
      "calls": {
       "money_level": "over",
       "sharp_gap": "over"
@@ -2714,14 +2992,17 @@
       "home": 29,
       "away": 71
      },
-     "open": -104,
+     "open": -108,
      "first_seen": "2026-11-01T1726Z",
+     "open_src": "sbr_open",
      "calls": {
+      "follow_move": "away",
       "money_level": "away",
       "sharp_gap": "away",
       "money_moving": "home",
       "pin_value": "home"
      },
+     "move_pts": 0.9,
      "gap": {
       "home": -2,
       "away": 2
@@ -2756,12 +3037,15 @@
       "home": 28,
       "away": 72
      },
-     "open": -104,
+     "open": -108,
      "first_seen": "2026-11-01T1726Z",
+     "open_src": "sbr_open",
      "calls": {
+      "follow_move": "away",
       "money_level": "away",
       "sharp_gap": "away"
      },
+     "move_pts": 0.9,
      "gap": {
       "home": -4,
       "away": 4
@@ -2777,6 +3061,15 @@
      "fair": 50.0
     },
     "early_graded": {
+     "follow_move": {
+      "side": "away",
+      "line": -112,
+      "odds": -112,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": true,
+      "clv": 0.0
+     },
      "money_level": {
       "side": "away",
       "line": -112,
@@ -2797,6 +3090,14 @@
      }
     },
     "close_graded": {
+     "follow_move": {
+      "side": "away",
+      "line": -112,
+      "odds": -112,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": true
+     },
      "money_level": {
       "side": "away",
       "line": -112,
@@ -2865,14 +3166,17 @@
       "home": 56,
       "away": 44
      },
-     "open": -5.5,
+     "open": -4,
      "first_seen": "2026-11-01T1726Z",
+     "open_src": "sbr_open",
      "calls": {
+      "follow_move": "home",
       "money_level": "home",
       "sharp_gap": "home",
       "money_moving": "away",
       "pin_value": "home"
      },
+     "move_pts": 1.5,
      "gap": {
       "home": 8,
       "away": -8
@@ -2906,13 +3210,16 @@
       "home": 57,
       "away": 43
      },
-     "open": -5.5,
+     "open": -4,
      "first_seen": "2026-11-01T1726Z",
+     "open_src": "sbr_open",
      "calls": {
+      "follow_move": "home",
       "money_level": "home",
       "sharp_gap": "home",
       "pin_value": "home"
      },
+     "move_pts": 1.5,
      "gap": {
       "home": 10,
       "away": -10
@@ -2928,6 +3235,15 @@
      "pin_gap": 0.5
     },
     "early_graded": {
+     "follow_move": {
+      "side": "home",
+      "line": -5.5,
+      "odds": -122,
+      "res": "W",
+      "units": 0.82,
+      "took_fav": true,
+      "clv": 0.0
+     },
      "money_level": {
       "side": "home",
       "line": -5.5,
@@ -2957,6 +3273,14 @@
      }
     },
     "close_graded": {
+     "follow_move": {
+      "side": "home",
+      "line": -5.5,
+      "odds": -112,
+      "res": "W",
+      "units": 0.893,
+      "took_fav": true
+     },
      "money_level": {
       "side": "home",
       "line": -5.5,
@@ -3013,6 +3337,7 @@
      },
      "open": 40.5,
      "first_seen": "2026-11-01T1726Z",
+     "open_src": "first_seen",
      "calls": {
       "money_level": "over",
       "sharp_gap": "over",
@@ -3052,6 +3377,7 @@
      },
      "open": 40.5,
      "first_seen": "2026-11-01T1726Z",
+     "open_src": "first_seen",
      "calls": {
       "money_level": "over",
       "sharp_gap": "over"
@@ -3136,18 +3462,16 @@
       "home": 28,
       "away": 72
      },
-     "open": -270,
+     "open": -110,
      "first_seen": "2026-11-01T1726Z",
+     "open_src": "sbr_open",
      "calls": {
-      "follow_move": "away",
-      "rlm": "away",
+      "follow_move": "home",
       "money_level": "away",
       "sharp_gap": "away",
       "money_moving": "away"
      },
-     "move_pts": 2.0,
-     "public_side": "home",
-     "public_tix": 82,
+     "move_pts": 18.6,
      "gap": {
       "home": -54,
       "away": 54
@@ -3181,12 +3505,15 @@
       "home": 60,
       "away": 40
      },
-     "open": -270,
+     "open": -110,
      "first_seen": "2026-11-01T1726Z",
+     "open_src": "sbr_open",
      "calls": {
+      "follow_move": "home",
       "money_level": "home",
       "sharp_gap": "away"
      },
+     "move_pts": 20.6,
      "gap": {
       "home": -23,
       "away": 23
@@ -3202,6 +3529,15 @@
      "fair": 69.7
     },
     "early_graded": {
+     "follow_move": {
+      "side": "home",
+      "line": -270,
+      "odds": -270,
+      "res": "W",
+      "units": 0.37,
+      "took_fav": true,
+      "clv": -2.0
+     },
      "money_level": {
       "side": "home",
       "line": -270,
@@ -3223,20 +3559,12 @@
     },
     "close_graded": {
      "follow_move": {
-      "side": "away",
-      "line": 200,
-      "odds": 200,
-      "res": "L",
-      "units": -1.0,
-      "took_fav": false
-     },
-     "rlm": {
-      "side": "away",
-      "line": 200,
-      "odds": 200,
-      "res": "L",
-      "units": -1.0,
-      "took_fav": false
+      "side": "home",
+      "line": -245,
+      "odds": -245,
+      "res": "W",
+      "units": 0.408,
+      "took_fav": true
      },
      "money_level": {
       "side": "away",
@@ -3300,6 +3628,7 @@
      },
      "open": -3,
      "first_seen": "2026-11-01T1726Z",
+     "open_src": "sbr_open",
      "calls": {
       "follow_move": "home",
       "money_level": "away",
@@ -3341,6 +3670,7 @@
      },
      "open": -3,
      "first_seen": "2026-11-01T1726Z",
+     "open_src": "sbr_open",
      "calls": {
       "money_level": "away",
       "sharp_gap": "home"
@@ -3435,6 +3765,7 @@
      },
      "open": 46.5,
      "first_seen": "2026-11-01T1726Z",
+     "open_src": "first_seen",
      "calls": {
       "money_level": "over",
       "sharp_gap": "over",
@@ -3474,6 +3805,7 @@
      },
      "open": 46.5,
      "first_seen": "2026-11-01T1726Z",
+     "open_src": "first_seen",
      "calls": {
       "money_level": "under",
       "sharp_gap": "over"
@@ -3558,15 +3890,16 @@
       "home": 76,
       "away": 24
      },
-     "open": -174,
+     "open": -108,
      "first_seen": "2026-11-01T1726Z",
+     "open_src": "sbr_open",
      "calls": {
       "follow_move": "home",
       "money_level": "home",
       "sharp_gap": "home",
       "money_moving": "home"
      },
-     "move_pts": 0.8,
+     "move_pts": 12.4,
      "gap": {
       "home": 1,
       "away": -1
@@ -3600,12 +3933,15 @@
       "home": 56,
       "away": 44
      },
-     "open": -174,
+     "open": -108,
      "first_seen": "2026-11-01T1726Z",
+     "open_src": "sbr_open",
      "calls": {
+      "follow_move": "home",
       "money_level": "home",
       "sharp_gap": "away"
      },
+     "move_pts": 11.6,
      "gap": {
       "home": -18,
       "away": 18
@@ -3621,6 +3957,15 @@
      "fair": 60.7
     },
     "early_graded": {
+     "follow_move": {
+      "side": "home",
+      "line": -174,
+      "odds": -174,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": true,
+      "clv": 0.8
+     },
      "money_level": {
       "side": "home",
       "line": -174,
@@ -3709,14 +4054,17 @@
       "home": 47,
       "away": 53
      },
-     "open": 9.5,
+     "open": 7.5,
      "first_seen": "2026-11-03T1151Z",
+     "open_src": "sbr_open",
      "calls": {
+      "follow_move": "away",
       "money_level": "away",
       "sharp_gap": "home",
       "money_moving": "home",
       "pin_value": "away"
      },
+     "move_pts": 2.0,
      "gap": {
       "home": 16,
       "away": -16
@@ -3750,14 +4098,17 @@
       "home": 29,
       "away": 71
      },
-     "open": 9.5,
+     "open": 7.5,
      "first_seen": "2026-11-03T1151Z",
+     "open_src": "sbr_open",
      "calls": {
+      "follow_move": "away",
       "money_level": "away",
       "sharp_gap": "away",
       "money_moving": "away",
       "pin_value": "away"
      },
+     "move_pts": 2.0,
      "gap": {
       "home": -3,
       "away": 3
@@ -3773,6 +4124,15 @@
      "pin_gap": -0.5
     },
     "early_graded": {
+     "follow_move": {
+      "side": "away",
+      "line": -9.5,
+      "odds": -102,
+      "res": "W",
+      "units": 0.98,
+      "took_fav": true,
+      "clv": 0.0
+     },
      "money_level": {
       "side": "away",
       "line": -9.5,
@@ -3811,6 +4171,14 @@
      }
     },
     "close_graded": {
+     "follow_move": {
+      "side": "away",
+      "line": -9.5,
+      "odds": -110,
+      "res": "W",
+      "units": 0.909,
+      "took_fav": true
+     },
      "money_level": {
       "side": "away",
       "line": -9.5,
@@ -3867,6 +4235,7 @@
      },
      "open": 42.5,
      "first_seen": "2026-11-03T1151Z",
+     "open_src": "first_seen",
      "calls": {
       "follow_move": "under",
       "rlm": "under",
@@ -3913,6 +4282,7 @@
      },
      "open": 42.5,
      "first_seen": "2026-11-03T1151Z",
+     "open_src": "first_seen",
      "calls": {
       "money_level": "over",
       "sharp_gap": "over",
@@ -4032,19 +4402,17 @@
       "home": 32,
       "away": 68
      },
-     "open": 370,
+     "open": -110,
      "first_seen": "2026-11-03T1151Z",
+     "open_src": "sbr_open",
      "calls": {
-      "follow_move": "home",
-      "rlm": "home",
+      "follow_move": "away",
       "money_level": "away",
       "sharp_gap": "home",
       "money_moving": "home",
       "pin_value": "home"
      },
-     "move_pts": 0.9,
-     "public_side": "away",
-     "public_tix": 87,
+     "move_pts": 30.2,
      "gap": {
       "home": 19,
       "away": -19
@@ -4079,17 +4447,15 @@
       "home": 16,
       "away": 84
      },
-     "open": 370,
+     "open": -110,
      "first_seen": "2026-11-03T1151Z",
+     "open_src": "sbr_open",
      "calls": {
-      "follow_move": "home",
-      "rlm": "home",
+      "follow_move": "away",
       "money_level": "away",
       "sharp_gap": "away"
      },
-     "move_pts": 0.5,
-     "public_side": "away",
-     "public_tix": 75,
+     "move_pts": 30.6,
      "gap": {
       "home": -9,
       "away": 9
@@ -4106,22 +4472,13 @@
     },
     "early_graded": {
      "follow_move": {
-      "side": "home",
-      "line": 360,
-      "odds": 360,
-      "res": "L",
-      "units": -1.0,
-      "took_fav": false,
-      "clv": 0.5
-     },
-     "rlm": {
-      "side": "home",
-      "line": 360,
-      "odds": 360,
-      "res": "L",
-      "units": -1.0,
-      "took_fav": false,
-      "clv": 0.5
+      "side": "away",
+      "line": -460,
+      "odds": -460,
+      "res": "W",
+      "units": 0.217,
+      "took_fav": true,
+      "clv": -0.3
      },
      "money_level": {
       "side": "away",
@@ -4144,20 +4501,12 @@
     },
     "close_graded": {
      "follow_move": {
-      "side": "home",
-      "line": 350,
-      "odds": 350,
-      "res": "L",
-      "units": -1.0,
-      "took_fav": false
-     },
-     "rlm": {
-      "side": "home",
-      "line": 350,
-      "odds": 350,
-      "res": "L",
-      "units": -1.0,
-      "took_fav": false
+      "side": "away",
+      "line": -450,
+      "odds": -450,
+      "res": "W",
+      "units": 0.222,
+      "took_fav": true
      },
      "money_level": {
       "side": "away",
@@ -4227,12 +4576,15 @@
       "home": 51,
       "away": 49
      },
-     "open": 3,
+     "open": 3.5,
      "first_seen": "2026-11-03T1151Z",
+     "open_src": "sbr_open",
      "calls": {
+      "follow_move": "home",
       "money_level": "home",
       "sharp_gap": "home"
      },
+     "move_pts": 0.5,
      "gap": {
       "home": 3,
       "away": -3
@@ -4265,12 +4617,15 @@
       "home": 75,
       "away": 25
      },
-     "open": 3,
+     "open": 3.5,
      "first_seen": "2026-11-03T1151Z",
+     "open_src": "sbr_open",
      "calls": {
+      "follow_move": "home",
       "money_level": "home",
       "sharp_gap": "home"
      },
+     "move_pts": 0.5,
      "gap": {
       "home": 3,
       "away": -3
@@ -4285,6 +4640,15 @@
      "pin_price_other": -108
     },
     "early_graded": {
+     "follow_move": {
+      "side": "home",
+      "line": 3,
+      "odds": -110,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": false,
+      "clv": 0
+     },
      "money_level": {
       "side": "home",
       "line": 3,
@@ -4305,6 +4669,14 @@
      }
     },
     "close_graded": {
+     "follow_move": {
+      "side": "home",
+      "line": 3,
+      "odds": -100,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": false
+     },
      "money_level": {
       "side": "home",
       "line": 3,
@@ -4345,6 +4717,7 @@
      },
      "open": 51.5,
      "first_seen": "2026-11-03T1151Z",
+     "open_src": "first_seen",
      "calls": {
       "follow_move": "over",
       "rlm": "over",
@@ -4391,6 +4764,7 @@
      },
      "open": 51.5,
      "first_seen": "2026-11-03T1151Z",
+     "open_src": "first_seen",
      "calls": {
       "money_level": "under",
       "sharp_gap": "under",
@@ -4510,15 +4884,16 @@
       "home": 10,
       "away": 90
      },
-     "open": 136,
+     "open": 100,
      "first_seen": "2026-11-03T1151Z",
+     "open_src": "sbr_open",
      "calls": {
       "follow_move": "away",
       "money_level": "away",
       "sharp_gap": "away",
       "money_moving": "away"
      },
-     "move_pts": 2.4,
+     "move_pts": 10.0,
      "gap": {
       "home": -1,
       "away": 1
@@ -4552,13 +4927,16 @@
       "home": 14,
       "away": 86
      },
-     "open": 136,
+     "open": 100,
      "first_seen": "2026-11-03T1151Z",
+     "open_src": "sbr_open",
      "calls": {
+      "follow_move": "away",
       "money_level": "away",
       "sharp_gap": "home",
       "money_moving": "away"
      },
+     "move_pts": 7.6,
      "gap": {
       "home": 2,
       "away": -2
@@ -4574,6 +4952,15 @@
      "fair": 40.0
     },
     "early_graded": {
+     "follow_move": {
+      "side": "away",
+      "line": -162,
+      "odds": -162,
+      "res": "W",
+      "units": 0.617,
+      "took_fav": true,
+      "clv": 2.2
+     },
      "money_level": {
       "side": "away",
       "line": -162,
@@ -4671,19 +5058,15 @@
       "home": 52,
       "away": 48
      },
-     "open": 3.5,
+     "open": 2.5,
      "first_seen": "2026-11-03T1151Z",
+     "open_src": "sbr_open",
      "calls": {
-      "follow_move": "home",
-      "rlm": "home",
       "money_level": "home",
       "sharp_gap": "home",
       "money_moving": "home",
       "pin_value": "away"
      },
-     "move_pts": 1.0,
-     "public_side": "away",
-     "public_tix": 63,
      "gap": {
       "home": 15,
       "away": -15
@@ -4717,14 +5100,17 @@
       "home": 20,
       "away": 80
      },
-     "open": 3.5,
+     "open": 2.5,
      "first_seen": "2026-11-03T1151Z",
+     "open_src": "sbr_open",
      "calls": {
+      "follow_move": "away",
       "money_level": "away",
       "sharp_gap": "away",
       "money_moving": "home",
       "pin_value": "home"
      },
+     "move_pts": 1.0,
      "gap": {
       "home": -18,
       "away": 18
@@ -4740,6 +5126,15 @@
      "pin_gap": 0.5
     },
     "early_graded": {
+     "follow_move": {
+      "side": "away",
+      "line": -3.5,
+      "odds": -104,
+      "res": "W",
+      "units": 0.962,
+      "took_fav": true,
+      "clv": -1.0
+     },
      "money_level": {
       "side": "away",
       "line": -3.5,
@@ -4778,22 +5173,6 @@
      }
     },
     "close_graded": {
-     "follow_move": {
-      "side": "home",
-      "line": 2.5,
-      "odds": -100,
-      "res": "L",
-      "units": -1.0,
-      "took_fav": false
-     },
-     "rlm": {
-      "side": "home",
-      "line": 2.5,
-      "odds": -100,
-      "res": "L",
-      "units": -1.0,
-      "took_fav": false
-     },
      "money_level": {
       "side": "home",
       "line": 2.5,
@@ -4850,6 +5229,7 @@
      },
      "open": 39.5,
      "first_seen": "2026-11-03T1151Z",
+     "open_src": "first_seen",
      "calls": {
       "follow_move": "under",
       "rlm": "under",
@@ -4894,6 +5274,7 @@
      },
      "open": 39.5,
      "first_seen": "2026-11-03T1151Z",
+     "open_src": "first_seen",
      "calls": {
       "follow_move": "over",
       "money_level": "over"
@@ -4995,18 +5376,16 @@
       "home": 29,
       "away": 71
      },
-     "open": 146,
+     "open": -108,
      "first_seen": "2026-11-03T1151Z",
+     "open_src": "sbr_open",
      "calls": {
-      "follow_move": "home",
-      "rlm": "home",
+      "follow_move": "away",
       "money_level": "away",
       "sharp_gap": "home",
       "money_moving": "home"
      },
-     "move_pts": 2.5,
-     "public_side": "away",
-     "public_tix": 80,
+     "move_pts": 8.8,
      "gap": {
       "home": 9,
       "away": -9
@@ -5040,15 +5419,16 @@
       "home": 32,
       "away": 68
      },
-     "open": 146,
+     "open": -108,
      "first_seen": "2026-11-03T1151Z",
+     "open_src": "sbr_open",
      "calls": {
       "follow_move": "away",
       "money_level": "away",
       "sharp_gap": "home",
       "money_moving": "away"
      },
-     "move_pts": 0.7,
+     "move_pts": 11.9,
      "gap": {
       "home": 7,
       "away": -7
@@ -5103,20 +5483,12 @@
     },
     "close_graded": {
      "follow_move": {
-      "side": "home",
-      "line": 132,
-      "odds": 132,
-      "res": "L",
-      "units": -1.0,
-      "took_fav": false
-     },
-     "rlm": {
-      "side": "home",
-      "line": 132,
-      "odds": 132,
-      "res": "L",
-      "units": -1.0,
-      "took_fav": false
+      "side": "away",
+      "line": -156,
+      "odds": -156,
+      "res": "W",
+      "units": 0.641,
+      "took_fav": true
      },
      "money_level": {
       "side": "away",
@@ -5178,13 +5550,16 @@
       "home": 44,
       "away": 56
      },
-     "open": 3,
+     "open": 2.5,
      "first_seen": "2026-11-03T1151Z",
+     "open_src": "sbr_open",
      "calls": {
+      "follow_move": "away",
       "money_level": "away",
       "sharp_gap": "home",
       "money_moving": "home"
      },
+     "move_pts": 0.5,
      "gap": {
       "home": 13,
       "away": -13
@@ -5217,12 +5592,15 @@
       "home": 22,
       "away": 78
      },
-     "open": 3,
+     "open": 2.5,
      "first_seen": "2026-11-03T1151Z",
+     "open_src": "sbr_open",
      "calls": {
+      "follow_move": "away",
       "money_level": "away",
       "sharp_gap": "away"
      },
+     "move_pts": 0.5,
      "gap": {
       "home": -4,
       "away": 4
@@ -5237,6 +5615,15 @@
      "pin_price_other": 101
     },
     "early_graded": {
+     "follow_move": {
+      "side": "away",
+      "line": -3,
+      "odds": -106,
+      "res": "W",
+      "units": 0.943,
+      "took_fav": true,
+      "clv": 0
+     },
      "money_level": {
       "side": "away",
       "line": -3,
@@ -5257,6 +5644,14 @@
      }
     },
     "close_graded": {
+     "follow_move": {
+      "side": "away",
+      "line": -3,
+      "odds": -110,
+      "res": "W",
+      "units": 0.909,
+      "took_fav": true
+     },
      "money_level": {
       "side": "away",
       "line": -3,
@@ -5305,6 +5700,7 @@
      },
      "open": 43.5,
      "first_seen": "2026-11-03T1151Z",
+     "open_src": "first_seen",
      "calls": {
       "follow_move": "over",
       "money_level": "over",
@@ -5346,6 +5742,7 @@
      },
      "open": 43.5,
      "first_seen": "2026-11-03T1151Z",
+     "open_src": "first_seen",
      "calls": {
       "money_level": "over",
       "sharp_gap": "over"
@@ -5438,15 +5835,16 @@
       "home": 6,
       "away": 94
      },
-     "open": 130,
+     "open": -102,
      "first_seen": "2026-11-03T1151Z",
+     "open_src": "sbr_open",
      "calls": {
       "follow_move": "away",
       "money_level": "away",
       "sharp_gap": "away",
       "money_moving": "home"
      },
-     "move_pts": 1.5,
+     "move_pts": 8.5,
      "gap": {
       "home": -5,
       "away": 5
@@ -5480,13 +5878,16 @@
       "home": 7,
       "away": 93
      },
-     "open": 130,
+     "open": -102,
      "first_seen": "2026-11-03T1151Z",
+     "open_src": "sbr_open",
      "calls": {
+      "follow_move": "away",
       "money_level": "away",
       "sharp_gap": "away",
       "money_moving": "home"
      },
+     "move_pts": 7.0,
      "gap": {
       "home": -6,
       "away": 6
@@ -5502,6 +5903,15 @@
      "fair": 40.8
     },
     "early_graded": {
+     "follow_move": {
+      "side": "away",
+      "line": -154,
+      "odds": -154,
+      "res": "W",
+      "units": 0.649,
+      "took_fav": true,
+      "clv": 1.5
+     },
      "money_level": {
       "side": "away",
       "line": -154,
@@ -5601,6 +6011,7 @@
      },
      "open": 7,
      "first_seen": "2026-11-03T1151Z",
+     "open_src": "sbr_open",
      "calls": {
       "follow_move": "home",
       "rlm": "home",
@@ -5645,6 +6056,7 @@
      },
      "open": 7,
      "first_seen": "2026-11-03T1151Z",
+     "open_src": "sbr_open",
      "calls": {
       "money_level": "away",
       "sharp_gap": "away",
@@ -5758,6 +6170,7 @@
      },
      "open": 50.5,
      "first_seen": "2026-11-03T1151Z",
+     "open_src": "first_seen",
      "calls": {
       "money_level": "over",
       "sharp_gap": "over",
@@ -5799,6 +6212,7 @@
      },
      "open": 50.5,
      "first_seen": "2026-11-03T1151Z",
+     "open_src": "first_seen",
      "calls": {
       "money_level": "over",
       "sharp_gap": "over",
@@ -5902,18 +6316,16 @@
       "home": 1,
       "away": 99
      },
-     "open": 275,
+     "open": -102,
      "first_seen": "2026-11-03T1151Z",
+     "open_src": "sbr_open",
      "calls": {
-      "follow_move": "home",
-      "rlm": "home",
+      "follow_move": "away",
       "money_level": "away",
       "sharp_gap": "away",
       "money_moving": "home"
      },
-     "move_pts": 1.9,
-     "public_side": "away",
-     "public_tix": 98,
+     "move_pts": 21.9,
      "gap": {
       "home": -1,
       "away": 1
@@ -5947,13 +6359,16 @@
       "home": 2,
       "away": 98
      },
-     "open": 275,
+     "open": -102,
      "first_seen": "2026-11-03T1151Z",
+     "open_src": "sbr_open",
      "calls": {
+      "follow_move": "away",
       "money_level": "away",
       "sharp_gap": "away",
       "pin_value": "home"
      },
+     "move_pts": 23.8,
      "gap": {
       "home": -2,
       "away": 2
@@ -5970,6 +6385,15 @@
      "edge_pct": 1.44
     },
     "early_graded": {
+     "follow_move": {
+      "side": "away",
+      "line": -350,
+      "odds": -350,
+      "res": "W",
+      "units": 0.286,
+      "took_fav": true,
+      "clv": -2.2
+     },
      "money_level": {
       "side": "away",
       "line": -350,
@@ -6000,20 +6424,12 @@
     },
     "close_graded": {
      "follow_move": {
-      "side": "home",
-      "line": 250,
-      "odds": 250,
-      "res": "L",
-      "units": -1.0,
-      "took_fav": false
-     },
-     "rlm": {
-      "side": "home",
-      "line": 250,
-      "odds": 250,
-      "res": "L",
-      "units": -1.0,
-      "took_fav": false
+      "side": "away",
+      "line": -310,
+      "odds": -310,
+      "res": "W",
+      "units": 0.323,
+      "took_fav": true
      },
      "money_level": {
       "side": "away",
@@ -6077,6 +6493,7 @@
      },
      "open": -9.5,
      "first_seen": "2026-11-03T1151Z",
+     "open_src": "sbr_open",
      "calls": {
       "money_level": "home",
       "sharp_gap": "away",
@@ -6118,6 +6535,7 @@
      },
      "open": -9.5,
      "first_seen": "2026-11-03T1151Z",
+     "open_src": "sbr_open",
      "calls": {
       "money_level": "away",
       "sharp_gap": "away",
@@ -6233,6 +6651,7 @@
      },
      "open": 46.5,
      "first_seen": "2026-11-03T1151Z",
+     "open_src": "first_seen",
      "calls": {
       "follow_move": "over",
       "money_level": "over",
@@ -6274,6 +6693,7 @@
      },
      "open": 46.5,
      "first_seen": "2026-11-03T1151Z",
+     "open_src": "first_seen",
      "calls": {
       "money_level": "over",
       "sharp_gap": "over",
@@ -6377,19 +6797,17 @@
       "home": 99,
       "away": 1
      },
-     "open": -510,
+     "open": -110,
      "first_seen": "2026-11-03T1151Z",
+     "open_src": "sbr_open",
      "calls": {
-      "follow_move": "away",
-      "rlm": "away",
+      "follow_move": "home",
       "money_level": "home",
       "sharp_gap": "home",
       "money_moving": "away",
       "pin_value": "away"
      },
-     "move_pts": 0.6,
-     "public_side": "home",
-     "public_tix": 98,
+     "move_pts": 30.7,
      "gap": {
       "home": 1,
       "away": -1
@@ -6424,13 +6842,16 @@
       "home": 98,
       "away": 2
      },
-     "open": -510,
+     "open": -110,
      "first_seen": "2026-11-03T1151Z",
+     "open_src": "sbr_open",
      "calls": {
+      "follow_move": "home",
       "money_level": "home",
       "sharp_gap": "home",
       "pin_value": "away"
      },
+     "move_pts": 31.2,
      "gap": {
       "home": 2,
       "away": -2
@@ -6447,6 +6868,15 @@
      "edge_pct": 7.74
     },
     "early_graded": {
+     "follow_move": {
+      "side": "home",
+      "line": -510,
+      "odds": -510,
+      "res": "W",
+      "units": 0.196,
+      "took_fav": true,
+      "clv": -0.6
+     },
      "money_level": {
       "side": "home",
       "line": -510,
@@ -6477,20 +6907,12 @@
     },
     "close_graded": {
      "follow_move": {
-      "side": "away",
-      "line": 380,
-      "odds": 380,
-      "res": "L",
-      "units": -1.0,
-      "took_fav": false
-     },
-     "rlm": {
-      "side": "away",
-      "line": 380,
-      "odds": 380,
-      "res": "L",
-      "units": -1.0,
-      "took_fav": false
+      "side": "home",
+      "line": -490,
+      "odds": -490,
+      "res": "W",
+      "units": 0.204,
+      "took_fav": true
      },
      "money_level": {
       "side": "home",
@@ -6562,6 +6984,7 @@
      },
      "open": -2.5,
      "first_seen": "2026-11-03T1151Z",
+     "open_src": "sbr_open",
      "calls": {
       "follow_move": "home",
       "rlm": "home",
@@ -6606,6 +7029,7 @@
      },
      "open": -2.5,
      "first_seen": "2026-11-03T1151Z",
+     "open_src": "sbr_open",
      "calls": {
       "money_level": "away",
       "sharp_gap": "home",
@@ -6718,6 +7142,7 @@
      },
      "open": 43.5,
      "first_seen": "2026-11-03T1151Z",
+     "open_src": "first_seen",
      "calls": {
       "money_level": "over",
       "sharp_gap": "over",
@@ -6757,6 +7182,7 @@
      },
      "open": 43.5,
      "first_seen": "2026-11-03T1151Z",
+     "open_src": "first_seen",
      "calls": {
       "money_level": "over",
       "sharp_gap": "over",
@@ -6862,8 +7288,9 @@
       "home": 64,
       "away": 36
      },
-     "open": -144,
+     "open": -115,
      "first_seen": "2026-11-03T1151Z",
+     "open_src": "sbr_open",
      "calls": {
       "follow_move": "home",
       "money_level": "home",
@@ -6871,7 +7298,7 @@
       "money_moving": "home",
       "pin_value": "home"
      },
-     "move_pts": 10.2,
+     "move_pts": 15.7,
      "gap": {
       "home": 1,
       "away": -1
@@ -6906,12 +7333,15 @@
       "home": 42,
       "away": 58
      },
-     "open": -144,
+     "open": -115,
      "first_seen": "2026-11-03T1151Z",
+     "open_src": "sbr_open",
      "calls": {
+      "follow_move": "home",
       "money_level": "away",
       "sharp_gap": "away"
      },
+     "move_pts": 5.5,
      "gap": {
       "home": -24,
       "away": 24
@@ -6927,6 +7357,15 @@
      "fair": 57.0
     },
     "early_graded": {
+     "follow_move": {
+      "side": "home",
+      "line": -144,
+      "odds": -144,
+      "res": "W",
+      "units": 0.694,
+      "took_fav": true,
+      "clv": 10.2
+     },
      "money_level": {
       "side": "away",
       "line": 122,
@@ -7023,8 +7462,9 @@
       "home": 35,
       "away": 65
      },
-     "open": 5.5,
+     "open": 6,
      "first_seen": "2026-11-03T1151Z",
+     "open_src": "sbr_open",
      "calls": {
       "follow_move": "home",
       "rlm": "home",
@@ -7032,7 +7472,7 @@
       "sharp_gap": "home",
       "money_moving": "home"
      },
-     "move_pts": 1.0,
+     "move_pts": 1.5,
      "public_side": "away",
      "public_tix": 69,
      "gap": {
@@ -7067,13 +7507,19 @@
       "home": 23,
       "away": 77
      },
-     "open": 5.5,
+     "open": 6,
      "first_seen": "2026-11-03T1151Z",
+     "open_src": "sbr_open",
      "calls": {
+      "follow_move": "home",
+      "rlm": "home",
       "money_level": "away",
       "sharp_gap": "away",
       "pin_value": "away"
      },
+     "move_pts": 0.5,
+     "public_side": "away",
+     "public_tix": 62,
      "gap": {
       "home": -15,
       "away": 15
@@ -7089,6 +7535,24 @@
      "pin_gap": -0.5
     },
     "early_graded": {
+     "follow_move": {
+      "side": "home",
+      "line": 5.5,
+      "odds": -106,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": false,
+      "clv": 1.0
+     },
+     "rlm": {
+      "side": "home",
+      "line": 5.5,
+      "odds": -106,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": false,
+      "clv": 1.0
+     },
      "money_level": {
       "side": "away",
       "line": -5.5,
@@ -7182,6 +7646,7 @@
      },
      "open": 47.5,
      "first_seen": "2026-11-03T1151Z",
+     "open_src": "first_seen",
      "calls": {
       "money_level": "over",
       "sharp_gap": "under",
@@ -7223,6 +7688,7 @@
      },
      "open": 47.5,
      "first_seen": "2026-11-03T1151Z",
+     "open_src": "first_seen",
      "calls": {
       "money_level": "under",
       "sharp_gap": "under",
@@ -7336,18 +7802,16 @@
       "home": 1,
       "away": 99
      },
-     "open": 210,
+     "open": -112,
      "first_seen": "2026-11-03T1151Z",
+     "open_src": "sbr_open",
      "calls": {
-      "follow_move": "home",
-      "rlm": "home",
+      "follow_move": "away",
       "money_level": "away",
       "sharp_gap": "away",
       "money_moving": "away"
      },
-     "move_pts": 5.1,
-     "public_side": "away",
-     "public_tix": 93,
+     "move_pts": 15.5,
      "gap": {
       "home": -6,
       "away": 6
@@ -7381,13 +7845,16 @@
       "home": 6,
       "away": 94
      },
-     "open": 210,
+     "open": -112,
      "first_seen": "2026-11-03T1151Z",
+     "open_src": "sbr_open",
      "calls": {
+      "follow_move": "away",
       "money_level": "away",
       "sharp_gap": "away",
       "money_moving": "away"
      },
+     "move_pts": 20.6,
      "gap": {
       "home": -4,
       "away": 4
@@ -7403,6 +7870,15 @@
      "fair": 30.4
     },
     "early_graded": {
+     "follow_move": {
+      "side": "away",
+      "line": -255,
+      "odds": -255,
+      "res": "W",
+      "units": 0.392,
+      "took_fav": true,
+      "clv": -3.6
+     },
      "money_level": {
       "side": "away",
       "line": -255,
@@ -7433,20 +7909,12 @@
     },
     "close_graded": {
      "follow_move": {
-      "side": "home",
-      "line": 168,
-      "odds": 168,
-      "res": "L",
-      "units": -1.0,
-      "took_fav": false
-     },
-     "rlm": {
-      "side": "home",
-      "line": 168,
-      "odds": 168,
-      "res": "L",
-      "units": -1.0,
-      "took_fav": false
+      "side": "away",
+      "line": -215,
+      "odds": -215,
+      "res": "W",
+      "units": 0.465,
+      "took_fav": true
      },
      "money_level": {
       "side": "away",
@@ -7510,6 +7978,7 @@
      },
      "open": 5.5,
      "first_seen": "2026-11-03T1151Z",
+     "open_src": "sbr_open",
      "calls": {
       "follow_move": "home",
       "rlm": "home",
@@ -7554,6 +8023,7 @@
      },
      "open": 5.5,
      "first_seen": "2026-11-03T1151Z",
+     "open_src": "sbr_open",
      "calls": {
       "money_level": "away",
       "sharp_gap": "away",
@@ -7666,6 +8136,7 @@
      },
      "open": 51.5,
      "first_seen": "2026-11-03T1151Z",
+     "open_src": "first_seen",
      "calls": {
       "money_level": "over",
       "sharp_gap": "over",
@@ -7707,6 +8178,7 @@
      },
      "open": 51.5,
      "first_seen": "2026-11-03T1151Z",
+     "open_src": "first_seen",
      "calls": {
       "money_level": "over",
       "sharp_gap": "over",
@@ -7810,18 +8282,16 @@
       "home": 5,
       "away": 95
      },
-     "open": 215,
+     "open": -108,
      "first_seen": "2026-11-03T1151Z",
+     "open_src": "sbr_open",
      "calls": {
-      "follow_move": "home",
-      "rlm": "home",
+      "follow_move": "away",
       "money_level": "away",
       "sharp_gap": "away",
       "money_moving": "away"
      },
-     "move_pts": 5.8,
-     "public_side": "away",
-     "public_tix": 89,
+     "move_pts": 14.3,
      "gap": {
       "home": -6,
       "away": 6
@@ -7855,12 +8325,15 @@
       "home": 16,
       "away": 84
      },
-     "open": 215,
+     "open": -108,
      "first_seen": "2026-11-03T1151Z",
+     "open_src": "sbr_open",
      "calls": {
+      "follow_move": "away",
       "money_level": "away",
       "sharp_gap": "home"
      },
+     "move_pts": 20.2,
      "gap": {
       "home": 4,
       "away": -4
@@ -7876,6 +8349,15 @@
      "fair": 31.0
     },
     "early_graded": {
+     "follow_move": {
+      "side": "away",
+      "line": -260,
+      "odds": -260,
+      "res": "W",
+      "units": 0.385,
+      "took_fav": true,
+      "clv": -5.8
+     },
      "money_level": {
       "side": "away",
       "line": -260,
@@ -7897,20 +8379,12 @@
     },
     "close_graded": {
      "follow_move": {
-      "side": "home",
-      "line": 166,
-      "odds": 166,
-      "res": "L",
-      "units": -1.0,
-      "took_fav": false
-     },
-     "rlm": {
-      "side": "home",
-      "line": 166,
-      "odds": 166,
-      "res": "L",
-      "units": -1.0,
-      "took_fav": false
+      "side": "away",
+      "line": -198,
+      "odds": -198,
+      "res": "W",
+      "units": 0.505,
+      "took_fav": true
      },
      "money_level": {
       "side": "away",
@@ -7972,15 +8446,16 @@
       "home": 34,
       "away": 66
      },
-     "open": 4.5,
+     "open": 3.5,
      "first_seen": "2026-11-03T1151Z",
+     "open_src": "sbr_open",
      "calls": {
       "follow_move": "away",
       "money_level": "away",
       "sharp_gap": "home",
       "money_moving": "home"
      },
-     "move_pts": 1.0,
+     "move_pts": 2.0,
      "gap": {
       "home": 1,
       "away": -1
@@ -8013,12 +8488,15 @@
       "home": 9,
       "away": 91
      },
-     "open": 4.5,
+     "open": 3.5,
      "first_seen": "2026-11-03T1151Z",
+     "open_src": "sbr_open",
      "calls": {
+      "follow_move": "away",
       "money_level": "away",
       "sharp_gap": "away"
      },
+     "move_pts": 1.0,
      "gap": {
       "home": -20,
       "away": 20
@@ -8033,6 +8511,15 @@
      "pin_price_other": -107
     },
     "early_graded": {
+     "follow_move": {
+      "side": "away",
+      "line": -4.5,
+      "odds": -115,
+      "res": "W",
+      "units": 0.87,
+      "took_fav": true,
+      "clv": 1.0
+     },
      "money_level": {
       "side": "away",
       "line": -4.5,
@@ -8109,6 +8596,7 @@
      },
      "open": 40.5,
      "first_seen": "2026-11-03T1151Z",
+     "open_src": "first_seen",
      "calls": {
       "money_level": "over",
       "sharp_gap": "under",
@@ -8148,6 +8636,7 @@
      },
      "open": 40.5,
      "first_seen": "2026-11-03T1151Z",
+     "open_src": "first_seen",
      "calls": {
       "money_level": "over",
       "sharp_gap": "under"
@@ -8232,15 +8721,16 @@
       "home": 20,
       "away": 80
      },
-     "open": 188,
+     "open": -110,
      "first_seen": "2026-11-03T1151Z",
+     "open_src": "sbr_open",
      "calls": {
       "follow_move": "away",
       "money_level": "away",
       "sharp_gap": "home",
       "money_moving": "home"
      },
-     "move_pts": 0.7,
+     "move_pts": 18.4,
      "gap": {
       "home": 8,
       "away": -8
@@ -8274,13 +8764,16 @@
       "home": 15,
       "away": 85
      },
-     "open": 188,
+     "open": -110,
      "first_seen": "2026-11-03T1151Z",
+     "open_src": "sbr_open",
      "calls": {
+      "follow_move": "away",
       "money_level": "away",
       "sharp_gap": "home",
       "money_moving": "away"
      },
+     "move_pts": 17.7,
      "gap": {
       "home": 2,
       "away": -2
@@ -8296,6 +8789,15 @@
      "fair": 33.4
     },
     "early_graded": {
+     "follow_move": {
+      "side": "away",
+      "line": -225,
+      "odds": -225,
+      "res": "W",
+      "units": 0.444,
+      "took_fav": true,
+      "clv": 1.4
+     },
      "money_level": {
       "side": "away",
       "line": -225,
@@ -8393,14 +8895,17 @@
       "home": 63,
       "away": 37
      },
-     "open": -9.5,
+     "open": -8.5,
      "first_seen": "2026-11-03T1151Z",
+     "open_src": "sbr_open",
      "calls": {
+      "follow_move": "home",
       "money_level": "home",
       "sharp_gap": "home",
       "money_moving": "home",
       "pin_value": "home"
      },
+     "move_pts": 1.0,
      "gap": {
       "home": 1,
       "away": -1
@@ -8434,14 +8939,17 @@
       "home": 40,
       "away": 60
      },
-     "open": -9.5,
+     "open": -8.5,
      "first_seen": "2026-11-03T1151Z",
+     "open_src": "sbr_open",
      "calls": {
+      "follow_move": "home",
       "money_level": "away",
       "sharp_gap": "away",
       "money_moving": "home",
       "pin_value": "home"
      },
+     "move_pts": 1.0,
      "gap": {
       "home": -2,
       "away": 2
@@ -8457,6 +8965,15 @@
      "pin_gap": 0.5
     },
     "early_graded": {
+     "follow_move": {
+      "side": "home",
+      "line": -9.5,
+      "odds": -120,
+      "res": "W",
+      "units": 0.833,
+      "took_fav": true,
+      "clv": 0.0
+     },
      "money_level": {
       "side": "away",
       "line": 9.5,
@@ -8495,6 +9012,14 @@
      }
     },
     "close_graded": {
+     "follow_move": {
+      "side": "home",
+      "line": -9.5,
+      "odds": -110,
+      "res": "W",
+      "units": 0.909,
+      "took_fav": true
+     },
      "money_level": {
       "side": "home",
       "line": -9.5,
@@ -8551,6 +9076,7 @@
      },
      "open": 51.5,
      "first_seen": "2026-11-03T1151Z",
+     "open_src": "first_seen",
      "calls": {
       "money_level": "over",
       "sharp_gap": "over",
@@ -8592,6 +9118,7 @@
      },
      "open": 51.5,
      "first_seen": "2026-11-03T1151Z",
+     "open_src": "first_seen",
      "calls": {
       "money_level": "under",
       "sharp_gap": "under"
@@ -8684,17 +9211,15 @@
       "home": 97,
       "away": 3
      },
-     "open": -590,
+     "open": -108,
      "first_seen": "2026-11-03T1151Z",
+     "open_src": "sbr_open",
      "calls": {
-      "follow_move": "away",
-      "rlm": "away",
+      "follow_move": "home",
       "money_level": "home",
       "money_moving": "home"
      },
-     "move_pts": 2.5,
-     "public_side": "home",
-     "public_tix": 97,
+     "move_pts": 31.1,
      "gap": {
       "home": 0,
       "away": 0
@@ -8728,13 +9253,16 @@
       "home": 95,
       "away": 5
      },
-     "open": -590,
+     "open": -108,
      "first_seen": "2026-11-03T1151Z",
+     "open_src": "sbr_open",
      "calls": {
+      "follow_move": "home",
       "money_level": "home",
       "sharp_gap": "away",
       "pin_value": "away"
      },
+     "move_pts": 33.6,
      "gap": {
       "home": -1,
       "away": 1
@@ -8751,6 +9279,15 @@
      "edge_pct": 14.98
     },
     "early_graded": {
+     "follow_move": {
+      "side": "home",
+      "line": -590,
+      "odds": -590,
+      "res": "W",
+      "units": 0.169,
+      "took_fav": true,
+      "clv": -2.5
+     },
      "money_level": {
       "side": "home",
       "line": -590,
@@ -8781,20 +9318,12 @@
     },
     "close_graded": {
      "follow_move": {
-      "side": "away",
-      "line": 380,
-      "odds": 380,
-      "res": "L",
-      "units": -1.0,
-      "took_fav": false
-     },
-     "rlm": {
-      "side": "away",
-      "line": 380,
-      "odds": 380,
-      "res": "L",
-      "units": -1.0,
-      "took_fav": false
+      "side": "home",
+      "line": -490,
+      "odds": -490,
+      "res": "W",
+      "units": 0.204,
+      "took_fav": true
      },
      "money_level": {
       "side": "home",
@@ -8848,8 +9377,9 @@
       "home": 60,
       "away": 40
      },
-     "open": -10.5,
+     "open": -11,
      "first_seen": "2026-11-03T1151Z",
+     "open_src": "sbr_open",
      "calls": {
       "follow_move": "away",
       "rlm": "away",
@@ -8857,7 +9387,7 @@
       "sharp_gap": "away",
       "money_moving": "home"
      },
-     "move_pts": 2.0,
+     "move_pts": 2.5,
      "public_side": "home",
      "public_tix": 63,
      "gap": {
@@ -8892,13 +9422,16 @@
       "home": 26,
       "away": 74
      },
-     "open": -10.5,
+     "open": -11,
      "first_seen": "2026-11-03T1151Z",
+     "open_src": "sbr_open",
      "calls": {
+      "follow_move": "away",
       "money_level": "away",
       "sharp_gap": "away",
       "pin_value": "home"
      },
+     "move_pts": 0.5,
      "gap": {
       "home": -23,
       "away": 23
@@ -8914,6 +9447,15 @@
      "pin_gap": 0.5
     },
     "early_graded": {
+     "follow_move": {
+      "side": "away",
+      "line": 10.5,
+      "odds": -110,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": false,
+      "clv": 2.0
+     },
      "money_level": {
       "side": "away",
       "line": 10.5,
@@ -9007,6 +9549,7 @@
      },
      "open": 44.5,
      "first_seen": "2026-11-03T1151Z",
+     "open_src": "first_seen",
      "calls": {
       "follow_move": "under",
       "rlm": "under",
@@ -9051,6 +9594,7 @@
      },
      "open": 44.5,
      "first_seen": "2026-11-03T1151Z",
+     "open_src": "first_seen",
      "calls": {
       "money_level": "over",
       "sharp_gap": "over"
@@ -9151,19 +9695,17 @@
       "home": 86,
       "away": 14
      },
-     "open": -650,
+     "open": -110,
      "first_seen": "2026-11-03T1151Z",
+     "open_src": "sbr_open",
      "calls": {
-      "follow_move": "away",
-      "rlm": "away",
+      "follow_move": "home",
       "money_level": "home",
       "sharp_gap": "away",
       "money_moving": "away",
       "pin_value": "away"
      },
-     "move_pts": 4.5,
-     "public_side": "home",
-     "public_tix": 95,
+     "move_pts": 29.8,
      "gap": {
       "home": -9,
       "away": 9
@@ -9198,14 +9740,17 @@
       "home": 89,
       "away": 11
      },
-     "open": -650,
+     "open": -110,
      "first_seen": "2026-11-03T1151Z",
+     "open_src": "sbr_open",
      "calls": {
+      "follow_move": "home",
       "money_level": "home",
       "sharp_gap": "away",
       "money_moving": "away",
       "pin_value": "away"
      },
+     "move_pts": 34.3,
      "gap": {
       "home": -7,
       "away": 7
@@ -9222,6 +9767,15 @@
      "edge_pct": 4.16
     },
     "early_graded": {
+     "follow_move": {
+      "side": "home",
+      "line": -650,
+      "odds": -650,
+      "res": "W",
+      "units": 0.154,
+      "took_fav": true,
+      "clv": -4.5
+     },
      "money_level": {
       "side": "home",
       "line": -650,
@@ -9261,20 +9815,12 @@
     },
     "close_graded": {
      "follow_move": {
-      "side": "away",
-      "line": 350,
-      "odds": 350,
-      "res": "L",
-      "units": -1.0,
-      "took_fav": false
-     },
-     "rlm": {
-      "side": "away",
-      "line": 350,
-      "odds": 350,
-      "res": "L",
-      "units": -1.0,
-      "took_fav": false
+      "side": "home",
+      "line": -460,
+      "odds": -460,
+      "res": "W",
+      "units": 0.217,
+      "took_fav": true
      },
      "money_level": {
       "side": "home",
@@ -9346,6 +9892,7 @@
      },
      "open": -2.5,
      "first_seen": "2026-11-03T1151Z",
+     "open_src": "sbr_open",
      "calls": {
       "follow_move": "home",
       "rlm": "home",
@@ -9390,6 +9937,7 @@
      },
      "open": -2.5,
      "first_seen": "2026-11-03T1151Z",
+     "open_src": "sbr_open",
      "calls": {
       "money_level": "away",
       "sharp_gap": "home"
@@ -9492,6 +10040,7 @@
      },
      "open": 46.5,
      "first_seen": "2026-11-03T1151Z",
+     "open_src": "first_seen",
      "calls": {
       "follow_move": "under",
       "rlm": "under",
@@ -9536,6 +10085,7 @@
      },
      "open": 46.5,
      "first_seen": "2026-11-03T1151Z",
+     "open_src": "first_seen",
      "calls": {
       "money_level": "over",
       "sharp_gap": "over"
@@ -9636,15 +10186,16 @@
       "home": 44,
       "away": 56
      },
-     "open": -152,
+     "open": -110,
      "first_seen": "2026-11-03T1151Z",
+     "open_src": "sbr_open",
      "calls": {
       "follow_move": "home",
       "money_level": "away",
       "sharp_gap": "away",
       "money_moving": "away"
      },
-     "move_pts": 3.2,
+     "move_pts": 11.1,
      "gap": {
       "home": -21,
       "away": 21
@@ -9678,11 +10229,14 @@
       "home": 50,
       "away": 50
      },
-     "open": -152,
+     "open": -110,
      "first_seen": "2026-11-03T1151Z",
+     "open_src": "sbr_open",
      "calls": {
+      "follow_move": "home",
       "sharp_gap": "away"
      },
+     "move_pts": 7.9,
      "gap": {
       "home": -20,
       "away": 20
@@ -9698,6 +10252,15 @@
      "fair": 59.4
     },
     "early_graded": {
+     "follow_move": {
+      "side": "home",
+      "line": -152,
+      "odds": -152,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": true,
+      "clv": 3.2
+     },
      "sharp_gap": {
       "side": "away",
       "line": 128,
@@ -9777,14 +10340,17 @@
       "home": 66,
       "away": 34
      },
-     "open": -6.5,
+     "open": -6,
      "first_seen": "2026-11-03T1151Z",
+     "open_src": "sbr_open",
      "calls": {
+      "follow_move": "home",
       "money_level": "home",
       "sharp_gap": "away",
       "money_moving": "away",
       "pin_value": "away"
      },
+     "move_pts": 0.5,
      "gap": {
       "home": -5,
       "away": 5
@@ -9818,13 +10384,16 @@
       "home": 74,
       "away": 26
      },
-     "open": -6.5,
+     "open": -6,
      "first_seen": "2026-11-03T1151Z",
+     "open_src": "sbr_open",
      "calls": {
+      "follow_move": "home",
       "money_level": "home",
       "sharp_gap": "home",
       "money_moving": "home"
      },
+     "move_pts": 0.5,
      "gap": {
       "home": 18,
       "away": -18
@@ -9839,6 +10408,15 @@
      "pin_price_other": -113
     },
     "early_graded": {
+     "follow_move": {
+      "side": "home",
+      "line": -6.5,
+      "odds": -108,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": true,
+      "clv": 0.0
+     },
      "money_level": {
       "side": "home",
       "line": -6.5,
@@ -9868,6 +10446,14 @@
      }
     },
     "close_graded": {
+     "follow_move": {
+      "side": "home",
+      "line": -6.5,
+      "odds": -100,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": true
+     },
      "money_level": {
       "side": "home",
       "line": -6.5,
@@ -9924,6 +10510,7 @@
      },
      "open": 46.5,
      "first_seen": "2026-11-03T1151Z",
+     "open_src": "first_seen",
      "calls": {
       "follow_move": "over",
       "money_level": "over",
@@ -9965,6 +10552,7 @@
      },
      "open": 46.5,
      "first_seen": "2026-11-03T1151Z",
+     "open_src": "first_seen",
      "calls": {
       "money_level": "under",
       "sharp_gap": "over"
@@ -10057,18 +10645,16 @@
       "home": 69,
       "away": 31
      },
-     "open": -295,
+     "open": -110,
      "first_seen": "2026-11-03T1151Z",
+     "open_src": "sbr_open",
      "calls": {
-      "follow_move": "away",
-      "rlm": "away",
+      "follow_move": "home",
       "money_level": "home",
       "sharp_gap": "away",
       "money_moving": "away"
      },
-     "move_pts": 1.7,
-     "public_side": "home",
-     "public_tix": 93,
+     "move_pts": 20.6,
      "gap": {
       "home": -24,
       "away": 24
@@ -10102,13 +10688,16 @@
       "home": 90,
       "away": 10
      },
-     "open": -295,
+     "open": -110,
      "first_seen": "2026-11-03T1151Z",
+     "open_src": "sbr_open",
      "calls": {
+      "follow_move": "home",
       "money_level": "home",
       "sharp_gap": "away",
       "pin_value": "away"
      },
+     "move_pts": 22.3,
      "gap": {
       "home": -2,
       "away": 2
@@ -10125,6 +10714,15 @@
      "edge_pct": 1.87
     },
     "early_graded": {
+     "follow_move": {
+      "side": "home",
+      "line": -295,
+      "odds": -295,
+      "res": "W",
+      "units": 0.339,
+      "took_fav": true,
+      "clv": -1.7
+     },
      "money_level": {
       "side": "home",
       "line": -295,
@@ -10155,20 +10753,12 @@
     },
     "close_graded": {
      "follow_move": {
-      "side": "away",
-      "line": 220,
-      "odds": 220,
-      "res": "L",
-      "units": -1.0,
-      "took_fav": false
-     },
-     "rlm": {
-      "side": "away",
-      "line": 220,
-      "odds": 220,
-      "res": "L",
-      "units": -1.0,
-      "took_fav": false
+      "side": "home",
+      "line": -270,
+      "odds": -270,
+      "res": "W",
+      "units": 0.37,
+      "took_fav": true
      },
      "money_level": {
       "side": "home",
@@ -10232,6 +10822,7 @@
      },
      "open": 3,
      "first_seen": "2026-11-03T1151Z",
+     "open_src": "sbr_open",
      "calls": {
       "money_level": "away",
       "sharp_gap": "home",
@@ -10271,6 +10862,7 @@
      },
      "open": 3,
      "first_seen": "2026-11-03T1151Z",
+     "open_src": "sbr_open",
      "calls": {
       "money_level": "away",
       "sharp_gap": "away"
@@ -10357,6 +10949,7 @@
      },
      "open": 46.5,
      "first_seen": "2026-11-03T1151Z",
+     "open_src": "first_seen",
      "calls": {
       "follow_move": "under",
       "rlm": "under",
@@ -10403,6 +10996,7 @@
      },
      "open": 46.5,
      "first_seen": "2026-11-03T1151Z",
+     "open_src": "first_seen",
      "calls": {
       "money_level": "over",
       "sharp_gap": "under",
@@ -10521,15 +11115,16 @@
       "home": 11,
       "away": 89
      },
-     "open": 144,
+     "open": -112,
      "first_seen": "2026-11-03T1151Z",
+     "open_src": "sbr_open",
      "calls": {
       "follow_move": "away",
       "money_level": "away",
       "sharp_gap": "home",
       "money_moving": "home"
      },
-     "move_pts": 2.2,
+     "move_pts": 14.1,
      "gap": {
       "home": 1,
       "away": -1
@@ -10563,12 +11158,15 @@
       "home": 12,
       "away": 88
      },
-     "open": 144,
+     "open": -112,
      "first_seen": "2026-11-03T1151Z",
+     "open_src": "sbr_open",
      "calls": {
+      "follow_move": "away",
       "money_level": "away",
       "sharp_gap": "away"
      },
+     "move_pts": 11.8,
      "gap": {
       "home": -1,
       "away": 1
@@ -10584,6 +11182,15 @@
      "fair": 37.5
     },
     "early_graded": {
+     "follow_move": {
+      "side": "away",
+      "line": -172,
+      "odds": -172,
+      "res": "W",
+      "units": 0.581,
+      "took_fav": true,
+      "clv": 2.0
+     },
      "money_level": {
       "side": "away",
       "line": -172,
