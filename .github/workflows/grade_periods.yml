@@ -1,0 +1,547 @@
+name: grade-periods
+
+# Propwatch NFL PERIOD grader — halves, quarters and team totals. Writes:
+#   nfl/graded/periods.json          every graded period market at two checkpoints
+#   nfl/graded/periods_summary.json  each signal's record as data
+#   nfl/PERIODS_SCORECARD.md         readable, base-rate corrected
+#   nfl/PERIODS_BOARD.md             live markets with each signal's record beside its call
+#
+# Lines come from the FanDuel event feed (props/) and Pinnacle s;1;* — Action Network
+# carries no periods. Settles from the boxscore linescore, so no external results feed.
+
+on:
+  schedule:
+    - cron: "43 */3 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: grade-periods
+  cancel-in-progress: false
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Grade periods and build the board
+        run: |
+          python3 - . <<'PY'
+
+          #!/usr/bin/env python3
+          """Propwatch NFL PERIOD grader + board — halves, quarters and team totals. Stdlib only.
+
+            nfl/graded/periods.json          every graded period market, read at two checkpoints
+            nfl/graded/periods_summary.json  each signal's record as data
+            nfl/PERIODS_SCORECARD.md         readable, base-rate corrected
+            nfl/PERIODS_BOARD.md             live period markets with each signal's record
+
+          WHERE THE DATA COMES FROM. Action Network carries NO periods — every record it serves is
+          `period: "event"`. So the lines here come from the FanDuel event feed (archived under
+          props/) and from Pinnacle's `s;1;*` keys. Two consequences:
+
+            1. There are NO tickets/money splits on any period market. The signals below are all
+               handicap and price. That is fine: across 850+ graded events the money-share signals
+               are the ones that died and the price signals are the ones that lived.
+            2. Pinnacle's `s;3;*` keys are NOT used. Their period is ambiguous — tested against
+               realised quarter scores, Q1 and Q3 fit about equally (mean abs error 4.5 vs 4.2 over
+               15 games), so mapping them would be a guess. Quarters are graded off FanDuel alone
+               until the period is pinned down.
+
+          Everything settles from the Action Network boxscore linescore, so no external results
+          feed is needed: 1H = Q1+Q2, 2H = Q3+Q4, Q4 = Q4.
+
+          Signals:
+            follow_move  FanDuel moved the handicap; take the side it moved toward
+            fd_juice     handicap unchanged, price moved >= JUICE_C cents; take the side getting
+                         more expensive. Money arriving against a number the book will not move.
+            pin_value    FanDuel's handicap sits on the better side of Pinnacle's (1H only)
+            pin_price    same handicap, FanDuel's price beats Pinnacle's no-vig fair (1H only)
+            pin_lead     Pinnacle moved and FanDuel has not followed (1H only)
+          """
+          import gzip, json, os, sys, glob, math, re, collections, datetime as dt
+
+          REPO = sys.argv[1] if len(sys.argv) > 1 else "."
+          C = lambda *a: os.path.join(REPO, "nfl", *a)
+          R = lambda *a: os.path.join(REPO, *a)
+          EARLY_MIN = 60
+          MIN_N = 40
+          JUICE_C = 12
+          BREAKEVEN = 0.524
+          SIGNALS = ("pin_value", "pin_price", "pin_lead", "follow_move", "fd_juice")
+          KIND = {"spread": ("home", "away"), "total": ("over", "under"),
+                  "ml": ("home", "away"), "tt": ("over", "under")}
+
+          # FanDuel market name -> (period, kind). Team totals are handled separately.
+          FD_MKT = {"1st half spread": ("1h", "spread"), "1st half total": ("1h", "total"),
+                    "1st half winner": ("1h", "ml"),
+                    "2nd half spread": ("2h", "spread"), "2nd half total": ("2h", "total"),
+                    "2nd half winner": ("2h", "ml"),
+                    "4th quarter spread": ("q4", "spread"), "4th quarter total": ("q4", "total"),
+                    "4th quarter winner": ("q4", "ml")}
+          TT_RE = re.compile(r"^(1st|2nd) half (.+) total points$")
+          PERIOD_Q = {"1h": (0, 2), "2h": (2, 4), "q4": (3, 4)}      # linescore slice
+
+
+          def nm(s): return re.sub(r"[^a-z0-9 ]", "", (s or "").lower()).strip()
+          def snap(p): return os.path.basename(p).split(".")[0]
+          def T(s): return dt.datetime.strptime(s, "%Y-%m-%dT%H%MZ").replace(tzinfo=dt.timezone.utc)
+          def iso(s):
+              try: return dt.datetime.fromisoformat(str(s).replace("Z", "+00:00"))
+              except Exception: return None
+          def jgz(p):
+              o = gzip.open if p.endswith(".gz") else open
+              with o(p, "rt") as f: return json.load(f)
+          def dec(p): return (100 / -p + 1) if p < 0 else (p / 100 + 1)
+          def imp(p): return 1 / dec(p) if p else None
+
+
+          # ------------------------------------------------------------------ games + results
+          def load_games():
+              """'<away> @ <home>' -> {kickoff, home, away, quarters}. Quarters settle everything."""
+              G = {}
+              for p in sorted(glob.glob(R("raw", "actionnet", "*", "*.json*"))):
+                  try: d = jgz(p)
+                  except Exception: continue
+                  for x in (d.get("games") or []):
+                      tm = {t.get("id"): t for t in (x.get("teams") or [])}
+                      h = (tm.get(x.get("home_team_id")) or {}).get("full_name")
+                      a = (tm.get(x.get("away_team_id")) or {}).get("full_name")
+                      if not (h and a and x.get("start_time")): continue
+                      key = f"{a} @ {h}"
+                      rec = G.setdefault(key, {"kickoff": x["start_time"], "home": h, "away": a,
+                                               "q": None})
+                      if x.get("status") in ("complete", "final") and rec["q"] is None:
+                          ls = ((x.get("boxscore") or {}).get("linescore")) or []
+                          if len(ls) >= 4:
+                              rec["q"] = [(q.get("away_points") or 0, q.get("home_points") or 0)
+                                          for q in ls]
+              return G
+
+
+          def settle(game, period, kind, side, line, team=None):
+              """Result of one period market from the linescore. None if the game is unfinished."""
+              q = game.get("q")
+              if not q: return None
+              lo, hi = PERIOD_Q[period]
+              a = sum(x[0] for x in q[lo:hi]); h = sum(x[1] for x in q[lo:hi])
+              if kind == "ml":
+                  d = (h - a) if side == "home" else (a - h)
+                  return "W" if d > 0 else ("L" if d < 0 else "P")
+              if kind == "spread":
+                  m = (h - a) if side == "home" else (a - h)
+                  x = m + line
+              elif kind == "tt":
+                  pts = h if team == "home" else a
+                  x = pts - line if side == "over" else line - pts
+              else:
+                  tot = a + h
+                  x = tot - line if side == "over" else line - tot
+              return "W" if x > 0 else ("L" if x < 0 else "P")
+
+
+          # ------------------------------------------------------------------ FanDuel lines
+          def load_fd(games):
+              """(game, market_id) -> {t: {side: (handicap, price)}}  where market_id is
+              e.g. '1h|total' or '1h|tt|home'."""
+              nick = {}
+              for g, d in games.items():
+                  for al in ("home", "away"):
+                      nick[(g, nm(d[al]).split()[-1])] = al
+              S = collections.defaultdict(dict)
+              for p in sorted(glob.glob(R("props", "*", "*.jsonl.gz"))):
+                  t = snap(p)
+                  try: fh = gzip.open(p, "rt")
+                  except Exception: continue
+                  for line in fh:
+                      try: r = json.loads(line)
+                      except Exception: continue
+                      if r.get("s") != "ACTIVE" or r.get("h") is None: continue
+                      if "ALTERNATE" in (r.get("mt") or ""): continue
+                      g = r.get("g")
+                      if g not in games: continue
+                      low = nm(r.get("mn"))
+                      sel = r.get("r") or ""
+                      mk = FD_MKT.get(low)
+                      if mk:
+                          per, kind = mk
+                          if kind in ("total",):
+                              side = "over" if "Over" in sel else ("under" if "Under" in sel else None)
+                          else:
+                              al = nick.get((g, nm(sel).split()[-1] if nm(sel) else ""))
+                              side = al
+                          if not side: continue
+                          S[(g, f"{per}|{kind}")].setdefault(t, {})[side] = (r["h"], r["o"])
+                          continue
+                      m = TT_RE.match(low)
+                      if m:
+                          per = "1h" if m.group(1) == "1st" else "2h"
+                          al = nick.get((g, nm(m.group(2)).split()[-1]))
+                          side = "over" if "Over" in sel else ("under" if "Under" in sel else None)
+                          if al and side:
+                              S[(g, f"{per}|tt|{al}")].setdefault(t, {})[side] = (r["h"], r["o"])
+              return S
+
+
+          # ------------------------------------------------------------------ Pinnacle 1H
+          def load_pin(games):
+              """(game, market_id) -> {t: {'line': {side: pts}, 'price': {side: odds}, 'lim': n}}
+              1st half only -- s;3 period is ambiguous, see the module docstring."""
+              S = collections.defaultdict(dict)
+              for mp in sorted(glob.glob(R("raw", "pin_matchups", "*", "*.json*"))):
+                  t = snap(mp)
+                  pps = glob.glob(R("raw", "pin_prices", "*", t + ".json*"))
+                  if not pps: continue
+                  try: M, P = jgz(mp), jgz(pps[0])
+                  except Exception: continue
+                  gm = {}
+                  for m in (M if isinstance(M, list) else []):
+                      if m.get("parentId") is not None: continue
+                      q = {x.get("alignment"): x.get("name") for x in (m.get("participants") or [])}
+                      if q.get("home") and q.get("away"):
+                          k = f"{q['away']} @ {q['home']}"
+                          if k in games: gm[m.get("id")] = k
+                  for r in (P if isinstance(P, list) else []):
+                      g = gm.get(r.get("matchupId"))
+                      if not g or r.get("isAlternate"): continue
+                      key = r.get("key") or ""
+                      if key.startswith("s;1;s;"):   mid = "1h|spread"
+                      elif key.startswith("s;1;ou"): mid = "1h|total"
+                      elif key == "s;1;m":           mid = "1h|ml"
+                      elif key.startswith("s;1;tt;"):
+                          al = key.rsplit(";", 1)[-1]
+                          mid = f"1h|tt|{al}" if al in ("home", "away") else None
+                      else: mid = None
+                      if not mid: continue
+                      lim = max([l.get("amount", 0) for l in (r.get("limits") or [])] or [0])
+                      ln, pr = {}, {}
+                      for x in (r.get("prices") or []):
+                          d_ = x.get("designation")
+                          if d_ is None: continue
+                          ln[d_] = x.get("price") if mid.endswith("|ml") else x.get("points")
+                          pr[d_] = x.get("price")
+                      if ln: S[(g, mid)][t] = {"line": ln, "price": pr, "lim": lim}
+              return S
+
+
+          # ------------------------------------------------------------------ read
+          def at(d, t):
+              ks = [k for k in d if k <= t]
+              return d[max(ks)] if ks else None
+
+
+          def read(fdser, pinser, mid, t):
+              kind = mid.split("|")[1]
+              s0, s1 = KIND[kind]
+              f = at(fdser, t)
+              if not f or s0 not in f or s1 not in f: return None
+              f0 = fdser[min(fdser)]
+              if s0 not in f0 or s1 not in f0: f0 = f
+              r = {"t": t, "line": {s0: f[s0][0], s1: f[s1][0]},
+                   "odds": {s0: f[s0][1], s1: f[s1][1]},
+                   "open": f0[s0][0], "open_odds": {s0: f0[s0][1], s1: f0[s1][1]}, "calls": {}}
+              if kind == "ml":
+                  r["line"] = {s0: f[s0][1], s1: f[s1][1]}        # a moneyline's price is its line
+                  r["open"] = f0[s0][1]
+
+              # --- FanDuel's own movement
+              cur, op = r["line"][s0], r["open"]
+              if cur is not None and op is not None and cur != op:
+                  if kind == "ml":
+                      i1, i0 = imp(cur), imp(op)
+                      if i1 and i0 and i1 != i0: r["calls"]["follow_move"] = s0 if i1 > i0 else s1
+                  elif kind == "spread":
+                      r["calls"]["follow_move"] = s1 if cur > op else s0
+                  else:
+                      r["calls"]["follow_move"] = s0 if cur > op else s1
+                  r["move"] = round(cur - op, 1)
+              elif kind != "ml" and None not in (f[s0][1], f[s1][1], f0[s0][1], f0[s1][1]):
+                  d0 = f[s0][1] - f0[s0][1]; d1 = f[s1][1] - f0[s1][1]
+                  if max(abs(d0), abs(d1)) >= JUICE_C and (d0 < 0) != (d1 < 0):
+                      r["calls"]["fd_juice"] = s0 if d0 < d1 else s1
+
+              # --- Pinnacle (1st half only)
+              p = at(pinser, t) if pinser else None
+              if p and p["line"].get(s0) is not None:
+                  r["pin"], r["pin_lim"] = p["line"][s0], p["lim"]
+                  po, pu = imp(p["price"].get(s0)), imp(p["price"].get(s1))
+                  if po and pu:
+                      fair0 = po / (po + pu)
+                      if kind == "ml" or p["line"][s0] == r["line"][s0]:
+                          e0 = fair0 * dec(r["odds"][s0]) - 1 if r["odds"][s0] else -9
+                          e1 = (1 - fair0) * dec(r["odds"][s1]) - 1 if r["odds"][s1] else -9
+                          if max(e0, e1) > 0:
+                              r["calls"]["pin_price"] = s0 if e0 > e1 else s1
+                              r["edge_pct"] = round(100 * max(e0, e1), 2)
+                  if kind != "ml" and p["line"][s0] != r["line"][s0]:
+                      r["pin_gap"] = round(r["line"][s0] - p["line"][s0], 1)
+                      if kind == "spread":
+                          r["calls"]["pin_value"] = s0 if r["line"][s0] > p["line"][s0] else s1
+                      else:
+                          r["calls"]["pin_value"] = s1 if r["line"][s0] > p["line"][s0] else s0
+                  p0 = pinser[min(pinser)]
+                  if (kind != "ml" and p0["line"].get(s0) is not None
+                          and p0["line"][s0] != p["line"][s0] and op is not None):
+                      pd_ = 1 if p["line"][s0] > p0["line"][s0] else -1
+                      fdm = 0 if cur == op else (1 if cur > op else -1)
+                      if fdm != pd_:
+                          if kind == "spread": r["calls"]["pin_lead"] = s1 if pd_ > 0 else s0
+                          else:                r["calls"]["pin_lead"] = s0 if pd_ > 0 else s1
+              return r
+
+
+          def profit(odds, res):
+              if res == "P" or odds is None: return 0.0
+              return -1.0 if res == "L" else (100.0 / -odds if odds < 0 else odds / 100.0)
+
+
+          def clv(kind, side, v_then, v_close):
+              if v_then is None or v_close is None: return None
+              if kind == "ml":
+                  a, b = imp(v_then), imp(v_close)
+                  return round(100 * (b - a), 1) if (a is not None and b is not None) else None
+              if kind == "spread": return round(v_then - v_close, 1)
+              return round((v_close - v_then) if side == "over" else (v_then - v_close), 1)
+
+
+          def default_side(kind, side, r):
+              """favourite for spread/ml, over for total/tt -- the side a base rate is measured on"""
+              if kind in ("total", "tt"): return side == "over"
+              a, b = r["line"].get("home"), r["line"].get("away")
+              if a is None or b is None: return None
+              if kind == "ml": return side == ("home" if a < b else "away")
+              return side == ("home" if a < 0 else "away")
+
+
+          def bucket(x):
+              if x is None: return None
+              for lo, hi, lab in ((0, 5000, "pin <$5k"), (5000, 20000, "pin $5-20k"),
+                                  (20000, 10**9, "pin $20k+")):
+                  if lo <= x < hi: return lab
+              return None
+
+
+          # ------------------------------------------------------------------ build
+          def build():
+              games = load_games()
+              FD, PIN = load_fd(games), load_pin(games)
+              now = dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%dT%H%MZ")
+              graded, live = [], []
+              for (g, mid), ser in FD.items():
+                  gi = games.get(g)
+                  if not gi or not ser: continue
+                  ko = iso(gi["kickoff"])
+                  if not ko: continue
+                  kots = ko.strftime("%Y-%m-%dT%H%MZ")
+                  per, kind = mid.split("|")[0], mid.split("|")[1]
+                  team = mid.split("|")[2] if kind == "tt" else None
+                  pinser = PIN.get((g, mid), {})
+                  base = {"game": g, "market": mid, "period": per, "kind": kind,
+                          "kickoff": gi["kickoff"]}
+                  if kots > now:
+                      r = read(ser, pinser, mid, now)
+                      if r and r["calls"]: live.append(dict(base, now=r))
+                      continue
+                  if not gi.get("q"): continue
+                  f0 = min(ser)
+                  e_t = (T(f0) + dt.timedelta(minutes=EARLY_MIN)).strftime("%Y-%m-%dT%H%MZ")
+                  last = (ko - dt.timedelta(minutes=1)).strftime("%Y-%m-%dT%H%MZ")
+                  cl = read(ser, pinser, mid, last)
+                  if not cl: continue
+                  ea = read(ser, pinser, mid, e_t) if e_t < kots else None
+                  rec = dict(base, markets={"close": cl})
+                  if ea: rec["markets"]["early"] = ea
+                  for cp, r in (("early", ea), ("close", cl)):
+                      if not r: continue
+                      gr = {}
+                      for sig, side in r["calls"].items():
+                          res = settle(gi, per, kind, side, r["line"][side], team)
+                          if res is None: continue
+                          gr[sig] = {"side": side, "line": r["line"][side], "odds": r["odds"][side],
+                                     "res": res, "units": round(profit(r["odds"][side], res), 3),
+                                     "took_default": default_side(kind, side, r)}
+                          if cp == "early":
+                              gr[sig]["clv"] = clv(kind, side, r["line"][side], cl["line"][side])
+                      rec[cp + "_graded"] = gr
+                  if rec.get("close_graded"): graded.append(rec)
+              graded.sort(key=lambda r: r["kickoff"]); live.sort(key=lambda r: r["kickoff"])
+              return graded, live, games
+
+
+          def base_rates(graded, games):
+              out = {}
+              for kind in ("spread", "total", "ml", "tt"):
+                  w = n = 0
+                  for g in graded:
+                      if g["kind"] != kind: continue
+                      cl = g["markets"]["close"]
+                      gi = games[g["game"]]
+                      team = g["market"].split("|")[2] if kind == "tt" else None
+                      for side in KIND[kind]:
+                          if default_side(kind, side, cl) is not True: continue
+                          res = settle(gi, g["period"], kind, side, cl["line"][side], team)
+                          if res in ("W", "L"): n += 1; w += (res == "W")
+                  out[kind] = {"rate": (w / n) if n else 0.5, "n": n}
+              return out
+
+
+          def summarize(graded, br):
+              def blank(): return {"n": 0, "W": 0, "L": 0, "P": 0, "units": 0.0, "clv": [],
+                                   "dec": 0, "exp": 0.0, "dflt": 0}
+              S = collections.defaultdict(blank)
+              for g in graded:
+                  rate = br[g["kind"]]["rate"]
+                  for cp in ("early", "close"):
+                      gr = g.get(cp + "_graded") or {}
+                      r = g["markets"].get(cp) or {}
+                      tags = ["all", g["period"], f"{g['period']}|{g['kind']}", bucket(r.get("pin_lim"))]
+                      for sig, x in gr.items():
+                          for tag in tags:
+                              if not tag: continue
+                              s = S[(sig, cp, tag)]
+                              s["n"] += 1; s[x["res"]] += 1; s["units"] += x["units"]
+                              if x.get("clv") is not None: s["clv"].append(x["clv"])
+                              if x["res"] != "P" and x.get("took_default") is not None:
+                                  s["dec"] += 1; s["dflt"] += bool(x["took_default"])
+                                  s["exp"] += rate if x["took_default"] else (1 - rate)
+              out = []
+              for (sig, cp, tag), s in S.items():
+                  d = s["W"] + s["L"]
+                  hit = s["W"] / d if d else None
+                  z = (s["W"] - d * BREAKEVEN) / math.sqrt(d * 0.25) if d else None
+                  row = {"signal": sig, "checkpoint": cp, "slice": tag, "n": s["n"], "W": s["W"],
+                         "L": s["L"], "P": s["P"],
+                         "hit_pct": round(100 * hit, 1) if hit is not None else None,
+                         "units": round(s["units"], 2),
+                         "roi_pct": round(100 * s["units"] / s["n"], 1) if s["n"] else None,
+                         "z_vs_breakeven": round(z, 2) if z is not None else None}
+                  if s["dec"]:
+                      exp = 100 * s["exp"] / s["dec"]
+                      row["picked_default_pct"] = round(100 * s["dflt"] / s["dec"], 1)
+                      row["expected_pct"] = round(exp, 1)
+                      row["edge_pts"] = round(100 * s["W"] / d - exp, 1) if d else None
+                  if s["clv"]:
+                      row["clv_avg"] = round(sum(s["clv"]) / len(s["clv"]), 2)
+                  e = row.get("edge_pts")
+                  row["proposal"] = (
+                      f"keep collecting ({d}/{MIN_N})" if d < MIN_N else
+                      "PROMOTE: beats break-even and its own base rate" if z >= 1.5 and (e or 0) >= 5 else
+                      "beats break-even but not its base rate -- directional bias, not signal"
+                      if z >= 1.5 else
+                      "INVERT candidate: wrong well beyond its base rate" if (e or 0) <= -15 else
+                      "DROP: below break-even" if z <= -1.5 else "no edge shown yet")
+                  out.append(row)
+              order = {s: i for i, s in enumerate(SIGNALS)}
+              out.sort(key=lambda r: (r["slice"] != "all", r["checkpoint"], order.get(r["signal"], 9),
+                                      r["slice"]))
+              return out
+
+
+          def rec_str(r): return f"{r['W']}-{r['L']}" + (f"-{r['P']}" if r["P"] else "")
+
+
+          def scorecard_md(summary, graded, br, gen):
+              L = ["# NFL period scorecard — halves, quarters, team totals", "",
+                   f"Generated {gen}. {len(graded)} graded period markets.", "",
+                   "Action Network serves no periods, so these lines come from the FanDuel event",
+                   "feed and Pinnacle's `s;1;*` keys. **There are no tickets/money splits on any",
+                   "period market**, so every signal here is handicap or price. Pinnacle's `s;3;*`",
+                   "keys are excluded: tested against realised quarter scores they fit Q1 and Q3",
+                   "about equally, so quarters are graded off FanDuel alone rather than guessed.",
+                   "Everything settles from the boxscore linescore.", "",
+                   "Base rates on this sample:", ""]
+              for k in ("spread", "total", "ml", "tt"):
+                  L.append(f"- **{k}**: default side won {100*br[k]['rate']:.1f}% (n={br[k]['n']})")
+              L += ["", f"Proposals appear at {MIN_N} decided markets. Nothing changes automatically.", ""]
+              for cp in ("early", "close"):
+                  L += [f"## {cp.upper()}", "",
+                        "| signal | record | hit % | expected % | edge | units | ROI % | CLV avg | status |",
+                        "|---|---|---|---|---|---|---|---|---|"]
+                  for r in summary:
+                      if r["slice"] != "all" or r["checkpoint"] != cp: continue
+                      L.append(f"| {r['signal']} | {rec_str(r)} | {r['hit_pct']} | "
+                               f"{r.get('expected_pct','')} | {r.get('edge_pts','')} | {r['units']:+} | "
+                               f"{r['roi_pct']} | {r.get('clv_avg','')} | {r['proposal']} |")
+                  L.append("")
+              L += ["## By period, market and Pinnacle limit", "",
+                    "| signal | checkpoint | slice | record | hit % | edge | ROI % |",
+                    "|---|---|---|---|---|---|---|"]
+              for r in summary:
+                  if r["slice"] == "all": continue
+                  L.append(f"| {r['signal']} | {r['checkpoint']} | {r['slice']} | {rec_str(r)} | "
+                           f"{r['hit_pct']} | {r.get('edge_pts','')} | {r['roi_pct']} |")
+              return "\n".join(L) + "\n"
+
+
+          def board_md(live, summary, gen):
+              rec = {r["signal"]: r for r in summary if r["slice"] == "all" and r["checkpoint"] == "close"}
+              L = ["# NFL period board", "",
+                   f"Generated {gen}. Live halves, quarters and team totals where a signal has an",
+                   "opinion. Each call shows that signal's graded record so far.", "",
+                   "No splits exist for any of these markets — every call is handicap or price.", "",
+                   "This is analysis, not picks.", ""]
+              groups = collections.defaultdict(list)
+              for x in live:
+                  r = x["now"]
+                  t = collections.Counter(r["calls"].values())
+                  side, n = t.most_common(1)[0]
+                  groups[(n, len(r["calls"]) - n)].append((x, r, side))
+              for k in sorted(groups, key=lambda k: (-k[0], k[1])):
+                  L += [f"## {k[0]} signal{'s' if k[0] != 1 else ''} agree, {k[1]} against", "",
+                        "| kickoff (ET) | game | market | lean | FD | open | Pin | gap | limit | price | calls |",
+                        "|---|---|---|---|---|---|---|---|---|---|---|"]
+                  for x, r, side in sorted(groups[k], key=lambda y: (y[0]["kickoff"], y[0]["market"])):
+                      ko = iso(x["kickoff"])
+                      kt = (ko - dt.timedelta(hours=5)).strftime("%a %H:%M") if ko else ""
+                      parts = [f"{s}->{sd} ({rec_str(rec[s]) if s in rec else '0-0'})"
+                               for s, sd in r["calls"].items()]
+                      ln = r["line"][side]
+                      L.append(f"| {kt} | {x['game']} | {x['market']} | {side} | "
+                               f"{ln if ln is not None else ''} | {r.get('open','')} | "
+                               f"{r.get('pin','')} | {r.get('pin_gap','')} | "
+                               f"{('$%s' % r['pin_lim']) if r.get('pin_lim') else ''} | "
+                               f"{r['odds'][side] if r['odds'][side] is not None else ''} | "
+                               f"{'; '.join(parts)} |")
+                  L.append("")
+              if not groups: L.append("No live period markets with a signal yet.")
+              return "\n".join(L) + "\n"
+
+
+          if __name__ == "__main__":
+              graded, live, games = build()
+              br = base_rates(graded, games)
+              summary = summarize(graded, br)
+              gen = dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
+              os.makedirs(C("graded"), exist_ok=True)
+              json.dump(graded, open(C("graded", "periods.json"), "w"), indent=1)
+              json.dump({"generated": gen, "graded": len(graded), "base_rates": br,
+                         "min_n_to_propose": MIN_N, "signals": summary},
+                        open(C("graded", "periods_summary.json"), "w"), indent=1)
+              open(C("PERIODS_SCORECARD.md"), "w").write(scorecard_md(summary, graded, br, gen))
+              open(C("PERIODS_BOARD.md"), "w").write(board_md(live, summary, gen))
+              print(f"graded period markets: {len(graded)}   live on board: {len(live)}")
+              print("base rates: " + "  ".join(
+                  f"{k} {100*v['rate']:.1f}% (n={v['n']})" for k, v in br.items()))
+              for r in summary:
+                  if r["slice"] == "all":
+                      print(f"  {r['checkpoint']:5} {r['signal']:11} {rec_str(r):>9}  hit {r['hit_pct']}"
+                            f"  exp {r.get('expected_pct')}  edge {r.get('edge_pts')}"
+                            f"  roi {r['roi_pct']}  {r['proposal']}")
+          PY
+
+      - name: Commit
+        run: |
+          git config user.name  "propwatch-bot"
+          git config user.email "propwatch-bot@users.noreply.github.com"
+          git add nfl/graded nfl/PERIODS_SCORECARD.md nfl/PERIODS_BOARD.md
+          git diff --cached --quiet && echo "no change" && exit 0
+          git commit -q -m "nfl periods $(date -u +%FT%TZ)"
+          for i in 1 2 3 4; do
+            git pull -q --rebase --autostash && git push -q && exit 0
+            sleep 9
+          done
+          exit 1

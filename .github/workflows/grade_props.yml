@@ -330,7 +330,14 @@ jobs:
                           gr[sig] = {"side": side, "line": r["line"], "odds": r["odds"][side],
                                      "res": res, "units": round(profit(r["odds"][side], res), 3)}
                           if cp == "early":
+                              # Handicap CLV is near-blank on props: most prop numbers never move,
+                              # so the closing-line value lives in the PRICE. Report both -- points
+                              # when the number moved, and percentage points of implied probability
+                              # on the taken side, which is always available.
                               gr[sig]["clv"] = round((cl["line"] - r["line"]) * (1 if side == "over" else -1), 1)
+                              a_, b_ = imp(r["odds"][side]), imp(cl["odds"][side])
+                              if a_ is not None and b_ is not None:
+                                  gr[sig]["clv_pct"] = round(100 * (b_ - a_), 1)
                       rec[cp + "_graded"] = gr
                   if rec.get("close_graded"): graded.append(rec)
               graded.sort(key=lambda r: r["kickoff"]); live.sort(key=lambda r: r["kickoff"])
@@ -348,7 +355,7 @@ jobs:
 
           def summarize(graded, orate):
               def blank(): return {"n": 0, "W": 0, "L": 0, "P": 0, "units": 0.0, "clv": [],
-                                   "ov": 0, "dec": 0, "exp": 0.0}
+                                   "clvp": [], "ov": 0, "dec": 0, "exp": 0.0}
               S = collections.defaultdict(blank)
               for g in graded:
                   for cp in ("early", "close"):
@@ -361,6 +368,7 @@ jobs:
                               s = S[(sig, cp, tag)]
                               s["n"] += 1; s[x["res"]] += 1; s["units"] += x["units"]
                               if "clv" in x: s["clv"].append(x["clv"])
+                              if "clv_pct" in x: s["clvp"].append(x["clv_pct"])
                               if x["res"] != "P":
                                   s["dec"] += 1
                                   s["ov"] += (x["side"] == "over")
@@ -384,7 +392,11 @@ jobs:
                   if s["clv"]:
                       c = s["clv"]
                       row["clv_avg"] = round(sum(c) / len(c), 2)
-                      row["clv_pos_pct"] = round(100 * sum(1 for x in c if x > 0) / len(c), 1)
+                      row["clv_moved_pct"] = round(100 * sum(1 for x in c if x != 0) / len(c), 1)
+                  if s["clvp"]:
+                      c = s["clvp"]
+                      row["clv_price_avg"] = round(sum(c) / len(c), 2)
+                      row["clv_price_pos_pct"] = round(100 * sum(1 for x in c if x > 0) / len(c), 1)
                   e = row.get("edge_pts")
                   row["proposal"] = (
                       f"keep collecting ({dec_}/{MIN_N})" if dec_ < MIN_N else
@@ -416,18 +428,24 @@ jobs:
                    "There are no tickets/money splits on any prop, so the only channels are the",
                    "handicap and the price. `fd_juice` is the money channel: a static handicap whose",
                    f"price moves {JUICE_C}+ cents one way. Break-even at -110 is 52.4%.", "",
+                   "**CLV pts** is handicap movement and is near-blank here, because most prop",
+                   "numbers never move. **CLV price** is the real one: percentage points of implied",
+                   "probability gained on the taken side between the early read and the close.", "",
                    f"Base rate: the over hit **{100*orate:.1f}%** of {on} graded props. `expected %` is",
                    "that rate applied to the sides each signal picked; `edge` is hit% minus it.", "",
                    f"Proposals appear at {MIN_N} decided props. Nothing changes automatically.", ""]
               for cp in ("early", "close"):
                   L += [f"## {cp.upper()}", "",
-                        "| signal | record | hit % | expected % | edge | units | ROI % | CLV avg | status |",
-                        "|---|---|---|---|---|---|---|---|---|"]
+                        "| signal | record | hit % | expected % | edge | units | ROI % | "
+                        "CLV pts | CLV price | CLV + % | status |",
+                        "|---|---|---|---|---|---|---|---|---|---|---|"]
                   for r in summary:
                       if r["slice"] != "all" or r["checkpoint"] != cp: continue
                       L.append(f"| {r['signal']} | {rec_str(r)} | {r['hit_pct']} | "
                                f"{r.get('expected_pct','')} | {r.get('edge_pts','')} | {r['units']:+} | "
-                               f"{r['roi_pct']} | {r.get('clv_avg','')} | {r['proposal']} |")
+                               f"{r['roi_pct']} | {r.get('clv_avg','')} | "
+                               f"{r.get('clv_price_avg','')} | {r.get('clv_price_pos_pct','')} | "
+                               f"{r['proposal']} |")
                   L.append("")
               L += ["## By Pinnacle limit and by stat", "",
                     "| signal | checkpoint | slice | record | hit % | edge | ROI % |",
