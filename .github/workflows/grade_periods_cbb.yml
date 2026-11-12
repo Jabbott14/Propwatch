@@ -132,9 +132,10 @@ jobs:
                   elif fa.startswith(h) and fh.startswith(a): hits.append((f, True))
               if len(hits) != 1: return None
               f, swap = hits[0]
+              ot = bool(f.get("ot"))
               if swap:
-                  return {"as": f["hs"], "hs": f["as"], "h1a": f["h1h"], "h1h": f["h1a"]}
-              return {"as": f["as"], "hs": f["hs"], "h1a": f["h1a"], "h1h": f["h1h"]}
+                  return {"as": f["hs"], "hs": f["as"], "h1a": f["h1h"], "h1h": f["h1a"], "ot": ot}
+              return {"as": f["as"], "hs": f["hs"], "h1a": f["h1a"], "h1h": f["h1h"], "ot": ot}
 
 
           def settle(fin, period, kind, side, line):
@@ -323,7 +324,7 @@ jobs:
                   ea = read(ser, pinser, mid, e_t) if e_t < kots else None
                   dflt = next((sd for sd in KIND["tt" if kind.startswith("tt_") else kind]
                                if default_side(kind, sd, cl) is True), None)
-                  rec = dict(base, markets={"close": cl})
+                  rec = dict(base, ot=fin.get("ot", False), markets={"close": cl})
                   if dflt is not None and cl["line"].get(dflt) is not None:
                       rec["default_res"] = settle(fin, per, kind, dflt, cl["line"][dflt])
                   if ea: rec["markets"]["early"] = ea
@@ -359,6 +360,18 @@ jobs:
                       r = g.get("default_res")
                       if r in ("W", "L"): n += 1; w += (r == "W")
                   out[kind] = {"rate": (w / n) if n else 0.5, "n": n}
+              # second-half team totals settle including overtime, and an OT game adds a whole
+              # scoring period the line never accounted for. Measured 2026-11-12: overs went
+              # 10-1 (90.9%) in OT games against 124-97 (56.1%) without. Reporting them together
+              # overstates the bias, so they are reported apart.
+              for lab, want in (("2h_tt_ot", True), ("2h_tt_no_ot", False)):
+                  w = n = 0
+                  for g in graded:
+                      if g["period"] != "2h" or not g["kind"].startswith("tt_"): continue
+                      if bool(g.get("ot")) != want: continue
+                      r = g.get("default_res")
+                      if r in ("W", "L"): n += 1; w += (r == "W")
+                  out[lab] = {"rate": (w / n) if n else 0.5, "n": n}
               return out
 
 
@@ -370,7 +383,10 @@ jobs:
                   rate = br[g["kind"]]["rate"]
                   for cp in ("early", "close"):
                       for sig, x in (g.get(cp + "_graded") or {}).items():
-                          for tag in ("all", g["period"], f"{g['period']}|{g['kind']}"):
+                          tags = ["all", g["period"], f"{g['period']}|{g['kind']}"]
+                          if g["period"] == "2h":
+                              tags.append("2h OT game" if g.get("ot") else "2h no OT")
+                          for tag in tags:
                               s = S[(sig, cp, tag)]
                               s["n"] += 1; s[x["res"]] += 1; s["units"] += x["units"]
                               if x.get("clv") is not None: s["clv"].append(x["clv"])
