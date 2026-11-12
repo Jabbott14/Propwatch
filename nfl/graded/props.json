@@ -16851,6 +16851,74 @@
   }
  },
  {
+  "game": "Cleveland Browns @ New Orleans Saints",
+  "player": "audric estime",
+  "stat": "rush_yds",
+  "kickoff": "2026-11-08T18:00:00.000Z",
+  "week": 9,
+  "actual": 72.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-08T1759Z",
+    "line": 35.5,
+    "odds": {
+     "over": -113,
+     "under": -113
+    },
+    "open": 24.5,
+    "calls": {
+     "pin_value": "under",
+     "fd_move": "over"
+    },
+    "pin": 34.5,
+    "pin_lim": 500,
+    "fair_over": 0.514,
+    "pin_gap": 1.0,
+    "move_pts": 11.0
+   },
+   "early": {
+    "t": "2026-11-07T2038Z",
+    "line": 26.5,
+    "odds": {
+     "over": -113,
+     "under": -113
+    },
+    "open": 24.5,
+    "calls": {
+     "fd_move": "over"
+    },
+    "move_pts": 2.0
+   }
+  },
+  "early_graded": {
+   "fd_move": {
+    "side": "over",
+    "line": 26.5,
+    "odds": -113,
+    "res": "W",
+    "units": 0.885,
+    "clv": 9.0,
+    "clv_pct": 0.0
+   }
+  },
+  "close_graded": {
+   "pin_value": {
+    "side": "under",
+    "line": 35.5,
+    "odds": -113,
+    "res": "L",
+    "units": -1.0
+   },
+   "fd_move": {
+    "side": "over",
+    "line": 35.5,
+    "odds": -113,
+    "res": "W",
+    "units": 0.885
+   }
+  }
+ },
+ {
   "game": "Los Angeles Rams @ Washington Commanders",
   "player": "austin ekeler",
   "stat": "rush_yds",
@@ -16951,6 +17019,104 @@
     "odds": 104,
     "res": "W",
     "units": 1.04
+   }
+  }
+ },
+ {
+  "game": "Cleveland Browns @ New Orleans Saints",
+  "player": "audric estime",
+  "stat": "recv_yds",
+  "kickoff": "2026-11-08T18:00:00.000Z",
+  "week": 9,
+  "actual": 5.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-08T1759Z",
+    "line": 3.5,
+    "odds": {
+     "over": 102,
+     "under": -130
+    },
+    "open": 3.5,
+    "calls": {
+     "fd_juice": "under"
+    },
+    "pin": 3.5,
+    "pin_lim": 500,
+    "fair_over": 0.4709,
+    "juice_c": [
+     215,
+     -17
+    ]
+   },
+   "early": {
+    "t": "2026-11-08T0128Z",
+    "line": 3.5,
+    "odds": {
+     "over": -113,
+     "under": -113
+    },
+    "open": 3.5,
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "fd_juice": {
+    "side": "under",
+    "line": 3.5,
+    "odds": -130,
+    "res": "L",
+    "units": -1.0
+   }
+  }
+ },
+ {
+  "game": "Cleveland Browns @ New Orleans Saints",
+  "player": "audric estime",
+  "stat": "receptions",
+  "kickoff": "2026-11-08T18:00:00.000Z",
+  "week": 9,
+  "actual": 1.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-08T1759Z",
+    "line": 0.5,
+    "odds": {
+     "over": -172,
+     "under": 128
+    },
+    "open": 0.5,
+    "calls": {
+     "fd_juice": "under"
+    },
+    "pin": 0.5,
+    "pin_lim": 500,
+    "fair_over": 0.5832,
+    "juice_c": [
+     33,
+     -24
+    ]
+   },
+   "early": {
+    "t": "2026-11-08T0128Z",
+    "line": 0.5,
+    "odds": {
+     "over": -205,
+     "under": 152
+    },
+    "open": 0.5,
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "fd_juice": {
+    "side": "under",
+    "line": 0.5,
+    "odds": 128,
+    "res": "L",
+    "units": -1.0
    }
   }
  },
