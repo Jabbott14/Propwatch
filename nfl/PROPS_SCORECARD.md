@@ -1,6 +1,6 @@
 # NFL prop scorecard
 
-Generated 2026-11-12 06:11 UTC. 494 graded props (87 had no nflverse result and are not graded).
+Generated 2026-11-12 15:38 UTC. 494 graded props (87 had no nflverse result and are not graded).
 
 **Read this on its own scale, not against the side scorecard.** Pinnacle risks
 **$75,000** on an NFL side and **$1,000-$3,000** on a prop at kickoff, $250-$500
