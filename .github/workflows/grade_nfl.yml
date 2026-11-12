@@ -1,0 +1,606 @@
+name: grade-nfl
+
+# Propwatch NFL grader + board. Rebuilt from the raw archive every run; writes:
+#   nfl/graded/games.json    every finished game, the system's read at two checkpoints
+#   nfl/graded/summary.json  each signal's record: W-L, ROI, CLV, base-rate-corrected edge
+#   nfl/SCORECARD.md         the same, readable on GitHub
+#   nfl/BOARD.md             upcoming games: what each signal says, beside its record
+#
+# Namespaced under nfl/ so it cannot clobber the candidates/ freeze written by grade.yml.
+
+on:
+  schedule:
+    - cron: "37 */3 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: grade-nfl
+  cancel-in-progress: false
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Grade and build the board
+        run: |
+          python3 - . <<'PY'
+
+          #!/usr/bin/env python3
+          """Propwatch NFL grader + board. Stdlib only. Runs on a GitHub Actions runner.
+
+          Ported from grade_cbb.yml, which got the architecture right. Every run it rebuilds,
+          from the collector's raw archive:
+
+            graded/games.json      every finished game: the system's read at two checkpoints
+                                   (EARLY = first hour after the line was first seen, CLOSE =
+                                   last number before kickoff) and how each signal did.
+            graded/summary.json    each signal's record: W-L, hit %, ROI at the actual price,
+                                   closing-line value, base-rate-corrected edge, split by
+                                   ticket volume and Pinnacle limit.
+            SCORECARD.md           the same, readable on GitHub.
+            BOARD.md               upcoming games: what each signal says now, next to that
+                                   signal's graded record so far.
+
+          Nothing here is a bet. It grades what every signal said on every game, so the record
+          is complete whether or not anyone bet. It never changes its own rules: it reports
+          which signals are earning and proposes changes once a signal has MIN_N decided games.
+          A person approves the change.
+
+          Reads are built only from rows timestamped BEFORE kickoff, so history has no look-ahead.
+
+          TWO GATES (the 2026-11-09 BUF@MIN lesson, logged as fault 4 in
+          claude/propwatch-news-vs-coherence.md). EV against Pinnacle can essentially never be
+          positive, because Pinnacle IS the fair-value definition: any true signal that has not
+          yet fully moved the market still prices at roughly minus-the-vig against it. So:
+
+            Gate B  -- the SIGNALS below. Directional: is informed money on a side? This is the
+                       gate that decides WHETHER to play. Graded here by CLV and hit rate.
+            Gate A  -- `pin_gap` / `pin_lim` columns. Where to buy it, and a price FLOOR.
+                       A floor, not a veto. It must never overrule a Gate B signal over a
+                       couple of points of vig.
+
+          On 2026-11-09 Gate B fired on the under (line fell 46.5 -> 45.5 while over tickets
+          went 54% -> 72%) and on Buffalo. Gate A read -3.7% and -2.7%. Gate A won. The game
+          landed 23-6, total 29. That is what these two gates exist to prevent.
+
+          Signals (each picks a side of the spread or the total):
+            follow_move   the side the line has moved toward since first seen
+            rlm           reverse line movement: the line moved toward the side the PUBLIC IS
+                          NOT on. Justin's stated template -- "jags have a bunch of public bets
+                          and money and the line moves towards BAL -> sharp signal on Bal".
+                          This is the signal that was missing on 2026-11-09.
+            money_level   the side with the larger share of money
+            sharp_gap     the side whose money% most exceeds its tickets%
+            money_moving  the side whose money% rose faster than its tickets% since first seen
+            pin_value     the side FanDuel prices better than Pinnacle (Pinnacle = fair value)
+          """
+          import gzip, json, os, sys, glob, math, collections, datetime as dt
+
+          REPO = sys.argv[1] if len(sys.argv) > 1 else "."
+          C = lambda *a: os.path.join(REPO, "nfl", *a)      # outputs, namespaced like cbb/
+          R = lambda *a: os.path.join(REPO, *a)             # the raw archive, at the repo root
+          FD = 69
+          EARLY_MIN = 60
+          MIN_N = 30
+          BREAKEVEN = 0.524            # -110
+          PUBLIC_MIN = 60              # tickets% needed before a side counts as "the public side"
+          SIGNALS = ("follow_move", "rlm", "money_level", "sharp_gap", "money_moving", "pin_value")
+          # NFL volumes run 2k-120k bets a game, and Pinnacle NFL limits run $3k-$75k.
+          NB_BUCKETS = ((0, 10000, "<10k bets"), (10000, 40000, "10-40k bets"), (40000, 10**9, "40k+ bets"))
+          LIM_BUCKETS = ((0, 10000, "pin limit <$10k"), (10000, 50000, "pin $10-50k"),
+                         (50000, 10**9, "pin $50k+"))
+          SIDES = {"spread": ("home", "away"), "total": ("over", "under")}
+
+
+          def now_utc(): return dt.datetime.now(dt.timezone.utc)
+          def tsfmt(t): return t.strftime("%Y-%m-%dT%H%MZ")
+          def parse_ts(s): return dt.datetime.strptime(s, "%Y-%m-%dT%H%MZ").replace(tzinfo=dt.timezone.utc)
+
+
+          def iso_dt(s):
+              try: return dt.datetime.fromisoformat(str(s).replace("Z", "+00:00"))
+              except Exception: return None
+
+
+          def snap_ts(path):
+              """raw/<src>/<date>/2026-11-09T2238Z.json.gz -> 2026-11-09T2238Z"""
+              return os.path.basename(path).split(".")[0]
+
+
+          def jgz(p):
+              o = gzip.open if p.endswith(".gz") else open
+              with o(p, "rt") as f:
+                  return json.load(f)
+
+
+          # ------------------------------------------------------------------ load
+          def load():
+              """Walk the raw archive. NFL keeps whole API responses, not a flattened layer, so
+              this does the flattening the CBB collector does at write time."""
+              ser = collections.defaultdict(list)      # (gid, mkt, side) -> [(t, v, o, tx, mn, nb)]
+              games, finals = {}, {}
+              for p in sorted(glob.glob(R("raw", "actionnet", "*", "*.json*"))):
+                  try: d = jgz(p)
+                  except Exception: continue
+                  t = snap_ts(p)
+                  for g in (d.get("games") or []):
+                      gid = str(g.get("id"))
+                      tm = {x.get("id"): x for x in (g.get("teams") or [])}
+                      home = (tm.get(g.get("home_team_id")) or {}).get("full_name")
+                      away = (tm.get(g.get("away_team_id")) or {}).get("full_name")
+                      ko = g.get("start_time")
+                      if not (gid and home and away and ko): continue
+                      games.setdefault(gid, {
+                          "gid": gid, "game": f"{away} @ {home}", "home_name": home, "away_name": away,
+                          "home_abbr": (tm.get(g.get("home_team_id")) or {}).get("abbr"),
+                          "away_abbr": (tm.get(g.get("away_team_id")) or {}).get("abbr"),
+                          "kickoff": ko, "week": g.get("week")})
+                      # final score, straight off the boxscore -- no separate finals feed to join
+                      if g.get("status") in ("complete", "final") and gid not in finals:
+                          ls = ((g.get("boxscore") or {}).get("linescore")) or []
+                          if ls:
+                              finals[gid] = {"as": sum(q.get("away_points") or 0 for q in ls),
+                                             "hs": sum(q.get("home_points") or 0 for q in ls)}
+                      bm = (g.get("markets") or {}).get(str(FD)) or {}
+                      ev = bm.get("event") or {}
+                      nb = g.get("num_bets")
+                      for mkt in ("spread", "total"):
+                          for o in (ev.get(mkt) or []):
+                              if o.get("is_live") or o.get("period") not in (None, "event"): continue
+                              side = o.get("side")
+                              if side not in SIDES[mkt]: continue
+                              bi = o.get("bet_info") or {}
+                              ser[(gid, mkt, side)].append(
+                                  (t, o.get("value"), o.get("odds"),
+                                   (bi.get("tickets") or {}).get("percent"),
+                                   (bi.get("money") or {}).get("percent"), nb))
+              for v in ser.values():
+                  v.sort()
+                  # collapse duplicate timestamps, keep last
+                  seen = {}
+                  for row in v: seen[row[0]] = row
+                  v[:] = [seen[k] for k in sorted(seen)]
+
+              # Pinnacle: matchups name the game, prices carry the numbers. Same snapshot stamp.
+              pin = collections.defaultdict(list)      # gid-agnostic key (home,away,kickoff-hour) -> rows
+              mfiles = {snap_ts(p): p for p in glob.glob(R("raw", "pin_matchups", "*", "*.json*"))}
+              for t, mp in sorted(mfiles.items()):
+                  pp = None
+                  for cand in glob.glob(R("raw", "pin_prices", "*", t + ".json*")):
+                      pp = cand; break
+                  if not pp: continue
+                  try: M, P = jgz(mp), jgz(pp)
+                  except Exception: continue
+                  byid = {}
+                  for m in (M if isinstance(M, list) else []):
+                      if m.get("parentId") is not None: continue
+                      ps = {p.get("alignment"): p.get("name") for p in (m.get("participants") or [])}
+                      ko = iso_dt(m.get("startTime"))
+                      if ps.get("home") and ps.get("away") and ko:
+                          byid[m.get("id")] = (ps["home"], ps["away"], ko)
+                  for r in (P if isinstance(P, list) else []):
+                      k = byid.get(r.get("matchupId"))
+                      if not k or r.get("isAlternate"): continue
+                      key = r.get("key") or ""
+                      if key.startswith("s;0;s;"): ty = "spread"
+                      elif key.startswith("s;0;ou"): ty = "total"
+                      else: continue
+                      lim = max([l.get("amount", 0) for l in (r.get("limits") or [])] or [0])
+                      for pr in (r.get("prices") or []):
+                          d_ = pr.get("designation")
+                          if d_ not in SIDES[ty]: continue
+                          pin[k].append((t, ty, d_, pr.get("points"), pr.get("price"), lim))
+              for v in pin.values(): v.sort()
+              return games, ser, pin, finals
+
+
+          def match_pin(g, pin_keys):
+              """NFL names are identical between Action Network and Pinnacle, so this is an exact
+              match on both full names plus a kickoff inside 3 hours. No fuzzy matching needed --
+              and per engine defect 7, never match on a team name alone: a team appears on two
+              boards at once for half the week."""
+              ko = iso_dt(g["kickoff"])
+              if not ko: return None
+              for k in pin_keys:
+                  h, a, pk = k
+                  if h == g["home_name"] and a == g["away_name"] and abs((pk - ko).total_seconds()) <= 10800:
+                      return k
+              return None
+
+
+          # ------------------------------------------------------------------ reads
+          def at(series, t):
+              """last row at or before t (series sorted), else None"""
+              out = None
+              for row in series:
+                  if row[0] <= t: out = row
+                  else: break
+              return out
+
+
+          def pin_at(prow, ty, desig, t):
+              out = None
+              for row in prow:
+                  if row[0] > t: break
+                  if row[1] == ty and row[2] == desig: out = row
+              return out
+
+
+          def read(gid, mkt, t, ser, prow):
+              """The system's read on one market at time t. None if no FanDuel line yet."""
+              s0, s1 = SIDES[mkt]
+              A, B = ser.get((gid, mkt, s0), []), ser.get((gid, mkt, s1), [])
+              a, b = at(A, t), at(B, t)
+              if not a or not b or a[1] is None or b[1] is None: return None
+              f0 = next((x for x in A if x[1] is not None), None)      # first line seen = our opener
+              fa = next((x for x in A if x[3] is not None), None)       # first with splits
+              fb = next((x for x in B if x[3] is not None), None)
+              r = {"t": a[0], "nb": a[5], "line": {s0: a[1], s1: b[1]}, "odds": {s0: a[2], s1: b[2]},
+                   "tix": {s0: a[3], s1: b[3]}, "mny": {s0: a[4], s1: b[4]},
+                   "open": f0[1] if f0 else None, "first_seen": f0[0] if f0 else None, "calls": {}}
+
+              # --- follow_move. spread: s0 (home) value FALLING = market moving toward home.
+              #     total: value RISING = moving toward over.
+              moved_to = None
+              if r["open"] is not None and a[1] != r["open"]:
+                  up = a[1] > r["open"]
+                  moved_to = (s1 if up else s0) if mkt == "spread" else (s0 if up else s1)
+                  r["calls"]["follow_move"] = moved_to
+                  r["move_pts"] = round(abs(a[1] - r["open"]), 1)
+
+              # --- rlm. The line moved toward the side the public is NOT on.
+              #     This is the 2026-11-09 signal: over tickets 54% -> 72%, total 46.5 -> 45.5,
+              #     so the public side is `over` and the line moved to `under` -> call under.
+              if moved_to and None not in (a[3], b[3]):
+                  tix = {s0: a[3], s1: b[3]}
+                  pub = max(tix, key=lambda k: tix[k])
+                  if tix[pub] >= PUBLIC_MIN and pub != moved_to:
+                      r["calls"]["rlm"] = moved_to
+                      r["public_side"] = pub
+                      r["public_tix"] = tix[pub]
+
+              if a[4] is not None and b[4] is not None and a[4] != b[4]:
+                  r["calls"]["money_level"] = s0 if a[4] > b[4] else s1
+              if None not in (a[3], a[4], b[3], b[4]):
+                  ga, gb = a[4] - a[3], b[4] - b[3]
+                  if max(ga, gb) > 0 and ga != gb:
+                      r["calls"]["sharp_gap"] = s0 if ga > gb else s1
+                  r["gap"] = {s0: ga, s1: gb}
+              if fa and fb and None not in (a[3], a[4], b[3], b[4]) and fa[0] < a[0]:
+                  da = (a[4] - fa[4]) - (a[3] - fa[3])
+                  db = (b[4] - fb[4]) - (b[3] - fb[3])
+                  if max(da, db) > 0 and da != db:
+                      r["calls"]["money_moving"] = s0 if da > db else s1
+                  r["div"] = {s0: da, s1: db}
+
+              # --- Gate A. Pinnacle's number and the size it will take. A floor, never a veto.
+              if prow:
+                  p = pin_at(prow, mkt, s0, t)
+                  if p and p[3] is not None:
+                      r["pin"], r["pin_price"], r["pin_lim"] = p[3], p[4], p[5]
+                      q = pin_at(prow, mkt, s1, t)
+                      if q and q[4] is not None: r["pin_price_other"] = q[4]
+                      if a[1] != p[3]:
+                          r["pin_gap"] = round(a[1] - p[3], 1)
+                          if mkt == "spread":        # FD gives home more points than Pinnacle -> home
+                              r["calls"]["pin_value"] = s0 if a[1] > p[3] else s1
+                          else:                      # FD total above Pinnacle -> under
+                              r["calls"]["pin_value"] = s1 if a[1] > p[3] else s0
+              return r
+
+
+          def result(mkt, side, line, fin):
+              if mkt == "spread":
+                  m = fin["hs"] - fin["as"] if side == "home" else fin["as"] - fin["hs"]
+                  x = m + line
+              else:
+                  tot = fin["hs"] + fin["as"]
+                  x = tot - line if side == "over" else line - tot
+              return "W" if x > 0 else ("L" if x < 0 else "P")
+
+
+          def profit(odds, res):
+              if res == "P" or odds is None: return 0.0
+              if res == "L": return -1.0
+              return 100.0 / -odds if odds < 0 else odds / 100.0
+
+
+          def clv(mkt, side, v_then, v_close):
+              """points of closing-line value for a bet taken at v_then"""
+              if mkt == "spread": return round(v_then - v_close, 1)
+              return round((v_close - v_then) if side == "over" else (v_then - v_close), 1)
+
+
+          def bucket(x, table):
+              if x is None: return None
+              for lo, hi, lab in table:
+                  if lo <= x < hi: return lab
+              return None
+
+
+          def favoured(mkt, side, r, fin=None):
+              """Which side of this market is the 'default' one -- the favourite on a spread, the
+              over on a total. Needed so a signal is scored against the base rate of the sides it
+              actually picked, not against a coin flip. A model that is 73% dogs looks like genius
+              in a week dogs cover."""
+              if mkt == "total": return side == "over"
+              home_line = r["line"].get("home")
+              if home_line is None: return None
+              fav = "home" if home_line < 0 else "away"
+              return side == fav
+
+
+          # ------------------------------------------------------------------ build
+          def build():
+              games, ser, pin, finals = load()
+              pin_keys = list(pin.keys())
+              now = now_utc(); nowts = tsfmt(now)
+              graded, upcoming, unmatched = [], [], 0
+              for gid, g in games.items():
+                  ko = iso_dt(g["kickoff"])
+                  if not ko: continue
+                  kots = tsfmt(ko)
+                  pk = match_pin(g, pin_keys)
+                  prow = pin.get(pk, []) if pk else []
+                  firsts = [s[0][0] for (gg, m, sd), s in ser.items() if gg == gid and s]
+                  if not firsts: continue
+                  first = min(firsts)
+                  e_t = tsfmt(parse_ts(first) + dt.timedelta(minutes=EARLY_MIN))
+                  rec = {"gid": gid, "game": g["game"], "away": g["away_name"], "home": g["home_name"],
+                         "kickoff": g["kickoff"], "week": g.get("week"), "first_seen": first,
+                         "pin_matched": bool(pk), "markets": {}}
+                  if kots > nowts:
+                      for mkt in ("spread", "total"):
+                          r = read(gid, mkt, nowts, ser, prow)
+                          if r: rec["markets"][mkt] = {"now": r}
+                      if rec["markets"]: upcoming.append(rec)
+                      continue
+                  fin = finals.get(gid)
+                  if not fin:
+                      unmatched += 1; continue
+                  rec["final"] = f"{fin['as']}-{fin['hs']}"
+                  rec["total_pts"] = fin["as"] + fin["hs"]
+                  last_pre = tsfmt(ko - dt.timedelta(minutes=1))
+                  for mkt in ("spread", "total"):
+                      cl = read(gid, mkt, last_pre, ser, prow)
+                      if not cl: continue
+                      ea = read(gid, mkt, e_t, ser, prow) if e_t < kots else None
+                      out = {"close": cl}
+                      if ea: out["early"] = ea
+                      for cp, r in (("early", ea), ("close", cl)):
+                          if not r: continue
+                          gr = {}
+                          for sig, side in r["calls"].items():
+                              res = result(mkt, side, r["line"][side], fin)
+                              gr[sig] = {"side": side, "line": r["line"][side], "odds": r["odds"][side],
+                                         "res": res, "units": round(profit(r["odds"][side], res), 3),
+                                         "took_fav": favoured(mkt, side, r)}
+                              if cp == "early":
+                                  gr[sig]["clv"] = clv(mkt, side, r["line"][side], cl["line"][side])
+                          out[cp + "_graded"] = gr
+                      rec["markets"][mkt] = out
+                  if rec["markets"]: graded.append(rec)
+              graded.sort(key=lambda r: r["kickoff"]); upcoming.sort(key=lambda r: r["kickoff"])
+              return graded, upcoming, unmatched
+
+
+          def base_rates(graded):
+              """How often the default side (favourite / over) actually won, measured on this
+              sample. This is what a signal's hit rate has to beat, not 50%."""
+              nf = nw = no = ow = 0
+              for g in graded:
+                  for mkt, m in g["markets"].items():
+                      cl = m.get("close")
+                      if not cl: continue
+                      fin = g.get("final")
+                      if not fin: continue
+                      a, h = (int(x) for x in fin.split("-"))
+                      f = {"as": a, "hs": h}
+                      s0, s1 = SIDES[mkt]
+                      for side in (s0, s1):
+                          if favoured(mkt, side, cl) is not True: continue
+                          res = result(mkt, side, cl["line"][side], f)
+                          if res == "P": continue
+                          if mkt == "spread":
+                              nf += 1; nw += (res == "W")
+                          else:
+                              no += 1; ow += (res == "W")
+              return {"spread_fav_rate": (nw / nf) if nf else 0.5, "spread_n": nf,
+                      "total_over_rate": (ow / no) if no else 0.5, "total_n": no}
+
+
+          def summarize(graded, br):
+              def blank(): return {"n": 0, "W": 0, "L": 0, "P": 0, "units": 0.0, "clv": [],
+                                   "fav": 0, "dec": 0, "exp": 0.0}
+              S = collections.defaultdict(blank)
+              for g in graded:
+                  for mkt, m in g["markets"].items():
+                      for cp in ("early", "close"):
+                          gr = m.get(cp + "_graded") or {}
+                          r = m.get(cp) or {}
+                          tags = ["all", bucket(r.get("nb"), NB_BUCKETS), bucket(r.get("pin_lim"), LIM_BUCKETS)]
+                          rate = br["spread_fav_rate"] if mkt == "spread" else br["total_over_rate"]
+                          for sig, x in gr.items():
+                              for tag in tags:
+                                  if not tag: continue
+                                  for mk in (mkt, "both"):
+                                      s = S[(sig, cp, mk, tag)]
+                                      s["n"] += 1; s[x["res"]] += 1; s["units"] += x["units"]
+                                      if "clv" in x: s["clv"].append(x["clv"])
+                                      if x["res"] != "P" and x.get("took_fav") is not None:
+                                          s["dec"] += 1
+                                          s["fav"] += bool(x["took_fav"])
+                                          s["exp"] += rate if x["took_fav"] else (1 - rate)
+              out = []
+              for (sig, cp, mk, tag), s in S.items():
+                  dec = s["W"] + s["L"]
+                  hit = s["W"] / dec if dec else None
+                  z = (s["W"] - dec * BREAKEVEN) / math.sqrt(dec * 0.25) if dec else None
+                  row = {"signal": sig, "checkpoint": cp, "market": mk, "slice": tag, "n": s["n"],
+                         "W": s["W"], "L": s["L"], "P": s["P"],
+                         "hit_pct": round(100 * hit, 1) if hit is not None else None,
+                         "units": round(s["units"], 2),
+                         "roi_pct": round(100 * s["units"] / s["n"], 1) if s["n"] else None,
+                         "z_vs_breakeven": round(z, 2) if z is not None else None}
+                  if s["dec"]:
+                      exp = 100 * s["exp"] / s["dec"]
+                      row["picked_default_pct"] = round(100 * s["fav"] / s["dec"], 1)
+                      row["expected_pct"] = round(exp, 1)
+                      row["edge_pts"] = round(100 * s["W"] / dec - exp, 1) if dec else None
+                  if s["clv"]:
+                      c = sorted(s["clv"])
+                      row["clv_avg"] = round(sum(c) / len(c), 2)
+                      row["clv_pos_pct"] = round(100 * sum(1 for x in c if x > 0) / len(c), 1)
+                  e = row.get("edge_pts")
+                  if dec >= MIN_N:
+                      row["proposal"] = (
+                          "PROMOTE: beats break-even and its own base rate" if z >= 1.5 and (e or 0) >= 5 else
+                          "beats break-even but not its base rate -- directional bias, not signal"
+                          if z >= 1.5 else
+                          "INVERT candidate: wrong well beyond its base rate" if (e or 0) <= -15 else
+                          "DROP: below break-even" if z <= -1.5 else "no edge shown yet")
+                  else:
+                      row["proposal"] = f"keep collecting ({dec}/{MIN_N})"
+                  out.append(row)
+              order = {s: i for i, s in enumerate(SIGNALS)}
+              out.sort(key=lambda r: (r["slice"] != "all", r["market"] != "both", r["checkpoint"],
+                                      order.get(r["signal"], 9), r["market"], r["slice"]))
+              return out
+
+
+          def fmt_rec(r):
+              return f"{r['W']}-{r['L']}" + (f"-{r['P']}" if r["P"] else "")
+
+
+          def scorecard_md(summary, graded, unmatched, br, gen):
+              L = ["# NFL scorecard", "",
+                   f"Generated {gen}. {len(graded)} graded games"
+                   f" ({unmatched} finished games had no final score and are not graded).", "",
+                   "Each signal is graded on **every** game it had an opinion on, at the FanDuel price",
+                   "available at that moment. EARLY = one hour after the line was first seen. CLOSE =",
+                   "last number before kickoff. Break-even at -110 is 52.4%. CLV = points of",
+                   "closing-line value; positive means the number you would have taken beat the close.",
+                   "",
+                   "`expected %` is the base rate of the sides that signal actually picked, measured on",
+                   "this sample. `edge` is hit% minus that. A signal that is structurally long dogs or",
+                   "unders will beat 50% in any week dogs or unders run, which is not an edge --",
+                   f"this sample ran **{100*br['spread_fav_rate']:.1f}% favourites** (n={br['spread_n']})",
+                   f"and **{100*br['total_over_rate']:.1f}% overs** (n={br['total_n']}).", "",
+                   f"Proposals appear once a signal has {MIN_N} decided games. Nothing changes",
+                   "automatically.", "",
+                   "**Gate B is these signals. Gate A is the Pinnacle columns on the board — a price",
+                   "floor, never a veto.** EV against Pinnacle can essentially never be positive,",
+                   "because Pinnacle is the fair-value definition. Using it as a veto rejects every",
+                   "signal this system exists to find. See fault 4 in propwatch-news-vs-coherence.md.",
+                   ""]
+              for cp in ("early", "close"):
+                  L += [f"## {cp.upper()}", "",
+                        "| signal | market | record | hit % | expected % | edge | units | ROI % | CLV avg | CLV + % | status |",
+                        "|---|---|---|---|---|---|---|---|---|---|---|"]
+                  for r in summary:
+                      if r["slice"] != "all" or r["checkpoint"] != cp: continue
+                      L.append(f"| {r['signal']} | {r['market']} | {fmt_rec(r)} | {r['hit_pct']} | "
+                               f"{r.get('expected_pct', '')} | {r.get('edge_pts', '')} | "
+                               f"{r['units']:+} | {r['roi_pct']} | {r.get('clv_avg', '')} | "
+                               f"{r.get('clv_pos_pct', '')} | {r['proposal']} |")
+                  L.append("")
+              L += ["## By ticket volume and Pinnacle limit (both markets)", "",
+                    "| signal | checkpoint | slice | record | hit % | edge | ROI % | CLV avg |",
+                    "|---|---|---|---|---|---|---|---|"]
+              for r in summary:
+                  if r["slice"] == "all" or r["market"] != "both": continue
+                  L.append(f"| {r['signal']} | {r['checkpoint']} | {r['slice']} | {fmt_rec(r)} | "
+                           f"{r['hit_pct']} | {r.get('edge_pts', '')} | {r['roi_pct']} | "
+                           f"{r.get('clv_avg', '')} |")
+              return "\n".join(L) + "\n"
+
+
+          def board_md(upcoming, summary, gen):
+              rec = {(r["signal"], r["market"]): r for r in summary
+                     if r["slice"] == "all" and r["checkpoint"] == "close"}
+              L = ["# NFL board", "",
+                   f"Generated {gen}. Upcoming games with a FanDuel line, grouped by how many signals",
+                   "agree on each market. Every game is listed; nothing is cut. Each call shows that",
+                   "signal's graded CLOSE record so far, so you can see which ones are earning.", "",
+                   "`Pin` is Pinnacle's number and the size it will take — **Gate A, a price floor and",
+                   "a guide to which book to use. It is not a veto.** `gap` is FanDuel minus Pinnacle in",
+                   "points. `public` names the ticket majority when it is over "
+                   f"{PUBLIC_MIN}% — when the line has",
+                   "moved the other way, `rlm` fires.", "",
+                   "This is analysis, not picks.", ""]
+              groups = collections.defaultdict(list)
+              for g in upcoming:
+                  for mkt, m in g["markets"].items():
+                      r = m["now"]
+                      if not r["calls"]: continue
+                      tally = collections.Counter(r["calls"].values())
+                      side, n = tally.most_common(1)[0]
+                      groups[(n, len(r["calls"]) - n)].append((g, mkt, r, side))
+              for (agree, against) in sorted(groups, key=lambda k: (-k[0], k[1])):
+                  L += [f"## {agree} signal{'s' if agree != 1 else ''} agree, {against} against", "",
+                        "| kickoff (ET) | game | market | lean | FD now | open | move | Pin | gap | "
+                        "public | tix / money (lean) | bets | calls |",
+                        "|---|---|---|---|---|---|---|---|---|---|---|---|---|"]
+                  for g, mkt, r, side in sorted(groups[(agree, against)], key=lambda x: x[0]["kickoff"]):
+                      k = iso_dt(g["kickoff"])
+                      ko = (k - dt.timedelta(hours=5)).strftime("%a %H:%M") if k else ""
+                      parts = []
+                      for sig, sd in r["calls"].items():
+                          s = rec.get((sig, mkt))
+                          parts.append(f"{sig}->{sd} ({fmt_rec(s) if s else '0-0'})")
+                      pin = (f"{r['pin']:g} (${r['pin_lim']:,.0f})"
+                             if r.get("pin") is not None and r.get("pin_lim") else "")
+                      op = f"{r['open']:g}" if r.get("open") is not None else ""
+                      mv = f"{r['move_pts']:g}" if r.get("move_pts") else ""
+                      gap = f"{r['pin_gap']:+g}" if r.get("pin_gap") is not None else ""
+                      pub = (f"{r['public_side']} {r['public_tix']}%" if r.get("public_side") else "")
+                      odds = f" ({r['odds'][side]:+d})" if r["odds"][side] is not None else ""
+                      tm = (f"{r['tix'][side]}% / {r['mny'][side]}%"
+                            if r["tix"][side] is not None and r["mny"][side] is not None else "")
+                      L.append(f"| {ko} | {g['game']} | {mkt} | {side} | {r['line'][side]:g}{odds} | "
+                               f"{op} | {mv} | {pin} | {gap} | {pub} | {tm} | {r['nb'] or ''} | "
+                               f"{'; '.join(parts)} |")
+                  L.append("")
+              if not groups: L.append("No upcoming games with signals yet.")
+              return "\n".join(L) + "\n"
+
+
+          if __name__ == "__main__":
+              graded, upcoming, unmatched = build()
+              br = base_rates(graded)
+              summary = summarize(graded, br)
+              gen = now_utc().strftime("%Y-%m-%d %H:%M UTC")
+              os.makedirs(C("graded"), exist_ok=True)
+              json.dump(graded, open(C("graded", "games.json"), "w"), indent=1)
+              json.dump({"generated": gen, "graded_games": len(graded), "unmatched_finals": unmatched,
+                         "min_n_to_propose": MIN_N, "base_rates": br, "signals": summary},
+                        open(C("graded", "summary.json"), "w"), indent=1)
+              open(C("SCORECARD.md"), "w").write(scorecard_md(summary, graded, unmatched, br, gen))
+              open(C("BOARD.md"), "w").write(board_md(upcoming, summary, gen))
+              print(f"graded games: {len(graded)}   upcoming on board: {len(upcoming)}   "
+                    f"finished but no final: {unmatched}")
+              print(f"base rates: {100*br['spread_fav_rate']:.1f}% favourites (n={br['spread_n']}), "
+                    f"{100*br['total_over_rate']:.1f}% overs (n={br['total_n']})")
+              for r in summary:
+                  if r["slice"] == "all" and r["market"] == "both":
+                      print(f"  {r['checkpoint']:5} {r['signal']:13} {fmt_rec(r):>9}  hit {r['hit_pct']}"
+                            f"  exp {r.get('expected_pct')}  edge {r.get('edge_pts')}"
+                            f"  roi {r['roi_pct']}  clv {r.get('clv_avg', '-')}  {r['proposal']}")
+          PY
+
+      - name: Commit
+        run: |
+          git config user.name  "propwatch-bot"
+          git config user.email "propwatch-bot@users.noreply.github.com"
+          git add nfl/graded nfl/SCORECARD.md nfl/BOARD.md
+          git diff --cached --quiet && echo "no change" && exit 0
+          git commit -m "nfl grade $(date -u +%FT%TZ)"
+          git pull --rebase -q || true
+          git push
