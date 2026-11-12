@@ -61,7 +61,9 @@ jobs:
           EARLY_MIN = 60
           MIN_N = 30
           BREAKEVEN = 0.524            # -110
-          SIGNALS = ("follow_move", "money_level", "sharp_gap", "money_moving", "pin_value")
+          SIGNALS = ("follow_move", "money_level", "sharp_gap", "money_moving", "pin_value",
+                     "book_lag", "consensus_gap")
+          LAG_BOOKS = 4        # books that must have moved before FanDuel counts as stale
           NB_BUCKETS = ((0, 1000, "<1k bets"), (1000, 3000, "1-3k bets"), (3000, 10**9, "3k+ bets"))
           LIM_BUCKETS = ((0, 1000, "pin limit <$1k"), (1000, 2000, "pin $1-2k"), (2000, 10**9, "pin $2k+"))
 
@@ -93,9 +95,17 @@ jobs:
               openers.update(jload(C("state", "collector.json"), {}).get("openers", {}).get("an", {}))
 
               ser = collections.defaultdict(list)           # (gid, mkt, side) -> [(t, v, o, tx, mn, nb)]
+              # Every OTHER book's number, for consensus and lag. CBB already collects 7 books
+              # (69, 30, 15, 49, 68, 71, 75) and the grader only ever read FanDuel.
+              bk = collections.defaultdict(lambda: collections.defaultdict(dict))  # (gid,mkt)->t->book->v
               games = {}
               for r in rows(C("splits", "*", "*.jsonl.gz")):
-                  if r.get("b") != FD or r.get("m") not in MARKETS: continue
+                  if r.get("m") not in MARKETS: continue
+                  if r.get("b") != FD:
+                      if r.get("sd") == ("over" if r["m"] == "total" else "home"):
+                          v = r.get("o") if r["m"] == "moneyline" else r.get("v")
+                          if v is not None: bk[(str(r["gid"]), r["m"])][r["t"]][r["b"]] = v
+                      continue
                   gid = str(r["gid"])
                   # a moneyline has no handicap -- its price IS its line
                   val = r.get("o") if r["m"] == "moneyline" else r.get("v")
@@ -117,7 +127,7 @@ jobs:
               finals = []
               for f in sorted(glob.glob(C("finals", "*.json"))):
                   finals += list(jload(f, {}).values())
-              return games, ser, openers, pin, finals
+              return games, ser, openers, pin, finals, bk
 
 
           # ------------------------------------------------------------------ joins
@@ -194,7 +204,44 @@ jobs:
           def imp(p): return 1 / dec(p) if p else None
 
 
-          def read(gid, mkt, t, ser, openers, prow):
+          def book_read(books, mkt, t, fd_line, fd_open, s0, s1):
+              """Consensus and lag across the other books. No splits involved.
+
+              consensus_gap  FanDuel is off the book median -- take the side FanDuel gives away.
+              book_lag       at least LAG_BOOKS of them have moved off their own first-seen number
+                             one way and FanDuel has not. FanDuel is stale and about to follow.
+              """
+              if not books: return {}, {}
+              ks = [k for k in books if k <= t]
+              if not ks: return {}, {}
+              snap = books[max(ks)]
+              first = books[min(books)]
+              vals = sorted(v for v in snap.values() if v is not None)
+              if len(vals) < 3: return {}, {}
+              med = (vals[len(vals)//2] if len(vals) % 2
+                     else (vals[len(vals)//2 - 1] + vals[len(vals)//2]) / 2)
+              calls, info = {}, {"books": len(vals), "median": med}
+              if fd_line is not None and fd_line != med:
+                  if mkt == "spread":    calls["consensus_gap"] = s0 if fd_line > med else s1
+                  elif mkt == "total":   calls["consensus_gap"] = s1 if fd_line > med else s0
+                  else:
+                      a, b = imp(fd_line), imp(med)
+                      if a and b: calls["consensus_gap"] = s1 if a > b else s0
+              up = dn = 0
+              for b_, v in snap.items():
+                  o = first.get(b_)
+                  if v is None or o is None or v == o: continue
+                  up += v > o; dn += v < o
+              info["books_up"], info["books_dn"] = up, dn
+              moved = fd_line is not None and fd_open is not None and fd_line != fd_open
+              if not moved and max(up, dn) >= LAG_BOOKS and min(up, dn) == 0:
+                  d = 1 if up > dn else -1
+                  if mkt == "spread":  calls["book_lag"] = s1 if d > 0 else s0
+                  else:                calls["book_lag"] = s0 if d > 0 else s1
+              return calls, info
+
+
+          def read(gid, mkt, t, ser, openers, prow, books=None):
               """The system's read on one market at time t. Returns None if no FanDuel line yet."""
               s0, s1 = SIDES[mkt]
               A, B = ser.get((gid, mkt, s0), []), ser.get((gid, mkt, s1), [])
@@ -233,6 +280,9 @@ jobs:
                   if max(da, db) > 0 and da != db:
                       r["calls"]["money_moving"] = s0 if da > db else s1
                   r["div"] = {s0: da, s1: db}
+              bc, bi = book_read(books, mkt, t, a[1], r.get("open"), s0, s1)
+              r["calls"].update(bc)
+              if bi: r["books"] = bi
               if prow:
                   p = pin_at(prow, mkt, s0, t)
                   if p and p[3] is not None:
@@ -328,7 +378,7 @@ jobs:
 
           # ------------------------------------------------------------------ build
           def build():
-              games, ser, openers, pin, finals = load()
+              games, ser, openers, pin, finals, BK = load()
               pin_keys = list(pin.keys())
               now = now_utc(); nowts = tsfmt(now)
               graded, upcoming = [], []
@@ -348,7 +398,7 @@ jobs:
                          "markets": {}}
                   if tipts > nowts:
                       for mkt in MARKETS:
-                          r = read(gid, mkt, nowts, ser, openers, prow)
+                          r = read(gid, mkt, nowts, ser, openers, prow, BK.get((gid, mkt)))
                           if r: rec["markets"][mkt] = {"now": r}
                       if rec["markets"]: upcoming.append(rec)
                       continue
@@ -358,9 +408,10 @@ jobs:
                   rec["final"] = fin
                   last_pre = tsfmt(parse_ts(tipts) - dt.timedelta(minutes=1))
                   for mkt in MARKETS:
-                      cl = read(gid, mkt, last_pre, ser, openers, prow)
+                      cl = read(gid, mkt, last_pre, ser, openers, prow, BK.get((gid, mkt)))
                       if not cl: continue
-                      ea = read(gid, mkt, e_t, ser, openers, prow) if before(e_t) else None
+                      ea = (read(gid, mkt, e_t, ser, openers, prow, BK.get((gid, mkt)))
+                            if before(e_t) else None)
                       out = {"close": cl}
                       if ea: out["early"] = ea
                       for cp, r in (("early", ea), ("close", cl)):
