@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-12 06:42 UTC",
+ "generated": "2026-11-12 06:44 UTC",
  "graded": 722,
  "unmatched_finals": 156,
  "base_rates": {
@@ -22,6 +22,14 @@
   "tt_away": {
    "rate": 0.5819672131147541,
    "n": 122
+  },
+  "2h_tt_ot": {
+   "rate": 0.9090909090909091,
+   "n": 11
+  },
+  "2h_tt_no_ot": {
+   "rate": 0.5787234042553191,
+   "n": 235
   }
  },
  "min_n_to_propose": 50,
@@ -356,6 +364,40 @@
   {
    "signal": "follow_move",
    "checkpoint": "close",
+   "slice": "2h OT game",
+   "n": 7,
+   "W": 1,
+   "L": 6,
+   "P": 0,
+   "hit_pct": 14.3,
+   "units": -5.06,
+   "roi_pct": -72.2,
+   "z_vs_breakeven": -2.02,
+   "picked_default_pct": 14.3,
+   "expected_pct": 43.2,
+   "edge_pts": -28.9,
+   "proposal": "keep collecting (7/50)"
+  },
+  {
+   "signal": "follow_move",
+   "checkpoint": "close",
+   "slice": "2h no OT",
+   "n": 233,
+   "W": 101,
+   "L": 132,
+   "P": 0,
+   "hit_pct": 43.3,
+   "units": -39.13,
+   "roi_pct": -16.8,
+   "z_vs_breakeven": -2.76,
+   "picked_default_pct": 43.8,
+   "expected_pct": 48.9,
+   "edge_pts": -5.6,
+   "proposal": "DROP: below break-even"
+  },
+  {
+   "signal": "follow_move",
+   "checkpoint": "close",
    "slice": "2h|spread",
    "n": 73,
    "W": 35,
@@ -470,6 +512,40 @@
    "picked_default_pct": 44.3,
    "expected_pct": 48.7,
    "edge_pts": -12.4,
+   "proposal": "DROP: below break-even"
+  },
+  {
+   "signal": "fd_juice",
+   "checkpoint": "close",
+   "slice": "2h OT game",
+   "n": 4,
+   "W": 0,
+   "L": 4,
+   "P": 0,
+   "hit_pct": 0.0,
+   "units": -4.0,
+   "roi_pct": -100.0,
+   "z_vs_breakeven": -2.1,
+   "picked_default_pct": 25.0,
+   "expected_pct": 45.3,
+   "edge_pts": -45.3,
+   "proposal": "keep collecting (4/50)"
+  },
+  {
+   "signal": "fd_juice",
+   "checkpoint": "close",
+   "slice": "2h no OT",
+   "n": 84,
+   "W": 32,
+   "L": 52,
+   "P": 0,
+   "hit_pct": 38.1,
+   "units": -25.61,
+   "roi_pct": -30.5,
+   "z_vs_breakeven": -2.62,
+   "picked_default_pct": 45.2,
+   "expected_pct": 48.9,
+   "edge_pts": -10.8,
    "proposal": "DROP: below break-even"
   },
   {
@@ -724,6 +800,24 @@
   {
    "signal": "follow_move",
    "checkpoint": "early",
+   "slice": "2h no OT",
+   "n": 71,
+   "W": 35,
+   "L": 36,
+   "P": 0,
+   "hit_pct": 49.3,
+   "units": -3.52,
+   "roi_pct": -5.0,
+   "z_vs_breakeven": -0.52,
+   "picked_default_pct": 49.3,
+   "expected_pct": 48.3,
+   "edge_pts": 1.0,
+   "clv_avg": -0.08,
+   "proposal": "no edge shown yet"
+  },
+  {
+   "signal": "follow_move",
+   "checkpoint": "early",
    "slice": "2h|spread",
    "n": 21,
    "W": 11,
@@ -815,6 +909,24 @@
    "signal": "fd_juice",
    "checkpoint": "early",
    "slice": "2h",
+   "n": 29,
+   "W": 9,
+   "L": 20,
+   "P": 0,
+   "hit_pct": 31.0,
+   "units": -12.63,
+   "roi_pct": -43.5,
+   "z_vs_breakeven": -2.3,
+   "picked_default_pct": 37.9,
+   "expected_pct": 47.9,
+   "edge_pts": -16.9,
+   "clv_avg": 0.14,
+   "proposal": "keep collecting (29/50)"
+  },
+  {
+   "signal": "fd_juice",
+   "checkpoint": "early",
+   "slice": "2h no OT",
    "n": 29,
    "W": 9,
    "L": 20,

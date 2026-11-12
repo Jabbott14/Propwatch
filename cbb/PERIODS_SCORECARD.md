@@ -1,6 +1,6 @@
 # CBB period scorecard — halves and half team totals
 
-Generated 2026-11-12 06:42 UTC. 722 graded period markets (156 had no unique final matched and are not graded).
+Generated 2026-11-12 06:44 UTC. 722 graded period markets (156 had no unique final matched and are not graded).
 
 Retail lines from the FanDuel event feed, sharp reference from Pinnacle at
 period 1. Second-half markets settle **including overtime**, which is how
@@ -19,6 +19,8 @@ Base rates on this sample:
 - **ml**: default side won 75.2% (n=125)
 - **tt_home**: default side won 60.5% (n=124)
 - **tt_away**: default side won 58.2% (n=122)
+- **2h_tt_ot**: default side won 90.9% (n=11)
+- **2h_tt_no_ot**: default side won 57.9% (n=235)
 
 Proposals appear at 50 decided markets. Nothing changes automatically.
 
@@ -55,6 +57,8 @@ Proposals appear at 50 decided markets. Nothing changes automatically.
 | follow_move | close | 1h|spread | 39-30 | 56.5 | 6.5 | 7.8 |
 | follow_move | close | 1h|total | 50-46 | 52.1 | 2.3 | -0.9 |
 | follow_move | close | 2h | 102-138 | 42.5 | -6.2 | -18.4 |
+| follow_move | close | 2h OT game | 1-6 | 14.3 | -28.9 | -72.2 |
+| follow_move | close | 2h no OT | 101-132 | 43.3 | -5.6 | -16.8 |
 | follow_move | close | 2h|spread | 35-38 | 47.9 | -2.1 | -7.8 |
 | follow_move | close | 2h|tt_away | 32-52 | 38.1 | -10.9 | -27.0 |
 | follow_move | close | 2h|tt_home | 35-48 | 42.2 | -5.2 | -19.1 |
@@ -62,6 +66,8 @@ Proposals appear at 50 decided markets. Nothing changes automatically.
 | fd_juice | close | 1h|spread | 0-4 | 0.0 | -50.0 | -100.0 |
 | fd_juice | close | 1h|total | 1-1 | 50.0 | 1.4 | -8.4 |
 | fd_juice | close | 2h | 32-56 | 36.4 | -12.4 | -33.6 |
+| fd_juice | close | 2h OT game | 0-4 | 0.0 | -45.3 | -100.0 |
+| fd_juice | close | 2h no OT | 32-52 | 38.1 | -10.8 | -30.5 |
 | fd_juice | close | 2h|spread | 4-5 | 44.4 | -5.6 | -18.2 |
 | fd_juice | close | 2h|tt_away | 17-21 | 44.7 | -7.0 | -18.3 |
 | fd_juice | close | 2h|tt_home | 11-30 | 26.8 | -18.8 | -51.3 |
@@ -76,12 +82,14 @@ Proposals appear at 50 decided markets. Nothing changes automatically.
 | follow_move | early | 1h|spread | 19-4 | 82.6 | 32.7 | 58.1 |
 | follow_move | early | 1h|total | 17-13 | 56.7 | 6.9 | 6.9 |
 | follow_move | early | 2h | 35-36 | 49.3 | 1.0 | -5.0 |
+| follow_move | early | 2h no OT | 35-36 | 49.3 | 1.0 | -5.0 |
 | follow_move | early | 2h|spread | 11-10 | 52.4 | 2.6 | 0.4 |
 | follow_move | early | 2h|tt_away | 11-13 | 45.8 | -2.1 | -12.0 |
 | follow_move | early | 2h|tt_home | 13-13 | 50.0 | 2.4 | -2.8 |
 | fd_juice | early | 1h | 1-0 | 100.0 | 48.6 | 83.3 |
 | fd_juice | early | 1h|total | 1-0 | 100.0 | 48.6 | 83.3 |
 | fd_juice | early | 2h | 9-20 | 31.0 | -16.9 | -43.5 |
+| fd_juice | early | 2h no OT | 9-20 | 31.0 | -16.9 | -43.5 |
 | fd_juice | early | 2h|spread | 0-2 | 0.0 | -50.0 | -100.0 |
 | fd_juice | early | 2h|tt_away | 5-7 | 41.7 | -4.2 | -24.9 |
 | fd_juice | early | 2h|tt_home | 4-11 | 26.7 | -22.6 | -50.9 |
