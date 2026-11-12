@@ -321,7 +321,11 @@ jobs:
                   cl = read(ser, pinser, mid, last)
                   if not cl: continue
                   ea = read(ser, pinser, mid, e_t) if e_t < kots else None
+                  dflt = next((sd for sd in KIND["tt" if kind.startswith("tt_") else kind]
+                               if default_side(kind, sd, cl) is True), None)
                   rec = dict(base, markets={"close": cl})
+                  if dflt is not None and cl["line"].get(dflt) is not None:
+                      rec["default_res"] = settle(fin, per, kind, dflt, cl["line"][dflt])
                   if ea: rec["markets"]["early"] = ea
                   for cp, r in (("early", ea), ("close", cl)):
                       if not r: continue
@@ -340,14 +344,20 @@ jobs:
 
 
           def base_rates(graded):
+              """How often the default side (favourite / over) won, over EVERY graded market.
+
+              This must not be conditioned on what the signals did. An earlier version tallied only
+              markets where some signal happened to fire AND take the default side, and counted a
+              market once per signal -- so the baseline moved with signal behaviour and every
+              `edge_pts` in the scorecard was measured against it.
+              """
               out = {}
               for kind in ("spread", "total", "ml", "tt_home", "tt_away"):
                   w = n = 0
                   for g in graded:
                       if g["kind"] != kind: continue
-                      for x in (g.get("close_graded") or {}).values():
-                          if x["res"] == "P" or x.get("took_default") is not True: continue
-                          n += 1; w += (x["res"] == "W")
+                      r = g.get("default_res")
+                      if r in ("W", "L"): n += 1; w += (r == "W")
                   out[kind] = {"rate": (w / n) if n else 0.5, "n": n}
               return out
 
