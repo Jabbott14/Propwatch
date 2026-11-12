@@ -95,9 +95,11 @@ jobs:
               ser = collections.defaultdict(list)           # (gid, mkt, side) -> [(t, v, o, tx, mn, nb)]
               games = {}
               for r in rows(C("splits", "*", "*.jsonl.gz")):
-                  if r.get("b") != FD or r.get("m") not in ("spread", "total"): continue
+                  if r.get("b") != FD or r.get("m") not in MARKETS: continue
                   gid = str(r["gid"])
-                  ser[(gid, r["m"], r["sd"])].append((r["t"], r.get("v"), r.get("o"), r.get("tx"),
+                  # a moneyline has no handicap -- its price IS its line
+                  val = r.get("o") if r["m"] == "moneyline" else r.get("v")
+                  ser[(gid, r["m"], r["sd"])].append((r["t"], val, r.get("o"), r.get("tx"),
                                                       r.get("mn"), r.get("nb")))
                   g = games.setdefault(gid, {"gid": gid, "g": r["g"], "tip": r["st"], "ac": r.get("ac"),
                                              "hc": r.get("hc")})
@@ -107,8 +109,9 @@ jobs:
 
               pin = collections.defaultdict(list)           # (pin game, kickoff) -> rows
               for r in rows(C("pin", "*", "*.jsonl.gz")):
-                  if r.get("per") != 0 or r.get("ty") not in ("spread", "total"): continue
-                  pin[(r["g"], r["k"])].append((r["t"], r["ty"], r["d"], r.get("pts"), r.get("lim")))
+                  if r.get("per") != 0 or r.get("ty") not in MARKETS: continue
+                  pts = r.get("pr") if r["ty"] == "moneyline" else r.get("pts")
+                  pin[(r["g"], r["k"])].append((r["t"], r["ty"], r["d"], pts, r.get("lim"), r.get("pr")))
               for v in pin.values(): v.sort()
 
               finals = []
@@ -182,7 +185,13 @@ jobs:
               return out
 
 
-          SIDES = {"spread": ("home", "away"), "total": ("over", "under")}
+          SIDES = {"spread": ("home", "away"), "total": ("over", "under"),
+                   "moneyline": ("home", "away")}
+          MARKETS = ("spread", "total", "moneyline")
+
+
+          def dec(p): return (100 / -p + 1) if p < 0 else (p / 100 + 1)
+          def imp(p): return 1 / dec(p) if p else None
 
 
           def read(gid, mkt, t, ser, openers, prow):
@@ -200,10 +209,17 @@ jobs:
               op = ((openers.get(gid) or {}).get("open") or {}).get(f"{mkt}|{s0}")
               r["open"] = op[0] if op else None
 
-              # follow_move: spread home value falling = moving toward home; total rising = toward over
+              # follow_move: spread home value falling = moving toward home; total rising = toward over.
+              # moneyline has no handicap, so the move is in PRICE: the side whose implied
+              # probability rose is the side the market moved toward.
               if r["open"] is not None and a[1] != r["open"]:
-                  up = a[1] > r["open"]
-                  r["calls"]["follow_move"] = (s1 if up else s0) if mkt == "spread" else (s0 if up else s1)
+                  if mkt == "moneyline":
+                      i_now, i_open = imp(a[1]), imp(r["open"])
+                      if i_now is not None and i_open is not None and i_now != i_open:
+                          r["calls"]["follow_move"] = s0 if i_now > i_open else s1
+                  else:
+                      up = a[1] > r["open"]
+                      r["calls"]["follow_move"] = (s1 if up else s0) if mkt == "spread" else (s0 if up else s1)
               if a[4] is not None and b[4] is not None and a[4] != b[4]:
                   r["calls"]["money_level"] = s0 if a[4] > b[4] else s1
               if None not in (a[3], a[4], b[3], b[4]):
@@ -221,7 +237,17 @@ jobs:
                   p = pin_at(prow, mkt, s0, t)
                   if p and p[3] is not None:
                       r["pin"], r["pin_lim"] = p[3], p[4]
-                      if a[1] != p[3]:
+                      if mkt == "moneyline":
+                          q = pin_at(prow, mkt, s1, t)
+                          po, pu = imp(p[3]), imp(q[3] if q else None)
+                          if po and pu:
+                              fair0 = po / (po + pu)
+                              e0 = fair0 * dec(a[2]) - 1 if a[2] else -9
+                              e1 = (1 - fair0) * dec(b[2]) - 1 if b[2] else -9
+                              r["fair"] = round(100 * fair0, 1)
+                              if max(e0, e1) > 0:
+                                  r["calls"]["pin_value"] = s0 if e0 > e1 else s1
+                      elif a[1] != p[3]:
                           if mkt == "spread":        # FD gives home more points than Pinnacle -> home
                               r["calls"]["pin_value"] = s0 if a[1] > p[3] else s1
                           else:                      # FD total above Pinnacle -> under
@@ -230,6 +256,9 @@ jobs:
 
 
           def result(mkt, side, line, fin):
+              if mkt == "moneyline":
+                  d = fin["hs"] - fin["as"] if side == "home" else fin["as"] - fin["hs"]
+                  return "W" if d > 0 else ("L" if d < 0 else "P")
               if mkt == "spread":
                   m = fin["hs"] - fin["as"] if side == "home" else fin["as"] - fin["hs"]
                   x = m + line
@@ -246,7 +275,11 @@ jobs:
 
 
           def clv(mkt, side, v_then, v_close):
-              """points of closing-line value for a bet taken at v_then"""
+              """closing-line value. Points for spread/total; for a moneyline there is no handicap,
+              so it is percentage points of implied probability."""
+              if mkt == "moneyline":
+                  a, b = imp(v_then), imp(v_close)
+                  return round(100 * (b - a), 1) if (a is not None and b is not None) else None
               if mkt == "spread": return v_then - v_close
               return (v_close - v_then) if side == "over" else (v_then - v_close)
 
@@ -258,12 +291,16 @@ jobs:
               if mkt == "total": return side == "over"
               hl = r["line"].get("home")
               if hl is None: return None
+              if mkt == "moneyline":
+                  al = r["line"].get("away")
+                  if al is None: return None
+                  return side == ("home" if hl < al else "away")   # shorter price = favourite
               return side == ("home" if hl < 0 else "away")
 
 
           def base_rates(graded):
               """How often the default side actually won, measured on this sample."""
-              fw = fn = ow = on = 0
+              fw = fn = ow = on = mw = mn_ = 0
               for g in graded:
                   fin = g.get("final")
                   if not fin: continue
@@ -275,9 +312,11 @@ jobs:
                           res = result(mkt, side, cl["line"][side], fin)
                           if res == "P": continue
                           if mkt == "spread": fn += 1; fw += (res == "W")
+                          elif mkt == "moneyline": mn_ += 1; mw += (res == "W")
                           else: on += 1; ow += (res == "W")
               return {"spread_fav_rate": (fw / fn) if fn else 0.5, "spread_n": fn,
-                      "total_over_rate": (ow / on) if on else 0.5, "total_n": on}
+                      "total_over_rate": (ow / on) if on else 0.5, "total_n": on,
+                      "ml_fav_rate": (mw / mn_) if mn_ else 0.5, "ml_n": mn_}
 
 
           def bucket(x, table):
@@ -308,7 +347,7 @@ jobs:
                          "caught": (openers.get(gid) or {}).get("caught"), "pin_match": pk[0] if pk else None,
                          "markets": {}}
                   if tipts > nowts:
-                      for mkt in ("spread", "total"):
+                      for mkt in MARKETS:
                           r = read(gid, mkt, nowts, ser, openers, prow)
                           if r: rec["markets"][mkt] = {"now": r}
                       if rec["markets"]: upcoming.append(rec)
@@ -318,7 +357,7 @@ jobs:
                       unmatched += 1; continue
                   rec["final"] = fin
                   last_pre = tsfmt(parse_ts(tipts) - dt.timedelta(minutes=1))
-                  for mkt in ("spread", "total"):
+                  for mkt in MARKETS:
                       cl = read(gid, mkt, last_pre, ser, openers, prow)
                       if not cl: continue
                       ea = read(gid, mkt, e_t, ser, openers, prow) if before(e_t) else None
@@ -351,7 +390,9 @@ jobs:
                           gr = m.get(cp + "_graded") or {}
                           r = m.get(cp) or {}
                           tags = ["all", bucket(r.get("nb"), NB_BUCKETS), bucket(r.get("pin_lim"), LIM_BUCKETS)]
-                          rate = br["spread_fav_rate"] if mkt == "spread" else br["total_over_rate"]
+                          rate = (br["spread_fav_rate"] if mkt == "spread" else
+                                  br["ml_fav_rate"] if mkt == "moneyline" else
+                                  br["total_over_rate"])
                           for sig, x in gr.items():
                               for tag in tags:
                                   if not tag: continue
@@ -416,7 +457,10 @@ jobs:
                    "on this sample. `edge` is hit% minus that. A signal that is structurally long",
                    "favourites or overs beats 50% whenever those run, which is not an edge -- this",
                    f"sample ran **{100*br['spread_fav_rate']:.1f}% favourites** (n={br['spread_n']}) and "
-                   f"**{100*br['total_over_rate']:.1f}% overs** (n={br['total_n']}).", "",
+                   f"**{100*br['total_over_rate']:.1f}% overs** (n={br['total_n']}) and "
+                   f"**{100*br['ml_fav_rate']:.1f}% moneyline favourites** (n={br['ml_n']}).", "",
+                   "Moneyline has no handicap: `follow_move` reads price, CLV is percentage points",
+                   "of implied probability, and `pin_value` is a pure price comparison.", "",
                    f"Proposals appear once a signal has {MIN_N} decided games. Nothing changes",
                    "automatically.", ""]
               for cp in ("early", "close"):

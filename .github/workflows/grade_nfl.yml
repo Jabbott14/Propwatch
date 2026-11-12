@@ -96,7 +96,13 @@ jobs:
           NB_BUCKETS = ((0, 10000, "<10k bets"), (10000, 40000, "10-40k bets"), (40000, 10**9, "40k+ bets"))
           LIM_BUCKETS = ((0, 10000, "pin limit <$10k"), (10000, 50000, "pin $10-50k"),
                          (50000, 10**9, "pin $50k+"))
-          SIDES = {"spread": ("home", "away"), "total": ("over", "under")}
+          SIDES = {"spread": ("home", "away"), "total": ("over", "under"),
+                   "moneyline": ("home", "away")}
+          MARKETS = ("spread", "total", "moneyline")
+
+
+          def dec(p): return (100 / -p + 1) if p < 0 else (p / 100 + 1)
+          def imp(p): return 1 / dec(p) if p else None
 
 
           def now_utc(): return dt.datetime.now(dt.timezone.utc)
@@ -151,14 +157,16 @@ jobs:
                       bm = (g.get("markets") or {}).get(str(FD)) or {}
                       ev = bm.get("event") or {}
                       nb = g.get("num_bets")
-                      for mkt in ("spread", "total"):
+                      for mkt in MARKETS:
                           for o in (ev.get(mkt) or []):
                               if o.get("is_live") or o.get("period") not in (None, "event"): continue
                               side = o.get("side")
                               if side not in SIDES[mkt]: continue
                               bi = o.get("bet_info") or {}
+                              # a moneyline has no handicap -- its price IS its line
+                              val = o.get("odds") if mkt == "moneyline" else o.get("value")
                               ser[(gid, mkt, side)].append(
-                                  (t, o.get("value"), o.get("odds"),
+                                  (t, val, o.get("odds"),
                                    (bi.get("tickets") or {}).get("percent"),
                                    (bi.get("money") or {}).get("percent"), nb))
               for v in ser.values():
@@ -191,12 +199,14 @@ jobs:
                       key = r.get("key") or ""
                       if key.startswith("s;0;s;"): ty = "spread"
                       elif key.startswith("s;0;ou"): ty = "total"
+                      elif key == "s;0;m": ty = "moneyline"
                       else: continue
                       lim = max([l.get("amount", 0) for l in (r.get("limits") or [])] or [0])
                       for pr in (r.get("prices") or []):
                           d_ = pr.get("designation")
                           if d_ not in SIDES[ty]: continue
-                          pin[k].append((t, ty, d_, pr.get("points"), pr.get("price"), lim))
+                          pts = pr.get("price") if ty == "moneyline" else pr.get("points")
+                          pin[k].append((t, ty, d_, pts, pr.get("price"), lim))
               for v in pin.values(): v.sort()
               return games, ser, pin, finals
 
@@ -248,12 +258,20 @@ jobs:
 
               # --- follow_move. spread: s0 (home) value FALLING = market moving toward home.
               #     total: value RISING = moving toward over.
+              #     moneyline: no handicap, so the move is in PRICE -- the side whose implied
+              #     probability rose is the side the market moved toward.
               moved_to = None
               if r["open"] is not None and a[1] != r["open"]:
-                  up = a[1] > r["open"]
-                  moved_to = (s1 if up else s0) if mkt == "spread" else (s0 if up else s1)
-                  r["calls"]["follow_move"] = moved_to
-                  r["move_pts"] = round(abs(a[1] - r["open"]), 1)
+                  if mkt == "moneyline":
+                      i_now, i_open = imp(a[1]), imp(r["open"])
+                      if i_now is not None and i_open is not None and i_now != i_open:
+                          moved_to = s0 if i_now > i_open else s1
+                          r["move_pts"] = round(100 * abs(i_now - i_open), 1)   # points of implied %
+                  else:
+                      up = a[1] > r["open"]
+                      moved_to = (s1 if up else s0) if mkt == "spread" else (s0 if up else s1)
+                      r["move_pts"] = round(abs(a[1] - r["open"]), 1)
+                  if moved_to: r["calls"]["follow_move"] = moved_to
 
               # --- rlm. The line moved toward the side the public is NOT on.
               #     This is the 2026-11-09 signal: over tickets 54% -> 72%, total 46.5 -> 45.5,
@@ -287,7 +305,18 @@ jobs:
                       r["pin"], r["pin_price"], r["pin_lim"] = p[3], p[4], p[5]
                       q = pin_at(prow, mkt, s1, t)
                       if q and q[4] is not None: r["pin_price_other"] = q[4]
-                      if a[1] != p[3]:
+                      if mkt == "moneyline":
+                          # no handicap: take the side whose FanDuel price beats Pinnacle's no-vig fair
+                          po, pu = imp(p[3]), imp(q[4] if q else None)
+                          if po and pu:
+                              fair0 = po / (po + pu)
+                              e0 = fair0 * dec(a[2]) - 1 if a[2] else -9
+                              e1 = (1 - fair0) * dec(b[2]) - 1 if b[2] else -9
+                              r["fair"] = round(100 * fair0, 1)
+                              if max(e0, e1) > 0:
+                                  r["calls"]["pin_value"] = s0 if e0 > e1 else s1
+                                  r["edge_pct"] = round(100 * max(e0, e1), 2)
+                      elif a[1] != p[3]:
                           r["pin_gap"] = round(a[1] - p[3], 1)
                           if mkt == "spread":        # FD gives home more points than Pinnacle -> home
                               r["calls"]["pin_value"] = s0 if a[1] > p[3] else s1
@@ -297,6 +326,9 @@ jobs:
 
 
           def result(mkt, side, line, fin):
+              if mkt == "moneyline":
+                  d = fin["hs"] - fin["as"] if side == "home" else fin["as"] - fin["hs"]
+                  return "W" if d > 0 else ("L" if d < 0 else "P")
               if mkt == "spread":
                   m = fin["hs"] - fin["as"] if side == "home" else fin["as"] - fin["hs"]
                   x = m + line
@@ -313,7 +345,12 @@ jobs:
 
 
           def clv(mkt, side, v_then, v_close):
-              """points of closing-line value for a bet taken at v_then"""
+              """closing-line value for a bet taken at v_then. Points for spread/total; for a
+              moneyline there is no handicap, so it is percentage points of implied probability --
+              positive means the market moved toward your side after you took it."""
+              if mkt == "moneyline":
+                  a, b = imp(v_then), imp(v_close)
+                  return round(100 * (b - a), 1) if (a is not None and b is not None) else None
               if mkt == "spread": return round(v_then - v_close, 1)
               return round((v_close - v_then) if side == "over" else (v_then - v_close), 1)
 
@@ -333,7 +370,12 @@ jobs:
               if mkt == "total": return side == "over"
               home_line = r["line"].get("home")
               if home_line is None: return None
-              fav = "home" if home_line < 0 else "away"
+              if mkt == "moneyline":
+                  away_line = r["line"].get("away")
+                  if away_line is None: return None
+                  fav = "home" if home_line < away_line else "away"   # shorter price = favourite
+              else:
+                  fav = "home" if home_line < 0 else "away"
               return side == fav
 
 
@@ -357,7 +399,7 @@ jobs:
                          "kickoff": g["kickoff"], "week": g.get("week"), "first_seen": first,
                          "pin_matched": bool(pk), "markets": {}}
                   if kots > nowts:
-                      for mkt in ("spread", "total"):
+                      for mkt in MARKETS:
                           r = read(gid, mkt, nowts, ser, prow)
                           if r: rec["markets"][mkt] = {"now": r}
                       if rec["markets"]: upcoming.append(rec)
@@ -368,7 +410,7 @@ jobs:
                   rec["final"] = f"{fin['as']}-{fin['hs']}"
                   rec["total_pts"] = fin["as"] + fin["hs"]
                   last_pre = tsfmt(ko - dt.timedelta(minutes=1))
-                  for mkt in ("spread", "total"):
+                  for mkt in MARKETS:
                       cl = read(gid, mkt, last_pre, ser, prow)
                       if not cl: continue
                       ea = read(gid, mkt, e_t, ser, prow) if e_t < kots else None
@@ -394,7 +436,7 @@ jobs:
           def base_rates(graded):
               """How often the default side (favourite / over) actually won, measured on this
               sample. This is what a signal's hit rate has to beat, not 50%."""
-              nf = nw = no = ow = 0
+              nf = nw = no = ow = nm_ = mw = 0
               for g in graded:
                   for mkt, m in g["markets"].items():
                       cl = m.get("close")
@@ -410,10 +452,13 @@ jobs:
                           if res == "P": continue
                           if mkt == "spread":
                               nf += 1; nw += (res == "W")
+                          elif mkt == "moneyline":
+                              nm_ += 1; mw += (res == "W")
                           else:
                               no += 1; ow += (res == "W")
               return {"spread_fav_rate": (nw / nf) if nf else 0.5, "spread_n": nf,
-                      "total_over_rate": (ow / no) if no else 0.5, "total_n": no}
+                      "total_over_rate": (ow / no) if no else 0.5, "total_n": no,
+                      "ml_fav_rate": (mw / nm_) if nm_ else 0.5, "ml_n": nm_}
 
 
           def summarize(graded, br):
@@ -426,7 +471,9 @@ jobs:
                           gr = m.get(cp + "_graded") or {}
                           r = m.get(cp) or {}
                           tags = ["all", bucket(r.get("nb"), NB_BUCKETS), bucket(r.get("pin_lim"), LIM_BUCKETS)]
-                          rate = br["spread_fav_rate"] if mkt == "spread" else br["total_over_rate"]
+                          rate = (br["spread_fav_rate"] if mkt == "spread" else
+                                  br["ml_fav_rate"] if mkt == "moneyline" else
+                                  br["total_over_rate"])
                           for sig, x in gr.items():
                               for tag in tags:
                                   if not tag: continue
@@ -492,7 +539,11 @@ jobs:
                    "this sample. `edge` is hit% minus that. A signal that is structurally long dogs or",
                    "unders will beat 50% in any week dogs or unders run, which is not an edge --",
                    f"this sample ran **{100*br['spread_fav_rate']:.1f}% favourites** (n={br['spread_n']})",
-                   f"and **{100*br['total_over_rate']:.1f}% overs** (n={br['total_n']}).", "",
+                   f"**{100*br['total_over_rate']:.1f}% overs** (n={br['total_n']}) and "
+                   f"**{100*br['ml_fav_rate']:.1f}% moneyline favourites** (n={br['ml_n']}).", "",
+                   "Moneyline has no handicap, so its `follow_move` reads price, its CLV is",
+                   "percentage points of implied probability, and `pin_value` is a pure price",
+                   "comparison against Pinnacle's no-vig fair -- no half-points involved.", "",
                    f"Proposals appear once a signal has {MIN_N} decided games. Nothing changes",
                    "automatically.", "",
                    "**Gate B is these signals. Gate A is the Pinnacle columns on the board — a price",
@@ -587,7 +638,8 @@ jobs:
               print(f"graded games: {len(graded)}   upcoming on board: {len(upcoming)}   "
                     f"finished but no final: {unmatched}")
               print(f"base rates: {100*br['spread_fav_rate']:.1f}% favourites (n={br['spread_n']}), "
-                    f"{100*br['total_over_rate']:.1f}% overs (n={br['total_n']})")
+                    f"{100*br['total_over_rate']:.1f}% overs (n={br['total_n']}), "
+                    f"{100*br['ml_fav_rate']:.1f}% ML favs (n={br['ml_n']})")
               for r in summary:
                   if r["slice"] == "all" and r["market"] == "both":
                       print(f"  {r['checkpoint']:5} {r['signal']:13} {fmt_rec(r):>9}  hit {r['hit_pct']}"
