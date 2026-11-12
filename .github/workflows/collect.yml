@@ -177,12 +177,22 @@ jobs:
                   try: lob=get(f"{FD}/content-managed-page?page=CUSTOM&customPageId=nfl&_ak={AK}")
                   except Exception: lob=None
 
+              # Pinnacle EVERY cycle, not on the heavy tick. It was inside `if heavy:` with
+              # HEAVY_N=6, so the fair-value reference everything is measured against was
+              # sampled 6x less often than the books measured against it: median 61 min of
+              # Pinnacle vs 10 min of Action Network, and only FOUR Pinnacle snapshots in the
+              # six hours before the 2026-11-09 MNF kickoff. That made lead/lag unmeasurable
+              # (36-47% of paired moves landed "in the same snapshot" because the snapshot was
+              # an hour wide) and left pin_value -- the one signal with edge in both sports --
+              # anchored on a stale number. Costs ~75KB/cycle. Matchups go every cycle too so
+              # both graders keep their exact-timestamp pairing of prices to matchup names.
+              PPX=archive("pin_prices","https://guest.api.arcadia.pinnacle.com/0.1/leagues/889/markets/straight",
+                      PIN,ts=ts,day=day,diag=diag)
+              PMX=archive("pin_matchups","https://guest.api.arcadia.pinnacle.com/0.1/leagues/889/matchups",
+                      PIN,ts=ts,day=day,diag=diag)
+              if PPX and PMX: LASTPIN=pin_parse(PMX,PPX)
+
               if heavy:
-                  PPX=archive("pin_prices","https://guest.api.arcadia.pinnacle.com/0.1/leagues/889/markets/straight",
-                          PIN,ts=ts,day=day,diag=diag)
-                  PMX=archive("pin_matchups","https://guest.api.arcadia.pinnacle.com/0.1/leagues/889/matchups",
-                          PIN,ts=ts,day=day,diag=diag)
-                  if PPX and PMX: LASTPIN=pin_parse(PMX,PPX)
                   archive("vsin","https://data.vsin.com/betting-splits/?sport=NFL",ts=ts,day=day,diag=diag)
                   archive("sbr","https://www.sportsbookreview.com/betting-odds/nfl-football/",
                           ts=ts,day=day,diag=diag)
