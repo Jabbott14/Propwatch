@@ -91,8 +91,8 @@ jobs:
           MIN_N = 30
           BREAKEVEN = 0.524            # -110
           PUBLIC_MIN = 60              # tickets% needed before a side counts as "the public side"
-          SIGNALS = ("follow_move", "rlm", "rlm_ratio", "money_level", "sharp_gap", "money_moving",
-                     "pin_value", "book_lag", "consensus_gap")
+          SIGNALS = ("pin_rlm", "follow_move", "rlm", "rlm_ratio", "money_level", "sharp_gap",
+                     "money_moving", "pin_value", "book_lag", "consensus_gap")
           # rlm_ratio is the conjunction, not a single variable. Measured on 1,862 CBB
           # side-observations: a minority-ticket side wins 42.9% on its own and 37.6% if you add a
           # high money/ticket ratio WITHOUT line confirmation -- i.e. "few tickets, big money" is a
@@ -101,6 +101,13 @@ jobs:
           # means nothing until the number moves against the crowd to confirm it.
           RLM_TIX_MAX = 45      # that side holds under this share of tickets
           RLM_RATIO_MIN = 1.2   # its money share is at least this multiple of its ticket share
+          # pin_rlm is the strongest form of the same idea. `rlm` and `rlm_ratio` read FanDuel's
+          # own number moving, which is a retail book reacting to its own flow. pin_rlm requires
+          # PINNACLE -- the book taking $75k a side and not limiting winners -- to have moved its
+          # number toward the side the public is NOT on. That is the sharp book repricing against
+          # the crowd, confirmed by the splits. Only measurable since Pinnacle went to every-cycle
+          # sampling (2026-11-12): before that it was observed once an hour against FanDuel's ten
+          # minutes, so most Pinnacle moves were invisible.
           LAG_BOOKS = 5        # of 8 SBR books that must have moved before FanDuel counts as stale
           # NFL volumes run 2k-120k bets a game, and Pinnacle NFL limits run $3k-$75k.
           NB_BUCKETS = ((0, 10000, "<10k bets"), (10000, 40000, "10-40k bets"), (40000, 10**9, "40k+ bets"))
@@ -463,6 +470,30 @@ jobs:
                               r["calls"]["pin_value"] = s0 if a[1] > p[3] else s1
                           else:                      # FD total above Pinnacle -> under
                               r["calls"]["pin_value"] = s1 if a[1] > p[3] else s0
+
+                      # --- pin_rlm: PINNACLE moved against the public, splits confirm
+                      p0 = next((x for x in prow if x[1] == mkt and x[2] == s0 and x[3] is not None), None)
+                      if p0 and p0[3] != p[3] and None not in (a[3], b[3]):
+                          if mkt == "moneyline":
+                              i1, i0 = imp(p[3]), imp(p0[3])
+                              pin_to = (s0 if i1 > i0 else s1) if (i1 and i0 and i1 != i0) else None
+                          else:
+                              up = p[3] > p0[3]
+                              pin_to = (s1 if up else s0) if mkt == "spread" else (s0 if up else s1)
+                          if pin_to:
+                              r["pin_open"] = p0[3]
+                              r["pin_moved_to"] = pin_to
+                              tix = {s0: a[3], s1: b[3]}
+                              mny = {s0: a[4], s1: b[4]}
+                              pub = max(tix, key=lambda k: tix[k])
+                              t_, m_ = tix.get(pin_to), mny.get(pin_to)
+                              # the crowd is on the other side, and the money on this side is
+                              # outsized relative to how few tickets it is
+                              if (pub != pin_to and tix[pub] >= PUBLIC_MIN and t_
+                                      and m_ is not None and (m_ / t_) >= RLM_RATIO_MIN):
+                                  r["calls"]["pin_rlm"] = pin_to
+                                  r["pin_rlm_tix"] = t_
+                                  r["pin_rlm_ratio"] = round(m_ / t_, 2)
               return r
 
 
@@ -754,6 +785,42 @@ jobs:
               return "\n".join(L) + "\n"
 
 
+          def flagged_md(live, summary, rec_of, label_of):
+              """Reverse line movement WITH public-split confirmation, pulled to the top of the
+              board instead of buried in a signal list. Two tiers:
+                PINNACLE moved against the public  (pin_rlm)  -- the sharp book repricing
+                FanDuel moved against the public   (rlm_ratio) -- a retail book reacting
+              Both require the crowd to hold the ticket majority on the OTHER side and the flagged
+              side's money share to run at least RLM_RATIO_MIN times its ticket share."""
+              hits = []
+              for x in live:
+                  r = x["now"] if "now" in x else x
+                  for sig, tier in (("pin_rlm", "PINNACLE moved vs public"),
+                                    ("rlm_ratio", "FanDuel moved vs public")):
+                      sd = r["calls"].get(sig)
+                      if sd: hits.append((0 if sig == "pin_rlm" else 1, tier, sig, sd, x, r))
+              if not hits: return []
+              hits.sort(key=lambda h: (h[0], label_of(h[4])))
+              L = ["## FLAGGED — reverse line movement with split confirmation", "",
+                   "The crowd holds the tickets on the other side, the money on this side is",
+                   f"outsized relative to its ticket count (>= {RLM_RATIO_MIN}x), and the number moved",
+                   "here anyway. Pinnacle tier first: that is the sharp book moving, not a retail",
+                   "book reacting to its own flow.", "",
+                   "| tier | game | market | side | line | moved from | tickets | money/tix | record |",
+                   "|---|---|---|---|---|---|---|---|---|"]
+              for _, tier, sig, sd, x, r in hits:
+                  s = rec_of(sig)
+                  frm = r.get("pin_open") if sig == "pin_rlm" else r.get("open")
+                  tx = r.get("pin_rlm_tix") if sig == "pin_rlm" else (r.get("tix") or {}).get(sd)
+                  rt = r.get("pin_rlm_ratio") if sig == "pin_rlm" else r.get("mny_ratio")
+                  ln = (r.get("line") or {}).get(sd)
+                  L.append(f"| {tier} | {label_of(x)} | {x.get('market', r.get('mkt',''))} | {sd} | "
+                           f"{ln if ln is not None else ''} | {frm if frm is not None else ''} | "
+                           f"{tx}% | {rt} | {s} |")
+              L.append("")
+              return L
+
+
           def board_md(upcoming, summary, gen):
               rec = {(r["signal"], r["market"]): r for r in summary
                      if r["slice"] == "all" and r["checkpoint"] == "close"}
@@ -767,6 +834,12 @@ jobs:
                    f"{PUBLIC_MIN}% — when the line has",
                    "moved the other way, `rlm` fires.", "",
                    "This is analysis, not picks.", ""]
+              flat = [{"game": g["game"], "market": mkt, "now": m["now"]}
+                      for g in upcoming for mkt, m in g["markets"].items() if m.get("now")]
+              L += flagged_md(flat, summary,
+                              lambda sig: (lambda q: f"{q['W']}-{q['L']}" if q else "0-0")(
+                                  rec.get((sig, "both"))),
+                              lambda x: x["game"])
               groups = collections.defaultdict(list)
               for g in upcoming:
                   for mkt, m in g["markets"].items():
