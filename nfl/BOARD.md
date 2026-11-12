@@ -1,6 +1,6 @@
 # NFL board
 
-Generated 2026-11-12 06:21 UTC. Upcoming games with a FanDuel line, grouped by how many signals
+Generated 2026-11-12 06:26 UTC. Upcoming games with a FanDuel line, grouped by how many signals
 agree on each market. Every game is listed; nothing is cut. Each call shows that
 signal's graded CLOSE record so far, so you can see which ones are earning.
 
@@ -76,6 +76,12 @@ This is analysis, not picks.
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
 | Sun 13:00 | Carolina Panthers @ New Orleans Saints | spread | home | -2.5 (-110) | 1.5 | 4 | -2 ($20,000) | -0.5 | away 69% | 31% / 30% | 6583 | follow_move->home (9-14); rlm->home (1-8); money_level->away (16-12); sharp_gap->away (9-18); money_moving->home (7-10); pin_value->away (10-1) |
 
+## 2 signals agree, 0 against
+
+| kickoff (ET) | game | market | lean | FD now | open | move | Pin | gap | public | tix / money (lean) | bets | calls |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| Mon 20:15 | Los Angeles Chargers @ Baltimore Ravens | tt_home | under | 21.5 (-115) | 22.5 | 1 | 20.5 ($2,000) | +1 |  | 0% / 0% | 3771 | follow_move->under (5-5); pin_value->under (10-9) |
+
 ## 2 signals agree, 1 against
 
 | kickoff (ET) | game | market | lean | FD now | open | move | Pin | gap | public | tix / money (lean) | bets | calls |
@@ -92,9 +98,31 @@ This is analysis, not picks.
 | Sun 13:00 | Kansas City Chiefs @ Atlanta Falcons | spread | away | -3.5 (-105) | 3 | 0.5 | 3.5 ($20,000) |  |  | 87% / 79% | 7239 | follow_move->away (9-14); money_level->away (16-12); sharp_gap->home (9-18); money_moving->home (7-10) |
 | Sun 16:05 | Los Angeles Rams @ Arizona Cardinals | total | under | 39.5 (-115) | 40.5 | 1 | 39.5 ($5,000) |  |  | 59% / 58% | 6396 | follow_move->under (5-4); money_level->under (14-14); sharp_gap->over (13-15); money_moving->over (10-9) |
 
+## 1 signal agree, 0 against
+
+| kickoff (ET) | game | market | lean | FD now | open | move | Pin | gap | public | tix / money (lean) | bets | calls |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| Sun 09:30 | New England Patriots @ Detroit Lions | tt_away | under | 24.5 (-125) | 24.5 |  | 23.5 ($2,000) | +1 |  | 0% / 0% | 8537 | pin_value->under (8-9) |
+| Sun 13:00 | Houston Texans @ Cleveland Browns | tt_home | under | 17.5 (-113) | 17.5 |  | 16.5 ($2,000) | +1 |  | 0% / 0% | 7154 | pin_value->under (10-9) |
+| Sun 13:00 | Jacksonville Jaguars @ Tennessee Titans | tt_away | under | 28.5 (-113) | 28.5 |  | 27.5 ($2,000) | +1 |  | 0% / 0% | 6830 | pin_value->under (8-9) |
+| Sun 13:00 | Kansas City Chiefs @ Atlanta Falcons | tt_away | over | 25.5 (-118) | 24.5 | 1 | 25.5 ($2,000) |  |  | 0% / 0% | 7239 | follow_move->over (6-4) |
+| Sun 16:05 | Los Angeles Rams @ Arizona Cardinals | tt_away | over | 24.5 (-106) | 24.5 |  | 27.5 ($2,000) | -3 |  | 0% / 0% | 6396 | pin_value->over (8-9) |
+
 ## 1 signal agree, 1 against
 
 | kickoff (ET) | game | market | lean | FD now | open | move | Pin | gap | public | tix / money (lean) | bets | calls |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
+| Thu 20:15 | Washington Commanders @ New York Giants | tt_home | under | 20.5 (-104) | 21.5 | 1 | 21.5 ($2,000) | -1 |  | 0% / 0% | 19967 | follow_move->under (5-5); pin_value->over (10-9) |
+| Thu 20:15 | Washington Commanders @ New York Giants | tt_away | under | 19.5 (-100) | 20.5 | 1 | 20.5 ($2,000) | -1 |  | 0% / 0% | 19967 | follow_move->under (6-4); pin_value->over (8-9) |
 | Sun 09:30 | New England Patriots @ Detroit Lions | total | under | 50.5 (-105) | 50.5 |  | 51 ($4,000) | -0.5 |  | 90% / 90% | 8537 | money_level->under (14-14); pin_value->over (7-5) |
+| Sun 13:00 | Houston Texans @ Cleveland Browns | tt_away | over | 23.5 (-104) | 22.5 | 1 | 22.5 ($2,000) | +1 |  | 0% / 0% | 7154 | follow_move->over (6-4); pin_value->under (8-9) |
+| Sun 13:00 | Jacksonville Jaguars @ Tennessee Titans | tt_home | under | 16.5 (+102) | 17.5 | 1 | 17.5 ($2,000) | -1 |  | 0% / 0% | 6830 | follow_move->under (5-5); pin_value->over (10-9) |
+| Sun 13:00 | Minnesota Vikings @ Green Bay Packers | tt_away | over | 19.5 (-122) | 17.5 | 2 | 16.5 ($1,000) | +3 |  | 0% / 0% | 7189 | follow_move->over (6-4); pin_value->under (8-9) |
+| Sun 13:00 | Miami Dolphins @ Indianapolis Colts | tt_away | under | 16.5 (-100) | 19.5 | 3 | 20.5 ($2,000) | -4 |  | 0% / 0% | 4993 | follow_move->under (6-4); pin_value->over (8-9) |
+| Sun 13:00 | Carolina Panthers @ New Orleans Saints | tt_home | over | 25.5 (-111) | 24.5 | 1 | 23.5 ($2,000) | +2 |  | 0% / 0% | 6583 | follow_move->over (5-5); pin_value->under (10-9) |
+| Sun 13:00 | Kansas City Chiefs @ Atlanta Falcons | tt_home | over | 21.5 (-115) | 20.5 | 1 | 20.5 ($2,000) | +1 |  | 0% / 0% | 7239 | follow_move->over (5-5); pin_value->under (10-9) |
+| Sun 16:05 | Los Angeles Rams @ Arizona Cardinals | tt_home | under | 13.5 (-102) | 14.5 | 1 | 19.5 ($2,000) | -6 |  | 0% / 0% | 6396 | follow_move->under (5-5); pin_value->over (10-9) |
+| Sun 16:05 | Seattle Seahawks @ Las Vegas Raiders | tt_home | under | 16.5 (-108) | 19.5 | 3 | 20.5 ($2,000) | -4 |  | 0% / 0% | 7401 | follow_move->under (5-5); pin_value->over (10-9) |
+| Sun 20:20 | Pittsburgh Steelers @ Cincinnati Bengals | tt_away | over | 23.5 (-102) | 22.5 | 1 | 21.5 ($2,000) | +2 |  | 0% / 0% | 6916 | follow_move->over (6-4); pin_value->under (8-9) |
+| Mon 20:15 | Los Angeles Chargers @ Baltimore Ravens | tt_away | over | 17.5 (-100) | 16.5 | 1 | 16.5 ($2,000) | +1 |  | 0% / 0% | 3771 | follow_move->over (6-4); pin_value->under (8-9) |
 
