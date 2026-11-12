@@ -24,6 +24,7 @@ jobs:
       - name: grade and build board
         run: |
           python3 - . <<'PY'
+
           #!/usr/bin/env python3
           """Propwatch CBB grader + board. Stdlib only. Runs on a GitHub Actions runner.
 
@@ -250,6 +251,35 @@ jobs:
               return (v_close - v_then) if side == "over" else (v_then - v_close)
 
 
+          def favoured(mkt, side, r):
+              """The 'default' side: the favourite on a spread, the over on a total. A signal has
+              to be scored against the base rate of the sides it ACTUALLY picked -- a signal that
+              is structurally long favourites looks like genius in any stretch favourites run."""
+              if mkt == "total": return side == "over"
+              hl = r["line"].get("home")
+              if hl is None: return None
+              return side == ("home" if hl < 0 else "away")
+
+
+          def base_rates(graded):
+              """How often the default side actually won, measured on this sample."""
+              fw = fn = ow = on = 0
+              for g in graded:
+                  fin = g.get("final")
+                  if not fin: continue
+                  for mkt, m in g["markets"].items():
+                      cl = m.get("close")
+                      if not cl: continue
+                      for side in SIDES[mkt]:
+                          if favoured(mkt, side, cl) is not True: continue
+                          res = result(mkt, side, cl["line"][side], fin)
+                          if res == "P": continue
+                          if mkt == "spread": fn += 1; fw += (res == "W")
+                          else: on += 1; ow += (res == "W")
+              return {"spread_fav_rate": (fw / fn) if fn else 0.5, "spread_n": fn,
+                      "total_over_rate": (ow / on) if on else 0.5, "total_n": on}
+
+
           def bucket(x, table):
               if x is None: return None
               for lo, hi, lab in table:
@@ -300,7 +330,8 @@ jobs:
                           for sig, side in r["calls"].items():
                               res = result(mkt, side, r["line"][side], fin)
                               gr[sig] = {"side": side, "line": r["line"][side], "odds": r["odds"][side],
-                                         "res": res, "units": round(profit(r["odds"][side], res), 3)}
+                                         "res": res, "units": round(profit(r["odds"][side], res), 3),
+                                         "took_fav": favoured(mkt, side, r)}
                               if cp == "early":
                                   gr[sig]["clv"] = clv(mkt, side, r["line"][side], cl["line"][side])
                           out[cp + "_graded"] = gr
@@ -310,8 +341,9 @@ jobs:
               return graded, upcoming, unmatched
 
 
-          def summarize(graded):
-              def blank(): return {"n": 0, "W": 0, "L": 0, "P": 0, "units": 0.0, "clv": []}
+          def summarize(graded, br):
+              def blank(): return {"n": 0, "W": 0, "L": 0, "P": 0, "units": 0.0, "clv": [],
+                                   "fav": 0, "dec": 0, "exp": 0.0}
               S = collections.defaultdict(blank)
               for g in graded:
                   for mkt, m in g["markets"].items():
@@ -319,6 +351,7 @@ jobs:
                           gr = m.get(cp + "_graded") or {}
                           r = m.get(cp) or {}
                           tags = ["all", bucket(r.get("nb"), NB_BUCKETS), bucket(r.get("pin_lim"), LIM_BUCKETS)]
+                          rate = br["spread_fav_rate"] if mkt == "spread" else br["total_over_rate"]
                           for sig, x in gr.items():
                               for tag in tags:
                                   if not tag: continue
@@ -326,6 +359,10 @@ jobs:
                                       s = S[(sig, cp, mk, tag)]
                                       s["n"] += 1; s[x["res"]] += 1; s["units"] += x["units"]
                                       if "clv" in x: s["clv"].append(x["clv"])
+                                      if x["res"] != "P" and x.get("took_fav") is not None:
+                                          s["dec"] += 1
+                                          s["fav"] += bool(x["took_fav"])
+                                          s["exp"] += rate if x["took_fav"] else (1 - rate)
               out = []
               for (sig, cp, mk, tag), s in S.items():
                   dec = s["W"] + s["L"]
@@ -337,15 +374,23 @@ jobs:
                          "hit_pct": round(100 * hit, 1) if hit is not None else None,
                          "units": round(s["units"], 2), "roi_pct": round(100 * s["units"] / s["n"], 1) if s["n"] else None,
                          "z_vs_breakeven": round(z, 2) if z is not None else None}
+                  if s["dec"]:
+                      exp = 100 * s["exp"] / s["dec"]
+                      row["picked_default_pct"] = round(100 * s["fav"] / s["dec"], 1)
+                      row["expected_pct"] = round(exp, 1)
+                      row["edge_pts"] = round(100 * s["W"] / dec - exp, 1) if dec else None
                   if s["clv"]:
                       c = sorted(s["clv"])
                       row["clv_avg"] = round(sum(c) / len(c), 2)
                       row["clv_pos_pct"] = round(100 * sum(1 for x in c if x > 0) / len(c), 1)
+                  e = row.get("edge_pts")
                   if dec >= MIN_N:
-                      row["proposal"] = ("PROMOTE: beating break-even" if z >= 1.5 else
-                                         "INVERT candidate: wrong more than chance" if z50 <= -2.0 else
-                                         "DROP: below break-even" if z <= -1.5 else
-                                         "no edge shown yet")
+                      row["proposal"] = (
+                          "PROMOTE: beats break-even and its own base rate" if z >= 1.5 and (e or 0) >= 5 else
+                          "beats break-even but not its base rate -- directional bias, not signal"
+                          if z >= 1.5 else
+                          "INVERT candidate: wrong well beyond its base rate" if (e or 0) <= -15 else
+                          "DROP: below break-even" if z <= -1.5 else "no edge shown yet")
                   else:
                       row["proposal"] = f"keep collecting ({dec}/{MIN_N})"
                   out.append(row)
@@ -359,7 +404,7 @@ jobs:
               return f"{r['W']}-{r['L']}" + (f"-{r['P']}" if r["P"] else "")
 
 
-          def scorecard_md(summary, graded, unmatched, gen):
+          def scorecard_md(summary, graded, unmatched, br, gen):
               L = [f"# CBB scorecard", "",
                    f"Generated {gen}. {len(graded)} graded games"
                    f" ({unmatched} finished games had no final score matched and are not graded).", "",
@@ -367,25 +412,32 @@ jobs:
                    "available at that moment. EARLY = one hour after the line was first seen. CLOSE =",
                    "last number before tip. Break-even at -110 is 52.4%. CLV = points of closing-line",
                    "value; positive means the number you would have taken beat the close.", "",
+                   "`expected %` is the base rate of the sides that signal actually picked, measured",
+                   "on this sample. `edge` is hit% minus that. A signal that is structurally long",
+                   "favourites or overs beats 50% whenever those run, which is not an edge -- this",
+                   f"sample ran **{100*br['spread_fav_rate']:.1f}% favourites** (n={br['spread_n']}) and "
+                   f"**{100*br['total_over_rate']:.1f}% overs** (n={br['total_n']}).", "",
                    f"Proposals appear once a signal has {MIN_N} decided games. Nothing changes",
                    "automatically.", ""]
               for cp in ("early", "close"):
                   L += [f"## {cp.upper()}", "",
-                        "| signal | market | record | hit % | units | ROI % | CLV avg | CLV + % | status |",
-                        "|---|---|---|---|---|---|---|---|---|"]
+                        "| signal | market | record | hit % | expected % | edge | units | ROI % | CLV avg | CLV + % | status |",
+                        "|---|---|---|---|---|---|---|---|---|---|---|"]
                   for r in summary:
                       if r["slice"] != "all" or r["checkpoint"] != cp: continue
                       L.append(f"| {r['signal']} | {r['market']} | {fmt_rec(r)} | {r['hit_pct']} | "
+                               f"{r.get('expected_pct', '')} | {r.get('edge_pts', '')} | "
                                f"{r['units']:+} | {r['roi_pct']} | {r.get('clv_avg', '')} | "
                                f"{r.get('clv_pos_pct', '')} | {r['proposal']} |")
                   L.append("")
               L += ["## By market depth (both markets)", "",
-                    "| signal | checkpoint | slice | record | hit % | ROI % | CLV avg |",
-                    "|---|---|---|---|---|---|---|"]
+                    "| signal | checkpoint | slice | record | hit % | edge | ROI % | CLV avg |",
+                    "|---|---|---|---|---|---|---|---|"]
               for r in summary:
                   if r["slice"] == "all" or r["market"] != "both": continue
                   L.append(f"| {r['signal']} | {r['checkpoint']} | {r['slice']} | {fmt_rec(r)} | "
-                           f"{r['hit_pct']} | {r['roi_pct']} | {r.get('clv_avg', '')} |")
+                           f"{r['hit_pct']} | {r.get('edge_pts', '')} | {r['roi_pct']} | "
+                           f"{r.get('clv_avg', '')} |")
               return "\n".join(L) + "\n"
 
 
@@ -432,21 +484,23 @@ jobs:
 
           if __name__ == "__main__":
               graded, upcoming, unmatched = build()
-              summary = summarize(graded)
+              br = base_rates(graded)
+              summary = summarize(graded, br)
               gen = now_utc().strftime("%Y-%m-%d %H:%M UTC")
               os.makedirs(C("graded"), exist_ok=True)
               json.dump(graded, open(C("graded", "games.json"), "w"), indent=1)
               json.dump({"generated": gen, "graded_games": len(graded), "unmatched_finals": unmatched,
-                         "min_n_to_propose": MIN_N, "signals": summary},
+                         "min_n_to_propose": MIN_N, "base_rates": br, "signals": summary},
                         open(C("graded", "summary.json"), "w"), indent=1)
-              open(C("SCORECARD.md"), "w").write(scorecard_md(summary, graded, unmatched, gen))
+              open(C("SCORECARD.md"), "w").write(scorecard_md(summary, graded, unmatched, br, gen))
               open(C("BOARD.md"), "w").write(board_md(upcoming, summary, gen))
               print(f"graded games: {len(graded)}   upcoming on board: {len(upcoming)}   "
                     f"finished but no final matched: {unmatched}")
               for r in summary:
                   if r["slice"] == "all" and r["market"] == "both":
-                      print(f"  {r['checkpoint']:5} {r['signal']:13} {fmt_rec(r):>9}  hit {r['hit_pct']}  "
-                            f"roi {r['roi_pct']}  clv {r.get('clv_avg', '-')}  {r['proposal']}")
+                      print(f"  {r['checkpoint']:5} {r['signal']:13} {fmt_rec(r):>9}  hit {r['hit_pct']}"
+                            f"  exp {r.get('expected_pct')}  edge {r.get('edge_pts')}"
+                            f"  roi {r['roi_pct']}  clv {r.get('clv_avg', '-')}  {r['proposal']}")
           PY
       - name: commit
         run: |
