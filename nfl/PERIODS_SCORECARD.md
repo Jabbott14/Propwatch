@@ -1,6 +1,6 @@
 # NFL period scorecard — halves, quarters, team totals
 
-Generated 2026-11-12 15:34 UTC. 201 graded period markets.
+Generated 2026-11-12 18:32 UTC. 201 graded period markets.
 
 Action Network serves no periods, so these lines come from the FanDuel event
 feed and Pinnacle's `s;1;*` keys. **There are no tickets/money splits on any
@@ -26,6 +26,8 @@ Proposals appear at 40 decided markets. Nothing changes automatically.
 | pin_price | 2-7 | 22.2 | 44.1 | -21.9 | -3.85 | -42.8 | 0.36 | keep collecting (9/40) |
 | follow_move | 6-9 | 40.0 | 42.8 | -2.8 | -3.44 | -23.0 | 0.42 | keep collecting (15/40) |
 | fd_juice | 3-2 | 60.0 | 53.8 | 6.2 | +0.48 | 9.6 | 0.4 | keep collecting (5/40) |
+| follow_move+pin_price | 0-2 | 0.0 | 26.8 | -26.8 | -2.0 | -100.0 | -0.35 | keep collecting (2/40) |
+| fd_juice+pin_value | 1-0 | 100.0 | 52.4 | 47.6 | +0.62 | 61.7 | 1.0 | keep collecting (1/40) |
 
 ## CLOSE
 
@@ -36,6 +38,9 @@ Proposals appear at 40 decided markets. Nothing changes automatically.
 | pin_lead | 1-0 | 100.0 | 48.7 | 51.3 | +0.8 | 80.0 |  | keep collecting (1/40) |
 | follow_move | 49-50-6 | 49.5 | 48.3 | 1.2 | -5.28 | -5.0 |  | no edge shown yet |
 | fd_juice | 27-23 | 54.0 | 49.6 | 4.4 | +0.05 | 0.1 |  | no edge shown yet |
+| follow_move+pin_price | 0-3 | 0.0 | 26.8 | -26.8 | -3.0 | -100.0 |  | keep collecting (3/40) |
+| pin_lead+pin_value | 1-0 | 100.0 | 48.7 | 51.3 | +0.8 | 80.0 |  | redundant -- identical record to pin_lead alone, not independent confirmation |
+| follow_move+pin_value | 1-1 | 50.0 | 50.5 | -0.5 | -0.07 | -3.7 |  | keep collecting (2/40) |
 
 ## By period, market and Pinnacle limit
 
@@ -90,6 +95,17 @@ Proposals appear at 40 decided markets. Nothing changes automatically.
 | fd_juice | close | q4 | 5-6 | 45.5 | -3.1 | -17.9 |
 | fd_juice | close | q4|spread | 3-3 | 50.0 | 0.0 | -8.8 |
 | fd_juice | close | q4|total | 2-3 | 40.0 | -6.9 | -28.8 |
+| follow_move+pin_price | close | 1h | 0-3 | 0.0 | -26.8 | -100.0 |
+| pin_lead+pin_value | close | 1h | 1-0 | 100.0 | 51.3 | 80.0 |
+| follow_move+pin_value | close | 1h | 1-1 | 50.0 | -0.5 | -3.7 |
+| follow_move+pin_price | close | 1h|ml | 0-3 | 0.0 | -26.8 | -100.0 |
+| pin_lead+pin_value | close | 1h|spread | 1-0 | 100.0 | 51.3 | 80.0 |
+| follow_move+pin_value | close | 1h|spread | 0-1 | 0.0 | -48.7 | -100.0 |
+| follow_move+pin_value | close | 1h|tt | 1-0 | 100.0 | 47.6 | 92.6 |
+| pin_lead+pin_value | close | pin $20k+ | 1-0 | 100.0 | 51.3 | 80.0 |
+| follow_move+pin_value | close | pin $20k+ | 0-1 | 0.0 | -48.7 | -100.0 |
+| follow_move+pin_price | close | pin $5-20k | 0-3 | 0.0 | -26.8 | -100.0 |
+| follow_move+pin_value | close | pin <$5k | 1-0 | 100.0 | 47.6 | 92.6 |
 | pin_value | early | 1h | 8-13 | 38.1 | -14.6 | -29.8 |
 | pin_value | early | 1h|spread | 1-3 | 25.0 | -25.0 | -54.2 |
 | pin_value | early | 1h|total | 3-6 | 33.3 | -21.8 | -35.4 |
@@ -122,3 +138,9 @@ Proposals appear at 40 decided markets. Nothing changes automatically.
 | fd_juice | early | 2h | 1-1 | 50.0 | 0.0 | -4.5 |
 | fd_juice | early | 2h|spread | 1-1 | 50.0 | 0.0 | -4.5 |
 | fd_juice | early | pin <$5k | 2-1 | 66.7 | 10.3 | 19.0 |
+| follow_move+pin_price | early | 1h | 0-2 | 0.0 | -26.8 | -100.0 |
+| fd_juice+pin_value | early | 1h | 1-0 | 100.0 | 47.6 | 61.7 |
+| follow_move+pin_price | early | 1h|ml | 0-2 | 0.0 | -26.8 | -100.0 |
+| fd_juice+pin_value | early | 1h|tt | 1-0 | 100.0 | 47.6 | 61.7 |
+| follow_move+pin_price | early | pin <$5k | 0-2 | 0.0 | -26.8 | -100.0 |
+| fd_juice+pin_value | early | pin <$5k | 1-0 | 100.0 | 47.6 | 61.7 |
