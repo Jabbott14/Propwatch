@@ -1,6 +1,6 @@
 # NFL prop scorecard
 
-Generated 2026-11-12 05:54 UTC. 494 graded props (87 had no nflverse result and are not graded).
+Generated 2026-11-12 06:11 UTC. 494 graded props (87 had no nflverse result and are not graded).
 
 **Read this on its own scale, not against the side scorecard.** Pinnacle risks
 **$75,000** on an NFL side and **$1,000-$3,000** on a prop at kickoff, $250-$500
@@ -13,6 +13,10 @@ There are no tickets/money splits on any prop, so the only channels are the
 handicap and the price. `fd_juice` is the money channel: a static handicap whose
 price moves 12+ cents one way. Break-even at -110 is 52.4%.
 
+**CLV pts** is handicap movement and is near-blank here, because most prop
+numbers never move. **CLV price** is the real one: percentage points of implied
+probability gained on the taken side between the early read and the close.
+
 Base rate: the over hit **46.4%** of 494 graded props. `expected %` is
 that rate applied to the sides each signal picked; `edge` is hit% minus it.
 
@@ -20,22 +24,22 @@ Proposals appear at 50 decided props. Nothing changes automatically.
 
 ## EARLY
 
-| signal | record | hit % | expected % | edge | units | ROI % | CLV avg | status |
-|---|---|---|---|---|---|---|---|---|
-| pin_value | 17-12 | 58.6 | 49.4 | 9.2 | +2.8 | 9.7 | -0.55 | keep collecting (29/50) |
-| pin_price | 4-1 | 80.0 | 49.3 | 30.7 | +2.79 | 55.9 | 0.0 | keep collecting (5/50) |
-| fd_move | 11-5 | 68.8 | 50.5 | 18.3 | +4.65 | 29.0 | 4.0 | keep collecting (16/50) |
-| fd_juice | 7-2 | 77.8 | 49.6 | 28.2 | +4.68 | 52.0 | 0.0 | keep collecting (9/50) |
+| signal | record | hit % | expected % | edge | units | ROI % | CLV pts | CLV price | CLV + % | status |
+|---|---|---|---|---|---|---|---|---|---|---|
+| pin_value | 17-12 | 58.6 | 49.4 | 9.2 | +2.8 | 9.7 | -0.55 | -0.03 | 0.0 | keep collecting (29/50) |
+| pin_price | 4-1 | 80.0 | 49.3 | 30.7 | +2.79 | 55.9 | 0.0 | 0.86 | 60.0 | keep collecting (5/50) |
+| fd_move | 11-5 | 68.8 | 50.5 | 18.3 | +4.65 | 29.0 | 4.0 | -0.2 | 0.0 | keep collecting (16/50) |
+| fd_juice | 7-2 | 77.8 | 49.6 | 28.2 | +4.68 | 52.0 | 0.0 | 3.33 | 55.6 | keep collecting (9/50) |
 
 ## CLOSE
 
-| signal | record | hit % | expected % | edge | units | ROI % | CLV avg | status |
-|---|---|---|---|---|---|---|---|---|
-| pin_value | 97-84 | 53.6 | 49.5 | 4.1 | -0.35 | -0.2 |  | no edge shown yet |
-| pin_price | 29-20 | 59.2 | 49.8 | 9.4 | +9.64 | 19.7 |  | keep collecting (49/50) |
-| fd_move | 124-137 | 47.5 | 50.2 | -2.7 | -25.23 | -9.7 |  | DROP: below break-even |
-| fd_juice | 73-55 | 57.0 | 50.8 | 6.2 | +5.67 | 4.4 |  | no edge shown yet |
-| pin_lead | 15-6 | 71.4 | 49.5 | 21.9 | +6.84 | 32.6 |  | keep collecting (21/50) |
+| signal | record | hit % | expected % | edge | units | ROI % | CLV pts | CLV price | CLV + % | status |
+|---|---|---|---|---|---|---|---|---|---|---|
+| pin_value | 97-84 | 53.6 | 49.5 | 4.1 | -0.35 | -0.2 |  |  |  | no edge shown yet |
+| pin_price | 29-20 | 59.2 | 49.8 | 9.4 | +9.64 | 19.7 |  |  |  | keep collecting (49/50) |
+| fd_move | 124-137 | 47.5 | 50.2 | -2.7 | -25.23 | -9.7 |  |  |  | DROP: below break-even |
+| fd_juice | 73-55 | 57.0 | 50.8 | 6.2 | +5.67 | 4.4 |  |  |  | no edge shown yet |
+| pin_lead | 15-6 | 71.4 | 49.5 | 21.9 | +6.84 | 32.6 |  |  |  | keep collecting (21/50) |
 
 ## By Pinnacle limit and by stat
 

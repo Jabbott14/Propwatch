@@ -1,6 +1,6 @@
 # NFL prop board
 
-Generated 2026-11-12 05:54 UTC. Live props where at least one signal has an opinion, most
+Generated 2026-11-12 06:11 UTC. Live props where at least one signal has an opinion, most
 agreement first. Each call shows that signal's graded record so far.
 
 `Pin` is Pinnacle's number and the size it will take. Prop limits run $250-$3,000

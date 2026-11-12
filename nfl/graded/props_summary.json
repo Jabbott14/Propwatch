@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-12 05:54 UTC",
+ "generated": "2026-11-12 06:11 UTC",
  "graded_props": 494,
  "no_result": 87,
  "over_base_rate": 0.4636,
@@ -106,7 +106,9 @@
    "expected_pct": 49.4,
    "edge_pts": 9.2,
    "clv_avg": -0.55,
-   "clv_pos_pct": 3.4,
+   "clv_moved_pct": 24.1,
+   "clv_price_avg": -0.03,
+   "clv_price_pos_pct": 0.0,
    "proposal": "keep collecting (29/50)"
   },
   {
@@ -125,7 +127,9 @@
    "expected_pct": 49.3,
    "edge_pts": 30.7,
    "clv_avg": 0.0,
-   "clv_pos_pct": 0.0,
+   "clv_moved_pct": 0.0,
+   "clv_price_avg": 0.86,
+   "clv_price_pos_pct": 60.0,
    "proposal": "keep collecting (5/50)"
   },
   {
@@ -144,7 +148,9 @@
    "expected_pct": 50.5,
    "edge_pts": 18.3,
    "clv_avg": 4.0,
-   "clv_pos_pct": 62.5,
+   "clv_moved_pct": 81.2,
+   "clv_price_avg": -0.2,
+   "clv_price_pos_pct": 0.0,
    "proposal": "keep collecting (16/50)"
   },
   {
@@ -163,7 +169,9 @@
    "expected_pct": 49.6,
    "edge_pts": 28.2,
    "clv_avg": 0.0,
-   "clv_pos_pct": 11.1,
+   "clv_moved_pct": 22.2,
+   "clv_price_avg": 3.33,
+   "clv_price_pos_pct": 55.6,
    "proposal": "keep collecting (9/50)"
   },
   {
@@ -811,7 +819,9 @@
    "expected_pct": 46.4,
    "edge_pts": 3.6,
    "clv_avg": -2.0,
-   "clv_pos_pct": 0.0,
+   "clv_moved_pct": 50.0,
+   "clv_price_avg": 0.0,
+   "clv_price_pos_pct": 0.0,
    "proposal": "keep collecting (2/50)"
   },
   {
@@ -830,7 +840,9 @@
    "expected_pct": 49.2,
    "edge_pts": 20.4,
    "clv_avg": -0.52,
-   "clv_pos_pct": 0.0,
+   "clv_moved_pct": 17.4,
+   "clv_price_avg": 0.0,
+   "clv_price_pos_pct": 0.0,
    "proposal": "keep collecting (23/50)"
   },
   {
@@ -849,7 +861,9 @@
    "expected_pct": 46.4,
    "edge_pts": -46.4,
    "clv_avg": 0.0,
-   "clv_pos_pct": 0.0,
+   "clv_moved_pct": 0.0,
+   "clv_price_avg": 0.0,
+   "clv_price_pos_pct": 0.0,
    "proposal": "keep collecting (1/50)"
   },
   {
@@ -868,7 +882,9 @@
    "expected_pct": 50.7,
    "edge_pts": -30.7,
    "clv_avg": -0.8,
-   "clv_pos_pct": 20.0,
+   "clv_moved_pct": 60.0,
+   "clv_price_avg": -0.16,
+   "clv_price_pos_pct": 0.0,
    "proposal": "keep collecting (5/50)"
   },
   {
@@ -887,7 +903,9 @@
    "expected_pct": 53.6,
    "edge_pts": 46.4,
    "clv_avg": 0.0,
-   "clv_pos_pct": 0.0,
+   "clv_moved_pct": 0.0,
+   "clv_price_avg": 0.0,
+   "clv_price_pos_pct": 0.0,
    "proposal": "keep collecting (1/50)"
   },
   {
@@ -906,7 +924,9 @@
    "expected_pct": 50.0,
    "edge_pts": 7.1,
    "clv_avg": -0.57,
-   "clv_pos_pct": 0.0,
+   "clv_moved_pct": 28.6,
+   "clv_price_avg": -0.03,
+   "clv_price_pos_pct": 0.0,
    "proposal": "keep collecting (14/50)"
   },
   {
@@ -925,7 +945,9 @@
    "expected_pct": 48.8,
    "edge_pts": 9.5,
    "clv_avg": -0.33,
-   "clv_pos_pct": 8.3,
+   "clv_moved_pct": 16.7,
+   "clv_price_avg": -0.03,
+   "clv_price_pos_pct": 0.0,
    "proposal": "keep collecting (12/50)"
   },
   {
@@ -944,7 +966,9 @@
    "expected_pct": 50.0,
    "edge_pts": 50.0,
    "clv_avg": 0.0,
-   "clv_pos_pct": 0.0,
+   "clv_moved_pct": 0.0,
+   "clv_price_avg": 0.32,
+   "clv_price_pos_pct": 50.0,
    "proposal": "keep collecting (4/50)"
   },
   {
@@ -963,7 +987,9 @@
    "expected_pct": 46.4,
    "edge_pts": -46.4,
    "clv_avg": 0.0,
-   "clv_pos_pct": 0.0,
+   "clv_moved_pct": 0.0,
+   "clv_price_avg": 3.0,
+   "clv_price_pos_pct": 100.0,
    "proposal": "keep collecting (1/50)"
   },
   {
@@ -982,7 +1008,9 @@
    "expected_pct": 50.0,
    "edge_pts": 25.0,
    "clv_avg": 0.0,
-   "clv_pos_pct": 0.0,
+   "clv_moved_pct": 0.0,
+   "clv_price_avg": 0.12,
+   "clv_price_pos_pct": 50.0,
    "proposal": "keep collecting (4/50)"
   },
   {
@@ -1001,7 +1029,9 @@
    "expected_pct": 46.4,
    "edge_pts": 53.6,
    "clv_avg": 0.0,
-   "clv_pos_pct": 0.0,
+   "clv_moved_pct": 0.0,
+   "clv_price_avg": 3.8,
+   "clv_price_pos_pct": 100.0,
    "proposal": "keep collecting (1/50)"
   },
   {
@@ -1020,7 +1050,9 @@
    "expected_pct": 51.8,
    "edge_pts": 23.2,
    "clv_avg": 4.75,
-   "clv_pos_pct": 75.0,
+   "clv_moved_pct": 75.0,
+   "clv_price_avg": -0.2,
+   "clv_price_pos_pct": 0.0,
    "proposal": "keep collecting (4/50)"
   },
   {
@@ -1039,7 +1071,9 @@
    "expected_pct": 51.2,
    "edge_pts": 15.5,
    "clv_avg": 0.0,
-   "clv_pos_pct": 33.3,
+   "clv_moved_pct": 66.7,
+   "clv_price_avg": -0.2,
+   "clv_price_pos_pct": 0.0,
    "proposal": "keep collecting (3/50)"
   },
   {
@@ -1058,7 +1092,9 @@
    "expected_pct": 48.8,
    "edge_pts": 17.9,
    "clv_avg": 7.33,
-   "clv_pos_pct": 83.3,
+   "clv_moved_pct": 83.3,
+   "clv_price_avg": -0.2,
+   "clv_price_pos_pct": 0.0,
    "proposal": "keep collecting (6/50)"
   },
   {
@@ -1077,7 +1113,9 @@
    "expected_pct": 51.2,
    "edge_pts": 15.5,
    "clv_avg": 0.17,
-   "clv_pos_pct": 33.3,
+   "clv_moved_pct": 83.3,
+   "clv_price_avg": -0.2,
+   "clv_price_pos_pct": 0.0,
    "proposal": "keep collecting (6/50)"
   },
   {
@@ -1096,7 +1134,9 @@
    "expected_pct": 53.6,
    "edge_pts": 46.4,
    "clv_avg": 0.0,
-   "clv_pos_pct": 0.0,
+   "clv_moved_pct": 0.0,
+   "clv_price_avg": 1.0,
+   "clv_price_pos_pct": 50.0,
    "proposal": "keep collecting (2/50)"
   },
   {
@@ -1115,7 +1155,9 @@
    "expected_pct": 47.6,
    "edge_pts": 19.1,
    "clv_avg": 0.17,
-   "clv_pos_pct": 16.7,
+   "clv_moved_pct": 16.7,
+   "clv_price_avg": 5.25,
+   "clv_price_pos_pct": 66.7,
    "proposal": "keep collecting (6/50)"
   },
   {
@@ -1134,7 +1176,9 @@
    "expected_pct": 53.6,
    "edge_pts": 46.4,
    "clv_avg": -1.0,
-   "clv_pos_pct": 0.0,
+   "clv_moved_pct": 100.0,
+   "clv_price_avg": -3.5,
+   "clv_price_pos_pct": 0.0,
    "proposal": "keep collecting (1/50)"
   }
  ]
