@@ -1,18 +1,59 @@
 # CBB board
 
-Generated 2026-11-12 18:16 UTC. Upcoming games with a FanDuel line, grouped by how many signals
+Generated 2026-11-12 18:23 UTC. Upcoming games with a FanDuel line, grouped by how many signals
 agree on each market. Every game is listed; nothing is cut. Each call shows that
 signal's graded CLOSE record so far, so you can see which ones are earning.
 
 This is analysis, not picks.
 
+## FLAGGED — reverse line movement with split confirmation
+
+The crowd holds the tickets on the other side, the money on this side is
+outsized relative to its ticket count (>= 1.2x), and the number moved
+here anyway. Pinnacle tier first: that is the sharp book moving, not a retail
+book reacting to its own flow.
+
+| tier | game | market | side | line | moved from | tickets | money/tix | record |
+|---|---|---|---|---|---|---|---|---|
+| PINNACLE moved vs public | CAN@BRWN | total | under | 137.5 | 138.5 | 27% | 1.96 | 63-64 |
+| PINNACLE moved vs public | CAN@BRWN | moneyline | away | 720 | -1028 | 2% | 2.5 | 63-64 |
+| PINNACLE moved vs public | COPP@BRAD | total | under | 132.5 | 136.0 | 10% | 5.3 | 63-64 |
+| PINNACLE moved vs public | CSB@WIU | total | under | 147.5 | 149.0 | 30% | 3.03 | 63-64 |
+| PINNACLE moved vs public | MONM@QUIN | total | under | 144.5 | 147.0 | 16% | 2.19 | 63-64 |
+| PINNACLE moved vs public | OKST@TXAM | total | under | 178.5 | 179.5 | 36% | 2.06 | 63-64 |
+| PINNACLE moved vs public | SOU@MINN | total | under | 142.5 | 143.0 | 19% | 2.47 | 63-64 |
+| PINNACLE moved vs public | STET@HOW | total | under | 149.5 | 152.0 | 33% | 1.27 | 63-64 |
+| FanDuel moved vs public | CAN@BRWN | total | under | 137.5 | 142.5 | 27% | 1.96 | 79-61 |
+| FanDuel moved vs public | CCSU@SHU | total | under | 145.5 | 147.5 | 34% | 1.41 | 79-61 |
+| FanDuel moved vs public | COPP@BRAD | total | under | 132.5 | 135.5 | 10% | 5.3 | 79-61 |
+| FanDuel moved vs public | CSB@WIU | total | under | 147.5 | 148.5 | 30% | 3.03 | 79-61 |
+| FanDuel moved vs public | L-MD@TOWS | total | under | 133.5 | 138.5 | 12% | 3.75 | 79-61 |
+| FanDuel moved vs public | MONM@QUIN | total | under | 144.5 | 147.5 | 16% | 2.19 | 79-61 |
+| FanDuel moved vs public | NIAG@BGSU | total | under | 145.5 | 148.5 | 21% | 1.48 | 79-61 |
+| FanDuel moved vs public | RICH@SIU | spread | home | 2.5 | 4.5 | 44% | 1.45 | 79-61 |
+| FanDuel moved vs public | STET@HOW | total | under | 149.5 | 152.5 | 33% | 1.27 | 79-61 |
+| FanDuel moved vs public | UMES@URI | total | under | 137.5 | 146.5 | 14% | 2.5 | 79-61 |
+
+## 7 signals agree, 0 against
+
+| tip (ET) | game | market | lean | FD now | open | Pin | tix / money (lean side) | bets | calls |
+|---|---|---|---|---|---|---|---|---|---|
+| Thu 19:00 | CAN@BRWN | total | under | 137.5 (-110) | 142.5 | 136.5 ($750) | 27% / 53% | 661 | follow_move->under (154-147); rlm_ratio->under (56-37); money_level->under (160-171); sharp_gap->under (151-174); money_moving->under (147-180); pin_value->under (89-84); pin_rlm->under (32-22) |
+| Thu 19:00 | CSB@WIU | total | under | 147.5 (-110) | 148.5 | 146.5 ($750) | 30% / 91% | 812 | follow_move->under (154-147); rlm_ratio->under (56-37); money_level->under (160-171); sharp_gap->under (151-174); money_moving->under (147-180); pin_value->under (89-84); pin_rlm->under (32-22) |
+
 ## 6 signals agree, 0 against
 
 | tip (ET) | game | market | lean | FD now | open | Pin | tix / money (lean side) | bets | calls |
 |---|---|---|---|---|---|---|---|---|---|
-| Thu 19:00 | CAN@BRWN | total | under | 137.5 (-110) | 142.5 | 136.5 ($750) | 27% / 53% | 661 | follow_move->under (154-147); rlm_ratio->under (56-37); money_level->under (160-171); sharp_gap->under (151-174); money_moving->under (147-180); pin_value->under (89-84) |
-| Thu 19:00 | CSB@WIU | total | under | 147.5 (-110) | 148.5 | 146.5 ($750) | 30% / 91% | 812 | follow_move->under (154-147); rlm_ratio->under (56-37); money_level->under (160-171); sharp_gap->under (151-174); money_moving->under (147-180); pin_value->under (89-84) |
 | Thu 19:00 | SUU@HP | spread | home | -22.5 (-120) | -20.5 | -23 ($500) | 83% / 92% | 1045 | follow_move->home (129-134); money_level->home (158-157); sharp_gap->home (158-152); money_moving->home (155-155); consensus_gap->home (63-49); pin_value->home (90-60) |
+
+## 6 signals agree, 1 against
+
+| tip (ET) | game | market | lean | FD now | open | Pin | tix / money (lean side) | bets | calls |
+|---|---|---|---|---|---|---|---|---|---|
+| Thu 18:00 | COPP@BRAD | total | under | 132.5 (-110) | 135.5 | 133 ($500) | 10% / 53% | 2287 | follow_move->under (154-147); rlm_ratio->under (56-37); money_level->under (160-171); sharp_gap->under (151-174); money_moving->under (147-180); pin_value->over (89-84); pin_rlm->under (32-22) |
+| Thu 19:00 | MONM@QUIN | total | under | 144.5 (-110) | 147.5 | 144 ($750) | 16% / 35% | 1009 | follow_move->under (154-147); rlm_ratio->under (56-37); money_level->over (160-171); sharp_gap->under (151-174); money_moving->under (147-180); pin_value->under (89-84); pin_rlm->under (32-22) |
+| Thu 19:00 | STET@HOW | total | under | 149.5 (-110) | 152.5 | 148.5 ($250) | 33% / 42% | 383 | follow_move->under (154-147); rlm_ratio->under (56-37); money_level->over (160-171); sharp_gap->under (151-174); money_moving->under (147-180); pin_value->under (89-84); pin_rlm->under (32-22) |
 
 ## 5 signals agree, 0 against
 
@@ -27,15 +68,14 @@ This is analysis, not picks.
 
 | tip (ET) | game | market | lean | FD now | open | Pin | tix / money (lean side) | bets | calls |
 |---|---|---|---|---|---|---|---|---|---|
-| Thu 18:00 | COPP@BRAD | total | under | 132.5 (-110) | 135.5 | 133 ($500) | 10% / 53% | 2287 | follow_move->under (154-147); rlm_ratio->under (56-37); money_level->under (160-171); sharp_gap->under (151-174); money_moving->under (147-180); pin_value->over (89-84) |
-| Thu 19:00 | MONM@QUIN | total | under | 144.5 (-110) | 147.5 | 144 ($750) | 16% / 35% | 1009 | follow_move->under (154-147); rlm_ratio->under (56-37); money_level->over (160-171); sharp_gap->under (151-174); money_moving->under (147-180); pin_value->under (89-84) |
-| Thu 19:00 | STET@HOW | total | under | 149.5 (-110) | 152.5 | 148.5 ($250) | 33% / 42% | 383 | follow_move->under (154-147); rlm_ratio->under (56-37); money_level->over (160-171); sharp_gap->under (151-174); money_moving->under (147-180); pin_value->under (89-84) |
+| Thu 19:00 | CAN@BRWN | moneyline | away | 720 (+720) | 0 | -937 ($1,500) | 2% / 5% | 661 | money_level->home (210-67); sharp_gap->away (83-172); money_moving->away (87-166); consensus_gap->away (82-171); pin_value->away (9-29); pin_rlm->away (17-30) |
 
 ## 5 signals agree, 2 against
 
 | tip (ET) | game | market | lean | FD now | open | Pin | tix / money (lean side) | bets | calls |
 |---|---|---|---|---|---|---|---|---|---|
 | Thu 19:00 | CCSU@SHU | total | under | 145.5 (-110) | 147.5 | 146.5 ($250) | 34% / 48% | 827 | follow_move->under (154-147); rlm_ratio->under (56-37); money_level->over (160-171); sharp_gap->under (151-174); money_moving->under (147-180); consensus_gap->under (70-77); pin_value->over (89-84) |
+| Thu 20:00 | SOU@MINN | total | under | 142.5 (-110) | 140.5 | 141.5 ($250) | 19% / 47% | 913 | follow_move->over (154-147); money_level->over (160-171); sharp_gap->under (151-174); money_moving->under (147-180); consensus_gap->under (70-77); pin_value->under (89-84); pin_rlm->under (32-22) |
 
 ## 4 signals agree, 0 against
 
@@ -57,11 +97,11 @@ This is analysis, not picks.
 | tip (ET) | game | market | lean | FD now | open | Pin | tix / money (lean side) | bets | calls |
 |---|---|---|---|---|---|---|---|---|---|
 | Thu 18:30 | TNTC@IND | total | under | 167.5 (-105) | 162.5 | 167 ($750) | 56% / 62% | 1822 | follow_move->over (154-147); money_level->under (160-171); sharp_gap->under (151-174); money_moving->under (147-180); pin_value->under (89-84) |
-| Thu 19:00 | CAN@BRWN | moneyline | away | 720 (+720) | 0 | -937 ($1,500) | 2% / 5% | 661 | money_level->home (210-67); sharp_gap->away (83-172); money_moving->away (87-166); consensus_gap->away (82-171); pin_value->away (9-29) |
 | Thu 19:00 | L-MD@TOWS | total | under | 133.5 (-110) | 138.5 |  | 12% / 45% | 853 | follow_move->under (154-147); rlm_ratio->under (56-37); money_level->over (160-171); sharp_gap->under (151-174); money_moving->under (147-180) |
 | Thu 19:00 | UMES@URI | spread | away | 22.5 (-102) | -24.5 |  | 49% / 57% | 994 | follow_move->away (129-134); money_level->away (158-157); sharp_gap->away (158-152); money_moving->away (155-155); consensus_gap->home (63-49) |
 | Thu 19:00 | UMES@URI | total | under | 137.5 (-110) | 146.5 |  | 14% / 35% | 959 | follow_move->under (154-147); rlm_ratio->under (56-37); money_level->over (160-171); sharp_gap->under (151-174); money_moving->under (147-180) |
 | Thu 19:00 | MER@WVU | total | over | 151.5 (-115) | 148.5 | 151 ($750) | 69% / 77% | 1024 | follow_move->over (154-147); money_level->over (160-171); sharp_gap->over (151-174); money_moving->over (147-180); pin_value->under (89-84) |
+| Thu 20:00 | OKST@TXAM | total | under | 178.5 (-110) | 176.5 | 178.5 ($750) | 36% / 74% | 3564 | follow_move->over (154-147); money_level->under (160-171); sharp_gap->under (151-174); money_moving->under (147-180); pin_rlm->under (32-22) |
 
 ## 4 signals agree, 2 against
 
@@ -70,7 +110,6 @@ This is analysis, not picks.
 | Thu 19:00 | NIAG@BGSU | total | under | 145.5 (-110) | 148.5 | 146 ($750) | 21% / 31% | 696 | follow_move->under (154-147); rlm_ratio->under (56-37); money_level->over (160-171); sharp_gap->under (151-174); money_moving->under (147-180); pin_value->over (89-84) |
 | Thu 19:00 | CSB@WIU | spread | away | -9.5 (-102) | 6.5 | 9 ($1,500) | 68% / 91% | 812 | follow_move->away (129-134); money_level->away (158-157); sharp_gap->away (158-152); money_moving->away (155-155); consensus_gap->home (63-49); pin_value->home (90-60) |
 | Thu 19:00 | STET@HOW | spread | away | 9.5 (-102) | -10.5 | -10.5 ($500) | 56% / 73% | 383 | follow_move->away (129-134); money_level->away (158-157); sharp_gap->away (158-152); money_moving->away (155-155); consensus_gap->home (63-49); pin_value->home (90-60) |
-| Thu 20:00 | SOU@MINN | total | under | 142.5 (-110) | 140.5 | 141.5 ($250) | 19% / 47% | 913 | follow_move->over (154-147); money_level->over (160-171); sharp_gap->under (151-174); money_moving->under (147-180); consensus_gap->under (70-77); pin_value->under (89-84) |
 
 ## 3 signals agree, 0 against
 
@@ -90,7 +129,6 @@ This is analysis, not picks.
 | Thu 19:00 | MER@WVU | moneyline | away | 3500 (+3500) | 0 |  | 1% / 2% | 1024 | money_level->home (210-67); sharp_gap->away (83-172); money_moving->away (87-166); consensus_gap->away (82-171) |
 | Thu 19:00 | MONM@QUIN | spread | home | -1.5 (-102) | -1.5 | -1 ($1,500) | 56% / 68% | 1009 | money_level->home (158-157); sharp_gap->home (158-152); money_moving->home (155-155); pin_value->away (90-60) |
 | Thu 20:00 | OKST@TXAM | spread | away | 8.5 (-114) | -6.5 | -8.5 ($1,500) | 64% / 74% | 3564 | follow_move->home (129-134); money_level->away (158-157); sharp_gap->away (158-152); money_moving->away (155-155) |
-| Thu 20:00 | OKST@TXAM | total | under | 178.5 (-110) | 176.5 | 178.5 ($750) | 36% / 74% | 3564 | follow_move->over (154-147); money_level->under (160-171); sharp_gap->under (151-174); money_moving->under (147-180) |
 | Thu 20:00 | RICH@SIU | moneyline | home | 126 (+126) | 0 | 123 ($1,500) | 11% / 13% | 1666 | money_level->away (210-67); sharp_gap->home (83-172); money_moving->home (87-166); consensus_gap->home (82-171) |
 | Thu 20:00 | SOU@MINN | moneyline | away | 3500 (+3500) | 0 |  | 1% / 4% | 898 | money_level->home (210-67); sharp_gap->away (83-172); money_moving->away (87-166); consensus_gap->away (82-171) |
 | Thu 21:00 | MTST@BYU | moneyline | away | 2200 (+2200) | 0 |  | 3% / 23% | 1085 | money_level->home (210-67); sharp_gap->away (83-172); money_moving->away (87-166); consensus_gap->away (82-171) |
