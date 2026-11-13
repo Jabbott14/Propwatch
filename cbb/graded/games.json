@@ -142426,5 +142426,191 @@
    "as": 80,
    "hs": 75
   }
+ },
+ {
+  "gid": "303550",
+  "game": "UWF@CLEV",
+  "away": "West Florida Argonauts",
+  "home": "Cleveland State Vikings",
+  "tip": "2026-11-13T20:00:00.000Z",
+  "conf": [
+   "ATLANTICSUN",
+   "HORIZON"
+  ],
+  "first_seen": "2026-11-13T0814Z",
+  "caught": true,
+  "pin_match": "West Florida @ Cleveland State",
+  "markets": {
+   "total": {
+    "close": {
+     "t": "2026-11-13T1924Z",
+     "nb": 2377,
+     "line": {
+      "over": 150.5,
+      "under": 150.5
+     },
+     "odds": {
+      "over": -110,
+      "under": -110
+     },
+     "tix": {
+      "over": 75,
+      "under": 25
+     },
+     "mny": {
+      "over": 41,
+      "under": 59
+     },
+     "calls": {
+      "follow_move": "under",
+      "rlm_ratio": "under",
+      "money_level": "under",
+      "sharp_gap": "under",
+      "money_moving": "under",
+      "pin_rlm": "under"
+     },
+     "open": 155.5,
+     "mny_ratio": 2.36,
+     "gap": {
+      "over": -34,
+      "under": 34
+     },
+     "div": {
+      "over": -30,
+      "under": 30
+     },
+     "pin": 150.5,
+     "pin_lim": 500,
+     "pin_open": 152.5,
+     "pin_moved_to": "under",
+     "pin_rlm_tix": 25,
+     "pin_rlm_ratio": 2.36
+    },
+    "early": {
+     "t": "2026-11-13T0844Z",
+     "nb": 217,
+     "line": {
+      "over": 153.5,
+      "under": 153.5
+     },
+     "odds": {
+      "over": -110,
+      "under": -110
+     },
+     "tix": {
+      "over": 58,
+      "under": 42
+     },
+     "mny": {
+      "over": 50,
+      "under": 50
+     },
+     "calls": {
+      "follow_move": "under",
+      "sharp_gap": "under",
+      "money_moving": "under"
+     },
+     "open": 155.5,
+     "mny_ratio": 1.19,
+     "gap": {
+      "over": -8,
+      "under": 8
+     },
+     "div": {
+      "over": -4,
+      "under": 4
+     },
+     "books": {
+      "books": 6,
+      "median": 153.5,
+      "books_up": 0,
+      "books_dn": 1
+     }
+    },
+    "early_graded": {
+     "follow_move": {
+      "side": "under",
+      "line": 153.5,
+      "odds": -110,
+      "res": "W",
+      "units": 0.909,
+      "took_fav": false,
+      "clv": 3.0
+     },
+     "sharp_gap": {
+      "side": "under",
+      "line": 153.5,
+      "odds": -110,
+      "res": "W",
+      "units": 0.909,
+      "took_fav": false,
+      "clv": 3.0
+     },
+     "money_moving": {
+      "side": "under",
+      "line": 153.5,
+      "odds": -110,
+      "res": "W",
+      "units": 0.909,
+      "took_fav": false,
+      "clv": 3.0
+     }
+    },
+    "close_graded": {
+     "follow_move": {
+      "side": "under",
+      "line": 150.5,
+      "odds": -110,
+      "res": "W",
+      "units": 0.909,
+      "took_fav": false
+     },
+     "rlm_ratio": {
+      "side": "under",
+      "line": 150.5,
+      "odds": -110,
+      "res": "W",
+      "units": 0.909,
+      "took_fav": false
+     },
+     "money_level": {
+      "side": "under",
+      "line": 150.5,
+      "odds": -110,
+      "res": "W",
+      "units": 0.909,
+      "took_fav": false
+     },
+     "sharp_gap": {
+      "side": "under",
+      "line": 150.5,
+      "odds": -110,
+      "res": "W",
+      "units": 0.909,
+      "took_fav": false
+     },
+     "money_moving": {
+      "side": "under",
+      "line": 150.5,
+      "odds": -110,
+      "res": "W",
+      "units": 0.909,
+      "took_fav": false
+     },
+     "pin_rlm": {
+      "side": "under",
+      "line": 150.5,
+      "odds": -110,
+      "res": "W",
+      "units": 0.909,
+      "took_fav": false
+     }
+    }
+   }
+  },
+  "final": {
+   "as": 67,
+   "hs": 69
+  }
  }
 ]
