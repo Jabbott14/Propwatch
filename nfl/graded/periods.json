@@ -12303,5 +12303,650 @@
     "took_default": true
    }
   }
+ },
+ {
+  "game": "Washington Commanders @ New York Giants",
+  "market": "q4|total",
+  "period": "q4",
+  "kind": "total",
+  "kickoff": "2026-11-13T01:15:00.000Z",
+  "markets": {
+   "close": {
+    "t": "2026-11-13T0114Z",
+    "line": {
+     "over": 10.5,
+     "under": 10.5
+    },
+    "odds": {
+     "over": -104,
+     "under": -118
+    },
+    "open": 12.5,
+    "open_odds": {
+     "over": -106,
+     "under": -116
+    },
+    "calls": {
+     "follow_move": "under"
+    },
+    "move": -2.0
+   },
+   "early": {
+    "t": "2026-11-09T0709Z",
+    "line": {
+     "over": 12.5,
+     "under": 12.5
+    },
+    "odds": {
+     "over": -106,
+     "under": -116
+    },
+    "open": 12.5,
+    "open_odds": {
+     "over": -106,
+     "under": -116
+    },
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "follow_move": {
+    "side": "under",
+    "line": 10.5,
+    "odds": -118,
+    "res": "L",
+    "units": -1.0,
+    "took_default": false
+   }
+  }
+ },
+ {
+  "game": "Washington Commanders @ New York Giants",
+  "market": "1h|spread",
+  "period": "1h",
+  "kind": "spread",
+  "kickoff": "2026-11-13T01:15:00.000Z",
+  "markets": {
+   "close": {
+    "t": "2026-11-13T0114Z",
+    "line": {
+     "home": -1.5,
+     "away": 1.5
+    },
+    "odds": {
+     "home": 115,
+     "away": -135
+    },
+    "open": -1.5,
+    "open_odds": {
+     "home": 110,
+     "away": -130
+    },
+    "calls": {
+     "pin_value": "away"
+    },
+    "pin": -0.5,
+    "pin_lim": 20000,
+    "pin_gap": -1.0
+   },
+   "early": {
+    "t": "2026-11-09T0709Z",
+    "line": {
+     "home": -1.5,
+     "away": 1.5
+    },
+    "odds": {
+     "home": 110,
+     "away": -130
+    },
+    "open": -1.5,
+    "open_odds": {
+     "home": 110,
+     "away": -130
+    },
+    "calls": {
+     "pin_value": "away"
+    },
+    "pin": -0.5,
+    "pin_lim": 2000,
+    "pin_gap": -1.0
+   }
+  },
+  "early_graded": {
+   "pin_value": {
+    "side": "away",
+    "line": 1.5,
+    "odds": -130,
+    "res": "W",
+    "units": 0.769,
+    "took_default": false,
+    "clv": 0.0
+   }
+  },
+  "close_graded": {
+   "pin_value": {
+    "side": "away",
+    "line": 1.5,
+    "odds": -135,
+    "res": "W",
+    "units": 0.741,
+    "took_default": false
+   }
+  }
+ },
+ {
+  "game": "Washington Commanders @ New York Giants",
+  "market": "1h|tt|home",
+  "period": "1h",
+  "kind": "tt",
+  "kickoff": "2026-11-13T01:15:00.000Z",
+  "markets": {
+   "close": {
+    "t": "2026-11-13T0114Z",
+    "line": {
+     "over": 9.5,
+     "under": 9.5
+    },
+    "odds": {
+     "over": -158,
+     "under": 124
+    },
+    "open": 10.5,
+    "open_odds": {
+     "over": -102,
+     "under": -125
+    },
+    "calls": {
+     "follow_move": "under",
+     "pin_value": "over"
+    },
+    "move": -1.0,
+    "pin": 10.5,
+    "pin_lim": 2000,
+    "pin_gap": -1.0
+   },
+   "early": {
+    "t": "2026-11-09T0709Z",
+    "line": {
+     "over": 10.5,
+     "under": 10.5
+    },
+    "odds": {
+     "over": -102,
+     "under": -125
+    },
+    "open": 10.5,
+    "open_odds": {
+     "over": -102,
+     "under": -125
+    },
+    "calls": {},
+    "pin": 10.5,
+    "pin_lim": 1000
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "follow_move": {
+    "side": "under",
+    "line": 9.5,
+    "odds": 124,
+    "res": "W",
+    "units": 1.24,
+    "took_default": false
+   },
+   "pin_value": {
+    "side": "over",
+    "line": 9.5,
+    "odds": -158,
+    "res": "L",
+    "units": -1.0,
+    "took_default": true
+   }
+  }
+ },
+ {
+  "game": "Washington Commanders @ New York Giants",
+  "market": "1h|total",
+  "period": "1h",
+  "kind": "total",
+  "kickoff": "2026-11-13T01:15:00.000Z",
+  "markets": {
+   "close": {
+    "t": "2026-11-13T0114Z",
+    "line": {
+     "over": 20.5,
+     "under": 20.5
+    },
+    "odds": {
+     "over": 100,
+     "under": -120
+    },
+    "open": 22.5,
+    "open_odds": {
+     "over": -110,
+     "under": -110
+    },
+    "calls": {
+     "follow_move": "under",
+     "pin_value": "over"
+    },
+    "move": -2.0,
+    "pin": 21.0,
+    "pin_lim": 10000,
+    "pin_gap": -0.5
+   },
+   "early": {
+    "t": "2026-11-09T0709Z",
+    "line": {
+     "over": 22.5,
+     "under": 22.5
+    },
+    "odds": {
+     "over": -110,
+     "under": -110
+    },
+    "open": 22.5,
+    "open_odds": {
+     "over": -110,
+     "under": -110
+    },
+    "calls": {
+     "pin_value": "under"
+    },
+    "pin": 21.0,
+    "pin_lim": 2000,
+    "pin_gap": 1.5
+   }
+  },
+  "early_graded": {
+   "pin_value": {
+    "side": "under",
+    "line": 22.5,
+    "odds": -110,
+    "res": "W",
+    "units": 0.909,
+    "took_default": false,
+    "clv": 2.0
+   }
+  },
+  "close_graded": {
+   "follow_move": {
+    "side": "under",
+    "line": 20.5,
+    "odds": -120,
+    "res": "W",
+    "units": 0.833,
+    "took_default": false
+   },
+   "pin_value": {
+    "side": "over",
+    "line": 20.5,
+    "odds": 100,
+    "res": "L",
+    "units": -1.0,
+    "took_default": true
+   }
+  }
+ },
+ {
+  "game": "Washington Commanders @ New York Giants",
+  "market": "1h|tt|away",
+  "period": "1h",
+  "kind": "tt",
+  "kickoff": "2026-11-13T01:15:00.000Z",
+  "markets": {
+   "close": {
+    "t": "2026-11-13T0114Z",
+    "line": {
+     "over": 9.5,
+     "under": 9.5
+    },
+    "odds": {
+     "over": -146,
+     "under": 114
+    },
+    "open": 10.5,
+    "open_odds": {
+     "over": 116,
+     "under": -148
+    },
+    "calls": {
+     "follow_move": "under",
+     "pin_value": "over"
+    },
+    "move": -1.0,
+    "pin": 10.5,
+    "pin_lim": 2000,
+    "pin_gap": -1.0
+   },
+   "early": {
+    "t": "2026-11-09T0709Z",
+    "line": {
+     "over": 10.5,
+     "under": 10.5
+    },
+    "odds": {
+     "over": 116,
+     "under": -148
+    },
+    "open": 10.5,
+    "open_odds": {
+     "over": 116,
+     "under": -148
+    },
+    "calls": {},
+    "pin": 10.5,
+    "pin_lim": 1000
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "follow_move": {
+    "side": "under",
+    "line": 9.5,
+    "odds": 114,
+    "res": "L",
+    "units": -1.0,
+    "took_default": false
+   },
+   "pin_value": {
+    "side": "over",
+    "line": 9.5,
+    "odds": -146,
+    "res": "W",
+    "units": 0.685,
+    "took_default": true
+   }
+  }
+ },
+ {
+  "game": "Washington Commanders @ New York Giants",
+  "market": "1h|ml",
+  "period": "1h",
+  "kind": "ml",
+  "kickoff": "2026-11-13T01:15:00.000Z",
+  "markets": {
+   "close": {
+    "t": "2026-11-13T0114Z",
+    "line": {
+     "home": -118,
+     "away": -104
+    },
+    "odds": {
+     "home": -118,
+     "away": -104
+    },
+    "open": -124,
+    "open_odds": {
+     "home": -124,
+     "away": 102
+    },
+    "calls": {
+     "follow_move": "away"
+    },
+    "move": 6,
+    "pin": -119,
+    "pin_lim": 10000
+   },
+   "early": {
+    "t": "2026-11-09T0709Z",
+    "line": {
+     "home": -124,
+     "away": 102
+    },
+    "odds": {
+     "home": -124,
+     "away": 102
+    },
+    "open": -124,
+    "open_odds": {
+     "home": -124,
+     "away": 102
+    },
+    "calls": {},
+    "pin": -118,
+    "pin_lim": 2000
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "follow_move": {
+    "side": "away",
+    "line": -104,
+    "odds": -104,
+    "res": "W",
+    "units": 0.962,
+    "took_default": false
+   }
+  }
+ },
+ {
+  "game": "Washington Commanders @ New York Giants",
+  "market": "2h|ml",
+  "period": "2h",
+  "kind": "ml",
+  "kickoff": "2026-11-13T01:15:00.000Z",
+  "markets": {
+   "close": {
+    "t": "2026-11-13T0114Z",
+    "line": {
+     "home": -116,
+     "away": 100
+    },
+    "odds": {
+     "home": -116,
+     "away": 100
+    },
+    "open": -120,
+    "open_odds": {
+     "home": -120,
+     "away": 102
+    },
+    "calls": {
+     "follow_move": "away"
+    },
+    "move": 4
+   },
+   "early": {
+    "t": "2026-11-09T0709Z",
+    "line": {
+     "home": -120,
+     "away": 102
+    },
+    "odds": {
+     "home": -120,
+     "away": 102
+    },
+    "open": -120,
+    "open_odds": {
+     "home": -120,
+     "away": 102
+    },
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "follow_move": {
+    "side": "away",
+    "line": 100,
+    "odds": 100,
+    "res": "P",
+    "units": 0.0,
+    "took_default": false
+   }
+  }
+ },
+ {
+  "game": "Washington Commanders @ New York Giants",
+  "market": "2h|total",
+  "period": "2h",
+  "kind": "total",
+  "kickoff": "2026-11-13T01:15:00.000Z",
+  "markets": {
+   "close": {
+    "t": "2026-11-13T0114Z",
+    "line": {
+     "over": 19.5,
+     "under": 19.5
+    },
+    "odds": {
+     "over": -120,
+     "under": 100
+    },
+    "open": 20.5,
+    "open_odds": {
+     "over": -110,
+     "under": -110
+    },
+    "calls": {
+     "follow_move": "under"
+    },
+    "move": -1.0
+   },
+   "early": {
+    "t": "2026-11-09T0709Z",
+    "line": {
+     "over": 20.5,
+     "under": 20.5
+    },
+    "odds": {
+     "over": -110,
+     "under": -110
+    },
+    "open": 20.5,
+    "open_odds": {
+     "over": -110,
+     "under": -110
+    },
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "follow_move": {
+    "side": "under",
+    "line": 19.5,
+    "odds": 100,
+    "res": "L",
+    "units": -1.0,
+    "took_default": false
+   }
+  }
+ },
+ {
+  "game": "Washington Commanders @ New York Giants",
+  "market": "2h|tt|home",
+  "period": "2h",
+  "kind": "tt",
+  "kickoff": "2026-11-13T01:15:00.000Z",
+  "markets": {
+   "close": {
+    "t": "2026-11-13T0114Z",
+    "line": {
+     "over": 9.5,
+     "under": 9.5
+    },
+    "odds": {
+     "over": -132,
+     "under": 104
+    },
+    "open": 10.5,
+    "open_odds": {
+     "over": 104,
+     "under": -132
+    },
+    "calls": {
+     "follow_move": "under"
+    },
+    "move": -1.0
+   },
+   "early": {
+    "t": "2026-11-09T0709Z",
+    "line": {
+     "over": 10.5,
+     "under": 10.5
+    },
+    "odds": {
+     "over": 104,
+     "under": -132
+    },
+    "open": 10.5,
+    "open_odds": {
+     "over": 104,
+     "under": -132
+    },
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "follow_move": {
+    "side": "under",
+    "line": 9.5,
+    "odds": 104,
+    "res": "L",
+    "units": -1.0,
+    "took_default": false
+   }
+  }
+ },
+ {
+  "game": "Washington Commanders @ New York Giants",
+  "market": "2h|tt|away",
+  "period": "2h",
+  "kind": "tt",
+  "kickoff": "2026-11-13T01:15:00.000Z",
+  "markets": {
+   "close": {
+    "t": "2026-11-13T0114Z",
+    "line": {
+     "over": 9.5,
+     "under": 9.5
+    },
+    "odds": {
+     "over": -120,
+     "under": -106
+    },
+    "open": 9.5,
+    "open_odds": {
+     "over": -140,
+     "under": 110
+    },
+    "calls": {
+     "fd_juice": "under"
+    }
+   },
+   "early": {
+    "t": "2026-11-09T0709Z",
+    "line": {
+     "over": 9.5,
+     "under": 9.5
+    },
+    "odds": {
+     "over": -140,
+     "under": 110
+    },
+    "open": 9.5,
+    "open_odds": {
+     "over": -140,
+     "under": 110
+    },
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "fd_juice": {
+    "side": "under",
+    "line": 9.5,
+    "odds": -106,
+    "res": "L",
+    "units": -1.0,
+    "took_default": false
+   }
+  }
  }
 ]
