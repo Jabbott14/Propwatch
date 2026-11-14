@@ -1,6 +1,6 @@
 # CBB period scorecard — halves and half team totals
 
-Generated 2026-11-13 23:45 UTC. 830 graded period markets (108 had no unique final matched and are not graded).
+Generated 2026-11-14 06:50 UTC. 921 graded period markets (108 had no unique final matched and are not graded).
 
 Retail lines from the FanDuel event feed, sharp reference from Pinnacle at
 period 1. Second-half markets settle **including overtime**, which is how
@@ -14,13 +14,13 @@ movement alone.
 
 Base rates on this sample:
 
-- **spread**: default side won 48.7% (n=230)
-- **total**: default side won 50.6% (n=168)
-- **ml**: default side won 74.0% (n=146)
-- **tt_home**: default side won 57.4% (n=141)
-- **tt_away**: default side won 55.4% (n=139)
-- **2h_tt_ot**: default side won 90.9% (n=11)
-- **2h_tt_no_ot**: default side won 55.0% (n=269)
+- **spread**: default side won 48.1% (n=258)
+- **total**: default side won 51.1% (n=186)
+- **ml**: default side won 74.1% (n=162)
+- **tt_home**: default side won 54.5% (n=156)
+- **tt_away**: default side won 55.6% (n=153)
+- **2h_tt_ot**: default side won 92.3% (n=13)
+- **2h_tt_no_ot**: default side won 53.4% (n=296)
 
 Proposals appear at 50 decided markets. Nothing changes automatically.
 
@@ -28,83 +28,83 @@ Proposals appear at 50 decided markets. Nothing changes automatically.
 
 | signal | record | hit % | expected % | edge | units | ROI % | CLV avg | status |
 |---|---|---|---|---|---|---|---|---|
-| pin_value | 61-50 | 55.0 | 49.9 | 5.1 | +2.99 | 2.7 | 0.24 | no edge shown yet |
-| pin_price | 9-21 | 30.0 | 26.8 | 3.2 | +19.56 | 65.2 | 0.5 | keep collecting (30/50) |
-| follow_move | 118-93-3 | 55.9 | 52.1 | 3.9 | +6.18 | 2.9 | -0.06 | no edge shown yet |
-| fd_juice | 14-25 | 35.9 | 49.1 | -13.2 | -13.55 | -34.7 | 0.03 | keep collecting (39/50) |
-| follow_move+pin_value | 2-3 | 40.0 | 49.9 | -9.9 | -1.15 | -23.1 | 0.2 | keep collecting (5/50) |
-| follow_move+pin_price | 2-0 | 100.0 | 26.0 | 74.0 | +12.2 | 610.0 | 1.05 | keep collecting (2/50) |
+| pin_value | 61-54 | 53.0 | 49.9 | 3.2 | -1.01 | -0.9 | 0.22 | no edge shown yet |
+| pin_price | 9-24 | 27.3 | 26.6 | 0.6 | +16.56 | 50.2 | 0.53 | keep collecting (33/50) |
+| follow_move | 121-97-3 | 55.5 | 51.8 | 3.7 | +4.97 | 2.2 | -0.06 | no edge shown yet |
+| fd_juice | 14-26 | 35.0 | 49.0 | -14.0 | -14.55 | -36.4 | 0.03 | keep collecting (40/50) |
+| follow_move+pin_value | 2-3 | 40.0 | 49.8 | -9.8 | -1.15 | -23.1 | 0.2 | keep collecting (5/50) |
+| follow_move+pin_price | 2-0 | 100.0 | 25.9 | 74.1 | +12.2 | 610.0 | 1.05 | keep collecting (2/50) |
 
 ## CLOSE
 
 | signal | record | hit % | expected % | edge | units | ROI % | CLV avg | status |
 |---|---|---|---|---|---|---|---|---|
-| pin_value | 113-73 | 60.8 | 49.9 | 10.9 | +25.29 | 13.6 |  | PROMOTE: beats break-even and its own base rate |
-| pin_price | 12-34-1 | 26.1 | 26.5 | -0.4 | +22.24 | 47.3 |  | keep collecting (46/50) |
-| follow_move | 277-321-6 | 46.3 | 49.2 | -2.9 | -64.33 | -10.7 |  | DROP: below break-even |
-| fd_juice | 39-63 | 38.2 | 49.1 | -10.9 | -30.91 | -30.3 |  | DROP: below break-even |
-| follow_move+pin_price | 5-7-1 | 41.7 | 26.0 | 15.6 | +24.2 | 186.2 |  | keep collecting (12/50) |
-| follow_move+pin_value | 12-8 | 60.0 | 49.7 | 10.3 | +2.68 | 13.4 |  | keep collecting (20/50) |
+| pin_value | 125-88 | 58.7 | 49.9 | 8.8 | +20.6 | 9.7 |  | PROMOTE: beats break-even and its own base rate |
+| pin_price | 12-41-1 | 22.6 | 26.3 | -3.7 | +15.24 | 28.2 |  | DROP: below break-even |
+| follow_move | 309-355-6 | 46.5 | 49.3 | -2.7 | -70.6 | -10.5 |  | DROP: below break-even |
+| fd_juice | 45-68 | 39.8 | 49.7 | -9.9 | -30.79 | -27.2 |  | DROP: below break-even |
+| follow_move+pin_price | 5-10-1 | 33.3 | 25.9 | 7.4 | +21.2 | 132.5 |  | keep collecting (15/50) |
+| follow_move+pin_value | 13-11 | 54.2 | 49.8 | 4.4 | +0.52 | 2.1 |  | keep collecting (24/50) |
 
 ## By period and market
 
 | signal | checkpoint | slice | record | hit % | edge | ROI % |
 |---|---|---|---|---|---|---|
-| pin_value | close | 1h | 113-73 | 60.8 | 10.9 | 13.6 |
-| pin_value | close | 1h|spread | 55-33 | 62.5 | 12.9 | 16.8 |
-| pin_value | close | 1h|total | 58-40 | 59.2 | 9.1 | 10.7 |
-| pin_price | close | 1h | 12-34-1 | 26.1 | -0.4 | 47.3 |
-| pin_price | close | 1h|ml | 12-33-1 | 26.7 | 0.6 | 50.5 |
-| pin_price | close | 1h|spread | 0-1 | 0.0 | -48.7 | -100.0 |
-| follow_move | close | 1h | 159-159-6 | 50.0 | 0.7 | -3.3 |
-| follow_move | close | 1h|ml | 59-66-6 | 47.2 | -1.1 | -6.1 |
-| follow_move | close | 1h|spread | 44-35 | 55.7 | 5.6 | 6.2 |
-| follow_move | close | 1h|total | 56-58 | 49.1 | -0.8 | -6.6 |
-| follow_move | close | 2h | 118-162 | 42.1 | -6.9 | -19.2 |
-| follow_move | close | 2h OT game | 1-6 | 14.3 | -31.0 | -72.2 |
-| follow_move | close | 2h no OT | 117-156 | 42.9 | -6.3 | -17.8 |
-| follow_move | close | 2h|spread | 38-47 | 44.7 | -5.3 | -14.2 |
-| follow_move | close | 2h|tt_away | 37-59 | 38.5 | -10.4 | -26.0 |
-| follow_move | close | 2h|tt_home | 43-56 | 43.4 | -5.0 | -16.8 |
-| fd_juice | close | 1h | 2-6 | 25.0 | -24.9 | -54.2 |
-| fd_juice | close | 1h|spread | 1-5 | 16.7 | -33.3 | -69.5 |
-| fd_juice | close | 1h|total | 1-1 | 50.0 | 0.6 | -8.4 |
-| fd_juice | close | 2h | 37-57 | 39.4 | -9.7 | -28.3 |
-| fd_juice | close | 2h OT game | 0-4 | 0.0 | -46.8 | -100.0 |
-| fd_juice | close | 2h no OT | 37-53 | 41.1 | -8.0 | -25.1 |
-| fd_juice | close | 2h|spread | 4-5 | 44.4 | -5.7 | -18.2 |
-| fd_juice | close | 2h|tt_away | 22-21 | 51.2 | 0.5 | -6.7 |
-| fd_juice | close | 2h|tt_home | 11-31 | 26.2 | -21.0 | -52.5 |
-| follow_move+pin_price | close | 1h | 5-7-1 | 41.7 | 15.6 | 186.2 |
-| follow_move+pin_value | close | 1h | 12-8 | 60.0 | 10.3 | 13.4 |
-| follow_move+pin_price | close | 1h|ml | 5-7-1 | 41.7 | 15.6 | 186.2 |
-| follow_move+pin_value | close | 1h|spread | 7-3 | 70.0 | 20.5 | 31.7 |
-| follow_move+pin_value | close | 1h|total | 5-5 | 50.0 | 0.1 | -4.8 |
-| pin_value | early | 1h | 61-50 | 55.0 | 5.1 | 2.7 |
-| pin_value | early | 1h|spread | 26-22 | 54.2 | 4.6 | 1.3 |
-| pin_value | early | 1h|total | 35-28 | 55.6 | 5.4 | 3.8 |
-| pin_price | early | 1h | 9-21 | 30.0 | 3.2 | 65.2 |
-| pin_price | early | 1h|ml | 9-20 | 31.0 | 5.0 | 70.9 |
-| pin_price | early | 1h|total | 0-1 | 0.0 | -49.4 | -100.0 |
-| follow_move | early | 1h | 75-49-3 | 60.5 | 6.3 | 8.1 |
-| follow_move | early | 1h|ml | 36-24-3 | 60.0 | 1.2 | 0.2 |
-| follow_move | early | 1h|spread | 21-6 | 77.8 | 28.1 | 48.8 |
-| follow_move | early | 1h|total | 18-19 | 48.6 | -1.3 | -8.2 |
-| follow_move | early | 2h | 43-44 | 49.4 | 0.3 | -4.7 |
-| follow_move | early | 2h no OT | 43-44 | 49.4 | 0.3 | -4.7 |
-| follow_move | early | 2h|spread | 13-12 | 52.0 | 2.7 | 0.1 |
-| follow_move | early | 2h|tt_away | 12-16 | 42.9 | -6.0 | -17.6 |
-| follow_move | early | 2h|tt_home | 18-16 | 52.9 | 3.8 | 2.5 |
-| fd_juice | early | 1h | 2-1 | 66.7 | 16.7 | 22.7 |
-| fd_juice | early | 1h|spread | 1-0 | 100.0 | 51.3 | 84.7 |
-| fd_juice | early | 1h|total | 1-1 | 50.0 | -0.6 | -8.4 |
-| fd_juice | early | 2h | 12-24 | 33.3 | -15.7 | -39.5 |
-| fd_juice | early | 2h no OT | 12-24 | 33.3 | -15.7 | -39.5 |
-| fd_juice | early | 2h|spread | 0-3 | 0.0 | -50.4 | -100.0 |
+| pin_value | close | 1h | 125-88 | 58.7 | 8.8 | 9.7 |
+| pin_value | close | 1h|spread | 60-43 | 58.3 | 8.7 | 8.8 |
+| pin_value | close | 1h|total | 65-45 | 59.1 | 8.9 | 10.5 |
+| pin_price | close | 1h | 12-41-1 | 22.6 | -3.7 | 28.2 |
+| pin_price | close | 1h|ml | 12-40-1 | 23.1 | -2.8 | 30.6 |
+| pin_price | close | 1h|spread | 0-1 | 0.0 | -48.1 | -100.0 |
+| follow_move | close | 1h | 176-179-6 | 49.6 | 0.4 | -4.5 |
+| follow_move | close | 1h|ml | 65-74-6 | 46.8 | -1.3 | -8.1 |
+| follow_move | close | 1h|spread | 52-40 | 56.5 | 6.4 | 7.8 |
+| follow_move | close | 1h|total | 59-65 | 47.6 | -2.2 | -9.6 |
+| follow_move | close | 2h | 133-176 | 43.0 | -6.3 | -17.5 |
+| follow_move | close | 2h OT game | 2-6 | 25.0 | -22.5 | -51.0 |
+| follow_move | close | 2h no OT | 131-170 | 43.5 | -5.9 | -16.6 |
+| follow_move | close | 2h|spread | 42-52 | 44.7 | -5.4 | -14.2 |
+| follow_move | close | 2h|tt_away | 40-64 | 38.5 | -10.6 | -26.4 |
+| follow_move | close | 2h|tt_home | 51-60 | 45.9 | -3.1 | -12.1 |
+| fd_juice | close | 1h | 3-6 | 33.3 | -16.6 | -38.7 |
+| fd_juice | close | 1h|spread | 2-5 | 28.6 | -21.7 | -47.4 |
+| fd_juice | close | 1h|total | 1-1 | 50.0 | 1.1 | -8.4 |
+| fd_juice | close | 2h | 42-62 | 40.4 | -9.3 | -26.2 |
+| fd_juice | close | 2h OT game | 1-4 | 20.0 | -29.1 | -63.1 |
+| fd_juice | close | 2h no OT | 41-58 | 41.4 | -8.3 | -24.4 |
+| fd_juice | close | 2h|spread | 5-5 | 50.0 | -0.4 | -7.7 |
+| fd_juice | close | 2h|tt_away | 25-24 | 51.0 | 0.2 | -6.7 |
+| fd_juice | close | 2h|tt_home | 12-33 | 26.7 | -21.6 | -51.7 |
+| follow_move+pin_price | close | 1h | 5-10-1 | 33.3 | 7.4 | 132.5 |
+| follow_move+pin_value | close | 1h | 13-11 | 54.2 | 4.4 | 2.1 |
+| follow_move+pin_price | close | 1h|ml | 5-10-1 | 33.3 | 7.4 | 132.5 |
+| follow_move+pin_value | close | 1h|spread | 8-5 | 61.5 | 11.7 | 15.4 |
+| follow_move+pin_value | close | 1h|total | 5-6 | 45.5 | -4.3 | -13.5 |
+| pin_value | early | 1h | 61-54 | 53.0 | 3.2 | -0.9 |
+| pin_value | early | 1h|spread | 26-25 | 51.0 | 1.6 | -4.7 |
+| pin_value | early | 1h|total | 35-29 | 54.7 | 4.4 | 2.2 |
+| pin_price | early | 1h | 9-24 | 27.3 | 0.6 | 50.2 |
+| pin_price | early | 1h|ml | 9-23 | 28.1 | 2.2 | 54.9 |
+| pin_price | early | 1h|total | 0-1 | 0.0 | -48.9 | -100.0 |
+| follow_move | early | 1h | 76-51-3 | 59.8 | 6.0 | 7.1 |
+| follow_move | early | 1h|ml | 36-25-3 | 59.0 | 0.7 | -1.4 |
+| follow_move | early | 1h|spread | 22-6 | 78.6 | 29.1 | 50.5 |
+| follow_move | early | 1h|total | 18-20 | 47.4 | -2.5 | -10.6 |
+| follow_move | early | 2h | 45-46 | 49.5 | 0.4 | -4.6 |
+| follow_move | early | 2h no OT | 45-46 | 49.5 | 0.4 | -4.6 |
+| follow_move | early | 2h|spread | 14-12 | 53.8 | 4.7 | 3.6 |
+| follow_move | early | 2h|tt_away | 12-17 | 41.4 | -7.3 | -20.4 |
+| follow_move | early | 2h|tt_home | 19-17 | 52.8 | 3.5 | 2.1 |
+| fd_juice | early | 1h | 2-1 | 66.7 | 16.6 | 22.7 |
+| fd_juice | early | 1h|spread | 1-0 | 100.0 | 51.9 | 84.7 |
+| fd_juice | early | 1h|total | 1-1 | 50.0 | -1.1 | -8.4 |
+| fd_juice | early | 2h | 12-25 | 32.4 | -16.4 | -41.2 |
+| fd_juice | early | 2h no OT | 12-25 | 32.4 | -16.4 | -41.2 |
+| fd_juice | early | 2h|spread | 0-3 | 0.0 | -50.6 | -100.0 |
 | fd_juice | early | 2h|tt_away | 8-9 | 47.1 | -0.7 | -15.2 |
-| fd_juice | early | 2h|tt_home | 4-12 | 25.0 | -25.0 | -54.0 |
-| follow_move+pin_value | early | 1h | 2-3 | 40.0 | -9.9 | -23.1 |
-| follow_move+pin_price | early | 1h | 2-0 | 100.0 | 74.0 | 610.0 |
-| follow_move+pin_price | early | 1h|ml | 2-0 | 100.0 | 74.0 | 610.0 |
+| fd_juice | early | 2h|tt_home | 4-13 | 23.5 | -26.2 | -56.7 |
+| follow_move+pin_value | early | 1h | 2-3 | 40.0 | -9.8 | -23.1 |
+| follow_move+pin_price | early | 1h | 2-0 | 100.0 | 74.1 | 610.0 |
+| follow_move+pin_price | early | 1h|ml | 2-0 | 100.0 | 74.1 | 610.0 |
 | follow_move+pin_value | early | 1h|spread | 1-1 | 50.0 | 0.0 | -1.9 |
-| follow_move+pin_value | early | 1h|total | 1-2 | 33.3 | -16.5 | -37.2 |
+| follow_move+pin_value | early | 1h|total | 1-2 | 33.3 | -16.3 | -37.2 |
