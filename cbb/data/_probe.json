@@ -10,16 +10,21 @@
  "pin_leagues": [
   {
    "id": 493,
-   "n": 29,
+   "n": 28,
    "name": "NCAA"
+  },
+  {
+   "id": 228036,
+   "n": 2,
+   "name": "Philippines - NCAA"
   }
  ],
- "run_utc": "2026-11-14T04:45:22Z",
+ "run_utc": "2026-11-14T10:05:37Z",
  "tried": [
   {
-   "bytes": 445736,
+   "bytes": 519803,
    "kind": "fd_lobby",
-   "score": 35,
+   "score": 50,
    "url": "https://sbapi.nj.sportsbook.fanduel.com/api/content-managed-page?page=CUSTOM&customPageId=ncaab&_ak=<ak>"
   },
   {
@@ -41,16 +46,16 @@
    "url": "https://sbapi.nj.sportsbook.fanduel.com/api/content-managed-page?page=CUSTOM&customPageId=ncaa-basketball-men&_ak=<ak>"
   },
   {
-   "bytes": 309946,
+   "bytes": 41986,
    "kind": "actionnet",
-   "score": 13,
-   "url": "https://api.actionnetwork.com/web/v2/scoreboard/ncaab?period=game&date=20261113"
+   "score": 2,
+   "url": "https://api.actionnetwork.com/web/v2/scoreboard/ncaab?period=game&date=20261114"
   },
   {
-   "bytes": 1385851,
+   "bytes": 1257269,
    "kind": "actionnet",
-   "score": 55,
-   "url": "https://api.actionnetwork.com/web/v2/scoreboard/ncaab?period=game&division=D1&date=20261113"
+   "score": 61,
+   "url": "https://api.actionnetwork.com/web/v2/scoreboard/ncaab?period=game&division=D1&date=20261114"
   },
   {
    "error": "HTTPError: HTTP Error 403: Forbidden",
