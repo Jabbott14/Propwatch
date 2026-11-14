@@ -1,6 +1,6 @@
 # CBB scorecard
 
-Generated 2026-11-14 07:04 UTC. 416 graded games (9 finished games had no final score matched and are not graded).
+Generated 2026-11-14 16:08 UTC. 416 graded games (10 finished games had no final score matched and are not graded).
 
 Each signal is graded on **every** game it had an opinion on, at the FanDuel price
 available at that moment. EARLY = one hour after the line was first seen. CLOSE =
