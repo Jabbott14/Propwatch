@@ -1,6 +1,6 @@
 # CBB period scorecard — halves and half team totals
 
-Generated 2026-11-15 06:54 UTC. 1035 graded period markets (114 had no unique final matched and are not graded).
+Generated 2026-11-15 16:30 UTC. 1035 graded period markets (114 had no unique final matched and are not graded).
 
 Retail lines from the FanDuel event feed, sharp reference from Pinnacle at
 period 1. Second-half markets settle **including overtime**, which is how
