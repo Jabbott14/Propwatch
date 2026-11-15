@@ -1,6 +1,6 @@
 # NFL prop board
 
-Generated 2026-11-15 14:21 UTC. Live props where at least one signal has an opinion, most
+Generated 2026-11-15 16:37 UTC. Live props where at least one signal has an opinion, most
 agreement first. Each call shows that signal's graded record so far.
 
 `Pin` is Pinnacle's number and the size it will take. Prop limits run $250-$3,000
@@ -13,8 +13,6 @@ This is analysis, not picks.
 
 | kickoff (ET) | player | stat | lean | FD | open | Pin | gap | limit | price | calls |
 |---|---|---|---|---|---|---|---|---|---|---|
-| Sun 09:30 | Amonra St Brown | recv_yds | over | 81.5 | 78.5 | 81.5 |  | $2000 | -113 | pin_price->over (29-21); fd_move->over (130-149) |
-| Sun 09:30 | Eli Raridon | recv_yds | under | 26.5 | 29.5 | 25.5 | 1.0 | $500 | -113 | pin_value->under (98-90); fd_move->under (130-149) |
 | Sun 13:00 | Bhayshul Tuten | rush_yds | over | 67.5 | 62.5 | 68.5 | -1.0 | $1000 | -113 | pin_value->over (98-90); fd_move->over (130-149) |
 | Sun 13:00 | Cam Ward | pass_yds | under | 197.5 | 198.5 | 195.5 | 2.0 | $500 | -113 | pin_value->under (98-90); fd_move->under (130-149) |
 | Sun 13:00 | Chuba Hubbard | recv_yds | under | 18.5 | 18.5 | 17.5 | 1.0 | $500 | -113 | pin_value->under (98-90); pin_lead->under (17-8) |
@@ -24,6 +22,7 @@ This is analysis, not picks.
 | Sun 13:00 | Jordan Mason | rush_yds | over | 45.5 | 42.5 | 46.5 | -1.0 | $500 | -113 | pin_value->over (98-90); fd_move->over (130-149) |
 | Sun 13:00 | Kyle Mccord | pass_yds | under | 159.5 | 159.5 | 158.5 | 1.0 | $500 | -113 | pin_value->under (98-90); pin_lead->under (17-8) |
 | Sun 13:00 | Nico Collins | recv_yds | over | 58.5 | 57.5 | 60.5 | -2.0 | $1000 | -113 | pin_value->over (98-90); fd_move->over (130-149) |
+| Sun 13:00 | Olamide Zaccheaus | recv_yds | over | 8.5 | 7.5 | 8.5 |  | $500 | -113 | pin_price->over (29-21); fd_move->over (130-149) |
 | Sun 13:00 | Patrick Mahomes | pass_yds | under | 241.5 | 241.5 | 239.5 | 2.0 | $1000 | -113 | pin_value->under (98-90); pin_lead->under (17-8) |
 | Sun 13:00 | Savion Williams | recv_yds | over | 19.5 | 18.5 | 20.5 | -1.0 | $500 | -113 | pin_value->over (98-90); fd_move->over (130-149) |
 | Sun 13:00 | Woody Marks | rush_yds | under | 61.5 | 64.5 | 56.5 | 5.0 | $500 | -113 | pin_value->under (98-90); fd_move->under (130-149) |
@@ -47,23 +46,6 @@ This is analysis, not picks.
 
 | kickoff (ET) | player | stat | lean | FD | open | Pin | gap | limit | price | calls |
 |---|---|---|---|---|---|---|---|---|---|---|
-| Sun 09:30 | Aj Brown | recv_yds | under | 50.5 | 51.5 | 50.5 |  | $500 | -113 | fd_move->under (130-149) |
-| Sun 09:30 | Drake Maye | pass_tds | over | 1.5 | 1.5 | 1.5 |  | $500 | -156 | fd_juice->over (79-62) |
-| Sun 09:30 | Drake Maye | pass_yds | under | 261.5 | 262.5 | 261.5 |  | $1000 | -113 | fd_move->under (130-149) |
-| Sun 09:30 | Efton Chism Iii | recv_yds | under | 5.5 | 7.5 |  |  |  | -125 | fd_move->under (130-149) |
-| Sun 09:30 | Efton Chism Iii | receptions | under | 0.5 | 0.5 |  |  |  | +116 | fd_juice->under (79-62) |
-| Sun 09:30 | Eli Raridon | receptions | under | 2.5 | 2.5 | 2.5 |  | $500 | -180 | fd_juice->under (79-62) |
-| Sun 09:30 | Hunter Henry | receptions | over | 3.5 | 3.5 | 3.5 |  | $500 | +102 | fd_juice->over (79-62) |
-| Sun 09:30 | Hunter Henry | recv_yds | over | 37.5 | 35.5 | 37.5 |  | $500 | -113 | fd_move->over (130-149) |
-| Sun 09:30 | Isaac Teslaa | recv_yds | under | 15.5 | 21.5 | 15.5 |  | $500 | -113 | fd_move->under (130-149) |
-| Sun 09:30 | Isaac Teslaa | receptions | under | 1.5 | 1.5 | 1.5 |  | $500 | -166 | fd_juice->under (79-62) |
-| Sun 09:30 | Jahmyr Gibbs | receptions | under | 4.5 | 4.5 | 4.5 |  | $1000 | -138 | fd_juice->under (79-62) |
-| Sun 09:30 | Jahmyr Gibbs | rush_yds | under | 90.5 | 97.5 | 90.5 |  | $2000 | -113 | fd_move->under (130-149) |
-| Sun 09:30 | Jared Goff | pass_tds | under | 1.5 | 1.5 | 1.5 |  | $1000 | +142 | fd_juice->under (79-62) |
-| Sun 09:30 | Jared Goff | rush_yds | over | 0.5 | 0.5 | 0.5 |  | $500 | -115 | fd_juice->over (79-62) |
-| Sun 09:30 | Rhamondre Stevenson | receptions | under | 2.5 | 3.5 | 2.5 |  | $250 | -114 | fd_move->under (130-149) |
-| Sun 09:30 | Rhamondre Stevenson | rush_yds | under | 40.5 | 46.5 | 40.5 |  | $250 | -113 | fd_move->under (130-149) |
-| Sun 09:30 | Sam Laporta | recv_yds | under | 41.5 | 43.5 | 41.5 |  | $2000 | -113 | fd_move->under (130-149) |
 | Sun 13:00 | Aaron Jones | recv_yds | over | 10.5 | 9.5 | 10.5 |  | $500 | -113 | fd_move->over (130-149) |
 | Sun 13:00 | Aaron Jones | receptions | over | 1.5 | 1.5 | 1.5 |  | $500 | -172 | fd_juice->over (79-62) |
 | Sun 13:00 | Adonai Mitchell | receptions | under | 2.5 | 2.5 | 2.5 |  | $500 | +100 | fd_juice->under (79-62) |
@@ -96,7 +78,6 @@ This is analysis, not picks.
 | Sun 13:00 | Chuba Hubbard | rush_yds | under | 79.5 | 80.5 | 79.5 |  | $500 | -113 | fd_move->under (130-149) |
 | Sun 13:00 | Dalton Kincaid | receptions | over | 3.5 | 3.5 | 3.5 |  | $500 | -102 | fd_juice->over (79-62) |
 | Sun 13:00 | Dalton Schultz | receptions | under | 3.5 | 3.5 | 3.5 |  | $500 | -172 | fd_juice->under (79-62) |
-| Sun 13:00 | Dalton Schultz | recv_yds | under | 27.5 | 31.5 | 27.5 |  | $500 | -113 | fd_move->under (130-149) |
 | Sun 13:00 | Daniel Bellinger | receptions | under | 1.5 | 1.5 | 1.5 |  | $500 | -162 | fd_juice->under (79-62) |
 | Sun 13:00 | Daniel Jones | pass_yds | over | 183.5 | 182.5 | 183.5 |  | $500 | -113 | fd_move->over (130-149) |
 | Sun 13:00 | Daniel Jones | pass_tds | under | 1.5 | 1.5 | 1.5 |  | $500 | -250 | fd_juice->under (79-62) |
@@ -115,7 +96,6 @@ This is analysis, not picks.
 | Sun 13:00 | Elic Ayomanor | recv_yds | under | 26.5 | 28.5 | 26.5 |  | $500 | -113 | fd_move->under (130-149) |
 | Sun 13:00 | Emmett Johnson | recv_yds | over | 25.5 | 12.5 | 25.5 |  | $500 | -113 | fd_move->over (130-149) |
 | Sun 13:00 | Emmett Johnson | receptions | over | 3.5 | 1.5 | 3.5 |  | $500 | +106 | fd_move->over (130-149) |
-| Sun 13:00 | Emmett Johnson | rush_yds | over | 73.5 | 9.5 | 73.5 |  | $500 | -113 | fd_move->over (130-149) |
 | Sun 13:00 | Garrett Wilson | recv_yds | under | 60.5 | 62.5 | 60.5 |  | $1000 | -113 | fd_move->under (130-149) |
 | Sun 13:00 | Garrett Wilson | receptions | under | 5.5 | 5.5 | 5.5 |  | $500 | -136 | fd_juice->under (79-62) |
 | Sun 13:00 | Gavin Bartholomew | recv_yds | over | 20.5 | 18.5 |  |  |  | -113 | fd_move->over (130-149) |
@@ -181,13 +161,13 @@ This is analysis, not picks.
 | Sun 13:00 | Noah Fant | receptions | over | 0.5 | 0.5 | 0.5 |  | $500 | -260 | fd_juice->over (79-62) |
 | Sun 13:00 | Noah Gray | recv_yds | over | 12.5 | 11.5 | 12.5 |  | $500 | -113 | fd_move->over (130-149) |
 | Sun 13:00 | Olamide Zaccheaus | receptions | over | 1.5 | 1.5 | 1.5 |  | $500 | +124 | fd_juice->over (79-62) |
-| Sun 13:00 | Olamide Zaccheaus | recv_yds | over | 8.5 | 7.5 | 8.5 |  | $500 | -113 | fd_move->over (130-149) |
 | Sun 13:00 | Ollie Gordon Ii | rush_yds | over | 72.5 | 70.5 | 72.5 |  | $500 | -113 | fd_move->over (130-149) |
 | Sun 13:00 | Ollie Gordon Ii | recv_yds | over | 5.5 | 5.5 | 5.5 |  | $500 | -113 | pin_price->over (29-21) |
 | Sun 13:00 | Ollie Gordon Ii | receptions | under | 1.5 | 1.5 | 1.5 |  | $500 | -114 | fd_juice->under (79-62) |
 | Sun 13:00 | Omar Cooper Jr | receptions | over | 3.5 | 2.5 | 3.5 |  | $500 | +102 | fd_move->over (130-149) |
 | Sun 13:00 | Parker Washington | receptions | over | 4.5 | 4.5 | 4.5 |  | $500 | +120 | pin_price->over (29-21) |
 | Sun 13:00 | Patrick Mahomes | pass_tds | over | 1.5 | 1.5 | 1.5 |  | $500 | -132 | fd_juice->over (79-62) |
+| Sun 13:00 | Patrick Mahomes | rush_yds | over | 8.5 | 8.5 | 8.5 |  | $500 | -113 | pin_price->over (29-21) |
 | Sun 13:00 | Pierre Strong | rush_yds | under | 10.5 | 15.5 | 10.5 |  | $250 | -114 | fd_move->under (130-149) |
 | Sun 13:00 | Quinshon Judkins | rush_yds | under | 43.5 | 44.5 | 43.5 |  | $500 | -113 | fd_move->under (130-149) |
 | Sun 13:00 | Rashee Rice | recv_yds | under | 55.5 | 56.5 | 55.5 |  | $250 | -113 | fd_move->under (130-149) |
@@ -257,6 +237,7 @@ This is analysis, not picks.
 | Sun 16:05 | Tyler Higbee | receptions | under | 3.5 | 3.5 | 3.5 |  | $500 | +102 | fd_juice->under (79-62) |
 | Sun 16:05 | Zach Charbonnet | receptions | under | 1.5 | 1.5 | 1.5 |  | $500 | +114 | fd_juice->under (79-62) |
 | Sun 16:25 | Brevyn Spannford | recv_yds | over | 23.5 | 20.5 | 23.5 |  | $500 | -113 | fd_move->over (130-149) |
+| Sun 16:25 | Brock Purdy | pass_tds | over | 1.5 | 1.5 | 1.5 |  | $500 | -225 | fd_juice->over (79-62) |
 | Sun 16:25 | Ceedee Lamb | recv_yds | over | 90.5 | 89.5 | 90.5 |  | $500 | -113 | fd_move->over (130-149) |
 | Sun 16:25 | Ceedee Lamb | receptions | under | 7.5 | 7.5 | 7.5 |  | $500 | -148 | fd_juice->under (79-62) |
 | Sun 16:25 | Christian Mccaffrey | rush_yds | over | 62.5 | 61.5 | 62.5 |  | $1000 | -113 | fd_move->over (130-149) |
@@ -278,6 +259,7 @@ This is analysis, not picks.
 | Sun 20:20 | Chase Brown | receptions | under | 4.5 | 4.5 | 4.5 |  | $500 | -140 | fd_juice->under (79-62) |
 | Sun 20:20 | Chase Brown | recv_yds | under | 24.5 | 24.5 | 23.5 | 1.0 | $500 | -113 | pin_value->under (98-90) |
 | Sun 20:20 | Chase Brown | rush_yds | over | 46.5 | 43.5 | 46.5 |  | $1000 | -113 | fd_move->over (130-149) |
+| Sun 20:20 | Darnell Washington | receptions | over | 2.5 | 2.5 | 2.5 |  | $500 | -112 | fd_juice->over (79-62) |
 | Sun 20:20 | Dk Metcalf | recv_yds | over | 53.5 | 49.5 | 53.5 |  | $500 | -113 | fd_move->over (130-149) |
 | Sun 20:20 | Dk Metcalf | receptions | over | 4.5 | 4.5 | 4.5 |  | $500 | +112 | fd_juice->over (79-62) |
 | Sun 20:20 | Germie Bernard | receptions | over | 4.5 | 3.5 | 4.5 |  | $500 | -122 | fd_move->over (130-149) |
@@ -315,19 +297,18 @@ This is analysis, not picks.
 
 | kickoff (ET) | player | stat | lean | FD | open | Pin | gap | limit | price | calls |
 |---|---|---|---|---|---|---|---|---|---|---|
-| Sun 09:30 | Corey Kiner | rush_yds | over | 30.5 | 53.5 | 51.5 | -21.0 | $250 | -113 | pin_value->over (98-90); fd_move->under (130-149) |
-| Sun 09:30 | Jared Goff | pass_yds | over | 266.5 | 268.5 | 268.5 | -2.0 | $2000 | -113 | pin_value->over (98-90); fd_move->under (130-149) |
-| Sun 09:30 | Rhamondre Stevenson | recv_yds | over | 18.5 | 21.5 | 21.5 | -3.0 | $250 | -113 | pin_value->over (98-90); fd_move->under (130-149) |
 | Sun 13:00 | Alvin Kamara | rush_yds | over | 11.5 | 14.5 | 13.5 | -2.0 | $250 | -113 | pin_value->over (98-90); fd_move->under (130-149) |
 | Sun 13:00 | Anthony Gould | recv_yds | under | 16.5 | 14.5 | 15.5 | 1.0 | $500 | -113 | pin_value->under (98-90); fd_move->over (130-149) |
 | Sun 13:00 | Ashton Dulin | recv_yds | under | 15.5 | 7.5 | 15.5 |  | $500 | -113 | pin_price->under (29-21); fd_move->over (130-149) |
-| Sun 13:00 | Ben Yurosek | recv_yds | over | 9.5 | 18.5 | 14.5 | -5.0 | $500 | -128 | pin_value->over (98-90); fd_move->under (130-149) |
-| Sun 13:00 | Ben Yurosek | receptions | over | 1.5 | 2.5 | 1.5 |  | $500 | +130 | pin_price->over (29-21); fd_move->under (130-149) |
+| Sun 13:00 | Ben Yurosek | recv_yds | over | 8.5 | 18.5 | 14.5 | -6.0 | $500 | -102 | pin_value->over (98-90); fd_move->under (130-149) |
+| Sun 13:00 | Ben Yurosek | receptions | over | 1.5 | 2.5 | 1.5 |  | $500 | +140 | pin_price->over (29-21); fd_move->under (130-149) |
 | Sun 13:00 | Breece Hall | rush_yds | over | 53.5 | 57.5 | 53.5 |  | $500 | -113 | pin_lead->over (17-8); fd_move->under (130-149) |
 | Sun 13:00 | Bryce Young | rush_yds | under | 9.5 | 8.5 | 9.5 |  | $500 | -113 | pin_price->under (29-21); fd_move->over (130-149) |
 | Sun 13:00 | Cam Ward | rush_yds | over | 10.5 | 11.5 | 11.5 | -1.0 | $500 | -113 | pin_value->over (98-90); fd_move->under (130-149) |
+| Sun 13:00 | Dalton Schultz | recv_yds | over | 27.5 | 31.5 | 27.5 |  | $500 | -113 | pin_price->over (29-21); fd_move->under (130-149) |
 | Sun 13:00 | Deshaun Watson | pass_yds | under | 208.5 | 207.5 | 208.5 |  | $1000 | -113 | pin_lead->under (17-8); fd_move->over (130-149) |
 | Sun 13:00 | Devaughn Vele | recv_yds | over | 29.5 | 31.5 | 29.5 |  | $500 | -113 | pin_lead->over (17-8); fd_move->under (130-149) |
+| Sun 13:00 | Emmett Johnson | rush_yds | under | 73.5 | 9.5 | 73.5 |  | $500 | -113 | pin_price->under (29-21); fd_move->over (130-149) |
 | Sun 13:00 | Harold Fannin Jr | receptions | under | 3.5 | 3.5 | 3.5 |  | $500 | +134 | pin_price->under (29-21); fd_juice->over (79-62) |
 | Sun 13:00 | Jordyn Tyson | recv_yds | under | 44.5 | 32.5 | 41.5 | 3.0 | $500 | -113 | pin_value->under (98-90); fd_move->over (130-149) |
 | Sun 13:00 | Kayshon Boutte | recv_yds | over | 20.5 | 23.5 | 21.5 | -1.0 | $250 | -113 | pin_value->over (98-90); fd_move->under (130-149) |
@@ -354,6 +335,7 @@ This is analysis, not picks.
 | Sun 16:25 | Javonte Williams | rush_yds | over | 60.5 | 67.5 | 63.5 | -3.0 | $1000 | -113 | pin_value->over (98-90); fd_move->under (130-149) |
 | Sun 16:25 | Jordan Watkins | recv_yds | over | 23.5 | 24.5 | 24.5 | -1.0 | $500 | -113 | pin_value->over (98-90); fd_move->under (130-149) |
 | Sun 16:25 | Kaelon Black | rush_yds | under | 36.5 | 33.5 | 34.5 | 2.0 | $500 | -113 | pin_value->under (98-90); fd_move->over (130-149) |
+| Sun 20:20 | Darnell Washington | recv_yds | under | 30.5 | 28.5 | 28.5 | 2.0 | $500 | -113 | pin_value->under (98-90); fd_move->over (130-149) |
 | Sun 20:20 | Dohnte Meyers | recv_yds | under | 21.5 | 19.5 | 19.5 | 2.0 | $500 | -113 | pin_value->under (98-90); fd_move->over (130-149) |
 | Mon 20:15 | Jakobi Lane | recv_yds | under | 19.5 | 18.5 | 19.5 |  | $250 | -114 | pin_lead->under (17-8); fd_move->over (130-149) |
 | Mon 20:15 | Jakobi Lane | receptions | over | 2.5 | 2.5 | 2.5 |  | $250 | +148 | pin_price->over (29-21); fd_juice->under (79-62) |
