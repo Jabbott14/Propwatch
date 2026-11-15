@@ -18296,5 +18296,5793 @@
   },
   "final": "24-21",
   "total_pts": 45
+ },
+ {
+  "gid": "290823",
+  "game": "New England Patriots @ Detroit Lions",
+  "away": "New England Patriots",
+  "home": "Detroit Lions",
+  "kickoff": "2026-11-15T14:30:00.000Z",
+  "week": 10,
+  "first_seen": "2026-11-10T0940Z",
+  "pin_matched": true,
+  "markets": {
+   "spread": {
+    "close": {
+     "t": "2026-11-15T1429Z",
+     "nb": 80486,
+     "line": {
+      "home": -2.5,
+      "away": 2.5
+     },
+     "odds": {
+      "home": -115,
+      "away": -105
+     },
+     "tix": {
+      "home": 53,
+      "away": 47
+     },
+     "mny": {
+      "home": 58,
+      "away": 42
+     },
+     "open": -1.5,
+     "first_seen": "2026-11-10T0940Z",
+     "open_src": "sbr_open",
+     "calls": {
+      "follow_move": "home",
+      "money_level": "home",
+      "sharp_gap": "home",
+      "money_moving": "away"
+     },
+     "move_pts": 1.0,
+     "mny_ratio": 1.09,
+     "gap": {
+      "home": 5,
+      "away": -5
+     },
+     "div": {
+      "home": -20,
+      "away": 20
+     },
+     "books": {
+      "books": 8,
+      "median": -2.5,
+      "spread_of_books": 0.0,
+      "books_up": 0,
+      "books_dn": 7
+     },
+     "pin": -2.5,
+     "pin_price": -112,
+     "pin_lim": 100000,
+     "pin_price_other": 102
+    },
+    "early": {
+     "t": "2026-11-10T1040Z",
+     "nb": 3362,
+     "line": {
+      "home": -2.5,
+      "away": 2.5
+     },
+     "odds": {
+      "home": -120,
+      "away": -100
+     },
+     "tix": {
+      "home": 13,
+      "away": 87
+     },
+     "mny": {
+      "home": 38,
+      "away": 62
+     },
+     "open": -1.5,
+     "first_seen": "2026-11-10T0940Z",
+     "open_src": "sbr_open",
+     "calls": {
+      "follow_move": "home",
+      "rlm": "home",
+      "rlm_ratio": "home",
+      "money_level": "away",
+      "sharp_gap": "home"
+     },
+     "move_pts": 1.0,
+     "public_side": "away",
+     "public_tix": 87,
+     "mny_ratio": 2.92,
+     "gap": {
+      "home": 25,
+      "away": -25
+     },
+     "div": {
+      "home": 0,
+      "away": 0
+     },
+     "books": {
+      "books": 8,
+      "median": -2.5,
+      "spread_of_books": 0.0,
+      "books_up": 0,
+      "books_dn": 7
+     },
+     "pin": -2.5,
+     "pin_price": -121,
+     "pin_lim": 10000,
+     "pin_price_other": 108
+    },
+    "early_graded": {
+     "follow_move": {
+      "side": "home",
+      "line": -2.5,
+      "odds": -120,
+      "res": "W",
+      "units": 0.833,
+      "took_fav": true,
+      "clv": 0.0
+     },
+     "rlm": {
+      "side": "home",
+      "line": -2.5,
+      "odds": -120,
+      "res": "W",
+      "units": 0.833,
+      "took_fav": true,
+      "clv": 0.0
+     },
+     "rlm_ratio": {
+      "side": "home",
+      "line": -2.5,
+      "odds": -120,
+      "res": "W",
+      "units": 0.833,
+      "took_fav": true,
+      "clv": 0.0
+     },
+     "money_level": {
+      "side": "away",
+      "line": 2.5,
+      "odds": -100,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": false,
+      "clv": 0.0
+     },
+     "sharp_gap": {
+      "side": "home",
+      "line": -2.5,
+      "odds": -120,
+      "res": "W",
+      "units": 0.833,
+      "took_fav": true,
+      "clv": 0.0
+     }
+    },
+    "close_graded": {
+     "follow_move": {
+      "side": "home",
+      "line": -2.5,
+      "odds": -115,
+      "res": "W",
+      "units": 0.87,
+      "took_fav": true
+     },
+     "money_level": {
+      "side": "home",
+      "line": -2.5,
+      "odds": -115,
+      "res": "W",
+      "units": 0.87,
+      "took_fav": true
+     },
+     "sharp_gap": {
+      "side": "home",
+      "line": -2.5,
+      "odds": -115,
+      "res": "W",
+      "units": 0.87,
+      "took_fav": true
+     },
+     "money_moving": {
+      "side": "away",
+      "line": 2.5,
+      "odds": -105,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": false
+     }
+    }
+   },
+   "total": {
+    "close": {
+     "t": "2026-11-15T1429Z",
+     "nb": 80486,
+     "line": {
+      "over": 50.5,
+      "under": 50.5
+     },
+     "odds": {
+      "over": -120,
+      "under": -100
+     },
+     "tix": {
+      "over": 15,
+      "under": 85
+     },
+     "mny": {
+      "over": 17,
+      "under": 83
+     },
+     "open": 50.5,
+     "first_seen": "2026-11-10T0940Z",
+     "open_src": "first_seen",
+     "calls": {
+      "money_level": "under",
+      "sharp_gap": "over",
+      "money_moving": "over",
+      "pin_value": "over"
+     },
+     "gap": {
+      "over": 2,
+      "under": -2
+     },
+     "div": {
+      "over": 2,
+      "under": -2
+     },
+     "pin": 51.0,
+     "pin_price": -115,
+     "pin_lim": 20000,
+     "pin_price_other": 102,
+     "pin_gap": -0.5,
+     "pin_open": 50.5,
+     "pin_moved_to": "over"
+    },
+    "early": {
+     "t": "2026-11-10T1040Z",
+     "nb": 3362,
+     "line": {
+      "over": 50.5,
+      "under": 50.5
+     },
+     "odds": {
+      "over": -115,
+      "under": -105
+     },
+     "tix": {
+      "over": 10,
+      "under": 90
+     },
+     "mny": {
+      "over": 10,
+      "under": 90
+     },
+     "open": 50.5,
+     "first_seen": "2026-11-10T0940Z",
+     "open_src": "first_seen",
+     "calls": {
+      "money_level": "under",
+      "pin_value": "over"
+     },
+     "gap": {
+      "over": 0,
+      "under": 0
+     },
+     "div": {
+      "over": 0,
+      "under": 0
+     },
+     "pin": 51.0,
+     "pin_price": -114,
+     "pin_lim": 3000,
+     "pin_price_other": -103,
+     "pin_gap": -0.5,
+     "pin_open": 50.5,
+     "pin_moved_to": "over"
+    },
+    "early_graded": {
+     "money_level": {
+      "side": "under",
+      "line": 50.5,
+      "odds": -105,
+      "res": "W",
+      "units": 0.952,
+      "took_fav": false,
+      "clv": 0.0
+     },
+     "pin_value": {
+      "side": "over",
+      "line": 50.5,
+      "odds": -115,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": true,
+      "clv": 0.0
+     }
+    },
+    "close_graded": {
+     "money_level": {
+      "side": "under",
+      "line": 50.5,
+      "odds": -100,
+      "res": "W",
+      "units": 1.0,
+      "took_fav": false
+     },
+     "sharp_gap": {
+      "side": "over",
+      "line": 50.5,
+      "odds": -120,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": true
+     },
+     "money_moving": {
+      "side": "over",
+      "line": 50.5,
+      "odds": -120,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": true
+     },
+     "pin_value": {
+      "side": "over",
+      "line": 50.5,
+      "odds": -120,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": true
+     }
+    }
+   },
+   "moneyline": {
+    "close": {
+     "t": "2026-11-15T1429Z",
+     "nb": 80486,
+     "line": {
+      "home": -138,
+      "away": 118
+     },
+     "odds": {
+      "home": -138,
+      "away": 118
+     },
+     "tix": {
+      "home": 83,
+      "away": 17
+     },
+     "mny": {
+      "home": 88,
+      "away": 12
+     },
+     "open": -105,
+     "first_seen": "2026-11-10T0940Z",
+     "open_src": "sbr_open",
+     "calls": {
+      "follow_move": "home",
+      "money_level": "home",
+      "sharp_gap": "home",
+      "money_moving": "away",
+      "consensus_gap": "away"
+     },
+     "move_pts": 6.8,
+     "mny_ratio": 1.06,
+     "gap": {
+      "home": 5,
+      "away": -5
+     },
+     "div": {
+      "home": -18,
+      "away": 18
+     },
+     "books": {
+      "books": 8,
+      "median": -115.0,
+      "spread_of_books": 13,
+      "fd_vs_median": null,
+      "books_up": 0,
+      "books_dn": 8
+     },
+     "pin": -143,
+     "pin_price": -143,
+     "pin_lim": 75000,
+     "pin_price_other": 129,
+     "fair": 57.4,
+     "pin_open": -145,
+     "pin_moved_to": "away"
+    },
+    "early": {
+     "t": "2026-11-10T1040Z",
+     "nb": 3362,
+     "line": {
+      "home": -154,
+      "away": 130
+     },
+     "odds": {
+      "home": -154,
+      "away": 130
+     },
+     "tix": {
+      "home": 68,
+      "away": 32
+     },
+     "mny": {
+      "home": 91,
+      "away": 9
+     },
+     "open": -105,
+     "first_seen": "2026-11-10T0940Z",
+     "open_src": "sbr_open",
+     "calls": {
+      "follow_move": "home",
+      "money_level": "home",
+      "sharp_gap": "home",
+      "consensus_gap": "away"
+     },
+     "move_pts": 9.4,
+     "mny_ratio": 1.34,
+     "gap": {
+      "home": 23,
+      "away": -23
+     },
+     "div": {
+      "home": 0,
+      "away": 0
+     },
+     "books": {
+      "books": 8,
+      "median": -120.0,
+      "spread_of_books": 10,
+      "fd_vs_median": null,
+      "books_up": 0,
+      "books_dn": 8
+     },
+     "pin": -154,
+     "pin_price": -154,
+     "pin_lim": 5000,
+     "pin_price_other": 136,
+     "fair": 58.9,
+     "pin_open": -145,
+     "pin_moved_to": "home"
+    },
+    "early_graded": {
+     "follow_move": {
+      "side": "home",
+      "line": -154,
+      "odds": -154,
+      "res": "W",
+      "units": 0.649,
+      "took_fav": true,
+      "clv": -2.6
+     },
+     "money_level": {
+      "side": "home",
+      "line": -154,
+      "odds": -154,
+      "res": "W",
+      "units": 0.649,
+      "took_fav": true,
+      "clv": -2.6
+     },
+     "sharp_gap": {
+      "side": "home",
+      "line": -154,
+      "odds": -154,
+      "res": "W",
+      "units": 0.649,
+      "took_fav": true,
+      "clv": -2.6
+     },
+     "consensus_gap": {
+      "side": "away",
+      "line": 130,
+      "odds": 130,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": false,
+      "clv": 2.4
+     }
+    },
+    "close_graded": {
+     "follow_move": {
+      "side": "home",
+      "line": -138,
+      "odds": -138,
+      "res": "W",
+      "units": 0.725,
+      "took_fav": true
+     },
+     "money_level": {
+      "side": "home",
+      "line": -138,
+      "odds": -138,
+      "res": "W",
+      "units": 0.725,
+      "took_fav": true
+     },
+     "sharp_gap": {
+      "side": "home",
+      "line": -138,
+      "odds": -138,
+      "res": "W",
+      "units": 0.725,
+      "took_fav": true
+     },
+     "money_moving": {
+      "side": "away",
+      "line": 118,
+      "odds": 118,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": false
+     },
+     "consensus_gap": {
+      "side": "away",
+      "line": 118,
+      "odds": 118,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": false
+     }
+    }
+   },
+   "tt_home": {
+    "close": {
+     "t": "2026-11-15T1429Z",
+     "nb": 80486,
+     "line": {
+      "over": 26.5,
+      "under": 26.5
+     },
+     "odds": {
+      "over": -122,
+      "under": -104
+     },
+     "tix": {
+      "over": 0,
+      "under": 0
+     },
+     "mny": {
+      "over": 0,
+      "under": 0
+     },
+     "open": 26.5,
+     "first_seen": "2026-11-10T0940Z",
+     "open_src": "first_seen",
+     "calls": {},
+     "gap": {
+      "over": 0,
+      "under": 0
+     },
+     "div": {
+      "over": 0,
+      "under": 0
+     },
+     "pin": 26.5,
+     "pin_price": -132,
+     "pin_lim": 5000,
+     "pin_price_other": 113
+    },
+    "early": {
+     "t": "2026-11-10T1040Z",
+     "nb": 3362,
+     "line": {
+      "over": 26.5,
+      "under": 26.5
+     },
+     "odds": {
+      "over": -122,
+      "under": -104
+     },
+     "tix": {
+      "over": 0,
+      "under": 0
+     },
+     "mny": {
+      "over": 0,
+      "under": 0
+     },
+     "open": 26.5,
+     "first_seen": "2026-11-10T0940Z",
+     "open_src": "first_seen",
+     "calls": {},
+     "gap": {
+      "over": 0,
+      "under": 0
+     },
+     "div": {
+      "over": 0,
+      "under": 0
+     },
+     "pin": 26.5,
+     "pin_price": -127,
+     "pin_lim": 2000,
+     "pin_price_other": 109
+    },
+    "early_graded": {},
+    "close_graded": {}
+   },
+   "tt_away": {
+    "close": {
+     "t": "2026-11-15T1429Z",
+     "nb": 80486,
+     "line": {
+      "over": 24.5,
+      "under": 24.5
+     },
+     "odds": {
+      "over": -108,
+      "under": -118
+     },
+     "tix": {
+      "over": 0,
+      "under": 0
+     },
+     "mny": {
+      "over": 0,
+      "under": 0
+     },
+     "open": 24.5,
+     "first_seen": "2026-11-10T0940Z",
+     "open_src": "first_seen",
+     "calls": {
+      "pin_value": "under"
+     },
+     "gap": {
+      "over": 0,
+      "under": 0
+     },
+     "div": {
+      "over": 0,
+      "under": 0
+     },
+     "pin": 23.5,
+     "pin_price": -139,
+     "pin_lim": 5000,
+     "pin_price_other": 118,
+     "pin_gap": 1.0
+    },
+    "early": {
+     "t": "2026-11-10T1040Z",
+     "nb": 3362,
+     "line": {
+      "over": 24.5,
+      "under": 24.5
+     },
+     "odds": {
+      "over": -102,
+      "under": -125
+     },
+     "tix": {
+      "over": 0,
+      "under": 0
+     },
+     "mny": {
+      "over": 0,
+      "under": 0
+     },
+     "open": 24.5,
+     "first_seen": "2026-11-10T0940Z",
+     "open_src": "first_seen",
+     "calls": {
+      "pin_value": "under"
+     },
+     "gap": {
+      "over": 0,
+      "under": 0
+     },
+     "div": {
+      "over": 0,
+      "under": 0
+     },
+     "pin": 23.5,
+     "pin_price": -131,
+     "pin_lim": 2000,
+     "pin_price_other": 112,
+     "pin_gap": 1.0
+    },
+    "early_graded": {
+     "pin_value": {
+      "side": "under",
+      "line": 24.5,
+      "odds": -125,
+      "res": "W",
+      "units": 0.8,
+      "took_fav": false,
+      "clv": 0.0
+     }
+    },
+    "close_graded": {
+     "pin_value": {
+      "side": "under",
+      "line": 24.5,
+      "odds": -118,
+      "res": "W",
+      "units": 0.847,
+      "took_fav": false
+     }
+    }
+   }
+  },
+  "final": "10-35",
+  "total_pts": 45
+ },
+ {
+  "gid": "290971",
+  "game": "Houston Texans @ Cleveland Browns",
+  "away": "Houston Texans",
+  "home": "Cleveland Browns",
+  "kickoff": "2026-11-15T18:00:00.000Z",
+  "week": 10,
+  "first_seen": "2026-11-10T0940Z",
+  "pin_matched": true,
+  "markets": {
+   "spread": {
+    "close": {
+     "t": "2026-11-15T1700Z",
+     "nb": 47922,
+     "line": {
+      "home": 4.5,
+      "away": -4.5
+     },
+     "odds": {
+      "home": -120,
+      "away": -100
+     },
+     "tix": {
+      "home": 32,
+      "away": 68
+     },
+     "mny": {
+      "home": 33,
+      "away": 67
+     },
+     "open": 3.5,
+     "first_seen": "2026-11-10T0940Z",
+     "open_src": "sbr_open",
+     "calls": {
+      "follow_move": "away",
+      "money_level": "away",
+      "sharp_gap": "home",
+      "money_moving": "away",
+      "consensus_gap": "home",
+      "pin_value": "home"
+     },
+     "move_pts": 1.0,
+     "mny_ratio": 0.99,
+     "gap": {
+      "home": 1,
+      "away": -1
+     },
+     "div": {
+      "home": -6,
+      "away": 6
+     },
+     "books": {
+      "books": 8,
+      "median": 3.5,
+      "spread_of_books": 1.0,
+      "fd_vs_median": 1.0,
+      "books_up": 1,
+      "books_dn": 4
+     },
+     "pin": 4.0,
+     "pin_price": -117,
+     "pin_lim": 100000,
+     "pin_price_other": 106,
+     "pin_gap": 0.5
+    },
+    "early": {
+     "t": "2026-11-10T1040Z",
+     "nb": 2433,
+     "line": {
+      "home": 4.5,
+      "away": -4.5
+     },
+     "odds": {
+      "home": -105,
+      "away": -115
+     },
+     "tix": {
+      "home": 30,
+      "away": 70
+     },
+     "mny": {
+      "home": 37,
+      "away": 63
+     },
+     "open": 3.5,
+     "first_seen": "2026-11-10T0940Z",
+     "open_src": "sbr_open",
+     "calls": {
+      "follow_move": "away",
+      "money_level": "away",
+      "sharp_gap": "home",
+      "pin_value": "away"
+     },
+     "move_pts": 1.0,
+     "mny_ratio": 0.9,
+     "gap": {
+      "home": 7,
+      "away": -7
+     },
+     "div": {
+      "home": 0,
+      "away": 0
+     },
+     "books": {
+      "books": 8,
+      "median": 4.5,
+      "spread_of_books": 0.5,
+      "books_up": 5,
+      "books_dn": 0
+     },
+     "pin": 5.0,
+     "pin_price": -108,
+     "pin_lim": 5000,
+     "pin_price_other": -104,
+     "pin_gap": -0.5,
+     "pin_open": 4.0,
+     "pin_moved_to": "away"
+    },
+    "early_graded": {
+     "follow_move": {
+      "side": "away",
+      "line": -4.5,
+      "odds": -115,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": true,
+      "clv": 0.0
+     },
+     "money_level": {
+      "side": "away",
+      "line": -4.5,
+      "odds": -115,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": true,
+      "clv": 0.0
+     },
+     "sharp_gap": {
+      "side": "home",
+      "line": 4.5,
+      "odds": -105,
+      "res": "W",
+      "units": 0.952,
+      "took_fav": false,
+      "clv": 0.0
+     },
+     "pin_value": {
+      "side": "away",
+      "line": -4.5,
+      "odds": -115,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": true,
+      "clv": 0.0
+     }
+    },
+    "close_graded": {
+     "follow_move": {
+      "side": "away",
+      "line": -4.5,
+      "odds": -100,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": true
+     },
+     "money_level": {
+      "side": "away",
+      "line": -4.5,
+      "odds": -100,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": true
+     },
+     "sharp_gap": {
+      "side": "home",
+      "line": 4.5,
+      "odds": -120,
+      "res": "W",
+      "units": 0.833,
+      "took_fav": false
+     },
+     "money_moving": {
+      "side": "away",
+      "line": -4.5,
+      "odds": -100,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": true
+     },
+     "consensus_gap": {
+      "side": "home",
+      "line": 4.5,
+      "odds": -120,
+      "res": "W",
+      "units": 0.833,
+      "took_fav": false
+     },
+     "pin_value": {
+      "side": "home",
+      "line": 4.5,
+      "odds": -120,
+      "res": "W",
+      "units": 0.833,
+      "took_fav": false
+     }
+    }
+   },
+   "total": {
+    "close": {
+     "t": "2026-11-15T1700Z",
+     "nb": 47922,
+     "line": {
+      "over": 41.5,
+      "under": 41.5
+     },
+     "odds": {
+      "over": -100,
+      "under": -120
+     },
+     "tix": {
+      "over": 59,
+      "under": 41
+     },
+     "mny": {
+      "over": 58,
+      "under": 42
+     },
+     "open": 39.5,
+     "first_seen": "2026-11-10T0940Z",
+     "open_src": "first_seen",
+     "calls": {
+      "follow_move": "over",
+      "money_level": "over",
+      "sharp_gap": "under",
+      "money_moving": "over",
+      "pin_value": "under"
+     },
+     "move_pts": 2.0,
+     "mny_ratio": 0.98,
+     "gap": {
+      "over": -1,
+      "under": 1
+     },
+     "div": {
+      "over": 26,
+      "under": -26
+     },
+     "pin": 41.0,
+     "pin_price": -104,
+     "pin_lim": 20000,
+     "pin_price_other": -108,
+     "pin_gap": 0.5,
+     "pin_open": 39.5,
+     "pin_moved_to": "over"
+    },
+    "early": {
+     "t": "2026-11-10T1040Z",
+     "nb": 2433,
+     "line": {
+      "over": 39.5,
+      "under": 39.5
+     },
+     "odds": {
+      "over": -115,
+      "under": -105
+     },
+     "tix": {
+      "over": 81,
+      "under": 19
+     },
+     "mny": {
+      "over": 54,
+      "under": 46
+     },
+     "open": 39.5,
+     "first_seen": "2026-11-10T0940Z",
+     "open_src": "first_seen",
+     "calls": {
+      "money_level": "over",
+      "sharp_gap": "under"
+     },
+     "gap": {
+      "over": -27,
+      "under": 27
+     },
+     "div": {
+      "over": 0,
+      "under": 0
+     },
+     "pin": 39.5,
+     "pin_price": -111,
+     "pin_lim": 3000,
+     "pin_price_other": -105
+    },
+    "early_graded": {
+     "money_level": {
+      "side": "over",
+      "line": 39.5,
+      "odds": -115,
+      "res": "W",
+      "units": 0.87,
+      "took_fav": true,
+      "clv": 2.0
+     },
+     "sharp_gap": {
+      "side": "under",
+      "line": 39.5,
+      "odds": -105,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": false,
+      "clv": -2.0
+     }
+    },
+    "close_graded": {
+     "follow_move": {
+      "side": "over",
+      "line": 41.5,
+      "odds": -100,
+      "res": "W",
+      "units": 1.0,
+      "took_fav": true
+     },
+     "money_level": {
+      "side": "over",
+      "line": 41.5,
+      "odds": -100,
+      "res": "W",
+      "units": 1.0,
+      "took_fav": true
+     },
+     "sharp_gap": {
+      "side": "under",
+      "line": 41.5,
+      "odds": -120,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": false
+     },
+     "money_moving": {
+      "side": "over",
+      "line": 41.5,
+      "odds": -100,
+      "res": "W",
+      "units": 1.0,
+      "took_fav": true
+     },
+     "pin_value": {
+      "side": "under",
+      "line": 41.5,
+      "odds": -120,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": false
+     }
+    }
+   },
+   "moneyline": {
+    "close": {
+     "t": "2026-11-15T1700Z",
+     "nb": 47922,
+     "line": {
+      "home": 166,
+      "away": -198
+     },
+     "odds": {
+      "home": 166,
+      "away": -198
+     },
+     "tix": {
+      "home": 9,
+      "away": 91
+     },
+     "mny": {
+      "home": 7,
+      "away": 93
+     },
+     "open": -108,
+     "first_seen": "2026-11-10T0940Z",
+     "open_src": "sbr_open",
+     "calls": {
+      "follow_move": "away",
+      "money_level": "away",
+      "sharp_gap": "away",
+      "consensus_gap": "home"
+     },
+     "move_pts": 14.3,
+     "mny_ratio": 1.02,
+     "gap": {
+      "home": -2,
+      "away": 2
+     },
+     "div": {
+      "home": 0,
+      "away": 0
+     },
+     "books": {
+      "books": 8,
+      "median": -109.5,
+      "spread_of_books": 28,
+      "fd_vs_median": null,
+      "books_up": 4,
+      "books_dn": 3
+     },
+     "pin": 163,
+     "pin_price": 163,
+     "pin_lim": 75000,
+     "pin_price_other": -183,
+     "fair": 37.0,
+     "pin_open": 184,
+     "pin_moved_to": "home"
+    },
+    "early": {
+     "t": "2026-11-10T1040Z",
+     "nb": 2433,
+     "line": {
+      "home": 194,
+      "away": -235
+     },
+     "odds": {
+      "home": 194,
+      "away": -235
+     },
+     "tix": {
+      "home": 9,
+      "away": 91
+     },
+     "mny": {
+      "home": 7,
+      "away": 93
+     },
+     "open": -108,
+     "first_seen": "2026-11-10T0940Z",
+     "open_src": "sbr_open",
+     "calls": {
+      "follow_move": "away",
+      "money_level": "away",
+      "sharp_gap": "away",
+      "consensus_gap": "home"
+     },
+     "move_pts": 17.9,
+     "mny_ratio": 1.02,
+     "gap": {
+      "home": -2,
+      "away": 2
+     },
+     "div": {
+      "home": 0,
+      "away": 0
+     },
+     "books": {
+      "books": 8,
+      "median": -105.5,
+      "spread_of_books": 7,
+      "fd_vs_median": null,
+      "books_up": 3,
+      "books_dn": 3
+     },
+     "pin": 195,
+     "pin_price": 195,
+     "pin_lim": 3000,
+     "pin_price_other": -227,
+     "fair": 32.8,
+     "pin_open": 184,
+     "pin_moved_to": "away"
+    },
+    "early_graded": {
+     "follow_move": {
+      "side": "away",
+      "line": -235,
+      "odds": -235,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": true,
+      "clv": -3.7
+     },
+     "money_level": {
+      "side": "away",
+      "line": -235,
+      "odds": -235,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": true,
+      "clv": -3.7
+     },
+     "sharp_gap": {
+      "side": "away",
+      "line": -235,
+      "odds": -235,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": true,
+      "clv": -3.7
+     },
+     "consensus_gap": {
+      "side": "home",
+      "line": 194,
+      "odds": 194,
+      "res": "W",
+      "units": 1.94,
+      "took_fav": false,
+      "clv": 3.6
+     }
+    },
+    "close_graded": {
+     "follow_move": {
+      "side": "away",
+      "line": -198,
+      "odds": -198,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": true
+     },
+     "money_level": {
+      "side": "away",
+      "line": -198,
+      "odds": -198,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": true
+     },
+     "sharp_gap": {
+      "side": "away",
+      "line": -198,
+      "odds": -198,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": true
+     },
+     "consensus_gap": {
+      "side": "home",
+      "line": 166,
+      "odds": 166,
+      "res": "W",
+      "units": 1.66,
+      "took_fav": false
+     }
+    }
+   },
+   "tt_home": {
+    "close": {
+     "t": "2026-11-15T1700Z",
+     "nb": 47922,
+     "line": {
+      "over": 18.5,
+      "under": 18.5
+     },
+     "odds": {
+      "over": -118,
+      "under": -108
+     },
+     "tix": {
+      "over": 0,
+      "under": 0
+     },
+     "mny": {
+      "over": 0,
+      "under": 0
+     },
+     "open": 17.5,
+     "first_seen": "2026-11-10T0940Z",
+     "open_src": "first_seen",
+     "calls": {
+      "follow_move": "over",
+      "pin_value": "under"
+     },
+     "move_pts": 1.0,
+     "gap": {
+      "over": 0,
+      "under": 0
+     },
+     "div": {
+      "over": 0,
+      "under": 0
+     },
+     "pin": 16.5,
+     "pin_price": -164,
+     "pin_lim": 5000,
+     "pin_price_other": 139,
+     "pin_gap": 2.0
+    },
+    "early": {
+     "t": "2026-11-10T1040Z",
+     "nb": 2433,
+     "line": {
+      "over": 17.5,
+      "under": 17.5
+     },
+     "odds": {
+      "over": -100,
+      "under": -130
+     },
+     "tix": {
+      "over": 0,
+      "under": 0
+     },
+     "mny": {
+      "over": 0,
+      "under": 0
+     },
+     "open": 17.5,
+     "first_seen": "2026-11-10T0940Z",
+     "open_src": "first_seen",
+     "calls": {
+      "pin_value": "under"
+     },
+     "gap": {
+      "over": 0,
+      "under": 0
+     },
+     "div": {
+      "over": 0,
+      "under": 0
+     },
+     "pin": 16.5,
+     "pin_price": -123,
+     "pin_lim": 2000,
+     "pin_price_other": 106,
+     "pin_gap": 1.0
+    },
+    "early_graded": {
+     "pin_value": {
+      "side": "under",
+      "line": 17.5,
+      "odds": -130,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": false,
+      "clv": -1.0
+     }
+    },
+    "close_graded": {
+     "follow_move": {
+      "side": "over",
+      "line": 18.5,
+      "odds": -118,
+      "res": "W",
+      "units": 0.847,
+      "took_fav": true
+     },
+     "pin_value": {
+      "side": "under",
+      "line": 18.5,
+      "odds": -108,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": false
+     }
+    }
+   },
+   "tt_away": {
+    "close": {
+     "t": "2026-11-15T1700Z",
+     "nb": 47922,
+     "line": {
+      "over": 22.5,
+      "under": 22.5
+     },
+     "odds": {
+      "over": -122,
+      "under": -104
+     },
+     "tix": {
+      "over": 0,
+      "under": 0
+     },
+     "mny": {
+      "over": 0,
+      "under": 0
+     },
+     "open": 22.5,
+     "first_seen": "2026-11-10T0940Z",
+     "open_src": "first_seen",
+     "calls": {},
+     "gap": {
+      "over": 0,
+      "under": 0
+     },
+     "div": {
+      "over": 0,
+      "under": 0
+     },
+     "pin": 22.5,
+     "pin_price": -112,
+     "pin_lim": 5000,
+     "pin_price_other": -104
+    },
+    "early": {
+     "t": "2026-11-10T1040Z",
+     "nb": 2433,
+     "line": {
+      "over": 22.5,
+      "under": 22.5
+     },
+     "odds": {
+      "over": -118,
+      "under": -108
+     },
+     "tix": {
+      "over": 0,
+      "under": 0
+     },
+     "mny": {
+      "over": 0,
+      "under": 0
+     },
+     "open": 22.5,
+     "first_seen": "2026-11-10T0940Z",
+     "open_src": "first_seen",
+     "calls": {},
+     "gap": {
+      "over": 0,
+      "under": 0
+     },
+     "div": {
+      "over": 0,
+      "under": 0
+     },
+     "pin": 22.5,
+     "pin_price": -114,
+     "pin_lim": 2000,
+     "pin_price_other": -102
+    },
+    "early_graded": {},
+    "close_graded": {}
+   }
+  },
+  "final": "24-27",
+  "total_pts": 51
+ },
+ {
+  "gid": "290972",
+  "game": "Jacksonville Jaguars @ Tennessee Titans",
+  "away": "Jacksonville Jaguars",
+  "home": "Tennessee Titans",
+  "kickoff": "2026-11-15T18:00:00.000Z",
+  "week": 10,
+  "first_seen": "2026-11-10T0940Z",
+  "pin_matched": true,
+  "markets": {
+   "spread": {
+    "close": {
+     "t": "2026-11-15T1700Z",
+     "nb": 57817,
+     "line": {
+      "home": 10.5,
+      "away": -10.5
+     },
+     "odds": {
+      "home": -110,
+      "away": -110
+     },
+     "tix": {
+      "home": 11,
+      "away": 89
+     },
+     "mny": {
+      "home": 16,
+      "away": 84
+     },
+     "open": 10,
+     "first_seen": "2026-11-10T0940Z",
+     "open_src": "sbr_open",
+     "calls": {
+      "follow_move": "away",
+      "money_level": "away",
+      "sharp_gap": "home",
+      "money_moving": "home"
+     },
+     "move_pts": 0.5,
+     "mny_ratio": 0.94,
+     "gap": {
+      "home": 5,
+      "away": -5
+     },
+     "div": {
+      "home": 6,
+      "away": -6
+     },
+     "books": {
+      "books": 8,
+      "median": 10.5,
+      "spread_of_books": 1.0,
+      "books_up": 8,
+      "books_dn": 0
+     },
+     "pin": 10.5,
+     "pin_price": 100,
+     "pin_lim": 100000,
+     "pin_price_other": -111,
+     "pin_open": 9.5,
+     "pin_moved_to": "away"
+    },
+    "early": {
+     "t": "2026-11-10T1040Z",
+     "nb": 2584,
+     "line": {
+      "home": 10.5,
+      "away": -10.5
+     },
+     "odds": {
+      "home": -115,
+      "away": -105
+     },
+     "tix": {
+      "home": 11,
+      "away": 89
+     },
+     "mny": {
+      "home": 10,
+      "away": 90
+     },
+     "open": 10,
+     "first_seen": "2026-11-10T0940Z",
+     "open_src": "sbr_open",
+     "calls": {
+      "follow_move": "away",
+      "money_level": "away",
+      "sharp_gap": "away"
+     },
+     "move_pts": 0.5,
+     "mny_ratio": 1.01,
+     "gap": {
+      "home": -1,
+      "away": 1
+     },
+     "div": {
+      "home": 0,
+      "away": 0
+     },
+     "books": {
+      "books": 8,
+      "median": 10.5,
+      "spread_of_books": 1.0,
+      "books_up": 6,
+      "books_dn": 0
+     },
+     "pin": 10.5,
+     "pin_price": -105,
+     "pin_lim": 5000,
+     "pin_price_other": -107,
+     "pin_open": 9.5,
+     "pin_moved_to": "away"
+    },
+    "early_graded": {
+     "follow_move": {
+      "side": "away",
+      "line": -10.5,
+      "odds": -105,
+      "res": "W",
+      "units": 0.952,
+      "took_fav": true,
+      "clv": 0.0
+     },
+     "money_level": {
+      "side": "away",
+      "line": -10.5,
+      "odds": -105,
+      "res": "W",
+      "units": 0.952,
+      "took_fav": true,
+      "clv": 0.0
+     },
+     "sharp_gap": {
+      "side": "away",
+      "line": -10.5,
+      "odds": -105,
+      "res": "W",
+      "units": 0.952,
+      "took_fav": true,
+      "clv": 0.0
+     }
+    },
+    "close_graded": {
+     "follow_move": {
+      "side": "away",
+      "line": -10.5,
+      "odds": -110,
+      "res": "W",
+      "units": 0.909,
+      "took_fav": true
+     },
+     "money_level": {
+      "side": "away",
+      "line": -10.5,
+      "odds": -110,
+      "res": "W",
+      "units": 0.909,
+      "took_fav": true
+     },
+     "sharp_gap": {
+      "side": "home",
+      "line": 10.5,
+      "odds": -110,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": false
+     },
+     "money_moving": {
+      "side": "home",
+      "line": 10.5,
+      "odds": -110,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": false
+     }
+    }
+   },
+   "total": {
+    "close": {
+     "t": "2026-11-15T1700Z",
+     "nb": 57817,
+     "line": {
+      "over": 46.5,
+      "under": 46.5
+     },
+     "odds": {
+      "over": -100,
+      "under": -120
+     },
+     "tix": {
+      "over": 63,
+      "under": 37
+     },
+     "mny": {
+      "over": 69,
+      "under": 31
+     },
+     "open": 46.5,
+     "first_seen": "2026-11-10T0940Z",
+     "open_src": "first_seen",
+     "calls": {
+      "money_level": "over",
+      "sharp_gap": "over",
+      "money_moving": "under",
+      "pin_value": "under"
+     },
+     "gap": {
+      "over": 6,
+      "under": -6
+     },
+     "div": {
+      "over": -6,
+      "under": 6
+     },
+     "pin": 45.0,
+     "pin_price": -117,
+     "pin_lim": 20000,
+     "pin_price_other": 104,
+     "pin_gap": 1.5,
+     "pin_open": 45.5,
+     "pin_moved_to": "under"
+    },
+    "early": {
+     "t": "2026-11-10T1040Z",
+     "nb": 2584,
+     "line": {
+      "over": 46.5,
+      "under": 46.5
+     },
+     "odds": {
+      "over": -110,
+      "under": -110
+     },
+     "tix": {
+      "over": 75,
+      "under": 25
+     },
+     "mny": {
+      "over": 87,
+      "under": 13
+     },
+     "open": 46.5,
+     "first_seen": "2026-11-10T0940Z",
+     "open_src": "first_seen",
+     "calls": {
+      "money_level": "over",
+      "sharp_gap": "over"
+     },
+     "gap": {
+      "over": 12,
+      "under": -12
+     },
+     "div": {
+      "over": 0,
+      "under": 0
+     },
+     "pin": 46.5,
+     "pin_price": -102,
+     "pin_lim": 3000,
+     "pin_price_other": -114,
+     "pin_open": 45.5,
+     "pin_moved_to": "over"
+    },
+    "early_graded": {
+     "money_level": {
+      "side": "over",
+      "line": 46.5,
+      "odds": -110,
+      "res": "W",
+      "units": 0.909,
+      "took_fav": true,
+      "clv": 0.0
+     },
+     "sharp_gap": {
+      "side": "over",
+      "line": 46.5,
+      "odds": -110,
+      "res": "W",
+      "units": 0.909,
+      "took_fav": true,
+      "clv": 0.0
+     }
+    },
+    "close_graded": {
+     "money_level": {
+      "side": "over",
+      "line": 46.5,
+      "odds": -100,
+      "res": "W",
+      "units": 1.0,
+      "took_fav": true
+     },
+     "sharp_gap": {
+      "side": "over",
+      "line": 46.5,
+      "odds": -100,
+      "res": "W",
+      "units": 1.0,
+      "took_fav": true
+     },
+     "money_moving": {
+      "side": "under",
+      "line": 46.5,
+      "odds": -120,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": false
+     },
+     "pin_value": {
+      "side": "under",
+      "line": 46.5,
+      "odds": -120,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": false
+     }
+    }
+   },
+   "moneyline": {
+    "close": {
+     "t": "2026-11-15T1700Z",
+     "nb": 57817,
+     "line": {
+      "home": 480,
+      "away": -650
+     },
+     "odds": {
+      "home": 480,
+      "away": -650
+     },
+     "tix": {
+      "home": 1,
+      "away": 99
+     },
+     "mny": {
+      "home": 2,
+      "away": 98
+     },
+     "open": -110,
+     "first_seen": "2026-11-10T0940Z",
+     "open_src": "sbr_open",
+     "calls": {
+      "follow_move": "away",
+      "money_level": "away",
+      "sharp_gap": "home",
+      "money_moving": "home",
+      "consensus_gap": "home",
+      "pin_value": "home"
+     },
+     "move_pts": 35.1,
+     "mny_ratio": 0.99,
+     "gap": {
+      "home": 1,
+      "away": -1
+     },
+     "div": {
+      "home": 1,
+      "away": -1
+     },
+     "books": {
+      "books": 8,
+      "median": -110.0,
+      "spread_of_books": 11,
+      "fd_vs_median": null,
+      "books_up": 4,
+      "books_dn": 3
+     },
+     "pin": 418,
+     "pin_price": 418,
+     "pin_lim": 75000,
+     "pin_price_other": -520,
+     "fair": 18.7,
+     "edge_pct": 8.52,
+     "pin_open": 359,
+     "pin_moved_to": "away"
+    },
+    "early": {
+     "t": "2026-11-10T1040Z",
+     "nb": 2584,
+     "line": {
+      "home": 440,
+      "away": -590
+     },
+     "odds": {
+      "home": 440,
+      "away": -590
+     },
+     "tix": {
+      "home": 2,
+      "away": 98
+     },
+     "mny": {
+      "home": 2,
+      "away": 98
+     },
+     "open": -110,
+     "first_seen": "2026-11-10T0940Z",
+     "open_src": "sbr_open",
+     "calls": {
+      "follow_move": "away",
+      "money_level": "away",
+      "consensus_gap": "home",
+      "pin_value": "home"
+     },
+     "move_pts": 33.9,
+     "mny_ratio": 1.0,
+     "gap": {
+      "home": 0,
+      "away": 0
+     },
+     "div": {
+      "home": 0,
+      "away": 0
+     },
+     "books": {
+      "books": 8,
+      "median": -111.0,
+      "spread_of_books": 12,
+      "fd_vs_median": null,
+      "books_up": 2,
+      "books_dn": 3
+     },
+     "pin": 410,
+     "pin_price": 410,
+     "pin_lim": 3000,
+     "pin_price_other": -533,
+     "fair": 18.9,
+     "edge_pct": 2.0,
+     "pin_open": 359,
+     "pin_moved_to": "away"
+    },
+    "early_graded": {
+     "follow_move": {
+      "side": "away",
+      "line": -590,
+      "odds": -590,
+      "res": "W",
+      "units": 0.169,
+      "took_fav": true,
+      "clv": 1.2
+     },
+     "money_level": {
+      "side": "away",
+      "line": -590,
+      "odds": -590,
+      "res": "W",
+      "units": 0.169,
+      "took_fav": true,
+      "clv": 1.2
+     },
+     "consensus_gap": {
+      "side": "home",
+      "line": 440,
+      "odds": 440,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": false,
+      "clv": -1.3
+     },
+     "pin_value": {
+      "side": "home",
+      "line": 440,
+      "odds": 440,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": false,
+      "clv": -1.3
+     }
+    },
+    "close_graded": {
+     "follow_move": {
+      "side": "away",
+      "line": -650,
+      "odds": -650,
+      "res": "W",
+      "units": 0.154,
+      "took_fav": true
+     },
+     "money_level": {
+      "side": "away",
+      "line": -650,
+      "odds": -650,
+      "res": "W",
+      "units": 0.154,
+      "took_fav": true
+     },
+     "sharp_gap": {
+      "side": "home",
+      "line": 480,
+      "odds": 480,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": false
+     },
+     "money_moving": {
+      "side": "home",
+      "line": 480,
+      "odds": 480,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": false
+     },
+     "consensus_gap": {
+      "side": "home",
+      "line": 480,
+      "odds": 480,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": false
+     },
+     "pin_value": {
+      "side": "home",
+      "line": 480,
+      "odds": 480,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": false
+     }
+    }
+   },
+   "tt_home": {
+    "close": {
+     "t": "2026-11-15T1700Z",
+     "nb": 57817,
+     "line": {
+      "over": 16.5,
+      "under": 16.5
+     },
+     "odds": {
+      "over": -120,
+      "under": -106
+     },
+     "tix": {
+      "over": 0,
+      "under": 0
+     },
+     "mny": {
+      "over": 0,
+      "under": 0
+     },
+     "open": 17.5,
+     "first_seen": "2026-11-10T0940Z",
+     "open_src": "first_seen",
+     "calls": {
+      "follow_move": "under",
+      "pin_value": "over"
+     },
+     "move_pts": 1.0,
+     "gap": {
+      "over": 0,
+      "under": 0
+     },
+     "div": {
+      "over": 0,
+      "under": 0
+     },
+     "pin": 17.5,
+     "pin_price": 116,
+     "pin_lim": 5000,
+     "pin_price_other": -136,
+     "pin_gap": -1.0
+    },
+    "early": {
+     "t": "2026-11-10T1040Z",
+     "nb": 2584,
+     "line": {
+      "over": 17.5,
+      "under": 17.5
+     },
+     "odds": {
+      "over": -100,
+      "under": -128
+     },
+     "tix": {
+      "over": 0,
+      "under": 0
+     },
+     "mny": {
+      "over": 0,
+      "under": 0
+     },
+     "open": 17.5,
+     "first_seen": "2026-11-10T0940Z",
+     "open_src": "first_seen",
+     "calls": {},
+     "gap": {
+      "over": 0,
+      "under": 0
+     },
+     "div": {
+      "over": 0,
+      "under": 0
+     },
+     "pin": 17.5,
+     "pin_price": 110,
+     "pin_lim": 2000,
+     "pin_price_other": -129
+    },
+    "early_graded": {},
+    "close_graded": {
+     "follow_move": {
+      "side": "under",
+      "line": 16.5,
+      "odds": -106,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": false
+     },
+     "pin_value": {
+      "side": "over",
+      "line": 16.5,
+      "odds": -120,
+      "res": "W",
+      "units": 0.833,
+      "took_fav": true
+     }
+    }
+   },
+   "tt_away": {
+    "close": {
+     "t": "2026-11-15T1700Z",
+     "nb": 57817,
+     "line": {
+      "over": 28.5,
+      "under": 28.5
+     },
+     "odds": {
+      "over": -113,
+      "under": -113
+     },
+     "tix": {
+      "over": 0,
+      "under": 0
+     },
+     "mny": {
+      "over": 0,
+      "under": 0
+     },
+     "open": 28.5,
+     "first_seen": "2026-11-10T0940Z",
+     "open_src": "first_seen",
+     "calls": {
+      "pin_value": "under"
+     },
+     "gap": {
+      "over": 0,
+      "under": 0
+     },
+     "div": {
+      "over": 0,
+      "under": 0
+     },
+     "pin": 27.5,
+     "pin_price": -132,
+     "pin_lim": 5000,
+     "pin_price_other": 113,
+     "pin_gap": 1.0
+    },
+    "early": {
+     "t": "2026-11-10T1040Z",
+     "nb": 2584,
+     "line": {
+      "over": 28.5,
+      "under": 28.5
+     },
+     "odds": {
+      "over": -113,
+      "under": -113
+     },
+     "tix": {
+      "over": 0,
+      "under": 0
+     },
+     "mny": {
+      "over": 0,
+      "under": 0
+     },
+     "open": 28.5,
+     "first_seen": "2026-11-10T0940Z",
+     "open_src": "first_seen",
+     "calls": {
+      "pin_value": "under"
+     },
+     "gap": {
+      "over": 0,
+      "under": 0
+     },
+     "div": {
+      "over": 0,
+      "under": 0
+     },
+     "pin": 27.5,
+     "pin_price": -126,
+     "pin_lim": 2000,
+     "pin_price_other": 108,
+     "pin_gap": 1.0
+    },
+    "early_graded": {
+     "pin_value": {
+      "side": "under",
+      "line": 28.5,
+      "odds": -113,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": false,
+      "clv": 0.0
+     }
+    },
+    "close_graded": {
+     "pin_value": {
+      "side": "under",
+      "line": 28.5,
+      "odds": -113,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": false
+     }
+    }
+   }
+  },
+  "final": "40-23",
+  "total_pts": 63
+ },
+ {
+  "gid": "290973",
+  "game": "Minnesota Vikings @ Green Bay Packers",
+  "away": "Minnesota Vikings",
+  "home": "Green Bay Packers",
+  "kickoff": "2026-11-15T18:00:00.000Z",
+  "week": 10,
+  "first_seen": "2026-11-10T0940Z",
+  "pin_matched": true,
+  "markets": {
+   "spread": {
+    "close": {
+     "t": "2026-11-15T1700Z",
+     "nb": 65052,
+     "line": {
+      "home": -2.5,
+      "away": 2.5
+     },
+     "odds": {
+      "home": -120,
+      "away": -100
+     },
+     "tix": {
+      "home": 57,
+      "away": 43
+     },
+     "mny": {
+      "home": 54,
+      "away": 46
+     },
+     "open": -3,
+     "first_seen": "2026-11-10T0940Z",
+     "open_src": "sbr_open",
+     "calls": {
+      "follow_move": "away",
+      "money_level": "home",
+      "sharp_gap": "away",
+      "money_moving": "away",
+      "pin_value": "home"
+     },
+     "move_pts": 0.5,
+     "mny_ratio": 1.07,
+     "gap": {
+      "home": -3,
+      "away": 3
+     },
+     "div": {
+      "home": -21,
+      "away": 21
+     },
+     "books": {
+      "books": 8,
+      "median": -2.5,
+      "spread_of_books": 0.0,
+      "books_up": 3,
+      "books_dn": 0
+     },
+     "pin": -3.0,
+     "pin_price": 104,
+     "pin_lim": 100000,
+     "pin_price_other": -115,
+     "pin_gap": 0.5,
+     "pin_open": -5.5,
+     "pin_moved_to": "away"
+    },
+    "early": {
+     "t": "2026-11-10T1040Z",
+     "nb": 2075,
+     "line": {
+      "home": -4.5,
+      "away": 4.5
+     },
+     "odds": {
+      "home": -110,
+      "away": -110
+     },
+     "tix": {
+      "home": 62,
+      "away": 38
+     },
+     "mny": {
+      "home": 80,
+      "away": 20
+     },
+     "open": -3,
+     "first_seen": "2026-11-10T0940Z",
+     "open_src": "sbr_open",
+     "calls": {
+      "follow_move": "home",
+      "money_level": "home",
+      "sharp_gap": "home"
+     },
+     "move_pts": 1.5,
+     "mny_ratio": 1.29,
+     "gap": {
+      "home": 18,
+      "away": -18
+     },
+     "div": {
+      "home": 0,
+      "away": 0
+     },
+     "books": {
+      "books": 8,
+      "median": -4.5,
+      "spread_of_books": 0.0,
+      "books_up": 0,
+      "books_dn": 7
+     }
+    },
+    "early_graded": {
+     "follow_move": {
+      "side": "home",
+      "line": -4.5,
+      "odds": -110,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": true,
+      "clv": -2.0
+     },
+     "money_level": {
+      "side": "home",
+      "line": -4.5,
+      "odds": -110,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": true,
+      "clv": -2.0
+     },
+     "sharp_gap": {
+      "side": "home",
+      "line": -4.5,
+      "odds": -110,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": true,
+      "clv": -2.0
+     }
+    },
+    "close_graded": {
+     "follow_move": {
+      "side": "away",
+      "line": 2.5,
+      "odds": -100,
+      "res": "W",
+      "units": 1.0,
+      "took_fav": false
+     },
+     "money_level": {
+      "side": "home",
+      "line": -2.5,
+      "odds": -120,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": true
+     },
+     "sharp_gap": {
+      "side": "away",
+      "line": 2.5,
+      "odds": -100,
+      "res": "W",
+      "units": 1.0,
+      "took_fav": false
+     },
+     "money_moving": {
+      "side": "away",
+      "line": 2.5,
+      "odds": -100,
+      "res": "W",
+      "units": 1.0,
+      "took_fav": false
+     },
+     "pin_value": {
+      "side": "home",
+      "line": -2.5,
+      "odds": -120,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": true
+     }
+    }
+   },
+   "total": {
+    "close": {
+     "t": "2026-11-15T1700Z",
+     "nb": 65052,
+     "line": {
+      "over": 42.5,
+      "under": 42.5
+     },
+     "odds": {
+      "over": -105,
+      "under": -115
+     },
+     "tix": {
+      "over": 62,
+      "under": 38
+     },
+     "mny": {
+      "over": 70,
+      "under": 30
+     },
+     "open": 40.5,
+     "first_seen": "2026-11-10T0940Z",
+     "open_src": "first_seen",
+     "calls": {
+      "follow_move": "over",
+      "money_level": "over",
+      "sharp_gap": "over",
+      "money_moving": "over",
+      "pin_value": "under"
+     },
+     "move_pts": 2.0,
+     "mny_ratio": 1.13,
+     "gap": {
+      "over": 8,
+      "under": -8
+     },
+     "div": {
+      "over": 24,
+      "under": -24
+     },
+     "pin": 42.0,
+     "pin_price": -106,
+     "pin_lim": 20000,
+     "pin_price_other": -106,
+     "pin_gap": 0.5,
+     "pin_open": 40.0,
+     "pin_moved_to": "over"
+    },
+    "early": {
+     "t": "2026-11-10T1040Z",
+     "nb": 2075,
+     "line": {
+      "over": 40.5,
+      "under": 40.5
+     },
+     "odds": {
+      "over": -115,
+      "under": -105
+     },
+     "tix": {
+      "over": 78,
+      "under": 22
+     },
+     "mny": {
+      "over": 61,
+      "under": 39
+     },
+     "open": 40.5,
+     "first_seen": "2026-11-10T0940Z",
+     "open_src": "first_seen",
+     "calls": {
+      "money_level": "over",
+      "sharp_gap": "under",
+      "money_moving": "under"
+     },
+     "gap": {
+      "over": -17,
+      "under": 17
+     },
+     "div": {
+      "over": -1,
+      "under": 1
+     }
+    },
+    "early_graded": {
+     "money_level": {
+      "side": "over",
+      "line": 40.5,
+      "odds": -115,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": true,
+      "clv": 2.0
+     },
+     "sharp_gap": {
+      "side": "under",
+      "line": 40.5,
+      "odds": -105,
+      "res": "W",
+      "units": 0.952,
+      "took_fav": false,
+      "clv": -2.0
+     },
+     "money_moving": {
+      "side": "under",
+      "line": 40.5,
+      "odds": -105,
+      "res": "W",
+      "units": 0.952,
+      "took_fav": false,
+      "clv": -2.0
+     }
+    },
+    "close_graded": {
+     "follow_move": {
+      "side": "over",
+      "line": 42.5,
+      "odds": -105,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": true
+     },
+     "money_level": {
+      "side": "over",
+      "line": 42.5,
+      "odds": -105,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": true
+     },
+     "sharp_gap": {
+      "side": "over",
+      "line": 42.5,
+      "odds": -105,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": true
+     },
+     "money_moving": {
+      "side": "over",
+      "line": 42.5,
+      "odds": -105,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": true
+     },
+     "pin_value": {
+      "side": "under",
+      "line": 42.5,
+      "odds": -115,
+      "res": "W",
+      "units": 0.87,
+      "took_fav": false
+     }
+    }
+   },
+   "moneyline": {
+    "close": {
+     "t": "2026-11-15T1700Z",
+     "nb": 65052,
+     "line": {
+      "home": -146,
+      "away": 124
+     },
+     "odds": {
+      "home": -146,
+      "away": 124
+     },
+     "tix": {
+      "home": 81,
+      "away": 19
+     },
+     "mny": {
+      "home": 65,
+      "away": 35
+     },
+     "open": -108,
+     "first_seen": "2026-11-10T0940Z",
+     "open_src": "sbr_open",
+     "calls": {
+      "follow_move": "home",
+      "money_level": "home",
+      "sharp_gap": "away",
+      "money_moving": "away",
+      "consensus_gap": "away",
+      "pin_rlm": "away"
+     },
+     "move_pts": 7.4,
+     "mny_ratio": 0.8,
+     "gap": {
+      "home": -16,
+      "away": 16
+     },
+     "div": {
+      "home": -15,
+      "away": 15
+     },
+     "books": {
+      "books": 8,
+      "median": -120.0,
+      "spread_of_books": 5,
+      "fd_vs_median": null,
+      "books_up": 0,
+      "books_dn": 7
+     },
+     "pin": -147,
+     "pin_price": -147,
+     "pin_lim": 75000,
+     "pin_price_other": 133,
+     "fair": 58.1,
+     "pin_open": -221,
+     "pin_moved_to": "away",
+     "pin_rlm_tix": 19,
+     "pin_rlm_ratio": 1.84
+    },
+    "early": {
+     "t": "2026-11-10T1040Z",
+     "nb": 2075,
+     "line": {
+      "home": -220,
+      "away": 184
+     },
+     "odds": {
+      "home": -220,
+      "away": 184
+     },
+     "tix": {
+      "home": 87,
+      "away": 13
+     },
+     "mny": {
+      "home": 86,
+      "away": 14
+     },
+     "open": -108,
+     "first_seen": "2026-11-10T0940Z",
+     "open_src": "sbr_open",
+     "calls": {
+      "follow_move": "home",
+      "money_level": "home",
+      "sharp_gap": "away",
+      "consensus_gap": "away"
+     },
+     "move_pts": 16.8,
+     "mny_ratio": 0.99,
+     "gap": {
+      "home": -1,
+      "away": 1
+     },
+     "div": {
+      "home": 0,
+      "away": 0
+     },
+     "books": {
+      "books": 8,
+      "median": -110.0,
+      "spread_of_books": 5,
+      "fd_vs_median": null,
+      "books_up": 4,
+      "books_dn": 3
+     }
+    },
+    "early_graded": {
+     "follow_move": {
+      "side": "home",
+      "line": -220,
+      "odds": -220,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": true,
+      "clv": -9.4
+     },
+     "money_level": {
+      "side": "home",
+      "line": -220,
+      "odds": -220,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": true,
+      "clv": -9.4
+     },
+     "sharp_gap": {
+      "side": "away",
+      "line": 184,
+      "odds": 184,
+      "res": "W",
+      "units": 1.84,
+      "took_fav": false,
+      "clv": 9.4
+     },
+     "consensus_gap": {
+      "side": "away",
+      "line": 184,
+      "odds": 184,
+      "res": "W",
+      "units": 1.84,
+      "took_fav": false,
+      "clv": 9.4
+     }
+    },
+    "close_graded": {
+     "follow_move": {
+      "side": "home",
+      "line": -146,
+      "odds": -146,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": true
+     },
+     "money_level": {
+      "side": "home",
+      "line": -146,
+      "odds": -146,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": true
+     },
+     "sharp_gap": {
+      "side": "away",
+      "line": 124,
+      "odds": 124,
+      "res": "W",
+      "units": 1.24,
+      "took_fav": false
+     },
+     "money_moving": {
+      "side": "away",
+      "line": 124,
+      "odds": 124,
+      "res": "W",
+      "units": 1.24,
+      "took_fav": false
+     },
+     "consensus_gap": {
+      "side": "away",
+      "line": 124,
+      "odds": 124,
+      "res": "W",
+      "units": 1.24,
+      "took_fav": false
+     },
+     "pin_rlm": {
+      "side": "away",
+      "line": 124,
+      "odds": 124,
+      "res": "W",
+      "units": 1.24,
+      "took_fav": false
+     }
+    }
+   },
+   "tt_home": {
+    "close": {
+     "t": "2026-11-15T1700Z",
+     "nb": 65052,
+     "line": {
+      "over": 22.5,
+      "under": 22.5
+     },
+     "odds": {
+      "over": -111,
+      "under": -115
+     },
+     "tix": {
+      "over": 0,
+      "under": 0
+     },
+     "mny": {
+      "over": 0,
+      "under": 0
+     },
+     "open": 22.5,
+     "first_seen": "2026-11-10T0940Z",
+     "open_src": "first_seen",
+     "calls": {},
+     "gap": {
+      "over": 0,
+      "under": 0
+     },
+     "div": {
+      "over": 0,
+      "under": 0
+     },
+     "pin": 22.5,
+     "pin_price": -104,
+     "pin_lim": 5000,
+     "pin_price_other": -112
+    },
+    "early": {
+     "t": "2026-11-10T1040Z",
+     "nb": 2075,
+     "line": {
+      "over": 22.5,
+      "under": 22.5
+     },
+     "odds": {
+      "over": -125,
+      "under": -102
+     },
+     "tix": {
+      "over": 0,
+      "under": 0
+     },
+     "mny": {
+      "over": 0,
+      "under": 0
+     },
+     "open": 22.5,
+     "first_seen": "2026-11-10T0940Z",
+     "open_src": "first_seen",
+     "calls": {},
+     "gap": {
+      "over": 0,
+      "under": 0
+     },
+     "div": {
+      "over": 0,
+      "under": 0
+     }
+    },
+    "early_graded": {},
+    "close_graded": {}
+   },
+   "tt_away": {
+    "close": {
+     "t": "2026-11-15T1700Z",
+     "nb": 65052,
+     "line": {
+      "over": 19.5,
+      "under": 19.5
+     },
+     "odds": {
+      "over": -125,
+      "under": -102
+     },
+     "tix": {
+      "over": 0,
+      "under": 0
+     },
+     "mny": {
+      "over": 0,
+      "under": 0
+     },
+     "open": 17.5,
+     "first_seen": "2026-11-10T0940Z",
+     "open_src": "first_seen",
+     "calls": {
+      "follow_move": "over",
+      "pin_value": "under"
+     },
+     "move_pts": 2.0,
+     "gap": {
+      "over": 0,
+      "under": 0
+     },
+     "div": {
+      "over": 0,
+      "under": 0
+     },
+     "pin": 16.5,
+     "pin_price": -184,
+     "pin_lim": 5000,
+     "pin_price_other": 154,
+     "pin_gap": 3.0
+    },
+    "early": {
+     "t": "2026-11-10T1040Z",
+     "nb": 2075,
+     "line": {
+      "over": 17.5,
+      "under": 17.5
+     },
+     "odds": {
+      "over": -113,
+      "under": -113
+     },
+     "tix": {
+      "over": 0,
+      "under": 0
+     },
+     "mny": {
+      "over": 0,
+      "under": 0
+     },
+     "open": 17.5,
+     "first_seen": "2026-11-10T0940Z",
+     "open_src": "first_seen",
+     "calls": {},
+     "gap": {
+      "over": 0,
+      "under": 0
+     },
+     "div": {
+      "over": 0,
+      "under": 0
+     }
+    },
+    "early_graded": {},
+    "close_graded": {
+     "follow_move": {
+      "side": "over",
+      "line": 19.5,
+      "odds": -125,
+      "res": "W",
+      "units": 0.8,
+      "took_fav": true
+     },
+     "pin_value": {
+      "side": "under",
+      "line": 19.5,
+      "odds": -102,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": false
+     }
+    }
+   }
+  },
+  "final": "30-10",
+  "total_pts": 40
+ },
+ {
+  "gid": "290974",
+  "game": "Miami Dolphins @ Indianapolis Colts",
+  "away": "Miami Dolphins",
+  "home": "Indianapolis Colts",
+  "kickoff": "2026-11-15T18:00:00.000Z",
+  "week": 10,
+  "first_seen": "2026-11-10T0940Z",
+  "pin_matched": true,
+  "markets": {
+   "spread": {
+    "close": {
+     "t": "2026-11-15T1700Z",
+     "nb": 41540,
+     "line": {
+      "home": -4.5,
+      "away": 4.5
+     },
+     "odds": {
+      "home": -105,
+      "away": -115
+     },
+     "tix": {
+      "home": 57,
+      "away": 43
+     },
+     "mny": {
+      "home": 60,
+      "away": 40
+     },
+     "open": -2.5,
+     "first_seen": "2026-11-10T0940Z",
+     "open_src": "sbr_open",
+     "calls": {
+      "follow_move": "home",
+      "money_level": "home",
+      "sharp_gap": "home",
+      "money_moving": "home"
+     },
+     "move_pts": 2.0,
+     "mny_ratio": 1.05,
+     "gap": {
+      "home": 3,
+      "away": -3
+     },
+     "div": {
+      "home": 16,
+      "away": -16
+     },
+     "books": {
+      "books": 8,
+      "median": -4.5,
+      "spread_of_books": 0.0,
+      "books_up": 1,
+      "books_dn": 7
+     },
+     "pin": -4.5,
+     "pin_price": -106,
+     "pin_lim": 100000,
+     "pin_price_other": -104,
+     "pin_open": -2.5,
+     "pin_moved_to": "home"
+    },
+    "early": {
+     "t": "2026-11-10T1040Z",
+     "nb": 1767,
+     "line": {
+      "home": -2.5,
+      "away": 2.5
+     },
+     "odds": {
+      "home": -110,
+      "away": -110
+     },
+     "tix": {
+      "home": 61,
+      "away": 39
+     },
+     "mny": {
+      "home": 49,
+      "away": 51
+     },
+     "open": -2.5,
+     "first_seen": "2026-11-10T0940Z",
+     "open_src": "sbr_open",
+     "calls": {
+      "money_level": "away",
+      "sharp_gap": "away",
+      "money_moving": "home"
+     },
+     "gap": {
+      "home": -12,
+      "away": 12
+     },
+     "div": {
+      "home": 1,
+      "away": -1
+     },
+     "books": {
+      "books": 8,
+      "median": -2.5,
+      "spread_of_books": 1.0,
+      "books_up": 2,
+      "books_dn": 3
+     },
+     "pin": -2.5,
+     "pin_price": -107,
+     "pin_lim": 5000,
+     "pin_price_other": -105
+    },
+    "early_graded": {
+     "money_level": {
+      "side": "away",
+      "line": 2.5,
+      "odds": -110,
+      "res": "W",
+      "units": 0.909,
+      "took_fav": false,
+      "clv": -2.0
+     },
+     "sharp_gap": {
+      "side": "away",
+      "line": 2.5,
+      "odds": -110,
+      "res": "W",
+      "units": 0.909,
+      "took_fav": false,
+      "clv": -2.0
+     },
+     "money_moving": {
+      "side": "home",
+      "line": -2.5,
+      "odds": -110,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": true,
+      "clv": 2.0
+     }
+    },
+    "close_graded": {
+     "follow_move": {
+      "side": "home",
+      "line": -4.5,
+      "odds": -105,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": true
+     },
+     "money_level": {
+      "side": "home",
+      "line": -4.5,
+      "odds": -105,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": true
+     },
+     "sharp_gap": {
+      "side": "home",
+      "line": -4.5,
+      "odds": -105,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": true
+     },
+     "money_moving": {
+      "side": "home",
+      "line": -4.5,
+      "odds": -105,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": true
+     }
+    }
+   },
+   "total": {
+    "close": {
+     "t": "2026-11-15T1700Z",
+     "nb": 41540,
+     "line": {
+      "over": 37.5,
+      "under": 37.5
+     },
+     "odds": {
+      "over": -110,
+      "under": -110
+     },
+     "tix": {
+      "over": 61,
+      "under": 39
+     },
+     "mny": {
+      "over": 54,
+      "under": 46
+     },
+     "open": 40.5,
+     "first_seen": "2026-11-10T0940Z",
+     "open_src": "first_seen",
+     "calls": {
+      "follow_move": "under",
+      "rlm": "under",
+      "money_level": "over",
+      "sharp_gap": "under",
+      "money_moving": "under",
+      "pin_value": "over"
+     },
+     "move_pts": 3.0,
+     "public_side": "over",
+     "public_tix": 61,
+     "mny_ratio": 1.18,
+     "gap": {
+      "over": -7,
+      "under": 7
+     },
+     "div": {
+      "over": -10,
+      "under": 10
+     },
+     "pin": 38.0,
+     "pin_price": 100,
+     "pin_lim": 20000,
+     "pin_price_other": -113,
+     "pin_gap": -0.5,
+     "pin_open": 42.5,
+     "pin_moved_to": "under"
+    },
+    "early": {
+     "t": "2026-11-10T1040Z",
+     "nb": 1767,
+     "line": {
+      "over": 40.5,
+      "under": 40.5
+     },
+     "odds": {
+      "over": -115,
+      "under": -105
+     },
+     "tix": {
+      "over": 68,
+      "under": 32
+     },
+     "mny": {
+      "over": 71,
+      "under": 29
+     },
+     "open": 40.5,
+     "first_seen": "2026-11-10T0940Z",
+     "open_src": "first_seen",
+     "calls": {
+      "money_level": "over",
+      "sharp_gap": "over"
+     },
+     "gap": {
+      "over": 3,
+      "under": -3
+     },
+     "div": {
+      "over": 0,
+      "under": 0
+     },
+     "pin": 40.5,
+     "pin_price": -110,
+     "pin_lim": 3000,
+     "pin_price_other": -106,
+     "pin_open": 42.5,
+     "pin_moved_to": "under"
+    },
+    "early_graded": {
+     "money_level": {
+      "side": "over",
+      "line": 40.5,
+      "odds": -115,
+      "res": "W",
+      "units": 0.87,
+      "took_fav": true,
+      "clv": -3.0
+     },
+     "sharp_gap": {
+      "side": "over",
+      "line": 40.5,
+      "odds": -115,
+      "res": "W",
+      "units": 0.87,
+      "took_fav": true,
+      "clv": -3.0
+     }
+    },
+    "close_graded": {
+     "follow_move": {
+      "side": "under",
+      "line": 37.5,
+      "odds": -110,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": false
+     },
+     "rlm": {
+      "side": "under",
+      "line": 37.5,
+      "odds": -110,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": false
+     },
+     "money_level": {
+      "side": "over",
+      "line": 37.5,
+      "odds": -110,
+      "res": "W",
+      "units": 0.909,
+      "took_fav": true
+     },
+     "sharp_gap": {
+      "side": "under",
+      "line": 37.5,
+      "odds": -110,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": false
+     },
+     "money_moving": {
+      "side": "under",
+      "line": 37.5,
+      "odds": -110,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": false
+     },
+     "pin_value": {
+      "side": "over",
+      "line": 37.5,
+      "odds": -110,
+      "res": "W",
+      "units": 0.909,
+      "took_fav": true
+     }
+    }
+   },
+   "moneyline": {
+    "close": {
+     "t": "2026-11-15T1700Z",
+     "nb": 41540,
+     "line": {
+      "home": -210,
+      "away": 176
+     },
+     "odds": {
+      "home": -210,
+      "away": 176
+     },
+     "tix": {
+      "home": 86,
+      "away": 14
+     },
+     "mny": {
+      "home": 83,
+      "away": 17
+     },
+     "open": -110,
+     "first_seen": "2026-11-10T0940Z",
+     "open_src": "sbr_open",
+     "calls": {
+      "follow_move": "home",
+      "money_level": "home",
+      "sharp_gap": "away",
+      "money_moving": "home",
+      "consensus_gap": "away"
+     },
+     "move_pts": 15.4,
+     "mny_ratio": 0.97,
+     "gap": {
+      "home": -3,
+      "away": 3
+     },
+     "div": {
+      "home": 7,
+      "away": -7
+     },
+     "books": {
+      "books": 8,
+      "median": -107.0,
+      "spread_of_books": 11,
+      "fd_vs_median": null,
+      "books_up": 4,
+      "books_dn": 2
+     },
+     "pin": -207,
+     "pin_price": -207,
+     "pin_lim": 75000,
+     "pin_price_other": 184,
+     "fair": 65.7,
+     "pin_open": -134,
+     "pin_moved_to": "home"
+    },
+    "early": {
+     "t": "2026-11-10T1040Z",
+     "nb": 1767,
+     "line": {
+      "home": -136,
+      "away": 116
+     },
+     "odds": {
+      "home": -136,
+      "away": 116
+     },
+     "tix": {
+      "home": 82,
+      "away": 18
+     },
+     "mny": {
+      "home": 72,
+      "away": 28
+     },
+     "open": -110,
+     "first_seen": "2026-11-10T0940Z",
+     "open_src": "sbr_open",
+     "calls": {
+      "follow_move": "home",
+      "money_level": "home",
+      "sharp_gap": "away",
+      "consensus_gap": "away"
+     },
+     "move_pts": 5.2,
+     "mny_ratio": 0.88,
+     "gap": {
+      "home": -10,
+      "away": 10
+     },
+     "div": {
+      "home": 0,
+      "away": 0
+     },
+     "books": {
+      "books": 8,
+      "median": -110.0,
+      "spread_of_books": 11,
+      "fd_vs_median": null,
+      "books_up": 2,
+      "books_dn": 3
+     },
+     "pin": -140,
+     "pin_price": -140,
+     "pin_lim": 3000,
+     "pin_price_other": 124,
+     "fair": 56.6,
+     "pin_open": -134,
+     "pin_moved_to": "home"
+    },
+    "early_graded": {
+     "follow_move": {
+      "side": "home",
+      "line": -136,
+      "odds": -136,
+      "res": "W",
+      "units": 0.735,
+      "took_fav": true,
+      "clv": 10.1
+     },
+     "money_level": {
+      "side": "home",
+      "line": -136,
+      "odds": -136,
+      "res": "W",
+      "units": 0.735,
+      "took_fav": true,
+      "clv": 10.1
+     },
+     "sharp_gap": {
+      "side": "away",
+      "line": 116,
+      "odds": 116,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": false,
+      "clv": -10.1
+     },
+     "consensus_gap": {
+      "side": "away",
+      "line": 116,
+      "odds": 116,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": false,
+      "clv": -10.1
+     }
+    },
+    "close_graded": {
+     "follow_move": {
+      "side": "home",
+      "line": -210,
+      "odds": -210,
+      "res": "W",
+      "units": 0.476,
+      "took_fav": true
+     },
+     "money_level": {
+      "side": "home",
+      "line": -210,
+      "odds": -210,
+      "res": "W",
+      "units": 0.476,
+      "took_fav": true
+     },
+     "sharp_gap": {
+      "side": "away",
+      "line": 176,
+      "odds": 176,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": false
+     },
+     "money_moving": {
+      "side": "home",
+      "line": -210,
+      "odds": -210,
+      "res": "W",
+      "units": 0.476,
+      "took_fav": true
+     },
+     "consensus_gap": {
+      "side": "away",
+      "line": 176,
+      "odds": 176,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": false
+     }
+    }
+   },
+   "tt_home": {
+    "close": {
+     "t": "2026-11-15T1700Z",
+     "nb": 41540,
+     "line": {
+      "over": 20.5,
+      "under": 20.5
+     },
+     "odds": {
+      "over": -115,
+      "under": -111
+     },
+     "tix": {
+      "over": 0,
+      "under": 0
+     },
+     "mny": {
+      "over": 0,
+      "under": 0
+     },
+     "open": 21.5,
+     "first_seen": "2026-11-10T0940Z",
+     "open_src": "first_seen",
+     "calls": {
+      "follow_move": "under",
+      "pin_value": "over"
+     },
+     "move_pts": 1.0,
+     "gap": {
+      "over": 0,
+      "under": 0
+     },
+     "div": {
+      "over": 0,
+      "under": 0
+     },
+     "pin": 21.5,
+     "pin_price": -101,
+     "pin_lim": 5000,
+     "pin_price_other": -115,
+     "pin_gap": -1.0
+    },
+    "early": {
+     "t": "2026-11-10T1040Z",
+     "nb": 1767,
+     "line": {
+      "over": 21.5,
+      "under": 21.5
+     },
+     "odds": {
+      "over": -106,
+      "under": -120
+     },
+     "tix": {
+      "over": 0,
+      "under": 0
+     },
+     "mny": {
+      "over": 0,
+      "under": 0
+     },
+     "open": 21.5,
+     "first_seen": "2026-11-10T0940Z",
+     "open_src": "first_seen",
+     "calls": {},
+     "gap": {
+      "over": 0,
+      "under": 0
+     },
+     "div": {
+      "over": 0,
+      "under": 0
+     },
+     "pin": 21.5,
+     "pin_price": 108,
+     "pin_lim": 2000,
+     "pin_price_other": -126
+    },
+    "early_graded": {},
+    "close_graded": {
+     "follow_move": {
+      "side": "under",
+      "line": 20.5,
+      "odds": -111,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": false
+     },
+     "pin_value": {
+      "side": "over",
+      "line": 20.5,
+      "odds": -115,
+      "res": "W",
+      "units": 0.87,
+      "took_fav": true
+     }
+    }
+   },
+   "tt_away": {
+    "close": {
+     "t": "2026-11-15T1700Z",
+     "nb": 41540,
+     "line": {
+      "over": 16.5,
+      "under": 16.5
+     },
+     "odds": {
+      "over": -118,
+      "under": -108
+     },
+     "tix": {
+      "over": 0,
+      "under": 0
+     },
+     "mny": {
+      "over": 0,
+      "under": 0
+     },
+     "open": 19.5,
+     "first_seen": "2026-11-10T0940Z",
+     "open_src": "first_seen",
+     "calls": {
+      "follow_move": "under",
+      "pin_value": "over"
+     },
+     "move_pts": 3.0,
+     "gap": {
+      "over": 0,
+      "under": 0
+     },
+     "div": {
+      "over": 0,
+      "under": 0
+     },
+     "pin": 20.5,
+     "pin_price": 201,
+     "pin_lim": 5000,
+     "pin_price_other": -247,
+     "pin_gap": -4.0
+    },
+    "early": {
+     "t": "2026-11-10T1040Z",
+     "nb": 1767,
+     "line": {
+      "over": 19.5,
+      "under": 19.5
+     },
+     "odds": {
+      "over": -125,
+      "under": -102
+     },
+     "tix": {
+      "over": 0,
+      "under": 0
+     },
+     "mny": {
+      "over": 0,
+      "under": 0
+     },
+     "open": 19.5,
+     "first_seen": "2026-11-10T0940Z",
+     "open_src": "first_seen",
+     "calls": {
+      "pin_value": "over"
+     },
+     "gap": {
+      "over": 0,
+      "under": 0
+     },
+     "div": {
+      "over": 0,
+      "under": 0
+     },
+     "pin": 20.5,
+     "pin_price": 112,
+     "pin_lim": 2000,
+     "pin_price_other": -130,
+     "pin_gap": -1.0
+    },
+    "early_graded": {
+     "pin_value": {
+      "side": "over",
+      "line": 19.5,
+      "odds": -125,
+      "res": "W",
+      "units": 0.8,
+      "took_fav": true,
+      "clv": -3.0
+     }
+    },
+    "close_graded": {
+     "follow_move": {
+      "side": "under",
+      "line": 16.5,
+      "odds": -108,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": false
+     },
+     "pin_value": {
+      "side": "over",
+      "line": 16.5,
+      "odds": -118,
+      "res": "W",
+      "units": 0.847,
+      "took_fav": true
+     }
+    }
+   }
+  },
+  "final": "22-24",
+  "total_pts": 46
+ },
+ {
+  "gid": "290975",
+  "game": "Buffalo Bills @ New York Jets",
+  "away": "Buffalo Bills",
+  "home": "New York Jets",
+  "kickoff": "2026-11-15T18:00:00.000Z",
+  "week": 10,
+  "first_seen": "2026-11-10T0940Z",
+  "pin_matched": true,
+  "markets": {
+   "spread": {
+    "close": {
+     "t": "2026-11-15T1700Z",
+     "nb": 62391,
+     "line": {
+      "home": 7.5,
+      "away": -7.5
+     },
+     "odds": {
+      "home": -110,
+      "away": -110
+     },
+     "tix": {
+      "home": 8,
+      "away": 92
+     },
+     "mny": {
+      "home": 10,
+      "away": 90
+     },
+     "open": 8.5,
+     "first_seen": "2026-11-10T0940Z",
+     "open_src": "sbr_open",
+     "calls": {
+      "follow_move": "home",
+      "rlm": "home",
+      "rlm_ratio": "home",
+      "money_level": "away",
+      "sharp_gap": "home",
+      "money_moving": "home",
+      "pin_value": "away"
+     },
+     "move_pts": 1.0,
+     "public_side": "away",
+     "public_tix": 92,
+     "mny_ratio": 1.25,
+     "gap": {
+      "home": 2,
+      "away": -2
+     },
+     "div": {
+      "home": 6,
+      "away": -6
+     },
+     "books": {
+      "books": 8,
+      "median": 7.5,
+      "spread_of_books": 1.0,
+      "books_up": 2,
+      "books_dn": 3
+     },
+     "pin": 8.5,
+     "pin_price": -119,
+     "pin_lim": 100000,
+     "pin_price_other": 108,
+     "pin_gap": -1.0,
+     "pin_open": 7.5,
+     "pin_moved_to": "away"
+    },
+    "early": {
+     "t": "2026-11-10T1040Z",
+     "nb": 2160,
+     "line": {
+      "home": 7.5,
+      "away": -7.5
+     },
+     "odds": {
+      "home": -115,
+      "away": -105
+     },
+     "tix": {
+      "home": 11,
+      "away": 89
+     },
+     "mny": {
+      "home": 8,
+      "away": 92
+     },
+     "open": 8.5,
+     "first_seen": "2026-11-10T0940Z",
+     "open_src": "sbr_open",
+     "calls": {
+      "follow_move": "home",
+      "rlm": "home",
+      "money_level": "away",
+      "sharp_gap": "away",
+      "money_moving": "home"
+     },
+     "move_pts": 1.0,
+     "public_side": "away",
+     "public_tix": 89,
+     "mny_ratio": 0.73,
+     "gap": {
+      "home": -3,
+      "away": 3
+     },
+     "div": {
+      "home": 1,
+      "away": -1
+     },
+     "books": {
+      "books": 8,
+      "median": 7.5,
+      "spread_of_books": 1.0,
+      "books_up": 2,
+      "books_dn": 3
+     }
+    },
+    "early_graded": {
+     "follow_move": {
+      "side": "home",
+      "line": 7.5,
+      "odds": -115,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": false,
+      "clv": 0.0
+     },
+     "rlm": {
+      "side": "home",
+      "line": 7.5,
+      "odds": -115,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": false,
+      "clv": 0.0
+     },
+     "money_level": {
+      "side": "away",
+      "line": -7.5,
+      "odds": -105,
+      "res": "W",
+      "units": 0.952,
+      "took_fav": true,
+      "clv": 0.0
+     },
+     "sharp_gap": {
+      "side": "away",
+      "line": -7.5,
+      "odds": -105,
+      "res": "W",
+      "units": 0.952,
+      "took_fav": true,
+      "clv": 0.0
+     },
+     "money_moving": {
+      "side": "home",
+      "line": 7.5,
+      "odds": -115,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": false,
+      "clv": 0.0
+     }
+    },
+    "close_graded": {
+     "follow_move": {
+      "side": "home",
+      "line": 7.5,
+      "odds": -110,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": false
+     },
+     "rlm": {
+      "side": "home",
+      "line": 7.5,
+      "odds": -110,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": false
+     },
+     "rlm_ratio": {
+      "side": "home",
+      "line": 7.5,
+      "odds": -110,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": false
+     },
+     "money_level": {
+      "side": "away",
+      "line": -7.5,
+      "odds": -110,
+      "res": "W",
+      "units": 0.909,
+      "took_fav": true
+     },
+     "sharp_gap": {
+      "side": "home",
+      "line": 7.5,
+      "odds": -110,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": false
+     },
+     "money_moving": {
+      "side": "home",
+      "line": 7.5,
+      "odds": -110,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": false
+     },
+     "pin_value": {
+      "side": "away",
+      "line": -7.5,
+      "odds": -110,
+      "res": "W",
+      "units": 0.909,
+      "took_fav": true
+     }
+    }
+   },
+   "total": {
+    "close": {
+     "t": "2026-11-15T1700Z",
+     "nb": 62391,
+     "line": {
+      "over": 50.5,
+      "under": 50.5
+     },
+     "odds": {
+      "over": -115,
+      "under": -105
+     },
+     "tix": {
+      "over": 60,
+      "under": 40
+     },
+     "mny": {
+      "over": 71,
+      "under": 29
+     },
+     "open": 50.5,
+     "first_seen": "2026-11-10T0940Z",
+     "open_src": "first_seen",
+     "calls": {
+      "money_level": "over",
+      "sharp_gap": "over",
+      "money_moving": "over",
+      "pin_value": "over"
+     },
+     "gap": {
+      "over": 11,
+      "under": -11
+     },
+     "div": {
+      "over": 8,
+      "under": -8
+     },
+     "pin": 51.0,
+     "pin_price": -106,
+     "pin_lim": 20000,
+     "pin_price_other": -106,
+     "pin_gap": -0.5
+    },
+    "early": {
+     "t": "2026-11-10T1040Z",
+     "nb": 2160,
+     "line": {
+      "over": 50.5,
+      "under": 50.5
+     },
+     "odds": {
+      "over": -110,
+      "under": -110
+     },
+     "tix": {
+      "over": 53,
+      "under": 47
+     },
+     "mny": {
+      "over": 56,
+      "under": 44
+     },
+     "open": 50.5,
+     "first_seen": "2026-11-10T0940Z",
+     "open_src": "first_seen",
+     "calls": {
+      "money_level": "over",
+      "sharp_gap": "over"
+     },
+     "gap": {
+      "over": 3,
+      "under": -3
+     },
+     "div": {
+      "over": 0,
+      "under": 0
+     }
+    },
+    "early_graded": {
+     "money_level": {
+      "side": "over",
+      "line": 50.5,
+      "odds": -110,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": true,
+      "clv": 0.0
+     },
+     "sharp_gap": {
+      "side": "over",
+      "line": 50.5,
+      "odds": -110,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": true,
+      "clv": 0.0
+     }
+    },
+    "close_graded": {
+     "money_level": {
+      "side": "over",
+      "line": 50.5,
+      "odds": -115,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": true
+     },
+     "sharp_gap": {
+      "side": "over",
+      "line": 50.5,
+      "odds": -115,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": true
+     },
+     "money_moving": {
+      "side": "over",
+      "line": 50.5,
+      "odds": -115,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": true
+     },
+     "pin_value": {
+      "side": "over",
+      "line": 50.5,
+      "odds": -115,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": true
+     }
+    }
+   },
+   "moneyline": {
+    "close": {
+     "t": "2026-11-15T1700Z",
+     "nb": 62391,
+     "line": {
+      "home": 360,
+      "away": -460
+     },
+     "odds": {
+      "home": 360,
+      "away": -460
+     },
+     "tix": {
+      "home": 1,
+      "away": 99
+     },
+     "mny": {
+      "home": 1,
+      "away": 99
+     },
+     "open": -108,
+     "first_seen": "2026-11-10T0940Z",
+     "open_src": "sbr_open",
+     "calls": {
+      "follow_move": "away",
+      "money_level": "away",
+      "money_moving": "home",
+      "consensus_gap": "home"
+     },
+     "move_pts": 30.2,
+     "mny_ratio": 1.0,
+     "gap": {
+      "home": 0,
+      "away": 0
+     },
+     "div": {
+      "home": 1,
+      "away": -1
+     },
+     "books": {
+      "books": 8,
+      "median": -110.0,
+      "spread_of_books": 10,
+      "fd_vs_median": null,
+      "books_up": 2,
+      "books_dn": 4
+     },
+     "pin": 376,
+     "pin_price": 376,
+     "pin_lim": 20000,
+     "pin_price_other": -460,
+     "fair": 20.4,
+     "pin_open": 342,
+     "pin_moved_to": "away"
+    },
+    "early": {
+     "t": "2026-11-10T1040Z",
+     "nb": 2160,
+     "line": {
+      "home": 340,
+      "away": -430
+     },
+     "odds": {
+      "home": 340,
+      "away": -430
+     },
+     "tix": {
+      "home": 1,
+      "away": 99
+     },
+     "mny": {
+      "home": 0,
+      "away": 100
+     },
+     "open": -108,
+     "first_seen": "2026-11-10T0940Z",
+     "open_src": "sbr_open",
+     "calls": {
+      "follow_move": "away",
+      "money_level": "away",
+      "sharp_gap": "away",
+      "consensus_gap": "home"
+     },
+     "move_pts": 29.2,
+     "mny_ratio": 1.01,
+     "gap": {
+      "home": -1,
+      "away": 1
+     },
+     "div": {
+      "home": 0,
+      "away": 0
+     },
+     "books": {
+      "books": 8,
+      "median": -114.5,
+      "spread_of_books": 25,
+      "fd_vs_median": null,
+      "books_up": 2,
+      "books_dn": 5
+     }
+    },
+    "early_graded": {
+     "follow_move": {
+      "side": "away",
+      "line": -430,
+      "odds": -430,
+      "res": "W",
+      "units": 0.233,
+      "took_fav": true,
+      "clv": 1.0
+     },
+     "money_level": {
+      "side": "away",
+      "line": -430,
+      "odds": -430,
+      "res": "W",
+      "units": 0.233,
+      "took_fav": true,
+      "clv": 1.0
+     },
+     "sharp_gap": {
+      "side": "away",
+      "line": -430,
+      "odds": -430,
+      "res": "W",
+      "units": 0.233,
+      "took_fav": true,
+      "clv": 1.0
+     },
+     "consensus_gap": {
+      "side": "home",
+      "line": 340,
+      "odds": 340,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": false,
+      "clv": -1.0
+     }
+    },
+    "close_graded": {
+     "follow_move": {
+      "side": "away",
+      "line": -460,
+      "odds": -460,
+      "res": "W",
+      "units": 0.217,
+      "took_fav": true
+     },
+     "money_level": {
+      "side": "away",
+      "line": -460,
+      "odds": -460,
+      "res": "W",
+      "units": 0.217,
+      "took_fav": true
+     },
+     "money_moving": {
+      "side": "home",
+      "line": 360,
+      "odds": 360,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": false
+     },
+     "consensus_gap": {
+      "side": "home",
+      "line": 360,
+      "odds": 360,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": false
+     }
+    }
+   },
+   "tt_home": {
+    "close": {
+     "t": "2026-11-15T1700Z",
+     "nb": 62391,
+     "line": {
+      "over": 20.5,
+      "under": 20.5
+     },
+     "odds": {
+      "over": -113,
+      "under": -113
+     },
+     "tix": {
+      "over": 0,
+      "under": 0
+     },
+     "mny": {
+      "over": 0,
+      "under": 0
+     },
+     "open": 20.5,
+     "first_seen": "2026-11-10T0940Z",
+     "open_src": "first_seen",
+     "calls": {},
+     "gap": {
+      "over": 0,
+      "under": 0
+     },
+     "div": {
+      "over": 0,
+      "under": 0
+     },
+     "pin": 20.5,
+     "pin_price": -114,
+     "pin_lim": 5000,
+     "pin_price_other": -102
+    },
+    "early": {
+     "t": "2026-11-10T1040Z",
+     "nb": 2160,
+     "line": {
+      "over": 20.5,
+      "under": 20.5
+     },
+     "odds": {
+      "over": -120,
+      "under": -106
+     },
+     "tix": {
+      "over": 0,
+      "under": 0
+     },
+     "mny": {
+      "over": 0,
+      "under": 0
+     },
+     "open": 20.5,
+     "first_seen": "2026-11-10T0940Z",
+     "open_src": "first_seen",
+     "calls": {},
+     "gap": {
+      "over": 0,
+      "under": 0
+     },
+     "div": {
+      "over": 0,
+      "under": 0
+     }
+    },
+    "early_graded": {},
+    "close_graded": {}
+   },
+   "tt_away": {
+    "close": {
+     "t": "2026-11-15T1700Z",
+     "nb": 62391,
+     "line": {
+      "over": 30.5,
+      "under": 30.5
+     },
+     "odds": {
+      "over": -111,
+      "under": -115
+     },
+     "tix": {
+      "over": 0,
+      "under": 0
+     },
+     "mny": {
+      "over": 0,
+      "under": 0
+     },
+     "open": 30.5,
+     "first_seen": "2026-11-10T0940Z",
+     "open_src": "first_seen",
+     "calls": {},
+     "gap": {
+      "over": 0,
+      "under": 0
+     },
+     "div": {
+      "over": 0,
+      "under": 0
+     },
+     "pin": 30.5,
+     "pin_price": -106,
+     "pin_lim": 5000,
+     "pin_price_other": -110
+    },
+    "early": {
+     "t": "2026-11-10T1040Z",
+     "nb": 2160,
+     "line": {
+      "over": 30.5,
+      "under": 30.5
+     },
+     "odds": {
+      "over": -102,
+      "under": -125
+     },
+     "tix": {
+      "over": 0,
+      "under": 0
+     },
+     "mny": {
+      "over": 0,
+      "under": 0
+     },
+     "open": 30.5,
+     "first_seen": "2026-11-10T0940Z",
+     "open_src": "first_seen",
+     "calls": {},
+     "gap": {
+      "over": 0,
+      "under": 0
+     },
+     "div": {
+      "over": 0,
+      "under": 0
+     }
+    },
+    "early_graded": {},
+    "close_graded": {}
+   }
+  },
+  "final": "31-12",
+  "total_pts": 43
+ },
+ {
+  "gid": "290976",
+  "game": "Carolina Panthers @ New Orleans Saints",
+  "away": "Carolina Panthers",
+  "home": "New Orleans Saints",
+  "kickoff": "2026-11-15T18:00:00.000Z",
+  "week": 10,
+  "first_seen": "2026-11-10T0940Z",
+  "pin_matched": true,
+  "markets": {
+   "spread": {
+    "close": {
+     "t": "2026-11-15T1700Z",
+     "nb": 56999,
+     "line": {
+      "home": -1.5,
+      "away": 1.5
+     },
+     "odds": {
+      "home": -100,
+      "away": -120
+     },
+     "tix": {
+      "home": 30,
+      "away": 70
+     },
+     "mny": {
+      "home": 21,
+      "away": 79
+     },
+     "open": 1.5,
+     "first_seen": "2026-11-10T0940Z",
+     "open_src": "sbr_open",
+     "calls": {
+      "follow_move": "home",
+      "rlm": "home",
+      "money_level": "away",
+      "sharp_gap": "away",
+      "money_moving": "home",
+      "pin_value": "away"
+     },
+     "move_pts": 3.0,
+     "public_side": "away",
+     "public_tix": 70,
+     "mny_ratio": 0.7,
+     "gap": {
+      "home": -9,
+      "away": 9
+     },
+     "div": {
+      "home": 3,
+      "away": -3
+     },
+     "books": {
+      "books": 8,
+      "median": -1.5,
+      "spread_of_books": 3.0,
+      "books_up": 1,
+      "books_dn": 4
+     },
+     "pin": -1.0,
+     "pin_price": 104,
+     "pin_lim": 100000,
+     "pin_price_other": -115,
+     "pin_gap": -0.5,
+     "pin_open": 1.0,
+     "pin_moved_to": "home"
+    },
+    "early": {
+     "t": "2026-11-10T1040Z",
+     "nb": 2221,
+     "line": {
+      "home": -1.5,
+      "away": 1.5
+     },
+     "odds": {
+      "home": -100,
+      "away": -120
+     },
+     "tix": {
+      "home": 31,
+      "away": 69
+     },
+     "mny": {
+      "home": 19,
+      "away": 81
+     },
+     "open": 1.5,
+     "first_seen": "2026-11-10T0940Z",
+     "open_src": "sbr_open",
+     "calls": {
+      "follow_move": "home",
+      "rlm": "home",
+      "money_level": "away",
+      "sharp_gap": "away",
+      "pin_value": "away"
+     },
+     "move_pts": 3.0,
+     "public_side": "away",
+     "public_tix": 69,
+     "mny_ratio": 0.61,
+     "gap": {
+      "home": -12,
+      "away": 12
+     },
+     "div": {
+      "home": 0,
+      "away": 0
+     },
+     "books": {
+      "books": 8,
+      "median": -1.5,
+      "spread_of_books": 0.0,
+      "books_up": 1,
+      "books_dn": 7
+     },
+     "pin": -1.0,
+     "pin_price": -110,
+     "pin_lim": 5000,
+     "pin_price_other": -102,
+     "pin_gap": -0.5,
+     "pin_open": 1.0,
+     "pin_moved_to": "home"
+    },
+    "early_graded": {
+     "follow_move": {
+      "side": "home",
+      "line": -1.5,
+      "odds": -100,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": true,
+      "clv": 0.0
+     },
+     "rlm": {
+      "side": "home",
+      "line": -1.5,
+      "odds": -100,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": true,
+      "clv": 0.0
+     },
+     "money_level": {
+      "side": "away",
+      "line": 1.5,
+      "odds": -120,
+      "res": "W",
+      "units": 0.833,
+      "took_fav": false,
+      "clv": 0.0
+     },
+     "sharp_gap": {
+      "side": "away",
+      "line": 1.5,
+      "odds": -120,
+      "res": "W",
+      "units": 0.833,
+      "took_fav": false,
+      "clv": 0.0
+     },
+     "pin_value": {
+      "side": "away",
+      "line": 1.5,
+      "odds": -120,
+      "res": "W",
+      "units": 0.833,
+      "took_fav": false,
+      "clv": 0.0
+     }
+    },
+    "close_graded": {
+     "follow_move": {
+      "side": "home",
+      "line": -1.5,
+      "odds": -100,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": true
+     },
+     "rlm": {
+      "side": "home",
+      "line": -1.5,
+      "odds": -100,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": true
+     },
+     "money_level": {
+      "side": "away",
+      "line": 1.5,
+      "odds": -120,
+      "res": "W",
+      "units": 0.833,
+      "took_fav": false
+     },
+     "sharp_gap": {
+      "side": "away",
+      "line": 1.5,
+      "odds": -120,
+      "res": "W",
+      "units": 0.833,
+      "took_fav": false
+     },
+     "money_moving": {
+      "side": "home",
+      "line": -1.5,
+      "odds": -100,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": true
+     },
+     "pin_value": {
+      "side": "away",
+      "line": 1.5,
+      "odds": -120,
+      "res": "W",
+      "units": 0.833,
+      "took_fav": false
+     }
+    }
+   },
+   "total": {
+    "close": {
+     "t": "2026-11-15T1700Z",
+     "nb": 56999,
+     "line": {
+      "over": 48.5,
+      "under": 48.5
+     },
+     "odds": {
+      "over": -115,
+      "under": -105
+     },
+     "tix": {
+      "over": 60,
+      "under": 40
+     },
+     "mny": {
+      "over": 62,
+      "under": 38
+     },
+     "open": 47.5,
+     "first_seen": "2026-11-10T0940Z",
+     "open_src": "first_seen",
+     "calls": {
+      "follow_move": "over",
+      "money_level": "over",
+      "sharp_gap": "over",
+      "money_moving": "under"
+     },
+     "move_pts": 1.0,
+     "mny_ratio": 1.03,
+     "gap": {
+      "over": 2,
+      "under": -2
+     },
+     "div": {
+      "over": -5,
+      "under": 5
+     },
+     "pin": 48.5,
+     "pin_price": -112,
+     "pin_lim": 20000,
+     "pin_price_other": 100,
+     "pin_open": 47.5,
+     "pin_moved_to": "over"
+    },
+    "early": {
+     "t": "2026-11-10T1040Z",
+     "nb": 2221,
+     "line": {
+      "over": 47.5,
+      "under": 47.5
+     },
+     "odds": {
+      "over": -120,
+      "under": -100
+     },
+     "tix": {
+      "over": 62,
+      "under": 38
+     },
+     "mny": {
+      "over": 65,
+      "under": 35
+     },
+     "open": 47.5,
+     "first_seen": "2026-11-10T0940Z",
+     "open_src": "first_seen",
+     "calls": {
+      "money_level": "over",
+      "sharp_gap": "over",
+      "money_moving": "under"
+     },
+     "gap": {
+      "over": 3,
+      "under": -3
+     },
+     "div": {
+      "over": -4,
+      "under": 4
+     },
+     "pin": 47.5,
+     "pin_price": -119,
+     "pin_lim": 3000,
+     "pin_price_other": 102
+    },
+    "early_graded": {
+     "money_level": {
+      "side": "over",
+      "line": 47.5,
+      "odds": -120,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": true,
+      "clv": 1.0
+     },
+     "sharp_gap": {
+      "side": "over",
+      "line": 47.5,
+      "odds": -120,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": true,
+      "clv": 1.0
+     },
+     "money_moving": {
+      "side": "under",
+      "line": 47.5,
+      "odds": -100,
+      "res": "W",
+      "units": 1.0,
+      "took_fav": false,
+      "clv": -1.0
+     }
+    },
+    "close_graded": {
+     "follow_move": {
+      "side": "over",
+      "line": 48.5,
+      "odds": -115,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": true
+     },
+     "money_level": {
+      "side": "over",
+      "line": 48.5,
+      "odds": -115,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": true
+     },
+     "sharp_gap": {
+      "side": "over",
+      "line": 48.5,
+      "odds": -115,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": true
+     },
+     "money_moving": {
+      "side": "under",
+      "line": 48.5,
+      "odds": -105,
+      "res": "W",
+      "units": 0.952,
+      "took_fav": false
+     }
+    }
+   },
+   "moneyline": {
+    "close": {
+     "t": "2026-11-15T1700Z",
+     "nb": 56999,
+     "line": {
+      "home": -108,
+      "away": -108
+     },
+     "odds": {
+      "home": -108,
+      "away": -108
+     },
+     "tix": {
+      "home": 50,
+      "away": 50
+     },
+     "mny": {
+      "home": 32,
+      "away": 68
+     },
+     "open": -108,
+     "first_seen": "2026-11-10T0940Z",
+     "open_src": "sbr_open",
+     "calls": {
+      "money_level": "away",
+      "sharp_gap": "away",
+      "money_moving": "away",
+      "consensus_gap": "away"
+     },
+     "gap": {
+      "home": -18,
+      "away": 18
+     },
+     "div": {
+      "home": -3,
+      "away": 3
+     },
+     "books": {
+      "books": 8,
+      "median": -4.0,
+      "spread_of_books": 235,
+      "fd_vs_median": null,
+      "books_up": 5,
+      "books_dn": 3
+     },
+     "pin": -104,
+     "pin_price": -104,
+     "pin_lim": 75000,
+     "pin_price_other": -106,
+     "fair": 49.8,
+     "pin_open": 111,
+     "pin_moved_to": "home"
+    },
+    "early": {
+     "t": "2026-11-10T1040Z",
+     "nb": 2221,
+     "line": {
+      "home": -112,
+      "away": -104
+     },
+     "odds": {
+      "home": -112,
+      "away": -104
+     },
+     "tix": {
+      "home": 37,
+      "away": 63
+     },
+     "mny": {
+      "home": 22,
+      "away": 78
+     },
+     "open": -108,
+     "first_seen": "2026-11-10T0940Z",
+     "open_src": "sbr_open",
+     "calls": {
+      "follow_move": "home",
+      "rlm": "home",
+      "money_level": "away",
+      "sharp_gap": "away",
+      "consensus_gap": "away"
+     },
+     "move_pts": 0.9,
+     "public_side": "away",
+     "public_tix": 63,
+     "mny_ratio": 0.59,
+     "gap": {
+      "home": -15,
+      "away": 15
+     },
+     "div": {
+      "home": 0,
+      "away": 0
+     },
+     "books": {
+      "books": 8,
+      "median": -104.0,
+      "spread_of_books": 210,
+      "fd_vs_median": null,
+      "books_up": 6,
+      "books_dn": 1
+     },
+     "pin": -117,
+     "pin_price": -117,
+     "pin_lim": 3000,
+     "pin_price_other": 104,
+     "fair": 52.4,
+     "pin_open": 111,
+     "pin_moved_to": "home"
+    },
+    "early_graded": {
+     "follow_move": {
+      "side": "home",
+      "line": -112,
+      "odds": -112,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": true,
+      "clv": -0.9
+     },
+     "rlm": {
+      "side": "home",
+      "line": -112,
+      "odds": -112,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": true,
+      "clv": -0.9
+     },
+     "money_level": {
+      "side": "away",
+      "line": -104,
+      "odds": -104,
+      "res": "W",
+      "units": 0.962,
+      "took_fav": false,
+      "clv": 0.9
+     },
+     "sharp_gap": {
+      "side": "away",
+      "line": -104,
+      "odds": -104,
+      "res": "W",
+      "units": 0.962,
+      "took_fav": false,
+      "clv": 0.9
+     },
+     "consensus_gap": {
+      "side": "away",
+      "line": -104,
+      "odds": -104,
+      "res": "W",
+      "units": 0.962,
+      "took_fav": false,
+      "clv": 0.9
+     }
+    },
+    "close_graded": {
+     "money_level": {
+      "side": "away",
+      "line": -108,
+      "odds": -108,
+      "res": "W",
+      "units": 0.926,
+      "took_fav": true
+     },
+     "sharp_gap": {
+      "side": "away",
+      "line": -108,
+      "odds": -108,
+      "res": "W",
+      "units": 0.926,
+      "took_fav": true
+     },
+     "money_moving": {
+      "side": "away",
+      "line": -108,
+      "odds": -108,
+      "res": "W",
+      "units": 0.926,
+      "took_fav": true
+     },
+     "consensus_gap": {
+      "side": "away",
+      "line": -108,
+      "odds": -108,
+      "res": "W",
+      "units": 0.926,
+      "took_fav": true
+     }
+    }
+   },
+   "tt_home": {
+    "close": {
+     "t": "2026-11-15T1700Z",
+     "nb": 56999,
+     "line": {
+      "over": 24.5,
+      "under": 24.5
+     },
+     "odds": {
+      "over": -104,
+      "under": -122
+     },
+     "tix": {
+      "over": 0,
+      "under": 0
+     },
+     "mny": {
+      "over": 0,
+      "under": 0
+     },
+     "open": 24.5,
+     "first_seen": "2026-11-10T0940Z",
+     "open_src": "first_seen",
+     "calls": {
+      "pin_value": "under"
+     },
+     "gap": {
+      "over": 0,
+      "under": 0
+     },
+     "div": {
+      "over": 0,
+      "under": 0
+     },
+     "pin": 23.5,
+     "pin_price": -140,
+     "pin_lim": 5000,
+     "pin_price_other": 119,
+     "pin_gap": 1.0
+    },
+    "early": {
+     "t": "2026-11-10T1040Z",
+     "nb": 2221,
+     "line": {
+      "over": 24.5,
+      "under": 24.5
+     },
+     "odds": {
+      "over": -102,
+      "under": -125
+     },
+     "tix": {
+      "over": 0,
+      "under": 0
+     },
+     "mny": {
+      "over": 0,
+      "under": 0
+     },
+     "open": 24.5,
+     "first_seen": "2026-11-10T0940Z",
+     "open_src": "first_seen",
+     "calls": {
+      "pin_value": "under"
+     },
+     "gap": {
+      "over": 0,
+      "under": 0
+     },
+     "div": {
+      "over": 0,
+      "under": 0
+     },
+     "pin": 23.5,
+     "pin_price": -131,
+     "pin_lim": 2000,
+     "pin_price_other": 112,
+     "pin_gap": 1.0
+    },
+    "early_graded": {
+     "pin_value": {
+      "side": "under",
+      "line": 24.5,
+      "odds": -125,
+      "res": "W",
+      "units": 0.8,
+      "took_fav": false,
+      "clv": 0.0
+     }
+    },
+    "close_graded": {
+     "pin_value": {
+      "side": "under",
+      "line": 24.5,
+      "odds": -122,
+      "res": "W",
+      "units": 0.82,
+      "took_fav": false
+     }
+    }
+   },
+   "tt_away": {
+    "close": {
+     "t": "2026-11-15T1700Z",
+     "nb": 56999,
+     "line": {
+      "over": 24.5,
+      "under": 24.5
+     },
+     "odds": {
+      "over": -104,
+      "under": -122
+     },
+     "tix": {
+      "over": 0,
+      "under": 0
+     },
+     "mny": {
+      "over": 0,
+      "under": 0
+     },
+     "open": 23.5,
+     "first_seen": "2026-11-10T0940Z",
+     "open_src": "first_seen",
+     "calls": {
+      "follow_move": "over",
+      "pin_value": "under"
+     },
+     "move_pts": 1.0,
+     "gap": {
+      "over": 0,
+      "under": 0
+     },
+     "div": {
+      "over": 0,
+      "under": 0
+     },
+     "pin": 23.5,
+     "pin_price": -133,
+     "pin_lim": 5000,
+     "pin_price_other": 114,
+     "pin_gap": 1.0
+    },
+    "early": {
+     "t": "2026-11-10T1040Z",
+     "nb": 2221,
+     "line": {
+      "over": 23.5,
+      "under": 23.5
+     },
+     "odds": {
+      "over": -128,
+      "under": -100
+     },
+     "tix": {
+      "over": 0,
+      "under": 0
+     },
+     "mny": {
+      "over": 0,
+      "under": 0
+     },
+     "open": 23.5,
+     "first_seen": "2026-11-10T0940Z",
+     "open_src": "first_seen",
+     "calls": {},
+     "gap": {
+      "over": 0,
+      "under": 0
+     },
+     "div": {
+      "over": 0,
+      "under": 0
+     },
+     "pin": 23.5,
+     "pin_price": -122,
+     "pin_lim": 2000,
+     "pin_price_other": 104
+    },
+    "early_graded": {},
+    "close_graded": {
+     "follow_move": {
+      "side": "over",
+      "line": 24.5,
+      "odds": -104,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": true
+     },
+     "pin_value": {
+      "side": "under",
+      "line": 24.5,
+      "odds": -122,
+      "res": "W",
+      "units": 0.82,
+      "took_fav": false
+     }
+    }
+   }
+  },
+  "final": "20-17",
+  "total_pts": 37
+ },
+ {
+  "gid": "290977",
+  "game": "Kansas City Chiefs @ Atlanta Falcons",
+  "away": "Kansas City Chiefs",
+  "home": "Atlanta Falcons",
+  "kickoff": "2026-11-15T18:00:00.000Z",
+  "week": 10,
+  "first_seen": "2026-11-10T0940Z",
+  "pin_matched": true,
+  "markets": {
+   "spread": {
+    "close": {
+     "t": "2026-11-15T1700Z",
+     "nb": 58004,
+     "line": {
+      "home": 3.5,
+      "away": -3.5
+     },
+     "odds": {
+      "home": -120,
+      "away": -100
+     },
+     "tix": {
+      "home": 20,
+      "away": 80
+     },
+     "mny": {
+      "home": 37,
+      "away": 63
+     },
+     "open": 3,
+     "first_seen": "2026-11-10T0940Z",
+     "open_src": "sbr_open",
+     "calls": {
+      "follow_move": "away",
+      "money_level": "away",
+      "sharp_gap": "home",
+      "money_moving": "home"
+     },
+     "move_pts": 0.5,
+     "mny_ratio": 0.79,
+     "gap": {
+      "home": 17,
+      "away": -17
+     },
+     "div": {
+      "home": 22,
+      "away": -22
+     },
+     "books": {
+      "books": 8,
+      "median": 3.5,
+      "spread_of_books": 0.0,
+      "books_up": 3,
+      "books_dn": 1
+     },
+     "pin": 3.5,
+     "pin_price": -123,
+     "pin_lim": 100000,
+     "pin_price_other": 111
+    },
+    "early": {
+     "t": "2026-11-10T1040Z",
+     "nb": 2640,
+     "line": {
+      "home": 3.5,
+      "away": -3.5
+     },
+     "odds": {
+      "home": -120,
+      "away": -100
+     },
+     "tix": {
+      "home": 16,
+      "away": 84
+     },
+     "mny": {
+      "home": 11,
+      "away": 89
+     },
+     "open": 3,
+     "first_seen": "2026-11-10T0940Z",
+     "open_src": "sbr_open",
+     "calls": {
+      "follow_move": "away",
+      "money_level": "away",
+      "sharp_gap": "away"
+     },
+     "move_pts": 0.5,
+     "mny_ratio": 1.06,
+     "gap": {
+      "home": -5,
+      "away": 5
+     },
+     "div": {
+      "home": 0,
+      "away": 0
+     },
+     "books": {
+      "books": 8,
+      "median": 3.5,
+      "spread_of_books": 0.0,
+      "books_up": 3,
+      "books_dn": 1
+     },
+     "pin": 3.5,
+     "pin_price": -118,
+     "pin_lim": 3000,
+     "pin_price_other": 105
+    },
+    "early_graded": {
+     "follow_move": {
+      "side": "away",
+      "line": -3.5,
+      "odds": -100,
+      "res": "W",
+      "units": 1.0,
+      "took_fav": true,
+      "clv": 0.0
+     },
+     "money_level": {
+      "side": "away",
+      "line": -3.5,
+      "odds": -100,
+      "res": "W",
+      "units": 1.0,
+      "took_fav": true,
+      "clv": 0.0
+     },
+     "sharp_gap": {
+      "side": "away",
+      "line": -3.5,
+      "odds": -100,
+      "res": "W",
+      "units": 1.0,
+      "took_fav": true,
+      "clv": 0.0
+     }
+    },
+    "close_graded": {
+     "follow_move": {
+      "side": "away",
+      "line": -3.5,
+      "odds": -100,
+      "res": "W",
+      "units": 1.0,
+      "took_fav": true
+     },
+     "money_level": {
+      "side": "away",
+      "line": -3.5,
+      "odds": -100,
+      "res": "W",
+      "units": 1.0,
+      "took_fav": true
+     },
+     "sharp_gap": {
+      "side": "home",
+      "line": 3.5,
+      "odds": -120,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": false
+     },
+     "money_moving": {
+      "side": "home",
+      "line": 3.5,
+      "odds": -120,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": false
+     }
+    }
+   },
+   "total": {
+    "close": {
+     "t": "2026-11-15T1700Z",
+     "nb": 58004,
+     "line": {
+      "over": 47.5,
+      "under": 47.5
+     },
+     "odds": {
+      "over": -110,
+      "under": -110
+     },
+     "tix": {
+      "over": 59,
+      "under": 41
+     },
+     "mny": {
+      "over": 71,
+      "under": 29
+     },
+     "open": 45.5,
+     "first_seen": "2026-11-10T0940Z",
+     "open_src": "first_seen",
+     "calls": {
+      "follow_move": "over",
+      "money_level": "over",
+      "sharp_gap": "over",
+      "money_moving": "over"
+     },
+     "move_pts": 2.0,
+     "mny_ratio": 1.2,
+     "gap": {
+      "over": 12,
+      "under": -12
+     },
+     "div": {
+      "over": 4,
+      "under": -4
+     },
+     "pin": 47.5,
+     "pin_price": -116,
+     "pin_lim": 50000,
+     "pin_price_other": 103,
+     "pin_open": 46.5,
+     "pin_moved_to": "over"
+    },
+    "early": {
+     "t": "2026-11-10T1040Z",
+     "nb": 2640,
+     "line": {
+      "over": 45.5,
+      "under": 45.5
+     },
+     "odds": {
+      "over": -105,
+      "under": -115
+     },
+     "tix": {
+      "over": 73,
+      "under": 27
+     },
+     "mny": {
+      "over": 81,
+      "under": 19
+     },
+     "open": 45.5,
+     "first_seen": "2026-11-10T0940Z",
+     "open_src": "first_seen",
+     "calls": {
+      "money_level": "over",
+      "sharp_gap": "over"
+     },
+     "gap": {
+      "over": 8,
+      "under": -8
+     },
+     "div": {
+      "over": 0,
+      "under": 0
+     },
+     "pin": 45.5,
+     "pin_price": -104,
+     "pin_lim": 2000,
+     "pin_price_other": -112,
+     "pin_open": 46.5,
+     "pin_moved_to": "under"
+    },
+    "early_graded": {
+     "money_level": {
+      "side": "over",
+      "line": 45.5,
+      "odds": -105,
+      "res": "W",
+      "units": 0.952,
+      "took_fav": true,
+      "clv": 2.0
+     },
+     "sharp_gap": {
+      "side": "over",
+      "line": 45.5,
+      "odds": -105,
+      "res": "W",
+      "units": 0.952,
+      "took_fav": true,
+      "clv": 2.0
+     }
+    },
+    "close_graded": {
+     "follow_move": {
+      "side": "over",
+      "line": 47.5,
+      "odds": -110,
+      "res": "W",
+      "units": 0.909,
+      "took_fav": true
+     },
+     "money_level": {
+      "side": "over",
+      "line": 47.5,
+      "odds": -110,
+      "res": "W",
+      "units": 0.909,
+      "took_fav": true
+     },
+     "sharp_gap": {
+      "side": "over",
+      "line": 47.5,
+      "odds": -110,
+      "res": "W",
+      "units": 0.909,
+      "took_fav": true
+     },
+     "money_moving": {
+      "side": "over",
+      "line": 47.5,
+      "odds": -110,
+      "res": "W",
+      "units": 0.909,
+      "took_fav": true
+     }
+    }
+   },
+   "moneyline": {
+    "close": {
+     "t": "2026-11-15T1700Z",
+     "nb": 58004,
+     "line": {
+      "home": 144,
+      "away": -172
+     },
+     "odds": {
+      "home": 144,
+      "away": -172
+     },
+     "tix": {
+      "home": 4,
+      "away": 96
+     },
+     "mny": {
+      "home": 10,
+      "away": 90
+     },
+     "open": 100,
+     "first_seen": "2026-11-10T0940Z",
+     "open_src": "sbr_open",
+     "calls": {
+      "follow_move": "away",
+      "money_level": "away",
+      "sharp_gap": "home",
+      "money_moving": "home",
+      "consensus_gap": "home",
+      "pin_rlm": "home"
+     },
+     "move_pts": 9.0,
+     "mny_ratio": 0.94,
+     "gap": {
+      "home": 6,
+      "away": -6
+     },
+     "div": {
+      "home": 5,
+      "away": -5
+     },
+     "books": {
+      "books": 8,
+      "median": -123.0,
+      "spread_of_books": 15,
+      "fd_vs_median": null,
+      "books_up": 1,
+      "books_dn": 7
+     },
+     "pin": 160,
+     "pin_price": 160,
+     "pin_lim": 75000,
+     "pin_price_other": -179,
+     "fair": 37.5,
+     "pin_open": 170,
+     "pin_moved_to": "home",
+     "pin_rlm_tix": 4,
+     "pin_rlm_ratio": 2.5
+    },
+    "early": {
+     "t": "2026-11-10T1040Z",
+     "nb": 2640,
+     "line": {
+      "home": 150,
+      "away": -178
+     },
+     "odds": {
+      "home": 150,
+      "away": -178
+     },
+     "tix": {
+      "home": 4,
+      "away": 96
+     },
+     "mny": {
+      "home": 5,
+      "away": 95
+     },
+     "open": 100,
+     "first_seen": "2026-11-10T0940Z",
+     "open_src": "sbr_open",
+     "calls": {
+      "follow_move": "away",
+      "money_level": "away",
+      "sharp_gap": "home",
+      "consensus_gap": "home",
+      "pin_rlm": "home"
+     },
+     "move_pts": 10.0,
+     "mny_ratio": 0.99,
+     "gap": {
+      "home": 1,
+      "away": -1
+     },
+     "div": {
+      "home": 0,
+      "away": 0
+     },
+     "books": {
+      "books": 8,
+      "median": -119.5,
+      "spread_of_books": 6,
+      "fd_vs_median": null,
+      "books_up": 1,
+      "books_dn": 7
+     },
+     "pin": 160,
+     "pin_price": 160,
+     "pin_lim": 2000,
+     "pin_price_other": -183,
+     "fair": 37.3,
+     "pin_open": 170,
+     "pin_moved_to": "home",
+     "pin_rlm_tix": 4,
+     "pin_rlm_ratio": 1.25
+    },
+    "early_graded": {
+     "follow_move": {
+      "side": "away",
+      "line": -178,
+      "odds": -178,
+      "res": "W",
+      "units": 0.562,
+      "took_fav": true,
+      "clv": -0.8
+     },
+     "money_level": {
+      "side": "away",
+      "line": -178,
+      "odds": -178,
+      "res": "W",
+      "units": 0.562,
+      "took_fav": true,
+      "clv": -0.8
+     },
+     "sharp_gap": {
+      "side": "home",
+      "line": 150,
+      "odds": 150,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": false,
+      "clv": 1.0
+     },
+     "consensus_gap": {
+      "side": "home",
+      "line": 150,
+      "odds": 150,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": false,
+      "clv": 1.0
+     },
+     "pin_rlm": {
+      "side": "home",
+      "line": 150,
+      "odds": 150,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": false,
+      "clv": 1.0
+     }
+    },
+    "close_graded": {
+     "follow_move": {
+      "side": "away",
+      "line": -172,
+      "odds": -172,
+      "res": "W",
+      "units": 0.581,
+      "took_fav": true
+     },
+     "money_level": {
+      "side": "away",
+      "line": -172,
+      "odds": -172,
+      "res": "W",
+      "units": 0.581,
+      "took_fav": true
+     },
+     "sharp_gap": {
+      "side": "home",
+      "line": 144,
+      "odds": 144,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": false
+     },
+     "money_moving": {
+      "side": "home",
+      "line": 144,
+      "odds": 144,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": false
+     },
+     "consensus_gap": {
+      "side": "home",
+      "line": 144,
+      "odds": 144,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": false
+     },
+     "pin_rlm": {
+      "side": "home",
+      "line": 144,
+      "odds": 144,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": false
+     }
+    }
+   },
+   "tt_home": {
+    "close": {
+     "t": "2026-11-15T1700Z",
+     "nb": 58004,
+     "line": {
+      "over": 22.5,
+      "under": 22.5
+     },
+     "odds": {
+      "over": -113,
+      "under": -113
+     },
+     "tix": {
+      "over": 0,
+      "under": 0
+     },
+     "mny": {
+      "over": 0,
+      "under": 0
+     },
+     "open": 20.5,
+     "first_seen": "2026-11-10T0940Z",
+     "open_src": "first_seen",
+     "calls": {
+      "follow_move": "over",
+      "pin_value": "under"
+     },
+     "move_pts": 2.0,
+     "gap": {
+      "over": 0,
+      "under": 0
+     },
+     "div": {
+      "over": 0,
+      "under": 0
+     },
+     "pin": 20.5,
+     "pin_price": -139,
+     "pin_lim": 5000,
+     "pin_price_other": 118,
+     "pin_gap": 2.0
+    },
+    "early": {
+     "t": "2026-11-10T1040Z",
+     "nb": 2640,
+     "line": {
+      "over": 20.5,
+      "under": 20.5
+     },
+     "odds": {
+      "over": -115,
+      "under": -111
+     },
+     "tix": {
+      "over": 0,
+      "under": 0
+     },
+     "mny": {
+      "over": 0,
+      "under": 0
+     },
+     "open": 20.5,
+     "first_seen": "2026-11-10T0940Z",
+     "open_src": "first_seen",
+     "calls": {},
+     "gap": {
+      "over": 0,
+      "under": 0
+     },
+     "div": {
+      "over": 0,
+      "under": 0
+     },
+     "pin": 20.5,
+     "pin_price": -113,
+     "pin_lim": 1000,
+     "pin_price_other": -103
+    },
+    "early_graded": {},
+    "close_graded": {
+     "follow_move": {
+      "side": "over",
+      "line": 22.5,
+      "odds": -113,
+      "res": "L",
+      "units": -1.0,
+      "took_fav": true
+     },
+     "pin_value": {
+      "side": "under",
+      "line": 22.5,
+      "odds": -113,
+      "res": "W",
+      "units": 0.885,
+      "took_fav": false
+     }
+    }
+   },
+   "tt_away": {
+    "close": {
+     "t": "2026-11-15T1700Z",
+     "nb": 58004,
+     "line": {
+      "over": 25.5,
+      "under": 25.5
+     },
+     "odds": {
+      "over": -115,
+      "under": -111
+     },
+     "tix": {
+      "over": 0,
+      "under": 0
+     },
+     "mny": {
+      "over": 0,
+      "under": 0
+     },
+     "open": 24.5,
+     "first_seen": "2026-11-10T0940Z",
+     "open_src": "first_seen",
+     "calls": {
+      "follow_move": "over"
+     },
+     "move_pts": 1.0,
+     "gap": {
+      "over": 0,
+      "under": 0
+     },
+     "div": {
+      "over": 0,
+      "under": 0
+     },
+     "pin": 25.5,
+     "pin_price": -113,
+     "pin_lim": 5000,
+     "pin_price_other": -104
+    },
+    "early": {
+     "t": "2026-11-10T1040Z",
+     "nb": 2640,
+     "line": {
+      "over": 24.5,
+      "under": 24.5
+     },
+     "odds": {
+      "over": -102,
+      "under": -125
+     },
+     "tix": {
+      "over": 0,
+      "under": 0
+     },
+     "mny": {
+      "over": 0,
+      "under": 0
+     },
+     "open": 24.5,
+     "first_seen": "2026-11-10T0940Z",
+     "open_src": "first_seen",
+     "calls": {
+      "pin_value": "over"
+     },
+     "gap": {
+      "over": 0,
+      "under": 0
+     },
+     "div": {
+      "over": 0,
+      "under": 0
+     },
+     "pin": 25.5,
+     "pin_price": 105,
+     "pin_lim": 1000,
+     "pin_price_other": -123,
+     "pin_gap": -1.0
+    },
+    "early_graded": {
+     "pin_value": {
+      "side": "over",
+      "line": 24.5,
+      "odds": -102,
+      "res": "W",
+      "units": 0.98,
+      "took_fav": true,
+      "clv": 1.0
+     }
+    },
+    "close_graded": {
+     "follow_move": {
+      "side": "over",
+      "line": 25.5,
+      "odds": -115,
+      "res": "W",
+      "units": 0.87,
+      "took_fav": true
+     }
+    }
+   }
+  },
+  "final": "35-13",
+  "total_pts": 48
  }
 ]
