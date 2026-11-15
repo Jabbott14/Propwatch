@@ -247,7 +247,9 @@ jobs:
                   if f["o"][0] != p["pts"]:
                       r["pin_gap"] = round(f["o"][0] - p["pts"], 1)
                       r["calls"]["pin_value"] = "under" if f["o"][0] > p["pts"] else "over"
-                  else:
+                  elif f["o"][1] is not None and f["u"][1] is not None:
+                      # a listed prop can carry a null price (suspended leg); dec() cannot take it,
+                      # and an unguarded call here killed every grade_props run from 2026-11-12.
                       eo = fair_over * dec(f["o"][1]) - 1
                       eu = (1 - fair_over) * dec(f["u"][1]) - 1
                       if max(eo, eu) > 0:
@@ -261,7 +263,7 @@ jobs:
                           r["calls"]["pin_lead"] = "over" if pd_ > 0 else "under"
 
               # --- FanDuel's own movement. The only high-volume channel: no splits exist on props.
-              if r["open"] is not None and f["o"][0] != r["open"]:
+              if r["open"] is not None and f["o"][0] is not None and f["o"][0] != r["open"]:
                   r["calls"]["fd_move"] = "over" if f["o"][0] > r["open"] else "under"
                   r["move_pts"] = round(f["o"][0] - r["open"], 1)
               elif (f0 and "o" in f0 and "u" in f0 and f0["o"][0] == f["o"][0]
@@ -502,11 +504,12 @@ jobs:
                       kt = (ko - dt.timedelta(hours=5)).strftime("%a %H:%M") if ko else ""
                       parts = [f"{s}->{sd} ({rec_str(rec[s]) if s in rec else '0-0'})"
                                for s, sd in r["calls"].items()]
+                      px = f"{r['odds'][side]:+d}" if r["odds"].get(side) is not None else ""
                       L.append(f"| {kt} | {x['player'].title()} | {x['stat']} | {side} | "
                                f"{r['line']:g} | {r.get('open','')} | {r.get('pin','')} | "
                                f"{r.get('pin_gap','')} | "
                                f"{('$%s' % r['pin_lim']) if r.get('pin_lim') else ''} | "
-                               f"{r['odds'][side]:+d} | {'; '.join(parts)} |")
+                               f"{px} | {'; '.join(parts)} |")
                   L.append("")
               if not groups: L.append("No live props with a signal yet.")
               return "\n".join(L) + "\n"
