@@ -24864,5 +24864,1495 @@
     "units": 1.18
    }
   }
+ },
+ {
+  "game": "Washington Commanders @ New York Giants",
+  "player": "jayden daniels",
+  "stat": "pass_yds",
+  "kickoff": "2026-11-13T01:15:00.000Z",
+  "week": 10,
+  "actual": 249.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-13T0114Z",
+    "line": 202.5,
+    "odds": {
+     "over": -113,
+     "under": -113
+    },
+    "open": 205.5,
+    "calls": {
+     "fd_move": "under"
+    },
+    "pin": 202.5,
+    "pin_lim": 5000,
+    "fair_over": 0.4957,
+    "move_pts": -3.0
+   },
+   "early": {
+    "t": "2026-11-09T0709Z",
+    "line": 205.5,
+    "odds": {
+     "over": -114,
+     "under": -114
+    },
+    "open": 205.5,
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "fd_move": {
+    "side": "under",
+    "line": 202.5,
+    "odds": -113,
+    "res": "L",
+    "units": -1.0
+   }
+  }
+ },
+ {
+  "game": "Washington Commanders @ New York Giants",
+  "player": "jayden daniels",
+  "stat": "pass_tds",
+  "kickoff": "2026-11-13T01:15:00.000Z",
+  "week": 10,
+  "actual": 3.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-13T0114Z",
+    "line": 1.5,
+    "odds": {
+     "over": 162,
+     "under": -215
+    },
+    "open": 1.5,
+    "calls": {
+     "fd_juice": "under"
+    },
+    "pin": 1.5,
+    "pin_lim": 5000,
+    "fair_over": 0.3603,
+    "juice_c": [
+     30,
+     -37
+    ]
+   },
+   "early": {
+    "t": "2026-11-09T0709Z",
+    "line": 1.5,
+    "odds": {
+     "over": 134,
+     "under": -180
+    },
+    "open": 1.5,
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "fd_juice": {
+    "side": "under",
+    "line": 1.5,
+    "odds": -215,
+    "res": "L",
+    "units": -1.0
+   }
+  }
+ },
+ {
+  "game": "Washington Commanders @ New York Giants",
+  "player": "jj mccarthy",
+  "stat": "pass_yds",
+  "kickoff": "2026-11-13T01:15:00.000Z",
+  "week": 10,
+  "actual": 293.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-13T0114Z",
+    "line": 201.5,
+    "odds": {
+     "over": -113,
+     "under": -113
+    },
+    "open": 210.5,
+    "calls": {
+     "fd_move": "under"
+    },
+    "pin": 201.5,
+    "pin_lim": 5000,
+    "fair_over": 0.5087,
+    "move_pts": -9.0
+   },
+   "early": {
+    "t": "2026-11-09T0709Z",
+    "line": 210.5,
+    "odds": {
+     "over": -114,
+     "under": -114
+    },
+    "open": 210.5,
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "fd_move": {
+    "side": "under",
+    "line": 201.5,
+    "odds": -113,
+    "res": "L",
+    "units": -1.0
+   }
+  }
+ },
+ {
+  "game": "Washington Commanders @ New York Giants",
+  "player": "jj mccarthy",
+  "stat": "pass_tds",
+  "kickoff": "2026-11-13T01:15:00.000Z",
+  "week": 10,
+  "actual": 1.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-13T0114Z",
+    "line": 1.5,
+    "odds": {
+     "over": 162,
+     "under": -215
+    },
+    "open": 1.5,
+    "calls": {
+     "pin_price": "over",
+     "fd_juice": "under"
+    },
+    "pin": 1.5,
+    "pin_lim": 5000,
+    "fair_over": 0.3817,
+    "edge_pct": 0.01,
+    "juice_c": [
+     42,
+     -55
+    ]
+   },
+   "early": {
+    "t": "2026-11-09T0709Z",
+    "line": 1.5,
+    "odds": {
+     "over": 120,
+     "under": -160
+    },
+    "open": 1.5,
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "pin_price": {
+    "side": "over",
+    "line": 1.5,
+    "odds": 162,
+    "res": "L",
+    "units": -1.0
+   },
+   "fd_juice": {
+    "side": "under",
+    "line": 1.5,
+    "odds": -215,
+    "res": "W",
+    "units": 0.465
+   }
+  }
+ },
+ {
+  "game": "Washington Commanders @ New York Giants",
+  "player": "darnell mooney",
+  "stat": "receptions",
+  "kickoff": "2026-11-13T01:15:00.000Z",
+  "week": 10,
+  "actual": 2.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-13T0114Z",
+    "line": 1.5,
+    "odds": {
+     "over": 106,
+     "under": -140
+    },
+    "open": 1.5,
+    "calls": {
+     "fd_juice": "under"
+    },
+    "pin": 1.5,
+    "pin_lim": 1000,
+    "fair_over": 0.4436,
+    "juice_c": [
+     228,
+     -32
+    ]
+   },
+   "early": {
+    "t": "2026-11-09T0809Z",
+    "line": 1.5,
+    "odds": {
+     "over": -122,
+     "under": -108
+    },
+    "open": 1.5,
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "fd_juice": {
+    "side": "under",
+    "line": 1.5,
+    "odds": -140,
+    "res": "L",
+    "units": -1.0
+   }
+  }
+ },
+ {
+  "game": "Washington Commanders @ New York Giants",
+  "player": "malik nabers",
+  "stat": "recv_yds",
+  "kickoff": "2026-11-13T01:15:00.000Z",
+  "week": 10,
+  "actual": 44.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-13T0114Z",
+    "line": 66.5,
+    "odds": {
+     "over": -113,
+     "under": -113
+    },
+    "open": 68.5,
+    "calls": {
+     "pin_value": "over",
+     "pin_lead": "over",
+     "fd_move": "under"
+    },
+    "pin": 67.5,
+    "pin_lim": 5000,
+    "fair_over": 0.5152,
+    "pin_gap": -1.0,
+    "move_pts": -2.0
+   },
+   "early": {
+    "t": "2026-11-09T0809Z",
+    "line": 68.5,
+    "odds": {
+     "over": -114,
+     "under": -114
+    },
+    "open": 68.5,
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "pin_value": {
+    "side": "over",
+    "line": 66.5,
+    "odds": -113,
+    "res": "L",
+    "units": -1.0
+   },
+   "pin_lead": {
+    "side": "over",
+    "line": 66.5,
+    "odds": -113,
+    "res": "L",
+    "units": -1.0
+   },
+   "fd_move": {
+    "side": "under",
+    "line": 66.5,
+    "odds": -113,
+    "res": "W",
+    "units": 0.885
+   }
+  }
+ },
+ {
+  "game": "Washington Commanders @ New York Giants",
+  "player": "darnell mooney",
+  "stat": "recv_yds",
+  "kickoff": "2026-11-13T01:15:00.000Z",
+  "week": 10,
+  "actual": 8.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-13T0114Z",
+    "line": 13.5,
+    "odds": {
+     "over": -113,
+     "under": -113
+    },
+    "open": 15.5,
+    "calls": {
+     "pin_value": "over",
+     "fd_move": "under"
+    },
+    "pin": 14.5,
+    "pin_lim": 1000,
+    "fair_over": 0.47,
+    "pin_gap": -1.0,
+    "move_pts": -2.0
+   },
+   "early": {
+    "t": "2026-11-09T0809Z",
+    "line": 15.5,
+    "odds": {
+     "over": -114,
+     "under": -114
+    },
+    "open": 15.5,
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "pin_value": {
+    "side": "over",
+    "line": 13.5,
+    "odds": -113,
+    "res": "L",
+    "units": -1.0
+   },
+   "fd_move": {
+    "side": "under",
+    "line": 13.5,
+    "odds": -113,
+    "res": "W",
+    "units": 0.885
+   }
+  }
+ },
+ {
+  "game": "Washington Commanders @ New York Giants",
+  "player": "malachi fields",
+  "stat": "recv_yds",
+  "kickoff": "2026-11-13T01:15:00.000Z",
+  "week": 10,
+  "actual": 62.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-13T0114Z",
+    "line": 25.5,
+    "odds": {
+     "over": -113,
+     "under": -113
+    },
+    "open": 25.5,
+    "calls": {
+     "pin_lead": "over"
+    },
+    "pin": 25.5,
+    "pin_lim": 3000,
+    "fair_over": 0.513
+   },
+   "early": {
+    "t": "2026-11-09T0809Z",
+    "line": 25.5,
+    "odds": {
+     "over": -114,
+     "under": -114
+    },
+    "open": 25.5,
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "pin_lead": {
+    "side": "over",
+    "line": 25.5,
+    "odds": -113,
+    "res": "W",
+    "units": 0.885
+   }
+  }
+ },
+ {
+  "game": "Washington Commanders @ New York Giants",
+  "player": "antonio williams",
+  "stat": "receptions",
+  "kickoff": "2026-11-13T01:15:00.000Z",
+  "week": 10,
+  "actual": 2.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-13T0114Z",
+    "line": 3.5,
+    "odds": {
+     "over": -130,
+     "under": -102
+    },
+    "open": 3.5,
+    "calls": {
+     "fd_juice": "under"
+    },
+    "pin": 3.5,
+    "pin_lim": 3000,
+    "fair_over": 0.513,
+    "juice_c": [
+     42,
+     -230
+    ]
+   },
+   "early": {
+    "t": "2026-11-09T0809Z",
+    "line": 3.5,
+    "odds": {
+     "over": -172,
+     "under": 128
+    },
+    "open": 3.5,
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "fd_juice": {
+    "side": "under",
+    "line": 3.5,
+    "odds": -102,
+    "res": "W",
+    "units": 0.98
+   }
+  }
+ },
+ {
+  "game": "Washington Commanders @ New York Giants",
+  "player": "isaiah likely",
+  "stat": "receptions",
+  "kickoff": "2026-11-13T01:15:00.000Z",
+  "week": 10,
+  "actual": 9.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-13T0114Z",
+    "line": 4.5,
+    "odds": {
+     "over": 102,
+     "under": -136
+    },
+    "open": 4.5,
+    "calls": {
+     "fd_juice": "under"
+    },
+    "pin": 4.5,
+    "pin_lim": 5000,
+    "fair_over": 0.4752,
+    "juice_c": [
+     240,
+     -240
+    ]
+   },
+   "early": {
+    "t": "2026-11-09T0809Z",
+    "line": 4.5,
+    "odds": {
+     "over": -138,
+     "under": 104
+    },
+    "open": 4.5,
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "fd_juice": {
+    "side": "under",
+    "line": 4.5,
+    "odds": -136,
+    "res": "L",
+    "units": -1.0
+   }
+  }
+ },
+ {
+  "game": "Washington Commanders @ New York Giants",
+  "player": "stefon diggs",
+  "stat": "recv_yds",
+  "kickoff": "2026-11-13T01:15:00.000Z",
+  "week": 10,
+  "actual": 83.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-13T0114Z",
+    "line": 38.5,
+    "odds": {
+     "over": -113,
+     "under": -113
+    },
+    "open": 43.5,
+    "calls": {
+     "pin_value": "under",
+     "fd_move": "under"
+    },
+    "pin": 36.5,
+    "pin_lim": 5000,
+    "fair_over": 0.5043,
+    "pin_gap": 2.0,
+    "move_pts": -5.0
+   },
+   "early": {
+    "t": "2026-11-09T0809Z",
+    "line": 43.5,
+    "odds": {
+     "over": -114,
+     "under": -114
+    },
+    "open": 43.5,
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "pin_value": {
+    "side": "under",
+    "line": 38.5,
+    "odds": -113,
+    "res": "L",
+    "units": -1.0
+   },
+   "fd_move": {
+    "side": "under",
+    "line": 38.5,
+    "odds": -113,
+    "res": "L",
+    "units": -1.0
+   }
+  }
+ },
+ {
+  "game": "Washington Commanders @ New York Giants",
+  "player": "rachaad white",
+  "stat": "receptions",
+  "kickoff": "2026-11-13T01:15:00.000Z",
+  "week": 10,
+  "actual": 1.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-13T0114Z",
+    "line": 2.5,
+    "odds": {
+     "over": 132,
+     "under": -178
+    },
+    "open": 2.5,
+    "calls": {
+     "fd_juice": "under"
+    },
+    "pin": 2.5,
+    "pin_lim": 1000,
+    "fair_over": 0.3957,
+    "juice_c": [
+     26,
+     -38
+    ]
+   },
+   "early": {
+    "t": "2026-11-09T0809Z",
+    "line": 2.5,
+    "odds": {
+     "over": 106,
+     "under": -140
+    },
+    "open": 2.5,
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "fd_juice": {
+    "side": "under",
+    "line": 2.5,
+    "odds": -178,
+    "res": "W",
+    "units": 0.562
+   }
+  }
+ },
+ {
+  "game": "Washington Commanders @ New York Giants",
+  "player": "antonio williams",
+  "stat": "recv_yds",
+  "kickoff": "2026-11-13T01:15:00.000Z",
+  "week": 10,
+  "actual": 42.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-13T0114Z",
+    "line": 37.5,
+    "odds": {
+     "over": -113,
+     "under": -113
+    },
+    "open": 42.5,
+    "calls": {
+     "fd_move": "under"
+    },
+    "pin": 37.5,
+    "pin_lim": 3000,
+    "fair_over": 0.5022,
+    "move_pts": -5.0
+   },
+   "early": {
+    "t": "2026-11-09T0809Z",
+    "line": 42.5,
+    "odds": {
+     "over": -114,
+     "under": -114
+    },
+    "open": 42.5,
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "fd_move": {
+    "side": "under",
+    "line": 37.5,
+    "odds": -113,
+    "res": "L",
+    "units": -1.0
+   }
+  }
+ },
+ {
+  "game": "Washington Commanders @ New York Giants",
+  "player": "malik nabers",
+  "stat": "receptions",
+  "kickoff": "2026-11-13T01:15:00.000Z",
+  "week": 10,
+  "actual": 5.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-13T0114Z",
+    "line": 5.5,
+    "odds": {
+     "over": -120,
+     "under": -110
+    },
+    "open": 5.5,
+    "calls": {
+     "fd_juice": "under"
+    },
+    "pin": 5.5,
+    "pin_lim": 5000,
+    "fair_over": 0.5174,
+    "juice_c": [
+     28,
+     -222
+    ]
+   },
+   "early": {
+    "t": "2026-11-09T0809Z",
+    "line": 5.5,
+    "odds": {
+     "over": -148,
+     "under": 112
+    },
+    "open": 5.5,
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "fd_juice": {
+    "side": "under",
+    "line": 5.5,
+    "odds": -110,
+    "res": "W",
+    "units": 0.909
+   }
+  }
+ },
+ {
+  "game": "Washington Commanders @ New York Giants",
+  "player": "stefon diggs",
+  "stat": "receptions",
+  "kickoff": "2026-11-13T01:15:00.000Z",
+  "week": 10,
+  "actual": 6.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-13T0114Z",
+    "line": 3.5,
+    "odds": {
+     "over": -172,
+     "under": 128
+    },
+    "open": 4.5,
+    "calls": {
+     "fd_move": "under"
+    },
+    "pin": 3.5,
+    "pin_lim": 5000,
+    "fair_over": 0.5903,
+    "move_pts": -1.0
+   },
+   "early": {
+    "t": "2026-11-09T0809Z",
+    "line": 4.5,
+    "odds": {
+     "over": 112,
+     "under": -148
+    },
+    "open": 4.5,
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "fd_move": {
+    "side": "under",
+    "line": 3.5,
+    "odds": 128,
+    "res": "L",
+    "units": -1.0
+   }
+  }
+ },
+ {
+  "game": "Washington Commanders @ New York Giants",
+  "player": "isaiah likely",
+  "stat": "recv_yds",
+  "kickoff": "2026-11-13T01:15:00.000Z",
+  "week": 10,
+  "actual": 127.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-13T0114Z",
+    "line": 46.5,
+    "odds": {
+     "over": -113,
+     "under": -113
+    },
+    "open": 47.5,
+    "calls": {
+     "fd_move": "under"
+    },
+    "pin": 46.5,
+    "pin_lim": 5000,
+    "fair_over": 0.4978,
+    "move_pts": -1.0
+   },
+   "early": {
+    "t": "2026-11-09T0809Z",
+    "line": 47.5,
+    "odds": {
+     "over": -114,
+     "under": -114
+    },
+    "open": 47.5,
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "fd_move": {
+    "side": "under",
+    "line": 46.5,
+    "odds": -113,
+    "res": "L",
+    "units": -1.0
+   }
+  }
+ },
+ {
+  "game": "Washington Commanders @ New York Giants",
+  "player": "jayden daniels",
+  "stat": "rush_yds",
+  "kickoff": "2026-11-13T01:15:00.000Z",
+  "week": 10,
+  "actual": 28.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-13T0114Z",
+    "line": 33.5,
+    "odds": {
+     "over": -113,
+     "under": -113
+    },
+    "open": 33.5,
+    "calls": {
+     "pin_value": "over",
+     "pin_lead": "over"
+    },
+    "pin": 37.5,
+    "pin_lim": 1000,
+    "fair_over": 0.4417,
+    "pin_gap": -4.0
+   },
+   "early": {
+    "t": "2026-11-09T0809Z",
+    "line": 33.5,
+    "odds": {
+     "over": -114,
+     "under": -114
+    },
+    "open": 33.5,
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "pin_value": {
+    "side": "over",
+    "line": 33.5,
+    "odds": -113,
+    "res": "L",
+    "units": -1.0
+   },
+   "pin_lead": {
+    "side": "over",
+    "line": 33.5,
+    "odds": -113,
+    "res": "L",
+    "units": -1.0
+   }
+  }
+ },
+ {
+  "game": "Washington Commanders @ New York Giants",
+  "player": "rachaad white",
+  "stat": "rush_yds",
+  "kickoff": "2026-11-13T01:15:00.000Z",
+  "week": 10,
+  "actual": 47.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-13T0114Z",
+    "line": 38.5,
+    "odds": {
+     "over": -113,
+     "under": -113
+    },
+    "open": 39.5,
+    "calls": {
+     "pin_lead": "over",
+     "fd_move": "under"
+    },
+    "pin": 38.5,
+    "pin_lim": 1000,
+    "fair_over": 0.5205,
+    "move_pts": -1.0
+   },
+   "early": {
+    "t": "2026-11-09T0809Z",
+    "line": 39.5,
+    "odds": {
+     "over": -114,
+     "under": -114
+    },
+    "open": 39.5,
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "pin_lead": {
+    "side": "over",
+    "line": 38.5,
+    "odds": -113,
+    "res": "W",
+    "units": 0.885
+   },
+   "fd_move": {
+    "side": "under",
+    "line": 38.5,
+    "odds": -113,
+    "res": "L",
+    "units": -1.0
+   }
+  }
+ },
+ {
+  "game": "Washington Commanders @ New York Giants",
+  "player": "cam skattebo",
+  "stat": "rush_yds",
+  "kickoff": "2026-11-13T01:15:00.000Z",
+  "week": 10,
+  "actual": 78.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-13T0114Z",
+    "line": 63.5,
+    "odds": {
+     "over": -113,
+     "under": -113
+    },
+    "open": 52.5,
+    "calls": {
+     "pin_value": "over",
+     "fd_move": "over"
+    },
+    "pin": 64.5,
+    "pin_lim": 5000,
+    "fair_over": 0.5,
+    "pin_gap": -1.0,
+    "move_pts": 11.0
+   },
+   "early": {
+    "t": "2026-11-09T0809Z",
+    "line": 52.5,
+    "odds": {
+     "over": -114,
+     "under": -114
+    },
+    "open": 52.5,
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "pin_value": {
+    "side": "over",
+    "line": 63.5,
+    "odds": -113,
+    "res": "W",
+    "units": 0.885
+   },
+   "fd_move": {
+    "side": "over",
+    "line": 63.5,
+    "odds": -113,
+    "res": "W",
+    "units": 0.885
+   }
+  }
+ },
+ {
+  "game": "Washington Commanders @ New York Giants",
+  "player": "devin singletary",
+  "stat": "rush_yds",
+  "kickoff": "2026-11-13T01:15:00.000Z",
+  "week": 10,
+  "actual": 3.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-13T0114Z",
+    "line": 19.5,
+    "odds": {
+     "over": -113,
+     "under": -113
+    },
+    "open": 28.5,
+    "calls": {
+     "pin_value": "over",
+     "fd_move": "under"
+    },
+    "pin": 20.5,
+    "pin_lim": 1000,
+    "fair_over": 0.47,
+    "pin_gap": -1.0,
+    "move_pts": -9.0
+   },
+   "early": {
+    "t": "2026-11-09T0809Z",
+    "line": 28.5,
+    "odds": {
+     "over": -114,
+     "under": -114
+    },
+    "open": 28.5,
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "pin_value": {
+    "side": "over",
+    "line": 19.5,
+    "odds": -113,
+    "res": "L",
+    "units": -1.0
+   },
+   "fd_move": {
+    "side": "under",
+    "line": 19.5,
+    "odds": -113,
+    "res": "W",
+    "units": 0.885
+   }
+  }
+ },
+ {
+  "game": "Washington Commanders @ New York Giants",
+  "player": "jj mccarthy",
+  "stat": "rush_yds",
+  "kickoff": "2026-11-13T01:15:00.000Z",
+  "week": 10,
+  "actual": 34.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-13T0114Z",
+    "line": 15.5,
+    "odds": {
+     "over": -113,
+     "under": -113
+    },
+    "open": 17.5,
+    "calls": {
+     "fd_move": "under"
+    },
+    "pin": 15.5,
+    "pin_lim": 1000,
+    "fair_over": 0.5108,
+    "move_pts": -2.0
+   },
+   "early": {
+    "t": "2026-11-09T0809Z",
+    "line": 17.5,
+    "odds": {
+     "over": -114,
+     "under": -114
+    },
+    "open": 17.5,
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "fd_move": {
+    "side": "under",
+    "line": 15.5,
+    "odds": -113,
+    "res": "L",
+    "units": -1.0
+   }
+  }
+ },
+ {
+  "game": "Washington Commanders @ New York Giants",
+  "player": "austin ekeler",
+  "stat": "rush_yds",
+  "kickoff": "2026-11-13T01:15:00.000Z",
+  "week": 10,
+  "actual": 26.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-13T0114Z",
+    "line": 29.5,
+    "odds": {
+     "over": -113,
+     "under": -113
+    },
+    "open": 24.5,
+    "calls": {
+     "fd_move": "over"
+    },
+    "pin": 29.5,
+    "pin_lim": 1000,
+    "fair_over": 0.5087,
+    "move_pts": 5.0
+   },
+   "early": {
+    "t": "2026-11-09T0809Z",
+    "line": 24.5,
+    "odds": {
+     "over": -114,
+     "under": -114
+    },
+    "open": 24.5,
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "fd_move": {
+    "side": "over",
+    "line": 29.5,
+    "odds": -113,
+    "res": "L",
+    "units": -1.0
+   }
+  }
+ },
+ {
+  "game": "Washington Commanders @ New York Giants",
+  "player": "austin ekeler",
+  "stat": "recv_yds",
+  "kickoff": "2026-11-13T01:15:00.000Z",
+  "week": 10,
+  "actual": 26.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-13T0114Z",
+    "line": 10.5,
+    "odds": {
+     "over": -113,
+     "under": -113
+    },
+    "open": 6.5,
+    "calls": {
+     "fd_move": "over"
+    },
+    "pin": 10.5,
+    "pin_lim": 1000,
+    "fair_over": 0.5,
+    "move_pts": 4.0
+   },
+   "early": {
+    "t": "2026-11-09T1924Z",
+    "line": 6.5,
+    "odds": {
+     "over": -114,
+     "under": -114
+    },
+    "open": 6.5,
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "fd_move": {
+    "side": "over",
+    "line": 10.5,
+    "odds": -113,
+    "res": "W",
+    "units": 0.885
+   }
+  }
+ },
+ {
+  "game": "Washington Commanders @ New York Giants",
+  "player": "austin ekeler",
+  "stat": "receptions",
+  "kickoff": "2026-11-13T01:15:00.000Z",
+  "week": 10,
+  "actual": 4.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-13T0114Z",
+    "line": 1.5,
+    "odds": {
+     "over": -130,
+     "under": -102
+    },
+    "open": 1.5,
+    "calls": {
+     "fd_juice": "over"
+    },
+    "pin": 1.5,
+    "pin_lim": 1000,
+    "fair_over": 0.5,
+    "juice_c": [
+     -246,
+     52
+    ]
+   },
+   "early": {
+    "t": "2026-11-09T1924Z",
+    "line": 1.5,
+    "odds": {
+     "over": 116,
+     "under": -154
+    },
+    "open": 1.5,
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "fd_juice": {
+    "side": "over",
+    "line": 1.5,
+    "odds": -130,
+    "res": "W",
+    "units": 0.769
+   }
+  }
+ },
+ {
+  "game": "Washington Commanders @ New York Giants",
+  "player": "devin singletary",
+  "stat": "receptions",
+  "kickoff": "2026-11-13T01:15:00.000Z",
+  "week": 10,
+  "actual": 0.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-13T0114Z",
+    "line": 1.5,
+    "odds": {
+     "over": -108,
+     "under": -122
+    },
+    "open": 1.5,
+    "calls": {
+     "fd_juice": "over"
+    },
+    "pin": 1.5,
+    "pin_lim": 1000,
+    "fair_over": 0.4892,
+    "juice_c": [
+     -240,
+     56
+    ]
+   },
+   "early": {
+    "t": "2026-11-09T2005Z",
+    "line": 1.5,
+    "odds": {
+     "over": 132,
+     "under": -178
+    },
+    "open": 1.5,
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "fd_juice": {
+    "side": "over",
+    "line": 1.5,
+    "odds": -108,
+    "res": "L",
+    "units": -1.0
+   }
+  }
+ },
+ {
+  "game": "Washington Commanders @ New York Giants",
+  "player": "devin singletary",
+  "stat": "recv_yds",
+  "kickoff": "2026-11-13T01:15:00.000Z",
+  "week": 10,
+  "actual": 0.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-13T0114Z",
+    "line": 9.5,
+    "odds": {
+     "over": -113,
+     "under": -113
+    },
+    "open": 7.5,
+    "calls": {
+     "fd_move": "over"
+    },
+    "pin": 9.5,
+    "pin_lim": 1000,
+    "fair_over": 0.4838,
+    "move_pts": 2.0
+   },
+   "early": {
+    "t": "2026-11-09T2005Z",
+    "line": 7.5,
+    "odds": {
+     "over": -114,
+     "under": -114
+    },
+    "open": 7.5,
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "fd_move": {
+    "side": "over",
+    "line": 9.5,
+    "odds": -113,
+    "res": "L",
+    "units": -1.0
+   }
+  }
+ },
+ {
+  "game": "Washington Commanders @ New York Giants",
+  "player": "cam skattebo",
+  "stat": "receptions",
+  "kickoff": "2026-11-13T01:15:00.000Z",
+  "week": 10,
+  "actual": 3.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-13T0114Z",
+    "line": 1.5,
+    "odds": {
+     "over": 106,
+     "under": -140
+    },
+    "open": 1.5,
+    "calls": {
+     "fd_juice": "over"
+    },
+    "pin": 1.5,
+    "pin_lim": 1000,
+    "fair_over": 0.4168,
+    "juice_c": [
+     -18,
+     26
+    ]
+   },
+   "early": {
+    "t": "2026-11-09T2005Z",
+    "line": 1.5,
+    "odds": {
+     "over": 124,
+     "under": -166
+    },
+    "open": 1.5,
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "fd_juice": {
+    "side": "over",
+    "line": 1.5,
+    "odds": 106,
+    "res": "W",
+    "units": 1.06
+   }
+  }
+ },
+ {
+  "game": "Washington Commanders @ New York Giants",
+  "player": "theo johnson",
+  "stat": "receptions",
+  "kickoff": "2026-11-13T01:15:00.000Z",
+  "week": 10,
+  "actual": 1.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-13T0114Z",
+    "line": 0.5,
+    "odds": {
+     "over": -148,
+     "under": 112
+    },
+    "open": 0.5,
+    "calls": {
+     "fd_juice": "under"
+    },
+    "pin": 0.5,
+    "pin_lim": 1000,
+    "fair_over": 0.5537,
+    "juice_c": [
+     32,
+     -22
+    ]
+   },
+   "early": {
+    "t": "2026-11-09T2015Z",
+    "line": 0.5,
+    "odds": {
+     "over": -180,
+     "under": 134
+    },
+    "open": 0.5,
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "fd_juice": {
+    "side": "under",
+    "line": 0.5,
+    "odds": 112,
+    "res": "L",
+    "units": -1.0
+   }
+  }
+ },
+ {
+  "game": "Washington Commanders @ New York Giants",
+  "player": "treylon burks",
+  "stat": "receptions",
+  "kickoff": "2026-11-13T01:15:00.000Z",
+  "week": 10,
+  "actual": 2.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-13T0114Z",
+    "line": 1.5,
+    "odds": {
+     "over": -158,
+     "under": 118
+    },
+    "open": 2.5,
+    "calls": {
+     "fd_move": "under"
+    },
+    "pin": 1.5,
+    "pin_lim": 1000,
+    "fair_over": 0.574,
+    "move_pts": -1.0
+   },
+   "early": {
+    "t": "2026-11-11T1606Z",
+    "line": 2.5,
+    "odds": {
+     "over": 144,
+     "under": -194
+    },
+    "open": 2.5,
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "fd_move": {
+    "side": "under",
+    "line": 1.5,
+    "odds": 118,
+    "res": "L",
+    "units": -1.0
+   }
+  }
+ },
+ {
+  "game": "Washington Commanders @ New York Giants",
+  "player": "treylon burks",
+  "stat": "recv_yds",
+  "kickoff": "2026-11-13T01:15:00.000Z",
+  "week": 10,
+  "actual": 27.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-13T0114Z",
+    "line": 26.5,
+    "odds": {
+     "over": -113,
+     "under": -113
+    },
+    "open": 31.5,
+    "calls": {
+     "fd_move": "under"
+    },
+    "pin": 26.5,
+    "pin_lim": 1000,
+    "fair_over": 0.4935,
+    "move_pts": -5.0
+   },
+   "early": {
+    "t": "2026-11-11T1606Z",
+    "line": 31.5,
+    "odds": {
+     "over": -114,
+     "under": -114
+    },
+    "open": 31.5,
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "fd_move": {
+    "side": "under",
+    "line": 26.5,
+    "odds": -113,
+    "res": "L",
+    "units": -1.0
+   }
+  }
  }
 ]
