@@ -1,37 +1,37 @@
 {
- "run_utc": "2026-11-15T21:37:43Z",
- "cycle": 54,
+ "run_utc": "2026-11-15T22:07:57Z",
+ "cycle": 57,
  "heavy": false,
  "games": 5,
- "rows": 1571,
- "props_gz": 16760,
+ "rows": 1466,
+ "props_gz": 15795,
  "pulls_ok": 35,
  "pulls_fail": 0,
- "elapsed_min": 277.5,
- "next_kickoff_h": 3.7,
+ "elapsed_min": 307.7,
+ "next_kickoff_h": 3.2,
  "cadence_min": 10,
  "closing_window": false,
- "pin_signals": 7,
+ "pin_signals": 3,
  "attempts": [
   {
    "name": "actionnet",
-   "bytes": 496340,
-   "gz": 31062
+   "bytes": 495426,
+   "gz": 31044
   },
   {
    "name": "pin_prices",
-   "bytes": 359603,
-   "gz": 18440
+   "bytes": 253655,
+   "gz": 13324
   },
   {
    "name": "pin_matchups",
-   "bytes": 1294516,
-   "gz": 37767
+   "bytes": 1032266,
+   "gz": 28652
   },
   {
    "name": "sbr",
-   "bytes": 516957,
-   "gz": 50233
+   "bytes": 518047,
+   "gz": 50341
   }
  ]
 }
