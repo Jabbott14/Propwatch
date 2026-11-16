@@ -18229,5 +18229,2509 @@
     "took_default": true
    }
   }
+ },
+ {
+  "game": "Los Angeles Rams @ Arizona Cardinals",
+  "market": "q4|ml",
+  "period": "q4",
+  "kind": "ml",
+  "kickoff": "2026-11-15T21:05:00.000Z",
+  "markets": {
+   "close": {
+    "t": "2026-11-15T2104Z",
+    "line": {
+     "home": 184,
+     "away": -230
+    },
+    "odds": {
+     "home": 184,
+     "away": -230
+    },
+    "open": 146,
+    "open_odds": {
+     "home": 146,
+     "away": -180
+    },
+    "calls": {
+     "follow_move": "away"
+    },
+    "move": 38
+   },
+   "early": {
+    "t": "2026-11-09T2126Z",
+    "line": {
+     "home": 146,
+     "away": -180
+    },
+    "odds": {
+     "home": 146,
+     "away": -180
+    },
+    "open": 146,
+    "open_odds": {
+     "home": 146,
+     "away": -180
+    },
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "follow_move": {
+    "side": "away",
+    "line": -230,
+    "odds": -230,
+    "res": "W",
+    "units": 0.435,
+    "took_default": true
+   }
+  }
+ },
+ {
+  "game": "Los Angeles Rams @ Arizona Cardinals",
+  "market": "q4|spread",
+  "period": "q4",
+  "kind": "spread",
+  "kickoff": "2026-11-15T21:05:00.000Z",
+  "markets": {
+   "close": {
+    "t": "2026-11-15T2104Z",
+    "line": {
+     "home": 2.5,
+     "away": -2.5
+    },
+    "odds": {
+     "home": 102,
+     "away": -124
+    },
+    "open": 1.5,
+    "open_odds": {
+     "home": -110,
+     "away": -110
+    },
+    "calls": {
+     "follow_move": "away"
+    },
+    "move": 1.0
+   },
+   "early": {
+    "t": "2026-11-09T2126Z",
+    "line": {
+     "home": 1.5,
+     "away": -1.5
+    },
+    "odds": {
+     "home": -110,
+     "away": -110
+    },
+    "open": 1.5,
+    "open_odds": {
+     "home": -110,
+     "away": -110
+    },
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "follow_move": {
+    "side": "away",
+    "line": -2.5,
+    "odds": -124,
+    "res": "W",
+    "units": 0.806,
+    "took_default": true
+   }
+  }
+ },
+ {
+  "game": "Los Angeles Rams @ Arizona Cardinals",
+  "market": "q4|total",
+  "period": "q4",
+  "kind": "total",
+  "kickoff": "2026-11-15T21:05:00.000Z",
+  "markets": {
+   "close": {
+    "t": "2026-11-15T2104Z",
+    "line": {
+     "over": 9.5,
+     "under": 9.5
+    },
+    "odds": {
+     "over": -138,
+     "under": 114
+    },
+    "open": 12.5,
+    "open_odds": {
+     "over": -116,
+     "under": -106
+    },
+    "calls": {
+     "follow_move": "under"
+    },
+    "move": -3.0
+   },
+   "early": {
+    "t": "2026-11-09T2126Z",
+    "line": {
+     "over": 12.5,
+     "under": 12.5
+    },
+    "odds": {
+     "over": -116,
+     "under": -106
+    },
+    "open": 12.5,
+    "open_odds": {
+     "over": -116,
+     "under": -106
+    },
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "follow_move": {
+    "side": "under",
+    "line": 9.5,
+    "odds": 114,
+    "res": "W",
+    "units": 1.14,
+    "took_default": false
+   }
+  }
+ },
+ {
+  "game": "Los Angeles Rams @ Arizona Cardinals",
+  "market": "1h|ml",
+  "period": "1h",
+  "kind": "ml",
+  "kickoff": "2026-11-15T21:05:00.000Z",
+  "markets": {
+   "close": {
+    "t": "2026-11-15T2104Z",
+    "line": {
+     "home": 280,
+     "away": -370
+    },
+    "odds": {
+     "home": 280,
+     "away": -370
+    },
+    "open": 205,
+    "open_odds": {
+     "home": 205,
+     "away": -270
+    },
+    "calls": {
+     "follow_move": "away"
+    },
+    "move": 75,
+    "pin": 276,
+    "pin_lim": 20000
+   },
+   "early": {
+    "t": "2026-11-09T2126Z",
+    "line": {
+     "home": 205,
+     "away": -270
+    },
+    "odds": {
+     "home": 205,
+     "away": -270
+    },
+    "open": 205,
+    "open_odds": {
+     "home": 205,
+     "away": -270
+    },
+    "calls": {},
+    "pin": 207,
+    "pin_lim": 1000
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "follow_move": {
+    "side": "away",
+    "line": -370,
+    "odds": -370,
+    "res": "W",
+    "units": 0.27,
+    "took_default": true
+   }
+  }
+ },
+ {
+  "game": "Los Angeles Rams @ Arizona Cardinals",
+  "market": "1h|tt|away",
+  "period": "1h",
+  "kind": "tt",
+  "kickoff": "2026-11-15T21:05:00.000Z",
+  "markets": {
+   "close": {
+    "t": "2026-11-15T2104Z",
+    "line": {
+     "over": 12.5,
+     "under": 12.5
+    },
+    "odds": {
+     "over": -130,
+     "under": 102
+    },
+    "open": 13.5,
+    "open_odds": {
+     "over": -102,
+     "under": -128
+    },
+    "calls": {
+     "follow_move": "under",
+     "pin_value": "over"
+    },
+    "move": -1.0,
+    "pin": 13.5,
+    "pin_lim": 2000,
+    "pin_gap": -1.0
+   },
+   "early": {
+    "t": "2026-11-09T2126Z",
+    "line": {
+     "over": 13.5,
+     "under": 13.5
+    },
+    "odds": {
+     "over": -102,
+     "under": -128
+    },
+    "open": 13.5,
+    "open_odds": {
+     "over": -102,
+     "under": -128
+    },
+    "calls": {
+     "pin_price": "over"
+    },
+    "pin": 13.5,
+    "pin_lim": 1000,
+    "edge_pct": 3.68
+   }
+  },
+  "early_graded": {
+   "pin_price": {
+    "side": "over",
+    "line": 13.5,
+    "odds": -102,
+    "res": "W",
+    "units": 0.98,
+    "took_default": true,
+    "clv": -1.0
+   }
+  },
+  "close_graded": {
+   "follow_move": {
+    "side": "under",
+    "line": 12.5,
+    "odds": 102,
+    "res": "L",
+    "units": -1.0,
+    "took_default": false
+   },
+   "pin_value": {
+    "side": "over",
+    "line": 12.5,
+    "odds": -130,
+    "res": "W",
+    "units": 0.769,
+    "took_default": true
+   }
+  }
+ },
+ {
+  "game": "Los Angeles Rams @ Arizona Cardinals",
+  "market": "1h|spread",
+  "period": "1h",
+  "kind": "spread",
+  "kickoff": "2026-11-15T21:05:00.000Z",
+  "markets": {
+   "close": {
+    "t": "2026-11-15T2104Z",
+    "line": {
+     "home": 6.5,
+     "away": -6.5
+    },
+    "odds": {
+     "home": -120,
+     "away": 100
+    },
+    "open": 4.5,
+    "open_odds": {
+     "home": -120,
+     "away": 100
+    },
+    "calls": {
+     "follow_move": "away",
+     "pin_value": "home"
+    },
+    "move": 2.0,
+    "pin": 4.5,
+    "pin_lim": 30000,
+    "pin_gap": 2.0
+   },
+   "early": {
+    "t": "2026-11-09T2126Z",
+    "line": {
+     "home": 4.5,
+     "away": -4.5
+    },
+    "odds": {
+     "home": -120,
+     "away": 100
+    },
+    "open": 4.5,
+    "open_odds": {
+     "home": -120,
+     "away": 100
+    },
+    "calls": {
+     "pin_value": "home"
+    },
+    "pin": 4.0,
+    "pin_lim": 1000,
+    "pin_gap": 0.5
+   }
+  },
+  "early_graded": {
+   "pin_value": {
+    "side": "home",
+    "line": 4.5,
+    "odds": -120,
+    "res": "L",
+    "units": -1.0,
+    "took_default": false,
+    "clv": -2.0
+   }
+  },
+  "close_graded": {
+   "follow_move": {
+    "side": "away",
+    "line": -6.5,
+    "odds": 100,
+    "res": "W",
+    "units": 1.0,
+    "took_default": true
+   },
+   "pin_value": {
+    "side": "home",
+    "line": 6.5,
+    "odds": -120,
+    "res": "L",
+    "units": -1.0,
+    "took_default": false
+   }
+  }
+ },
+ {
+  "game": "Los Angeles Rams @ Arizona Cardinals",
+  "market": "1h|total",
+  "period": "1h",
+  "kind": "total",
+  "kickoff": "2026-11-15T21:05:00.000Z",
+  "markets": {
+   "close": {
+    "t": "2026-11-15T2104Z",
+    "line": {
+     "over": 19.5,
+     "under": 19.5
+    },
+    "odds": {
+     "over": -115,
+     "under": -105
+    },
+    "open": 22.5,
+    "open_odds": {
+     "over": -110,
+     "under": -110
+    },
+    "calls": {
+     "follow_move": "under",
+     "pin_value": "over"
+    },
+    "move": -3.0,
+    "pin": 20.0,
+    "pin_lim": 10000,
+    "pin_gap": -0.5
+   },
+   "early": {
+    "t": "2026-11-09T2126Z",
+    "line": {
+     "over": 22.5,
+     "under": 22.5
+    },
+    "odds": {
+     "over": -110,
+     "under": -110
+    },
+    "open": 22.5,
+    "open_odds": {
+     "over": -110,
+     "under": -110
+    },
+    "calls": {
+     "pin_value": "over"
+    },
+    "pin": 23.0,
+    "pin_lim": 1000,
+    "pin_gap": -0.5
+   }
+  },
+  "early_graded": {
+   "pin_value": {
+    "side": "over",
+    "line": 22.5,
+    "odds": -110,
+    "res": "W",
+    "units": 0.909,
+    "took_default": true,
+    "clv": -3.0
+   }
+  },
+  "close_graded": {
+   "follow_move": {
+    "side": "under",
+    "line": 19.5,
+    "odds": -105,
+    "res": "L",
+    "units": -1.0,
+    "took_default": false
+   },
+   "pin_value": {
+    "side": "over",
+    "line": 19.5,
+    "odds": -115,
+    "res": "W",
+    "units": 0.87,
+    "took_default": true
+   }
+  }
+ },
+ {
+  "game": "Los Angeles Rams @ Arizona Cardinals",
+  "market": "1h|tt|home",
+  "period": "1h",
+  "kind": "tt",
+  "kickoff": "2026-11-15T21:05:00.000Z",
+  "markets": {
+   "close": {
+    "t": "2026-11-15T2104Z",
+    "line": {
+     "over": 6.5,
+     "under": 6.5
+    },
+    "odds": {
+     "over": -120,
+     "under": -108
+    },
+    "open": 8.5,
+    "open_odds": {
+     "over": -115,
+     "under": -111
+    },
+    "calls": {
+     "follow_move": "under",
+     "pin_value": "over"
+    },
+    "move": -2.0,
+    "pin": 9.5,
+    "pin_lim": 2000,
+    "pin_gap": -3.0
+   },
+   "early": {
+    "t": "2026-11-09T2126Z",
+    "line": {
+     "over": 8.5,
+     "under": 8.5
+    },
+    "odds": {
+     "over": -115,
+     "under": -111
+    },
+    "open": 8.5,
+    "open_odds": {
+     "over": -115,
+     "under": -111
+    },
+    "calls": {
+     "pin_value": "over"
+    },
+    "pin": 9.5,
+    "pin_lim": 1000,
+    "pin_gap": -1.0
+   }
+  },
+  "early_graded": {
+   "pin_value": {
+    "side": "over",
+    "line": 8.5,
+    "odds": -115,
+    "res": "L",
+    "units": -1.0,
+    "took_default": true,
+    "clv": -2.0
+   }
+  },
+  "close_graded": {
+   "follow_move": {
+    "side": "under",
+    "line": 6.5,
+    "odds": -108,
+    "res": "W",
+    "units": 0.926,
+    "took_default": false
+   },
+   "pin_value": {
+    "side": "over",
+    "line": 6.5,
+    "odds": -120,
+    "res": "L",
+    "units": -1.0,
+    "took_default": true
+   }
+  }
+ },
+ {
+  "game": "Los Angeles Rams @ Arizona Cardinals",
+  "market": "2h|tt|away",
+  "period": "2h",
+  "kind": "tt",
+  "kickoff": "2026-11-15T21:05:00.000Z",
+  "markets": {
+   "close": {
+    "t": "2026-11-15T2104Z",
+    "line": {
+     "over": 11.5,
+     "under": 11.5
+    },
+    "odds": {
+     "over": -115,
+     "under": -111
+    },
+    "open": 13.5,
+    "open_odds": {
+     "over": 100,
+     "under": -128
+    },
+    "calls": {
+     "follow_move": "under"
+    },
+    "move": -2.0
+   },
+   "early": {
+    "t": "2026-11-09T2126Z",
+    "line": {
+     "over": 13.5,
+     "under": 13.5
+    },
+    "odds": {
+     "over": 100,
+     "under": -128
+    },
+    "open": 13.5,
+    "open_odds": {
+     "over": 100,
+     "under": -128
+    },
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "follow_move": {
+    "side": "under",
+    "line": 11.5,
+    "odds": -111,
+    "res": "L",
+    "units": -1.0,
+    "took_default": false
+   }
+  }
+ },
+ {
+  "game": "Los Angeles Rams @ Arizona Cardinals",
+  "market": "2h|spread",
+  "period": "2h",
+  "kind": "spread",
+  "kickoff": "2026-11-15T21:05:00.000Z",
+  "markets": {
+   "close": {
+    "t": "2026-11-15T2104Z",
+    "line": {
+     "home": 4.5,
+     "away": -4.5
+    },
+    "odds": {
+     "home": -110,
+     "away": -110
+    },
+    "open": 3.5,
+    "open_odds": {
+     "home": -110,
+     "away": -110
+    },
+    "calls": {
+     "follow_move": "away"
+    },
+    "move": 1.0
+   },
+   "early": {
+    "t": "2026-11-09T2126Z",
+    "line": {
+     "home": 3.5,
+     "away": -3.5
+    },
+    "odds": {
+     "home": -110,
+     "away": -110
+    },
+    "open": 3.5,
+    "open_odds": {
+     "home": -110,
+     "away": -110
+    },
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "follow_move": {
+    "side": "away",
+    "line": -4.5,
+    "odds": -110,
+    "res": "W",
+    "units": 0.909,
+    "took_default": true
+   }
+  }
+ },
+ {
+  "game": "Los Angeles Rams @ Arizona Cardinals",
+  "market": "2h|ml",
+  "period": "2h",
+  "kind": "ml",
+  "kickoff": "2026-11-15T21:05:00.000Z",
+  "markets": {
+   "close": {
+    "t": "2026-11-15T2104Z",
+    "line": {
+     "home": 245,
+     "away": -300
+    },
+    "odds": {
+     "home": 245,
+     "away": -300
+    },
+    "open": 190,
+    "open_odds": {
+     "home": 190,
+     "away": -230
+    },
+    "calls": {
+     "follow_move": "away"
+    },
+    "move": 55
+   },
+   "early": {
+    "t": "2026-11-09T2126Z",
+    "line": {
+     "home": 190,
+     "away": -230
+    },
+    "odds": {
+     "home": 190,
+     "away": -230
+    },
+    "open": 190,
+    "open_odds": {
+     "home": 190,
+     "away": -230
+    },
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "follow_move": {
+    "side": "away",
+    "line": -300,
+    "odds": -300,
+    "res": "W",
+    "units": 0.333,
+    "took_default": true
+   }
+  }
+ },
+ {
+  "game": "Los Angeles Rams @ Arizona Cardinals",
+  "market": "2h|total",
+  "period": "2h",
+  "kind": "total",
+  "kickoff": "2026-11-15T21:05:00.000Z",
+  "markets": {
+   "close": {
+    "t": "2026-11-15T2104Z",
+    "line": {
+     "over": 18.5,
+     "under": 18.5
+    },
+    "odds": {
+     "over": -115,
+     "under": -105
+    },
+    "open": 21.5,
+    "open_odds": {
+     "over": -110,
+     "under": -110
+    },
+    "calls": {
+     "follow_move": "under"
+    },
+    "move": -3.0
+   },
+   "early": {
+    "t": "2026-11-09T2126Z",
+    "line": {
+     "over": 21.5,
+     "under": 21.5
+    },
+    "odds": {
+     "over": -110,
+     "under": -110
+    },
+    "open": 21.5,
+    "open_odds": {
+     "over": -110,
+     "under": -110
+    },
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "follow_move": {
+    "side": "under",
+    "line": 18.5,
+    "odds": -105,
+    "res": "W",
+    "units": 0.952,
+    "took_default": false
+   }
+  }
+ },
+ {
+  "game": "Los Angeles Rams @ Arizona Cardinals",
+  "market": "2h|tt|home",
+  "period": "2h",
+  "kind": "tt",
+  "kickoff": "2026-11-15T21:05:00.000Z",
+  "markets": {
+   "close": {
+    "t": "2026-11-15T2104Z",
+    "line": {
+     "over": 6.5,
+     "under": 6.5
+    },
+    "odds": {
+     "over": -140,
+     "under": 110
+    },
+    "open": 8.5,
+    "open_odds": {
+     "over": -120,
+     "under": -106
+    },
+    "calls": {
+     "follow_move": "under"
+    },
+    "move": -2.0
+   },
+   "early": {
+    "t": "2026-11-09T2126Z",
+    "line": {
+     "over": 8.5,
+     "under": 8.5
+    },
+    "odds": {
+     "over": -120,
+     "under": -106
+    },
+    "open": 8.5,
+    "open_odds": {
+     "over": -120,
+     "under": -106
+    },
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "follow_move": {
+    "side": "under",
+    "line": 6.5,
+    "odds": 110,
+    "res": "W",
+    "units": 1.1,
+    "took_default": false
+   }
+  }
+ },
+ {
+  "game": "Seattle Seahawks @ Las Vegas Raiders",
+  "market": "q4|total",
+  "period": "q4",
+  "kind": "total",
+  "kickoff": "2026-11-15T21:05:00.000Z",
+  "markets": {
+   "close": {
+    "t": "2026-11-15T2104Z",
+    "line": {
+     "over": 10.5,
+     "under": 10.5
+    },
+    "odds": {
+     "over": 100,
+     "under": -122
+    },
+    "open": 12.5,
+    "open_odds": {
+     "over": -112,
+     "under": -110
+    },
+    "calls": {
+     "follow_move": "under"
+    },
+    "move": -2.0
+   },
+   "early": {
+    "t": "2026-11-09T2126Z",
+    "line": {
+     "over": 12.5,
+     "under": 12.5
+    },
+    "odds": {
+     "over": -112,
+     "under": -110
+    },
+    "open": 12.5,
+    "open_odds": {
+     "over": -112,
+     "under": -110
+    },
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "follow_move": {
+    "side": "under",
+    "line": 10.5,
+    "odds": -122,
+    "res": "W",
+    "units": 0.82,
+    "took_default": false
+   }
+  }
+ },
+ {
+  "game": "Seattle Seahawks @ Las Vegas Raiders",
+  "market": "q4|ml",
+  "period": "q4",
+  "kind": "ml",
+  "kickoff": "2026-11-15T21:05:00.000Z",
+  "markets": {
+   "close": {
+    "t": "2026-11-15T2104Z",
+    "line": {
+     "home": 144,
+     "away": -178
+    },
+    "odds": {
+     "home": 144,
+     "away": -178
+    },
+    "open": 114,
+    "open_odds": {
+     "home": 114,
+     "away": -140
+    },
+    "calls": {
+     "follow_move": "away"
+    },
+    "move": 30
+   },
+   "early": {
+    "t": "2026-11-09T2126Z",
+    "line": {
+     "home": 114,
+     "away": -140
+    },
+    "odds": {
+     "home": 114,
+     "away": -140
+    },
+    "open": 114,
+    "open_odds": {
+     "home": 114,
+     "away": -140
+    },
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "follow_move": {
+    "side": "away",
+    "line": -178,
+    "odds": -178,
+    "res": "L",
+    "units": -1.0,
+    "took_default": true
+   }
+  }
+ },
+ {
+  "game": "Seattle Seahawks @ Las Vegas Raiders",
+  "market": "q4|spread",
+  "period": "q4",
+  "kind": "spread",
+  "kickoff": "2026-11-15T21:05:00.000Z",
+  "markets": {
+   "close": {
+    "t": "2026-11-15T2104Z",
+    "line": {
+     "home": 1.5,
+     "away": -1.5
+    },
+    "odds": {
+     "home": -114,
+     "away": -108
+    },
+    "open": 1.5,
+    "open_odds": {
+     "home": -138,
+     "away": 114
+    },
+    "calls": {
+     "fd_juice": "away"
+    }
+   },
+   "early": {
+    "t": "2026-11-09T2126Z",
+    "line": {
+     "home": 1.5,
+     "away": -1.5
+    },
+    "odds": {
+     "home": -138,
+     "away": 114
+    },
+    "open": 1.5,
+    "open_odds": {
+     "home": -138,
+     "away": 114
+    },
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "fd_juice": {
+    "side": "away",
+    "line": -1.5,
+    "odds": -108,
+    "res": "L",
+    "units": -1.0,
+    "took_default": true
+   }
+  }
+ },
+ {
+  "game": "Seattle Seahawks @ Las Vegas Raiders",
+  "market": "1h|ml",
+  "period": "1h",
+  "kind": "ml",
+  "kickoff": "2026-11-15T21:05:00.000Z",
+  "markets": {
+   "close": {
+    "t": "2026-11-15T2104Z",
+    "line": {
+     "home": 196,
+     "away": -245
+    },
+    "odds": {
+     "home": 196,
+     "away": -245
+    },
+    "open": 132,
+    "open_odds": {
+     "home": 132,
+     "away": -162
+    },
+    "calls": {
+     "follow_move": "away"
+    },
+    "move": 64,
+    "pin": 187,
+    "pin_lim": 20000
+   },
+   "early": {
+    "t": "2026-11-09T2126Z",
+    "line": {
+     "home": 132,
+     "away": -162
+    },
+    "odds": {
+     "home": 132,
+     "away": -162
+    },
+    "open": 132,
+    "open_odds": {
+     "home": 132,
+     "away": -162
+    },
+    "calls": {},
+    "pin": 137,
+    "pin_lim": 1000
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "follow_move": {
+    "side": "away",
+    "line": -245,
+    "odds": -245,
+    "res": "L",
+    "units": -1.0,
+    "took_default": true
+   }
+  }
+ },
+ {
+  "game": "Seattle Seahawks @ Las Vegas Raiders",
+  "market": "1h|tt|home",
+  "period": "1h",
+  "kind": "tt",
+  "kickoff": "2026-11-15T21:05:00.000Z",
+  "markets": {
+   "close": {
+    "t": "2026-11-15T2104Z",
+    "line": {
+     "over": 7.5,
+     "under": 7.5
+    },
+    "odds": {
+     "over": 100,
+     "under": -128
+    },
+    "open": 9.5,
+    "open_odds": {
+     "over": -128,
+     "under": 100
+    },
+    "calls": {
+     "follow_move": "under",
+     "pin_value": "over"
+    },
+    "move": -2.0,
+    "pin": 9.5,
+    "pin_lim": 2000,
+    "pin_gap": -2.0
+   },
+   "early": {
+    "t": "2026-11-09T2126Z",
+    "line": {
+     "over": 9.5,
+     "under": 9.5
+    },
+    "odds": {
+     "over": -128,
+     "under": 100
+    },
+    "open": 9.5,
+    "open_odds": {
+     "over": -128,
+     "under": 100
+    },
+    "calls": {},
+    "pin": 9.5,
+    "pin_lim": 1000
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "follow_move": {
+    "side": "under",
+    "line": 7.5,
+    "odds": -128,
+    "res": "L",
+    "units": -1.0,
+    "took_default": false
+   },
+   "pin_value": {
+    "side": "over",
+    "line": 7.5,
+    "odds": 100,
+    "res": "W",
+    "units": 1.0,
+    "took_default": true
+   }
+  }
+ },
+ {
+  "game": "Seattle Seahawks @ Las Vegas Raiders",
+  "market": "1h|total",
+  "period": "1h",
+  "kind": "total",
+  "kickoff": "2026-11-15T21:05:00.000Z",
+  "markets": {
+   "close": {
+    "t": "2026-11-15T2104Z",
+    "line": {
+     "over": 20.5,
+     "under": 20.5
+    },
+    "odds": {
+     "over": 105,
+     "under": -125
+    },
+    "open": 20.5,
+    "open_odds": {
+     "over": -115,
+     "under": -105
+    },
+    "calls": {
+     "fd_juice": "under",
+     "pin_value": "over"
+    },
+    "pin": 21.0,
+    "pin_lim": 10000,
+    "pin_gap": -0.5
+   },
+   "early": {
+    "t": "2026-11-09T2126Z",
+    "line": {
+     "over": 20.5,
+     "under": 20.5
+    },
+    "odds": {
+     "over": -115,
+     "under": -105
+    },
+    "open": 20.5,
+    "open_odds": {
+     "over": -115,
+     "under": -105
+    },
+    "calls": {
+     "pin_value": "over"
+    },
+    "pin": 21.0,
+    "pin_lim": 1000,
+    "pin_gap": -0.5
+   }
+  },
+  "early_graded": {
+   "pin_value": {
+    "side": "over",
+    "line": 20.5,
+    "odds": -115,
+    "res": "L",
+    "units": -1.0,
+    "took_default": true,
+    "clv": 0.0
+   }
+  },
+  "close_graded": {
+   "fd_juice": {
+    "side": "under",
+    "line": 20.5,
+    "odds": -125,
+    "res": "W",
+    "units": 0.8,
+    "took_default": false
+   },
+   "pin_value": {
+    "side": "over",
+    "line": 20.5,
+    "odds": 105,
+    "res": "L",
+    "units": -1.0,
+    "took_default": true
+   }
+  }
+ },
+ {
+  "game": "Seattle Seahawks @ Las Vegas Raiders",
+  "market": "1h|spread",
+  "period": "1h",
+  "kind": "spread",
+  "kickoff": "2026-11-15T21:05:00.000Z",
+  "markets": {
+   "close": {
+    "t": "2026-11-15T2104Z",
+    "line": {
+     "home": 3.5,
+     "away": -3.5
+    },
+    "odds": {
+     "home": -105,
+     "away": -115
+    },
+    "open": 2.5,
+    "open_odds": {
+     "home": -110,
+     "away": -110
+    },
+    "calls": {
+     "follow_move": "away"
+    },
+    "move": 1.0,
+    "pin": 3.5,
+    "pin_lim": 30000
+   },
+   "early": {
+    "t": "2026-11-09T2126Z",
+    "line": {
+     "home": 2.5,
+     "away": -2.5
+    },
+    "odds": {
+     "home": -110,
+     "away": -110
+    },
+    "open": 2.5,
+    "open_odds": {
+     "home": -110,
+     "away": -110
+    },
+    "calls": {},
+    "pin": 2.5,
+    "pin_lim": 1000
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "follow_move": {
+    "side": "away",
+    "line": -3.5,
+    "odds": -115,
+    "res": "L",
+    "units": -1.0,
+    "took_default": true
+   }
+  }
+ },
+ {
+  "game": "Seattle Seahawks @ Las Vegas Raiders",
+  "market": "1h|tt|away",
+  "period": "1h",
+  "kind": "tt",
+  "kickoff": "2026-11-15T21:05:00.000Z",
+  "markets": {
+   "close": {
+    "t": "2026-11-15T2104Z",
+    "line": {
+     "over": 12.5,
+     "under": 12.5
+    },
+    "odds": {
+     "over": -115,
+     "under": -111
+    },
+    "open": 10.5,
+    "open_odds": {
+     "over": -111,
+     "under": -115
+    },
+    "calls": {
+     "follow_move": "over",
+     "pin_value": "under"
+    },
+    "move": 2.0,
+    "pin": 11.5,
+    "pin_lim": 2000,
+    "pin_gap": 1.0
+   },
+   "early": {
+    "t": "2026-11-09T2126Z",
+    "line": {
+     "over": 10.5,
+     "under": 10.5
+    },
+    "odds": {
+     "over": -111,
+     "under": -115
+    },
+    "open": 10.5,
+    "open_odds": {
+     "over": -111,
+     "under": -115
+    },
+    "calls": {
+     "pin_value": "over"
+    },
+    "pin": 11.5,
+    "pin_lim": 1000,
+    "pin_gap": -1.0
+   }
+  },
+  "early_graded": {
+   "pin_value": {
+    "side": "over",
+    "line": 10.5,
+    "odds": -111,
+    "res": "L",
+    "units": -1.0,
+    "took_default": true,
+    "clv": 2.0
+   }
+  },
+  "close_graded": {
+   "follow_move": {
+    "side": "over",
+    "line": 12.5,
+    "odds": -115,
+    "res": "L",
+    "units": -1.0,
+    "took_default": true
+   },
+   "pin_value": {
+    "side": "under",
+    "line": 12.5,
+    "odds": -111,
+    "res": "W",
+    "units": 0.901,
+    "took_default": false
+   }
+  }
+ },
+ {
+  "game": "Seattle Seahawks @ Las Vegas Raiders",
+  "market": "2h|spread",
+  "period": "2h",
+  "kind": "spread",
+  "kickoff": "2026-11-15T21:05:00.000Z",
+  "markets": {
+   "close": {
+    "t": "2026-11-15T2104Z",
+    "line": {
+     "home": 3.5,
+     "away": -3.5
+    },
+    "odds": {
+     "home": -120,
+     "away": 100
+    },
+    "open": 1.5,
+    "open_odds": {
+     "home": -110,
+     "away": -110
+    },
+    "calls": {
+     "follow_move": "away"
+    },
+    "move": 2.0
+   },
+   "early": {
+    "t": "2026-11-09T2126Z",
+    "line": {
+     "home": 1.5,
+     "away": -1.5
+    },
+    "odds": {
+     "home": -110,
+     "away": -110
+    },
+    "open": 1.5,
+    "open_odds": {
+     "home": -110,
+     "away": -110
+    },
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "follow_move": {
+    "side": "away",
+    "line": -3.5,
+    "odds": 100,
+    "res": "W",
+    "units": 1.0,
+    "took_default": true
+   }
+  }
+ },
+ {
+  "game": "Seattle Seahawks @ Las Vegas Raiders",
+  "market": "2h|tt|home",
+  "period": "2h",
+  "kind": "tt",
+  "kickoff": "2026-11-15T21:05:00.000Z",
+  "markets": {
+   "close": {
+    "t": "2026-11-15T2104Z",
+    "line": {
+     "over": 7.5,
+     "under": 7.5
+    },
+    "odds": {
+     "over": -104,
+     "under": -122
+    },
+    "open": 9.5,
+    "open_odds": {
+     "over": -128,
+     "under": 100
+    },
+    "calls": {
+     "follow_move": "under"
+    },
+    "move": -2.0
+   },
+   "early": {
+    "t": "2026-11-09T2126Z",
+    "line": {
+     "over": 9.5,
+     "under": 9.5
+    },
+    "odds": {
+     "over": -128,
+     "under": 100
+    },
+    "open": 9.5,
+    "open_odds": {
+     "over": -128,
+     "under": 100
+    },
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "follow_move": {
+    "side": "under",
+    "line": 7.5,
+    "odds": -122,
+    "res": "W",
+    "units": 0.82,
+    "took_default": false
+   }
+  }
+ },
+ {
+  "game": "Seattle Seahawks @ Las Vegas Raiders",
+  "market": "2h|total",
+  "period": "2h",
+  "kind": "total",
+  "kickoff": "2026-11-15T21:05:00.000Z",
+  "markets": {
+   "close": {
+    "t": "2026-11-15T2104Z",
+    "line": {
+     "over": 19.5,
+     "under": 19.5
+    },
+    "odds": {
+     "over": -120,
+     "under": 100
+    },
+    "open": 21.5,
+    "open_odds": {
+     "over": 100,
+     "under": -120
+    },
+    "calls": {
+     "follow_move": "under"
+    },
+    "move": -2.0
+   },
+   "early": {
+    "t": "2026-11-09T2126Z",
+    "line": {
+     "over": 21.5,
+     "under": 21.5
+    },
+    "odds": {
+     "over": 100,
+     "under": -120
+    },
+    "open": 21.5,
+    "open_odds": {
+     "over": 100,
+     "under": -120
+    },
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "follow_move": {
+    "side": "under",
+    "line": 19.5,
+    "odds": 100,
+    "res": "W",
+    "units": 1.0,
+    "took_default": false
+   }
+  }
+ },
+ {
+  "game": "Seattle Seahawks @ Las Vegas Raiders",
+  "market": "2h|ml",
+  "period": "2h",
+  "kind": "ml",
+  "kickoff": "2026-11-15T21:05:00.000Z",
+  "markets": {
+   "close": {
+    "t": "2026-11-15T2104Z",
+    "line": {
+     "home": 178,
+     "away": -210
+    },
+    "odds": {
+     "home": 178,
+     "away": -210
+    },
+    "open": 130,
+    "open_odds": {
+     "home": 130,
+     "away": -152
+    },
+    "calls": {
+     "follow_move": "away"
+    },
+    "move": 48
+   },
+   "early": {
+    "t": "2026-11-09T2126Z",
+    "line": {
+     "home": 130,
+     "away": -152
+    },
+    "odds": {
+     "home": 130,
+     "away": -152
+    },
+    "open": 130,
+    "open_odds": {
+     "home": 130,
+     "away": -152
+    },
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "follow_move": {
+    "side": "away",
+    "line": -210,
+    "odds": -210,
+    "res": "W",
+    "units": 0.476,
+    "took_default": true
+   }
+  }
+ },
+ {
+  "game": "San Francisco 49ers @ Dallas Cowboys",
+  "market": "q4|total",
+  "period": "q4",
+  "kind": "total",
+  "kickoff": "2026-11-15T21:25:00.000Z",
+  "markets": {
+   "close": {
+    "t": "2026-11-15T2124Z",
+    "line": {
+     "over": 16.5,
+     "under": 16.5
+    },
+    "odds": {
+     "over": -104,
+     "under": -118
+    },
+    "open": 15.5,
+    "open_odds": {
+     "over": -118,
+     "under": -104
+    },
+    "calls": {
+     "follow_move": "over"
+    },
+    "move": 1.0
+   },
+   "early": {
+    "t": "2026-11-09T2126Z",
+    "line": {
+     "over": 15.5,
+     "under": 15.5
+    },
+    "odds": {
+     "over": -118,
+     "under": -104
+    },
+    "open": 15.5,
+    "open_odds": {
+     "over": -118,
+     "under": -104
+    },
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "follow_move": {
+    "side": "over",
+    "line": 16.5,
+    "odds": -104,
+    "res": "W",
+    "units": 0.962,
+    "took_default": true
+   }
+  }
+ },
+ {
+  "game": "San Francisco 49ers @ Dallas Cowboys",
+  "market": "1h|spread",
+  "period": "1h",
+  "kind": "spread",
+  "kickoff": "2026-11-15T21:25:00.000Z",
+  "markets": {
+   "close": {
+    "t": "2026-11-15T2124Z",
+    "line": {
+     "home": 2.5,
+     "away": -2.5
+    },
+    "odds": {
+     "home": 100,
+     "away": -120
+    },
+    "open": 2.5,
+    "open_odds": {
+     "home": 100,
+     "away": -120
+    },
+    "calls": {
+     "pin_value": "away"
+    },
+    "pin": 3.0,
+    "pin_lim": 30000,
+    "pin_gap": -0.5
+   },
+   "early": {
+    "t": "2026-11-09T2126Z",
+    "line": {
+     "home": 2.5,
+     "away": -2.5
+    },
+    "odds": {
+     "home": 100,
+     "away": -120
+    },
+    "open": 2.5,
+    "open_odds": {
+     "home": 100,
+     "away": -120
+    },
+    "calls": {
+     "pin_value": "away"
+    },
+    "pin": 3.0,
+    "pin_lim": 1000,
+    "pin_gap": -0.5
+   }
+  },
+  "early_graded": {
+   "pin_value": {
+    "side": "away",
+    "line": -2.5,
+    "odds": -120,
+    "res": "L",
+    "units": -1.0,
+    "took_default": true,
+    "clv": 0.0
+   }
+  },
+  "close_graded": {
+   "pin_value": {
+    "side": "away",
+    "line": -2.5,
+    "odds": -120,
+    "res": "L",
+    "units": -1.0,
+    "took_default": true
+   }
+  }
+ },
+ {
+  "game": "San Francisco 49ers @ Dallas Cowboys",
+  "market": "1h|total",
+  "period": "1h",
+  "kind": "total",
+  "kickoff": "2026-11-15T21:25:00.000Z",
+  "markets": {
+   "close": {
+    "t": "2026-11-15T2124Z",
+    "line": {
+     "over": 27.5,
+     "under": 27.5
+    },
+    "odds": {
+     "over": -110,
+     "under": -110
+    },
+    "open": 27.5,
+    "open_odds": {
+     "over": -105,
+     "under": -115
+    },
+    "calls": {
+     "pin_value": "over"
+    },
+    "pin": 28.0,
+    "pin_lim": 10000,
+    "pin_gap": -0.5
+   },
+   "early": {
+    "t": "2026-11-09T2126Z",
+    "line": {
+     "over": 27.5,
+     "under": 27.5
+    },
+    "odds": {
+     "over": -105,
+     "under": -115
+    },
+    "open": 27.5,
+    "open_odds": {
+     "over": -105,
+     "under": -115
+    },
+    "calls": {
+     "pin_value": "over"
+    },
+    "pin": 28.0,
+    "pin_lim": 1000,
+    "pin_gap": -0.5
+   }
+  },
+  "early_graded": {
+   "pin_value": {
+    "side": "over",
+    "line": 27.5,
+    "odds": -105,
+    "res": "W",
+    "units": 0.952,
+    "took_default": true,
+    "clv": 0.0
+   }
+  },
+  "close_graded": {
+   "pin_value": {
+    "side": "over",
+    "line": 27.5,
+    "odds": -110,
+    "res": "W",
+    "units": 0.909,
+    "took_default": true
+   }
+  }
+ },
+ {
+  "game": "San Francisco 49ers @ Dallas Cowboys",
+  "market": "1h|ml",
+  "period": "1h",
+  "kind": "ml",
+  "kickoff": "2026-11-15T21:25:00.000Z",
+  "markets": {
+   "close": {
+    "t": "2026-11-15T2124Z",
+    "line": {
+     "home": 136,
+     "away": -166
+    },
+    "odds": {
+     "home": 136,
+     "away": -166
+    },
+    "open": 142,
+    "open_odds": {
+     "home": 142,
+     "away": -174
+    },
+    "calls": {
+     "follow_move": "home"
+    },
+    "move": -6,
+    "pin": 133,
+    "pin_lim": 20000
+   },
+   "early": {
+    "t": "2026-11-09T2126Z",
+    "line": {
+     "home": 142,
+     "away": -174
+    },
+    "odds": {
+     "home": 142,
+     "away": -174
+    },
+    "open": 142,
+    "open_odds": {
+     "home": 142,
+     "away": -174
+    },
+    "calls": {},
+    "pin": 153,
+    "pin_lim": 1000
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "follow_move": {
+    "side": "home",
+    "line": 136,
+    "odds": 136,
+    "res": "L",
+    "units": -1.0,
+    "took_default": false
+   }
+  }
+ },
+ {
+  "game": "San Francisco 49ers @ Dallas Cowboys",
+  "market": "1h|tt|home",
+  "period": "1h",
+  "kind": "tt",
+  "kickoff": "2026-11-15T21:25:00.000Z",
+  "markets": {
+   "close": {
+    "t": "2026-11-15T2124Z",
+    "line": {
+     "over": 13.5,
+     "under": 13.5
+    },
+    "odds": {
+     "over": 100,
+     "under": -128
+    },
+    "open": 13.5,
+    "open_odds": {
+     "over": 102,
+     "under": -130
+    },
+    "calls": {
+     "pin_value": "under"
+    },
+    "pin": 12.5,
+    "pin_lim": 2000,
+    "pin_gap": 1.0
+   },
+   "early": {
+    "t": "2026-11-09T2126Z",
+    "line": {
+     "over": 13.5,
+     "under": 13.5
+    },
+    "odds": {
+     "over": 102,
+     "under": -130
+    },
+    "open": 13.5,
+    "open_odds": {
+     "over": 102,
+     "under": -130
+    },
+    "calls": {
+     "pin_value": "under"
+    },
+    "pin": 12.5,
+    "pin_lim": 1000,
+    "pin_gap": 1.0
+   }
+  },
+  "early_graded": {
+   "pin_value": {
+    "side": "under",
+    "line": 13.5,
+    "odds": -130,
+    "res": "L",
+    "units": -1.0,
+    "took_default": false,
+    "clv": 0.0
+   }
+  },
+  "close_graded": {
+   "pin_value": {
+    "side": "under",
+    "line": 13.5,
+    "odds": -128,
+    "res": "L",
+    "units": -1.0,
+    "took_default": false
+   }
+  }
+ },
+ {
+  "game": "San Francisco 49ers @ Dallas Cowboys",
+  "market": "2h|ml",
+  "period": "2h",
+  "kind": "ml",
+  "kickoff": "2026-11-15T21:25:00.000Z",
+  "markets": {
+   "close": {
+    "t": "2026-11-15T2124Z",
+    "line": {
+     "home": 136,
+     "away": -160
+    },
+    "odds": {
+     "home": 136,
+     "away": -160
+    },
+    "open": 142,
+    "open_odds": {
+     "home": 142,
+     "away": -166
+    },
+    "calls": {
+     "follow_move": "home"
+    },
+    "move": -6
+   },
+   "early": {
+    "t": "2026-11-09T2126Z",
+    "line": {
+     "home": 142,
+     "away": -166
+    },
+    "odds": {
+     "home": 142,
+     "away": -166
+    },
+    "open": 142,
+    "open_odds": {
+     "home": 142,
+     "away": -166
+    },
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "follow_move": {
+    "side": "home",
+    "line": 136,
+    "odds": 136,
+    "res": "L",
+    "units": -1.0,
+    "took_default": false
+   }
+  }
+ },
+ {
+  "game": "Pittsburgh Steelers @ Cincinnati Bengals",
+  "market": "2h|ml",
+  "period": "2h",
+  "kind": "ml",
+  "kickoff": "2026-11-16T01:20:00.000Z",
+  "markets": {
+   "close": {
+    "t": "2026-11-16T0119Z",
+    "line": {
+     "home": -144,
+     "away": 124
+    },
+    "odds": {
+     "home": -144,
+     "away": 124
+    },
+    "open": -152,
+    "open_odds": {
+     "home": -152,
+     "away": 130
+    },
+    "calls": {
+     "follow_move": "away"
+    },
+    "move": 8
+   },
+   "early": {
+    "t": "2026-11-09T2126Z",
+    "line": {
+     "home": -152,
+     "away": 130
+    },
+    "odds": {
+     "home": -152,
+     "away": 130
+    },
+    "open": -152,
+    "open_odds": {
+     "home": -152,
+     "away": 130
+    },
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "follow_move": {
+    "side": "away",
+    "line": 124,
+    "odds": 124,
+    "res": "W",
+    "units": 1.24,
+    "took_default": false
+   }
+  }
+ },
+ {
+  "game": "Pittsburgh Steelers @ Cincinnati Bengals",
+  "market": "2h|tt|home",
+  "period": "2h",
+  "kind": "tt",
+  "kickoff": "2026-11-16T01:20:00.000Z",
+  "markets": {
+   "close": {
+    "t": "2026-11-16T0119Z",
+    "line": {
+     "over": 13.5,
+     "under": 13.5
+    },
+    "odds": {
+     "over": 100,
+     "under": -128
+    },
+    "open": 13.5,
+    "open_odds": {
+     "over": -104,
+     "under": -122
+    },
+    "calls": {
+     "fd_juice": "under"
+    }
+   },
+   "early": {
+    "t": "2026-11-09T2126Z",
+    "line": {
+     "over": 13.5,
+     "under": 13.5
+    },
+    "odds": {
+     "over": -104,
+     "under": -122
+    },
+    "open": 13.5,
+    "open_odds": {
+     "over": -104,
+     "under": -122
+    },
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "fd_juice": {
+    "side": "under",
+    "line": 13.5,
+    "odds": -128,
+    "res": "L",
+    "units": -1.0,
+    "took_default": false
+   }
+  }
+ },
+ {
+  "game": "Pittsburgh Steelers @ Cincinnati Bengals",
+  "market": "2h|total",
+  "period": "2h",
+  "kind": "total",
+  "kickoff": "2026-11-16T01:20:00.000Z",
+  "markets": {
+   "close": {
+    "t": "2026-11-16T0119Z",
+    "line": {
+     "over": 24.5,
+     "under": 24.5
+    },
+    "odds": {
+     "over": 105,
+     "under": -125
+    },
+    "open": 23.5,
+    "open_odds": {
+     "over": -120,
+     "under": 100
+    },
+    "calls": {
+     "follow_move": "over"
+    },
+    "move": 1.0
+   },
+   "early": {
+    "t": "2026-11-09T2126Z",
+    "line": {
+     "over": 23.5,
+     "under": 23.5
+    },
+    "odds": {
+     "over": -120,
+     "under": 100
+    },
+    "open": 23.5,
+    "open_odds": {
+     "over": -120,
+     "under": 100
+    },
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "follow_move": {
+    "side": "over",
+    "line": 24.5,
+    "odds": 105,
+    "res": "W",
+    "units": 1.05,
+    "took_default": true
+   }
+  }
+ },
+ {
+  "game": "Pittsburgh Steelers @ Cincinnati Bengals",
+  "market": "q4|total",
+  "period": "q4",
+  "kind": "total",
+  "kickoff": "2026-11-16T01:20:00.000Z",
+  "markets": {
+   "close": {
+    "t": "2026-11-16T0119Z",
+    "line": {
+     "over": 13.5,
+     "under": 13.5
+    },
+    "odds": {
+     "over": -118,
+     "under": -104
+    },
+    "open": 13.5,
+    "open_odds": {
+     "over": -122,
+     "under": 100
+    },
+    "calls": {
+     "fd_juice": "under"
+    }
+   },
+   "early": {
+    "t": "2026-11-09T2136Z",
+    "line": {
+     "over": 13.5,
+     "under": 13.5
+    },
+    "odds": {
+     "over": -122,
+     "under": 100
+    },
+    "open": 13.5,
+    "open_odds": {
+     "over": -122,
+     "under": 100
+    },
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "fd_juice": {
+    "side": "under",
+    "line": 13.5,
+    "odds": -104,
+    "res": "L",
+    "units": -1.0,
+    "took_default": false
+   }
+  }
+ },
+ {
+  "game": "Pittsburgh Steelers @ Cincinnati Bengals",
+  "market": "1h|total",
+  "period": "1h",
+  "kind": "total",
+  "kickoff": "2026-11-16T01:20:00.000Z",
+  "markets": {
+   "close": {
+    "t": "2026-11-16T0119Z",
+    "line": {
+     "over": 23.5,
+     "under": 23.5
+    },
+    "odds": {
+     "over": -120,
+     "under": 100
+    },
+    "open": 23.5,
+    "open_odds": {
+     "over": -120,
+     "under": 100
+    },
+    "calls": {
+     "pin_price": "over"
+    },
+    "pin": 23.5,
+    "pin_lim": 10000,
+    "edge_pct": 1.94
+   },
+   "early": {
+    "t": "2026-11-09T2136Z",
+    "line": {
+     "over": 23.5,
+     "under": 23.5
+    },
+    "odds": {
+     "over": -120,
+     "under": 100
+    },
+    "open": 23.5,
+    "open_odds": {
+     "over": -120,
+     "under": 100
+    },
+    "calls": {},
+    "pin": 23.5,
+    "pin_lim": 1000
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "pin_price": {
+    "side": "over",
+    "line": 23.5,
+    "odds": -120,
+    "res": "W",
+    "units": 0.833,
+    "took_default": true
+   }
+  }
+ },
+ {
+  "game": "Pittsburgh Steelers @ Cincinnati Bengals",
+  "market": "1h|tt|away",
+  "period": "1h",
+  "kind": "tt",
+  "kickoff": "2026-11-16T01:20:00.000Z",
+  "markets": {
+   "close": {
+    "t": "2026-11-16T0119Z",
+    "line": {
+     "over": 10.5,
+     "under": 10.5
+    },
+    "odds": {
+     "over": 112,
+     "under": -142
+    },
+    "open": 10.5,
+    "open_odds": {
+     "over": 112,
+     "under": -142
+    },
+    "calls": {
+     "pin_value": "under"
+    },
+    "pin": 9.5,
+    "pin_lim": 2000,
+    "pin_gap": 1.0
+   },
+   "early": {
+    "t": "2026-11-09T2136Z",
+    "line": {
+     "over": 10.5,
+     "under": 10.5
+    },
+    "odds": {
+     "over": 112,
+     "under": -142
+    },
+    "open": 10.5,
+    "open_odds": {
+     "over": 112,
+     "under": -142
+    },
+    "calls": {
+     "pin_value": "under"
+    },
+    "pin": 9.5,
+    "pin_lim": 1000,
+    "pin_gap": 1.0
+   }
+  },
+  "early_graded": {
+   "pin_value": {
+    "side": "under",
+    "line": 10.5,
+    "odds": -142,
+    "res": "W",
+    "units": 0.704,
+    "took_default": false,
+    "clv": 0.0
+   }
+  },
+  "close_graded": {
+   "pin_value": {
+    "side": "under",
+    "line": 10.5,
+    "odds": -142,
+    "res": "W",
+    "units": 0.704,
+    "took_default": false
+   }
+  }
+ },
+ {
+  "game": "Pittsburgh Steelers @ Cincinnati Bengals",
+  "market": "1h|spread",
+  "period": "1h",
+  "kind": "spread",
+  "kickoff": "2026-11-16T01:20:00.000Z",
+  "markets": {
+   "close": {
+    "t": "2026-11-16T0119Z",
+    "line": {
+     "home": -2.5,
+     "away": 2.5
+    },
+    "odds": {
+     "home": -115,
+     "away": -105
+    },
+    "open": -2.5,
+    "open_odds": {
+     "home": -115,
+     "away": -105
+    },
+    "calls": {
+     "pin_value": "home"
+    },
+    "pin": -3.0,
+    "pin_lim": 30000,
+    "pin_gap": 0.5
+   },
+   "early": {
+    "t": "2026-11-09T2136Z",
+    "line": {
+     "home": -2.5,
+     "away": 2.5
+    },
+    "odds": {
+     "home": -115,
+     "away": -105
+    },
+    "open": -2.5,
+    "open_odds": {
+     "home": -115,
+     "away": -105
+    },
+    "calls": {
+     "pin_value": "home"
+    },
+    "pin": -3.0,
+    "pin_lim": 1000,
+    "pin_gap": 0.5
+   }
+  },
+  "early_graded": {
+   "pin_value": {
+    "side": "home",
+    "line": -2.5,
+    "odds": -115,
+    "res": "W",
+    "units": 0.87,
+    "took_default": true,
+    "clv": 0.0
+   }
+  },
+  "close_graded": {
+   "pin_value": {
+    "side": "home",
+    "line": -2.5,
+    "odds": -115,
+    "res": "W",
+    "units": 0.87,
+    "took_default": true
+   }
+  }
+ },
+ {
+  "game": "Pittsburgh Steelers @ Cincinnati Bengals",
+  "market": "1h|tt|home",
+  "period": "1h",
+  "kind": "tt",
+  "kickoff": "2026-11-16T01:20:00.000Z",
+  "markets": {
+   "close": {
+    "t": "2026-11-16T0119Z",
+    "line": {
+     "over": 13.5,
+     "under": 13.5
+    },
+    "odds": {
+     "over": -104,
+     "under": -122
+    },
+    "open": 13.5,
+    "open_odds": {
+     "over": -104,
+     "under": -122
+    },
+    "calls": {
+     "pin_price": "over"
+    },
+    "pin": 13.5,
+    "pin_lim": 2000,
+    "edge_pct": 0.94
+   },
+   "early": {
+    "t": "2026-11-09T2136Z",
+    "line": {
+     "over": 13.5,
+     "under": 13.5
+    },
+    "odds": {
+     "over": -104,
+     "under": -122
+    },
+    "open": 13.5,
+    "open_odds": {
+     "over": -104,
+     "under": -122
+    },
+    "calls": {},
+    "pin": 13.5,
+    "pin_lim": 1000
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "pin_price": {
+    "side": "over",
+    "line": 13.5,
+    "odds": -104,
+    "res": "W",
+    "units": 0.962,
+    "took_default": true
+   }
+  }
  }
 ]
