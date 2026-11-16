@@ -1,6 +1,6 @@
 # NFL scorecard
 
-Generated 2026-11-16 07:10 UTC. 41 graded games (0 finished games had no final score and are not graded).
+Generated 2026-11-16 19:48 UTC. 41 graded games (0 finished games had no final score and are not graded).
 
 Each signal is graded on **every** game it had an opinion on, at the FanDuel price
 available at that moment. EARLY = one hour after the line was first seen. CLOSE =
