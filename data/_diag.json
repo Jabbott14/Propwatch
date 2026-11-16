@@ -1,14 +1,14 @@
 {
- "run_utc": "2026-11-16T23:38:00Z",
- "cycle": 18,
+ "run_utc": "2026-11-16T23:47:45Z",
+ "cycle": 21,
  "heavy": false,
  "games": 14,
- "rows": 1411,
- "props_gz": 14347,
+ "rows": 1438,
+ "props_gz": 14628,
  "pulls_ok": 98,
  "pulls_fail": 0,
- "elapsed_min": 196.3,
- "next_kickoff_h": 1.7,
+ "elapsed_min": 206.1,
+ "next_kickoff_h": 1.6,
  "cadence_min": 3,
  "closing_window": true,
  "pin_signals": 13,
@@ -21,7 +21,7 @@
   {
    "name": "pin_prices",
    "bytes": 428605,
-   "gz": 17205
+   "gz": 17301
   },
   {
    "name": "pin_matchups",
