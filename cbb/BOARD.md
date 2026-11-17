@@ -1,8 +1,17 @@
 # CBB board
 
-Generated 2026-11-17 16:30 UTC. Upcoming games with a FanDuel line, grouped by how many signals
-agree on each market. Every game is listed; nothing is cut. Each call shows that
-signal's graded CLOSE record so far, so you can see which ones are earning.
+Generated 2026-11-17 21:26 UTC. Upcoming games with a FanDuel line. Every game is listed;
+nothing is cut.
+
+Ranked by **weighted edge**: each agreeing signal contributes its own
+base-rate-corrected edge, and contributes nothing until it has 30 decided
+outcomes. Raw agreement count is shown too, but it is the weaker number — a
+market can have five signals agreeing where four have losing records.
+
+Each call shows **two** records: `fit` (games the signal was chosen on, before
+2026-11-17 — a good number there proves nothing) and `fwd` (games since,
+which it had no hand in choosing). A `*` means the weight came from the forward
+record, which happens once that record reaches 30 decided outcomes.
 
 This is analysis, not picks.
 
@@ -13,278 +22,222 @@ outsized relative to its ticket count (>= 1.2x), and the number moved
 here anyway. Pinnacle tier first: that is the sharp book moving, not a retail
 book reacting to its own flow.
 
-| tier | game | market | side | line | moved from | tickets | money/tix | record |
-|---|---|---|---|---|---|---|---|---|
-| PINNACLE moved vs public | BRY@MASS | moneyline | away | 385 | -680 | 1% | 27.0 | 107-108 |
-| PINNACLE moved vs public | HOF@MURR | spread | away | 11.5 | -12.0 | 26% | 1.46 | 107-108 |
-| PINNACLE moved vs public | HOF@MURR | moneyline | away | 540 | -785 | 2% | 12.0 | 107-108 |
-| PINNACLE moved vs public | ILL@DUKE | total | over | 167.5 | 164.0 | 30% | 1.27 | 107-108 |
-| PINNACLE moved vs public | JVST@LT | total | under | 130.5 | 133.5 | 7% | 2.43 | 107-108 |
-| PINNACLE moved vs public | JVST@LT | moneyline | away | 115 | -138 | 11% | 1.82 | 107-108 |
-| PINNACLE moved vs public | KENN@ALA | total | over | 176.5 | 175.0 | 30% | 1.67 | 107-108 |
-| PINNACLE moved vs public | LIP@PUR | total | under | 148.5 | 149.0 | 16% | 1.75 | 107-108 |
-| PINNACLE moved vs public | LMC@EVAN | moneyline | away | 300 | -365 | 2% | 3.5 | 107-108 |
-| PINNACLE moved vs public | MSU@TENN | total | under | 149.5 | 150.0 | 34% | 2.56 | 107-108 |
-| PINNACLE moved vs public | SIUE@UND | total | under | 143.5 | 147.0 | 36% | 2.69 | 107-108 |
-| PINNACLE moved vs public | SIUE@UND | moneyline | away | 106 | -156 | 17% | 5.82 | 107-108 |
-| PINNACLE moved vs public | TNST@USF | total | over | 165.5 | 164.0 | 27% | 2.0 | 107-108 |
-| FanDuel moved vs public | BALL@FSU | spread | home | -26.5 | -24.5 | 44% | 1.3 | 129-98 |
-| FanDuel moved vs public | CHAR@DAV | total | under | 132.5 | 133.5 | 8% | 1.5 | 129-98 |
-| FanDuel moved vs public | ETSU@MRSH | total | under | 145.5 | 147 | 28% | 1.25 | 129-98 |
-| FanDuel moved vs public | FIU@UAB | total | over | 168.5 | 162.5 | 16% | 4.06 | 129-98 |
-| FanDuel moved vs public | HOF@MURR | total | under | 148.5 | 149.5 | 27% | 2.11 | 129-98 |
-| FanDuel moved vs public | ILL@DUKE | total | over | 167.5 | 160.5 | 30% | 1.27 | 129-98 |
-| FanDuel moved vs public | IND@ARK | spread | away | 1.5 | -2.5 | 29% | 2.62 | 129-98 |
-| FanDuel moved vs public | JVST@LT | total | under | 130.5 | 136.5 | 7% | 2.43 | 129-98 |
-| FanDuel moved vs public | KENN@ALA | total | over | 176.5 | 172.5 | 30% | 1.67 | 129-98 |
-| FanDuel moved vs public | LAM@NEOM | total | over | 158.5 | 150.5 | 41% | 1.85 | 129-98 |
-| FanDuel moved vs public | MRST@ARMY | total | under | 131.5 | 132.5 | 11% | 1.45 | 129-98 |
-| FanDuel moved vs public | MSST@UCF | spread | away | -1.5 | -1.5 | 40% | 1.55 | 129-98 |
-| FanDuel moved vs public | MSU@TENN | total | under | 149.5 | 150.5 | 34% | 2.56 | 129-98 |
-| FanDuel moved vs public | NICH@MISS | total | under | 142.5 | 149.5 | 26% | 2.85 | 129-98 |
-| FanDuel moved vs public | SEA@CBU | total | under | 133.5 | 136.5 | 12% | 7.17 | 129-98 |
-| FanDuel moved vs public | SHU@PROV | total | over | 154.5 | 151.5 | 39% | 1.54 | 129-98 |
-| FanDuel moved vs public | SIUE@UND | total | under | 143.5 | 148.5 | 36% | 2.69 | 129-98 |
-| FanDuel moved vs public | TNST@USF | total | over | 165.5 | 163 | 27% | 2.0 | 129-98 |
-| FanDuel moved vs public | UMES@DEP | total | under | 126.5 | 130.5 | 8% | 4.12 | 129-98 |
-| FanDuel moved vs public | WAG@JOES | total | under | 137.5 | 139.5 | 11% | 1.45 | 129-98 |
 
-## 6 signals agree, 0 against
+`moved` is **that tier's own book** moving — Pinnacle's number for the Pinnacle
+tier, FanDuel's for the FanDuel tier. `FD now` is what you would be buying.
+This table used to print one book's number next to the other's in one row.
 
-| tip (ET) | game | market | lean | FD now | open | Pin | tix / money (lean side) | bets | calls |
+| tier | game | market | side | book | moved | FD now | tickets | money/tix | record |
 |---|---|---|---|---|---|---|---|---|---|
-| Tue 19:00 | NORF@GT | total | under | 151.5 (-110) | 158.5 | 150.5 ($250) | 72% / 84% | 479 | follow_move->under (232-236); money_level->under (262-254); sharp_gap->under (253-255); money_moving->under (248-263); consensus_gap->under (84-92); pin_value->under (132-125) |
-| Tue 21:00 | MSU@TENN | total | under | 149.5 (-110) | 150.5 | 149.5 ($750) | 34% / 87% | 3968 | follow_move->under (232-236); rlm_ratio->under (96-63); money_level->under (262-254); sharp_gap->under (253-255); money_moving->under (248-263); pin_rlm->under (61-37) |
+| PINNACLE moved vs public | BRY@MASS | moneyline | away | Pinnacle | 484 -> 447 | 400 | 1% | 29.0 | 100-106 fit · 7-5 fwd |
+| PINNACLE moved vs public | CSN@TROY | spread | away | Pinnacle | 2.5 -> 1.5 | 1.5 | 23% | 1.48 | 100-106 fit · 7-5 fwd |
+| PINNACLE moved vs public | EWU@UTAH | moneyline | away | Pinnacle | 573 -> 590 | 680 | 1% | 46.0 | 100-106 fit · 7-5 fwd |
+| PINNACLE moved vs public | ILL@DUKE | total | over | Pinnacle | 164 -> 167 | 166.5 | 33% | 1.45 | 100-106 fit · 7-5 fwd |
+| PINNACLE moved vs public | JVST@LT | moneyline | away | Pinnacle | 116 -> 116 | 108 | 12% | 1.25 | 100-106 fit · 7-5 fwd |
+| PINNACLE moved vs public | KENN@ALA | total | over | Pinnacle | 175 -> 177 | 177.5 | 36% | 1.97 | 100-106 fit · 7-5 fwd |
+| PINNACLE moved vs public | LMC@EVAN | moneyline | away | Pinnacle | 294 -> 274 | 270 | 3% | 1.67 | 100-106 fit · 7-5 fwd |
+| PINNACLE moved vs public | MSU@TENN | total | under | Pinnacle | 150 -> 149.5 | 149.5 | 34% | 1.88 | 100-106 fit · 7-5 fwd |
+| PINNACLE moved vs public | ODU@UVA | total | under | Pinnacle | 150 -> 145.5 | 144.5 | 34% | 2.15 | 100-106 fit · 7-5 fwd |
+| PINNACLE moved vs public | SIUE@UND | total | under | Pinnacle | 147 -> 145.5 | 145.5 | 23% | 4.09 | 100-106 fit · 7-5 fwd |
+| PINNACLE moved vs public | SIUE@UND | moneyline | away | Pinnacle | 130 -> 117 | 114 | 16% | 6.19 | 100-106 fit · 7-5 fwd |
+| PINNACLE moved vs public | SPC@MASSL | total | under | Pinnacle | 130.5 -> 129.5 | 129.5 | 21% | 1.9 | 100-106 fit · 7-5 fwd |
+| PINNACLE moved vs public | SPC@MASSL | moneyline | away | Pinnacle | 204 -> 183 | 176 | 5% | 1.2 | 100-106 fit · 7-5 fwd |
+| PINNACLE moved vs public | TNST@USF | moneyline | away | Pinnacle | 569 -> 512 | 580 | 2% | 2.5 | 100-106 fit · 7-5 fwd |
+| PINNACLE moved vs public | WCU@BUT | moneyline | away | Pinnacle | 536 -> 534 | 570 | 2% | 4.5 | 100-106 fit · 7-5 fwd |
+| FanDuel moved vs public | CHAR@DAV | spread | away | FanDuel | -4.5 -> 3.5 | 3.5 | 25% | 1.4 | 125-97 fit · 4-2 fwd |
+| FanDuel moved vs public | CHAR@DAV | total | under | FanDuel | 133.5 -> 132.5 | 132.5 | 14% | 1.79 | 125-97 fit · 4-2 fwd |
+| FanDuel moved vs public | CSN@TROY | spread | away | FanDuel | -2.5 -> 1.5 | 1.5 | 23% | 1.48 | 125-97 fit · 4-2 fwd |
+| FanDuel moved vs public | ETSU@MRSH | total | under | FanDuel | 147 -> 145.5 | 145.5 | 32% | 1.28 | 125-97 fit · 4-2 fwd |
+| FanDuel moved vs public | FIU@UAB | total | over | FanDuel | 162.5 -> 169.5 | 169.5 | 24% | 3.29 | 125-97 fit · 4-2 fwd |
+| FanDuel moved vs public | ILL@DUKE | total | over | FanDuel | 160.5 -> 166.5 | 166.5 | 33% | 1.45 | 125-97 fit · 4-2 fwd |
+| FanDuel moved vs public | IND@ARK | spread | away | FanDuel | -2.5 -> -1.5 | -1.5 | 36% | 1.75 | 125-97 fit · 4-2 fwd |
+| FanDuel moved vs public | KENN@ALA | total | over | FanDuel | 172.5 -> 177.5 | 177.5 | 36% | 1.97 | 125-97 fit · 4-2 fwd |
+| FanDuel moved vs public | LAM@NEOM | total | over | FanDuel | 150.5 -> 158.5 | 158.5 | 43% | 1.86 | 125-97 fit · 4-2 fwd |
+| FanDuel moved vs public | LEH@MSM | total | under | FanDuel | 138.5 -> 137.5 | 137.5 | 9% | 4.44 | 125-97 fit · 4-2 fwd |
+| FanDuel moved vs public | MRST@ARMY | total | under | FanDuel | 132.5 -> 131.5 | 131.5 | 11% | 1.91 | 125-97 fit · 4-2 fwd |
+| FanDuel moved vs public | MSU@TENN | total | under | FanDuel | 150.5 -> 149.5 | 149.5 | 34% | 1.88 | 125-97 fit · 4-2 fwd |
+| FanDuel moved vs public | NICH@MISS | total | under | FanDuel | 149.5 -> 142.5 | 142.5 | 15% | 3.8 | 125-97 fit · 4-2 fwd |
+| FanDuel moved vs public | ODU@UVA | total | under | FanDuel | 153.5 -> 144.5 | 144.5 | 34% | 2.15 | 125-97 fit · 4-2 fwd |
+| FanDuel moved vs public | SEA@CBU | total | under | FanDuel | 136.5 -> 133.5 | 133.5 | 7% | 10.29 | 125-97 fit · 4-2 fwd |
+| FanDuel moved vs public | SHSU@WYO | total | under | FanDuel | 150.5 -> 149.5 | 149.5 | 34% | 1.24 | 125-97 fit · 4-2 fwd |
+| FanDuel moved vs public | SHU@PROV | total | over | FanDuel | 151.5 -> 154.5 | 154.5 | 39% | 1.33 | 125-97 fit · 4-2 fwd |
+| FanDuel moved vs public | SIUE@UND | total | under | FanDuel | 148.5 -> 145.5 | 145.5 | 23% | 4.09 | 125-97 fit · 4-2 fwd |
+| FanDuel moved vs public | SPC@MASSL | total | under | FanDuel | 132.5 -> 129.5 | 129.5 | 21% | 1.9 | 125-97 fit · 4-2 fwd |
+| FanDuel moved vs public | UCI@STAN | total | under | FanDuel | 148.5 -> 142.5 | 142.5 | 25% | 2.16 | 125-97 fit · 4-2 fwd |
+| FanDuel moved vs public | UMES@DEP | total | under | FanDuel | 130.5 -> 125.5 | 125.5 | 8% | 6.5 | 125-97 fit · 4-2 fwd |
+| FanDuel moved vs public | WAG@JOES | total | under | FanDuel | 139.5 -> 137.5 | 137.5 | 8% | 2.5 | 125-97 fit · 4-2 fwd |
 
-## 6 signals agree, 1 against
+## A  weighted edge >= +10
 
-| tip (ET) | game | market | lean | FD now | open | Pin | tix / money (lean side) | bets | calls |
-|---|---|---|---|---|---|---|---|---|---|
-| Tue 19:00 | TNST@USF | total | over | 165.5 (-105) | 163 | 165 ($750) | 27% / 54% | 716 | follow_move->over (232-236); rlm_ratio->over (96-63); money_level->over (262-254); sharp_gap->over (253-255); money_moving->over (248-263); pin_value->under (132-125); pin_rlm->over (61-37) |
+| tip (ET) | game | market | lean | wt edge | raw | FD now | open | Pin | tix / money (lean side) | bets | calls |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| Tue 19:00 | FOR@MAN | moneyline | away | +15.1 | 2-2 | -880 (-880) | 0 | 560 ($3,000) | 98% / 96% | 989 | money_level->away (312-113 fit · 13-2 fwd); sharp_gap->home (138-254 fit · 6-8 fwd); money_moving->away (142-248 fit · 7-7 fwd); consensus_gap->home (104-224 fit · 2-9 fwd) |
+| Tue 20:00 | SIUE@UND | total | under | +10.8 | 6-0 | 145.5 (-105) | 148.5 | 145.5 ($750) | 23% / 94% | 984 | follow_move->under (225-231 fit · 7-6 fwd); rlm_ratio->under (92-63 fit · 4-1 fwd); money_level->under (253-247 fit · 9-8 fwd); sharp_gap->under (244-249 fit · 9-7 fwd); money_moving->under (239-257 fit · 9-7 fwd); pin_rlm->under (57-37 fit · 4-1 fwd) |
+| Tue 21:00 | MSU@TENN | total | under | +10.8 | 6-0 | 149.5 (-110) | 150.5 | 149.5 ($750) | 34% / 64% | 8512 | follow_move->under (225-231 fit · 7-6 fwd); rlm_ratio->under (92-63 fit · 4-1 fwd); money_level->under (253-247 fit · 9-8 fwd); sharp_gap->under (244-249 fit · 9-7 fwd); money_moving->under (239-257 fit · 9-7 fwd); pin_rlm->under (57-37 fit · 4-1 fwd) |
+| Tue 19:00 | ILL@DUKE | total | over | +10 | 7-1 | 166.5 (-115) | 160.5 | 167 ($1,500) | 33% / 48% | 9218 | follow_move->over (225-231 fit · 7-6 fwd); rlm_ratio->over (92-63 fit · 4-1 fwd); money_level->under (253-247 fit · 9-8 fwd); sharp_gap->over (244-249 fit · 9-7 fwd); money_moving->over (239-257 fit · 9-7 fwd); consensus_gap->over (81-91 fit · 4-1 fwd); pin_value->over (127-120 fit · 5-5 fwd); pin_rlm->over (57-37 fit · 4-1 fwd) |
 
-## 6 signals agree, 2 against
+## B  weighted edge +5 to +10
 
-| tip (ET) | game | market | lean | FD now | open | Pin | tix / money (lean side) | bets | calls |
-|---|---|---|---|---|---|---|---|---|---|
-| Tue 20:00 | SIUE@UND | total | under | 143.5 (-110) | 148.5 | 145 ($750) | 36% / 97% | 419 | follow_move->under (232-236); rlm_ratio->under (96-63); money_level->under (262-254); sharp_gap->under (253-255); money_moving->under (248-263); consensus_gap->over (84-92); pin_value->over (132-125); pin_rlm->under (61-37) |
+| tip (ET) | game | market | lean | wt edge | raw | FD now | open | Pin | tix / money (lean side) | bets | calls |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| Tue 20:00 | LINW@UNI | moneyline | home | +9.8 | 3-2 | -1200 (-1200) | 0 | -985 ($3,000) | 99% / 100% | 615 | money_level->home (312-113 fit · 13-2 fwd); sharp_gap->home (138-254 fit · 6-8 fwd); money_moving->home (142-248 fit · 7-7 fwd); consensus_gap->away (104-224 fit · 2-9 fwd); pin_value->away (13-44 fit · 0-1 fwd) |
+| Tue 19:00 | SHU@PROV | spread | home | +9.2 | 5-1 | -29.5 (-118) | -27.5 | -30 ($3,000) | 35% / 37% | 777 | follow_move->home (192-193 fit · 4-9 fwd); money_level->away (231-245 fit · 9-8 fwd); sharp_gap->home (239-231 fit · 10-7 fwd); money_moving->home (236-234 fit · 10-7 fwd); consensus_gap->home (72-65 fit · 2-2 fwd); pin_value->home (124-111 fit · 3-5 fwd) |
+| Tue 19:30 | KENN@ALA | total | over | +8.7 | 6-1 | 177.5 (-110) | 172.5 | 177 ($1,500) | 36% / 71% | 1802 | follow_move->over (225-231 fit · 7-6 fwd); rlm_ratio->over (92-63 fit · 4-1 fwd); money_level->over (253-247 fit · 9-8 fwd); sharp_gap->over (244-249 fit · 9-7 fwd); money_moving->over (239-257 fit · 9-7 fwd); pin_value->under (127-120 fit · 5-5 fwd); pin_rlm->over (57-37 fit · 4-1 fwd) |
+| Tue 21:00 | ODU@UVA | total | under | +8.7 | 6-1 | 144.5 (-105) | 153.5 | 145.5 ($750) | 34% / 73% | 1368 | follow_move->under (225-231 fit · 7-6 fwd); rlm_ratio->under (92-63 fit · 4-1 fwd); money_level->under (253-247 fit · 9-8 fwd); sharp_gap->under (244-249 fit · 9-7 fwd); money_moving->under (239-257 fit · 9-7 fwd); pin_value->over (127-120 fit · 5-5 fwd); pin_rlm->under (57-37 fit · 4-1 fwd) |
+| Tue 18:00 | SPC@MASSL | total | under | +8.4 | 5-1 | 129.5 (-110) | 132.5 | 129.5 ($500) | 21% / 40% | 1403 | follow_move->under (225-231 fit · 7-6 fwd); rlm_ratio->under (92-63 fit · 4-1 fwd); money_level->over (253-247 fit · 9-8 fwd); sharp_gap->under (244-249 fit · 9-7 fwd); money_moving->under (239-257 fit · 9-7 fwd); pin_rlm->under (57-37 fit · 4-1 fwd) |
+| Tue 18:30 | LIP@PUR | spread | home | +8.2 | 6-0 | -21.5 (-120) | -19.5 | -22.5 ($1,000) | 49% / 60% | 1120 | follow_move->home (192-193 fit · 4-9 fwd); money_level->home (231-245 fit · 9-8 fwd); sharp_gap->home (239-231 fit · 10-7 fwd); money_moving->home (236-234 fit · 10-7 fwd); consensus_gap->home (72-65 fit · 2-2 fwd); pin_value->home (124-111 fit · 3-5 fwd) |
+| Tue 19:00 | ETSU@MRSH | total | under | +7.9 | 3-3 | 145.5 (-105) | 147 |  | 32% / 41% | 1368 | follow_move->under (225-231 fit · 7-6 fwd); rlm_ratio->under (92-63 fit · 4-1 fwd); money_level->over (253-247 fit · 9-8 fwd); sharp_gap->under (244-249 fit · 9-7 fwd); money_moving->over (239-257 fit · 9-7 fwd); consensus_gap->over (81-91 fit · 4-1 fwd) |
+| Tue 20:00 | EIU@VAN | total | over | +6.6 | 3-2 | 147.5 (-115) | 144.5 | 148 ($1,500) | 78% / 76% | 1060 | follow_move->over (225-231 fit · 7-6 fwd); money_level->over (253-247 fit · 9-8 fwd); sharp_gap->under (244-249 fit · 9-7 fwd); money_moving->under (239-257 fit · 9-7 fwd); pin_value->over (127-120 fit · 5-5 fwd) |
+| Tue 19:00 | CSN@TROY | moneyline | home | +5.9 | 3-1 | -134 (-134) | 0 | -125 ($3,000) | 89% / 93% | 1171 | money_level->home (312-113 fit · 13-2 fwd); sharp_gap->home (138-254 fit · 6-8 fwd); money_moving->home (142-248 fit · 7-7 fwd); consensus_gap->away (104-224 fit · 2-9 fwd) |
+| Tue 20:00 | SIUE@UND | spread | home | +5.9 | 2-0 | -1.5 (-118) | -1.5 | -2 ($1,500) | 0% / 0% | 873 | consensus_gap->home (72-65 fit · 2-2 fwd); pin_value->home (124-111 fit · 3-5 fwd) |
+| Tue 20:00 | LINW@UNI | spread | home | +5.9 | 2-0 | -12.5 (-120) | -12.5 | -13 ($3,000) | 0% / 0% | 615 | consensus_gap->home (72-65 fit · 2-2 fwd); pin_value->home (124-111 fit · 3-5 fwd) |
+| Tue 20:00 | UTA@USM | moneyline | away | +5.9 | 3-1 | 110 (+110) | 0 |  | 17% / 71% | 913 | money_level->away (312-113 fit · 13-2 fwd); sharp_gap->away (138-254 fit · 6-8 fwd); money_moving->away (142-248 fit · 7-7 fwd); consensus_gap->home (104-224 fit · 2-9 fwd) |
+| Tue 20:30 | SHSU@WYO | moneyline | home | +5.9 | 3-1 | -900 (-900) | 0 |  | 99% / 100% | 883 | money_level->home (312-113 fit · 13-2 fwd); sharp_gap->home (138-254 fit · 6-8 fwd); money_moving->home (142-248 fit · 7-7 fwd); consensus_gap->away (104-224 fit · 2-9 fwd) |
+| Wed 00:00 | AUB@WVU | moneyline | away | +5.9 | 3-1 | -113 (-113) | 0 |  | 61% / 93% | 3029 | money_level->away (312-113 fit · 13-2 fwd); sharp_gap->away (138-254 fit · 6-8 fwd); money_moving->away (142-248 fit · 7-7 fwd); consensus_gap->home (104-224 fit · 2-9 fwd) |
+| Tue 21:00 | ALST@UCD | spread | home | +5.2 | 5-0 | -11.5 (-120) | -10.5 | -12.5 ($500) | 88% / 99% | 989 | follow_move->home (192-193 fit · 4-9 fwd); money_level->home (231-245 fit · 9-8 fwd); sharp_gap->home (239-231 fit · 10-7 fwd); money_moving->home (236-234 fit · 10-7 fwd); pin_value->home (124-111 fit · 3-5 fwd) |
+| Tue 19:30 | FIU@UAB | total | over | +5.1 | 5-1 | 169.5 (-108) | 162.5 |  | 24% / 79% | 1332 | follow_move->over (225-231 fit · 7-6 fwd); rlm_ratio->over (92-63 fit · 4-1 fwd); money_level->over (253-247 fit · 9-8 fwd); sharp_gap->over (244-249 fit · 9-7 fwd); money_moving->over (239-257 fit · 9-7 fwd); consensus_gap->under (81-91 fit · 4-1 fwd) |
 
-## 5 signals agree, 0 against
+## C  weighted edge 0 to +5
 
-| tip (ET) | game | market | lean | FD now | open | Pin | tix / money (lean side) | bets | calls |
-|---|---|---|---|---|---|---|---|---|---|
-| Tue 18:00 | MRST@ARMY | spread | home | 0.5 (-105) | 1.5 | -1.5 ($500) | 73% / 88% | 620 | follow_move->home (195-202); money_level->home (239-253); sharp_gap->home (249-237); money_moving->home (246-240); pin_value->home (127-115) |
-| Tue 18:30 | LIP@PUR | spread | home | -21.5 (-120) | -19.5 | -22 ($500) | 45% / 53% | 504 | follow_move->home (195-202); money_level->home (239-253); sharp_gap->home (249-237); money_moving->home (246-240); pin_value->home (127-115) |
-| Tue 19:00 | CMU@DAY | spread | home | -11.5 (-120) | -7.5 | -12.5 ($1,500) | 70% / 90% | 838 | follow_move->home (195-202); money_level->home (239-253); sharp_gap->home (249-237); money_moving->home (246-240); pin_value->home (127-115) |
-| Tue 19:00 | MSST@UCF | total | over | 153.5 (-115) | 152.5 |  | 59% / 64% | 1454 | follow_move->over (232-236); money_level->over (262-254); sharp_gap->over (253-255); money_moving->over (248-263); consensus_gap->over (84-92) |
-| Tue 19:00 | BALL@FSU | spread | home | -26.5 (-120) | -24.5 | -26.5 ($1,500) | 44% / 57% | 413 | follow_move->home (195-202); rlm_ratio->home (33-35); money_level->home (239-253); sharp_gap->home (249-237); money_moving->home (246-240) |
-| Tue 19:30 | IND@ARK | spread | away | 1.5 (-118) | -2.5 |  | 29% / 76% | 2928 | follow_move->away (195-202); rlm_ratio->away (33-35); money_level->away (239-253); sharp_gap->away (249-237); money_moving->away (246-240) |
-| Tue 19:30 | FIU@UAB | total | over | 168.5 (-108) | 162.5 |  | 16% / 65% | 615 | follow_move->over (232-236); rlm_ratio->over (96-63); money_level->over (262-254); sharp_gap->over (253-255); money_moving->over (248-263) |
-| Tue 20:00 | LAM@NEOM | total | over | 158.5 (-110) | 150.5 |  | 41% / 76% | 323 | follow_move->over (232-236); rlm_ratio->over (96-63); money_level->over (262-254); sharp_gap->over (253-255); money_moving->over (248-263) |
-| Tue 20:30 | EWU@UTAH | moneyline | away | 680 (+680) | 0 | -881 ($1,500) | 1% / 60% | 676 | money_level->away (324-115); sharp_gap->away (144-261); money_moving->away (149-254); consensus_gap->away (106-233); pin_value->away (13-45) |
-| Tue 20:30 | NICH@MISS | total | under | 142.5 (-105) | 149.5 |  | 26% / 74% | 388 | follow_move->under (232-236); rlm_ratio->under (96-63); money_level->under (262-254); sharp_gap->under (253-255); money_moving->under (248-263) |
+| tip (ET) | game | market | lean | wt edge | raw | FD now | open | Pin | tix / money (lean side) | bets | calls |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| Tue 19:30 | JVST@LT | total | over | +4.7 | 4-2 | 130.5 (-110) | 136.5 | 131 ($1,500) | 94% / 95% | 1034 | follow_move->under (225-231 fit · 7-6 fwd); money_level->over (253-247 fit · 9-8 fwd); sharp_gap->over (244-249 fit · 9-7 fwd); money_moving->under (239-257 fit · 9-7 fwd); consensus_gap->over (81-91 fit · 4-1 fwd); pin_value->over (127-120 fit · 5-5 fwd) |
+| Tue 20:00 | UMES@DEP | total | under | +4.6 | 5-0 | 125.5 (-105) | 130.5 |  | 8% / 52% | 822 | follow_move->under (225-231 fit · 7-6 fwd); rlm_ratio->under (92-63 fit · 4-1 fwd); money_level->under (253-247 fit · 9-8 fwd); sharp_gap->under (244-249 fit · 9-7 fwd); money_moving->under (239-257 fit · 9-7 fwd) |
+| Tue 20:00 | LAM@NEOM | total | over | +4.6 | 5-0 | 158.5 (-114) | 150.5 |  | 43% / 80% | 1019 | follow_move->over (225-231 fit · 7-6 fwd); rlm_ratio->over (92-63 fit · 4-1 fwd); money_level->over (253-247 fit · 9-8 fwd); sharp_gap->over (244-249 fit · 9-7 fwd); money_moving->over (239-257 fit · 9-7 fwd) |
+| Tue 20:30 | NICH@MISS | total | under | +4.6 | 5-0 | 142.5 (-105) | 149.5 |  | 15% / 57% | 666 | follow_move->under (225-231 fit · 7-6 fwd); rlm_ratio->under (92-63 fit · 4-1 fwd); money_level->under (253-247 fit · 9-8 fwd); sharp_gap->under (244-249 fit · 9-7 fwd); money_moving->under (239-257 fit · 9-7 fwd) |
+| Tue 22:00 | SEA@CBU | total | under | +4.6 | 5-0 | 133.5 (-110) | 136.5 |  | 7% / 72% | 989 | follow_move->under (225-231 fit · 7-6 fwd); rlm_ratio->under (92-63 fit · 4-1 fwd); money_level->under (253-247 fit · 9-8 fwd); sharp_gap->under (244-249 fit · 9-7 fwd); money_moving->under (239-257 fit · 9-7 fwd) |
+| Tue 22:00 | UCI@STAN | total | under | +4.6 | 5-0 | 142.5 (-110) | 148.5 |  | 25% / 54% | 1196 | follow_move->under (225-231 fit · 7-6 fwd); rlm_ratio->under (92-63 fit · 4-1 fwd); money_level->under (253-247 fit · 9-8 fwd); sharp_gap->under (244-249 fit · 9-7 fwd); money_moving->under (239-257 fit · 9-7 fwd) |
+| Tue 19:00 | VILL@PITT | total | over | +4.5 | 2-2 | 148.5 (-110) | 147.5 | 148.5 ($750) | 73% / 69% | 5124 | follow_move->over (225-231 fit · 7-6 fwd); money_level->over (253-247 fit · 9-8 fwd); sharp_gap->under (244-249 fit · 9-7 fwd); money_moving->under (239-257 fit · 9-7 fwd) |
+| Tue 20:00 | AMCC@RICE | total | over | +4.5 | 2-2 | 141.5 (-110) | 140.5 |  | 78% / 51% | 514 | follow_move->over (225-231 fit · 7-6 fwd); money_level->over (253-247 fit · 9-8 fwd); sharp_gap->under (244-249 fit · 9-7 fwd); money_moving->under (239-257 fit · 9-7 fwd) |
+| Tue 20:30 | EWU@UTAH | total | over | +4.5 | 2-2 | 145.5 (-110) | 142.5 | 145.5 ($1,500) | 86% / 54% | 1282 | follow_move->over (225-231 fit · 7-6 fwd); money_level->over (253-247 fit · 9-8 fwd); sharp_gap->under (244-249 fit · 9-7 fwd); money_moving->under (239-257 fit · 9-7 fwd) |
+| Tue 20:00 | LMC@EVAN | spread | home | +3.7 | 2-0 | -7.5 (-114) | -6.5 | -8 ($1,000) | 0% / 0% | 535 | follow_move->home (192-193 fit · 4-9 fwd); pin_value->home (124-111 fit · 3-5 fwd) |
+| Tue 19:00 | WAG@JOES | spread | away | +3.3 | 3-1 | 15.5 (-102) | -16.5 |  | 31% / 35% | 434 | follow_move->away (192-193 fit · 4-9 fwd); money_level->home (231-245 fit · 9-8 fwd); sharp_gap->away (239-231 fit · 10-7 fwd); money_moving->away (236-234 fit · 10-7 fwd) |
+| Tue 19:30 | BRY@MASS | moneyline | away | +3.1 | 3-2 | 400 (+400) | 0 | -593 ($1,000) | 1% / 29% | 1050 | money_level->home (312-113 fit · 13-2 fwd); sharp_gap->away (138-254 fit · 6-8 fwd); money_moving->away (142-248 fit · 7-7 fwd); consensus_gap->home (104-224 fit · 2-9 fwd); pin_rlm->away (26-53 fit · 2-3 fwd) |
+| Tue 19:30 | JVST@LT | moneyline | away | +3.1 | 3-2 | 108 (+108) | 0 | -135 ($3,000) | 12% / 15% | 1040 | money_level->home (312-113 fit · 13-2 fwd); sharp_gap->away (138-254 fit · 6-8 fwd); money_moving->away (142-248 fit · 7-7 fwd); consensus_gap->home (104-224 fit · 2-9 fwd); pin_rlm->away (26-53 fit · 2-3 fwd) |
+| Tue 20:00 | LMC@EVAN | moneyline | away | +3.1 | 3-2 | 270 (+270) | 0 | -337 ($1,000) | 3% / 5% | 555 | money_level->home (312-113 fit · 13-2 fwd); sharp_gap->away (138-254 fit · 6-8 fwd); money_moving->away (142-248 fit · 7-7 fwd); consensus_gap->home (104-224 fit · 2-9 fwd); pin_rlm->away (26-53 fit · 2-3 fwd) |
+| Tue 19:30 | FIU@UAB | spread | home | +3 | 1-0 | -3.5 (-120) | -3.5 |  | 0% / 0% | 1272 | consensus_gap->home (72-65 fit · 2-2 fwd) |
+| Tue 20:00 | MTU@GASO | spread | home | +3 | 1-0 | 2.5 (-120) | 2.5 |  | 0% / 0% | 873 | consensus_gap->home (72-65 fit · 2-2 fwd) |
+| Tue 20:00 | AMCC@RICE | spread | home | +3 | 1-0 | -1.5 (-120) | -1.5 |  | 0% / 0% | 469 | consensus_gap->home (72-65 fit · 2-2 fwd) |
+| Tue 19:00 | LEH@MSM | spread | home | +2.9 | 1-0 | -1.5 (-108) | -1.5 | -2 ($1,000) | 0% / 0% | 757 | pin_value->home (124-111 fit · 3-5 fwd) |
+| Tue 19:30 | JVST@LT | spread | home | +2.9 | 1-0 | -1.5 (-120) | -1.5 | -2 ($3,000) | 0% / 0% | 1040 | pin_value->home (124-111 fit · 3-5 fwd) |
+| Tue 20:30 | SHSU@WYO | total | under | +2.7 | 4-2 | 149.5 (-110) | 150.5 |  | 34% / 42% | 939 | follow_move->under (225-231 fit · 7-6 fwd); rlm_ratio->under (92-63 fit · 4-1 fwd); money_level->over (253-247 fit · 9-8 fwd); sharp_gap->under (244-249 fit · 9-7 fwd); money_moving->under (239-257 fit · 9-7 fwd); consensus_gap->over (81-91 fit · 4-1 fwd) |
+| Tue 19:00 | SHU@PROV | total | over | +2.5 | 5-1 | 154.5 (-105) | 151.5 | 154 ($1,500) | 39% / 52% | 777 | follow_move->over (225-231 fit · 7-6 fwd); rlm_ratio->over (92-63 fit · 4-1 fwd); money_level->over (253-247 fit · 9-8 fwd); sharp_gap->over (244-249 fit · 9-7 fwd); money_moving->over (239-257 fit · 9-7 fwd); pin_value->under (127-120 fit · 5-5 fwd) |
+| Tue 19:00 | WCU@BUT | spread | away | +2.5 | 2-1 | 11.5 (-110) | -11.5 | -11.5 ($3,000) | 24% / 38% | 1014 | money_level->home (231-245 fit · 9-8 fwd); sharp_gap->away (239-231 fit · 10-7 fwd); money_moving->away (236-234 fit · 10-7 fwd) |
+| Tue 16:30 | ND@FLA | spread | home | +2.3 | 4-0 | -15.5 (-105) | -13.5 |  | 60% / 68% | 7280 | follow_move->home (192-193 fit · 4-9 fwd); money_level->home (231-245 fit · 9-8 fwd); sharp_gap->home (239-231 fit · 10-7 fwd); money_moving->home (236-234 fit · 10-7 fwd) |
+| Tue 18:00 | MRST@ARMY | spread | home | +2.3 | 4-0 | -1.5 (-105) | 1.5 | -1.5 ($1,000) | 67% / 80% | 1590 | follow_move->home (192-193 fit · 4-9 fwd); money_level->home (231-245 fit · 9-8 fwd); sharp_gap->home (239-231 fit · 10-7 fwd); money_moving->home (236-234 fit · 10-7 fwd) |
+| Tue 19:00 | VILL@PITT | spread | away | +2.3 | 4-0 | -1.5 (-110) | -1.5 | 1.5 ($1,500) | 54% / 62% | 5275 | follow_move->away (192-193 fit · 4-9 fwd); money_level->away (231-245 fit · 9-8 fwd); sharp_gap->away (239-231 fit · 10-7 fwd); money_moving->away (236-234 fit · 10-7 fwd) |
+| Tue 19:00 | CMU@DAY | spread | home | +2.3 | 4-0 | -12.5 (-110) | -7.5 | -12.5 ($3,000) | 66% / 82% | 1938 | follow_move->home (192-193 fit · 4-9 fwd); money_level->home (231-245 fit · 9-8 fwd); sharp_gap->home (239-231 fit · 10-7 fwd); money_moving->home (236-234 fit · 10-7 fwd) |
+| Tue 19:00 | MSST@UCF | spread | away | +2.3 | 4-0 | -1.5 (-100) | -1.5 |  | 46% / 58% | 3210 | follow_move->away (192-193 fit · 4-9 fwd); money_level->away (231-245 fit · 9-8 fwd); sharp_gap->away (239-231 fit · 10-7 fwd); money_moving->away (236-234 fit · 10-7 fwd) |
+| Tue 19:00 | NORF@GT | spread | away | +2.3 | 4-0 | 20.5 (-110) | -23.5 | -20.5 ($1,000) | 50% / 58% | 827 | follow_move->away (192-193 fit · 4-9 fwd); money_level->away (231-245 fit · 9-8 fwd); sharp_gap->away (239-231 fit · 10-7 fwd); money_moving->away (236-234 fit · 10-7 fwd) |
+| Tue 19:00 | BALL@FSU | spread | home | +2.3 | 4-0 | -26.5 (-110) | -24.5 | -26.5 ($3,000) | 52% / 67% | 827 | follow_move->home (192-193 fit · 4-9 fwd); money_level->home (231-245 fit · 9-8 fwd); sharp_gap->home (239-231 fit · 10-7 fwd); money_moving->home (236-234 fit · 10-7 fwd) |
+| Tue 19:00 | TNST@USF | spread | home | +2.3 | 4-0 | -11.5 (-120) | -11 | -11.5 ($3,000) | 56% / 57% | 1489 | follow_move->home (192-193 fit · 4-9 fwd); money_level->home (231-245 fit · 9-8 fwd); sharp_gap->home (239-231 fit · 10-7 fwd); money_moving->home (236-234 fit · 10-7 fwd) |
+| Tue 19:00 | AKR@BUCK | spread | away | +2.3 | 4-0 | -15.5 (-110) | 14.5 | 15.5 ($1,000) | 66% / 85% | 1146 | follow_move->away (192-193 fit · 4-9 fwd); money_level->away (231-245 fit · 9-8 fwd); sharp_gap->away (239-231 fit · 10-7 fwd); money_moving->away (236-234 fit · 10-7 fwd) |
+| Tue 20:00 | ORU@SMU | spread | away | +2.3 | 4-0 | 23.5 (-110) | -25.5 |  | 61% / 70% | 757 | follow_move->away (192-193 fit · 4-9 fwd); money_level->away (231-245 fit · 9-8 fwd); sharp_gap->away (239-231 fit · 10-7 fwd); money_moving->away (236-234 fit · 10-7 fwd) |
+| Tue 20:00 | UTA@USM | spread | away | +2.3 | 4-0 | 1.5 (-102) | -4 |  | 54% / 74% | 913 | follow_move->away (192-193 fit · 4-9 fwd); money_level->away (231-245 fit · 9-8 fwd); sharp_gap->away (239-231 fit · 10-7 fwd); money_moving->away (236-234 fit · 10-7 fwd) |
+| Tue 21:00 | ODU@UVA | spread | home | +2.3 | 4-0 | -26.5 (-110) | -25.5 | -26.5 ($1,500) | 65% / 72% | 1368 | follow_move->home (192-193 fit · 4-9 fwd); money_level->home (231-245 fit · 9-8 fwd); sharp_gap->home (239-231 fit · 10-7 fwd); money_moving->home (236-234 fit · 10-7 fwd) |
+| Tue 22:00 | UCI@STAN | spread | away | +2.3 | 4-0 | 6.5 (-110) | -7.5 |  | 61% / 86% | 1196 | follow_move->away (192-193 fit · 4-9 fwd); money_level->away (231-245 fit · 9-8 fwd); sharp_gap->away (239-231 fit · 10-7 fwd); money_moving->away (236-234 fit · 10-7 fwd) |
+| Tue 19:00 | CHAR@DAV | total | under | +2.2 | 4-1 | 132.5 (-110) | 133.5 |  | 14% / 25% | 1585 | follow_move->under (225-231 fit · 7-6 fwd); rlm_ratio->under (92-63 fit · 4-1 fwd); money_level->over (253-247 fit · 9-8 fwd); sharp_gap->under (244-249 fit · 9-7 fwd); money_moving->under (239-257 fit · 9-7 fwd) |
+| Tue 19:00 | WAG@JOES | total | under | +2.2 | 4-1 | 137.5 (-110) | 139.5 |  | 8% / 20% | 434 | follow_move->under (225-231 fit · 7-6 fwd); rlm_ratio->under (92-63 fit · 4-1 fwd); money_level->over (253-247 fit · 9-8 fwd); sharp_gap->under (244-249 fit · 9-7 fwd); money_moving->under (239-257 fit · 9-7 fwd) |
+| Tue 19:30 | KENN@ALA | spread | home | +1.5 | 3-0 | -25.5 (-115) | -25.5 | -25.5 ($3,000) | 68% / 85% | 1842 | money_level->home (231-245 fit · 9-8 fwd); sharp_gap->home (239-231 fit · 10-7 fwd); money_moving->home (236-234 fit · 10-7 fwd) |
+| Tue 20:30 | EWU@UTAH | spread | home | +1.5 | 3-0 | -12.5 (-120) | -12.5 | -12.5 ($3,000) | 90% / 97% | 1282 | money_level->home (231-245 fit · 9-8 fwd); sharp_gap->home (239-231 fit · 10-7 fwd); money_moving->home (236-234 fit · 10-7 fwd) |
+| Tue 21:00 | MSU@TENN | spread | away | +1.5 | 3-0 | -2.5 (-110) | 2.5 | 2.5 ($1,500) | 71% / 78% | 8512 | money_level->away (231-245 fit · 9-8 fwd); sharp_gap->away (239-231 fit · 10-7 fwd); money_moving->away (236-234 fit · 10-7 fwd) |
+| Tue 21:30 | UNLV@KU | spread | home | +1.5 | 3-0 | -16.5 (-110) | -16.5 |  | 78% / 81% | 2837 | money_level->home (231-245 fit · 9-8 fwd); sharp_gap->home (239-231 fit · 10-7 fwd); money_moving->home (236-234 fit · 10-7 fwd) |
+| Wed 00:00 | AUB@WVU | spread | away | +1.5 | 3-0 | -1.5 (-100) | 1.5 |  | 84% / 92% | 2781 | money_level->away (231-245 fit · 9-8 fwd); sharp_gap->away (239-231 fit · 10-7 fwd); money_moving->away (236-234 fit · 10-7 fwd) |
+| Tue 19:00 | CSN@TROY | spread | away | +0.9 | 5-1 | 1.5 (-102) | -2.5 | -1.5 ($3,000) | 23% / 34% | 1171 | follow_move->away (192-193 fit · 4-9 fwd); rlm_ratio->away (33-34 fit · 0-1 fwd); money_level->home (231-245 fit · 9-8 fwd); sharp_gap->away (239-231 fit · 10-7 fwd); money_moving->away (236-234 fit · 10-7 fwd); pin_rlm->away (17-16 fit · 1-1 fwd) |
+| Tue 19:00 | BGSU@WM | moneyline | home | +0.9 | 2-2 | -142 (-142) | 0 | -141 ($3,000) | 86% / 83% | 1130 | money_level->home (312-113 fit · 13-2 fwd); sharp_gap->away (138-254 fit · 6-8 fwd); money_moving->away (142-248 fit · 7-7 fwd); consensus_gap->home (104-224 fit · 2-9 fwd) |
+| Tue 19:00 | LEH@MSM | moneyline | home | +0.9 | 2-2 | -122 (-122) | 0 | -121 ($1,000) | 80% / 66% | 822 | money_level->home (312-113 fit · 13-2 fwd); sharp_gap->away (138-254 fit · 6-8 fwd); money_moving->away (142-248 fit · 7-7 fwd); consensus_gap->home (104-224 fit · 2-9 fwd) |
+| Tue 19:30 | IND@ARK | moneyline | home | +0.9 | 2-2 | 106 (+106) | 0 |  | 76% / 61% | 7234 | money_level->home (312-113 fit · 13-2 fwd); sharp_gap->away (138-254 fit · 6-8 fwd); money_moving->away (142-248 fit · 7-7 fwd); consensus_gap->home (104-224 fit · 2-9 fwd) |
+| Tue 20:00 | MTU@GASO | moneyline | away | +0.9 | 2-2 | -128 (-128) | 0 |  | 86% / 83% | 898 | money_level->away (312-113 fit · 13-2 fwd); sharp_gap->home (138-254 fit · 6-8 fwd); money_moving->home (142-248 fit · 7-7 fwd); consensus_gap->away (104-224 fit · 2-9 fwd) |
+| Tue 22:00 | UCI@STAN | moneyline | home | +0.9 | 2-2 | -275 (-275) | 0 |  | 98% / 97% | 1196 | money_level->home (312-113 fit · 13-2 fwd); sharp_gap->away (138-254 fit · 6-8 fwd); money_moving->away (142-248 fit · 7-7 fwd); consensus_gap->home (104-224 fit · 2-9 fwd) |
+| Tue 20:00 | LAM@NEOM | spread | home | +0.8 | 1-0 | -1.5 (-105) | 2.5 |  | 0% / 0% | 1019 | follow_move->home (192-193 fit · 4-9 fwd) |
+| Tue 22:00 | SEA@CBU | spread | home | +0.8 | 1-0 | 8.5 (-120) | 9.5 |  | 0% / 0% | 974 | follow_move->home (192-193 fit · 4-9 fwd) |
+| Wed 21:00 | CONN@ARIZ | spread | home | +0.8 | 1-0 | -3.5 (-115) | -2.5 |  | 0% / 0% | 80 | follow_move->home (192-193 fit · 4-9 fwd) |
+| Tue 18:00 | SIU@LIB | spread | home | +0.7 | 3-1 | 2.5 (-120) | 1.5 |  | 59% / 70% | 2019 | follow_move->away (192-193 fit · 4-9 fwd); money_level->home (231-245 fit · 9-8 fwd); sharp_gap->home (239-231 fit · 10-7 fwd); money_moving->home (236-234 fit · 10-7 fwd) |
+| Tue 19:00 | CHAR@DAV | spread | away | +0.7 | 4-1 | 3.5 (-106) | -4.5 |  | 25% / 35% | 1585 | follow_move->away (192-193 fit · 4-9 fwd); rlm_ratio->away (33-34 fit · 0-1 fwd); money_level->home (231-245 fit · 9-8 fwd); sharp_gap->away (239-231 fit · 10-7 fwd); money_moving->away (236-234 fit · 10-7 fwd) |
+| Tue 19:00 | MONM@WAKE | spread | home | +0.7 | 3-1 | -14.5 (-120) | -15.5 | -14.5 ($3,000) | 70% / 75% | 1070 | follow_move->away (192-193 fit · 4-9 fwd); money_level->home (231-245 fit · 9-8 fwd); sharp_gap->home (239-231 fit · 10-7 fwd); money_moving->home (236-234 fit · 10-7 fwd) |
+| Tue 19:00 | RID@MIA | spread | home | +0.7 | 3-1 | -41.5 (-110) | -42.5 |  | 47% / 63% | 979 | follow_move->away (192-193 fit · 4-9 fwd); money_level->home (231-245 fit · 9-8 fwd); sharp_gap->home (239-231 fit · 10-7 fwd); money_moving->home (236-234 fit · 10-7 fwd) |
+| Tue 19:00 | GB@UWF | spread | away | +0.7 | 3-1 | -4.5 (-114) | 5.5 |  | 60% / 65% | 873 | follow_move->home (192-193 fit · 4-9 fwd); money_level->away (231-245 fit · 9-8 fwd); sharp_gap->away (239-231 fit · 10-7 fwd); money_moving->away (236-234 fit · 10-7 fwd) |
+| Tue 20:30 | NICH@MISS | spread | home | +0.7 | 3-1 | -27.5 (-120) | -30.5 |  | 47% / 66% | 666 | follow_move->away (192-193 fit · 4-9 fwd); money_level->home (231-245 fit · 9-8 fwd); sharp_gap->home (239-231 fit · 10-7 fwd); money_moving->home (236-234 fit · 10-7 fwd) |
+| Tue 23:00 | MTST@GONZ | spread | home | +0.7 | 3-1 | -22.5 (-110) | -23.5 | -22.5 ($1,500) | 75% / 82% | 1171 | follow_move->away (192-193 fit · 4-9 fwd); money_level->home (231-245 fit · 9-8 fwd); sharp_gap->home (239-231 fit · 10-7 fwd); money_moving->home (236-234 fit · 10-7 fwd) |
+| Tue 18:00 | MRST@ARMY | total | under | +0.1 | 4-2 | 131.5 (-110) | 132.5 | 132.5 ($500) | 11% / 21% | 1590 | follow_move->under (225-231 fit · 7-6 fwd); rlm_ratio->under (92-63 fit · 4-1 fwd); money_level->over (253-247 fit · 9-8 fwd); sharp_gap->under (244-249 fit · 9-7 fwd); money_moving->under (239-257 fit · 9-7 fwd); pin_value->over (127-120 fit · 5-5 fwd) |
+| Tue 19:00 | TNST@USF | total | over | +0.1 | 3-3 | 165.5 (-105) | 163 | 165 ($1,500) | 50% / 53% | 1489 | follow_move->over (225-231 fit · 7-6 fwd); money_level->over (253-247 fit · 9-8 fwd); sharp_gap->over (244-249 fit · 9-7 fwd); money_moving->under (239-257 fit · 9-7 fwd); consensus_gap->under (81-91 fit · 4-1 fwd); pin_value->under (127-120 fit · 5-5 fwd) |
+| Tue 19:00 | LEH@MSM | total | under | +0.1 | 4-2 | 137.5 (-110) | 138.5 | 138.5 ($500) | 9% / 40% | 822 | follow_move->under (225-231 fit · 7-6 fwd); rlm_ratio->under (92-63 fit · 4-1 fwd); money_level->over (253-247 fit · 9-8 fwd); sharp_gap->under (244-249 fit · 9-7 fwd); money_moving->under (239-257 fit · 9-7 fwd); pin_value->over (127-120 fit · 5-5 fwd) |
 
-## 5 signals agree, 1 against
+## D  no weighted edge (agreement is all unproven or negative signals)
 
-| tip (ET) | game | market | lean | FD now | open | Pin | tix / money (lean side) | bets | calls |
-|---|---|---|---|---|---|---|---|---|---|
-| Tue 12:00 | HOF@MURR | total | under | 148.5 (-110) | 149.5 | 149 ($1,500) | 27% / 57% | 3185 | follow_move->under (232-236); rlm_ratio->under (96-63); money_level->under (262-254); sharp_gap->under (253-255); money_moving->under (248-263); pin_value->over (132-125) |
-| Tue 19:00 | SHU@PROV | total | over | 154.5 (-105) | 151.5 | 154 ($750) | 39% / 60% | 383 | follow_move->over (232-236); rlm_ratio->over (96-63); money_level->over (262-254); sharp_gap->over (253-255); money_moving->over (248-263); pin_value->under (132-125) |
-| Tue 19:00 | MSST@UCF | spread | away | -1.5 (-100) | -1.5 |  | 40% / 62% | 1454 | follow_move->away (195-202); rlm_ratio->away (33-35); money_level->away (239-253); sharp_gap->away (249-237); money_moving->away (246-240); consensus_gap->home (74-67) |
-| Tue 19:30 | KENN@ALA | total | over | 176.5 (-110) | 172.5 | 176 ($750) | 30% / 50% | 898 | follow_move->over (232-236); rlm_ratio->over (96-63); sharp_gap->over (253-255); money_moving->over (248-263); pin_value->under (132-125); pin_rlm->over (61-37) |
-| Tue 22:00 | SEA@CBU | total | under | 133.5 (-110) | 136.5 |  | 12% / 86% | 565 | follow_move->under (232-236); rlm_ratio->under (96-63); money_level->under (262-254); sharp_gap->under (253-255); money_moving->under (248-263); consensus_gap->over (84-92) |
-
-## 5 signals agree, 2 against
-
-| tip (ET) | game | market | lean | FD now | open | Pin | tix / money (lean side) | bets | calls |
-|---|---|---|---|---|---|---|---|---|---|
-| Tue 19:00 | ILL@DUKE | total | over | 167.5 (-110) | 160.5 | 167 ($750) | 30% / 38% | 4422 | follow_move->over (232-236); rlm_ratio->over (96-63); money_level->under (262-254); sharp_gap->over (253-255); money_moving->over (248-263); pin_value->under (132-125); pin_rlm->over (61-37) |
-| Tue 19:30 | JVST@LT | total | under | 130.5 (-110) | 136.5 | 131 ($750) | 7% / 17% | 489 | follow_move->under (232-236); rlm_ratio->under (96-63); money_level->over (262-254); sharp_gap->under (253-255); money_moving->under (248-263); pin_value->over (132-125); pin_rlm->under (61-37) |
-
-## 4 signals agree, 0 against
-
-| tip (ET) | game | market | lean | FD now | open | Pin | tix / money (lean side) | bets | calls |
-|---|---|---|---|---|---|---|---|---|---|
-| Tue 18:00 | SIU@LIB | moneyline | home | 114 (+114) | 0 |  | 27% / 78% | 1075 | money_level->home (324-115); sharp_gap->home (144-261); money_moving->home (149-254); consensus_gap->home (106-233) |
-| Tue 19:00 | VILL@PITT | spread | away | -1.5 (-105) | -1.5 | 1.5 ($1,500) | 55% / 64% | 2529 | follow_move->away (195-202); money_level->away (239-253); sharp_gap->away (249-237); money_moving->away (246-240) |
-| Tue 19:00 | WCU@BUT | total | under | 160.5 (-105) | 161.5 | 160.5 ($750) | 72% / 85% | 484 | follow_move->under (232-236); money_level->under (262-254); sharp_gap->under (253-255); money_moving->under (248-263) |
-| Tue 19:00 | RID@MIA | total | under | 148.5 (-110) | 150 |  | 62% / 83% | 530 | follow_move->under (232-236); money_level->under (262-254); sharp_gap->under (253-255); money_moving->under (248-263) |
-| Tue 19:30 | FIU@UAB | moneyline | away | 150 (+150) | 0 |  | 12% / 84% | 615 | money_level->away (324-115); sharp_gap->away (144-261); money_moving->away (149-254); consensus_gap->away (106-233) |
-| Tue 20:00 | ORU@SMU | total | under | 156.5 (-110) | 159.5 |  | 66% / 92% | 363 | follow_move->under (232-236); money_level->under (262-254); sharp_gap->under (253-255); money_moving->under (248-263) |
-| Tue 20:00 | SIUE@UND | moneyline | away | 106 (+106) | 0 | -130 ($1,500) | 17% / 99% | 464 | money_level->away (324-115); sharp_gap->away (144-261); money_moving->away (149-254); pin_rlm->away (28-55) |
-| Tue 21:00 | ODU@UVA | spread | home | -26.5 (-110) | -25.5 | -26.5 ($1,500) | 65% / 67% | 706 | follow_move->home (195-202); money_level->home (239-253); sharp_gap->home (249-237); money_moving->home (246-240) |
-| Tue 21:30 | UNLV@KU | spread | home | -17.5 (-110) | -16.5 |  | 73% / 81% | 1443 | follow_move->home (195-202); money_level->home (239-253); sharp_gap->home (249-237); money_moving->home (246-240) |
-| Tue 23:00 | MTST@GONZ | total | over | 152.5 (-110) | 151.5 | 152.5 ($750) | 55% / 61% | 590 | follow_move->over (232-236); money_level->over (262-254); sharp_gap->over (253-255); money_moving->over (248-263) |
-
-## 4 signals agree, 1 against
-
-| tip (ET) | game | market | lean | FD now | open | Pin | tix / money (lean side) | bets | calls |
-|---|---|---|---|---|---|---|---|---|---|
-| Tue 18:00 | SPC@MASSL | total | under | 129.5 (-110) | 132.5 | 129.5 ($250) | 34% / 39% | 636 | follow_move->under (232-236); money_level->over (262-254); sharp_gap->under (253-255); money_moving->under (248-263); consensus_gap->under (84-92) |
-| Tue 18:30 | LIP@PUR | total | under | 148.5 (-110) | 148.5 | 148 ($250) | 16% / 28% | 489 | money_level->over (262-254); sharp_gap->under (253-255); money_moving->under (248-263); pin_value->under (132-125); pin_rlm->under (61-37) |
-| Tue 19:00 | CMU@DAY | moneyline | away | 580 (+580) | 0 | -710 ($1,500) | 6% / 21% | 838 | money_level->home (324-115); sharp_gap->away (144-261); money_moving->away (149-254); consensus_gap->away (106-233); pin_value->away (13-45) |
-| Tue 19:00 | SHU@PROV | spread | home | -29.5 (-118) | -27.5 | -30 ($1,500) | 23% / 26% | 383 | follow_move->home (195-202); money_level->away (239-253); sharp_gap->home (249-237); money_moving->home (246-240); pin_value->home (127-115) |
-| Tue 19:00 | CHAR@DAV | total | under | 132.5 (-110) | 133.5 |  | 8% / 12% | 691 | follow_move->under (232-236); rlm_ratio->under (96-63); money_level->over (262-254); sharp_gap->under (253-255); money_moving->under (248-263) |
-| Tue 19:30 | JVST@LT | moneyline | away | 115 (+115) | 0 | -136 ($1,500) | 11% / 20% | 489 | money_level->home (324-115); sharp_gap->away (144-261); money_moving->away (149-254); consensus_gap->away (106-233); pin_rlm->away (28-55) |
-| Tue 20:00 | UMES@DEP | total | under | 126.5 (-105) | 130.5 |  | 8% / 33% | 408 | follow_move->under (232-236); rlm_ratio->under (96-63); money_level->over (262-254); sharp_gap->under (253-255); money_moving->under (248-263) |
-| Tue 20:00 | UTA@USM | total | over | 149.5 (-106) | 148.5 |  | 59% / 89% | 429 | follow_move->over (232-236); money_level->over (262-254); sharp_gap->over (253-255); money_moving->over (248-263); consensus_gap->under (84-92) |
-| Tue 20:00 | LMC@EVAN | moneyline | away | 300 (+300) | 0 | -364 ($500) | 2% / 7% | 242 | money_level->home (324-115); sharp_gap->away (144-261); money_moving->away (149-254); consensus_gap->away (106-233); pin_rlm->away (28-55) |
-| Tue 21:00 | ODU@UVA | total | under | 145.5 (-106) | 153.5 | 146 ($750) | 50% / 96% | 706 | follow_move->under (232-236); money_level->under (262-254); sharp_gap->under (253-255); money_moving->under (248-263); pin_value->over (132-125) |
-| Tue 21:00 | ALST@UCD | total | under | 142.5 (-110) | 156.5 | 143 ($250) | 69% / 98% | 540 | follow_move->under (232-236); money_level->under (262-254); sharp_gap->under (253-255); money_moving->under (248-263); pin_value->over (132-125) |
-| Tue 21:30 | UNLV@KU | total | over | 157.5 (-110) | 155.5 |  | 53% / 57% | 1236 | follow_move->over (232-236); money_level->over (262-254); sharp_gap->over (253-255); money_moving->over (248-263); consensus_gap->under (84-92) |
-
-## 4 signals agree, 2 against
-
-| tip (ET) | game | market | lean | FD now | open | Pin | tix / money (lean side) | bets | calls |
-|---|---|---|---|---|---|---|---|---|---|
-| Tue 12:00 | HOF@MURR | spread | away | 11.5 (-110) | -9.5 | -11 ($3,000) | 26% / 38% | 3498 | follow_move->home (195-202); money_level->home (239-253); sharp_gap->away (249-237); money_moving->away (246-240); pin_value->away (127-115); pin_rlm->away (18-16) |
-| Tue 18:00 | MRST@ARMY | total | under | 131.5 (-110) | 132.5 | 132.5 ($250) | 11% / 16% | 620 | follow_move->under (232-236); rlm_ratio->under (96-63); money_level->over (262-254); sharp_gap->under (253-255); money_moving->under (248-263); pin_value->over (132-125) |
-| Tue 19:00 | ILL@DUKE | spread | away | 7.5 (-102) | -8.5 | -8 ($1,500) | 52% / 74% | 4220 | follow_move->away (195-202); money_level->away (239-253); sharp_gap->away (249-237); money_moving->away (246-240); consensus_gap->home (74-67); pin_value->home (127-115) |
-| Tue 19:00 | CLEV@XAV | total | under | 158.5 (-110) | 162.5 | 159 ($750) | 76% / 92% | 469 | follow_move->under (232-236); money_level->under (262-254); sharp_gap->under (253-255); money_moving->under (248-263); consensus_gap->over (84-92); pin_value->over (132-125) |
-| Tue 19:00 | NORF@GT | spread | home | -20.5 (-118) | -23.5 | -21 ($500) | 41% / 49% | 479 | follow_move->away (195-202); money_level->away (239-253); sharp_gap->home (249-237); money_moving->home (246-240); consensus_gap->home (74-67); pin_value->home (127-115) |
-| Tue 19:00 | WAG@JOES | total | under | 137.5 (-110) | 139.5 |  | 11% / 16% | 161 | follow_move->under (232-236); rlm_ratio->under (96-63); money_level->over (262-254); sharp_gap->under (253-255); money_moving->under (248-263); consensus_gap->over (84-92) |
-| Tue 19:30 | BRY@MASS | spread | away | 9.5 (-110) | -11.5 | -10 ($500) | 86% / 99% | 353 | follow_move->away (195-202); money_level->away (239-253); sharp_gap->away (249-237); money_moving->away (246-240); consensus_gap->home (74-67); pin_value->home (127-115) |
-| Tue 19:30 | BRY@MASS | total | over | 141.5 (-110) | 137.5 | 140.5 ($250) | 85% / 94% | 353 | follow_move->over (232-236); money_level->over (262-254); sharp_gap->over (253-255); money_moving->over (248-263); consensus_gap->under (84-92); pin_value->under (132-125) |
-| Tue 20:00 | LINW@UNI | total | over | 154.5 (-110) | 151.5 | 154 ($750) | 56% / 74% | 267 | follow_move->over (232-236); money_level->over (262-254); sharp_gap->over (253-255); money_moving->over (248-263); consensus_gap->under (84-92); pin_value->under (132-125) |
-| Tue 21:00 | MSU@TENN | spread | away | -3.5 (-102) | 2.5 | 3 ($1,500) | 76% / 80% | 3968 | follow_move->away (195-202); money_level->away (239-253); sharp_gap->away (249-237); money_moving->away (246-240); consensus_gap->home (74-67); pin_value->home (127-115) |
-
-## 3 signals agree, 0 against
-
-| tip (ET) | game | market | lean | FD now | open | Pin | tix / money (lean side) | bets | calls |
-|---|---|---|---|---|---|---|---|---|---|
-| Tue 18:00 | SIU@LIB | total | over | 144.5 (-110) | 144.5 |  | 87% / 90% | 1009 | money_level->over (262-254); sharp_gap->over (253-255); money_moving->over (248-263) |
-| Tue 19:00 | VILL@PITT | moneyline | away | -120 (-120) | 0 | 103 ($1,500) | 70% / 91% | 2529 | money_level->away (324-115); sharp_gap->away (144-261); money_moving->away (149-254) |
-| Tue 19:00 | FOR@MAN | spread | home | 11.5 (-120) | 12 | 11 ($1,500) | 0% / 0% | 403 | follow_move->home (195-202); consensus_gap->home (74-67); pin_value->home (127-115) |
-| Tue 19:00 | FOR@MAN | moneyline | away | -710 (-710) | 0 | 520 ($1,500) | 97% / 97% | 403 | money_level->away (324-115); money_moving->away (149-254); consensus_gap->away (106-233) |
-| Tue 19:00 | AKR@BUCK | moneyline | away | -1400 (-1400) | 0 | 816 ($500) | 98% / 100% | 474 | money_level->away (324-115); sharp_gap->away (144-261); money_moving->away (149-254) |
-| Tue 20:00 | ORU@SMU | spread | away | 25.5 (-110) | -25.5 |  | 69% / 71% | 363 | money_level->away (239-253); sharp_gap->away (249-237); money_moving->away (246-240) |
-| Tue 21:00 | MSU@TENN | moneyline | away | -154 (-154) | 0 | 130 ($1,500) | 85% / 91% | 3968 | money_level->away (324-115); sharp_gap->away (144-261); money_moving->away (149-254) |
-| Wed 00:00 | AUB@WVU | spread | away | -1.5 (-100) | 1.5 |  | 85% / 94% | 1448 | money_level->away (239-253); sharp_gap->away (249-237); money_moving->away (246-240) |
-
-## 3 signals agree, 1 against
-
-| tip (ET) | game | market | lean | FD now | open | Pin | tix / money (lean side) | bets | calls |
-|---|---|---|---|---|---|---|---|---|---|
-| Tue 12:00 | HOF@MURR | moneyline | away | 540 (+540) | 0 | -709 ($3,000) | 2% / 24% | 3498 | money_level->home (324-115); sharp_gap->away (144-261); money_moving->away (149-254); pin_rlm->away (28-55) |
-| Tue 14:00 | RUTG@HOU | total | under | 142.5 (-110) | 144.5 |  | 22% / 23% | 3175 | follow_move->under (232-236); money_level->over (262-254); sharp_gap->under (253-255); money_moving->under (248-263) |
-| Tue 16:30 | ND@FLA | total | over | 150.5 (-110) | 151.5 |  | 70% / 76% | 2595 | follow_move->under (232-236); money_level->over (262-254); sharp_gap->over (253-255); money_moving->over (248-263) |
-| Tue 16:30 | ND@FLA | moneyline | away | 1060 (+1060) | 0 |  | 5% / 36% | 2595 | money_level->home (324-115); sharp_gap->away (144-261); money_moving->away (149-254); consensus_gap->away (106-233) |
-| Tue 18:00 | MRST@ARMY | moneyline | away | -111 (-111) | 0 | -115 ($500) | 65% / 79% | 620 | money_level->away (324-115); sharp_gap->away (144-261); money_moving->away (149-254); consensus_gap->home (106-233) |
-| Tue 19:00 | ILL@DUKE | moneyline | home | -365 (-365) | 0 | -364 ($1,500) | 94% / 96% | 4422 | money_level->home (324-115); sharp_gap->home (144-261); money_moving->home (149-254); consensus_gap->away (106-233) |
-| Tue 19:00 | VILL@PITT | total | under | 148.5 (-110) | 147.5 | 148.5 ($750) | 30% / 62% | 2529 | follow_move->over (232-236); money_level->under (262-254); sharp_gap->under (253-255); money_moving->under (248-263) |
-| Tue 19:00 | CMU@DAY | total | over | 146.5 (-114) | 147.5 | 146.5 ($750) | 86% / 89% | 838 | follow_move->under (232-236); money_level->over (262-254); sharp_gap->over (253-255); money_moving->over (248-263) |
-| Tue 19:00 | WCU@BUT | moneyline | home | -780 (-780) | 0 | -748 ($1,500) | 98% / 99% | 484 | money_level->home (324-115); sharp_gap->home (144-261); money_moving->home (149-254); consensus_gap->away (106-233) |
-| Tue 19:00 | NORF@GT | moneyline | home | -7000 (-7000) | 0 |  | 99% / 100% | 479 | money_level->home (324-115); sharp_gap->home (144-261); money_moving->home (149-254); consensus_gap->away (106-233) |
-| Tue 19:00 | CSN@TROY | moneyline | home | -137 (-137) | 0 | -125 ($1,500) | 90% / 92% | 499 | money_level->home (324-115); sharp_gap->home (144-261); money_moving->home (149-254); consensus_gap->away (106-233) |
-| Tue 19:00 | MONM@WAKE | spread | home | -14.5 (-120) | -15.5 | -14.5 ($1,500) | 56% / 67% | 525 | follow_move->away (195-202); money_level->home (239-253); sharp_gap->home (249-237); money_moving->home (246-240) |
-| Tue 19:00 | MONM@WAKE | moneyline | home | -1700 (-1700) | 0 | -1438 ($1,500) | 99% / 100% | 525 | money_level->home (324-115); sharp_gap->home (144-261); money_moving->home (149-254); consensus_gap->away (106-233) |
-| Tue 19:00 | BALL@FSU | total | under | 150.5 (-110) | 149.5 | 150.5 ($750) | 61% / 66% | 413 | follow_move->over (232-236); money_level->under (262-254); sharp_gap->under (253-255); money_moving->under (248-263) |
-| Tue 19:00 | BGSU@WM | total | under | 169.5 (-110) | 169.5 | 168.5 ($750) | 44% / 49% | 540 | money_level->over (262-254); sharp_gap->under (253-255); money_moving->under (248-263); pin_value->under (132-125) |
-| Tue 19:00 | BGSU@WM | moneyline | home | -142 (-142) | 0 | -141 ($1,500) | 87% / 88% | 540 | money_level->home (324-115); sharp_gap->home (144-261); money_moving->away (149-254); consensus_gap->home (106-233) |
-| Tue 19:00 | FOR@MAN | total | under | 143.5 (-110) | 142.5 | 143 ($750) | 46% / 78% | 403 | follow_move->over (232-236); money_level->under (262-254); sharp_gap->under (253-255); pin_value->under (132-125) |
-| Tue 19:00 | TNST@USF | spread | away | 11.5 (-102) | -11 | -11.5 ($1,500) | 51% / 57% | 716 | follow_move->home (195-202); money_level->away (239-253); sharp_gap->away (249-237); money_moving->away (246-240) |
-| Tue 19:00 | LEH@MSM | moneyline | away | -105 (-105) | 0 | -114 ($500) | 25% / 73% | 302 | money_level->away (324-115); sharp_gap->away (144-261); money_moving->away (149-254); consensus_gap->home (106-233) |
-| Tue 19:00 | AKR@BUCK | total | under | 146.5 (-110) | 144.5 | 146.5 ($250) | 55% / 74% | 474 | follow_move->over (232-236); money_level->under (262-254); sharp_gap->under (253-255); money_moving->under (248-263) |
-| Tue 19:00 | GB@UWF | moneyline | home | 220 (+220) | 0 |  | 8% / 10% | 338 | money_level->away (324-115); sharp_gap->home (144-261); money_moving->home (149-254); consensus_gap->home (106-233) |
-| Tue 19:30 | IND@ARK | total | over | 154.5 (-110) | 154.5 |  | 57% / 58% | 2928 | money_level->over (262-254); sharp_gap->over (253-255); money_moving->over (248-263); consensus_gap->under (84-92) |
-| Tue 19:30 | KENN@ALA | moneyline | away | 4000 (+4000) | 0 |  | 2% / 3% | 848 | money_level->home (324-115); sharp_gap->away (144-261); money_moving->away (149-254); consensus_gap->away (106-233) |
-| Tue 20:00 | ORU@SMU | moneyline | home | -20000 (-20000) | 0 |  | 97% / 100% | 363 | money_level->home (324-115); sharp_gap->home (144-261); money_moving->home (149-254); consensus_gap->away (106-233) |
-| Tue 20:00 | BELL@ILST | moneyline | home | -4000 (-4000) | 0 |  | 99% / 100% | 232 | money_level->home (324-115); sharp_gap->home (144-261); money_moving->home (149-254); consensus_gap->away (106-233) |
-| Tue 20:00 | LINW@UNI | moneyline | home | -1050 (-1050) | 0 | -931 ($1,500) | 99% / 100% | 267 | money_level->home (324-115); sharp_gap->home (144-261); money_moving->home (149-254); consensus_gap->away (106-233) |
-| Tue 20:00 | MTU@GASO | total | under | 154.5 (-110) | 152.5 |  | 51% / 54% | 398 | follow_move->over (232-236); money_level->under (262-254); sharp_gap->under (253-255); money_moving->under (248-263) |
-| Tue 20:00 | LMC@EVAN | total | under | 146.5 (-110) | 147.5 | 146.5 ($250) | 15% / 17% | 242 | follow_move->under (232-236); money_level->over (262-254); sharp_gap->under (253-255); money_moving->under (248-263) |
-| Tue 20:30 | SHSU@WYO | total | under | 149.5 (-110) | 150.5 |  | 38% / 41% | 550 | follow_move->under (232-236); money_level->over (262-254); sharp_gap->under (253-255); money_moving->under (248-263) |
-| Tue 20:30 | SHSU@WYO | moneyline | home | -900 (-900) | 0 |  | 99% / 100% | 550 | money_level->home (324-115); sharp_gap->home (144-261); money_moving->home (149-254); consensus_gap->away (106-233) |
-| Tue 22:00 | SEA@CBU | moneyline | home | 330 (+330) | 0 |  | 3% / 8% | 565 | money_level->away (324-115); sharp_gap->home (144-261); money_moving->home (149-254); consensus_gap->home (106-233) |
-| Tue 23:00 | MTST@GONZ | spread | home | -22.5 (-110) | -23.5 | -22.5 ($1,500) | 74% / 90% | 590 | follow_move->away (195-202); money_level->home (239-253); sharp_gap->home (249-237); money_moving->home (246-240) |
-| Wed 00:00 | AUB@WVU | moneyline | away | -113 (-113) | 0 |  | 61% / 93% | 1448 | money_level->away (324-115); sharp_gap->away (144-261); money_moving->away (149-254); consensus_gap->home (106-233) |
-
-## 3 signals agree, 2 against
-
-| tip (ET) | game | market | lean | FD now | open | Pin | tix / money (lean side) | bets | calls |
-|---|---|---|---|---|---|---|---|---|---|
-| Tue 19:00 | CLEV@XAV | spread | away | 32.5 (-104) | -32.5 | -33 ($1,500) | 74% / 79% | 469 | money_level->away (239-253); sharp_gap->away (249-237); money_moving->away (246-240); consensus_gap->home (74-67); pin_value->home (127-115) |
-| Tue 19:00 | CSN@TROY | total | over | 149.5 (-110) | 146.5 | 150 ($750) | 74% / 69% | 499 | follow_move->over (232-236); money_level->over (262-254); sharp_gap->under (253-255); money_moving->under (248-263); pin_value->over (132-125) |
-| Tue 19:00 | ETSU@MRSH | total | under | 145.5 (-105) | 147 |  | 28% / 35% | 686 | follow_move->under (232-236); rlm_ratio->under (96-63); money_level->over (262-254); sharp_gap->under (253-255); money_moving->over (248-263) |
-| Tue 19:00 | LEH@MSM | total | under | 137.5 (-110) | 138.5 | 138.5 ($250) | 10% / 11% | 302 | follow_move->under (232-236); money_level->over (262-254); sharp_gap->under (253-255); money_moving->under (248-263); pin_value->over (132-125) |
-| Tue 19:30 | BRY@MASS | moneyline | away | 385 (+385) | 0 | -584 ($500) | 1% / 27% | 353 | money_level->home (324-115); sharp_gap->away (144-261); money_moving->away (149-254); consensus_gap->home (106-233); pin_rlm->away (28-55) |
-| Tue 20:00 | EIU@VAN | spread | home | -42.5 (-118) | -44.5 | -43 ($1,500) | 34% / 41% | 525 | follow_move->away (195-202); money_level->away (239-253); sharp_gap->home (249-237); money_moving->home (246-240); pin_value->home (127-115) |
-| Tue 20:00 | EIU@VAN | total | over | 146.5 (-110) | 144.5 | 147 ($750) | 75% / 66% | 525 | follow_move->over (232-236); money_level->over (262-254); sharp_gap->under (253-255); money_moving->under (248-263); pin_value->over (132-125) |
-| Tue 20:00 | BELL@ILST | total | under | 142.5 (-110) | 145.5 | 143 ($250) | 14% / 16% | 232 | follow_move->under (232-236); money_level->over (262-254); sharp_gap->under (253-255); money_moving->under (248-263); pin_value->over (132-125) |
-| Tue 21:00 | ALST@UCD | moneyline | home | -800 (-800) | 0 | -675 ($500) | 99% / 100% | 540 | money_level->home (324-115); sharp_gap->home (144-261); money_moving->home (149-254); consensus_gap->away (106-233); pin_value->away (13-45) |
-| Tue 22:00 | UCI@STAN | total | under | 143.5 (-105) | 148.5 |  | 36% / 39% | 550 | follow_move->under (232-236); money_level->over (262-254); sharp_gap->under (253-255); money_moving->under (248-263); consensus_gap->over (84-92) |
-
-## 3 signals agree, 3 against
-
-| tip (ET) | game | market | lean | FD now | open | Pin | tix / money (lean side) | bets | calls |
-|---|---|---|---|---|---|---|---|---|---|
-| Tue 19:00 | MONM@WAKE | total | under | 143.5 (-110) | 144.5 | 145 ($750) | 11% / 13% | 525 | follow_move->under (232-236); money_level->over (262-254); sharp_gap->under (253-255); money_moving->under (248-263); consensus_gap->over (84-92); pin_value->over (132-125) |
-
-## 2 signals agree, 0 against
-
-| tip (ET) | game | market | lean | FD now | open | Pin | tix / money (lean side) | bets | calls |
-|---|---|---|---|---|---|---|---|---|---|
-| Tue 21:00 | ALST@UCD | spread | home | -11.5 (-110) | -10.5 | -12 ($500) | 0% / 0% | 540 | follow_move->home (195-202); pin_value->home (127-115) |
-
-## 2 signals agree, 1 against
-
-| tip (ET) | game | market | lean | FD now | open | Pin | tix / money (lean side) | bets | calls |
-|---|---|---|---|---|---|---|---|---|---|
-| Tue 14:00 | RUTG@HOU | moneyline | away | 1400 (+1400) | 0 |  | 4% / 29% | 3175 | money_level->home (324-115); sharp_gap->away (144-261); money_moving->away (149-254) |
-| Tue 18:00 | SPC@MASSL | spread | home | -6.5 (-110) | -5.5 | -6 ($500) | 73% / 73% | 636 | follow_move->home (195-202); money_level->home (239-253); pin_value->away (127-115) |
-| Tue 18:00 | SPC@MASSL | moneyline | home | -275 (-275) | 0 | -265 ($500) | 95% / 93% | 636 | money_level->home (324-115); sharp_gap->away (144-261); money_moving->home (149-254) |
-| Tue 19:00 | WCU@BUT | spread | away | 11.5 (-110) | -11.5 | -11.5 ($1,500) | 34% / 49% | 484 | money_level->home (239-253); sharp_gap->away (249-237); money_moving->away (246-240) |
-| Tue 19:00 | RID@MIA | spread | home | -41.5 (-110) | -42.5 |  | 43% / 50% | 530 | follow_move->away (195-202); sharp_gap->home (249-237); money_moving->home (246-240) |
-| Tue 19:00 | ETSU@MRSH | moneyline | home | -125 (-125) | 0 |  | 88% / 92% | 610 | money_level->home (324-115); sharp_gap->home (144-261); money_moving->away (149-254) |
-| Tue 19:00 | LEH@MSM | spread | home | -0.5 (-115) | -1.5 | -1 ($500) | 0% / 0% | 302 | follow_move->away (195-202); consensus_gap->home (74-67); pin_value->home (127-115) |
-| Tue 19:30 | IND@ARK | moneyline | away | -106 (-106) | 0 |  | 16% / 37% | 2928 | money_level->home (324-115); sharp_gap->away (144-261); money_moving->away (149-254) |
-| Tue 19:30 | KENN@ALA | spread | away | 25.5 (-112) | -25.5 | -25.5 ($1,500) | 29% / 38% | 848 | money_level->home (239-253); sharp_gap->away (249-237); money_moving->away (246-240) |
-| Tue 20:00 | MTU@GASO | moneyline | home | 106 (+106) | 0 |  | 15% / 18% | 434 | money_level->away (324-115); sharp_gap->home (144-261); money_moving->home (149-254) |
-| Tue 21:30 | UNLV@KU | moneyline | away | 1280 (+1280) | 0 |  | 2% / 8% | 1443 | money_level->home (324-115); sharp_gap->away (144-261); money_moving->away (149-254) |
-| Tue 23:00 | MTST@GONZ | moneyline | away | 2400 (+2400) | 0 |  | 2% / 3% | 590 | money_level->home (324-115); sharp_gap->away (144-261); money_moving->away (149-254) |
-
-## 2 signals agree, 2 against
-
-| tip (ET) | game | market | lean | FD now | open | Pin | tix / money (lean side) | bets | calls |
-|---|---|---|---|---|---|---|---|---|---|
-| Tue 14:00 | RUTG@HOU | spread | home | -18.5 (-105) | -15.5 |  | 68% / 62% | 3175 | follow_move->home (195-202); money_level->home (239-253); sharp_gap->away (249-237); money_moving->away (246-240) |
-| Tue 16:30 | ND@FLA | spread | home | -15.5 (-110) | -13.5 |  | 61% / 53% | 2595 | follow_move->home (195-202); money_level->home (239-253); sharp_gap->away (249-237); money_moving->away (246-240) |
-| Tue 18:30 | LIP@PUR | moneyline | home | -8000 (-8000) | 0 |  | 97% / 95% | 504 | money_level->home (324-115); sharp_gap->away (144-261); money_moving->away (149-254); consensus_gap->home (106-233) |
-| Tue 19:00 | MSST@UCF | moneyline | home | -106 (-106) | 0 |  | 71% / 65% | 1454 | money_level->home (324-115); sharp_gap->away (144-261); money_moving->away (149-254); consensus_gap->home (106-233) |
-| Tue 19:00 | CHAR@DAV | moneyline | home | -162 (-162) | 0 |  | 93% / 87% | 691 | money_level->home (324-115); sharp_gap->away (144-261); money_moving->away (149-254); consensus_gap->home (106-233) |
-| Tue 19:00 | TNST@USF | moneyline | home | -880 (-880) | 0 | -730 ($1,500) | 98% / 99% | 716 | money_level->home (324-115); sharp_gap->home (144-261); consensus_gap->away (106-233); pin_value->away (13-45) |
-| Tue 19:00 | GB@UWF | total | over | 145.5 (-115) | 145.5 |  | 79% / 71% | 338 | money_level->over (262-254); sharp_gap->under (253-255); money_moving->under (248-263); consensus_gap->over (84-92) |
-| Tue 20:00 | UMES@DEP | spread | away | 32.5 (-115) | -34.5 |  | 77% / 72% | 408 | follow_move->away (195-202); money_level->away (239-253); sharp_gap->home (249-237); money_moving->home (246-240) |
-| Tue 20:00 | UTA@USM | moneyline | home | -142 (-142) | 0 |  | 86% / 69% | 429 | money_level->home (324-115); sharp_gap->away (144-261); money_moving->away (149-254); consensus_gap->home (106-233) |
-| Tue 20:00 | AMCC@RICE | total | over | 141.5 (-110) | 140.5 |  | 81% / 70% | 212 | follow_move->over (232-236); money_level->over (262-254); sharp_gap->under (253-255); money_moving->under (248-263) |
-| Tue 20:30 | EWU@UTAH | total | over | 145.5 (-110) | 142.5 | 145.5 ($750) | 78% / 73% | 676 | follow_move->over (232-236); money_level->over (262-254); sharp_gap->under (253-255); money_moving->under (248-263) |
-| Tue 20:30 | NICH@MISS | spread | away | 28.5 (-104) | -30.5 |  | 60% / 59% | 388 | follow_move->away (195-202); money_level->away (239-253); sharp_gap->home (249-237); money_moving->home (246-240) |
-| Tue 22:00 | UCI@STAN | moneyline | home | -300 (-300) | 0 |  | 99% / 98% | 550 | money_level->home (324-115); sharp_gap->away (144-261); money_moving->away (149-254); consensus_gap->home (106-233) |
-| Wed 00:00 | AUB@WVU | total | over | 143.5 (-110) | 142.5 |  | 65% / 63% | 1448 | follow_move->over (232-236); money_level->over (262-254); sharp_gap->under (253-255); money_moving->under (248-263) |
-
-## 1 signal agree, 0 against
-
-| tip (ET) | game | market | lean | FD now | open | Pin | tix / money (lean side) | bets | calls |
-|---|---|---|---|---|---|---|---|---|---|
-| Tue 18:00 | SIU@LIB | spread | away | -2.5 (-102) | 1.5 |  | 0% / 0% | 1075 | follow_move->away (195-202) |
-| Tue 19:00 | CSN@TROY | spread | away | 1.5 (-102) | -2.5 | -1.5 ($1,500) | 0% / 0% | 499 | follow_move->away (195-202) |
-| Tue 19:00 | CHAR@DAV | spread | away | 3.5 (-110) | -4.5 |  | 0% / 0% | 691 | follow_move->away (195-202) |
-| Tue 19:00 | BALL@FSU | moneyline | away | 3500 (+3500) | 0 |  | 0% / 0% | 60 | consensus_gap->away (106-233) |
-| Tue 19:00 | BGSU@WM | spread | away | 2.5 (-110) | -2.5 | -2 ($1,500) | 0% / 0% | 540 | pin_value->away (127-115) |
-| Tue 19:00 | AKR@BUCK | spread | home | 14.5 (-120) | 14.5 | 14 ($500) | 0% / 0% | 474 | pin_value->home (127-115) |
-| Tue 19:00 | GB@UWF | spread | away | -6.5 (-105) | 5.5 |  | 0% / 0% | 338 | follow_move->away (195-202) |
-| Tue 19:30 | FIU@UAB | spread | home | -3.5 (-120) | -3.5 |  | 0% / 0% | 615 | consensus_gap->home (74-67) |
-| Tue 20:00 | UTA@USM | spread | away | 2.5 (-110) | -4 |  | 0% / 0% | 429 | follow_move->away (195-202) |
-| Tue 21:00 | ODU@UVA | moneyline | away | 4000 (+4000) | 0 |  | 2% / 0% | 45 | consensus_gap->away (106-233) |
-| Tue 22:00 | SEA@CBU | spread | home | 9.5 (-120) | 9.5 |  | 0% / 0% | 565 | consensus_gap->home (74-67) |
-| Tue 22:00 | UCI@STAN | spread | away | 6.5 (-102) | -7.5 |  | 0% / 0% | 550 | follow_move->away (195-202) |
-
-## 1 signal agree, 1 against
-
-| tip (ET) | game | market | lean | FD now | open | Pin | tix / money (lean side) | bets | calls |
-|---|---|---|---|---|---|---|---|---|---|
-| Tue 19:00 | WAG@JOES | moneyline | home | -3000 (-3000) | 0 |  | 98% / 98% | 161 | money_level->home (324-115); consensus_gap->away (106-233) |
-| Tue 19:30 | JVST@LT | spread | home | -2.5 (-110) | -1.5 | -2 ($1,500) | 0% / 0% | 489 | follow_move->home (195-202); pin_value->away (127-115) |
-| Tue 20:00 | BELL@ILST | spread | away | 17.5 (-102) | -18.5 | -18 ($500) | 0% / 0% | 232 | follow_move->away (195-202); pin_value->home (127-115) |
-| Tue 20:00 | LMC@EVAN | spread | home | -8.5 (-105) | -6.5 | -8 ($500) | 0% / 0% | 242 | follow_move->home (195-202); pin_value->away (127-115) |
-| Tue 20:30 | SHSU@WYO | spread | home | -12.5 (-105) | -11.5 |  | 0% / 0% | 550 | follow_move->home (195-202); consensus_gap->away (74-67) |
+| tip (ET) | game | market | lean | wt edge | raw | FD now | open | Pin | tix / money (lean side) | bets | calls |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| Tue 19:00 | CMU@DAY | total | over | +0 | 4-1 | 144.5 (-114) | 147.5 | 145.5 ($1,500) | 81% / 87% | 1938 | follow_move->under (225-231 fit · 7-6 fwd); money_level->over (253-247 fit · 9-8 fwd); sharp_gap->over (244-249 fit · 9-7 fwd); money_moving->over (239-257 fit · 9-7 fwd); pin_value->over (127-120 fit · 5-5 fwd) |
+| Tue 18:00 | SPC@MASSL | moneyline | home | -0.1 | 2-2 | -215 (-215) | 0 | -218 ($1,000) | 95% / 94% | 1403 | money_level->home (312-113 fit · 13-2 fwd); sharp_gap->away (138-254 fit · 6-8 fwd); money_moving->home (142-248 fit · 7-7 fwd); pin_rlm->away (26-53 fit · 2-3 fwd) |
+| Tue 19:30 | IND@ARK | spread | away | -0.3 | 5-0 | -1.5 (-110) | -2.5 |  | 36% / 63% | 7234 | follow_move->away (192-193 fit · 4-9 fwd); rlm_ratio->away (33-34 fit · 0-1 fwd); money_level->away (231-245 fit · 9-8 fwd); sharp_gap->away (239-231 fit · 10-7 fwd); money_moving->away (236-234 fit · 10-7 fwd) |
+| Tue 19:30 | BRY@MASS | spread | away | -0.6 | 4-1 | 9.5 (-105) | -11.5 | -10 ($1,000) | 79% / 97% | 1050 | follow_move->away (192-193 fit · 4-9 fwd); money_level->away (231-245 fit · 9-8 fwd); sharp_gap->away (239-231 fit · 10-7 fwd); money_moving->away (236-234 fit · 10-7 fwd); pin_value->home (124-111 fit · 3-5 fwd) |
+| Tue 20:00 | UMES@DEP | spread | away | -0.7 | 4-1 | 29.5 (-102) | -34.5 |  | 77% / 85% | 822 | follow_move->away (192-193 fit · 4-9 fwd); money_level->away (231-245 fit · 9-8 fwd); sharp_gap->away (239-231 fit · 10-7 fwd); money_moving->away (236-234 fit · 10-7 fwd); consensus_gap->home (72-65 fit · 2-2 fwd) |
+| Wed 21:00 | CONN@ARIZ | total | over | -0.7 | 1-0 | 149.5 (-115) | 147.5 |  | 0% / 0% | 80 | follow_move->over (225-231 fit · 7-6 fwd) |
+| Tue 20:00 | SIUE@UND | moneyline | away | -1.3 | 4-0 | 114 (+114) | 0 | -137 ($1,500) | 16% / 99% | 873 | money_level->away (312-113 fit · 13-2 fwd); sharp_gap->away (138-254 fit · 6-8 fwd); money_moving->away (142-248 fit · 7-7 fwd); pin_rlm->away (26-53 fit · 2-3 fwd) |
+| Tue 18:00 | SPC@MASSL | spread | home | -1.4 | 3-1 | -5.5 (-105) | -5.5 | -5 ($1,000) | 73% / 74% | 1403 | money_level->home (231-245 fit · 9-8 fwd); sharp_gap->home (239-231 fit · 10-7 fwd); money_moving->home (236-234 fit · 10-7 fwd); pin_value->away (124-111 fit · 3-5 fwd) |
+| Tue 19:00 | ILL@DUKE | spread | home | -1.4 | 3-1 | -8.5 (-104) | -8.5 | -8 ($3,000) | 52% / 56% | 9218 | money_level->home (231-245 fit · 9-8 fwd); sharp_gap->home (239-231 fit · 10-7 fwd); money_moving->home (236-234 fit · 10-7 fwd); pin_value->away (124-111 fit · 3-5 fwd) |
+| Tue 19:00 | CLEV@XAV | spread | away | -1.4 | 3-1 | 32.5 (-104) | -32.5 | -33 ($3,000) | 66% / 73% | 939 | money_level->away (231-245 fit · 9-8 fwd); sharp_gap->away (239-231 fit · 10-7 fwd); money_moving->away (236-234 fit · 10-7 fwd); pin_value->home (124-111 fit · 3-5 fwd) |
+| Tue 19:00 | BGSU@WM | spread | home | -1.4 | 3-1 | -2.5 (-110) | -2.5 | -2 ($3,000) | 56% / 63% | 1130 | money_level->home (231-245 fit · 9-8 fwd); sharp_gap->home (239-231 fit · 10-7 fwd); money_moving->home (236-234 fit · 10-7 fwd); pin_value->away (124-111 fit · 3-5 fwd) |
+| Tue 19:00 | AKR@BUCK | moneyline | away | -1.4 | 3-1 | -2000 (-2000) | 0 | 860 ($1,000) | 98% / 99% | 1146 | money_level->away (312-113 fit · 13-2 fwd); sharp_gap->away (138-254 fit · 6-8 fwd); money_moving->away (142-248 fit · 7-7 fwd); pin_value->home (13-44 fit · 0-1 fwd) |
+| Tue 23:00 | MTST@GONZ | total | over | -1.4 | 5-0 | 152.5 (-110) | 151.5 | 153.5 ($750) | 59% / 67% | 1171 | follow_move->over (225-231 fit · 7-6 fwd); money_level->over (253-247 fit · 9-8 fwd); sharp_gap->over (244-249 fit · 9-7 fwd); money_moving->over (239-257 fit · 9-7 fwd); pin_value->over (127-120 fit · 5-5 fwd) |
+| Tue 20:00 | EIU@VAN | spread | away | -1.7 | 2-2 | 41.5 (-104) | -44.5 | -41.5 ($3,000) | 62% / 55% | 1060 | follow_move->away (192-193 fit · 4-9 fwd); money_level->away (231-245 fit · 9-8 fwd); sharp_gap->home (239-231 fit · 10-7 fwd); money_moving->home (236-234 fit · 10-7 fwd) |
+| Tue 19:00 | FOR@MAN | total | over | -1.9 | 6-0 | 144.5 (-115) | 142.5 | 145 ($1,500) | 68% / 87% | 1100 | follow_move->over (225-231 fit · 7-6 fwd); money_level->over (253-247 fit · 9-8 fwd); sharp_gap->over (244-249 fit · 9-7 fwd); money_moving->over (239-257 fit · 9-7 fwd); consensus_gap->over (81-91 fit · 4-1 fwd); pin_value->over (127-120 fit · 5-5 fwd) |
+| Tue 16:30 | ND@FLA | total | over | -2.1 | 3-1 | 150.5 (-110) | 151.5 |  | 68% / 78% | 6452 | follow_move->under (225-231 fit · 7-6 fwd); money_level->over (253-247 fit · 9-8 fwd); sharp_gap->over (244-249 fit · 9-7 fwd); money_moving->over (239-257 fit · 9-7 fwd) |
+| Tue 19:00 | BALL@FSU | total | under | -2.1 | 3-1 | 150.5 (-110) | 149.5 | 150.5 ($1,500) | 53% / 67% | 827 | follow_move->over (225-231 fit · 7-6 fwd); money_level->under (253-247 fit · 9-8 fwd); sharp_gap->under (244-249 fit · 9-7 fwd); money_moving->under (239-257 fit · 9-7 fwd) |
+| Tue 19:00 | AKR@BUCK | total | under | -2.1 | 3-1 | 146.5 (-110) | 144.5 | 146.5 ($500) | 43% / 73% | 1146 | follow_move->over (225-231 fit · 7-6 fwd); money_level->under (253-247 fit · 9-8 fwd); sharp_gap->under (244-249 fit · 9-7 fwd); money_moving->under (239-257 fit · 9-7 fwd) |
+| Tue 19:30 | IND@ARK | total | over | -2.1 | 3-1 | 153.5 (-110) | 154.5 |  | 63% / 67% | 7234 | follow_move->under (225-231 fit · 7-6 fwd); money_level->over (253-247 fit · 9-8 fwd); sharp_gap->over (244-249 fit · 9-7 fwd); money_moving->over (239-257 fit · 9-7 fwd) |
+| Tue 20:00 | BELL@ILST | spread | away | -2.1 | 1-1 | 17.5 (-102) | -18.5 | -18 ($1,000) | 0% / 0% | 525 | follow_move->away (192-193 fit · 4-9 fwd); pin_value->home (124-111 fit · 3-5 fwd) |
+| Tue 21:30 | UNLV@KU | total | under | -2.1 | 3-1 | 158.5 (-110) | 155.5 |  | 49% / 53% | 2837 | follow_move->over (225-231 fit · 7-6 fwd); money_level->under (253-247 fit · 9-8 fwd); sharp_gap->under (244-249 fit · 9-7 fwd); money_moving->under (239-257 fit · 9-7 fwd) |
+| Tue 20:30 | SHSU@WYO | spread | home | -2.2 | 1-1 | -12.5 (-105) | -11.5 |  | 0% / 0% | 883 | follow_move->home (192-193 fit · 4-9 fwd); consensus_gap->away (72-65 fit · 2-2 fwd) |
+| Tue 19:00 | GB@UWF | total | under | -2.8 | 3-0 | 145.5 (-105) | 145.5 |  | 17% / 87% | 873 | money_level->under (253-247 fit · 9-8 fwd); sharp_gap->under (244-249 fit · 9-7 fwd); money_moving->under (239-257 fit · 9-7 fwd) |
+| Tue 20:00 | UTA@USM | total | over | -3 | 4-1 | 149.5 (-106) | 148.5 |  | 61% / 84% | 913 | follow_move->over (225-231 fit · 7-6 fwd); money_level->over (253-247 fit · 9-8 fwd); sharp_gap->over (244-249 fit · 9-7 fwd); money_moving->over (239-257 fit · 9-7 fwd); consensus_gap->under (81-91 fit · 4-1 fwd) |
+| Tue 19:00 | MONM@WAKE | total | under | -3.1 | 3-1 | 144.5 (-114) | 144.5 | 144 ($1,500) | 10% / 12% | 1070 | money_level->over (253-247 fit · 9-8 fwd); sharp_gap->under (244-249 fit · 9-7 fwd); money_moving->under (239-257 fit · 9-7 fwd); pin_value->under (127-120 fit · 5-5 fwd) |
+| Tue 19:00 | BGSU@WM | total | under | -3.1 | 3-1 | 169.5 (-110) | 169.5 | 168.5 ($1,500) | 47% / 48% | 1130 | money_level->over (253-247 fit · 9-8 fwd); sharp_gap->under (244-249 fit · 9-7 fwd); money_moving->under (239-257 fit · 9-7 fwd); pin_value->under (127-120 fit · 5-5 fwd) |
+| Tue 19:00 | CLEV@XAV | total | under | -3.5 | 4-0 | 157.5 (-110) | 162.5 | 157.5 ($1,500) | 69% / 81% | 939 | follow_move->under (225-231 fit · 7-6 fwd); money_level->under (253-247 fit · 9-8 fwd); sharp_gap->under (244-249 fit · 9-7 fwd); money_moving->under (239-257 fit · 9-7 fwd) |
+| Tue 19:00 | MSST@UCF | total | over | -3.5 | 4-0 | 154.5 (-115) | 152.5 |  | 65% / 68% | 3210 | follow_move->over (225-231 fit · 7-6 fwd); money_level->over (253-247 fit · 9-8 fwd); sharp_gap->over (244-249 fit · 9-7 fwd); money_moving->over (239-257 fit · 9-7 fwd) |
+| Tue 19:00 | NORF@GT | total | under | -3.5 | 4-0 | 150.5 (-110) | 158.5 | 150.5 ($500) | 58% / 84% | 888 | follow_move->under (225-231 fit · 7-6 fwd); money_level->under (253-247 fit · 9-8 fwd); sharp_gap->under (244-249 fit · 9-7 fwd); money_moving->under (239-257 fit · 9-7 fwd) |
+| Tue 19:00 | CSN@TROY | total | over | -3.5 | 4-0 | 151.5 (-110) | 146.5 | 151.5 ($1,500) | 68% / 75% | 1171 | follow_move->over (225-231 fit · 7-6 fwd); money_level->over (253-247 fit · 9-8 fwd); sharp_gap->over (244-249 fit · 9-7 fwd); money_moving->over (239-257 fit · 9-7 fwd) |
+| Tue 19:00 | RID@MIA | total | under | -3.5 | 4-0 | 148.5 (-110) | 150 |  | 46% / 53% | 1019 | follow_move->under (225-231 fit · 7-6 fwd); money_level->under (253-247 fit · 9-8 fwd); sharp_gap->under (244-249 fit · 9-7 fwd); money_moving->under (239-257 fit · 9-7 fwd) |
+| Tue 19:30 | BRY@MASS | total | over | -3.5 | 4-0 | 141.5 (-110) | 137.5 | 141.5 ($500) | 89% / 95% | 1050 | follow_move->over (225-231 fit · 7-6 fwd); money_level->over (253-247 fit · 9-8 fwd); sharp_gap->over (244-249 fit · 9-7 fwd); money_moving->over (239-257 fit · 9-7 fwd) |
+| Tue 20:00 | ORU@SMU | total | under | -3.5 | 4-0 | 155.5 (-105) | 159.5 |  | 53% / 71% | 757 | follow_move->under (225-231 fit · 7-6 fwd); money_level->under (253-247 fit · 9-8 fwd); sharp_gap->under (244-249 fit · 9-7 fwd); money_moving->under (239-257 fit · 9-7 fwd) |
+| Wed 00:00 | AUB@WVU | total | over | -3.5 | 4-0 | 143.5 (-110) | 142.5 |  | 64% / 71% | 3029 | follow_move->over (225-231 fit · 7-6 fwd); money_level->over (253-247 fit · 9-8 fwd); sharp_gap->over (244-249 fit · 9-7 fwd); money_moving->over (239-257 fit · 9-7 fwd) |
+| Tue 19:00 | FOR@MAN | spread | away | -3.6 | 4-2 | -12.5 (-102) | 12 | 12 ($3,000) | 68% / 76% | 1100 | follow_move->away (192-193 fit · 4-9 fwd); money_level->away (231-245 fit · 9-8 fwd); sharp_gap->away (239-231 fit · 10-7 fwd); money_moving->away (236-234 fit · 10-7 fwd); consensus_gap->home (72-65 fit · 2-2 fwd); pin_value->home (124-111 fit · 3-5 fwd) |
+| Tue 20:00 | MTU@GASO | total | over | -4 | 5-0 | 154.5 (-110) | 152.5 |  | 45% / 52% | 898 | follow_move->over (225-231 fit · 7-6 fwd); money_level->over (253-247 fit · 9-8 fwd); sharp_gap->over (244-249 fit · 9-7 fwd); money_moving->over (239-257 fit · 9-7 fwd); consensus_gap->over (81-91 fit · 4-1 fwd) |
+| Tue 20:00 | BELL@ILST | total | over | -4.2 | 3-2 | 142.5 (-110) | 145.5 | 142 ($500) | 88% / 89% | 565 | follow_move->under (225-231 fit · 7-6 fwd); money_level->over (253-247 fit · 9-8 fwd); sharp_gap->over (244-249 fit · 9-7 fwd); money_moving->over (239-257 fit · 9-7 fwd); pin_value->under (127-120 fit · 5-5 fwd) |
+| Tue 18:30 | LIP@PUR | total | over | -4.9 | 3-1 | 148.5 (-110) | 148.5 | 148 ($500) | 76% / 85% | 1120 | money_level->over (253-247 fit · 9-8 fwd); sharp_gap->over (244-249 fit · 9-7 fwd); money_moving->over (239-257 fit · 9-7 fwd); pin_value->under (127-120 fit · 5-5 fwd) |
+| Tue 20:00 | LMC@EVAN | total | over | -4.9 | 3-1 | 147.5 (-110) | 147.5 | 146.5 ($500) | 86% / 90% | 555 | money_level->over (253-247 fit · 9-8 fwd); sharp_gap->over (244-249 fit · 9-7 fwd); money_moving->over (239-257 fit · 9-7 fwd); pin_value->under (127-120 fit · 5-5 fwd) |
+| Tue 19:00 | WCU@BUT | total | under | -5.1 | 4-2 | 158.5 (-105) | 161.5 | 159 ($1,500) | 61% / 72% | 1014 | follow_move->under (225-231 fit · 7-6 fwd); money_level->under (253-247 fit · 9-8 fwd); sharp_gap->under (244-249 fit · 9-7 fwd); money_moving->under (239-257 fit · 9-7 fwd); consensus_gap->over (81-91 fit · 4-1 fwd); pin_value->over (127-120 fit · 5-5 fwd) |
+| Tue 20:00 | LINW@UNI | total | over | -5.1 | 4-2 | 154.5 (-110) | 151.5 | 154 ($1,500) | 74% / 83% | 696 | follow_move->over (225-231 fit · 7-6 fwd); money_level->over (253-247 fit · 9-8 fwd); sharp_gap->over (244-249 fit · 9-7 fwd); money_moving->over (239-257 fit · 9-7 fwd); consensus_gap->under (81-91 fit · 4-1 fwd); pin_value->under (127-120 fit · 5-5 fwd) |
+| Tue 18:00 | SIU@LIB | total | under | -5.2 | 2-1 | 144.5 (-110) | 144.5 |  | 13% / 19% | 2019 | money_level->over (253-247 fit · 9-8 fwd); sharp_gap->under (244-249 fit · 9-7 fwd); money_moving->under (239-257 fit · 9-7 fwd) |
+| Tue 18:00 | MRST@ARMY | moneyline | away | -5.3 | 3-0 | -102 (-102) | 0 | -115 ($1,000) | 42% / 52% | 1590 | money_level->away (312-113 fit · 13-2 fwd); sharp_gap->away (138-254 fit · 6-8 fwd); money_moving->away (142-248 fit · 7-7 fwd) |
+| Tue 18:00 | SIU@LIB | moneyline | home | -5.3 | 3-0 | 114 (+114) | 0 |  | 28% / 53% | 2019 | money_level->home (312-113 fit · 13-2 fwd); sharp_gap->home (138-254 fit · 6-8 fwd); money_moving->home (142-248 fit · 7-7 fwd) |
+| Tue 19:00 | NORF@GT | moneyline | home | -5.3 | 3-0 | -7000 (-7000) | 0 |  | 99% / 100% | 827 | money_level->home (312-113 fit · 13-2 fwd); sharp_gap->home (138-254 fit · 6-8 fwd); money_moving->home (142-248 fit · 7-7 fwd) |
+| Tue 19:00 | ETSU@MRSH | moneyline | home | -5.3 | 3-0 | -125 (-125) | 0 |  | 83% / 94% | 1368 | money_level->home (312-113 fit · 13-2 fwd); sharp_gap->home (138-254 fit · 6-8 fwd); money_moving->home (142-248 fit · 7-7 fwd) |
+| Tue 20:00 | ORU@SMU | moneyline | home | -5.3 | 3-0 | -10000 (-10000) | 0 |  | 98% / 100% | 696 | money_level->home (312-113 fit · 13-2 fwd); sharp_gap->home (138-254 fit · 6-8 fwd); money_moving->home (142-248 fit · 7-7 fwd) |
+| Tue 20:00 | LAM@NEOM | moneyline | away | -5.3 | 3-0 | -100 (-100) | 0 |  | 84% / 86% | 1019 | money_level->away (312-113 fit · 13-2 fwd); sharp_gap->away (138-254 fit · 6-8 fwd); money_moving->away (142-248 fit · 7-7 fwd) |
+| Tue 21:00 | ALST@UCD | total | under | -5.6 | 4-1 | 142.5 (-110) | 156.5 | 143 ($250) | 53% / 88% | 989 | follow_move->under (225-231 fit · 7-6 fwd); money_level->under (253-247 fit · 9-8 fwd); sharp_gap->under (244-249 fit · 9-7 fwd); money_moving->under (239-257 fit · 9-7 fwd); pin_value->over (127-120 fit · 5-5 fwd) |
+| Tue 19:00 | BALL@FSU | moneyline | away | -11.2 | 1-0 | 3500 (+3500) | 0 |  | 0% / 0% | 60 | consensus_gap->away (104-224 fit · 2-9 fwd) |
+| Tue 21:00 | ODU@UVA | moneyline | away | -11.2 | 1-0 | 4000 (+4000) | 0 |  | 2% / 0% | 45 | consensus_gap->away (104-224 fit · 2-9 fwd) |
+| Tue 19:00 | ILL@DUKE | moneyline | away | -12.1 | 2-1 | 290 (+290) | 0 | -377 ($3,000) | 7% / 9% | 8668 | money_level->home (312-113 fit · 13-2 fwd); sharp_gap->away (138-254 fit · 6-8 fwd); money_moving->away (142-248 fit · 7-7 fwd) |
+| Tue 19:00 | MSST@UCF | moneyline | away | -12.1 | 2-1 | -110 (-110) | 0 |  | 35% / 45% | 3210 | money_level->home (312-113 fit · 13-2 fwd); sharp_gap->away (138-254 fit · 6-8 fwd); money_moving->away (142-248 fit · 7-7 fwd) |
+| Tue 19:00 | CHAR@DAV | moneyline | away | -12.1 | 2-1 | 134 (+134) | 0 |  | 7% / 8% | 1585 | money_level->home (312-113 fit · 13-2 fwd); sharp_gap->away (138-254 fit · 6-8 fwd); money_moving->away (142-248 fit · 7-7 fwd) |
+| Tue 19:00 | WAG@JOES | moneyline | away | -12.1 | 2-1 | 1160 (+1160) | 0 |  | 2% / 6% | 434 | money_level->home (312-113 fit · 13-2 fwd); sharp_gap->away (138-254 fit · 6-8 fwd); money_moving->away (142-248 fit · 7-7 fwd) |
+| Tue 19:00 | GB@UWF | moneyline | home | -12.1 | 2-1 | 168 (+168) | 0 |  | 7% / 9% | 873 | money_level->away (312-113 fit · 13-2 fwd); sharp_gap->home (138-254 fit · 6-8 fwd); money_moving->home (142-248 fit · 7-7 fwd) |
+| Tue 22:00 | SEA@CBU | moneyline | home | -12.1 | 2-1 | 280 (+280) | 0 |  | 3% / 4% | 989 | money_level->away (312-113 fit · 13-2 fwd); sharp_gap->home (138-254 fit · 6-8 fwd); money_moving->home (142-248 fit · 7-7 fwd) |
+| Tue 23:00 | MTST@GONZ | moneyline | away | -12.1 | 2-1 | 2400 (+2400) | 0 |  | 4% / 10% | 1171 | money_level->home (312-113 fit · 13-2 fwd); sharp_gap->away (138-254 fit · 6-8 fwd); money_moving->away (142-248 fit · 7-7 fwd) |
+| Tue 18:30 | LIP@PUR | moneyline | home | -16.5 | 4-0 | -8000 (-8000) | 0 |  | 94% / 96% | 1120 | money_level->home (312-113 fit · 13-2 fwd); sharp_gap->home (138-254 fit · 6-8 fwd); money_moving->home (142-248 fit · 7-7 fwd); consensus_gap->home (104-224 fit · 2-9 fwd) |
+| Tue 19:00 | VILL@PITT | moneyline | away | -16.5 | 4-0 | -125 (-125) | 0 | 107 ($1,500) | 71% / 82% | 5275 | money_level->away (312-113 fit · 13-2 fwd); sharp_gap->away (138-254 fit · 6-8 fwd); money_moving->away (142-248 fit · 7-7 fwd); consensus_gap->away (104-224 fit · 2-9 fwd) |
+| Tue 19:30 | FIU@UAB | moneyline | away | -16.5 | 4-0 | 146 (+146) | 0 |  | 10% / 73% | 1332 | money_level->away (312-113 fit · 13-2 fwd); sharp_gap->away (138-254 fit · 6-8 fwd); money_moving->away (142-248 fit · 7-7 fwd); consensus_gap->away (104-224 fit · 2-9 fwd) |
+| Tue 20:00 | AMCC@RICE | moneyline | home | -16.5 | 4-0 | -130 (-130) | 0 |  | 85% / 93% | 514 | money_level->home (312-113 fit · 13-2 fwd); sharp_gap->home (138-254 fit · 6-8 fwd); money_moving->home (142-248 fit · 7-7 fwd); consensus_gap->home (104-224 fit · 2-9 fwd) |
+| Tue 21:00 | MSU@TENN | moneyline | away | -16.5 | 4-0 | -142 (-142) | 0 | 121 ($1,500) | 86% / 91% | 8512 | money_level->away (312-113 fit · 13-2 fwd); sharp_gap->away (138-254 fit · 6-8 fwd); money_moving->away (142-248 fit · 7-7 fwd); consensus_gap->away (104-224 fit · 2-9 fwd) |
+| Tue 19:00 | MONM@WAKE | moneyline | away | -18.5 | 2-1 | 920 (+920) | 0 | -1434 ($3,000) | 1% / 1% | 1070 | money_level->home (312-113 fit · 13-2 fwd); consensus_gap->away (104-224 fit · 2-9 fwd); pin_value->away (13-44 fit · 0-1 fwd) |
+| Tue 21:00 | ALST@UCD | moneyline | away | -18.5 | 2-1 | 580 (+580) | 0 | -720 ($500) | 1% / 1% | 989 | money_level->home (312-113 fit · 13-2 fwd); consensus_gap->away (104-224 fit · 2-9 fwd); pin_value->away (13-44 fit · 0-1 fwd) |
+| Tue 19:00 | WCU@BUT | moneyline | away | -23.2 | 5-1 | 570 (+570) | 0 | -739 ($3,000) | 2% / 9% | 1014 | money_level->home (312-113 fit · 13-2 fwd); sharp_gap->away (138-254 fit · 6-8 fwd); money_moving->away (142-248 fit · 7-7 fwd); consensus_gap->away (104-224 fit · 2-9 fwd); pin_value->away (13-44 fit · 0-1 fwd); pin_rlm->away (26-53 fit · 2-3 fwd) |
+| Tue 19:00 | TNST@USF | moneyline | away | -23.2 | 5-1 | 580 (+580) | 0 | -700 ($3,000) | 2% / 5% | 1489 | money_level->home (312-113 fit · 13-2 fwd); sharp_gap->away (138-254 fit · 6-8 fwd); money_moving->away (142-248 fit · 7-7 fwd); consensus_gap->away (104-224 fit · 2-9 fwd); pin_value->away (13-44 fit · 0-1 fwd); pin_rlm->away (26-53 fit · 2-3 fwd) |
+| Tue 20:30 | EWU@UTAH | moneyline | away | -23.2 | 5-1 | 680 (+680) | 0 | -838 ($3,000) | 1% / 46% | 1282 | money_level->home (312-113 fit · 13-2 fwd); sharp_gap->away (138-254 fit · 6-8 fwd); money_moving->away (142-248 fit · 7-7 fwd); consensus_gap->away (104-224 fit · 2-9 fwd); pin_value->away (13-44 fit · 0-1 fwd); pin_rlm->away (26-53 fit · 2-3 fwd) |
+| Tue 16:30 | ND@FLA | moneyline | away | -23.3 | 3-1 | 980 (+980) | 0 |  | 7% / 38% | 7744 | money_level->home (312-113 fit · 13-2 fwd); sharp_gap->away (138-254 fit · 6-8 fwd); money_moving->away (142-248 fit · 7-7 fwd); consensus_gap->away (104-224 fit · 2-9 fwd) |
+| Tue 19:30 | KENN@ALA | moneyline | away | -23.3 | 3-1 | 4000 (+4000) | 0 |  | 3% / 5% | 1802 | money_level->home (312-113 fit · 13-2 fwd); sharp_gap->away (138-254 fit · 6-8 fwd); money_moving->away (142-248 fit · 7-7 fwd); consensus_gap->away (104-224 fit · 2-9 fwd) |
+| Tue 20:00 | BELL@ILST | moneyline | away | -23.3 | 3-1 | 1400 (+1400) | 0 |  | 2% / 3% | 565 | money_level->home (312-113 fit · 13-2 fwd); sharp_gap->away (138-254 fit · 6-8 fwd); money_moving->away (142-248 fit · 7-7 fwd); consensus_gap->away (104-224 fit · 2-9 fwd) |
+| Tue 21:30 | UNLV@KU | moneyline | away | -23.3 | 3-1 | 1160 (+1160) | 0 |  | 2% / 9% | 2837 | money_level->home (312-113 fit · 13-2 fwd); sharp_gap->away (138-254 fit · 6-8 fwd); money_moving->away (142-248 fit · 7-7 fwd); consensus_gap->away (104-224 fit · 2-9 fwd) |
+| Tue 19:00 | CMU@DAY | moneyline | away | -27.2 | 4-1 | 660 (+660) | 0 | -747 ($3,000) | 5% / 27% | 1938 | money_level->home (312-113 fit · 13-2 fwd); sharp_gap->away (138-254 fit · 6-8 fwd); money_moving->away (142-248 fit · 7-7 fwd); consensus_gap->away (104-224 fit · 2-9 fwd); pin_value->away (13-44 fit · 0-1 fwd) |
 
