@@ -1,6 +1,6 @@
 # NFL period scorecard — halves, quarters, team totals
 
-Generated 2026-11-16 19:49 UTC. 328 graded period markets.
+Generated 2026-11-17 04:10 UTC. 328 graded period markets.
 
 Action Network serves no periods, so these lines come from the FanDuel event
 feed and Pinnacle's `s;1;*` keys. **There are no tickets/money splits on any
