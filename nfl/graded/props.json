@@ -41325,5 +41325,1704 @@
     "units": 1.0
    }
   }
+ },
+ {
+  "game": "Los Angeles Chargers @ Baltimore Ravens",
+  "player": "jacoby brissett",
+  "stat": "pass_yds",
+  "kickoff": "2026-11-17T01:15:00.000Z",
+  "week": 10,
+  "actual": 340.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-17T0114Z",
+    "line": 209.5,
+    "odds": {
+     "over": -113,
+     "under": -113
+    },
+    "open": 203.5,
+    "calls": {
+     "pin_value": "over",
+     "pin_lead": "under",
+     "fd_move": "over"
+    },
+    "pin": 210.5,
+    "pin_lim": 5000,
+    "fair_over": 0.5,
+    "pin_gap": -1.0,
+    "move_pts": 6.0
+   },
+   "early": {
+    "t": "2026-11-11T1907Z",
+    "line": 210.5,
+    "odds": {
+     "over": -114,
+     "under": -114
+    },
+    "open": 203.5,
+    "calls": {
+     "fd_move": "over"
+    },
+    "move_pts": 7.0
+   }
+  },
+  "early_graded": {
+   "fd_move": {
+    "side": "over",
+    "line": 210.5,
+    "odds": -114,
+    "res": "W",
+    "units": 0.877,
+    "clv": -1.0,
+    "clv_pct": -0.2
+   }
+  },
+  "close_graded": {
+   "pin_value": {
+    "side": "over",
+    "line": 209.5,
+    "odds": -113,
+    "res": "W",
+    "units": 0.885
+   },
+   "pin_lead": {
+    "side": "under",
+    "line": 209.5,
+    "odds": -113,
+    "res": "L",
+    "units": -1.0
+   },
+   "fd_move": {
+    "side": "over",
+    "line": 209.5,
+    "odds": -113,
+    "res": "W",
+    "units": 0.885
+   }
+  }
+ },
+ {
+  "game": "Los Angeles Chargers @ Baltimore Ravens",
+  "player": "justin herbert",
+  "stat": "pass_yds",
+  "kickoff": "2026-11-17T01:15:00.000Z",
+  "week": 10,
+  "actual": 129.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-17T0114Z",
+    "line": 199.5,
+    "odds": {
+     "over": -113,
+     "under": -113
+    },
+    "open": 208.5,
+    "calls": {
+     "pin_value": "over",
+     "fd_move": "under"
+    },
+    "pin": 202.5,
+    "pin_lim": 5000,
+    "fair_over": 0.5022,
+    "pin_gap": -3.0,
+    "move_pts": -9.0
+   },
+   "early": {
+    "t": "2026-11-11T1907Z",
+    "line": 208.5,
+    "odds": {
+     "over": -114,
+     "under": -114
+    },
+    "open": 208.5,
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "pin_value": {
+    "side": "over",
+    "line": 199.5,
+    "odds": -113,
+    "res": "L",
+    "units": -1.0
+   },
+   "fd_move": {
+    "side": "under",
+    "line": 199.5,
+    "odds": -113,
+    "res": "W",
+    "units": 0.885
+   }
+  }
+ },
+ {
+  "game": "Los Angeles Chargers @ Baltimore Ravens",
+  "player": "justin herbert",
+  "stat": "pass_tds",
+  "kickoff": "2026-11-17T01:15:00.000Z",
+  "week": 10,
+  "actual": 0.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-17T0114Z",
+    "line": 0.5,
+    "odds": {
+     "over": -250,
+     "under": 185
+    },
+    "open": 0.5,
+    "calls": {
+     "fd_juice": "under"
+    },
+    "pin": 0.5,
+    "pin_lim": 5000,
+    "fair_over": 0.6776,
+    "juice_c": [
+     20,
+     -9
+    ]
+   },
+   "early": {
+    "t": "2026-11-11T1907Z",
+    "line": 0.5,
+    "odds": {
+     "over": -270,
+     "under": 194
+    },
+    "open": 0.5,
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "fd_juice": {
+    "side": "under",
+    "line": 0.5,
+    "odds": 185,
+    "res": "W",
+    "units": 1.85
+   }
+  }
+ },
+ {
+  "game": "Los Angeles Chargers @ Baltimore Ravens",
+  "player": "keaton mitchell",
+  "stat": "recv_yds",
+  "kickoff": "2026-11-17T01:15:00.000Z",
+  "week": 10,
+  "actual": 0.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-17T0114Z",
+    "line": 11.5,
+    "odds": {
+     "over": -113,
+     "under": -113
+    },
+    "open": 11.5,
+    "calls": {
+     "pin_value": "under"
+    },
+    "pin": 10.5,
+    "pin_lim": 1000,
+    "fair_over": 0.5065,
+    "pin_gap": 1.0
+   },
+   "early": {
+    "t": "2026-11-11T1907Z",
+    "line": 11.5,
+    "odds": {
+     "over": -114,
+     "under": -114
+    },
+    "open": 11.5,
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "pin_value": {
+    "side": "under",
+    "line": 11.5,
+    "odds": -113,
+    "res": "W",
+    "units": 0.885
+   }
+  }
+ },
+ {
+  "game": "Los Angeles Chargers @ Baltimore Ravens",
+  "player": "justice hill",
+  "stat": "recv_yds",
+  "kickoff": "2026-11-17T01:15:00.000Z",
+  "week": 10,
+  "actual": 34.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-17T0114Z",
+    "line": 10.5,
+    "odds": {
+     "over": -113,
+     "under": -113
+    },
+    "open": 11.5,
+    "calls": {
+     "pin_value": "over",
+     "fd_move": "under"
+    },
+    "pin": 11.5,
+    "pin_lim": 1000,
+    "fair_over": 0.47,
+    "pin_gap": -1.0,
+    "move_pts": -1.0
+   },
+   "early": {
+    "t": "2026-11-11T1907Z",
+    "line": 11.5,
+    "odds": {
+     "over": -114,
+     "under": -114
+    },
+    "open": 11.5,
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "pin_value": {
+    "side": "over",
+    "line": 10.5,
+    "odds": -113,
+    "res": "W",
+    "units": 0.885
+   },
+   "fd_move": {
+    "side": "under",
+    "line": 10.5,
+    "odds": -113,
+    "res": "L",
+    "units": -1.0
+   }
+  }
+ },
+ {
+  "game": "Los Angeles Chargers @ Baltimore Ravens",
+  "player": "josh cuevas",
+  "stat": "receptions",
+  "kickoff": "2026-11-17T01:15:00.000Z",
+  "week": 10,
+  "actual": 3.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-17T0114Z",
+    "line": 0.5,
+    "odds": {
+     "over": -240,
+     "under": 174
+    },
+    "open": 1.5,
+    "calls": {
+     "fd_move": "under"
+    },
+    "pin": 0.5,
+    "pin_lim": 1000,
+    "fair_over": 0.6568,
+    "move_pts": -1.0
+   },
+   "early": {
+    "t": "2026-11-11T1907Z",
+    "line": 1.5,
+    "odds": {
+     "over": 144,
+     "under": -194
+    },
+    "open": 1.5,
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "fd_move": {
+    "side": "under",
+    "line": 0.5,
+    "odds": 174,
+    "res": "L",
+    "units": -1.0
+   }
+  }
+ },
+ {
+  "game": "Los Angeles Chargers @ Baltimore Ravens",
+  "player": "josh cuevas",
+  "stat": "recv_yds",
+  "kickoff": "2026-11-17T01:15:00.000Z",
+  "week": 10,
+  "actual": 37.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-17T0114Z",
+    "line": 7.5,
+    "odds": {
+     "over": -106,
+     "under": -120
+    },
+    "open": 9.5,
+    "calls": {
+     "fd_move": "under"
+    },
+    "pin": 7.5,
+    "pin_lim": 1000,
+    "fair_over": 0.4882,
+    "move_pts": -2.0
+   },
+   "early": {
+    "t": "2026-11-11T1907Z",
+    "line": 9.5,
+    "odds": {
+     "over": -114,
+     "under": -114
+    },
+    "open": 9.5,
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "fd_move": {
+    "side": "under",
+    "line": 7.5,
+    "odds": -120,
+    "res": "L",
+    "units": -1.0
+   }
+  }
+ },
+ {
+  "game": "Los Angeles Chargers @ Baltimore Ravens",
+  "player": "zay flowers",
+  "stat": "recv_yds",
+  "kickoff": "2026-11-17T01:15:00.000Z",
+  "week": 10,
+  "actual": 74.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-17T0114Z",
+    "line": 71.5,
+    "odds": {
+     "over": -113,
+     "under": -113
+    },
+    "open": 64.5,
+    "calls": {
+     "fd_move": "over"
+    },
+    "pin": 71.5,
+    "pin_lim": 5000,
+    "fair_over": 0.5,
+    "move_pts": 7.0
+   },
+   "early": {
+    "t": "2026-11-11T1907Z",
+    "line": 66.5,
+    "odds": {
+     "over": -114,
+     "under": -114
+    },
+    "open": 64.5,
+    "calls": {
+     "fd_move": "over"
+    },
+    "move_pts": 2.0
+   }
+  },
+  "early_graded": {
+   "fd_move": {
+    "side": "over",
+    "line": 66.5,
+    "odds": -114,
+    "res": "W",
+    "units": 0.877,
+    "clv": 5.0,
+    "clv_pct": -0.2
+   }
+  },
+  "close_graded": {
+   "fd_move": {
+    "side": "over",
+    "line": 71.5,
+    "odds": -113,
+    "res": "W",
+    "units": 0.885
+   }
+  }
+ },
+ {
+  "game": "Los Angeles Chargers @ Baltimore Ravens",
+  "player": "jakobi lane",
+  "stat": "recv_yds",
+  "kickoff": "2026-11-17T01:15:00.000Z",
+  "week": 10,
+  "actual": 61.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-17T0114Z",
+    "line": 21.5,
+    "odds": {
+     "over": -113,
+     "under": -113
+    },
+    "open": 18.5,
+    "calls": {
+     "pin_value": "under",
+     "pin_lead": "under",
+     "fd_move": "over"
+    },
+    "pin": 19.5,
+    "pin_lim": 1000,
+    "fair_over": 0.5321,
+    "pin_gap": 2.0,
+    "move_pts": 3.0
+   },
+   "early": {
+    "t": "2026-11-11T1907Z",
+    "line": 18.5,
+    "odds": {
+     "over": -114,
+     "under": -114
+    },
+    "open": 18.5,
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "pin_value": {
+    "side": "under",
+    "line": 21.5,
+    "odds": -113,
+    "res": "L",
+    "units": -1.0
+   },
+   "pin_lead": {
+    "side": "under",
+    "line": 21.5,
+    "odds": -113,
+    "res": "L",
+    "units": -1.0
+   },
+   "fd_move": {
+    "side": "over",
+    "line": 21.5,
+    "odds": -113,
+    "res": "W",
+    "units": 0.885
+   }
+  }
+ },
+ {
+  "game": "Los Angeles Chargers @ Baltimore Ravens",
+  "player": "omarion hampton",
+  "stat": "recv_yds",
+  "kickoff": "2026-11-17T01:15:00.000Z",
+  "week": 10,
+  "actual": 0.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-17T0114Z",
+    "line": 6.5,
+    "odds": {
+     "over": -113,
+     "under": -113
+    },
+    "open": 4.5,
+    "calls": {
+     "pin_value": "under",
+     "fd_move": "over"
+    },
+    "pin": 5.5,
+    "pin_lim": 1000,
+    "fair_over": 0.4978,
+    "pin_gap": 1.0,
+    "move_pts": 2.0
+   },
+   "early": {
+    "t": "2026-11-11T1907Z",
+    "line": 4.5,
+    "odds": {
+     "over": -114,
+     "under": -114
+    },
+    "open": 4.5,
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "pin_value": {
+    "side": "under",
+    "line": 6.5,
+    "odds": -113,
+    "res": "W",
+    "units": 0.885
+   },
+   "fd_move": {
+    "side": "over",
+    "line": 6.5,
+    "odds": -113,
+    "res": "L",
+    "units": -1.0
+   }
+  }
+ },
+ {
+  "game": "Los Angeles Chargers @ Baltimore Ravens",
+  "player": "mark andrews",
+  "stat": "receptions",
+  "kickoff": "2026-11-17T01:15:00.000Z",
+  "week": 10,
+  "actual": 8.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-17T0114Z",
+    "line": 2.5,
+    "odds": {
+     "over": -148,
+     "under": 112
+    },
+    "open": 2.5,
+    "calls": {
+     "fd_juice": "over"
+    },
+    "pin": 2.5,
+    "pin_lim": 3000,
+    "fair_over": 0.5887,
+    "juice_c": [
+     -34,
+     226
+    ]
+   },
+   "early": {
+    "t": "2026-11-11T1907Z",
+    "line": 2.5,
+    "odds": {
+     "over": -114,
+     "under": -114
+    },
+    "open": 2.5,
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "fd_juice": {
+    "side": "over",
+    "line": 2.5,
+    "odds": -148,
+    "res": "W",
+    "units": 0.676
+   }
+  }
+ },
+ {
+  "game": "Los Angeles Chargers @ Baltimore Ravens",
+  "player": "justice hill",
+  "stat": "receptions",
+  "kickoff": "2026-11-17T01:15:00.000Z",
+  "week": 10,
+  "actual": 5.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-17T0114Z",
+    "line": 2.5,
+    "odds": {
+     "over": 120,
+     "under": -160
+    },
+    "open": 2.5,
+    "calls": {
+     "fd_juice": "over"
+    },
+    "pin": 2.5,
+    "pin_lim": 1000,
+    "fair_over": 0.4242,
+    "juice_c": [
+     -10,
+     14
+    ]
+   },
+   "early": {
+    "t": "2026-11-11T1907Z",
+    "line": 2.5,
+    "odds": {
+     "over": 130,
+     "under": -174
+    },
+    "open": 2.5,
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "fd_juice": {
+    "side": "over",
+    "line": 2.5,
+    "odds": 120,
+    "res": "W",
+    "units": 1.2
+   }
+  }
+ },
+ {
+  "game": "Los Angeles Chargers @ Baltimore Ravens",
+  "player": "jakobi lane",
+  "stat": "receptions",
+  "kickoff": "2026-11-17T01:15:00.000Z",
+  "week": 10,
+  "actual": 3.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-17T0114Z",
+    "line": 2.5,
+    "odds": {
+     "over": 154,
+     "under": -210
+    },
+    "open": 2.5,
+    "calls": {
+     "fd_juice": "under"
+    },
+    "pin": 2.5,
+    "pin_lim": 1000,
+    "fair_over": 0.3714,
+    "juice_c": [
+     20,
+     -30
+    ]
+   },
+   "early": {
+    "t": "2026-11-11T1907Z",
+    "line": 2.5,
+    "odds": {
+     "over": 134,
+     "under": -180
+    },
+    "open": 2.5,
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "fd_juice": {
+    "side": "under",
+    "line": 2.5,
+    "odds": -210,
+    "res": "L",
+    "units": -1.0
+   }
+  }
+ },
+ {
+  "game": "Los Angeles Chargers @ Baltimore Ravens",
+  "player": "kimani vidal",
+  "stat": "receptions",
+  "kickoff": "2026-11-17T01:15:00.000Z",
+  "week": 10,
+  "actual": 2.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-17T0114Z",
+    "line": 1.5,
+    "odds": {
+     "over": -130,
+     "under": -102
+    },
+    "open": 1.5,
+    "calls": {
+     "fd_juice": "under"
+    },
+    "pin": 1.5,
+    "pin_lim": 500,
+    "fair_over": 0.5152,
+    "juice_c": [
+     75,
+     -254
+    ]
+   },
+   "early": {
+    "t": "2026-11-11T1907Z",
+    "line": 1.5,
+    "odds": {
+     "over": -205,
+     "under": 152
+    },
+    "open": 1.5,
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "fd_juice": {
+    "side": "under",
+    "line": 1.5,
+    "odds": -102,
+    "res": "L",
+    "units": -1.0
+   }
+  }
+ },
+ {
+  "game": "Los Angeles Chargers @ Baltimore Ravens",
+  "player": "mark andrews",
+  "stat": "recv_yds",
+  "kickoff": "2026-11-17T01:15:00.000Z",
+  "week": 10,
+  "actual": 82.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-17T0114Z",
+    "line": 24.5,
+    "odds": {
+     "over": -113,
+     "under": -113
+    },
+    "open": 19.5,
+    "calls": {
+     "pin_value": "under",
+     "fd_move": "over"
+    },
+    "pin": 23.5,
+    "pin_lim": 3000,
+    "fair_over": 0.4978,
+    "pin_gap": 1.0,
+    "move_pts": 5.0
+   },
+   "early": {
+    "t": "2026-11-11T1907Z",
+    "line": 19.5,
+    "odds": {
+     "over": -114,
+     "under": -114
+    },
+    "open": 19.5,
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "pin_value": {
+    "side": "under",
+    "line": 24.5,
+    "odds": -113,
+    "res": "L",
+    "units": -1.0
+   },
+   "fd_move": {
+    "side": "over",
+    "line": 24.5,
+    "odds": -113,
+    "res": "W",
+    "units": 0.885
+   }
+  }
+ },
+ {
+  "game": "Los Angeles Chargers @ Baltimore Ravens",
+  "player": "derrick henry",
+  "stat": "receptions",
+  "kickoff": "2026-11-17T01:15:00.000Z",
+  "week": 10,
+  "actual": 5.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-17T0114Z",
+    "line": 1.5,
+    "odds": {
+     "over": 162,
+     "under": -220
+    },
+    "open": 1.5,
+    "calls": {
+     "fd_juice": "under"
+    },
+    "pin": 1.5,
+    "pin_lim": 1000,
+    "fair_over": 0.3458,
+    "juice_c": [
+     18,
+     -26
+    ]
+   },
+   "early": {
+    "t": "2026-11-11T1907Z",
+    "line": 1.5,
+    "odds": {
+     "over": 178,
+     "under": -245
+    },
+    "open": 1.5,
+    "calls": {
+     "fd_juice": "under"
+    },
+    "juice_c": [
+     34,
+     -51
+    ]
+   }
+  },
+  "early_graded": {
+   "fd_juice": {
+    "side": "under",
+    "line": 1.5,
+    "odds": -245,
+    "res": "L",
+    "units": -1.0,
+    "clv": -0.0,
+    "clv_pct": -2.3
+   }
+  },
+  "close_graded": {
+   "fd_juice": {
+    "side": "under",
+    "line": 1.5,
+    "odds": -220,
+    "res": "L",
+    "units": -1.0
+   }
+  }
+ },
+ {
+  "game": "Los Angeles Chargers @ Baltimore Ravens",
+  "player": "keaton mitchell",
+  "stat": "receptions",
+  "kickoff": "2026-11-17T01:15:00.000Z",
+  "week": 10,
+  "actual": 0.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-17T0114Z",
+    "line": 2.5,
+    "odds": {
+     "over": 144,
+     "under": -194
+    },
+    "open": 2.5,
+    "calls": {
+     "fd_juice": "under"
+    },
+    "pin": 2.5,
+    "pin_lim": 1000,
+    "fair_over": 0.3879,
+    "juice_c": [
+     246,
+     -64
+    ]
+   },
+   "early": {
+    "t": "2026-11-11T1907Z",
+    "line": 2.5,
+    "odds": {
+     "over": -102,
+     "under": -130
+    },
+    "open": 2.5,
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "fd_juice": {
+    "side": "under",
+    "line": 2.5,
+    "odds": -194,
+    "res": "W",
+    "units": 0.515
+   }
+  }
+ },
+ {
+  "game": "Los Angeles Chargers @ Baltimore Ravens",
+  "player": "kimani vidal",
+  "stat": "recv_yds",
+  "kickoff": "2026-11-17T01:15:00.000Z",
+  "week": 10,
+  "actual": 14.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-17T0114Z",
+    "line": 9.5,
+    "odds": {
+     "over": -113,
+     "under": -113
+    },
+    "open": 9.5,
+    "calls": {
+     "pin_value": "under"
+    },
+    "pin": 8.5,
+    "pin_lim": 1000,
+    "fair_over": 0.5,
+    "pin_gap": 1.0
+   },
+   "early": {
+    "t": "2026-11-11T1907Z",
+    "line": 9.5,
+    "odds": {
+     "over": -114,
+     "under": -114
+    },
+    "open": 9.5,
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "pin_value": {
+    "side": "under",
+    "line": 9.5,
+    "odds": -113,
+    "res": "L",
+    "units": -1.0
+   }
+  }
+ },
+ {
+  "game": "Los Angeles Chargers @ Baltimore Ravens",
+  "player": "derrick henry",
+  "stat": "recv_yds",
+  "kickoff": "2026-11-17T01:15:00.000Z",
+  "week": 10,
+  "actual": 10.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-17T0114Z",
+    "line": 4.5,
+    "odds": {
+     "over": -113,
+     "under": -113
+    },
+    "open": 5.5,
+    "calls": {
+     "pin_value": "over",
+     "pin_lead": "over",
+     "fd_move": "under"
+    },
+    "pin": 5.5,
+    "pin_lim": 1000,
+    "fair_over": 0.4658,
+    "pin_gap": -1.0,
+    "move_pts": -1.0
+   },
+   "early": {
+    "t": "2026-11-11T1907Z",
+    "line": 4.5,
+    "odds": {
+     "over": -114,
+     "under": -114
+    },
+    "open": 5.5,
+    "calls": {
+     "fd_move": "under"
+    },
+    "move_pts": -1.0
+   }
+  },
+  "early_graded": {
+   "fd_move": {
+    "side": "under",
+    "line": 4.5,
+    "odds": -114,
+    "res": "L",
+    "units": -1.0,
+    "clv": -0.0,
+    "clv_pct": -0.2
+   }
+  },
+  "close_graded": {
+   "pin_value": {
+    "side": "over",
+    "line": 4.5,
+    "odds": -113,
+    "res": "W",
+    "units": 0.885
+   },
+   "pin_lead": {
+    "side": "over",
+    "line": 4.5,
+    "odds": -113,
+    "res": "W",
+    "units": 0.885
+   },
+   "fd_move": {
+    "side": "under",
+    "line": 4.5,
+    "odds": -113,
+    "res": "L",
+    "units": -1.0
+   }
+  }
+ },
+ {
+  "game": "Los Angeles Chargers @ Baltimore Ravens",
+  "player": "zay flowers",
+  "stat": "receptions",
+  "kickoff": "2026-11-17T01:15:00.000Z",
+  "week": 10,
+  "actual": 6.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-17T0114Z",
+    "line": 5.5,
+    "odds": {
+     "over": -136,
+     "under": 102
+    },
+    "open": 5.5,
+    "calls": {
+     "fd_juice": "over"
+    },
+    "pin": 5.5,
+    "pin_lim": 5000,
+    "fair_over": 0.5537,
+    "juice_c": [
+     -242,
+     242
+    ]
+   },
+   "early": {
+    "t": "2026-11-11T1907Z",
+    "line": 5.5,
+    "odds": {
+     "over": -108,
+     "under": -122
+    },
+    "open": 5.5,
+    "calls": {
+     "fd_juice": "over"
+    },
+    "juice_c": [
+     -214,
+     18
+    ]
+   }
+  },
+  "early_graded": {
+   "fd_juice": {
+    "side": "over",
+    "line": 5.5,
+    "odds": -108,
+    "res": "W",
+    "units": 0.926,
+    "clv": 0.0,
+    "clv_pct": 5.7
+   }
+  },
+  "close_graded": {
+   "fd_juice": {
+    "side": "over",
+    "line": 5.5,
+    "odds": -136,
+    "res": "W",
+    "units": 0.735
+   }
+  }
+ },
+ {
+  "game": "Los Angeles Chargers @ Baltimore Ravens",
+  "player": "zay flowers",
+  "stat": "rush_yds",
+  "kickoff": "2026-11-17T01:15:00.000Z",
+  "week": 10,
+  "actual": 0.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-17T0114Z",
+    "line": 2.5,
+    "odds": {
+     "over": 114,
+     "under": -146
+    },
+    "open": 3.5,
+    "calls": {
+     "fd_move": "under"
+    },
+    "pin": 2.5,
+    "pin_lim": 1000,
+    "fair_over": 0.4501,
+    "move_pts": -1.0
+   },
+   "early": {
+    "t": "2026-11-11T1907Z",
+    "line": 3.5,
+    "odds": {
+     "over": -108,
+     "under": -120
+    },
+    "open": 3.5,
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "fd_move": {
+    "side": "under",
+    "line": 2.5,
+    "odds": -146,
+    "res": "W",
+    "units": 0.685
+   }
+  }
+ },
+ {
+  "game": "Los Angeles Chargers @ Baltimore Ravens",
+  "player": "justice hill",
+  "stat": "rush_yds",
+  "kickoff": "2026-11-17T01:15:00.000Z",
+  "week": 10,
+  "actual": 4.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-17T0114Z",
+    "line": 12.5,
+    "odds": {
+     "over": -113,
+     "under": -113
+    },
+    "open": 14.5,
+    "calls": {
+     "pin_value": "over",
+     "pin_lead": "over",
+     "fd_move": "under"
+    },
+    "pin": 13.5,
+    "pin_lim": 1000,
+    "fair_over": 0.4826,
+    "pin_gap": -1.0,
+    "move_pts": -2.0
+   },
+   "early": {
+    "t": "2026-11-11T1907Z",
+    "line": 12.5,
+    "odds": {
+     "over": -114,
+     "under": -114
+    },
+    "open": 14.5,
+    "calls": {
+     "fd_move": "under"
+    },
+    "move_pts": -2.0
+   }
+  },
+  "early_graded": {
+   "fd_move": {
+    "side": "under",
+    "line": 12.5,
+    "odds": -114,
+    "res": "W",
+    "units": 0.877,
+    "clv": -0.0,
+    "clv_pct": -0.2
+   }
+  },
+  "close_graded": {
+   "pin_value": {
+    "side": "over",
+    "line": 12.5,
+    "odds": -113,
+    "res": "L",
+    "units": -1.0
+   },
+   "pin_lead": {
+    "side": "over",
+    "line": 12.5,
+    "odds": -113,
+    "res": "L",
+    "units": -1.0
+   },
+   "fd_move": {
+    "side": "under",
+    "line": 12.5,
+    "odds": -113,
+    "res": "W",
+    "units": 0.885
+   }
+  }
+ },
+ {
+  "game": "Los Angeles Chargers @ Baltimore Ravens",
+  "player": "justin herbert",
+  "stat": "rush_yds",
+  "kickoff": "2026-11-17T01:15:00.000Z",
+  "week": 10,
+  "actual": 51.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-17T0114Z",
+    "line": 19.5,
+    "odds": {
+     "over": -113,
+     "under": -113
+    },
+    "open": 20.5,
+    "calls": {
+     "pin_value": "over",
+     "fd_move": "under"
+    },
+    "pin": 20.5,
+    "pin_lim": 2000,
+    "fair_over": 0.4848,
+    "pin_gap": -1.0,
+    "move_pts": -1.0
+   },
+   "early": {
+    "t": "2026-11-11T1907Z",
+    "line": 20.5,
+    "odds": {
+     "over": -114,
+     "under": -114
+    },
+    "open": 20.5,
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "pin_value": {
+    "side": "over",
+    "line": 19.5,
+    "odds": -113,
+    "res": "W",
+    "units": 0.885
+   },
+   "fd_move": {
+    "side": "under",
+    "line": 19.5,
+    "odds": -113,
+    "res": "L",
+    "units": -1.0
+   }
+  }
+ },
+ {
+  "game": "Los Angeles Chargers @ Baltimore Ravens",
+  "player": "kimani vidal",
+  "stat": "rush_yds",
+  "kickoff": "2026-11-17T01:15:00.000Z",
+  "week": 10,
+  "actual": 0.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-17T0114Z",
+    "line": 19.5,
+    "odds": {
+     "over": -113,
+     "under": -113
+    },
+    "open": 18.5,
+    "calls": {
+     "pin_value": "over",
+     "fd_move": "over"
+    },
+    "pin": 20.5,
+    "pin_lim": 1000,
+    "fair_over": 0.5065,
+    "pin_gap": -1.0,
+    "move_pts": 1.0
+   },
+   "early": {
+    "t": "2026-11-11T1907Z",
+    "line": 18.5,
+    "odds": {
+     "over": -114,
+     "under": -114
+    },
+    "open": 18.5,
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "pin_value": {
+    "side": "over",
+    "line": 19.5,
+    "odds": -113,
+    "res": "L",
+    "units": -1.0
+   },
+   "fd_move": {
+    "side": "over",
+    "line": 19.5,
+    "odds": -113,
+    "res": "L",
+    "units": -1.0
+   }
+  }
+ },
+ {
+  "game": "Los Angeles Chargers @ Baltimore Ravens",
+  "player": "jacoby brissett",
+  "stat": "rush_yds",
+  "kickoff": "2026-11-17T01:15:00.000Z",
+  "week": 10,
+  "actual": 2.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-17T0114Z",
+    "line": 7.5,
+    "odds": {
+     "over": -113,
+     "under": -113
+    },
+    "open": 7.5,
+    "calls": {
+     "pin_value": "under"
+    },
+    "pin": 5.5,
+    "pin_lim": 1000,
+    "fair_over": 0.5491,
+    "pin_gap": 2.0
+   },
+   "early": {
+    "t": "2026-11-11T1907Z",
+    "line": 5.5,
+    "odds": {
+     "over": -114,
+     "under": -114
+    },
+    "open": 7.5,
+    "calls": {
+     "fd_move": "under"
+    },
+    "move_pts": -2.0
+   }
+  },
+  "early_graded": {
+   "fd_move": {
+    "side": "under",
+    "line": 5.5,
+    "odds": -114,
+    "res": "W",
+    "units": 0.877,
+    "clv": -2.0,
+    "clv_pct": -0.2
+   }
+  },
+  "close_graded": {
+   "pin_value": {
+    "side": "under",
+    "line": 7.5,
+    "odds": -113,
+    "res": "W",
+    "units": 0.885
+   }
+  }
+ },
+ {
+  "game": "Los Angeles Chargers @ Baltimore Ravens",
+  "player": "derrick henry",
+  "stat": "rush_yds",
+  "kickoff": "2026-11-17T01:15:00.000Z",
+  "week": 10,
+  "actual": 10.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-17T0114Z",
+    "line": 82.5,
+    "odds": {
+     "over": -113,
+     "under": -113
+    },
+    "open": 77.5,
+    "calls": {
+     "pin_value": "under",
+     "fd_move": "over"
+    },
+    "pin": 80.5,
+    "pin_lim": 5000,
+    "fair_over": 0.4935,
+    "pin_gap": 2.0,
+    "move_pts": 5.0
+   },
+   "early": {
+    "t": "2026-11-11T1907Z",
+    "line": 77.5,
+    "odds": {
+     "over": -114,
+     "under": -114
+    },
+    "open": 77.5,
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "pin_value": {
+    "side": "under",
+    "line": 82.5,
+    "odds": -113,
+    "res": "W",
+    "units": 0.885
+   },
+   "fd_move": {
+    "side": "over",
+    "line": 82.5,
+    "odds": -113,
+    "res": "L",
+    "units": -1.0
+   }
+  }
+ },
+ {
+  "game": "Los Angeles Chargers @ Baltimore Ravens",
+  "player": "keaton mitchell",
+  "stat": "rush_yds",
+  "kickoff": "2026-11-17T01:15:00.000Z",
+  "week": 10,
+  "actual": 4.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-17T0114Z",
+    "line": 13.5,
+    "odds": {
+     "over": -113,
+     "under": -113
+    },
+    "open": 9.5,
+    "calls": {
+     "pin_value": "under",
+     "fd_move": "over"
+    },
+    "pin": 11.5,
+    "pin_lim": 1000,
+    "fair_over": 0.5342,
+    "pin_gap": 2.0,
+    "move_pts": 4.0
+   },
+   "early": {
+    "t": "2026-11-11T1907Z",
+    "line": 9.5,
+    "odds": {
+     "over": -114,
+     "under": -114
+    },
+    "open": 9.5,
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "pin_value": {
+    "side": "under",
+    "line": 13.5,
+    "odds": -113,
+    "res": "W",
+    "units": 0.885
+   },
+   "fd_move": {
+    "side": "over",
+    "line": 13.5,
+    "odds": -113,
+    "res": "L",
+    "units": -1.0
+   }
+  }
+ },
+ {
+  "game": "Los Angeles Chargers @ Baltimore Ravens",
+  "player": "omarion hampton",
+  "stat": "rush_yds",
+  "kickoff": "2026-11-17T01:15:00.000Z",
+  "week": 10,
+  "actual": 105.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-17T0114Z",
+    "line": 34.5,
+    "odds": {
+     "over": -113,
+     "under": -113
+    },
+    "open": 32.5,
+    "calls": {
+     "fd_move": "over"
+    },
+    "pin": 34.5,
+    "pin_lim": 1000,
+    "fair_over": 0.4848,
+    "move_pts": 2.0
+   },
+   "early": {
+    "t": "2026-11-11T1907Z",
+    "line": 32.5,
+    "odds": {
+     "over": -114,
+     "under": -114
+    },
+    "open": 32.5,
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "fd_move": {
+    "side": "over",
+    "line": 34.5,
+    "odds": -113,
+    "res": "W",
+    "units": 0.885
+   }
+  }
+ },
+ {
+  "game": "Los Angeles Chargers @ Baltimore Ravens",
+  "player": "tre harris",
+  "stat": "recv_yds",
+  "kickoff": "2026-11-17T01:15:00.000Z",
+  "week": 10,
+  "actual": 86.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-17T0114Z",
+    "line": 40.5,
+    "odds": {
+     "over": -113,
+     "under": -113
+    },
+    "open": 40.5,
+    "calls": {
+     "pin_value": "over"
+    },
+    "pin": 42.5,
+    "pin_lim": 3000,
+    "fair_over": 0.5043,
+    "pin_gap": -2.0
+   },
+   "early": {
+    "t": "2026-11-16T1523Z",
+    "line": 40.5,
+    "odds": {
+     "over": -113,
+     "under": -113
+    },
+    "open": 40.5,
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "pin_value": {
+    "side": "over",
+    "line": 40.5,
+    "odds": -113,
+    "res": "W",
+    "units": 0.885
+   }
+  }
+ },
+ {
+  "game": "Los Angeles Chargers @ Baltimore Ravens",
+  "player": "tre harris",
+  "stat": "receptions",
+  "kickoff": "2026-11-17T01:15:00.000Z",
+  "week": 10,
+  "actual": 5.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-17T0114Z",
+    "line": 3.5,
+    "odds": {
+     "over": -102,
+     "under": -130
+    },
+    "open": 3.5,
+    "calls": {
+     "fd_juice": "over"
+    },
+    "pin": 3.5,
+    "pin_lim": 3000,
+    "fair_over": 0.4892,
+    "juice_c": [
+     -204,
+     6
+    ]
+   },
+   "early": {
+    "t": "2026-11-16T1523Z",
+    "line": 3.5,
+    "odds": {
+     "over": 102,
+     "under": -136
+    },
+    "open": 3.5,
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "fd_juice": {
+    "side": "over",
+    "line": 3.5,
+    "odds": -102,
+    "res": "W",
+    "units": 0.98
+   }
+  }
+ },
+ {
+  "game": "Los Angeles Chargers @ Baltimore Ravens",
+  "player": "quentin johnston",
+  "stat": "recv_yds",
+  "kickoff": "2026-11-17T01:15:00.000Z",
+  "week": 10,
+  "actual": 6.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-17T0114Z",
+    "line": 34.5,
+    "odds": {
+     "over": -113,
+     "under": -113
+    },
+    "open": 35.5,
+    "calls": {
+     "pin_value": "over",
+     "fd_move": "under"
+    },
+    "pin": 35.5,
+    "pin_lim": 3000,
+    "fair_over": 0.4637,
+    "pin_gap": -1.0,
+    "move_pts": -1.0
+   },
+   "early": {
+    "t": "2026-11-16T1523Z",
+    "line": 35.5,
+    "odds": {
+     "over": -113,
+     "under": -113
+    },
+    "open": 35.5,
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "pin_value": {
+    "side": "over",
+    "line": 34.5,
+    "odds": -113,
+    "res": "L",
+    "units": -1.0
+   },
+   "fd_move": {
+    "side": "under",
+    "line": 34.5,
+    "odds": -113,
+    "res": "W",
+    "units": 0.885
+   }
+  }
  }
 ]
