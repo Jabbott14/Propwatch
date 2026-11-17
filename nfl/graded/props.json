@@ -245,6 +245,117 @@
   }
  },
  {
+  "game": "Tennessee Titans @ Cincinnati Bengals",
+  "player": "elic ayomanor",
+  "stat": "anytime_td",
+  "kickoff": "2026-11-01T18:00:00.000Z",
+  "week": 8,
+  "actual": 0.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-01T1759Z",
+    "line": 0.5,
+    "odds": {
+     "over": 450,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {
+     "pin_price": "over"
+    },
+    "pin": 0.5,
+    "pin_lim": 1000,
+    "fair_over": 0.1898,
+    "edge_pct": 4.38,
+    "td_open_odds": 450,
+    "td_move_pp": 0.0
+   }
+  },
+  "close_graded": {
+   "pin_price": {
+    "side": "over",
+    "line": 0.5,
+    "odds": 450,
+    "res": "L",
+    "units": -1.0
+   }
+  }
+ },
+ {
+  "game": "Tennessee Titans @ Cincinnati Bengals",
+  "player": "joe burrow",
+  "stat": "anytime_td",
+  "kickoff": "2026-11-01T18:00:00.000Z",
+  "week": 8,
+  "actual": 1.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-01T1759Z",
+    "line": 0.5,
+    "odds": {
+     "over": 500,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {
+     "pin_price": "over"
+    },
+    "pin": 0.5,
+    "pin_lim": 1000,
+    "fair_over": 0.1761,
+    "edge_pct": 5.68,
+    "td_open_odds": 500,
+    "td_move_pp": 0.0
+   }
+  },
+  "close_graded": {
+   "pin_price": {
+    "side": "over",
+    "line": 0.5,
+    "odds": 500,
+    "res": "W",
+    "units": 5.0
+   }
+  }
+ },
+ {
+  "game": "Tennessee Titans @ Cincinnati Bengals",
+  "player": "cam ward",
+  "stat": "anytime_td",
+  "kickoff": "2026-11-01T18:00:00.000Z",
+  "week": 8,
+  "actual": 0.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-01T1759Z",
+    "line": 0.5,
+    "odds": {
+     "over": 600,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {
+     "pin_price": "over"
+    },
+    "pin": 0.5,
+    "pin_lim": 1000,
+    "fair_over": 0.1537,
+    "edge_pct": 7.59,
+    "td_open_odds": 600,
+    "td_move_pp": 0.0
+   }
+  },
+  "close_graded": {
+   "pin_price": {
+    "side": "over",
+    "line": 0.5,
+    "odds": 600,
+    "res": "L",
+    "units": -1.0
+   }
+  }
+ },
+ {
   "game": "Baltimore Ravens @ Buffalo Bills",
   "player": "josh allen",
   "stat": "pass_tds",
@@ -665,6 +776,43 @@
   }
  },
  {
+  "game": "Baltimore Ravens @ Buffalo Bills",
+  "player": "dj moore",
+  "stat": "anytime_td",
+  "kickoff": "2026-11-01T18:00:00.000Z",
+  "week": 8,
+  "actual": 1.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-01T1759Z",
+    "line": 0.5,
+    "odds": {
+     "over": 200,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {
+     "pin_price": "over"
+    },
+    "pin": 0.5,
+    "pin_lim": 1000,
+    "fair_over": 0.3338,
+    "edge_pct": 0.14,
+    "td_open_odds": 200,
+    "td_move_pp": 0.0
+   }
+  },
+  "close_graded": {
+   "pin_price": {
+    "side": "over",
+    "line": 0.5,
+    "odds": 200,
+    "res": "W",
+    "units": 2.0
+   }
+  }
+ },
+ {
   "game": "Arizona Cardinals @ Dallas Cowboys",
   "player": "jacoby brissett",
   "stat": "pass_yds",
@@ -869,6 +1017,43 @@
     "side": "over",
     "line": 17.5,
     "odds": -113,
+    "res": "L",
+    "units": -1.0
+   }
+  }
+ },
+ {
+  "game": "Arizona Cardinals @ Dallas Cowboys",
+  "player": "jake ferguson",
+  "stat": "anytime_td",
+  "kickoff": "2026-11-01T18:00:00.000Z",
+  "week": 8,
+  "actual": 0.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-01T1759Z",
+    "line": 0.5,
+    "odds": {
+     "over": 250,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {
+     "pin_price": "over"
+    },
+    "pin": 0.5,
+    "pin_lim": 1000,
+    "fair_over": 0.2984,
+    "edge_pct": 4.44,
+    "td_open_odds": 250,
+    "td_move_pp": 0.0
+   }
+  },
+  "close_graded": {
+   "pin_price": {
+    "side": "over",
+    "line": 0.5,
+    "odds": 250,
     "res": "L",
     "units": -1.0
    }
@@ -1400,6 +1585,117 @@
   }
  },
  {
+  "game": "Indianapolis Colts @ Jacksonville Jaguars",
+  "player": "bhayshul tuten",
+  "stat": "anytime_td",
+  "kickoff": "2026-11-01T18:00:00.000Z",
+  "week": 8,
+  "actual": 2.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-01T1759Z",
+    "line": 0.5,
+    "odds": {
+     "over": 100,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {
+     "pin_price": "over"
+    },
+    "pin": 0.5,
+    "pin_lim": 1000,
+    "fair_over": 0.5108,
+    "edge_pct": 2.17,
+    "td_open_odds": 100,
+    "td_move_pp": 0.0
+   }
+  },
+  "close_graded": {
+   "pin_price": {
+    "side": "over",
+    "line": 0.5,
+    "odds": 100,
+    "res": "W",
+    "units": 1.0
+   }
+  }
+ },
+ {
+  "game": "Indianapolis Colts @ Jacksonville Jaguars",
+  "player": "brenton strange",
+  "stat": "anytime_td",
+  "kickoff": "2026-11-01T18:00:00.000Z",
+  "week": 8,
+  "actual": 0.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-01T1759Z",
+    "line": 0.5,
+    "odds": {
+     "over": 210,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {
+     "pin_price": "over"
+    },
+    "pin": 0.5,
+    "pin_lim": 1000,
+    "fair_over": 0.328,
+    "edge_pct": 1.67,
+    "td_open_odds": 210,
+    "td_move_pp": 0.0
+   }
+  },
+  "close_graded": {
+   "pin_price": {
+    "side": "over",
+    "line": 0.5,
+    "odds": 210,
+    "res": "L",
+    "units": -1.0
+   }
+  }
+ },
+ {
+  "game": "Indianapolis Colts @ Jacksonville Jaguars",
+  "player": "trevor lawrence",
+  "stat": "anytime_td",
+  "kickoff": "2026-11-01T18:00:00.000Z",
+  "week": 8,
+  "actual": 0.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-01T1759Z",
+    "line": 0.5,
+    "odds": {
+     "over": 310,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {
+     "pin_price": "over"
+    },
+    "pin": 0.5,
+    "pin_lim": 1000,
+    "fair_over": 0.246,
+    "edge_pct": 0.86,
+    "td_open_odds": 310,
+    "td_move_pp": 0.0
+   }
+  },
+  "close_graded": {
+   "pin_price": {
+    "side": "over",
+    "line": 0.5,
+    "odds": 310,
+    "res": "L",
+    "units": -1.0
+   }
+  }
+ },
+ {
   "game": "Minnesota Vikings @ Detroit Lions",
   "player": "jared goff",
   "stat": "pass_yds",
@@ -1820,6 +2116,80 @@
   }
  },
  {
+  "game": "Atlanta Falcons @ Tampa Bay Buccaneers",
+  "player": "bucky irving",
+  "stat": "anytime_td",
+  "kickoff": "2026-11-01T18:00:00.000Z",
+  "week": 8,
+  "actual": 1.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-01T1759Z",
+    "line": 0.5,
+    "odds": {
+     "over": 105,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {
+     "pin_price": "over"
+    },
+    "pin": 0.5,
+    "pin_lim": 1000,
+    "fair_over": 0.4892,
+    "edge_pct": 0.28,
+    "td_open_odds": 105,
+    "td_move_pp": 0.0
+   }
+  },
+  "close_graded": {
+   "pin_price": {
+    "side": "over",
+    "line": 0.5,
+    "odds": 105,
+    "res": "W",
+    "units": 1.05
+   }
+  }
+ },
+ {
+  "game": "Atlanta Falcons @ Tampa Bay Buccaneers",
+  "player": "kyle pitts",
+  "stat": "anytime_td",
+  "kickoff": "2026-11-01T18:00:00.000Z",
+  "week": 8,
+  "actual": 0.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-01T1759Z",
+    "line": 0.5,
+    "odds": {
+     "over": 330,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {
+     "pin_price": "over"
+    },
+    "pin": 0.5,
+    "pin_lim": 1000,
+    "fair_over": 0.2487,
+    "edge_pct": 6.93,
+    "td_open_odds": 330,
+    "td_move_pp": 0.0
+   }
+  },
+  "close_graded": {
+   "pin_price": {
+    "side": "over",
+    "line": 0.5,
+    "odds": 330,
+    "res": "L",
+    "units": -1.0
+   }
+  }
+ },
+ {
   "game": "Las Vegas Raiders @ New York Jets",
   "player": "kirk cousins",
   "stat": "pass_yds",
@@ -1989,6 +2359,43 @@
     "side": "under",
     "line": 64.5,
     "odds": -113,
+    "res": "L",
+    "units": -1.0
+   }
+  }
+ },
+ {
+  "game": "Las Vegas Raiders @ New York Jets",
+  "player": "michael mayer",
+  "stat": "anytime_td",
+  "kickoff": "2026-11-01T18:00:00.000Z",
+  "week": 8,
+  "actual": 0.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-01T1759Z",
+    "line": 0.5,
+    "odds": {
+     "over": 370,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {
+     "pin_price": "over"
+    },
+    "pin": 0.5,
+    "pin_lim": 1000,
+    "fair_over": 0.2225,
+    "edge_pct": 4.58,
+    "td_open_odds": 370,
+    "td_move_pp": 0.0
+   }
+  },
+  "close_graded": {
+   "pin_price": {
+    "side": "over",
+    "line": 0.5,
+    "odds": 370,
     "res": "L",
     "units": -1.0
    }
@@ -2984,6 +3391,224 @@
   }
  },
  {
+  "game": "Kansas City Chiefs @ Denver Broncos",
+  "player": "kenneth walker iii",
+  "stat": "anytime_td",
+  "kickoff": "2026-11-01T21:25:00.000Z",
+  "week": 8,
+  "actual": 0.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-01T2124Z",
+    "line": 0.5,
+    "odds": {
+     "over": -125,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {
+     "pin_price": "over"
+    },
+    "pin": 0.5,
+    "pin_lim": 1000,
+    "fair_over": 0.562,
+    "edge_pct": 1.15,
+    "td_open_odds": -140,
+    "td_move_pp": -2.8
+   },
+   "early": {
+    "t": "2026-11-01T1843Z",
+    "line": 0.5,
+    "odds": {
+     "over": -140,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {},
+    "pin": 0.5,
+    "pin_lim": 1000,
+    "fair_over": 0.5564,
+    "td_open_odds": -140,
+    "td_move_pp": 0.0
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "pin_price": {
+    "side": "over",
+    "line": 0.5,
+    "odds": -125,
+    "res": "L",
+    "units": -1.0
+   }
+  }
+ },
+ {
+  "game": "Kansas City Chiefs @ Denver Broncos",
+  "player": "jonah coleman",
+  "stat": "anytime_td",
+  "kickoff": "2026-11-01T21:25:00.000Z",
+  "week": 8,
+  "actual": 1.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-01T2124Z",
+    "line": 0.5,
+    "odds": {
+     "over": 185,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {
+     "pin_price": "over"
+    },
+    "pin": 0.5,
+    "pin_lim": 1000,
+    "fair_over": 0.355,
+    "edge_pct": 1.18,
+    "td_open_odds": 175,
+    "td_move_pp": -1.3
+   },
+   "early": {
+    "t": "2026-11-01T1843Z",
+    "line": 0.5,
+    "odds": {
+     "over": 175,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {},
+    "pin": 0.5,
+    "pin_lim": 1000,
+    "fair_over": 0.355,
+    "td_open_odds": 175,
+    "td_move_pp": 0.0
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "pin_price": {
+    "side": "over",
+    "line": 0.5,
+    "odds": 185,
+    "res": "W",
+    "units": 1.85
+   }
+  }
+ },
+ {
+  "game": "Kansas City Chiefs @ Denver Broncos",
+  "player": "jaylen waddle",
+  "stat": "anytime_td",
+  "kickoff": "2026-11-01T21:25:00.000Z",
+  "week": 8,
+  "actual": 1.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-01T2124Z",
+    "line": 0.5,
+    "odds": {
+     "over": 280,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {
+     "pin_price": "over"
+    },
+    "pin": 0.5,
+    "pin_lim": 1000,
+    "fair_over": 0.275,
+    "edge_pct": 4.51,
+    "td_open_odds": 270,
+    "td_move_pp": -0.7
+   },
+   "early": {
+    "t": "2026-11-01T1843Z",
+    "line": 0.5,
+    "odds": {
+     "over": 270,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {
+     "pin_price": "over"
+    },
+    "pin": 0.5,
+    "pin_lim": 1000,
+    "fair_over": 0.275,
+    "edge_pct": 1.76,
+    "td_open_odds": 270,
+    "td_move_pp": 0.0
+   }
+  },
+  "early_graded": {
+   "pin_price": {
+    "side": "over",
+    "line": 0.5,
+    "odds": 270,
+    "res": "W",
+    "units": 2.7,
+    "clv": 0.0,
+    "clv_pct": -0.7
+   }
+  },
+  "close_graded": {
+   "pin_price": {
+    "side": "over",
+    "line": 0.5,
+    "odds": 280,
+    "res": "W",
+    "units": 2.8
+   }
+  }
+ },
+ {
+  "game": "Kansas City Chiefs @ Denver Broncos",
+  "player": "jalen royals",
+  "stat": "anytime_td",
+  "kickoff": "2026-11-01T21:25:00.000Z",
+  "week": 8,
+  "actual": 0.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-01T2124Z",
+    "line": 0.5,
+    "odds": {
+     "over": 700,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {
+     "td_steam": "over"
+    },
+    "td_open_odds": 1100,
+    "td_move_pp": 4.2
+   },
+   "early": {
+    "t": "2026-11-01T1843Z",
+    "line": 0.5,
+    "odds": {
+     "over": 1100,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {},
+    "td_open_odds": 1100,
+    "td_move_pp": 0.0
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "td_steam": {
+    "side": "over",
+    "line": 0.5,
+    "odds": 700,
+    "res": "L",
+    "units": -1.0
+   }
+  }
+ },
+ {
   "game": "New England Patriots @ Miami Dolphins",
   "player": "malik willis",
   "stat": "pass_yds",
@@ -3960,6 +4585,138 @@
   }
  },
  {
+  "game": "New England Patriots @ Miami Dolphins",
+  "player": "hunter henry",
+  "stat": "anytime_td",
+  "kickoff": "2026-11-01T21:25:00.000Z",
+  "week": 8,
+  "actual": 0.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-01T2124Z",
+    "line": 0.5,
+    "odds": {
+     "over": 175,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {
+     "pin_price": "over"
+    },
+    "pin": 0.5,
+    "pin_lim": 1000,
+    "fair_over": 0.3674,
+    "edge_pct": 1.04,
+    "td_open_odds": 175,
+    "td_move_pp": 0.0
+   },
+   "early": {
+    "t": "2026-11-01T1843Z",
+    "line": 0.5,
+    "odds": {
+     "over": 175,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {
+     "pin_price": "over"
+    },
+    "pin": 0.5,
+    "pin_lim": 1000,
+    "fair_over": 0.3714,
+    "edge_pct": 2.12,
+    "td_open_odds": 175,
+    "td_move_pp": 0.0
+   }
+  },
+  "early_graded": {
+   "pin_price": {
+    "side": "over",
+    "line": 0.5,
+    "odds": 175,
+    "res": "L",
+    "units": -1.0,
+    "clv": 0.0,
+    "clv_pct": 0.0
+   }
+  },
+  "close_graded": {
+   "pin_price": {
+    "side": "over",
+    "line": 0.5,
+    "odds": 175,
+    "res": "L",
+    "units": -1.0
+   }
+  }
+ },
+ {
+  "game": "New England Patriots @ Miami Dolphins",
+  "player": "demario douglas",
+  "stat": "anytime_td",
+  "kickoff": "2026-11-01T21:25:00.000Z",
+  "week": 8,
+  "actual": 1.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-01T2124Z",
+    "line": 0.5,
+    "odds": {
+     "over": 250,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {
+     "pin_price": "over"
+    },
+    "pin": 0.5,
+    "pin_lim": 1000,
+    "fair_over": 0.292,
+    "edge_pct": 2.19,
+    "td_open_odds": 260,
+    "td_move_pp": 0.8
+   },
+   "early": {
+    "t": "2026-11-01T1843Z",
+    "line": 0.5,
+    "odds": {
+     "over": 260,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {
+     "pin_price": "over"
+    },
+    "pin": 0.5,
+    "pin_lim": 1000,
+    "fair_over": 0.292,
+    "edge_pct": 5.11,
+    "td_open_odds": 260,
+    "td_move_pp": 0.0
+   }
+  },
+  "early_graded": {
+   "pin_price": {
+    "side": "over",
+    "line": 0.5,
+    "odds": 260,
+    "res": "W",
+    "units": 2.6,
+    "clv": 0.0,
+    "clv_pct": 0.8
+   }
+  },
+  "close_graded": {
+   "pin_price": {
+    "side": "over",
+    "line": 0.5,
+    "odds": 250,
+    "res": "W",
+    "units": 2.5
+   }
+  }
+ },
+ {
   "game": "Philadelphia Eagles @ Washington Commanders",
   "player": "tanner mckee",
   "stat": "pass_tds",
@@ -4837,6 +5594,59 @@
     "odds": -113,
     "res": "W",
     "units": 0.885
+   }
+  }
+ },
+ {
+  "game": "Philadelphia Eagles @ Washington Commanders",
+  "player": "dallas goedert",
+  "stat": "anytime_td",
+  "kickoff": "2026-11-02T01:20:00.000Z",
+  "week": 8,
+  "actual": 0.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-02T0119Z",
+    "line": 0.5,
+    "odds": {
+     "over": 250,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {
+     "pin_price": "over"
+    },
+    "pin": 0.5,
+    "pin_lim": 1000,
+    "fair_over": 0.2876,
+    "edge_pct": 0.65,
+    "td_open_odds": 250,
+    "td_move_pp": 0.0
+   },
+   "early": {
+    "t": "2026-11-01T1843Z",
+    "line": 0.5,
+    "odds": {
+     "over": 250,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {},
+    "pin": 0.5,
+    "pin_lim": 1000,
+    "fair_over": 0.2841,
+    "td_open_odds": 250,
+    "td_move_pp": 0.0
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "pin_price": {
+    "side": "over",
+    "line": 0.5,
+    "odds": 250,
+    "res": "L",
+    "units": -1.0
    }
   }
  },
@@ -5866,6 +6676,125 @@
     "side": "under",
     "line": 10.5,
     "odds": -113,
+    "res": "L",
+    "units": -1.0
+   }
+  }
+ },
+ {
+  "game": "Chicago Bears @ Seattle Seahawks",
+  "player": "cooper kupp",
+  "stat": "anytime_td",
+  "kickoff": "2026-11-03T01:15:00.000Z",
+  "week": 8,
+  "actual": 1.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-03T0114Z",
+    "line": 0.5,
+    "odds": {
+     "over": 330,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {
+     "pin_price": "over"
+    },
+    "pin": 0.5,
+    "pin_lim": 5000,
+    "fair_over": 0.2386,
+    "edge_pct": 2.62,
+    "td_open_odds": 300,
+    "td_move_pp": -1.7
+   },
+   "early": {
+    "t": "2026-11-01T1843Z",
+    "line": 0.5,
+    "odds": {
+     "over": 300,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {},
+    "pin": 0.5,
+    "pin_lim": 500,
+    "fair_over": 0.2491,
+    "td_open_odds": 300,
+    "td_move_pp": 0.0
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "pin_price": {
+    "side": "over",
+    "line": 0.5,
+    "odds": 330,
+    "res": "W",
+    "units": 3.3
+   }
+  }
+ },
+ {
+  "game": "Chicago Bears @ Seattle Seahawks",
+  "player": "caleb williams",
+  "stat": "anytime_td",
+  "kickoff": "2026-11-03T01:15:00.000Z",
+  "week": 8,
+  "actual": 0.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-03T0114Z",
+    "line": 0.5,
+    "odds": {
+     "over": 480,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {
+     "pin_price": "over"
+    },
+    "pin": 0.5,
+    "pin_lim": 1000,
+    "fair_over": 0.185,
+    "edge_pct": 7.3,
+    "td_open_odds": 480,
+    "td_move_pp": 0.0
+   },
+   "early": {
+    "t": "2026-11-01T1843Z",
+    "line": 0.5,
+    "odds": {
+     "over": 480,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {
+     "pin_price": "over"
+    },
+    "pin": 0.5,
+    "pin_lim": 500,
+    "fair_over": 0.1762,
+    "edge_pct": 2.21,
+    "td_open_odds": 480,
+    "td_move_pp": 0.0
+   }
+  },
+  "early_graded": {
+   "pin_price": {
+    "side": "over",
+    "line": 0.5,
+    "odds": 480,
+    "res": "L",
+    "units": -1.0,
+    "clv": 0.0,
+    "clv_pct": 0.0
+   }
+  },
+  "close_graded": {
+   "pin_price": {
+    "side": "over",
+    "line": 0.5,
+    "odds": 480,
     "res": "L",
     "units": -1.0
    }
@@ -7407,6 +8336,156 @@
  },
  {
   "game": "Jacksonville Jaguars @ Baltimore Ravens",
+  "player": "parker washington",
+  "stat": "anytime_td",
+  "kickoff": "2026-11-06T01:15:00.000Z",
+  "week": 9,
+  "actual": 1.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-06T0114Z",
+    "line": 0.5,
+    "odds": {
+     "over": 170,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {
+     "pin_price": "over"
+    },
+    "pin": 0.5,
+    "pin_lim": 1000,
+    "fair_over": 0.3771,
+    "edge_pct": 1.83,
+    "td_open_odds": 125,
+    "td_move_pp": -7.4
+   },
+   "early": {
+    "t": "2026-11-02T0845Z",
+    "line": 0.5,
+    "odds": {
+     "over": 125,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {},
+    "td_open_odds": 125,
+    "td_move_pp": 0.0
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "pin_price": {
+    "side": "over",
+    "line": 0.5,
+    "odds": 170,
+    "res": "W",
+    "units": 1.7
+   }
+  }
+ },
+ {
+  "game": "Jacksonville Jaguars @ Baltimore Ravens",
+  "player": "brenton strange",
+  "stat": "anytime_td",
+  "kickoff": "2026-11-06T01:15:00.000Z",
+  "week": 9,
+  "actual": 0.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-06T0114Z",
+    "line": 0.5,
+    "odds": {
+     "over": 270,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {
+     "pin_price": "over"
+    },
+    "pin": 0.5,
+    "pin_lim": 1000,
+    "fair_over": 0.2705,
+    "edge_pct": 0.07,
+    "td_open_odds": 230,
+    "td_move_pp": -3.3
+   },
+   "early": {
+    "t": "2026-11-02T0845Z",
+    "line": 0.5,
+    "odds": {
+     "over": 230,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {},
+    "td_open_odds": 230,
+    "td_move_pp": 0.0
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "pin_price": {
+    "side": "over",
+    "line": 0.5,
+    "odds": 270,
+    "res": "L",
+    "units": -1.0
+   }
+  }
+ },
+ {
+  "game": "Jacksonville Jaguars @ Baltimore Ravens",
+  "player": "chris rodriguez jr",
+  "stat": "anytime_td",
+  "kickoff": "2026-11-06T01:15:00.000Z",
+  "week": 9,
+  "actual": 1.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-06T0114Z",
+    "line": 0.5,
+    "odds": {
+     "over": 220,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {
+     "pin_price": "over"
+    },
+    "pin": 0.5,
+    "pin_lim": 500,
+    "fair_over": 0.3249,
+    "edge_pct": 3.97,
+    "td_open_odds": 250,
+    "td_move_pp": 2.7
+   },
+   "early": {
+    "t": "2026-11-02T0845Z",
+    "line": 0.5,
+    "odds": {
+     "over": 250,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {},
+    "td_open_odds": 250,
+    "td_move_pp": 0.0
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "pin_price": {
+    "side": "over",
+    "line": 0.5,
+    "odds": 220,
+    "res": "W",
+    "units": 2.2
+   }
+  }
+ },
+ {
+  "game": "Jacksonville Jaguars @ Baltimore Ravens",
   "player": "travis hunter",
   "stat": "recv_yds",
   "kickoff": "2026-11-06T01:15:00.000Z",
@@ -8326,6 +9405,155 @@
     "side": "under",
     "line": 49.5,
     "odds": -113,
+    "res": "L",
+    "units": -1.0
+   }
+  }
+ },
+ {
+  "game": "Cincinnati Bengals @ Atlanta Falcons",
+  "player": "bijan robinson",
+  "stat": "anytime_td",
+  "kickoff": "2026-11-08T14:30:00.000Z",
+  "week": 9,
+  "actual": 1.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-08T1429Z",
+    "line": 0.5,
+    "odds": {
+     "over": -300,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {
+     "td_steam": "over"
+    },
+    "pin": 0.5,
+    "pin_lim": 250,
+    "fair_over": 0.6832,
+    "td_open_odds": -240,
+    "td_move_pp": 4.4
+   },
+   "early": {
+    "t": "2026-11-02T2005Z",
+    "line": 0.5,
+    "odds": {
+     "over": -240,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {},
+    "td_open_odds": -240,
+    "td_move_pp": 0.0
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "td_steam": {
+    "side": "over",
+    "line": 0.5,
+    "odds": -300,
+    "res": "W",
+    "units": 0.333
+   }
+  }
+ },
+ {
+  "game": "Cincinnati Bengals @ Atlanta Falcons",
+  "player": "tee higgins",
+  "stat": "anytime_td",
+  "kickoff": "2026-11-08T14:30:00.000Z",
+  "week": 9,
+  "actual": 2.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-08T1429Z",
+    "line": 0.5,
+    "odds": {
+     "over": 115,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {
+     "pin_price": "over"
+    },
+    "pin": 0.5,
+    "pin_lim": 250,
+    "fair_over": 0.4808,
+    "edge_pct": 3.38,
+    "td_open_odds": 110,
+    "td_move_pp": -1.1
+   },
+   "early": {
+    "t": "2026-11-02T2005Z",
+    "line": 0.5,
+    "odds": {
+     "over": 110,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {},
+    "td_open_odds": 110,
+    "td_move_pp": 0.0
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "pin_price": {
+    "side": "over",
+    "line": 0.5,
+    "odds": 115,
+    "res": "W",
+    "units": 1.15
+   }
+  }
+ },
+ {
+  "game": "Cincinnati Bengals @ Atlanta Falcons",
+  "player": "kyle pitts",
+  "stat": "anytime_td",
+  "kickoff": "2026-11-08T14:30:00.000Z",
+  "week": 9,
+  "actual": 0.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-08T1429Z",
+    "line": 0.5,
+    "odds": {
+     "over": 250,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {
+     "pin_price": "over"
+    },
+    "pin": 0.5,
+    "pin_lim": 250,
+    "fair_over": 0.2921,
+    "edge_pct": 2.24,
+    "td_open_odds": 280,
+    "td_move_pp": 2.3
+   },
+   "early": {
+    "t": "2026-11-02T2005Z",
+    "line": 0.5,
+    "odds": {
+     "over": 280,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {},
+    "td_open_odds": 280,
+    "td_move_pp": 0.0
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "pin_price": {
+    "side": "over",
+    "line": 0.5,
+    "odds": 250,
     "res": "L",
     "units": -1.0
    }
@@ -10775,6 +12003,144 @@
   }
  },
  {
+  "game": "Detroit Lions @ Miami Dolphins",
+  "player": "kaytron allen",
+  "stat": "anytime_td",
+  "kickoff": "2026-11-08T18:00:00.000Z",
+  "week": 9,
+  "actual": 0.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-08T1759Z",
+    "line": 0.5,
+    "odds": {
+     "over": 800,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {
+     "td_steam": "over"
+    },
+    "td_open_odds": 2200,
+    "td_move_pp": 6.8
+   },
+   "early": {
+    "t": "2026-11-04T1002Z",
+    "line": 0.5,
+    "odds": {
+     "over": 2200,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {},
+    "td_open_odds": 2200,
+    "td_move_pp": 0.0
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "td_steam": {
+    "side": "over",
+    "line": 0.5,
+    "odds": 800,
+    "res": "L",
+    "units": -1.0
+   }
+  }
+ },
+ {
+  "game": "Detroit Lions @ Miami Dolphins",
+  "player": "deandre carter",
+  "stat": "anytime_td",
+  "kickoff": "2026-11-08T18:00:00.000Z",
+  "week": 9,
+  "actual": 0.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-08T1759Z",
+    "line": 0.5,
+    "odds": {
+     "over": 1000,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {
+     "td_steam": "over"
+    },
+    "td_open_odds": 2200,
+    "td_move_pp": 4.7
+   },
+   "early": {
+    "t": "2026-11-04T1002Z",
+    "line": 0.5,
+    "odds": {
+     "over": 2200,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {},
+    "td_open_odds": 2200,
+    "td_move_pp": 0.0
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "td_steam": {
+    "side": "over",
+    "line": 0.5,
+    "odds": 1000,
+    "res": "L",
+    "units": -1.0
+   }
+  }
+ },
+ {
+  "game": "Detroit Lions @ Miami Dolphins",
+  "player": "jacob saylors",
+  "stat": "anytime_td",
+  "kickoff": "2026-11-08T18:00:00.000Z",
+  "week": 9,
+  "actual": 0.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-08T1759Z",
+    "line": 0.5,
+    "odds": {
+     "over": 1000,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {
+     "td_steam": "over"
+    },
+    "td_open_odds": 3500,
+    "td_move_pp": 6.3
+   },
+   "early": {
+    "t": "2026-11-04T1002Z",
+    "line": 0.5,
+    "odds": {
+     "over": 3500,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {},
+    "td_open_odds": 3500,
+    "td_move_pp": 0.0
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "td_steam": {
+    "side": "over",
+    "line": 0.5,
+    "odds": 1000,
+    "res": "L",
+    "units": -1.0
+   }
+  }
+ },
+ {
   "game": "Los Angeles Rams @ Washington Commanders",
   "player": "matthew stafford",
   "stat": "pass_yds",
@@ -10940,6 +12306,190 @@
     "odds": 120,
     "res": "L",
     "units": -1.0
+   }
+  }
+ },
+ {
+  "game": "Los Angeles Rams @ Washington Commanders",
+  "player": "chigoziem okonkwo",
+  "stat": "anytime_td",
+  "kickoff": "2026-11-08T18:00:00.000Z",
+  "week": 9,
+  "actual": 0.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-08T1759Z",
+    "line": 0.5,
+    "odds": {
+     "over": 260,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {
+     "td_steam": "over"
+    },
+    "td_open_odds": 330,
+    "td_move_pp": 4.5
+   },
+   "early": {
+    "t": "2026-11-04T1205Z",
+    "line": 0.5,
+    "odds": {
+     "over": 340,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {},
+    "td_open_odds": 330,
+    "td_move_pp": -0.5
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "td_steam": {
+    "side": "over",
+    "line": 0.5,
+    "odds": 260,
+    "res": "L",
+    "units": -1.0
+   }
+  }
+ },
+ {
+  "game": "Los Angeles Rams @ Washington Commanders",
+  "player": "austin ekeler",
+  "stat": "anytime_td",
+  "kickoff": "2026-11-08T18:00:00.000Z",
+  "week": 9,
+  "actual": 0.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-08T1759Z",
+    "line": 0.5,
+    "odds": {
+     "over": 280,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {
+     "td_steam": "over"
+    },
+    "td_open_odds": 350,
+    "td_move_pp": 4.1
+   },
+   "early": {
+    "t": "2026-11-04T1205Z",
+    "line": 0.5,
+    "odds": {
+     "over": 350,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {},
+    "td_open_odds": 350,
+    "td_move_pp": 0.0
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "td_steam": {
+    "side": "over",
+    "line": 0.5,
+    "odds": 280,
+    "res": "L",
+    "units": -1.0
+   }
+  }
+ },
+ {
+  "game": "Los Angeles Rams @ Washington Commanders",
+  "player": "luke mccaffrey",
+  "stat": "anytime_td",
+  "kickoff": "2026-11-08T18:00:00.000Z",
+  "week": 9,
+  "actual": 0.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-08T1759Z",
+    "line": 0.5,
+    "odds": {
+     "over": 850,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {
+     "td_steam": "over"
+    },
+    "td_open_odds": 2500,
+    "td_move_pp": 6.7
+   },
+   "early": {
+    "t": "2026-11-04T1205Z",
+    "line": 0.5,
+    "odds": {
+     "over": 2700,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {},
+    "td_open_odds": 2500,
+    "td_move_pp": -0.3
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "td_steam": {
+    "side": "over",
+    "line": 0.5,
+    "odds": 850,
+    "res": "L",
+    "units": -1.0
+   }
+  }
+ },
+ {
+  "game": "Los Angeles Rams @ Washington Commanders",
+  "player": "van jefferson",
+  "stat": "anytime_td",
+  "kickoff": "2026-11-08T18:00:00.000Z",
+  "week": 9,
+  "actual": 1.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-08T1759Z",
+    "line": 0.5,
+    "odds": {
+     "over": 700,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {
+     "td_steam": "over"
+    },
+    "td_open_odds": 3000,
+    "td_move_pp": 9.3
+   },
+   "early": {
+    "t": "2026-11-04T1205Z",
+    "line": 0.5,
+    "odds": {
+     "over": 3300,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {},
+    "td_open_odds": 3000,
+    "td_move_pp": -0.3
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "td_steam": {
+    "side": "over",
+    "line": 0.5,
+    "odds": 700,
+    "res": "W",
+    "units": 7.0
    }
   }
  },
@@ -11637,6 +13187,110 @@
     "odds": -113,
     "res": "W",
     "units": 0.885
+   }
+  }
+ },
+ {
+  "game": "Dallas Cowboys @ Indianapolis Colts",
+  "player": "ryan flournoy",
+  "stat": "anytime_td",
+  "kickoff": "2026-11-08T18:00:00.000Z",
+  "week": 9,
+  "actual": 0.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-08T1759Z",
+    "line": 0.5,
+    "odds": {
+     "over": 140,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {
+     "td_steam": "over"
+    },
+    "td_open_odds": 260,
+    "td_move_pp": 13.9
+   },
+   "early": {
+    "t": "2026-11-04T1236Z",
+    "line": 0.5,
+    "odds": {
+     "over": 200,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {
+     "td_steam": "over"
+    },
+    "td_open_odds": 260,
+    "td_move_pp": 5.6
+   }
+  },
+  "early_graded": {
+   "td_steam": {
+    "side": "over",
+    "line": 0.5,
+    "odds": 200,
+    "res": "L",
+    "units": -1.0,
+    "clv": 0.0,
+    "clv_pct": 8.3
+   }
+  },
+  "close_graded": {
+   "td_steam": {
+    "side": "over",
+    "line": 0.5,
+    "odds": 140,
+    "res": "L",
+    "units": -1.0
+   }
+  }
+ },
+ {
+  "game": "Dallas Cowboys @ Indianapolis Colts",
+  "player": "jonathan mingo",
+  "stat": "anytime_td",
+  "kickoff": "2026-11-08T18:00:00.000Z",
+  "week": 9,
+  "actual": 0.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-08T1759Z",
+    "line": 0.5,
+    "odds": {
+     "over": 390,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {
+     "td_steam": "over"
+    },
+    "td_open_odds": 650,
+    "td_move_pp": 7.1
+   },
+   "early": {
+    "t": "2026-11-04T1236Z",
+    "line": 0.5,
+    "odds": {
+     "over": 650,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {},
+    "td_open_odds": 650,
+    "td_move_pp": 0.0
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "td_steam": {
+    "side": "over",
+    "line": 0.5,
+    "odds": 390,
+    "res": "L",
+    "units": -1.0
    }
   }
  },
@@ -12639,6 +14293,98 @@
   }
  },
  {
+  "game": "Cleveland Browns @ New Orleans Saints",
+  "player": "alvin kamara",
+  "stat": "anytime_td",
+  "kickoff": "2026-11-08T18:00:00.000Z",
+  "week": 9,
+  "actual": 0.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-08T1759Z",
+    "line": 0.5,
+    "odds": {
+     "over": 140,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {
+     "td_steam": "over"
+    },
+    "td_open_odds": 300,
+    "td_move_pp": 16.7
+   },
+   "early": {
+    "t": "2026-11-04T1857Z",
+    "line": 0.5,
+    "odds": {
+     "over": 300,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {},
+    "td_open_odds": 300,
+    "td_move_pp": 0.0
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "td_steam": {
+    "side": "over",
+    "line": 0.5,
+    "odds": 140,
+    "res": "L",
+    "units": -1.0
+   }
+  }
+ },
+ {
+  "game": "Cleveland Browns @ New Orleans Saints",
+  "player": "blake whiteheart",
+  "stat": "anytime_td",
+  "kickoff": "2026-11-08T18:00:00.000Z",
+  "week": 9,
+  "actual": 0.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-08T1759Z",
+    "line": 0.5,
+    "odds": {
+     "over": 800,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {
+     "td_steam": "over"
+    },
+    "td_open_odds": 1400,
+    "td_move_pp": 4.4
+   },
+   "early": {
+    "t": "2026-11-04T1857Z",
+    "line": 0.5,
+    "odds": {
+     "over": 1400,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {},
+    "td_open_odds": 1400,
+    "td_move_pp": 0.0
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "td_steam": {
+    "side": "over",
+    "line": 0.5,
+    "odds": 800,
+    "res": "L",
+    "units": -1.0
+   }
+  }
+ },
+ {
   "game": "New York Giants @ Philadelphia Eagles",
   "player": "jj mccarthy",
   "stat": "pass_yds",
@@ -13268,6 +15014,102 @@
   }
  },
  {
+  "game": "New York Giants @ Philadelphia Eagles",
+  "player": "cam skattebo",
+  "stat": "anytime_td",
+  "kickoff": "2026-11-08T18:00:00.000Z",
+  "week": 9,
+  "actual": 0.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-08T1759Z",
+    "line": 0.5,
+    "odds": {
+     "over": -115,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {
+     "td_steam": "over"
+    },
+    "td_open_odds": 110,
+    "td_move_pp": 5.9
+   },
+   "early": {
+    "t": "2026-11-04T1857Z",
+    "line": 0.5,
+    "odds": {
+     "over": 110,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {},
+    "td_open_odds": 110,
+    "td_move_pp": 0.0
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "td_steam": {
+    "side": "over",
+    "line": 0.5,
+    "odds": -115,
+    "res": "L",
+    "units": -1.0
+   }
+  }
+ },
+ {
+  "game": "New York Giants @ Philadelphia Eagles",
+  "player": "jj mccarthy",
+  "stat": "anytime_td",
+  "kickoff": "2026-11-08T18:00:00.000Z",
+  "week": 9,
+  "actual": 0.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-08T1759Z",
+    "line": 0.5,
+    "odds": {
+     "over": 400,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {
+     "pin_price": "over"
+    },
+    "pin": 0.5,
+    "pin_lim": 500,
+    "fair_over": 0.2135,
+    "edge_pct": 6.77,
+    "td_open_odds": 340,
+    "td_move_pp": -2.7
+   },
+   "early": {
+    "t": "2026-11-04T1857Z",
+    "line": 0.5,
+    "odds": {
+     "over": 350,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {},
+    "td_open_odds": 340,
+    "td_move_pp": -0.5
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "pin_price": {
+    "side": "over",
+    "line": 0.5,
+    "odds": 400,
+    "res": "L",
+    "units": -1.0
+   }
+  }
+ },
+ {
   "game": "New York Jets @ Kansas City Chiefs",
   "player": "patrick mahomes",
   "stat": "pass_tds",
@@ -13510,6 +15352,52 @@
     "side": "over",
     "line": 13.5,
     "odds": -113,
+    "res": "L",
+    "units": -1.0
+   }
+  }
+ },
+ {
+  "game": "New York Jets @ Kansas City Chiefs",
+  "player": "isaiah williams",
+  "stat": "anytime_td",
+  "kickoff": "2026-11-08T18:00:00.000Z",
+  "week": 9,
+  "actual": 0.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-08T1759Z",
+    "line": 0.5,
+    "odds": {
+     "over": 700,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {
+     "td_steam": "over"
+    },
+    "td_open_odds": 1200,
+    "td_move_pp": 4.8
+   },
+   "early": {
+    "t": "2026-11-04T2139Z",
+    "line": 0.5,
+    "odds": {
+     "over": 1200,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {},
+    "td_open_odds": 1200,
+    "td_move_pp": 0.0
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "td_steam": {
+    "side": "over",
+    "line": 0.5,
+    "odds": 700,
     "res": "L",
     "units": -1.0
    }
@@ -14307,6 +16195,52 @@
   }
  },
  {
+  "game": "New York Giants @ Philadelphia Eagles",
+  "player": "joe milton iii",
+  "stat": "anytime_td",
+  "kickoff": "2026-11-08T18:00:00.000Z",
+  "week": 9,
+  "actual": 0.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-08T1759Z",
+    "line": 0.5,
+    "odds": {
+     "over": 380,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {
+     "td_steam": "over"
+    },
+    "td_open_odds": 800,
+    "td_move_pp": 9.7
+   },
+   "early": {
+    "t": "2026-11-05T0513Z",
+    "line": 0.5,
+    "odds": {
+     "over": 800,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {},
+    "td_open_odds": 800,
+    "td_move_pp": 0.0
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "td_steam": {
+    "side": "over",
+    "line": 0.5,
+    "odds": 380,
+    "res": "L",
+    "units": -1.0
+   }
+  }
+ },
+ {
   "game": "Denver Broncos @ Carolina Panthers",
   "player": "mitchell evans",
   "stat": "recv_yds",
@@ -14484,6 +16418,52 @@
     "odds": -113,
     "res": "W",
     "units": 0.885
+   }
+  }
+ },
+ {
+  "game": "Denver Broncos @ Carolina Panthers",
+  "player": "pat bryant",
+  "stat": "anytime_td",
+  "kickoff": "2026-11-08T18:00:00.000Z",
+  "week": 9,
+  "actual": 1.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-08T1759Z",
+    "line": 0.5,
+    "odds": {
+     "over": 360,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {
+     "td_steam": "over"
+    },
+    "td_open_odds": 500,
+    "td_move_pp": 5.1
+   },
+   "early": {
+    "t": "2026-11-05T1725Z",
+    "line": 0.5,
+    "odds": {
+     "over": 500,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {},
+    "td_open_odds": 500,
+    "td_move_pp": 0.0
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "td_steam": {
+    "side": "over",
+    "line": 0.5,
+    "odds": 360,
+    "res": "W",
+    "units": 3.6
    }
   }
  },
@@ -15031,6 +17011,52 @@
     "odds": -113,
     "res": "L",
     "units": -1.0
+   }
+  }
+ },
+ {
+  "game": "Cleveland Browns @ New Orleans Saints",
+  "player": "audric estime",
+  "stat": "anytime_td",
+  "kickoff": "2026-11-08T18:00:00.000Z",
+  "week": 9,
+  "actual": 1.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-08T1759Z",
+    "line": 0.5,
+    "odds": {
+     "over": 230,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {
+     "td_steam": "over"
+    },
+    "td_open_odds": 650,
+    "td_move_pp": 17.0
+   },
+   "early": {
+    "t": "2026-11-05T2101Z",
+    "line": 0.5,
+    "odds": {
+     "over": 650,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {},
+    "td_open_odds": 650,
+    "td_move_pp": 0.0
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "td_steam": {
+    "side": "over",
+    "line": 0.5,
+    "odds": 230,
+    "res": "W",
+    "units": 2.3
    }
   }
  },
@@ -18652,6 +20678,56 @@
  },
  {
   "game": "Houston Texans @ Los Angeles Chargers",
+  "player": "ladd mcconkey",
+  "stat": "anytime_td",
+  "kickoff": "2026-11-08T21:05:00.000Z",
+  "week": 9,
+  "actual": 0.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-08T2104Z",
+    "line": 0.5,
+    "odds": {
+     "over": 330,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {
+     "pin_price": "over"
+    },
+    "pin": 0.5,
+    "pin_lim": 500,
+    "fair_over": 0.2428,
+    "edge_pct": 4.42,
+    "td_open_odds": 300,
+    "td_move_pp": -1.7
+   },
+   "early": {
+    "t": "2026-11-03T2027Z",
+    "line": 0.5,
+    "odds": {
+     "over": 300,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {},
+    "td_open_odds": 300,
+    "td_move_pp": 0.0
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "pin_price": {
+    "side": "over",
+    "line": 0.5,
+    "odds": 330,
+    "res": "L",
+    "units": -1.0
+   }
+  }
+ },
+ {
+  "game": "Houston Texans @ Los Angeles Chargers",
   "player": "kayshon boutte",
   "stat": "receptions",
   "kickoff": "2026-11-08T21:05:00.000Z",
@@ -20872,6 +22948,56 @@
  },
  {
   "game": "Arizona Cardinals @ Seattle Seahawks",
+  "player": "trey mcbride",
+  "stat": "anytime_td",
+  "kickoff": "2026-11-08T21:25:00.000Z",
+  "week": 9,
+  "actual": 0.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-08T2124Z",
+    "line": 0.5,
+    "odds": {
+     "over": 230,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {
+     "pin_price": "over"
+    },
+    "pin": 0.5,
+    "pin_lim": 500,
+    "fair_over": 0.3201,
+    "edge_pct": 5.64,
+    "td_open_odds": 200,
+    "td_move_pp": -3.0
+   },
+   "early": {
+    "t": "2026-11-04T1002Z",
+    "line": 0.5,
+    "odds": {
+     "over": 200,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {},
+    "td_open_odds": 200,
+    "td_move_pp": 0.0
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "pin_price": {
+    "side": "over",
+    "line": 0.5,
+    "odds": 230,
+    "res": "L",
+    "units": -1.0
+   }
+  }
+ },
+ {
+  "game": "Arizona Cardinals @ Seattle Seahawks",
   "player": "drew lock",
   "stat": "pass_yds",
   "kickoff": "2026-11-08T21:25:00.000Z",
@@ -22766,6 +24892,56 @@
  },
  {
   "game": "Tampa Bay Buccaneers @ Chicago Bears",
+  "player": "cade otton",
+  "stat": "anytime_td",
+  "kickoff": "2026-11-09T01:20:00.000Z",
+  "week": 9,
+  "actual": 0.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-09T0119Z",
+    "line": 0.5,
+    "odds": {
+     "over": 420,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {
+     "pin_price": "over"
+    },
+    "pin": 0.5,
+    "pin_lim": 1000,
+    "fair_over": 0.2031,
+    "edge_pct": 5.62,
+    "td_open_odds": 370,
+    "td_move_pp": -2.0
+   },
+   "early": {
+    "t": "2026-11-03T2027Z",
+    "line": 0.5,
+    "odds": {
+     "over": 370,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {},
+    "td_open_odds": 370,
+    "td_move_pp": 0.0
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "pin_price": {
+    "side": "over",
+    "line": 0.5,
+    "odds": 420,
+    "res": "L",
+    "units": -1.0
+   }
+  }
+ },
+ {
+  "game": "Tampa Bay Buccaneers @ Chicago Bears",
   "player": "kalif raymond",
   "stat": "recv_yds",
   "kickoff": "2026-11-09T01:20:00.000Z",
@@ -24314,6 +26490,105 @@
  },
  {
   "game": "Buffalo Bills @ Minnesota Vikings",
+  "player": "justin jefferson",
+  "stat": "anytime_td",
+  "kickoff": "2026-11-10T01:15:00.000Z",
+  "week": 9,
+  "actual": 0.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-10T0114Z",
+    "line": 0.5,
+    "odds": {
+     "over": 130,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {
+     "td_steam": "over"
+    },
+    "pin": 0.5,
+    "pin_lim": 2000,
+    "fair_over": 0.385,
+    "td_open_odds": 175,
+    "td_move_pp": 7.1
+   },
+   "early": {
+    "t": "2026-11-04T1002Z",
+    "line": 0.5,
+    "odds": {
+     "over": 175,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {},
+    "td_open_odds": 175,
+    "td_move_pp": 0.0
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "td_steam": {
+    "side": "over",
+    "line": 0.5,
+    "odds": 130,
+    "res": "L",
+    "units": -1.0
+   }
+  }
+ },
+ {
+  "game": "Buffalo Bills @ Minnesota Vikings",
+  "player": "ray davis",
+  "stat": "anytime_td",
+  "kickoff": "2026-11-10T01:15:00.000Z",
+  "week": 9,
+  "actual": 0.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-10T0114Z",
+    "line": 0.5,
+    "odds": {
+     "over": 1300,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {
+     "pin_price": "over"
+    },
+    "pin": 0.5,
+    "pin_lim": 500,
+    "fair_over": 0.0728,
+    "edge_pct": 1.86,
+    "td_open_odds": 1200,
+    "td_move_pp": -0.5
+   },
+   "early": {
+    "t": "2026-11-04T1002Z",
+    "line": 0.5,
+    "odds": {
+     "over": 1200,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {},
+    "td_open_odds": 1200,
+    "td_move_pp": 0.0
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "pin_price": {
+    "side": "over",
+    "line": 0.5,
+    "odds": 1300,
+    "res": "L",
+    "units": -1.0
+   }
+  }
+ },
+ {
+  "game": "Buffalo Bills @ Minnesota Vikings",
   "player": "carson wentz",
   "stat": "pass_tds",
   "kickoff": "2026-11-10T01:15:00.000Z",
@@ -25061,6 +27336,106 @@
     "odds": -215,
     "res": "W",
     "units": 0.465
+   }
+  }
+ },
+ {
+  "game": "Washington Commanders @ New York Giants",
+  "player": "malik nabers",
+  "stat": "anytime_td",
+  "kickoff": "2026-11-13T01:15:00.000Z",
+  "week": 10,
+  "actual": 0.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-13T0114Z",
+    "line": 0.5,
+    "odds": {
+     "over": 180,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {
+     "pin_price": "over"
+    },
+    "pin": 0.5,
+    "pin_lim": 1000,
+    "fair_over": 0.3603,
+    "edge_pct": 0.89,
+    "td_open_odds": 145,
+    "td_move_pp": -5.1
+   },
+   "early": {
+    "t": "2026-11-09T0709Z",
+    "line": 0.5,
+    "odds": {
+     "over": 145,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {},
+    "td_open_odds": 145,
+    "td_move_pp": 0.0
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "pin_price": {
+    "side": "over",
+    "line": 0.5,
+    "odds": 180,
+    "res": "L",
+    "units": -1.0
+   }
+  }
+ },
+ {
+  "game": "Washington Commanders @ New York Giants",
+  "player": "jj mccarthy",
+  "stat": "anytime_td",
+  "kickoff": "2026-11-13T01:15:00.000Z",
+  "week": 10,
+  "actual": 0.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-13T0114Z",
+    "line": 0.5,
+    "odds": {
+     "over": 490,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {
+     "pin_price": "over"
+    },
+    "pin": 0.5,
+    "pin_lim": 1000,
+    "fair_over": 0.1726,
+    "edge_pct": 1.85,
+    "td_open_odds": 420,
+    "td_move_pp": -2.3
+   },
+   "early": {
+    "t": "2026-11-09T0709Z",
+    "line": 0.5,
+    "odds": {
+     "over": 420,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {},
+    "td_open_odds": 420,
+    "td_move_pp": 0.0
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "pin_price": {
+    "side": "over",
+    "line": 0.5,
+    "odds": 490,
+    "res": "L",
+    "units": -1.0
    }
   }
  },
@@ -26266,6 +28641,55 @@
  {
   "game": "Washington Commanders @ New York Giants",
   "player": "treylon burks",
+  "stat": "anytime_td",
+  "kickoff": "2026-11-13T01:15:00.000Z",
+  "week": 10,
+  "actual": 0.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-13T0114Z",
+    "line": 0.5,
+    "odds": {
+     "over": 340,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {
+     "td_steam": "over"
+    },
+    "pin": 0.5,
+    "pin_lim": 1000,
+    "fair_over": 0.1948,
+    "td_open_odds": 460,
+    "td_move_pp": 4.9
+   },
+   "early": {
+    "t": "2026-11-10T0228Z",
+    "line": 0.5,
+    "odds": {
+     "over": 460,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {},
+    "td_open_odds": 460,
+    "td_move_pp": 0.0
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "td_steam": {
+    "side": "over",
+    "line": 0.5,
+    "odds": 340,
+    "res": "L",
+    "units": -1.0
+   }
+  }
+ },
+ {
+  "game": "Washington Commanders @ New York Giants",
+  "player": "treylon burks",
   "stat": "receptions",
   "kickoff": "2026-11-13T01:15:00.000Z",
   "week": 10,
@@ -26840,6 +29264,155 @@
     "side": "under",
     "line": 90.5,
     "odds": -113,
+    "res": "L",
+    "units": -1.0
+   }
+  }
+ },
+ {
+  "game": "New England Patriots @ Detroit Lions",
+  "player": "amonra st brown",
+  "stat": "anytime_td",
+  "kickoff": "2026-11-15T14:30:00.000Z",
+  "week": 10,
+  "actual": 2.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-15T1429Z",
+    "line": 0.5,
+    "odds": {
+     "over": -135,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {
+     "td_steam": "over"
+    },
+    "pin": 0.5,
+    "pin_lim": 1000,
+    "fair_over": 0.5491,
+    "td_open_odds": -110,
+    "td_move_pp": 5.1
+   },
+   "early": {
+    "t": "2026-11-09T1824Z",
+    "line": 0.5,
+    "odds": {
+     "over": -110,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {},
+    "td_open_odds": -110,
+    "td_move_pp": 0.0
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "td_steam": {
+    "side": "over",
+    "line": 0.5,
+    "odds": -135,
+    "res": "W",
+    "units": 0.741
+   }
+  }
+ },
+ {
+  "game": "New England Patriots @ Detroit Lions",
+  "player": "jameson williams",
+  "stat": "anytime_td",
+  "kickoff": "2026-11-15T14:30:00.000Z",
+  "week": 10,
+  "actual": 0.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-15T1429Z",
+    "line": 0.5,
+    "odds": {
+     "over": 220,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {
+     "pin_price": "over"
+    },
+    "pin": 0.5,
+    "pin_lim": 1000,
+    "fair_over": 0.3165,
+    "edge_pct": 1.28,
+    "td_open_odds": 175,
+    "td_move_pp": -5.1
+   },
+   "early": {
+    "t": "2026-11-09T1824Z",
+    "line": 0.5,
+    "odds": {
+     "over": 175,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {},
+    "td_open_odds": 175,
+    "td_move_pp": 0.0
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "pin_price": {
+    "side": "over",
+    "line": 0.5,
+    "odds": 220,
+    "res": "L",
+    "units": -1.0
+   }
+  }
+ },
+ {
+  "game": "New England Patriots @ Detroit Lions",
+  "player": "drake maye",
+  "stat": "anytime_td",
+  "kickoff": "2026-11-15T14:30:00.000Z",
+  "week": 10,
+  "actual": 0.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-15T1429Z",
+    "line": 0.5,
+    "odds": {
+     "over": 320,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {
+     "pin_price": "over"
+    },
+    "pin": 0.5,
+    "pin_lim": 500,
+    "fair_over": 0.2652,
+    "edge_pct": 11.37,
+    "td_open_odds": 270,
+    "td_move_pp": -3.2
+   },
+   "early": {
+    "t": "2026-11-09T1824Z",
+    "line": 0.5,
+    "odds": {
+     "over": 270,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {},
+    "td_open_odds": 270,
+    "td_move_pp": 0.0
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "pin_price": {
+    "side": "over",
+    "line": 0.5,
+    "odds": 320,
     "res": "L",
     "units": -1.0
    }
@@ -28354,6 +30927,193 @@
   }
  },
  {
+  "game": "Minnesota Vikings @ Green Bay Packers",
+  "player": "justin jefferson",
+  "stat": "anytime_td",
+  "kickoff": "2026-11-15T18:00:00.000Z",
+  "week": 10,
+  "actual": 0.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-15T1759Z",
+    "line": 0.5,
+    "odds": {
+     "over": 130,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {
+     "td_steam": "over"
+    },
+    "pin": 0.5,
+    "pin_lim": 500,
+    "fair_over": 0.4245,
+    "td_open_odds": 165,
+    "td_move_pp": 5.7
+   },
+   "early": {
+    "t": "2026-11-11T0113Z",
+    "line": 0.5,
+    "odds": {
+     "over": 165,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {},
+    "td_open_odds": 165,
+    "td_move_pp": 0.0
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "td_steam": {
+    "side": "over",
+    "line": 0.5,
+    "odds": 130,
+    "res": "L",
+    "units": -1.0
+   }
+  }
+ },
+ {
+  "game": "Minnesota Vikings @ Green Bay Packers",
+  "player": "myles price",
+  "stat": "anytime_td",
+  "kickoff": "2026-11-15T18:00:00.000Z",
+  "week": 10,
+  "actual": 1.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-15T1759Z",
+    "line": 0.5,
+    "odds": {
+     "over": 500,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {
+     "td_steam": "over"
+    },
+    "td_open_odds": 1100,
+    "td_move_pp": 8.3
+   },
+   "early": {
+    "t": "2026-11-11T0113Z",
+    "line": 0.5,
+    "odds": {
+     "over": 1100,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {},
+    "td_open_odds": 1100,
+    "td_move_pp": 0.0
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "td_steam": {
+    "side": "over",
+    "line": 0.5,
+    "odds": 500,
+    "res": "W",
+    "units": 5.0
+   }
+  }
+ },
+ {
+  "game": "Minnesota Vikings @ Green Bay Packers",
+  "player": "tai felton",
+  "stat": "anytime_td",
+  "kickoff": "2026-11-15T18:00:00.000Z",
+  "week": 10,
+  "actual": 0.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-15T1759Z",
+    "line": 0.5,
+    "odds": {
+     "over": 500,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {
+     "td_steam": "over"
+    },
+    "td_open_odds": 1400,
+    "td_move_pp": 10.0
+   },
+   "early": {
+    "t": "2026-11-11T0113Z",
+    "line": 0.5,
+    "odds": {
+     "over": 1400,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {},
+    "td_open_odds": 1400,
+    "td_move_pp": 0.0
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "td_steam": {
+    "side": "over",
+    "line": 0.5,
+    "odds": 500,
+    "res": "L",
+    "units": -1.0
+   }
+  }
+ },
+ {
+  "game": "Minnesota Vikings @ Green Bay Packers",
+  "player": "gavin bartholomew",
+  "stat": "anytime_td",
+  "kickoff": "2026-11-15T18:00:00.000Z",
+  "week": 10,
+  "actual": 1.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-15T1759Z",
+    "line": 0.5,
+    "odds": {
+     "over": 380,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {
+     "td_steam": "over"
+    },
+    "td_open_odds": 2200,
+    "td_move_pp": 16.5
+   },
+   "early": {
+    "t": "2026-11-11T0113Z",
+    "line": 0.5,
+    "odds": {
+     "over": 2200,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {},
+    "td_open_odds": 2200,
+    "td_move_pp": 0.0
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "td_steam": {
+    "side": "over",
+    "line": 0.5,
+    "odds": 380,
+    "res": "W",
+    "units": 3.8
+   }
+  }
+ },
+ {
   "game": "Kansas City Chiefs @ Atlanta Falcons",
   "player": "michael penix jr",
   "stat": "pass_tds",
@@ -29335,6 +32095,147 @@
     "odds": -113,
     "res": "W",
     "units": 0.885
+   }
+  }
+ },
+ {
+  "game": "Kansas City Chiefs @ Atlanta Falcons",
+  "player": "bijan robinson",
+  "stat": "anytime_td",
+  "kickoff": "2026-11-15T18:00:00.000Z",
+  "week": 10,
+  "actual": 1.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-15T1759Z",
+    "line": 0.5,
+    "odds": {
+     "over": -220,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {
+     "td_steam": "over"
+    },
+    "pin": 0.5,
+    "pin_lim": 500,
+    "fair_over": 0.6284,
+    "td_open_odds": -180,
+    "td_move_pp": 4.5
+   },
+   "early": {
+    "t": "2026-11-11T0514Z",
+    "line": 0.5,
+    "odds": {
+     "over": -180,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {},
+    "td_open_odds": -180,
+    "td_move_pp": 0.0
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "td_steam": {
+    "side": "over",
+    "line": 0.5,
+    "odds": -220,
+    "res": "W",
+    "units": 0.455
+   }
+  }
+ },
+ {
+  "game": "Kansas City Chiefs @ Atlanta Falcons",
+  "player": "emmett johnson",
+  "stat": "anytime_td",
+  "kickoff": "2026-11-15T18:00:00.000Z",
+  "week": 10,
+  "actual": 2.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-15T1759Z",
+    "line": 0.5,
+    "odds": {
+     "over": -170,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {
+     "td_steam": "over"
+    },
+    "td_open_odds": 490,
+    "td_move_pp": 46.0
+   },
+   "early": {
+    "t": "2026-11-11T0514Z",
+    "line": 0.5,
+    "odds": {
+     "over": 490,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {},
+    "td_open_odds": 490,
+    "td_move_pp": 0.0
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "td_steam": {
+    "side": "over",
+    "line": 0.5,
+    "odds": -170,
+    "res": "W",
+    "units": 0.588
+   }
+  }
+ },
+ {
+  "game": "Kansas City Chiefs @ Atlanta Falcons",
+  "player": "jaydn ott",
+  "stat": "anytime_td",
+  "kickoff": "2026-11-15T18:00:00.000Z",
+  "week": 10,
+  "actual": 0.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-15T1759Z",
+    "line": 0.5,
+    "odds": {
+     "over": 500,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {
+     "td_steam": "over"
+    },
+    "td_open_odds": 2500,
+    "td_move_pp": 12.8
+   },
+   "early": {
+    "t": "2026-11-11T0514Z",
+    "line": 0.5,
+    "odds": {
+     "over": 2500,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {},
+    "td_open_odds": 2500,
+    "td_move_pp": 0.0
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "td_steam": {
+    "side": "over",
+    "line": 0.5,
+    "odds": 500,
+    "res": "L",
+    "units": -1.0
    }
   }
  },
@@ -32280,6 +35181,148 @@
   }
  },
  {
+  "game": "Houston Texans @ Cleveland Browns",
+  "player": "nico collins",
+  "stat": "anytime_td",
+  "kickoff": "2026-11-15T18:00:00.000Z",
+  "week": 10,
+  "actual": 1.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-15T1759Z",
+    "line": 0.5,
+    "odds": {
+     "over": 180,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {
+     "pin_price": "over"
+    },
+    "pin": 0.5,
+    "pin_lim": 500,
+    "fair_over": 0.3599,
+    "edge_pct": 0.76,
+    "td_open_odds": 175,
+    "td_move_pp": -0.6
+   },
+   "early": {
+    "t": "2026-11-11T2007Z",
+    "line": 0.5,
+    "odds": {
+     "over": 175,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {},
+    "td_open_odds": 175,
+    "td_move_pp": 0.0
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "pin_price": {
+    "side": "over",
+    "line": 0.5,
+    "odds": 180,
+    "res": "W",
+    "units": 1.8
+   }
+  }
+ },
+ {
+  "game": "Houston Texans @ Cleveland Browns",
+  "player": "kayshon boutte",
+  "stat": "anytime_td",
+  "kickoff": "2026-11-15T18:00:00.000Z",
+  "week": 10,
+  "actual": 0.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-15T1759Z",
+    "line": 0.5,
+    "odds": {
+     "over": 470,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {
+     "td_steam": "over"
+    },
+    "td_open_odds": 750,
+    "td_move_pp": 5.8
+   },
+   "early": {
+    "t": "2026-11-11T2007Z",
+    "line": 0.5,
+    "odds": {
+     "over": 750,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {},
+    "td_open_odds": 750,
+    "td_move_pp": 0.0
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "td_steam": {
+    "side": "over",
+    "line": 0.5,
+    "odds": 470,
+    "res": "L",
+    "units": -1.0
+   }
+  }
+ },
+ {
+  "game": "Houston Texans @ Cleveland Browns",
+  "player": "emari demercado",
+  "stat": "anytime_td",
+  "kickoff": "2026-11-15T18:00:00.000Z",
+  "week": 10,
+  "actual": 0.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-15T1759Z",
+    "line": 0.5,
+    "odds": {
+     "over": 600,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {
+     "td_steam": "over"
+    },
+    "td_open_odds": 950,
+    "td_move_pp": 4.8
+   },
+   "early": {
+    "t": "2026-11-11T2007Z",
+    "line": 0.5,
+    "odds": {
+     "over": 950,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {},
+    "td_open_odds": 950,
+    "td_move_pp": 0.0
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "td_steam": {
+    "side": "over",
+    "line": 0.5,
+    "odds": 600,
+    "res": "L",
+    "units": -1.0
+   }
+  }
+ },
+ {
   "game": "Miami Dolphins @ Indianapolis Colts",
   "player": "kyle mccord",
   "stat": "pass_tds",
@@ -32999,6 +36042,56 @@
     "odds": -113,
     "res": "W",
     "units": 0.885
+   }
+  }
+ },
+ {
+  "game": "Miami Dolphins @ Indianapolis Colts",
+  "player": "jonathan taylor",
+  "stat": "anytime_td",
+  "kickoff": "2026-11-15T18:00:00.000Z",
+  "week": 10,
+  "actual": 0.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-15T1759Z",
+    "line": 0.5,
+    "odds": {
+     "over": -110,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {
+     "pin_price": "over"
+    },
+    "pin": 0.5,
+    "pin_lim": 500,
+    "fair_over": 0.5242,
+    "edge_pct": 0.07,
+    "td_open_odds": -120,
+    "td_move_pp": -2.2
+   },
+   "early": {
+    "t": "2026-11-12T0023Z",
+    "line": 0.5,
+    "odds": {
+     "over": -120,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {},
+    "td_open_odds": -120,
+    "td_move_pp": 0.0
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "pin_price": {
+    "side": "over",
+    "line": 0.5,
+    "odds": -110,
+    "res": "L",
+    "units": -1.0
    }
   }
  },
@@ -35985,6 +39078,52 @@
   }
  },
  {
+  "game": "Kansas City Chiefs @ Atlanta Falcons",
+  "player": "nate carter",
+  "stat": "anytime_td",
+  "kickoff": "2026-11-15T18:00:00.000Z",
+  "week": 10,
+  "actual": 0.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-15T1759Z",
+    "line": 0.5,
+    "odds": {
+     "over": 1000,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {
+     "td_steam": "over"
+    },
+    "td_open_odds": 2000,
+    "td_move_pp": 4.3
+   },
+   "early": {
+    "t": "2026-11-14T2000Z",
+    "line": 0.5,
+    "odds": {
+     "over": 2000,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {},
+    "td_open_odds": 2000,
+    "td_move_pp": 0.0
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "td_steam": {
+    "side": "over",
+    "line": 0.5,
+    "odds": 1000,
+    "res": "L",
+    "units": -1.0
+   }
+  }
+ },
+ {
   "game": "Jacksonville Jaguars @ Tennessee Titans",
   "player": "tony pollard",
   "stat": "receptions",
@@ -38355,6 +41494,52 @@
     "odds": -194,
     "res": "W",
     "units": 0.515
+   }
+  }
+ },
+ {
+  "game": "Los Angeles Rams @ Arizona Cardinals",
+  "player": "cj daniels",
+  "stat": "anytime_td",
+  "kickoff": "2026-11-15T21:05:00.000Z",
+  "week": 10,
+  "actual": 0.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-15T2104Z",
+    "line": 0.5,
+    "odds": {
+     "over": 500,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {
+     "td_steam": "over"
+    },
+    "td_open_odds": 900,
+    "td_move_pp": 6.7
+   },
+   "early": {
+    "t": "2026-11-12T0554Z",
+    "line": 0.5,
+    "odds": {
+     "over": 900,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {},
+    "td_open_odds": 900,
+    "td_move_pp": 0.0
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "td_steam": {
+    "side": "over",
+    "line": 0.5,
+    "odds": 500,
+    "res": "L",
+    "units": -1.0
    }
   }
  },
@@ -41233,6 +44418,55 @@
  },
  {
   "game": "Pittsburgh Steelers @ Cincinnati Bengals",
+  "player": "joe burrow",
+  "stat": "anytime_td",
+  "kickoff": "2026-11-16T01:20:00.000Z",
+  "week": 10,
+  "actual": 0.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-16T0119Z",
+    "line": 0.5,
+    "odds": {
+     "over": 470,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {
+     "td_steam": "over"
+    },
+    "pin": 0.5,
+    "pin_lim": 250,
+    "fair_over": 0.17,
+    "td_open_odds": 750,
+    "td_move_pp": 5.8
+   },
+   "early": {
+    "t": "2026-11-10T1842Z",
+    "line": 0.5,
+    "odds": {
+     "over": 700,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {},
+    "td_open_odds": 750,
+    "td_move_pp": 0.7
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "td_steam": {
+    "side": "over",
+    "line": 0.5,
+    "odds": 470,
+    "res": "L",
+    "units": -1.0
+   }
+  }
+ },
+ {
+  "game": "Pittsburgh Steelers @ Cincinnati Bengals",
   "player": "pat freiermuth",
   "stat": "recv_yds",
   "kickoff": "2026-11-16T01:20:00.000Z",
@@ -42872,6 +46106,352 @@
     "odds": -113,
     "res": "W",
     "units": 0.885
+   }
+  }
+ },
+ {
+  "game": "Los Angeles Chargers @ Baltimore Ravens",
+  "player": "omarion hampton",
+  "stat": "anytime_td",
+  "kickoff": "2026-11-17T01:15:00.000Z",
+  "week": 10,
+  "actual": 1.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-17T0114Z",
+    "line": 0.5,
+    "odds": {
+     "over": 300,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {
+     "pin_price": "over"
+    },
+    "pin": 0.5,
+    "pin_lim": 500,
+    "fair_over": 0.2539,
+    "edge_pct": 1.55,
+    "td_open_odds": 310,
+    "td_move_pp": 0.6
+   },
+   "early": {
+    "t": "2026-11-11T1907Z",
+    "line": 0.5,
+    "odds": {
+     "over": 300,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {},
+    "td_open_odds": 310,
+    "td_move_pp": 0.6
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "pin_price": {
+    "side": "over",
+    "line": 0.5,
+    "odds": 300,
+    "res": "W",
+    "units": 3.0
+   }
+  }
+ },
+ {
+  "game": "Los Angeles Chargers @ Baltimore Ravens",
+  "player": "mark andrews",
+  "stat": "anytime_td",
+  "kickoff": "2026-11-17T01:15:00.000Z",
+  "week": 10,
+  "actual": 0.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-17T0114Z",
+    "line": 0.5,
+    "odds": {
+     "over": 370,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {
+     "pin_price": "over"
+    },
+    "pin": 0.5,
+    "pin_lim": 1000,
+    "fair_over": 0.2131,
+    "edge_pct": 0.16,
+    "td_open_odds": 350,
+    "td_move_pp": -0.9
+   },
+   "early": {
+    "t": "2026-11-11T1907Z",
+    "line": 0.5,
+    "odds": {
+     "over": 350,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {},
+    "td_open_odds": 350,
+    "td_move_pp": 0.0
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "pin_price": {
+    "side": "over",
+    "line": 0.5,
+    "odds": 370,
+    "res": "L",
+    "units": -1.0
+   }
+  }
+ },
+ {
+  "game": "Los Angeles Chargers @ Baltimore Ravens",
+  "player": "jakobi lane",
+  "stat": "anytime_td",
+  "kickoff": "2026-11-17T01:15:00.000Z",
+  "week": 10,
+  "actual": 0.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-17T0114Z",
+    "line": 0.5,
+    "odds": {
+     "over": 480,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {
+     "pin_price": "over"
+    },
+    "pin": 0.5,
+    "pin_lim": 500,
+    "fair_over": 0.1818,
+    "edge_pct": 5.45,
+    "td_open_odds": 380,
+    "td_move_pp": -3.6
+   },
+   "early": {
+    "t": "2026-11-11T1907Z",
+    "line": 0.5,
+    "odds": {
+     "over": 390,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {},
+    "td_open_odds": 380,
+    "td_move_pp": -0.4
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "pin_price": {
+    "side": "over",
+    "line": 0.5,
+    "odds": 480,
+    "res": "L",
+    "units": -1.0
+   }
+  }
+ },
+ {
+  "game": "Los Angeles Chargers @ Baltimore Ravens",
+  "player": "justice hill",
+  "stat": "anytime_td",
+  "kickoff": "2026-11-17T01:15:00.000Z",
+  "week": 10,
+  "actual": 0.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-17T0114Z",
+    "line": 0.5,
+    "odds": {
+     "over": 460,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {
+     "pin_price": "over"
+    },
+    "pin": 0.5,
+    "pin_lim": 500,
+    "fair_over": 0.1819,
+    "edge_pct": 1.84,
+    "td_open_odds": 380,
+    "td_move_pp": -3.0
+   },
+   "early": {
+    "t": "2026-11-11T1907Z",
+    "line": 0.5,
+    "odds": {
+     "over": 390,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {},
+    "td_open_odds": 380,
+    "td_move_pp": -0.4
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "pin_price": {
+    "side": "over",
+    "line": 0.5,
+    "odds": 460,
+    "res": "L",
+    "units": -1.0
+   }
+  }
+ },
+ {
+  "game": "Los Angeles Chargers @ Baltimore Ravens",
+  "player": "ladd mcconkey",
+  "stat": "anytime_td",
+  "kickoff": "2026-11-17T01:15:00.000Z",
+  "week": 10,
+  "actual": 0.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-17T0114Z",
+    "line": 0.5,
+    "odds": {
+     "over": 330,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {
+     "td_steam": "over"
+    },
+    "td_open_odds": 440,
+    "td_move_pp": 4.7
+   },
+   "early": {
+    "t": "2026-11-11T1907Z",
+    "line": 0.5,
+    "odds": {
+     "over": 440,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {},
+    "td_open_odds": 440,
+    "td_move_pp": 0.0
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "td_steam": {
+    "side": "over",
+    "line": 0.5,
+    "odds": 330,
+    "res": "L",
+    "units": -1.0
+   }
+  }
+ },
+ {
+  "game": "Los Angeles Chargers @ Baltimore Ravens",
+  "player": "kimani vidal",
+  "stat": "anytime_td",
+  "kickoff": "2026-11-17T01:15:00.000Z",
+  "week": 10,
+  "actual": 0.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-17T0114Z",
+    "line": 0.5,
+    "odds": {
+     "over": 490,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {
+     "pin_price": "over"
+    },
+    "pin": 0.5,
+    "pin_lim": 500,
+    "fair_over": 0.1755,
+    "edge_pct": 3.53,
+    "td_open_odds": 480,
+    "td_move_pp": -0.3
+   },
+   "early": {
+    "t": "2026-11-11T1907Z",
+    "line": 0.5,
+    "odds": {
+     "over": 480,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {},
+    "td_open_odds": 480,
+    "td_move_pp": 0.0
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "pin_price": {
+    "side": "over",
+    "line": 0.5,
+    "odds": 490,
+    "res": "L",
+    "units": -1.0
+   }
+  }
+ },
+ {
+  "game": "Los Angeles Chargers @ Baltimore Ravens",
+  "player": "keaton mitchell",
+  "stat": "anytime_td",
+  "kickoff": "2026-11-17T01:15:00.000Z",
+  "week": 10,
+  "actual": 0.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-17T0114Z",
+    "line": 0.5,
+    "odds": {
+     "over": 600,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {
+     "pin_price": "over"
+    },
+    "pin": 0.5,
+    "pin_lim": 500,
+    "fair_over": 0.1438,
+    "edge_pct": 0.64,
+    "td_open_odds": 550,
+    "td_move_pp": -1.1
+   },
+   "early": {
+    "t": "2026-11-11T1907Z",
+    "line": 0.5,
+    "odds": {
+     "over": 550,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {},
+    "td_open_odds": 550,
+    "td_move_pp": 0.0
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "pin_price": {
+    "side": "over",
+    "line": 0.5,
+    "odds": 600,
+    "res": "L",
+    "units": -1.0
    }
   }
  },
