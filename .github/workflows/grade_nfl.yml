@@ -279,8 +279,9 @@ jobs:
               their DIRECTION from the opener, so a wrong opener does not just scale the move --
               it can reverse it.
 
-              SBR's archived page is the spread/moneyline view, so totals have no opener here yet;
-              those fall back to first-seen and are flagged `open_src: "first_seen"`.
+              SBR's archived page is the SPREAD view only: homeOdds is the juice on the spread,
+              not a moneyline, and total is null throughout. So totals AND moneylines have no true
+              opener here; both fall back to first-seen, flagged `open_src: "first_seen"`.
               """
               out, cur = {}, collections.defaultdict(dict)
               for p in sorted(glob.glob(R("raw", "sbr", "*", "*"))):
@@ -303,8 +304,16 @@ jobs:
                           k = f"{a} @ {h}"
                           rec = out.setdefault(k, {})
                           if ol.get("homeSpread") is not None: rec.setdefault("spread", ol["homeSpread"])
-                          if ol.get("homeOdds") is not None:   rec.setdefault("moneyline", ol["homeOdds"])
                           if ol.get("total") is not None:      rec.setdefault("total", ol["total"])
+                          # NOT ol["homeOdds"] for the moneyline. This page is the SPREAD view:
+                          # every row carries homeSpread with homeOdds beside it as the JUICE ON
+                          # THAT SPREAD, and total is null throughout. Reading homeOdds as a
+                          # moneyline opener gave every NFL game an "opening moneyline" of -110,
+                          # -108 or -112 -- KC@ATL stored 100 while Pinnacle actually ran
+                          # 170 -> 160 -- so follow_move fired 41 times on moneylines measuring
+                          # a price move against a spread's vig. SBR has no moneyline opener in
+                          # this scrape, so moneylines fall back to first-seen (a real moneyline
+                          # price) and say so via open_src, same as totals already did.
                           # every book's CURRENT number at this snapshot, for consensus and lag
                           snap = {}
                           for ov in (gr.get("oddsViews") or []):
@@ -410,6 +419,15 @@ jobs:
                    "open_src": "first_seen", "calls": {}}
               if true_open is not None:
                   r["open"], r["open_src"] = true_open, "sbr_open"
+              # Both sides of the opener. read() works off the s0 (home/over) series and the
+              # board prints those scalars beside whichever side the lean is on, so an away
+              # lean was shown the HOME opening number. Same family as pin_side and the FLAGGED
+              # table's two-book row.
+              _g0 = next((x for x in B if x[1] is not None), None)
+              r["open_side"] = {s0: r["open"],
+                                s1: (-r["open"] if (mkt == "spread" and r["open"] is not None)
+                                     else r["open"] if mkt in ("total", "tt_home", "tt_away")
+                                     else (_g0[1] if _g0 else None))}
 
               # --- follow_move. spread: s0 (home) value FALLING = market moving toward home.
               #     total: value RISING = moving toward over.
@@ -484,7 +502,20 @@ jobs:
               if prow:
                   p = pin_at(prow, mkt, s0, t)
                   if p and p[3] is not None:
+                      # Pinnacle's number for BOTH sides. r["pin"] is the s0 (home/over) side,
+                      # and the board prints it beside whichever side the lean is on -- for an
+                      # away moneyline lean that showed Pinnacle's HOME price, so SPC@MASSL read
+                      # "FD +176, Pin -218" as if FanDuel were offering a dog price on a side
+                      # Pinnacle had at -218. Same side-confusion as the FLAGGED table printed
+                      # with two books; third instance of this family. Store the other side too
+                      # and let the board pick the one it is actually talking about.
                       r["pin"], r["pin_price"], r["pin_lim"] = p[3], p[4], p[5]
+                      _q = pin_at(prow, mkt, s1, t)
+                      r["pin_side"] = {s0: p[3],
+                                       s1: (_q[3] if _q and _q[3] is not None else
+                                            (-p[3] if mkt == "spread" else
+                                             p[3] if mkt in ("total", "tt_home", "tt_away")
+                                             else None))}
                       q = pin_at(prow, mkt, s1, t)
                       if q and q[4] is not None: r["pin_price_other"] = q[4]
                       if mkt == "moneyline":
@@ -1031,7 +1062,8 @@ jobs:
                       dec_ = row["W"] + row["L"]
                       if per == "fwd" and dec_ < MIN_N:
                           continue          # not enough forward evidence yet -- keep the fit weight
-                      W[(sig, mk)] = (round(row.get("edge_pts") or 0.0, 1), dec_, per)
+                      W[(sig, mk)] = (round(row.get("edge_pts") or 0.0, 1),
+                                      round(row.get("roi_pct") or 0.0, 1), dec_, per)
 
               def wt(sig, mkt):
                   """A signal's weight is its base-rate-corrected edge IN THIS MARKET, shrunk toward
@@ -1046,16 +1078,32 @@ jobs:
                   Shrinkage handles both without an arbitrary line: 10-1 keeps about a third of its
                   apparent edge, a 66-game record keeps about three quarters, and a market with no
                   record of its own borrows the pooled number under the same discount."""
-                  e_m, n_m, _p = W.get((sig, mkt), (0.0, 0, "fit"))
-                  if n_m == 0:
-                      e_m, n_m, _p = W.get((sig, "both"), (0.0, 0, "fit"))
-                  return round(e_m * n_m / (n_m + SHRINK_K), 1) if n_m else 0.0
+                  v = W.get((sig, mkt))
+                  if not v or v[2] == 0:
+                      v = W.get((sig, "both"))
+                  if not v or v[2] == 0:
+                      return 0.0
+                  e_m, roi_m, n_m, _p = v
+                  # WEIGHT BY ROI, NOT BY HIT-RATE EDGE, and require BOTH to be positive.
+                  #
+                  # Hit-rate edge was the right correction to raw win rate, but it is the wrong
+                  # CURRENCY once prices vary. On spreads and totals everything is near -110, so
+                  # edge and ROI rank the same and the difference never showed. On moneylines
+                  # they come apart completely: money_level on CBB moneylines is 312-113, hit
+                  # 73.4% against a 69.8% base rate -- edge +3.6, so it earned positive weight --
+                  # while returning -3.5% and -14.87 units, because it is laying -880 favourites.
+                  # On 2026-11-17 that ranked a -880 chalk moneyline as the best play on the
+                  # board. A signal has to beat its base rate AND make money; ROI alone could be
+                  # flattered by a sample where one side simply kept winning, and edge alone is
+                  # blind to price, so neither test is dropped.
+                  w_ = roi_m if (roi_m <= 0 or e_m >= 0) else 0.0
+                  return round(w_ * n_m / (n_m + SHRINK_K), 1) if n_m else 0.0
 
               def wt_src(sig, mkt):
                   """"fit" or "fwd" -- which period that weight came from, shown on the board so
                   a lean built on fitted numbers is never mistaken for a tested one."""
                   v = W.get((sig, mkt)) or W.get((sig, "both"))
-                  return v[2] if v else "fit"
+                  return v[3] if v else "fit"
 
               def score(calls, side, mkt):
                   keep = {g_ for g_ in calls if SUB.get(g_) not in calls}
@@ -1064,10 +1112,13 @@ jobs:
                   return round(pos - neg, 1)
 
               def band(sc):
-                  return ("A  weighted edge >= +10" if sc >= 10 else
-                          "B  weighted edge +5 to +10" if sc >= 5 else
-                          "C  weighted edge 0 to +5" if sc > 0 else
-                          "D  no weighted edge (agreement is all unproven or negative signals)")
+                  # Thresholds doubled with the switch from edge points to ROI %: at -110,
+                  # ROI = 1.909p - 1, so a 5-point hit-rate edge is about +9.6% ROI. Same bands,
+                  # restated in the new currency.
+                  return ("A  weighted ROI >= +20%" if sc >= 20 else
+                          "B  weighted ROI +10% to +20%" if sc >= 10 else
+                          "C  weighted ROI 0 to +10%" if sc > 0 else
+                          "D  no weighted edge (agreement is all unproven or money-losing signals)")
 
               groups = collections.defaultdict(list)
               for g in upcoming:
@@ -1078,9 +1129,13 @@ jobs:
                       side, n = tally.most_common(1)[0]
                       sc = score(r["calls"], side, mkt)
                       groups[band(sc)].append((g, mkt, r, side, sc, n, len(r["calls"]) - n))
-              L += ["Ranked by **weighted edge**: each agreeing signal contributes its own",
-                    f"base-rate-corrected edge, and contributes nothing until it has {MIN_N} decided",
-                    "outcomes. Raw agreement count is shown too, but it is the weaker number — a",
+              L += ["Ranked by **weighted ROI**: each agreeing signal contributes its own return per",
+                    "unit risked, and contributes nothing until it has 30 decided outcomes. A signal",
+                    "earns positive weight only if it **both** beats its own base rate and makes",
+                    "money. Hit-rate edge alone is blind to price — `money_level` on CBB moneylines",
+                    "beats its base rate by 3.6 points while returning −3.5%, because it lays −880",
+                    "favourites, and on 2026-11-17 that ranked a −880 chalk first on the board.",
+                    "Raw agreement count is shown too, but it is the weaker number — a",
                     "market can have seven signals agreeing where four of them have losing records.",
                     "",
                     "Each call shows **two** records: `fit` (the games the signal was chosen on —",
@@ -1091,7 +1146,7 @@ jobs:
                     ""]
               for b in sorted(groups):
                   L += [f"## {b}", "",
-                        "| kickoff (ET) | game | market | lean | wt edge | raw | FD now | open | move | "
+                        "| kickoff (ET) | game | market | lean | wt ROI | raw | FD now | open | move | "
                         "Pin | gap | public | tix / money (lean) | bets | calls |",
                         "|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|"]
                   for g, mkt, r, side, sc, nag, nag_ag in sorted(
@@ -1102,9 +1157,11 @@ jobs:
                       for sig, sd in r["calls"].items():
                           parts.append(f"{sig}->{sd} ({rec2(sig, mkt)}"
                                        + ("*)" if wt_src(sig, mkt) == "fwd" else ")"))
-                      pin = (f"{r['pin']:g} (${r['pin_lim']:,.0f})"
-                             if r.get("pin") is not None and r.get("pin_lim") else "")
-                      op = f"{r['open']:g}" if r.get("open") is not None else ""
+                      pv = (r.get("pin_side") or {}).get(side, r.get("pin"))
+                      pin = (f"{pv:g} (${r['pin_lim']:,.0f})"
+                             if pv is not None and r.get("pin_lim") else "")
+                      ov = (r.get("open_side") or {}).get(side, r.get("open"))
+                      op = f"{ov:g}" if ov is not None else ""
                       mv = f"{r['move_pts']:g}" if r.get("move_pts") else ""
                       gap = f"{r['pin_gap']:+g}" if r.get("pin_gap") is not None else ""
                       pub = (f"{r['public_side']} {r['public_tix']}%" if r.get("public_side") else "")
