@@ -32,6 +32,7 @@ jobs:
         run: |
           python3 - . <<'PY'
 
+
           #!/usr/bin/env python3
           """Propwatch NFL grader + board. Stdlib only. Runs on a GitHub Actions runner.
 
@@ -92,8 +93,8 @@ jobs:
           SHRINK_K = 25         # a signal's edge is shrunk toward zero by n/(n+K)
           BREAKEVEN = 0.524            # -110
           PUBLIC_MIN = 60              # tickets% needed before a side counts as "the public side"
-          SIGNALS = ("pin_rlm", "follow_move", "rlm", "rlm_ratio", "money_level", "sharp_gap",
-                     "money_moving", "pin_value", "book_lag", "consensus_gap")
+          SIGNALS = ("pin_rlm", "pre_move", "follow_move", "rlm", "rlm_ratio", "money_level",
+                     "sharp_gap", "money_moving", "pin_value", "book_lag", "consensus_gap")
           # rlm_ratio is the conjunction, not a single variable. Measured on 1,862 CBB
           # side-observations: a minority-ticket side wins 42.9% on its own and 37.6% if you add a
           # high money/ticket ratio WITHOUT line confirmation -- i.e. "few tickets, big money" is a
@@ -102,6 +103,12 @@ jobs:
           # means nothing until the number moves against the crowd to confirm it.
           RLM_TIX_MAX = 45      # that side holds under this share of tickets
           RLM_RATIO_MIN = 1.2   # its money share is at least this multiple of its ticket share
+          # pre_move is rlm_ratio's mirror image and the system's stated goal stated as a signal:
+          # the money is on the minority-ticket side at an outsized ratio and the number has NOT
+          # moved yet. rlm_ratio pays you for recognising a move that already happened; pre_move
+          # claims the move is still coming. It is the harder and more valuable claim, and until
+          # now it has only ever been eyeballed into a card by hand -- never graded. CLV is the
+          # direct test of it: if the thesis is right, the number should come to you.
           # pin_rlm is the strongest form of the same idea. `rlm` and `rlm_ratio` read FanDuel's
           # own number moving, which is a retail book reacting to its own flow. pin_rlm requires
           # PINNACLE -- the book taking $75k a side and not limiting winners -- to have moved its
@@ -110,6 +117,20 @@ jobs:
           # sampling (2026-11-12): before that it was observed once an hour against FanDuel's ten
           # minutes, so most Pinnacle moves were invisible.
           LAG_BOOKS = 5        # of 8 SBR books that must have moved before FanDuel counts as stale
+          # ---------------------------------------------------------------------------
+          # HOLDOUT. Every signal in this file, every threshold in it, and every
+          # PROMOTE/DROP label the scorecard has ever printed was chosen while looking at
+          # games that kicked off before this date. Measuring those choices on the same
+          # games is grading the exam you studied from: pin_value was 108-68 in CBB first
+          # halves and 10-1 on NFL spreads, and both of those numbers were fitted and
+          # scored on one sample. So every record below is reported twice --
+          #   fit  games before HOLDOUT_FROM. In-sample. A label here is a HYPOTHESIS.
+          #   fwd  games on or after it. Out-of-sample. A label here is EVIDENCE.
+          # Nothing may be added to the fit period. If a threshold is ever changed, this
+          # date moves forward to the day of the change and the forward test restarts --
+          # that is the whole point, and it is the only cost of fiddling with the engine.
+          HOLDOUT_FROM = "2026-11-17"
+          # ---------------------------------------------------------------------------
           # NFL volumes run 2k-120k bets a game, and Pinnacle NFL limits run $3k-$75k.
           NB_BUCKETS = ((0, 10000, "<10k bets"), (10000, 40000, "10-40k bets"), (40000, 10**9, "40k+ bets"))
           LIM_BUCKETS = ((0, 10000, "pin limit <$10k"), (10000, 50000, "pin $10-50k"),
@@ -428,6 +449,18 @@ jobs:
                       if t_ < RLM_TIX_MAX and ratio >= RLM_RATIO_MIN:
                           r["calls"]["rlm_ratio"] = moved_to
 
+              # --- pre_move: money is on the minority-ticket side at an outsized ratio and the
+              #     number has NOT moved yet. The claim is that the move is still to come, which
+              #     is the opposite of rlm_ratio and is what "get the line before it moves" means.
+              if None not in (a[3], b[3], a[4], b[4]) and r.get("open") is not None:
+                  line_static = (a[1] == r["open"])
+                  for sd_, t_, m_ in ((s0, a[3], a[4]), (s1, b[3], b[4])):
+                      if not t_: continue
+                      if line_static and t_ < RLM_TIX_MAX and (m_ / t_) >= RLM_RATIO_MIN:
+                          r["calls"]["pre_move"] = sd_
+                          r["pre_move_tix"] = t_
+                          r["pre_move_ratio"] = round(m_ / t_, 2)
+
               if a[4] is not None and b[4] is not None and a[4] != b[4]:
                   r["calls"]["money_level"] = s0 if a[4] > b[4] else s1
               if None not in (a[3], a[4], b[3], b[4]):
@@ -484,6 +517,23 @@ jobs:
                           if pin_to:
                               r["pin_open"] = p0[3]
                               r["pin_moved_to"] = pin_to
+                              # Pinnacle's own before/after ON THE FLAGGED SIDE. p0/p are the s0
+                              # (home/over) row, so without this the board had two ways to lie:
+                              # it printed FanDuel's current number next to Pinnacle's opening
+                              # number ("KC@ATL moneyline 144 from 170" -- 144 was FanDuel, 170
+                              # was Pinnacle, whose real move was 170 -> 160), and when the
+                              # flagged side was the away/under it quoted the home/over price.
+                              if pin_to == s0:
+                                  r["pin_mv_from"], r["pin_mv_to"] = p0[3], p[3]
+                              elif mkt == "moneyline":
+                                  q0 = next((z for z in prow if z[1] == mkt and z[2] == s1
+                                             and z[4] is not None), None)
+                                  r["pin_mv_from"] = q0[4] if q0 else None
+                                  r["pin_mv_to"] = q[4] if (q and q[4] is not None) else None
+                              elif mkt == "spread":
+                                  r["pin_mv_from"], r["pin_mv_to"] = -p0[3], -p[3]
+                              else:                       # total / team total: same number, other side
+                                  r["pin_mv_from"], r["pin_mv_to"] = p0[3], p[3]
                               tix = {s0: a[3], s1: b[3]}
                               mny = {s0: a[4], s1: b[4]}
                               pub = max(tix, key=lambda k: tix[k])
@@ -618,11 +668,22 @@ jobs:
               return graded, upcoming, unmatched
 
 
-          def base_rates(graded):
+          def period_of(g):
+              """fit = chosen-on, fwd = tested-on. See HOLDOUT_FROM."""
+              return "fwd" if (g.get("kickoff") or "")[:10] >= HOLDOUT_FROM else "fit"
+
+
+          def base_rates(graded, period=None):
               """How often the default side (favourite / over) actually won, measured on this
-              sample. This is what a signal's hit rate has to beat, not 50%."""
+              sample. This is what a signal's hit rate has to beat, not 50%.
+
+              Measured PER PERIOD. Scoring the forward test against the fit period's chalk
+              rate would import exactly the bias the holdout exists to remove: the fit
+              window ran 65.9% favourites, and a signal that is structurally long favourites
+              would look like it had found something the moment dogs started covering."""
               nf = nw = no = ow = nm_ = mw = nt = tw = 0
               for g in graded:
+                  if period and period_of(g) != period: continue
                   for mkt, m in g["markets"].items():
                       cl = m.get("close")
                       if not cl: continue
@@ -649,20 +710,24 @@ jobs:
                       "tt_over_rate": (tw / nt) if nt else 0.5, "tt_n": nt}
 
 
-          def summarize(graded, br):
+          def summarize(graded, brs):
+              """brs maps period -> base rates, for "all", "fit" and "fwd"."""
               def blank(): return {"n": 0, "W": 0, "L": 0, "P": 0, "units": 0.0, "clv": [],
                                    "fav": 0, "dec": 0, "exp": 0.0}
               S = collections.defaultdict(blank)
               for g in graded:
+                  per = period_of(g)
                   for mkt, m in g["markets"].items():
                       for cp in ("early", "close"):
                           gr = m.get(cp + "_graded") or {}
                           r = m.get(cp) or {}
                           tags = ["all", bucket(r.get("nb"), NB_BUCKETS), bucket(r.get("pin_lim"), LIM_BUCKETS)]
-                          rate = (br["spread_fav_rate"] if mkt == "spread" else
-                                  br["ml_fav_rate"] if mkt == "moneyline" else
-                                  br["tt_over_rate"] if mkt.startswith("tt_") else
-                                  br["total_over_rate"])
+                          def rate_for(p):
+                              br = brs[p]
+                              return (br["spread_fav_rate"] if mkt == "spread" else
+                                      br["ml_fav_rate"] if mkt == "moneyline" else
+                                      br["tt_over_rate"] if mkt.startswith("tt_") else
+                                      br["total_over_rate"])
                           # singles, then every PAIR of signals that agree on a side. Signals are
                           # not independent bets -- they are evidence, and evidence combines. Two
                           # that each look like nothing alone can be worth something together:
@@ -676,19 +741,24 @@ jobs:
                               for tag in tags:
                                   if not tag: continue
                                   for mk in (mkt, "both"):
-                                      s = S[(sig, cp, mk, tag)]
-                                      s["n"] += 1; s[x["res"]] += 1; s["units"] += x["units"]
-                                      if "clv" in x: s["clv"].append(x["clv"])
-                                      if x["res"] != "P" and x.get("took_fav") is not None:
-                                          s["dec"] += 1
-                                          s["fav"] += bool(x["took_fav"])
-                                          s["exp"] += rate if x["took_fav"] else (1 - rate)
+                                      # "all" keeps the pooled view; the period keys are the
+                                      # fit/forward split and are the ones that carry meaning.
+                                      for pr in ("all", per):
+                                          s = S[(sig, cp, mk, tag, pr)]
+                                          rate = rate_for(pr)
+                                          s["n"] += 1; s[x["res"]] += 1; s["units"] += x["units"]
+                                          if "clv" in x: s["clv"].append(x["clv"])
+                                          if x["res"] != "P" and x.get("took_fav") is not None:
+                                              s["dec"] += 1
+                                              s["fav"] += bool(x["took_fav"])
+                                              s["exp"] += rate if x["took_fav"] else (1 - rate)
               out = []
-              for (sig, cp, mk, tag), s in S.items():
+              for (sig, cp, mk, tag, pr), s in S.items():
                   dec = s["W"] + s["L"]
                   hit = s["W"] / dec if dec else None
                   z = (s["W"] - dec * BREAKEVEN) / math.sqrt(dec * 0.25) if dec else None
-                  row = {"signal": sig, "checkpoint": cp, "market": mk, "slice": tag, "n": s["n"],
+                  row = {"signal": sig, "checkpoint": cp, "market": mk, "slice": tag,
+                         "period": pr, "n": s["n"],
                          "W": s["W"], "L": s["L"], "P": s["P"],
                          "hit_pct": round(100 * hit, 1) if hit is not None else None,
                          "units": round(s["units"], 2),
@@ -705,30 +775,38 @@ jobs:
                       row["clv_pos_pct"] = round(100 * sum(1 for x in c if x > 0) / len(c), 1)
                   e = row.get("edge_pts")
                   if dec >= MIN_N:
-                      row["proposal"] = (
+                      verdict = (
                           "PROMOTE: beats break-even and its own base rate" if z >= 1.5 and (e or 0) >= 5 else
                           "beats break-even but not its base rate -- directional bias, not signal"
                           if z >= 1.5 else
                           "INVERT candidate: wrong well beyond its base rate" if (e or 0) <= -15 else
                           "DROP: below break-even" if z <= -1.5 else "no edge shown yet")
+                      # A verdict reached on the data the signal was built from is a hypothesis
+                      # about the future, not a finding about it. Only the forward period can
+                      # confirm one, so the fit period's labels say so out loud.
+                      row["proposal"] = (f"HYPOTHESIS (in-sample) -- {verdict}" if pr == "fit"
+                                         else verdict)
                   else:
                       row["proposal"] = f"keep collecting ({dec}/{MIN_N})"
                   out.append(row)
               # mark pairs that merely restate a component: same W-L as one of its own halves
-              single = {(r["signal"], r["checkpoint"], r.get("market"), r["slice"]): (r["W"], r["L"])
-                        for r in out if "+" not in r["signal"]}
+              single = {(r["signal"], r["checkpoint"], r.get("market"), r["slice"], r["period"]):
+                        (r["W"], r["L"]) for r in out if "+" not in r["signal"]}
               for r in out:
                   if "+" not in r["signal"]: continue
                   a, b = r["signal"].split("+", 1)
                   rec_ = (r["W"], r["L"])
                   for comp in (a, b):
-                      if single.get((comp, r["checkpoint"], r.get("market"), r["slice"])) == rec_:
+                      if single.get((comp, r["checkpoint"], r.get("market"),
+                                     r["slice"], r["period"])) == rec_:
                           r["redundant_with"] = comp
                           r["proposal"] = f"redundant -- identical record to {comp} alone, not independent confirmation"
                           break
 
               order = {s: i for i, s in enumerate(SIGNALS)}
-              out.sort(key=lambda r: (r["slice"] != "all", r["market"] != "both", r["checkpoint"],
+              perord = {"all": 0, "fit": 1, "fwd": 2}
+              out.sort(key=lambda r: (perord.get(r["period"], 9), r["slice"] != "all",
+                                      r["market"] != "both", r["checkpoint"],
                                       "+" in r["signal"], order.get(r["signal"], 9),
                                       r["market"], r["slice"]))
               return out
@@ -738,10 +816,37 @@ jobs:
               return f"{r['W']}-{r['L']}" + (f"-{r['P']}" if r["P"] else "")
 
 
-          def scorecard_md(summary, graded, unmatched, br, gen):
+          def scorecard_md(summary, graded, unmatched, brs, gen):
+              br = brs["all"]
+              nfit = sum(1 for g in graded if period_of(g) == "fit")
+              nfwd = len(graded) - nfit
               L = ["# NFL scorecard", "",
                    f"Generated {gen}. {len(graded)} graded games"
                    f" ({unmatched} finished games had no final score and are not graded).", "",
+                   "## Read this first: fit vs forward", "",
+                   f"**{nfit} games before {HOLDOUT_FROM} (fit) · {nfwd} on or after it (forward).**",
+                   "",
+                   "Every signal here, every threshold, and every PROMOTE/DROP label this scorecard",
+                   f"has printed was chosen while looking at the games before {HOLDOUT_FROM}.",
+                   "Scoring those choices on those same games is grading the exam you studied from.",
+                   "`pin_value` was 108-68 in CBB first halves and 10-1 on NFL spreads; both numbers",
+                   "were fitted and scored on one sample, and neither has ever been tested on a game",
+                   "it did not help choose. So every record below appears twice:", "",
+                   "- **FIT** — in-sample. A label here is a **hypothesis**. It is what we guessed.",
+                   "- **FORWARD** — out-of-sample. A label here is **evidence**. It is what happened.",
+                   "",
+                   "Base rates are measured separately in each period. Scoring the forward test",
+                   "against the fit window's chalk rate would re-import the bias the split exists to",
+                   "remove — the fit window ran",
+                   f"{100*brs['fit']['spread_fav_rate']:.1f}% favourites, and a signal that is",
+                   "structurally long favourites would look like a discovery the week dogs cover.",
+                   "",
+                   "The board follows the same rule: a signal is weighted by its FIT edge until it",
+                   f"has {MIN_N} decided forward outcomes, and by its FORWARD edge from then on. It",
+                   "migrates onto out-of-sample evidence on its own, with no hand-tuning.", "",
+                   "**Changing any threshold moves the holdout date to the day of the change and",
+                   "restarts the forward test.** That is the real cost of fiddling with the engine,",
+                   "and it is deliberately expensive.", "",
                    "Each signal is graded on **every** game it had an opinion on, at the FanDuel price",
                    "available at that moment. EARLY = one hour after the line was first seen. CLOSE =",
                    "last number before kickoff. Break-even at -110 is 52.4%. CLV = points of",
@@ -764,22 +869,54 @@ jobs:
                    "because Pinnacle is the fair-value definition. Using it as a veto rejects every",
                    "signal this system exists to find. See fault 4 in propwatch-news-vs-coherence.md.",
                    ""]
+              # FORWARD first and FIT second, on purpose: the out-of-sample table is the one
+              # that means anything, so it should not be below two screens of fitted numbers.
+              for per, head, note in (
+                      ("fwd", "FORWARD (out-of-sample — this is the evidence)",
+                       f"Games kicking off on or after {HOLDOUT_FROM}. Nothing in the engine was "
+                       f"chosen using these. n={nfwd} games."),
+                      ("fit", "FIT (in-sample — this is the hypothesis)",
+                       f"Games before {HOLDOUT_FROM}. The signals and thresholds were chosen by "
+                       f"looking at these, so a strong record here is expected and proves nothing. "
+                       f"n={nfit} games.")):
+                  L += [f"# {head}", "", note, ""]
+                  if per == "fwd" and nfwd == 0:
+                      L += ["*No games yet. The forward test starts with the next kickoff.*", ""]
+                      continue
+                  for cp in ("early", "close"):
+                      L += [f"## {cp.upper()}  ({per})", "",
+                            "| signal | market | record | hit % | expected % | edge | units | ROI % | CLV avg | CLV + % | status |",
+                            "|---|---|---|---|---|---|---|---|---|---|---|"]
+                      for r in summary:
+                          if (r["slice"] != "all" or r["checkpoint"] != cp
+                                  or r["period"] != per): continue
+                          L.append(f"| {r['signal']} | {r['market']} | {fmt_rec(r)} | {r['hit_pct']} | "
+                                   f"{r.get('expected_pct', '')} | {r.get('edge_pts', '')} | "
+                                   f"{r['units']:+} | {r['roi_pct']} | {r.get('clv_avg', '')} | "
+                                   f"{r.get('clv_pos_pct', '')} | {r['proposal']} |")
+                      L.append("")
+              L += ["# Pooled (fit + forward together)", "",
+                    "Kept for continuity with earlier runs. **This table is contaminated** — it",
+                    "mixes the games the engine was built on with the games testing it. Use the",
+                    "forward table for any decision.", ""]
               for cp in ("early", "close"):
-                  L += [f"## {cp.upper()}", "",
+                  L += [f"## {cp.upper()}  (pooled)", "",
                         "| signal | market | record | hit % | expected % | edge | units | ROI % | CLV avg | CLV + % | status |",
                         "|---|---|---|---|---|---|---|---|---|---|---|"]
                   for r in summary:
-                      if r["slice"] != "all" or r["checkpoint"] != cp: continue
+                      if (r["slice"] != "all" or r["checkpoint"] != cp
+                              or r["period"] != "all"): continue
                       L.append(f"| {r['signal']} | {r['market']} | {fmt_rec(r)} | {r['hit_pct']} | "
                                f"{r.get('expected_pct', '')} | {r.get('edge_pts', '')} | "
                                f"{r['units']:+} | {r['roi_pct']} | {r.get('clv_avg', '')} | "
                                f"{r.get('clv_pos_pct', '')} | {r['proposal']} |")
                   L.append("")
-              L += ["## By ticket volume and Pinnacle limit (both markets)", "",
+              L += ["## By ticket volume and Pinnacle limit (both markets, pooled)", "",
                     "| signal | checkpoint | slice | record | hit % | edge | ROI % | CLV avg |",
                     "|---|---|---|---|---|---|---|---|"]
               for r in summary:
-                  if r["slice"] == "all" or r["market"] != "both": continue
+                  if (r["slice"] == "all" or r["market"] != "both"
+                          or r["period"] != "all"): continue
                   L.append(f"| {r['signal']} | {r['checkpoint']} | {r['slice']} | {fmt_rec(r)} | "
                            f"{r['hit_pct']} | {r.get('edge_pts', '')} | {r['roi_pct']} | "
                            f"{r.get('clv_avg', '')} |")
@@ -807,24 +944,41 @@ jobs:
                    f"outsized relative to its ticket count (>= {RLM_RATIO_MIN}x), and the number moved",
                    "here anyway. Pinnacle tier first: that is the sharp book moving, not a retail",
                    "book reacting to its own flow.", "",
-                   "| tier | game | market | side | line | moved from | tickets | money/tix | record |",
-                   "|---|---|---|---|---|---|---|---|---|"]
+                   "",
+                   "`moved` is **that tier's own book** moving — Pinnacle's number for the Pinnacle",
+                   "tier, FanDuel's for the FanDuel tier. `FD now` is what you would actually be",
+                   "buying. Those are two different books and this table used to print one next to",
+                   "the other in a single row.", "",
+                   "| tier | game | market | side | book | moved | FD now | tickets | money/tix | record |",
+                   "|---|---|---|---|---|---|---|---|---|---|"]
               for _, tier, sig, sd, x, r in hits:
                   s = rec_of(sig)
-                  frm = r.get("pin_open") if sig == "pin_rlm" else r.get("open")
-                  tx = r.get("pin_rlm_tix") if sig == "pin_rlm" else (r.get("tix") or {}).get(sd)
-                  rt = r.get("pin_rlm_ratio") if sig == "pin_rlm" else r.get("mny_ratio")
+                  pin = sig == "pin_rlm"
+                  book = "Pinnacle" if pin else "FanDuel"
+                  frm = r.get("pin_mv_from") if pin else r.get("open")
+                  to_ = r.get("pin_mv_to") if pin else (r.get("line") or {}).get(sd)
+                  tx = r.get("pin_rlm_tix") if pin else (r.get("tix") or {}).get(sd)
+                  rt = r.get("pin_rlm_ratio") if pin else r.get("mny_ratio")
                   ln = (r.get("line") or {}).get(sd)
+                  mv = (f"{frm:g} -> {to_:g}" if None not in (frm, to_) else "")
                   L.append(f"| {tier} | {label_of(x)} | {x.get('market', r.get('mkt',''))} | {sd} | "
-                           f"{ln if ln is not None else ''} | {frm if frm is not None else ''} | "
+                           f"{book} | {mv} | {ln if ln is not None else ''} | "
                            f"{tx}% | {rt} | {s} |")
               L.append("")
               return L
 
 
           def board_md(upcoming, summary, gen):
-              rec = {(r["signal"], r["market"]): r for r in summary
+              rec = {(r["signal"], r["market"], r["period"]): r for r in summary
                      if r["slice"] == "all" and r["checkpoint"] == "close"}
+
+              def rec2(sig, mkt):
+                  """fit record, then forward record. Both, always -- a signal with a glowing
+                  fitted record and a losing forward record should look like what it is."""
+                  # no "|" in here -- these land inside markdown table cells, and a pipe
+                  # silently splits the column and shifts every field after it.
+                  f_ = rec.get((sig, mkt, "fit")); w_ = rec.get((sig, mkt, "fwd"))
+                  return f"{fmt_rec(f_) if f_ else '0-0'} fit · {fmt_rec(w_) if w_ else '0-0'} fwd"
               L = ["# NFL board", "",
                    f"Generated {gen}. Upcoming games with a FanDuel line, grouped by how many signals",
                    "agree on each market. Every game is listed; nothing is cut. Each call shows that",
@@ -838,8 +992,7 @@ jobs:
               flat = [{"game": g["game"], "market": mkt, "now": m["now"]}
                       for g in upcoming for mkt, m in g["markets"].items() if m.get("now")]
               L += flagged_md(flat, summary,
-                              lambda sig: (lambda q: f"{q['W']}-{q['L']}" if q else "0-0")(
-                                  rec.get((sig, "both"))),
+                              lambda sig: rec2(sig, "both"),
                               lambda x: x["game"])
               # WEIGHT BY RECORD, NOT BY HEADCOUNT.
               # Ranking by "how many signals agree" treats a 147-180 signal as equal evidence to a
@@ -856,16 +1009,29 @@ jobs:
               # Weights are PER MARKET where the sample allows, falling back to the all-market
               # number otherwise. pin_value is +36 on spreads and 18-18 on team totals -- one
               # pooled weight would carry its spread record into markets where it has none.
+              #
+              # Which period's edge does a weight come from? The forward record is the only
+              # honest estimate, but on day one it is empty, and a board that weights
+              # everything at zero ranks nothing. So: use the FORWARD edge as soon as a
+              # signal has MIN_N decided forward outcomes, and the FIT edge until then. The
+              # board migrates onto out-of-sample evidence by itself as the season runs, and
+              # a signal whose fitted edge does not survive contact loses its weight without
+              # anyone deciding to take it away.
               W, SUB = {}, {}
-              for row in summary:
-                  if row["slice"] != "all" or row["checkpoint"] != "close": continue
-                  sig, mk = row["signal"], row.get("market")
-                  if "+" in sig:
-                      if row.get("redundant_with") and mk == "both":
-                          a_, b_ = sig.split("+", 1)
-                          SUB[b_ if row["redundant_with"] == a_ else a_] = row["redundant_with"]
-                      continue
-                  W[(sig, mk)] = (round(row.get("edge_pts") or 0.0, 1), row["W"] + row["L"])
+              for per in ("fit", "fwd"):
+                  for row in summary:
+                      if (row["slice"] != "all" or row["checkpoint"] != "close"
+                              or row["period"] != per): continue
+                      sig, mk = row["signal"], row.get("market")
+                      if "+" in sig:
+                          if row.get("redundant_with") and mk == "both" and per == "fit":
+                              a_, b_ = sig.split("+", 1)
+                              SUB[b_ if row["redundant_with"] == a_ else a_] = row["redundant_with"]
+                          continue
+                      dec_ = row["W"] + row["L"]
+                      if per == "fwd" and dec_ < MIN_N:
+                          continue          # not enough forward evidence yet -- keep the fit weight
+                      W[(sig, mk)] = (round(row.get("edge_pts") or 0.0, 1), dec_, per)
 
               def wt(sig, mkt):
                   """A signal's weight is its base-rate-corrected edge IN THIS MARKET, shrunk toward
@@ -880,10 +1046,16 @@ jobs:
                   Shrinkage handles both without an arbitrary line: 10-1 keeps about a third of its
                   apparent edge, a 66-game record keeps about three quarters, and a market with no
                   record of its own borrows the pooled number under the same discount."""
-                  e_m, n_m = W.get((sig, mkt), (0.0, 0))
+                  e_m, n_m, _p = W.get((sig, mkt), (0.0, 0, "fit"))
                   if n_m == 0:
-                      e_m, n_m = W.get((sig, "both"), (0.0, 0))
+                      e_m, n_m, _p = W.get((sig, "both"), (0.0, 0, "fit"))
                   return round(e_m * n_m / (n_m + SHRINK_K), 1) if n_m else 0.0
+
+              def wt_src(sig, mkt):
+                  """"fit" or "fwd" -- which period that weight came from, shown on the board so
+                  a lean built on fitted numbers is never mistaken for a tested one."""
+                  v = W.get((sig, mkt)) or W.get((sig, "both"))
+                  return v[2] if v else "fit"
 
               def score(calls, side, mkt):
                   keep = {g_ for g_ in calls if SUB.get(g_) not in calls}
@@ -910,6 +1082,12 @@ jobs:
                     f"base-rate-corrected edge, and contributes nothing until it has {MIN_N} decided",
                     "outcomes. Raw agreement count is shown too, but it is the weaker number — a",
                     "market can have seven signals agreeing where four of them have losing records.",
+                    "",
+                    "Each call shows **two** records: `fit` (the games the signal was chosen on —",
+                    f"before {HOLDOUT_FROM}, so a good number there proves nothing) and `fwd` (games",
+                    "since, which it had no hand in choosing). A `*` means the weight came from the",
+                    f"forward record, which happens once that record reaches {MIN_N} decided",
+                    "outcomes. No asterisk means the lean rests on fitted numbers only.",
                     ""]
               for b in sorted(groups):
                   L += [f"## {b}", "",
@@ -922,8 +1100,8 @@ jobs:
                       ko = (k - dt.timedelta(hours=5)).strftime("%a %H:%M") if k else ""
                       parts = []
                       for sig, sd in r["calls"].items():
-                          s = rec.get((sig, mkt))
-                          parts.append(f"{sig}->{sd} ({fmt_rec(s) if s else '0-0'})")
+                          parts.append(f"{sig}->{sd} ({rec2(sig, mkt)}"
+                                       + ("*)" if wt_src(sig, mkt) == "fwd" else ")"))
                       pin = (f"{r['pin']:g} (${r['pin_lim']:,.0f})"
                              if r.get("pin") is not None and r.get("pin_lim") else "")
                       op = f"{r['open']:g}" if r.get("open") is not None else ""
@@ -944,15 +1122,20 @@ jobs:
 
           if __name__ == "__main__":
               graded, upcoming, unmatched = build()
-              br = base_rates(graded)
-              summary = summarize(graded, br)
+              brs = {p_: base_rates(graded, None if p_ == "all" else p_)
+                     for p_ in ("all", "fit", "fwd")}
+              br = brs["all"]
+              summary = summarize(graded, brs)
               gen = now_utc().strftime("%Y-%m-%d %H:%M UTC")
+              nfit = sum(1 for g in graded if period_of(g) == "fit")
               os.makedirs(C("graded"), exist_ok=True)
               json.dump(graded, open(C("graded", "games.json"), "w"), indent=1)
               json.dump({"generated": gen, "graded_games": len(graded), "unmatched_finals": unmatched,
-                         "min_n_to_propose": MIN_N, "base_rates": br, "signals": summary},
+                         "min_n_to_propose": MIN_N, "holdout_from": HOLDOUT_FROM,
+                         "fit_games": nfit, "forward_games": len(graded) - nfit,
+                         "base_rates": brs, "signals": summary},
                         open(C("graded", "summary.json"), "w"), indent=1)
-              open(C("SCORECARD.md"), "w").write(scorecard_md(summary, graded, unmatched, br, gen))
+              open(C("SCORECARD.md"), "w").write(scorecard_md(summary, graded, unmatched, brs, gen))
               open(C("BOARD.md"), "w").write(board_md(upcoming, summary, gen))
               print(f"graded games: {len(graded)}   upcoming on board: {len(upcoming)}   "
                     f"finished but no final: {unmatched}")
@@ -960,12 +1143,18 @@ jobs:
                     f"{100*br['total_over_rate']:.1f}% overs (n={br['total_n']}), "
                     f"{100*br['ml_fav_rate']:.1f}% ML favs (n={br['ml_n']}), "
                     f"{100*br['tt_over_rate']:.1f}% TT overs (n={br['tt_n']})")
-              for r in summary:
-                  if r["slice"] == "all" and r["market"] == "both" and (
-                          "+" not in r["signal"] or (r["W"] + r["L"]) >= 12):
+              print(f"holdout {HOLDOUT_FROM}: {nfit} fit games, {len(graded)-nfit} forward games")
+              for per in ("fwd", "fit"):
+                  rows = [r for r in summary
+                          if r["slice"] == "all" and r["market"] == "both" and r["period"] == per
+                          and ("+" not in r["signal"] or (r["W"] + r["L"]) >= 12)]
+                  print(f"--- {per.upper()} ---" + ("  (empty -- starts at next kickoff)"
+                                                    if not rows else ""))
+                  for r in rows:
                       print(f"  {r['checkpoint']:5} {r['signal']:13} {fmt_rec(r):>9}  hit {r['hit_pct']}"
                             f"  exp {r.get('expected_pct')}  edge {r.get('edge_pts')}"
                             f"  roi {r['roi_pct']}  clv {r.get('clv_avg', '-')}  {r['proposal']}")
+
           PY
 
       - name: Commit

@@ -32,6 +32,7 @@ jobs:
         run: |
           python3 - . <<'PY'
 
+
           #!/usr/bin/env python3
           """Propwatch CBB PERIOD grader + board — halves and half team totals. Stdlib only.
 
@@ -395,8 +396,24 @@ jobs:
               return graded, live, nomatch
 
 
-          def base_rates(graded):
+          # ---------------------------------------------------------------------------
+          # HOLDOUT. Signals and thresholds here were chosen by looking at games before
+          # this date, so scoring them on the same games proves nothing.
+          #   fit  before HOLDOUT_FROM -- in-sample, a label there is a HYPOTHESIS
+          #   fwd  on or after it      -- out-of-sample, a label there is EVIDENCE
+          HOLDOUT_FROM = "2026-11-17"
+          # ---------------------------------------------------------------------------
+
+
+          def period_of(g):
+              return "fwd" if (g.get("tip") or "")[:10] >= HOLDOUT_FROM else "fit"
+
+
+          def base_rates(graded, period=None):
               """How often the default side (favourite / over) won, over EVERY graded market.
+
+              Measured per fit/forward period, so the forward test is not scored against the
+              fit window's own default-side rate.
 
               This must not be conditioned on what the signals did. An earlier version tallied only
               markets where some signal happened to fire AND take the default side, and counted a
@@ -408,6 +425,7 @@ jobs:
                   w = n = 0
                   for g in graded:
                       if g["kind"] != kind: continue
+                      if period and period_of(g) != period: continue
                       r = g.get("default_res")
                       if r in ("W", "L"): n += 1; w += (r == "W")
                   out[kind] = {"rate": (w / n) if n else 0.5, "n": n}
@@ -426,12 +444,13 @@ jobs:
               return out
 
 
-          def summarize(graded, br):
+          def summarize(graded, brs):
+              """brs maps period -> base rates, for "all", "fit" and "fwd"."""
               def blank(): return {"n": 0, "W": 0, "L": 0, "P": 0, "units": 0.0, "clv": [],
                                    "dec": 0, "exp": 0.0, "dflt": 0}
               S = collections.defaultdict(blank)
               for g in graded:
-                  rate = br[g["kind"]]["rate"]
+                  per = period_of(g)
                   for cp in ("early", "close"):
                       # singles, then every PAIR of signals agreeing on a side. Signals are
                       # evidence, not independent bets, and evidence combines -- measured on 1,862
@@ -447,18 +466,21 @@ jobs:
                           tags.append("2h OT game" if g.get("ot") else "2h no OT")
                       for sig, x in list(gr.items()) + pairs:
                           for tag in tags:
-                              s = S[(sig, cp, tag)]
-                              s["n"] += 1; s[x["res"]] += 1; s["units"] += x["units"]
-                              if x.get("clv") is not None: s["clv"].append(x["clv"])
-                              if x["res"] != "P" and x.get("took_default") is not None:
-                                  s["dec"] += 1; s["dflt"] += bool(x["took_default"])
-                                  s["exp"] += rate if x["took_default"] else (1 - rate)
+                              for pr in ("all", per):
+                                  s = S[(sig, cp, tag, pr)]
+                                  rate = brs[pr][g["kind"]]["rate"]
+                                  s["n"] += 1; s[x["res"]] += 1; s["units"] += x["units"]
+                                  if x.get("clv") is not None: s["clv"].append(x["clv"])
+                                  if x["res"] != "P" and x.get("took_default") is not None:
+                                      s["dec"] += 1; s["dflt"] += bool(x["took_default"])
+                                      s["exp"] += rate if x["took_default"] else (1 - rate)
               out = []
-              for (sig, cp, tag), s in S.items():
+              for (sig, cp, tag, pr), s in S.items():
                   d = s["W"] + s["L"]
                   hit = s["W"] / d if d else None
                   z = (s["W"] - d * BREAKEVEN) / math.sqrt(d * 0.25) if d else None
-                  row = {"signal": sig, "checkpoint": cp, "slice": tag, "n": s["n"], "W": s["W"],
+                  row = {"signal": sig, "checkpoint": cp, "slice": tag, "period": pr,
+                         "n": s["n"], "W": s["W"],
                          "L": s["L"], "P": s["P"],
                          "hit_pct": round(100 * hit, 1) if hit is not None else None,
                          "units": round(s["units"], 2),
@@ -471,39 +493,63 @@ jobs:
                       row["edge_pts"] = round(100 * s["W"] / d - exp, 1) if d else None
                   if s["clv"]: row["clv_avg"] = round(sum(s["clv"]) / len(s["clv"]), 2)
                   e = row.get("edge_pts")
-                  row["proposal"] = (
+                  verdict = (
                       f"keep collecting ({d}/{MIN_N})" if d < MIN_N else
                       "PROMOTE: beats break-even and its own base rate" if z >= 1.5 and (e or 0) >= 5 else
                       "beats break-even but not its base rate -- directional bias, not signal"
                       if z >= 1.5 else
                       "INVERT candidate: wrong well beyond its base rate" if (e or 0) <= -15 else
                       "DROP: below break-even" if z <= -1.5 else "no edge shown yet")
+                  # in-sample verdicts are guesses about the future, not findings about it
+                  row["proposal"] = (f"HYPOTHESIS (in-sample) -- {verdict}"
+                                     if pr == "fit" and d >= MIN_N else verdict)
                   out.append(row)
               # mark pairs that merely restate a component: same W-L as one of its own halves
-              single = {(r["signal"], r["checkpoint"], r["slice"]): (r["W"], r["L"])
+              single = {(r["signal"], r["checkpoint"], r["slice"], r["period"]): (r["W"], r["L"])
                         for r in out if "+" not in r["signal"]}
               for r in out:
                   if "+" not in r["signal"]: continue
                   a_, b_ = r["signal"].split("+", 1)
                   for comp in (a_, b_):
-                      if single.get((comp, r["checkpoint"], r["slice"])) == (r["W"], r["L"]):
+                      if single.get((comp, r["checkpoint"], r["slice"],
+                                     r["period"])) == (r["W"], r["L"]):
                           r["redundant_with"] = comp
                           r["proposal"] = f"redundant -- identical record to {comp} alone, not independent confirmation"
                           break
 
               order = {s: i for i, s in enumerate(SIGNALS)}
-              out.sort(key=lambda r: (r["slice"] != "all", r["checkpoint"],
-                                      order.get(r["signal"], 9), r["slice"]))
+              perord = {"all": 0, "fit": 1, "fwd": 2}
+              out.sort(key=lambda r: (perord.get(r["period"], 9), r["slice"] != "all",
+                                      r["checkpoint"], order.get(r["signal"], 9), r["slice"]))
               return out
+
+
+          def md(x):
+              """Escape a value for a markdown table cell.
+
+              Slice tags and market ids carry a literal "|" (`1h|spread`, `2h|tt|home`), and an
+              unescaped pipe silently ends the cell and shifts every column after it. 128 rows
+              across the four period files were rendering shifted. Same class of fault as the
+              FLAGGED table printing two books in one row: the number was right, the column it
+              landed in was not."""
+              return str(x).replace("|", "\\|")
 
 
           def rec_str(r): return f"{r['W']}-{r['L']}" + (f"-{r['P']}" if r["P"] else "")
 
 
-          def scorecard_md(summary, graded, br, nomatch, gen):
+          def scorecard_md(summary, graded, brs, nomatch, gen):
+              br = brs["all"]
+              nfit = sum(1 for g in graded if period_of(g) == "fit")
+              nfwd = len(graded) - nfit
               L = ["# CBB period scorecard — halves and half team totals", "",
                    f"Generated {gen}. {len(graded)} graded period markets "
                    f"({nomatch} had no unique final matched and are not graded).", "",
+                   "## Read this first: fit vs forward", "",
+                   f"**{nfit} markets before {HOLDOUT_FROM} (fit) · {nfwd} on or after it "
+                   f"(forward).** Every signal and threshold here was chosen by looking at the",
+                   "fit markets, so a label there is a **hypothesis**; only the forward table is",
+                   "**evidence**. Base rates are measured separately in each period.", "",
                    "Retail lines from the FanDuel event feed, sharp reference from Pinnacle at",
                    "period 1. Second-half markets settle **including overtime**, which is how",
                    "FanDuel grades them, and the finals file carries `h1a`/`h1h` so the second half",
@@ -516,28 +562,45 @@ jobs:
               for k, v in br.items():
                   L.append(f"- **{k}**: default side won {100*v['rate']:.1f}% (n={v['n']})")
               L += ["", f"Proposals appear at {MIN_N} decided markets. Nothing changes automatically.", ""]
+              hdr = ["| signal | record | hit % | expected % | edge | units | ROI % | CLV avg | status |",
+                     "|---|---|---|---|---|---|---|---|---|"]
+
+              def rows(per, cp):
+                  return [f"| {r['signal']} | {rec_str(r)} | {r['hit_pct']} | "
+                          f"{r.get('expected_pct','')} | {r.get('edge_pts','')} | {r['units']:+} | "
+                          f"{r['roi_pct']} | {r.get('clv_avg','')} | {r['proposal']} |"
+                          for r in summary
+                          if r["slice"] == "all" and r["checkpoint"] == cp and r["period"] == per]
+
+              for per, head in (("fwd", "FORWARD (out-of-sample — this is the evidence)"),
+                                ("fit", "FIT (in-sample — this is the hypothesis)")):
+                  L += [f"# {head}", ""]
+                  if per == "fwd" and nfwd == 0:
+                      L += ["*No markets yet. The forward test starts with the next tip.*", ""]
+                      continue
+                  for cp in ("early", "close"):
+                      L += [f"## {cp.upper()}  ({per})", ""] + hdr + rows(per, cp) + [""]
+              L += ["# Pooled (contaminated — mixes fit and forward)", ""]
               for cp in ("early", "close"):
-                  L += [f"## {cp.upper()}", "",
-                        "| signal | record | hit % | expected % | edge | units | ROI % | CLV avg | status |",
-                        "|---|---|---|---|---|---|---|---|---|"]
-                  for r in summary:
-                      if r["slice"] != "all" or r["checkpoint"] != cp: continue
-                      L.append(f"| {r['signal']} | {rec_str(r)} | {r['hit_pct']} | "
-                               f"{r.get('expected_pct','')} | {r.get('edge_pts','')} | {r['units']:+} | "
-                               f"{r['roi_pct']} | {r.get('clv_avg','')} | {r['proposal']} |")
-                  L.append("")
-              L += ["## By period and market", "",
+                  L += [f"## {cp.upper()}  (pooled)", ""] + hdr + rows("all", cp) + [""]
+              L += ["## By period and market (pooled)", "",
                     "| signal | checkpoint | slice | record | hit % | edge | ROI % |",
                     "|---|---|---|---|---|---|---|"]
               for r in summary:
-                  if r["slice"] == "all": continue
-                  L.append(f"| {r['signal']} | {r['checkpoint']} | {r['slice']} | {rec_str(r)} | "
+                  if r["slice"] == "all" or r["period"] != "all": continue
+                  L.append(f"| {r['signal']} | {r['checkpoint']} | {md(r['slice'])} | {rec_str(r)} | "
                            f"{r['hit_pct']} | {r.get('edge_pts','')} | {r['roi_pct']} |")
               return "\n".join(L) + "\n"
 
 
           def board_md(live, summary, gen):
-              rec = {r["signal"]: r for r in summary if r["slice"] == "all" and r["checkpoint"] == "close"}
+              rec = {(r["signal"], r["period"]): r for r in summary
+                     if r["slice"] == "all" and r["checkpoint"] == "close"}
+
+              def rec2(sig):
+                  """fit record, then forward record. No "|" -- this lands in a table cell."""
+                  f_ = rec.get((sig, "fit")); w_ = rec.get((sig, "fwd"))
+                  return f"{rec_str(f_) if f_ else '0-0'} fit · {rec_str(w_) if w_ else '0-0'} fwd"
               L = ["# CBB period board", "",
                    f"Generated {gen}. Live halves and half team totals where a signal has an",
                    "opinion. Each call shows that signal's graded record so far.", "",
@@ -555,9 +618,9 @@ jobs:
                   for x, r, side in sorted(groups[k], key=lambda y: (y[0]["tip"], y[0]["market"])):
                       tp = iso(x["tip"])
                       tt = (tp - dt.timedelta(hours=5)).strftime("%a %H:%M") if tp else ""
-                      parts = [f"{s}->{sd} ({rec_str(rec[s]) if s in rec else '0-0'})"
+                      parts = [f"{s}->{sd} ({rec2(s)})"
                                for s, sd in r["calls"].items()]
-                      L.append(f"| {tt} | {x['game']} | {x['market']} | {side} | "
+                      L.append(f"| {tt} | {x['game']} | {md(x['market'])} | {side} | "
                                f"{r['line'][side] if r['line'][side] is not None else ''} | "
                                f"{r.get('open','')} | {r.get('pin','')} | {r.get('pin_gap','')} | "
                                f"{r['odds'][side] if r['odds'][side] is not None else ''} | "
@@ -569,25 +632,34 @@ jobs:
 
           if __name__ == "__main__":
               graded, live, nomatch = build()
-              br = base_rates(graded)
-              summary = summarize(graded, br)
+              brs = {p_: base_rates(graded, None if p_ == "all" else p_)
+                     for p_ in ("all", "fit", "fwd")}
+              br = brs["all"]
+              summary = summarize(graded, brs)
               gen = dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
+              nfit = sum(1 for g in graded if period_of(g) == "fit")
               os.makedirs(C("graded"), exist_ok=True)
               json.dump(graded, open(C("graded", "periods.json"), "w"), indent=1)
               json.dump({"generated": gen, "graded": len(graded), "unmatched_finals": nomatch,
-                         "base_rates": br, "min_n_to_propose": MIN_N, "signals": summary},
+                         "base_rates": brs, "min_n_to_propose": MIN_N,
+                         "holdout_from": HOLDOUT_FROM, "fit_markets": nfit,
+                         "forward_markets": len(graded) - nfit, "signals": summary},
                         open(C("graded", "periods_summary.json"), "w"), indent=1)
-              open(C("PERIODS_SCORECARD.md"), "w").write(scorecard_md(summary, graded, br, nomatch, gen))
+              open(C("PERIODS_SCORECARD.md"), "w").write(scorecard_md(summary, graded, brs, nomatch, gen))
               open(C("PERIODS_BOARD.md"), "w").write(board_md(live, summary, gen))
               print(f"graded CBB period markets: {len(graded)}   live: {len(live)}   "
                     f"no final matched: {nomatch}")
               print("base rates: " + "  ".join(
                   f"{k} {100*v['rate']:.1f}% (n={v['n']})" for k, v in br.items()))
-              for r in summary:
-                  if r["slice"] == "all":
+              print(f"holdout {HOLDOUT_FROM}: {nfit} fit markets, {len(graded)-nfit} forward")
+              for per in ("fwd", "fit"):
+                  rows_ = [r for r in summary if r["slice"] == "all" and r["period"] == per]
+                  print(f"--- {per.upper()} ---" + ("  (empty)" if not rows_ else ""))
+                  for r in rows_:
                       print(f"  {r['checkpoint']:5} {r['signal']:11} {rec_str(r):>10}  hit {r['hit_pct']}"
                             f"  exp {r.get('expected_pct')}  edge {r.get('edge_pts')}"
                             f"  roi {r['roi_pct']}  {r['proposal']}")
+
           PY
 
       - name: Commit

@@ -34,6 +34,7 @@ jobs:
           python3 - . <<'PY'
 
 
+
           #!/usr/bin/env python3
           """Propwatch NFL PROP grader + board. Stdlib only. Runs on a GitHub Actions runner.
 
@@ -85,7 +86,18 @@ jobs:
           MIN_N = 50          # props are plentiful; demand more than the 30 used for sides
           JUICE_C = 12        # cents of price move on a static handicap that counts as money
           BREAKEVEN = 0.524
-          SIGNALS = ("pin_value", "pin_price", "fd_move", "fd_juice", "pin_lead")
+          SIGNALS = ("pin_value", "pin_price", "fd_move", "fd_juice", "pin_lead", "td_steam")
+          # td_steam: anytime-TD price collapsing at FanDuel with no tick back. This is the
+          # loudest price signal in football and we were blind to it -- not for want of data
+          # (the props collector has been archiving 113 anytime-TD rows a snapshot all along)
+          # but because the FanDuel parser only understood "<player> - <stat>" over/under
+          # markets and silently dropped the Yes/No ones. Same shape as defect 6: an empty
+          # result from a filter is evidence about the filter first.
+          # The pattern: Deshaun Watson +2100 -> +535 on Circa in 25 minutes, Emmett Johnson
+          # 5-1 -> -150, Myles Price 11-1 -> 5-1, all three scored. In implied-probability
+          # terms Watson went 4.5% -> 15.7%, a +11.2 point move on a market whose whole range
+          # is a few points wide.
+          TD_STEAM_PP = 4.0   # points of implied probability the Yes price must gain
           LIM_BUCKETS = ((0, 400, "pin limit <$400"), (400, 1000, "pin $400-1k"),
                          (1000, 10**9, "pin $1k+"))
 
@@ -94,11 +106,16 @@ jobs:
           FD_STAT = {"receiving yds": "recv_yds", "total receptions": "receptions",
                      "rushing yds": "rush_yds", "passing yds": "pass_yds", "passing tds": "pass_tds",
                      "total rushing attempts": "rush_att", "total passing attempts": "pass_att"}
-          PIN_STAT = {"total receiving yards": "recv_yds", "total receptions": "receptions",
+          # "<player> Total Touchdowns" is Pinnacle's anytime-TD market (over/under 0.5) and is
+          # the fair-value reference for FanDuel's one-sided "Any Time Touchdown Scorer".
+          PIN_STAT = {"total touchdowns": "anytime_td",
+                      "total receiving yards": "recv_yds", "total receptions": "receptions",
                       "total rushing yards": "rush_yds", "total passing yards": "pass_yds",
                       "total touchdown passes": "pass_tds", "total rush attempts": "rush_att",
                       "total pass attempts": "pass_att", "total pass completions": "pass_cmp"}
-          STAT_COL = {"recv_yds": "receiving_yards", "receptions": "receptions",
+          # anytime_td is summed from two nflverse columns: a TD is a TD however it was scored.
+          STAT_COL = {"anytime_td": ("rushing_tds", "receiving_tds"),
+                      "recv_yds": "receiving_yards", "receptions": "receptions",
                       "rush_yds": "rushing_yards", "pass_yds": "passing_yards",
                       "pass_tds": "passing_tds", "rush_att": "carries",
                       "pass_att": "attempts", "pass_cmp": "completions"}
@@ -134,10 +151,11 @@ jobs:
                   if not who or not wk: continue
                   d = out.setdefault((who, wk), {})
                   for stat, col in STAT_COL.items():
-                      v = row.get(col)
-                      if v not in (None, "", "NA"):
-                          try: d[stat] = d.get(stat, 0) + float(v)
-                          except Exception: pass
+                      for c in ((col,) if isinstance(col, str) else col):
+                          v = row.get(c)
+                          if v not in (None, "", "NA"):
+                              try: d[stat] = d.get(stat, 0) + float(v)
+                              except Exception: pass
               return out
 
 
@@ -170,6 +188,23 @@ jobs:
                       if r.get("s") != "ACTIVE" or r.get("h") is None: continue
                       if "ALTERNATE" in (r.get("mt") or ""): continue
                       mn_ = r.get("mn") or ""
+                      # Anytime TD is a one-sided Yes/No market: the runner `r` is the PLAYER,
+                      # not an Over/Under selection, and there is no No leg at FanDuel. It
+                      # therefore never matched the "<player> - <stat>" split below and was
+                      # dropped for the whole season despite being archived every snapshot.
+                      # Stored as the over half of a 0.5 line, which is exactly what it is.
+                      if (r.get("mt") or "") == "ANY_TIME_TOUCHDOWN_SCORER":
+                          if r.get("o") is None: continue
+                          who_ = nm(r.get("r"))
+                          # Team defense / special teams are listed as anytime-TD scorers and
+                          # cannot be settled from nflverse player stats. Drop them outright
+                          # rather than let them sit in the "no result" pile looking like
+                          # coverage we have.
+                          if who_.endswith(" defense") or who_.endswith(" special teams"):
+                              continue
+                          S[(r.get("g"), who_, "anytime_td")].setdefault(
+                              t, {})["o"] = (0.5, r["o"])
+                          continue
                       if " - " not in mn_: continue
                       who, what = mn_.split(" - ", 1)
                       stat = FD_STAT.get(nm(what))
@@ -229,12 +264,15 @@ jobs:
               return d[min(d)] if d else None
 
 
-          def read(fdser, pinser, t):
+          def read(fdser, pinser, t, stat=None):
               """The system's read on one prop at time t."""
               f = at(fdser, t)
-              if not f or "o" not in f or "u" not in f: return None
+              if not f or "o" not in f: return None
+              one_sided = stat == "anytime_td"          # FanDuel lists no No leg on anytime TD
+              if not one_sided and "u" not in f: return None
               f0 = first(fdser)
-              r = {"t": t, "line": f["o"][0], "odds": {"over": f["o"][1], "under": f["u"][1]},
+              r = {"t": t, "line": f["o"][0],
+                   "odds": {"over": f["o"][1], "under": (f["u"][1] if "u" in f else None)},
                    "open": (f0.get("o") or (None,))[0] if f0 else None, "calls": {}}
               p = at(pinser, t) if pinser else None
 
@@ -247,11 +285,12 @@ jobs:
                   if f["o"][0] != p["pts"]:
                       r["pin_gap"] = round(f["o"][0] - p["pts"], 1)
                       r["calls"]["pin_value"] = "under" if f["o"][0] > p["pts"] else "over"
-                  elif f["o"][1] is not None and f["u"][1] is not None:
+                  elif f["o"][1] is not None and (one_sided or f["u"][1] is not None):
                       # a listed prop can carry a null price (suspended leg); dec() cannot take it,
                       # and an unguarded call here killed every grade_props run from 2026-11-12.
                       eo = fair_over * dec(f["o"][1]) - 1
-                      eu = (1 - fair_over) * dec(f["u"][1]) - 1
+                      # one-sided: there is no under to buy, so the over is the only candidate
+                      eu = -9 if one_sided else (1 - fair_over) * dec(f["u"][1]) - 1
                       if max(eo, eu) > 0:
                           r["calls"]["pin_price"] = "over" if eo > eu else "under"
                           r["edge_pct"] = round(100 * max(eo, eu), 2)
@@ -261,6 +300,19 @@ jobs:
                       fdm = 0 if f["o"][0] == r["open"] else (1 if f["o"][0] > r["open"] else -1)
                       if fdm != pd_:
                           r["calls"]["pin_lead"] = "over" if pd_ > 0 else "under"
+
+              # --- td_steam: the anytime-TD price collapsing with no tick back. The handicap
+              # is always 0.5 so fd_move can never fire here and fd_juice needs a No leg that
+              # FanDuel does not list; price movement is the entire available channel.
+              if one_sided and f0 and "o" in f0:
+                  p_now, p_open = imp(f["o"][1]), imp(f0["o"][1])
+                  if p_now and p_open:
+                      gain = 100 * (p_now - p_open)
+                      r["td_open_odds"] = f0["o"][1]
+                      r["td_move_pp"] = round(gain, 1)
+                      if gain >= TD_STEAM_PP:
+                          r["calls"]["td_steam"] = "over"
+                  return r
 
               # --- FanDuel's own movement. The only high-volume channel: no splits exist on props.
               if r["open"] is not None and f["o"][0] is not None and f["o"][0] != r["open"]:
@@ -310,18 +362,30 @@ jobs:
                   pinser = PIN.get(key, {})
                   base = {"game": gm, "player": who, "stat": stat, "kickoff": gi[0], "week": wk}
                   if kots > nowts:
-                      r = read(ser, pinser, nowts)
+                      r = read(ser, pinser, nowts, stat)
                       if r and r["calls"]: live.append(dict(base, now=r))
                       continue
                   actual = (RES.get((who, wk)) or {}).get(stat)
+                  if actual is None and stat == "anytime_td":
+                      # A missing nflverse row means NO TD, not "unknown". You cannot score a
+                      # rushing or receiving touchdown without appearing in the rushing or
+                      # receiving stats, so absence settles the bet at zero.
+                      #
+                      # This matters more than it looks. Dropping these as unresolved threw out
+                      # 386 of 1,276 anytime-TD props, and they were almost entirely the players
+                      # who did NOT score -- keeping the scorers and discarding the rest. That
+                      # inflates both the base rate and every signal measured against it. It is
+                      # the same failure mode as every other measurement bug found in this
+                      # system: all of them inflated a result, none deflated one.
+                      actual = 0.0
                   if actual is None:
                       nores += 1; continue
                   f0 = min(ser)
                   e_t = (T(f0) + dt.timedelta(minutes=EARLY_MIN)).strftime("%Y-%m-%dT%H%MZ")
                   last = (ko - dt.timedelta(minutes=1)).strftime("%Y-%m-%dT%H%MZ")
-                  cl = read(ser, pinser, last)
+                  cl = read(ser, pinser, last, stat)
                   if not cl: continue
-                  ea = read(ser, pinser, e_t) if e_t < kots else None
+                  ea = read(ser, pinser, e_t, stat) if e_t < kots else None
                   rec = dict(base, actual=actual, markets={"close": cl})
                   if ea: rec["markets"]["early"] = ea
                   for cp, r in (("early", ea), ("close", cl)):
@@ -347,20 +411,53 @@ jobs:
               return graded, live, nores
 
 
-          def over_rate(graded):
+          # ---------------------------------------------------------------------------
+          # HOLDOUT. Every signal and threshold here was chosen by looking at props before
+          # this date, so scoring them on those same props is grading the exam you studied
+          # from. pin_lead looked like 17-8 on Nov 15 and was 22-22 a week later; the only
+          # way to tell a signal from a streak is to test it on props it did not pick.
+          #   fit  before HOLDOUT_FROM -- in-sample, a label there is a HYPOTHESIS
+          #   fwd  on or after it      -- out-of-sample, a label there is EVIDENCE
+          HOLDOUT_FROM = "2026-11-17"
+          # ---------------------------------------------------------------------------
+
+
+          def period_of(g):
+              return "fwd" if (g.get("kickoff") or "")[:10] >= HOLDOUT_FROM else "fit"
+
+
+          def over_rate(graded, period=None):
+              """The over's hit rate, measured PER PERIOD and PER STAT.
+
+              Per stat matters as much as per period. A yardage over is close to a coin flip;
+              an anytime-TD "over 0.5" is a longshot that hits well under half the time. Scored
+              against one pooled over rate, every anytime-TD signal is charged an expectation it
+              could never meet and shows a large negative edge for doing nothing wrong -- the
+              same base-rate error that killed money_level, reappearing market by market.
+
+              Returns (pooled rate, n, {stat: (rate, n)})."""
               w = n = 0
+              by = collections.defaultdict(lambda: [0, 0])
               for g in graded:
+                  if period and period_of(g) != period: continue
                   cl = g["markets"]["close"]
                   res = result("over", cl["line"], g["actual"])
-                  if res in ("W", "L"): n += 1; w += (res == "W")
-              return (w / n) if n else 0.5, n
+                  if res in ("W", "L"):
+                      n += 1; w += (res == "W")
+                      b = by[g["stat"]]; b[1] += 1; b[0] += (res == "W")
+              pooled = (w / n) if n else 0.5
+              # a stat with too little of its own history borrows the pooled rate
+              rates = {k: ((v[0] / v[1]) if v[1] >= 25 else pooled, v[1]) for k, v in by.items()}
+              return pooled, n, rates
 
 
-          def summarize(graded, orate):
+          def summarize(graded, orates):
+              """orates maps period -> (over rate, n), for "all", "fit" and "fwd"."""
               def blank(): return {"n": 0, "W": 0, "L": 0, "P": 0, "units": 0.0, "clv": [],
                                    "clvp": [], "ov": 0, "dec": 0, "exp": 0.0}
               S = collections.defaultdict(blank)
               for g in graded:
+                  per = period_of(g)
                   for cp in ("early", "close"):
                       gr = g.get(cp + "_graded") or {}
                       r = g["markets"].get(cp) or {}
@@ -376,20 +473,24 @@ jobs:
                       for sig, x in list(gr.items()) + pairs:
                           for tag in tags:
                               if not tag: continue
-                              s = S[(sig, cp, tag)]
-                              s["n"] += 1; s[x["res"]] += 1; s["units"] += x["units"]
-                              if "clv" in x: s["clv"].append(x["clv"])
-                              if "clv_pct" in x: s["clvp"].append(x["clv_pct"])
-                              if x["res"] != "P":
-                                  s["dec"] += 1
-                                  s["ov"] += (x["side"] == "over")
-                                  s["exp"] += orate if x["side"] == "over" else (1 - orate)
+                              for pr in ("all", per):
+                                  s = S[(sig, cp, tag, pr)]
+                                  # this stat's own over rate, not the pooled one
+                                  orate = orates[pr][2].get(g["stat"], (orates[pr][0],))[0]
+                                  s["n"] += 1; s[x["res"]] += 1; s["units"] += x["units"]
+                                  if "clv" in x: s["clv"].append(x["clv"])
+                                  if "clv_pct" in x: s["clvp"].append(x["clv_pct"])
+                                  if x["res"] != "P":
+                                      s["dec"] += 1
+                                      s["ov"] += (x["side"] == "over")
+                                      s["exp"] += orate if x["side"] == "over" else (1 - orate)
               out = []
-              for (sig, cp, tag), s in S.items():
+              for (sig, cp, tag, pr), s in S.items():
                   dec_ = s["W"] + s["L"]
                   hit = s["W"] / dec_ if dec_ else None
                   z = (s["W"] - dec_ * BREAKEVEN) / math.sqrt(dec_ * 0.25) if dec_ else None
-                  row = {"signal": sig, "checkpoint": cp, "slice": tag, "n": s["n"], "W": s["W"],
+                  row = {"signal": sig, "checkpoint": cp, "slice": tag, "period": pr,
+                         "n": s["n"], "W": s["W"],
                          "L": s["L"], "P": s["P"],
                          "hit_pct": round(100 * hit, 1) if hit is not None else None,
                          "units": round(s["units"], 2),
@@ -409,28 +510,34 @@ jobs:
                       row["clv_price_avg"] = round(sum(c) / len(c), 2)
                       row["clv_price_pos_pct"] = round(100 * sum(1 for x in c if x > 0) / len(c), 1)
                   e = row.get("edge_pts")
-                  row["proposal"] = (
+                  verdict = (
                       f"keep collecting ({dec_}/{MIN_N})" if dec_ < MIN_N else
                       "PROMOTE: beats break-even and its own base rate" if z >= 1.5 and (e or 0) >= 5 else
                       "beats break-even but not its base rate -- directional bias, not signal"
                       if z >= 1.5 else
                       "INVERT candidate: wrong well beyond its base rate" if (e or 0) <= -15 else
                       "DROP: below break-even" if z <= -1.5 else "no edge shown yet")
+                  # in-sample verdicts are guesses about the future, not findings about it
+                  row["proposal"] = (f"HYPOTHESIS (in-sample) -- {verdict}"
+                                     if pr == "fit" and dec_ >= MIN_N else verdict)
                   out.append(row)
               # mark pairs that merely restate a component: same W-L as one of its own halves
-              single = {(r["signal"], r["checkpoint"], r["slice"]): (r["W"], r["L"])
+              single = {(r["signal"], r["checkpoint"], r["slice"], r["period"]): (r["W"], r["L"])
                         for r in out if "+" not in r["signal"]}
               for r in out:
                   if "+" not in r["signal"]: continue
                   a_, b_ = r["signal"].split("+", 1)
                   for comp in (a_, b_):
-                      if single.get((comp, r["checkpoint"], r["slice"])) == (r["W"], r["L"]):
+                      if single.get((comp, r["checkpoint"], r["slice"],
+                                     r["period"])) == (r["W"], r["L"]):
                           r["redundant_with"] = comp
                           r["proposal"] = f"redundant -- identical record to {comp} alone, not independent confirmation"
                           break
 
               order = {s: i for i, s in enumerate(SIGNALS)}
-              out.sort(key=lambda r: (r["slice"] != "all", r["checkpoint"], "+" in r["signal"],
+              perord = {"all": 0, "fit": 1, "fwd": 2}
+              out.sort(key=lambda r: (perord.get(r["period"], 9), r["slice"] != "all",
+                                      r["checkpoint"], "+" in r["signal"],
                                       order.get(r["signal"], 9), r["slice"]))
               return out
 
@@ -438,10 +545,23 @@ jobs:
           def rec_str(r): return f"{r['W']}-{r['L']}" + (f"-{r['P']}" if r["P"] else "")
 
 
-          def scorecard_md(summary, graded, orate, on, nores, gen):
+          def scorecard_md(summary, graded, orates, nores, gen):
+              orate, on = orates["all"][0], orates["all"][1]
+              nfit = sum(1 for g in graded if period_of(g) == "fit")
+              nfwd = len(graded) - nfit
               L = ["# NFL prop scorecard", "",
                    f"Generated {gen}. {len(graded)} graded props "
                    f"({nores} had no nflverse result and are not graded).", "",
+                   "## Read this first: fit vs forward", "",
+                   f"**{nfit} props before {HOLDOUT_FROM} (fit) · {nfwd} on or after it (forward).**",
+                   "",
+                   "Every signal and threshold here was chosen by looking at the props before",
+                   f"{HOLDOUT_FROM}. `pin_lead` read 17-8 on Nov 15 and 22-22 a week later; the only",
+                   "way to tell a signal from a streak is to score it on props it had no hand in",
+                   "picking. So every record appears twice:", "",
+                   "- **FIT** — in-sample. A label here is a **hypothesis**.",
+                   "- **FORWARD** — out-of-sample. A label here is **evidence**.", "",
+                   "The over base rate is measured separately in each period.", "",
                    "**Read this on its own scale, not against the side scorecard.** Pinnacle risks",
                    "**$75,000** on an NFL side and **$1,000-$3,000** on a prop at kickoff, $250-$500",
                    "earlier in the week. The sharpest book in the world is telling you it is 25-75x",
@@ -454,34 +574,67 @@ jobs:
                    "**CLV pts** is handicap movement and is near-blank here, because most prop",
                    "numbers never move. **CLV price** is the real one: percentage points of implied",
                    "probability gained on the taken side between the early read and the close.", "",
-                   f"Base rate: the over hit **{100*orate:.1f}%** of {on} graded props. `expected %` is",
-                   "that rate applied to the sides each signal picked; `edge` is hit% minus it.", "",
+                   f"Base rate: the over hit **{100*orate:.1f}%** of {on} graded props, but `expected %`",
+                   "uses **each stat's own rate**, not that pooled one. A yardage over is near a coin",
+                   "flip; an anytime-TD over 0.5 is a longshot. Scored against one pooled number every",
+                   "anytime-TD signal would be charged an expectation it could never meet:", ""]
+              for st, (rt, nn) in sorted(orates["all"][2].items(), key=lambda kv: -kv[1][1]):
+                  L.append(f"- **{st}**: over hit {100*rt:.1f}% of {nn}"
+                           + ("" if nn >= 25 else "  *(too few — uses the pooled rate)*"))
+              L += ["",
                    f"Proposals appear at {MIN_N} decided props. Nothing changes automatically.", ""]
-              for cp in ("early", "close"):
-                  L += [f"## {cp.upper()}", "",
-                        "| signal | record | hit % | expected % | edge | units | ROI % | "
-                        "CLV pts | CLV price | CLV + % | status |",
-                        "|---|---|---|---|---|---|---|---|---|---|---|"]
+              hdr = ["| signal | record | hit % | expected % | edge | units | ROI % | "
+                     "CLV pts | CLV price | CLV + % | status |",
+                     "|---|---|---|---|---|---|---|---|---|---|---|"]
+
+              def rows(per, cp):
+                  out_ = []
                   for r in summary:
-                      if r["slice"] != "all" or r["checkpoint"] != cp: continue
-                      L.append(f"| {r['signal']} | {rec_str(r)} | {r['hit_pct']} | "
-                               f"{r.get('expected_pct','')} | {r.get('edge_pts','')} | {r['units']:+} | "
-                               f"{r['roi_pct']} | {r.get('clv_avg','')} | "
-                               f"{r.get('clv_price_avg','')} | {r.get('clv_price_pos_pct','')} | "
-                               f"{r['proposal']} |")
-                  L.append("")
-              L += ["## By Pinnacle limit and by stat", "",
+                      if (r["slice"] != "all" or r["checkpoint"] != cp
+                              or r["period"] != per): continue
+                      out_.append(f"| {r['signal']} | {rec_str(r)} | {r['hit_pct']} | "
+                                  f"{r.get('expected_pct','')} | {r.get('edge_pts','')} | {r['units']:+} | "
+                                  f"{r['roi_pct']} | {r.get('clv_avg','')} | "
+                                  f"{r.get('clv_price_avg','')} | {r.get('clv_price_pos_pct','')} | "
+                                  f"{r['proposal']} |")
+                  return out_
+
+              for per, head, note in (
+                      ("fwd", "FORWARD (out-of-sample — this is the evidence)",
+                       f"Props for games kicking off on or after {HOLDOUT_FROM}. "
+                       f"n={nfwd}, over rate {100*orates['fwd'][0]:.1f}% of {orates['fwd'][1]}."),
+                      ("fit", "FIT (in-sample — this is the hypothesis)",
+                       f"Props before {HOLDOUT_FROM}, which the signals were chosen on. "
+                       f"n={nfit}, over rate {100*orates['fit'][0]:.1f}% of {orates['fit'][1]}.")):
+                  L += [f"# {head}", "", note, ""]
+                  if per == "fwd" and nfwd == 0:
+                      L += ["*No props yet. The forward test starts with the next kickoff.*", ""]
+                      continue
+                  for cp in ("early", "close"):
+                      L += [f"## {cp.upper()}  ({per})", ""] + hdr + rows(per, cp) + [""]
+              L += ["# Pooled (fit + forward together)", "",
+                    "Kept for continuity. **Contaminated** — it mixes the props the signals were",
+                    "chosen on with the props testing them.", ""]
+              for cp in ("early", "close"):
+                  L += [f"## {cp.upper()}  (pooled)", ""] + hdr + rows("all", cp) + [""]
+              L += ["## By Pinnacle limit and by stat (pooled)", "",
                     "| signal | checkpoint | slice | record | hit % | edge | ROI % |",
                     "|---|---|---|---|---|---|---|"]
               for r in summary:
-                  if r["slice"] == "all": continue
+                  if r["slice"] == "all" or r["period"] != "all": continue
                   L.append(f"| {r['signal']} | {r['checkpoint']} | {r['slice']} | {rec_str(r)} | "
                            f"{r['hit_pct']} | {r.get('edge_pts','')} | {r['roi_pct']} |")
               return "\n".join(L) + "\n"
 
 
           def board_md(live, summary, gen):
-              rec = {r["signal"]: r for r in summary if r["slice"] == "all" and r["checkpoint"] == "close"}
+              rec = {(r["signal"], r["period"]): r for r in summary
+                     if r["slice"] == "all" and r["checkpoint"] == "close"}
+
+              def rec2(sig):
+                  """fit record, then forward record. No "|" -- this lands in a table cell."""
+                  f_ = rec.get((sig, "fit")); w_ = rec.get((sig, "fwd"))
+                  return f"{rec_str(f_) if f_ else '0-0'} fit · {rec_str(w_) if w_ else '0-0'} fwd"
               L = ["# NFL prop board", "",
                    f"Generated {gen}. Live props where at least one signal has an opinion, most",
                    "agreement first. Each call shows that signal's graded record so far.", "",
@@ -502,8 +655,7 @@ jobs:
                   for x, r, side in sorted(groups[k], key=lambda y: (y[0]["kickoff"], y[0]["player"])):
                       ko = iso(x["kickoff"])
                       kt = (ko - dt.timedelta(hours=5)).strftime("%a %H:%M") if ko else ""
-                      parts = [f"{s}->{sd} ({rec_str(rec[s]) if s in rec else '0-0'})"
-                               for s, sd in r["calls"].items()]
+                      parts = [f"{s}->{sd} ({rec2(s)})" for s, sd in r["calls"].items()]
                       px = f"{r['odds'][side]:+d}" if r["odds"].get(side) is not None else ""
                       L.append(f"| {kt} | {x['player'].title()} | {x['stat']} | {side} | "
                                f"{r['line']:g} | {r.get('open','')} | {r.get('pin','')} | "
@@ -517,23 +669,34 @@ jobs:
 
           if __name__ == "__main__":
               graded, live, nores = build()
-              orate, on = over_rate(graded)
-              summary = summarize(graded, orate)
+              orates = {p_: over_rate(graded, None if p_ == "all" else p_)
+                        for p_ in ("all", "fit", "fwd")}
+              orate, on = orates["all"][0], orates["all"][1]
+              summary = summarize(graded, orates)
               gen = dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
+              nfit = sum(1 for g in graded if period_of(g) == "fit")
               os.makedirs(C("graded"), exist_ok=True)
               json.dump(graded, open(C("graded", "props.json"), "w"), indent=1)
               json.dump({"generated": gen, "graded_props": len(graded), "no_result": nores,
                          "over_base_rate": round(orate, 4), "min_n_to_propose": MIN_N,
+                         "holdout_from": HOLDOUT_FROM, "fit_props": nfit,
+                         "forward_props": len(graded) - nfit,
+                         "over_base_rate_by_period": {k: round(v[0], 4) for k, v in orates.items()},
                          "signals": summary}, open(C("graded", "props_summary.json"), "w"), indent=1)
-              open(C("PROPS_SCORECARD.md"), "w").write(scorecard_md(summary, graded, orate, on, nores, gen))
+              open(C("PROPS_SCORECARD.md"), "w").write(scorecard_md(summary, graded, orates, nores, gen))
               open(C("PROPS_BOARD.md"), "w").write(board_md(live, summary, gen))
               print(f"graded props: {len(graded)}   live on board: {len(live)}   no result: {nores}")
               print(f"over base rate: {100*orate:.1f}% of {on}")
-              for r in summary:
-                  if r["slice"] == "all":
+              print(f"holdout {HOLDOUT_FROM}: {nfit} fit props, {len(graded)-nfit} forward props")
+              for per in ("fwd", "fit"):
+                  rows_ = [r for r in summary if r["slice"] == "all" and r["period"] == per]
+                  print(f"--- {per.upper()} ---" + ("  (empty -- starts at next kickoff)"
+                                                    if not rows_ else ""))
+                  for r in rows_:
                       print(f"  {r['checkpoint']:5} {r['signal']:10} {rec_str(r):>9}  hit {r['hit_pct']}"
                             f"  exp {r.get('expected_pct')}  edge {r.get('edge_pts')}"
                             f"  roi {r['roi_pct']}  {r['proposal']}")
+
           PY
 
       - name: Commit
