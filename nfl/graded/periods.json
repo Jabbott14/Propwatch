@@ -20733,5 +20733,324 @@
     "took_default": true
    }
   }
+ },
+ {
+  "game": "Los Angeles Chargers @ Baltimore Ravens",
+  "market": "q4|ml",
+  "period": "q4",
+  "kind": "ml",
+  "kickoff": "2026-11-17T01:15:00.000Z",
+  "markets": {
+   "close": {
+    "t": "2026-11-17T0114Z",
+    "line": {
+     "home": -162,
+     "away": 130
+    },
+    "odds": {
+     "home": -162,
+     "away": 130
+    },
+    "open": -154,
+    "open_odds": {
+     "home": -154,
+     "away": 126
+    },
+    "calls": {
+     "follow_move": "home"
+    },
+    "move": -8
+   },
+   "early": {
+    "t": "2026-11-09T2136Z",
+    "line": {
+     "home": -154,
+     "away": 126
+    },
+    "odds": {
+     "home": -154,
+     "away": 126
+    },
+    "open": -154,
+    "open_odds": {
+     "home": -154,
+     "away": 126
+    },
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "follow_move": {
+    "side": "home",
+    "line": -162,
+    "odds": -162,
+    "res": "W",
+    "units": 0.617,
+    "took_default": true
+   }
+  }
+ },
+ {
+  "game": "Los Angeles Chargers @ Baltimore Ravens",
+  "market": "1h|ml",
+  "period": "1h",
+  "kind": "ml",
+  "kickoff": "2026-11-17T01:15:00.000Z",
+  "markets": {
+   "close": {
+    "t": "2026-11-17T0114Z",
+    "line": {
+     "home": -190,
+     "away": 156
+    },
+    "odds": {
+     "home": -190,
+     "away": 156
+    },
+    "open": -205,
+    "open_odds": {
+     "home": -205,
+     "away": 164
+    },
+    "calls": {
+     "follow_move": "away"
+    },
+    "move": 15,
+    "pin": -187,
+    "pin_lim": 10000
+   },
+   "early": {
+    "t": "2026-11-09T2136Z",
+    "line": {
+     "home": -205,
+     "away": 164
+    },
+    "odds": {
+     "home": -205,
+     "away": 164
+    },
+    "open": -205,
+    "open_odds": {
+     "home": -205,
+     "away": 164
+    },
+    "calls": {},
+    "pin": -184,
+    "pin_lim": 500
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "follow_move": {
+    "side": "away",
+    "line": 156,
+    "odds": 156,
+    "res": "W",
+    "units": 1.56,
+    "took_default": false
+   }
+  }
+ },
+ {
+  "game": "Los Angeles Chargers @ Baltimore Ravens",
+  "market": "1h|tt|away",
+  "period": "1h",
+  "kind": "tt",
+  "kickoff": "2026-11-17T01:15:00.000Z",
+  "markets": {
+   "close": {
+    "t": "2026-11-17T0114Z",
+    "line": {
+     "over": 7.5,
+     "under": 7.5
+    },
+    "odds": {
+     "over": -102,
+     "under": -125
+    },
+    "open": 7.5,
+    "open_odds": {
+     "over": 100,
+     "under": -128
+    },
+    "calls": {
+     "fd_juice": "over"
+    },
+    "pin": 7.5,
+    "pin_lim": 2000
+   },
+   "early": {
+    "t": "2026-11-09T2136Z",
+    "line": {
+     "over": 7.5,
+     "under": 7.5
+    },
+    "odds": {
+     "over": 100,
+     "under": -128
+    },
+    "open": 7.5,
+    "open_odds": {
+     "over": 100,
+     "under": -128
+    },
+    "calls": {},
+    "pin": 7.5,
+    "pin_lim": 500
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "fd_juice": {
+    "side": "over",
+    "line": 7.5,
+    "odds": -102,
+    "res": "W",
+    "units": 0.98,
+    "took_default": true
+   }
+  }
+ },
+ {
+  "game": "Los Angeles Chargers @ Baltimore Ravens",
+  "market": "1h|spread",
+  "period": "1h",
+  "kind": "spread",
+  "kickoff": "2026-11-17T01:15:00.000Z",
+  "markets": {
+   "close": {
+    "t": "2026-11-17T0114Z",
+    "line": {
+     "home": -2.5,
+     "away": 2.5
+    },
+    "odds": {
+     "home": -125,
+     "away": 105
+    },
+    "open": -3.5,
+    "open_odds": {
+     "home": 105,
+     "away": -125
+    },
+    "calls": {
+     "follow_move": "away",
+     "pin_value": "home"
+    },
+    "move": 1.0,
+    "pin": -3.0,
+    "pin_lim": 20000,
+    "pin_gap": 0.5
+   },
+   "early": {
+    "t": "2026-11-09T2136Z",
+    "line": {
+     "home": -3.5,
+     "away": 3.5
+    },
+    "odds": {
+     "home": 105,
+     "away": -125
+    },
+    "open": -3.5,
+    "open_odds": {
+     "home": 105,
+     "away": -125
+    },
+    "calls": {
+     "pin_value": "away"
+    },
+    "pin": -3.0,
+    "pin_lim": 500,
+    "pin_gap": -0.5
+   }
+  },
+  "early_graded": {
+   "pin_value": {
+    "side": "away",
+    "line": 3.5,
+    "odds": -125,
+    "res": "W",
+    "units": 0.8,
+    "took_default": false,
+    "clv": 1.0
+   }
+  },
+  "close_graded": {
+   "follow_move": {
+    "side": "away",
+    "line": 2.5,
+    "odds": 105,
+    "res": "W",
+    "units": 1.05,
+    "took_default": false
+   },
+   "pin_value": {
+    "side": "home",
+    "line": -2.5,
+    "odds": -125,
+    "res": "L",
+    "units": -1.0,
+    "took_default": true
+   }
+  }
+ },
+ {
+  "game": "Los Angeles Chargers @ Baltimore Ravens",
+  "market": "2h|ml",
+  "period": "2h",
+  "kind": "ml",
+  "kickoff": "2026-11-17T01:15:00.000Z",
+  "markets": {
+   "close": {
+    "t": "2026-11-17T0114Z",
+    "line": {
+     "home": -166,
+     "away": 142
+    },
+    "odds": {
+     "home": -166,
+     "away": 142
+    },
+    "open": -172,
+    "open_odds": {
+     "home": -172,
+     "away": 144
+    },
+    "calls": {
+     "follow_move": "away"
+    },
+    "move": 6
+   },
+   "early": {
+    "t": "2026-11-09T2136Z",
+    "line": {
+     "home": -172,
+     "away": 144
+    },
+    "odds": {
+     "home": -172,
+     "away": 144
+    },
+    "open": -172,
+    "open_odds": {
+     "home": -172,
+     "away": 144
+    },
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "follow_move": {
+    "side": "away",
+    "line": 142,
+    "odds": 142,
+    "res": "L",
+    "units": -1.0,
+    "took_default": false
+   }
+  }
  }
 ]
