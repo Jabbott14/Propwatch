@@ -24,9 +24,10 @@ jobs:
   run:
     runs-on: ubuntu-latest
     steps:
+      # Shallow clone, like the other seven workflows. fetch-depth: 0 pulled the whole
+      # history -- 366 MB and growing ~16 MB/day -- on every run, eight times a day, to
+      # read files that are all present at HEAD. Nothing here reads git history.
       - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
 
       - name: Grade and build the board
         run: |
