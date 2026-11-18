@@ -10,16 +10,16 @@
  "pin_leagues": [
   {
    "id": 493,
-   "n": 30,
+   "n": 26,
    "name": "NCAA"
   }
  ],
- "run_utc": "2026-11-18T04:50:40Z",
+ "run_utc": "2026-11-18T10:11:00Z",
  "tried": [
   {
-   "bytes": 444628,
+   "bytes": 552858,
    "kind": "fd_lobby",
-   "score": 35,
+   "score": 57,
    "url": "https://sbapi.nj.sportsbook.fanduel.com/api/content-managed-page?page=CUSTOM&customPageId=ncaab&_ak=<ak>"
   },
   {
@@ -41,16 +41,16 @@
    "url": "https://sbapi.nj.sportsbook.fanduel.com/api/content-managed-page?page=CUSTOM&customPageId=ncaa-basketball-men&_ak=<ak>"
   },
   {
-   "bytes": 294486,
+   "bytes": 165427,
    "kind": "actionnet",
-   "score": 11,
-   "url": "https://api.actionnetwork.com/web/v2/scoreboard/ncaab?period=game&date=20261117"
+   "score": 9,
+   "url": "https://api.actionnetwork.com/web/v2/scoreboard/ncaab?period=game&date=20261118"
   },
   {
-   "bytes": 1393825,
+   "bytes": 1296300,
    "kind": "actionnet",
-   "score": 55,
-   "url": "https://api.actionnetwork.com/web/v2/scoreboard/ncaab?period=game&division=D1&date=20261117"
+   "score": 61,
+   "url": "https://api.actionnetwork.com/web/v2/scoreboard/ncaab?period=game&division=D1&date=20261118"
   },
   {
    "error": "HTTPError: HTTP Error 403: Forbidden",
