@@ -183,6 +183,17 @@ jobs:
                       -u if res == "L" else 0.0)
                   row["clv"] = clv(p["market"], p["side"], p.get("line"), p.get("price"), close)
                   row["close_line"] = (close or {}).get("line", {}).get(p["side"])
+                  # Bet count is read from the graded CLOSE record, never from the pick entry.
+                  # A count logged when the pick is made is a PRE-TIP number and is far smaller
+                  # than the one the analysis buckets on: ODU@UVA read 585 when its money ratio
+                  # spiked and closed at 2,589. Logging the live figure would have sorted picks
+                  # into the wrong volume bucket every time -- which is exactly the mistake made
+                  # by hand on 2026-11-19 before this was written.
+                  nb = (close or {}).get("nb")
+                  row["bets"] = nb
+                  row["vol_bucket"] = (None if nb is None else
+                                       "<500" if nb < 500 else "500-999" if nb < 1000 else
+                                       "1k-2k" if nb < 2000 else "2k-4k" if nb < 4000 else "4k+")
                   out.append(row)
               return out
 
@@ -222,6 +233,7 @@ jobs:
                     f"- {len(pend)} pending, {len(unm)} unmatched" if (pend or unm) else "", ""]
 
               for key, title in (("sport", "By sport"), ("driver", "By what drove the pick"),
+                                 ("vol_bucket", "By market volume at close (PRE-DECLARED TEST)"),
                                  ("board_rank", "By what the board said at the time")):
                   buckets = collections.defaultdict(lambda: [0, 0, 0, 0.0, []])
                   for r in gr:
