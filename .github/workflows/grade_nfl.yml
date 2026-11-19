@@ -1024,6 +1024,11 @@ jobs:
               return L
 
 
+          def s0_of(mkt):
+              """The side pin_gap and the other stored scalars are framed in."""
+              return SIDES[mkt][0]
+
+
           def board_md(upcoming, summary, gen):
               rec = {(r["signal"], r["market"], r["period"]): r for r in summary
                      if r["slice"] == "all" and r["checkpoint"] == "close"}
@@ -1200,7 +1205,20 @@ jobs:
                       ov = (r.get("open_side") or {}).get(side, r.get("open"))
                       op = f"{ov:g}" if ov is not None else ""
                       mv = f"{r['move_pts']:g}" if r.get("move_pts") else ""
-                      gap = f"{r['pin_gap']:+g}" if r.get("pin_gap") is not None else ""
+                      # LEAN-ORIENTED. pin_gap is stored in the s0 (home/over) frame, so printing
+                      # it raw next to an away/under lean inverts its meaning: TEN@DAL +7.5 showed
+                      # "+0.5" while actually being half a point WORSE than Pinnacle. Positive here
+                      # always means "FanDuel's number is better for the side we are leaning".
+                      # NOTE this is information, not a gate. Graded 2026-11-19 over 2,950 CBB
+                      # markets, the gap does not order outcomes at all: >= +1.0 returns -5.2%,
+                      # same number -3.5%, <= -1.0 returns -1.8%. Five buckets, no monotonicity.
+                      # Plays were being cut on this with no evidence behind it.
+                      _g = r.get("pin_gap")
+                      if _g is None:
+                          gap = ""
+                      else:
+                          _o = _g if side in (s0_of(mkt),) else -_g
+                          gap = f"{_o:+g}"
                       pub = (f"{r['public_side']} {r['public_tix']}%" if r.get("public_side") else "")
                       odds = f" ({r['odds'][side]:+d})" if r["odds"][side] is not None else ""
                       tm = (f"{r['tix'][side]}% / {r['mny'][side]}%"
