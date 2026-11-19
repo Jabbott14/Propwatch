@@ -1,6 +1,6 @@
 # NFL prop scorecard
 
-Generated 2026-11-19 12:13 UTC. 928 graded props (127 had no nflverse result and are not graded).
+Generated 2026-11-19 21:00 UTC. 928 graded props (127 had no nflverse result and are not graded).
 
 ## Read this first: fit vs forward
 
