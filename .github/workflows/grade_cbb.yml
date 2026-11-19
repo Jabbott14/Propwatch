@@ -739,18 +739,34 @@ jobs:
 
           def flagged_md(live, summary, rec_of, label_of):
               """Reverse line movement WITH public-split confirmation, pulled to the top of the
-              board instead of buried in a signal list. Two tiers:
-                PINNACLE moved against the public  (pin_rlm)  -- the sharp book repricing
-                FanDuel moved against the public   (rlm_ratio) -- a retail book reacting
-              Both require the crowd to hold the ticket majority on the OTHER side and the flagged
-              side's money share to run at least RLM_RATIO_MIN times its ticket share."""
+              board instead of buried in a signal list. Three tiers:
+                PINNACLE moved against the public  (pin_rlm)    -- the sharp book repricing
+                FanDuel moved against the public   (rlm_ratio)  -- a retail book reacting
+                line moved off a >=60% public side (rlm)        -- no money-ratio requirement
+
+              The third tier exists because the first two were screening out the stated rule.
+              pin_rlm and rlm_ratio both demand that the side the line moved TOWARD carries at
+              least RLM_RATIO_MIN times its share of money. The original template is about the
+              side the line moved AWAY from: the crowd holds the tickets AND the money, and the
+              number goes the other way regardless. IND@HOU on 2026-11-19 was exactly that --
+              73% of tickets and 76% of money on the over, total 44.5 -> 43.5, 17,670 bets, the
+              heaviest volume on the card -- and it appeared nowhere, because the under's money
+              ratio was 0.89. Plain `rlm` fired on it and had no surface to appear on.
+
+              Tier 3 is intentionally the weakest and is labelled so: `rlm` is 5-17 in NFL. It is
+              here to be SEEN and graded, not to be trusted."""
               hits = []
               for x in live:
                   r = x["now"] if "now" in x else x
-                  for sig, tier in (("pin_rlm", "PINNACLE moved vs public"),
-                                    ("rlm_ratio", "FanDuel moved vs public")):
+                  for rank, (sig, tier) in enumerate((
+                          ("pin_rlm", "PINNACLE moved vs public"),
+                          ("rlm_ratio", "FanDuel moved vs public"),
+                          ("rlm", "line moved off the public (no ratio test)"))):
                       sd = r["calls"].get(sig)
-                      if sd: hits.append((0 if sig == "pin_rlm" else 1, tier, sig, sd, x, r))
+                      # don't repeat a market in tier 3 that a stronger tier already showed
+                      if sig == "rlm" and (r["calls"].get("pin_rlm") == sd
+                                           or r["calls"].get("rlm_ratio") == sd): continue
+                      if sd: hits.append((rank, tier, sig, sd, x, r))
               if not hits: return []
               hits.sort(key=lambda h: (h[0], label_of(h[4])))
               L = ["## FLAGGED — reverse line movement with split confirmation", "",
@@ -768,12 +784,20 @@ jobs:
                   s = rec_of(sig)
                   pin = sig == "pin_rlm"
                   book = "Pinnacle" if pin else "FanDuel"
-                  frm = r.get("pin_mv_from") if pin else r.get("open")
+                  # NOT r["open"] -- that is the s0 (home/over) opener, and printing it beside an
+                  # away/under flag showed another side's number: Tennessee's moneyline read
+                  # "-450 -> 330" (-450 was DALLAS's opener) and Miami's spread read "-17 -> 16.5",
+                  # a sign flip. open_side carries the flagged side's own opener; use it.
+                  frm = r.get("pin_mv_from") if pin else (r.get("open_side") or {}).get(sd, r.get("open"))
                   to_ = r.get("pin_mv_to") if pin else (r.get("line") or {}).get(sd)
                   tx = r.get("pin_rlm_tix") if pin else (r.get("tix") or {}).get(sd)
                   rt = r.get("pin_rlm_ratio") if pin else r.get("mny_ratio")
                   ln = (r.get("line") or {}).get(sd)
-                  mv = (f"{frm:g} -> {to_:g}" if None not in (frm, to_) else "")
+                  # A flagged side whose own number never moved is honest information, not a move:
+                  # the signal fired on the OTHER side's price shifting (Pinnacle re-vigging one
+                  # side only). Say so rather than printing "139 -> 139" as though it moved.
+                  mv = ("" if None in (frm, to_) else
+                        f"{frm:g} (other side moved)" if frm == to_ else f"{frm:g} -> {to_:g}")
                   L.append(f"| {tier} | {label_of(x)} | {x.get('market', r.get('mkt',''))} | {sd} | "
                            f"{book} | {mv} | {ln if ln is not None else ''} | "
                            f"{tx}% | {rt} | {s} |")
@@ -866,6 +890,10 @@ jobs:
                    "lays −880 favourites, and on 2026-11-17 that ranked a −880 chalk first here.",
                    "Raw agreement count is shown too, but it is the weaker number — a",
                    "market can have five signals agreeing where four have losing records.", "",
+                   "**SPLIT** marks a market where at least two signals point each way. Those average",
+                   "to a weak score and land in band D looking empty, when our inputs are in",
+                   "conflict — often the markets worth the most attention. They sort first inside",
+                   "whatever band they fall in.", "",
                    "Each call shows **two** records: `fit` (games the signal was chosen on, before",
                    f"{HOLDOUT_FROM} — a good number there proves nothing) and `fwd` (games since,",
                    "which it had no hand in choosing). A `*` means the weight came from the forward",
@@ -883,14 +911,19 @@ jobs:
                       tally = collections.Counter(calls.values())
                       side, n = tally.most_common(1)[0]
                       sc = score(calls, side, mkt)
-                      groups[band(sc)].append((g, mkt, r, side, sc, n, len(calls) - n))
+                      # SPLIT: signals pointing opposite ways average to a weak score and sink to
+                      # band D looking empty, when our own inputs are actually in conflict. Marked
+                      # and sorted first within its band. See the NFL grader for the case that
+                      # prompted it (IND@HOU 2026-11-19).
+                      opp = len(calls) - n
+                      groups[band(sc)].append((g, mkt, r, side, sc, n, opp, n >= 2 and opp >= 2))
               for b in sorted(groups):
                   L += [f"## {b}", "",
                         "| tip (ET) | game | market | lean | wt ROI | raw | FD now | open | Pin | "
                         "tix / money (lean side) | bets | calls |",
                         "|---|---|---|---|---|---|---|---|---|---|---|---|"]
-                  for g, mkt, r, side, sc, nag, nag_ag in sorted(
-                          groups[b], key=lambda x: (-x[4], x[0]["tip"])):
+                  for g, mkt, r, side, sc, nag, nag_ag, split in sorted(
+                          groups[b], key=lambda x: (not x[7], -x[4], x[0]["tip"])):
                       tip = (dt.datetime.fromisoformat(g["tip"].replace("Z", "+00:00"))
                              - dt.timedelta(hours=5)).strftime("%a %H:%M")
                       parts = []
@@ -905,7 +938,8 @@ jobs:
                       odds = f" ({r['odds'][side]:+d})" if r["odds"][side] is not None else ""
                       tm = (f"{r['tix'][side]}% / {r['mny'][side]}%" if r["tix"][side] is not None
                             and r["mny"][side] is not None else "")
-                      L.append(f"| {tip} | {g['game']} | {mkt} | {side} | {sc:+g} | {nag}-{nag_ag} | "
+                      L.append(f"| {tip} | {g['game']} | {mkt} | "
+                               f"{side}{' **SPLIT**' if split else ''} | {sc:+g} | {nag}-{nag_ag} | "
                                f"{r['line'][side]:g}{odds} | "
                                f"{op} | {pin} | {tm} | {r['nb'] or ''} | "
                                f"{'; '.join(parts)} |")
