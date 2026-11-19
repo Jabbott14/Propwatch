@@ -1,6 +1,6 @@
 # CBB period board
 
-Generated 2026-11-19 02:42 UTC. Live halves and half team totals where a signal has an
+Generated 2026-11-19 11:57 UTC. Live halves and half team totals where a signal has an
 opinion. Each call shows that signal's graded record so far.
 
 No splits exist for any of these markets. This is analysis, not picks.
@@ -9,8 +9,13 @@ No splits exist for any of these markets. This is analysis, not picks.
 
 | tip (ET) | game | market | lean | FD | open | Pin | gap | price | calls |
 |---|---|---|---|---|---|---|---|---|---|
-| Wed 22:00 | Idaho @ Nevada | 1h\|ml | away | 610 | -1000 | -831 |  | 610 | pin_price->away (14-46-1 fit · 5-3 fwd) |
-| Wed 22:00 | Idaho @ Nevada | 1h\|spread | home | -10.5 | -10.5 | -11.0 | 0.5 | -104 | pin_value->home (143-109 fit · 20-25 fwd) |
-| Wed 22:00 | Idaho @ Nevada | 1h\|total | under | 69.5 | 69.5 | 69.0 | 0.5 | -115 | pin_value->under (143-109 fit · 20-25 fwd) |
-| Wed 22:00 | Auburn @ UNLV | 2h\|tt_away | over | 43.5 | 43.5 |  |  | -128 | fd_juice->over (59-75 fit · 12-17 fwd) |
+| Thu 14:30 | West Virginia @ Florida | 1h\|ml | home | -300 | -265 |  |  | -300 | follow_move->home (381-434-6 fit · 126-135-1 fwd) |
+| Thu 14:30 | West Virginia @ Florida | 1h\|spread | home | -5.5 | -4.5 |  |  | -102 | follow_move->home (381-434-6 fit · 126-135-1 fwd) |
+| Thu 14:30 | West Virginia @ Florida | 1h\|total | over | 70.5 | 69.5 |  |  | -111 | follow_move->over (381-434-6 fit · 126-135-1 fwd) |
+| Thu 14:30 | West Virginia @ Florida | 2h\|spread | home | -4.5 | -3.5 |  |  | -110 | follow_move->home (381-434-6 fit · 126-135-1 fwd) |
+| Thu 23:00 | Kansas @ Houston | 1h\|ml | home | -134 | -102 |  |  | -134 | follow_move->home (381-434-6 fit · 126-135-1 fwd) |
+| Thu 23:00 | Kansas @ Houston | 1h\|spread | home | -0.5 | 0.5 |  |  | -122 | follow_move->home (381-434-6 fit · 126-135-1 fwd) |
+| Thu 23:00 | Kansas @ Houston | 1h\|total | under | 69.5 | 70.5 |  |  | -106 | follow_move->under (381-434-6 fit · 126-135-1 fwd) |
+| Thu 23:00 | Kansas @ Houston | 2h\|spread | away | 0.5 | -1.5 |  |  | -108 | follow_move->away (381-434-6 fit · 126-135-1 fwd) |
+| Thu 23:00 | Kansas @ Houston | 2h\|tt_away | over | 40.5 | 39.5 |  |  | -102 | follow_move->over (381-434-6 fit · 126-135-1 fwd) |
 
