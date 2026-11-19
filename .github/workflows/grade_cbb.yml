@@ -63,7 +63,7 @@ jobs:
           MIN_N = 30
           SHRINK_K = 25         # a signal's edge is shrunk toward zero by n/(n+K)
           BREAKEVEN = 0.524            # -110
-          SIGNALS = ("pin_rlm", "pre_move", "follow_move", "rlm_ratio", "money_level",
+          SIGNALS = ("pin_move", "money_delta", "pin_rlm", "pre_move", "follow_move", "rlm_ratio", "money_level",
                      "sharp_gap", "money_moving", "pin_value", "book_lag", "consensus_gap")
           # rlm_ratio is a conjunction, not a single variable. Measured on 1,862 CBB
           # side-observations: a minority-ticket side wins 42.9% alone, and 37.6% if you add a high
@@ -73,6 +73,26 @@ jobs:
           # moves against the crowd to confirm it.
           RLM_TIX_MAX = 45      # that side holds under this share of tickets
           RLM_RATIO_MIN = 1.2   # its money share is at least this multiple of its ticket share
+          # ---------------------------------------------------------------------------
+          # CHANGES, NOT STATES. Measured 2026-11-19 across 2,950 CBB markets where some
+          # signal fired, every state variable came back flat and every derivative carried
+          # information:
+          #   money LEVEL (peak >=95% of handle) ... 53.4%, a coin flip
+          #   money RISING (into a <50% ticket side) 57.1%, n=399
+          #   Pinnacle's POSITION vs FanDuel ....... no order at all across five buckets:
+          #                                          >=+1.0 pt -5.2%, same -3.5%, <=-1.0 -1.8%
+          #   Pinnacle MOVING ...................... orders outcomes at every level of
+          #                                          what FanDuel did
+          #   line UNMOVED ......................... -9.4%
+          #   line ALREADY MOVED 2+ pts ............ -2.3%
+          # The engine was built almost entirely on states -- money_level, sharp_gap and
+          # pin_value all read a snapshot at a checkpoint, and the one change-based signal,
+          # follow_move, reads FANDUEL's change, the book whose direction does not matter.
+          # These two signals read the changes that do.
+          PIN_MOVE_MIN = 0.5    # points Pinnacle's own number must have travelled
+          MONEY_DELTA_MIN = 5   # points of money share a side must have GAINED
+          MONEY_DELTA_TIX_MAX = 50   # ...while still holding under this share of tickets
+          # ---------------------------------------------------------------------------
           # pre_move is rlm_ratio's mirror image and the system's stated goal stated as a signal:
           # the money is on the minority-ticket side at an outsized ratio and the number has NOT
           # moved yet. rlm_ratio pays you for recognising a move that already happened; pre_move
@@ -181,11 +201,25 @@ jobs:
 
           def match_pin(g, pin_keys):
               """Pinnacle uses school names without mascots ('Kentucky' vs 'Kentucky Wildcats').
-              Match when both school names are prefixes of AN's full names and tip is within 90 min."""
+              Match when both school names are prefixes of AN's full names and tip is within 90 min.
+
+              Neutral-site games (MTEs, conference tournaments, the Thanksgiving-week fields)
+              have no real home team, so AN and Pinnacle pick an orientation independently and
+              disagree about half the time. Requiring orientation to agree declined those games
+              outright: neutral games matched at 69.6% against 83.0% for true home/away, and a
+              declined match means no Pinnacle price reaches the board at all -- pin_value,
+              pin_rlm and pin_move all go silent on exactly the games Justin most wants them on.
+
+              So try the reversed orientation too, and report it with swap=True. A forward match
+              is always preferred, and the reversed pass only runs when the forward one finds
+              nothing, so a real home/away game cannot be silently flipped. The caller relabels
+              Pinnacle's home/away rows rather than threading the flag into read().
+
+              Returns (name, key, swap) or None."""
               a, h = norm(g.get("away_name")), norm(g.get("home_name"))
               if not a or not h: return None
               tip = dt.datetime.fromisoformat(g["tip"].replace("Z", "+00:00"))
-              best = None
+              cand = []
               for name, k in pin_keys:
                   try: pk = dt.datetime.fromisoformat(str(k).replace("Z", "+00:00"))
                   except Exception: continue
@@ -193,9 +227,26 @@ jobs:
                   parts = name.split(" @ ")
                   if len(parts) != 2: continue
                   pa, ph = norm(parts[0]), norm(parts[1])
-                  if len(pa) >= 4 and len(ph) >= 4 and a.startswith(pa) and h.startswith(ph):
-                      if best is None or len(pa) + len(ph) > best[0]: best = (len(pa) + len(ph), (name, k))
-              return best[1] if best else None
+                  if len(pa) < 4 or len(ph) < 4: continue
+                  cand.append((name, k, pa, ph))
+              for swap in (False, True):
+                  best = None
+                  for name, k, pa, ph in cand:
+                      x, y = (ph, pa) if swap else (pa, ph)
+                      if a.startswith(x) and h.startswith(y):
+                          if best is None or len(pa) + len(ph) > best[0]:
+                              best = (len(pa) + len(ph), (name, k, swap))
+                  if best: return best[1]
+              return None
+
+
+          def swap_sides(prow):
+              """Relabel Pinnacle's home/away rows for a reversed-orientation match.
+
+              The handicap and the price travel with the team, not with the label, so this is a
+              pure relabel -- no negation. Totals carry no orientation and pass through."""
+              flip = {"home": "away", "away": "home"}
+              return [(row[0], row[1], flip.get(row[2], row[2])) + tuple(row[3:]) for row in prow]
 
 
           # ------------------------------------------------------------------ reads
@@ -291,6 +342,24 @@ jobs:
               _v = (lambda q: (q[1] if mkt == "moneyline" else q[0]) if q else None)
               r["open_side"] = {s0: r["open"], s1: _v(_op1)}
 
+              # --- money_delta: money share on a side has RISEN while that side still holds a
+              #     ticket minority. Level is a coin flip (a side peaking above 95% of handle
+              #     covers 53.4%); the DIRECTION carries -- rising into a 35-50% ticket side ran
+              #     57.1% over 399 markets, rising into a MAJORITY ticket side ran 44.9%, the
+              #     worst cell measured. The ticket cap is load-bearing: without it this inverts.
+              #     Baseline is the first reading with real splits, never AN's 0/0 placeholder --
+              #     using the placeholder is what made money_moving a duplicate of sharp_gap.
+              _b0 = next((x for x in A if x[3] not in (None, 0)), None)
+              _b1 = next((x for x in B if x[3] not in (None, 0)), None)
+              for _sd, _now, _base in ((s0, a, _b0), (s1, b, _b1)):
+                  if not _base or _now[4] is None or _base[4] is None or _now[3] is None: continue
+                  _d = _now[4] - _base[4]
+                  if _d >= MONEY_DELTA_MIN and _now[3] < MONEY_DELTA_TIX_MAX:
+                      prev = r.get("money_delta_pts")
+                      if prev is None or _d > prev:
+                          r["money_delta_pts"] = round(_d, 1)
+                          r["calls"]["money_delta"] = _sd
+
               # follow_move: spread home value falling = moving toward home; total rising = toward over.
               # moneyline has no handicap, so the move is in PRICE: the side whose implied
               # probability rose is the side the market moved toward.
@@ -371,8 +440,29 @@ jobs:
                           else:                      # FD total above Pinnacle -> under
                               r["calls"]["pin_value"] = s1 if a[1] > p[3] else s0
 
-                      # --- pin_rlm: PINNACLE moved against the public, splits confirm
                       p0 = next((x for x in prow if x[1] == mkt and x[2] == s0 and x[3] is not None), None)
+
+                      # --- pin_move: Pinnacle's OWN number has travelled, take the side it
+                      #     travelled toward. No public test, no money ratio, no comparison with
+                      #     FanDuel -- that is the point. Pinnacle's POSITION relative to FanDuel
+                      #     orders nothing (>= +1.0pt -5.2%, same -3.5%, <= -1.0pt -1.8%, no
+                      #     monotonicity over 2,950 markets); Pinnacle's MOTION orders outcomes at
+                      #     every level of what FanDuel did.
+                      if p0 and p0[3] is not None and p[3] is not None:
+                          if mkt == "moneyline":
+                              i1, i0 = imp(p[3]), imp(p0[3])
+                              if i1 and i0 and abs(i1 - i0) >= 0.01:
+                                  r["pin_move_to"] = s0 if i1 > i0 else s1
+                                  r["pin_move_pts"] = round(100 * (i1 - i0), 1)
+                                  r["calls"]["pin_move"] = r["pin_move_to"]
+                          elif abs(p[3] - p0[3]) >= PIN_MOVE_MIN:
+                              up = p[3] > p0[3]
+                              to = (s1 if up else s0) if mkt == "spread" else (s0 if up else s1)
+                              r["pin_move_to"] = to
+                              r["pin_move_pts"] = round(abs(p[3] - p0[3]), 1)
+                              r["calls"]["pin_move"] = to
+
+                      # --- pin_rlm: PINNACLE moved against the public, splits confirm
                       if p0 and p0[3] != p[3] and None not in (a[3], b[3], a[4], b[4]):
                           if mkt == "moneyline":
                               i1, i0 = imp(p[3]), imp(p0[3])
@@ -459,7 +549,10 @@ jobs:
           #   fit  before HOLDOUT_FROM -- in-sample, a label there is a HYPOTHESIS
           #   fwd  on or after it      -- out-of-sample, a label there is EVIDENCE
           # Changing a threshold moves this date forward and restarts the forward test.
-          HOLDOUT_FROM = "2026-11-17"
+          # Bumped 2026-11-19 when pin_move and money_delta were added. Adding a signal is
+          # exactly the change this date exists to charge for: games through 2026-11-19 are
+          # the window those two were designed in, so they are fit, not evidence.
+          HOLDOUT_FROM = "2026-11-20"
           # ---------------------------------------------------------------------------
 
 
@@ -510,14 +603,15 @@ jobs:
                   tipts = iso_to_ts(g["tip"])
                   before = lambda t: t < tipts
                   pk = match_pin(g, pin_keys)
-                  prow = pin.get(pk, []) if pk else []
+                  prow = pin.get(pk[:2], []) if pk else []
+                  if pk and pk[2] and prow: prow = swap_sides(prow)
                   firsts = [s[0][0] for (gg, m, sd), s in ser.items() if gg == gid and s]
                   if not firsts: continue
                   first = min(firsts)
                   e_t = tsfmt(parse_ts(first) + dt.timedelta(minutes=EARLY_MIN))
                   rec = {"gid": gid, "game": g["g"], "away": g.get("away_name"), "home": g.get("home_name"),
                          "tip": g["tip"], "conf": [g.get("ac"), g.get("hc")], "first_seen": first,
-                         "caught": (openers.get(gid) or {}).get("caught"), "pin_match": pk[0] if pk else None,
+                         "caught": (openers.get(gid) or {}).get("caught"), "pin_match": (pk[0] + (" (reversed)" if pk[2] else "")) if pk else None,
                          "markets": {}}
                   if tipts > nowts:
                       for mkt in MARKETS:
