@@ -1,0 +1,290 @@
+name: grade-picks
+# Grades the picks that were actually recommended, as a signal in its own right.
+#
+# Every signal in this repo has a record; the picks did not. They lived in a project
+# doc written by hand, which is the one kind of record this rebuild exists to remove.
+# This reads picks.json (append-only) plus both sports' graded games and writes:
+#   PICKS_SCORECARD.md   record, net units, CLV, and the same split by sport, by what
+#                        drove the pick, and by what the board said at the time
+#   picks/graded.json    the same as data
+#
+# It touches no signal and no threshold, so it does not move HOLDOUT_FROM.
+# Runs after the other graders so it reads their fresh output.
+on:
+  schedule:
+    - cron: "25 */3 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: grade-picks
+  cancel-in-progress: false
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Grade picks
+        run: |
+          python3 - . <<'PY'
+
+          #!/usr/bin/env python3
+          """Grade the picks that were actually recommended, as a signal in their own right.
+
+          Every signal in this repo has a record. The picks did not. They lived in a project
+          doc written by hand, which is the one kind of record this whole rebuild exists to
+          eliminate -- a wrong finding went into that doc on 2026-11-18 and was only caught
+          because Justin pushed back on it.
+
+          The specific thing this measures, which nothing else does: the picks are NOT the
+          board. On 2026-11-19 the CBB board's top market was +16.8 and the pick was a market
+          ranked -14.9, overridden on price, Pinnacle's direction and limit size. That filtering
+          is either adding value or destroying it. The scorecards can say `rlm_ratio` is 39-49
+          forward; they cannot say whether a human reading the board does better than the raw
+          signal. `board_rank` is recorded ON the pick so "the board was overridden" is countable
+          rather than something mentioned only when it worked.
+
+          CLV is the headline, not W/L. At n=5 the record is noise; CLV is measurable on every
+          pick the moment its game closes and converges far faster.
+
+          Reads   picks.json          (append-only; never edit or delete an entry)
+                  nfl/graded/games.json, cbb/graded/games.json
+          Writes  PICKS_SCORECARD.md, picks/graded.json
+          """
+          import json, os, sys, datetime as dt, collections
+
+          ROOT = sys.argv[1] if len(sys.argv) > 1 else "."
+          C = lambda *p: os.path.join(ROOT, *p)
+
+
+          def dec(american):
+              if american is None: return None
+              a = float(american)
+              return 1 + (a / 100 if a > 0 else 100 / -a)
+
+
+          def imp(american):
+              d = dec(american)
+              return None if not d else 1 / d
+
+
+          def load_picks():
+              p = C("picks.json")
+              if not os.path.exists(p): return []
+              raw = json.load(open(p))
+              return raw if isinstance(raw, list) else raw.get("picks", [])
+
+
+          def load_games():
+              """sport -> {game_key: record}. The two graders store finals differently:
+              NFL as the string "away-home", CBB as {"as":..,"hs":..}. Normalise here."""
+              out = {}
+              for sport, path in (("nfl", C("nfl", "graded", "games.json")),
+                                  ("cbb", C("cbb", "graded", "games.json"))):
+                  d = {}
+                  if os.path.exists(path):
+                      for g in json.load(open(path)):
+                          fin = g.get("final")
+                          if isinstance(fin, str) and "-" in fin:
+                              try: a, h = [int(v) for v in fin.split("-")]
+                              except ValueError: a = h = None
+                          elif isinstance(fin, dict):
+                              a, h = fin.get("as"), fin.get("hs")
+                          else:
+                              a = h = None
+                          g = dict(g); g["_as"], g["_hs"] = a, h
+                          d[g.get("game")] = g
+                  out[sport] = d
+              return out
+
+
+          def find(games, sport, key):
+              """Exact match, then a unique case-insensitive substring match either way, so a
+              pick logged as "UTU@WASH" still resolves if the grader renamed the game."""
+              d = games.get(sport) or {}
+              if key in d: return d[key]
+              k = key.lower().replace(" ", "")
+              hits = [v for g, v in d.items()
+                      if k in g.lower().replace(" ", "") or g.lower().replace(" ", "") in k]
+              return hits[0] if len(hits) == 1 else None
+
+
+          def settle(mkt, side, line, a, h):
+              """W / L / P for a pick, from the final score."""
+              if a is None or h is None: return None
+              if mkt == "spread":
+                  d = ((h - a) if side == "home" else (a - h)) + line
+              elif mkt in ("total", "tt_home", "tt_away"):
+                  tot = (a + h) if mkt == "total" else (h if mkt == "tt_home" else a)
+                  d = (tot - line) if side == "over" else (line - tot)
+              elif mkt == "moneyline":
+                  d = (h - a) if side == "home" else (a - h)
+              else:
+                  return None
+              return "W" if d > 0 else ("L" if d < 0 else "P")
+
+
+          def clv(mkt, side, our_line, our_price, close):
+              """Positive = we bought a better number than the close.
+
+              Points for spread/total (side-framed: on a total the over wants the close HIGHER
+              than what we took, the under wants it lower), cents of implied probability for
+              moneylines, where a line does not exist."""
+              if not close: return None
+              if mkt == "moneyline":
+                  cp = (close.get("odds") or {}).get(side)
+                  i_us, i_cl = imp(our_price), imp(cp)
+                  if None in (i_us, i_cl): return None
+                  return round(100 * (i_cl - i_us), 1)      # we want OUR implied prob lower
+              cl = (close.get("line") or {}).get(side)
+              if cl is None or our_line is None: return None
+              if mkt == "spread":
+                  return round(our_line - cl, 2)            # more points taken = better
+              return round((cl - our_line) if side == "over" else (our_line - cl), 2)
+
+
+          def grade():
+              picks, games = load_picks(), load_games()
+              out = []
+              for p in picks:
+                  g = find(games, p.get("sport"), p.get("game"))
+                  row = dict(p)
+                  if not g:
+                      # graded/games.json holds finished games only, so a pick on a game that has
+                      # not kicked off yet simply is not there. Call that PENDING. Only a pick old
+                      # enough that its game must have finished is UNMATCHED -- and that is a real
+                      # problem worth flagging, because a pick that quietly fails to join is a
+                      # pick that quietly leaves the record.
+                      try:
+                          age = (dt.datetime.now(dt.timezone.utc)
+                                 - dt.datetime.fromisoformat(p["ts"].replace("Z", "+00:00"))).days
+                      except Exception:
+                          age = 99
+                      row["status"] = "pending" if age < 3 else "unmatched"
+                      out.append(row); continue
+                  a, h = g.get("_as"), g.get("_hs")
+                  if a is None:
+                      row["status"] = "pending"; out.append(row); continue
+                  m = (g.get("markets") or {}).get(p.get("market")) or {}
+                  close = m.get("close")
+                  res = settle(p["market"], p["side"], p.get("line"), a, h)
+                  row["status"] = "graded"
+                  row["final"] = f"{a}-{h}"
+                  row["result"] = res
+                  u = float(p.get("units") or 1)
+                  d = dec(p.get("price"))
+                  row["net_units"] = round(u * (d - 1), 3) if res == "W" and d else (
+                      -u if res == "L" else 0.0)
+                  row["clv"] = clv(p["market"], p["side"], p.get("line"), p.get("price"), close)
+                  row["close_line"] = (close or {}).get("line", {}).get(p["side"])
+                  out.append(row)
+              return out
+
+
+          def md(rows, gen):
+              gr = [r for r in rows if r.get("status") == "graded"]
+              W = sum(1 for r in gr if r["result"] == "W")
+              L = sum(1 for r in gr if r["result"] == "L")
+              P = sum(1 for r in gr if r["result"] == "P")
+              net = round(sum(r["net_units"] for r in gr), 2)
+              risk = sum(float(r.get("units") or 1) for r in gr if r["result"] != "P")
+              clvs = [r["clv"] for r in gr if r.get("clv") is not None]
+              pend = [r for r in rows if r.get("status") == "pending"]
+              unm = [r for r in rows if r.get("status") == "unmatched"]
+
+              L_ = ["# Picks scorecard — what was actually recommended", "",
+                    f"Generated {gen}. Every pick ever logged, graded at the price and number",
+                    "taken. `picks.json` is append-only: nothing here is edited or removed after",
+                    "the fact, including the losers.", "",
+                    "**Why this exists separately from the signal scorecards.** The picks are not",
+                    "the board. They are the board filtered by price, Pinnacle's limit, and",
+                    "judgment — and that filter had no record of its own. A scorecard can say",
+                    "`rlm_ratio` is 39-49 forward; only this file can say whether overriding the",
+                    "board helped. `board_rank` on each pick is what the engine said at the time,",
+                    "so an override is countable rather than remembered selectively.", "",
+                    "**Read CLV before the record.** At this sample size W/L is noise. CLV scores",
+                    "every pick the moment its game closes and converges much faster: if the picks",
+                    "are finding value, the number we bought beats the close even while the record",
+                    "is losing.", "",
+                    "## Overall", "",
+                    f"- **Record: {W}-{L}" + (f"-{P}" if P else "") + "**",
+                    f"- **Net: {net:+.2f} units**"
+                    + (f" (ROI {100*net/risk:+.1f}% on {risk:g}u risked)" if risk else ""),
+                    f"- **CLV: {sum(clvs)/len(clvs):+.2f} average**, "
+                    f"{100*sum(1 for c in clvs if c > 0)/len(clvs):.0f}% of picks beat the close"
+                    if clvs else "- CLV: no graded picks yet",
+                    f"- {len(pend)} pending, {len(unm)} unmatched" if (pend or unm) else "", ""]
+
+              for key, title in (("sport", "By sport"), ("driver", "By what drove the pick"),
+                                 ("board_rank", "By what the board said at the time")):
+                  buckets = collections.defaultdict(lambda: [0, 0, 0, 0.0, []])
+                  for r in gr:
+                      k = str(r.get(key, "—"))[:28]
+                      b = buckets[k]
+                      b[0 if r["result"] == "W" else 1 if r["result"] == "L" else 2] += 1
+                      b[3] += r["net_units"]
+                      if r.get("clv") is not None: b[4].append(r["clv"])
+                  if not buckets: continue
+                  L_ += [f"## {title}", "", "| | record | units | CLV avg |", "|---|---|---|---|"]
+                  for k, b in sorted(buckets.items(), key=lambda kv: -kv[1][3]):
+                      cv = f"{sum(b[4])/len(b[4]):+.2f}" if b[4] else ""
+                      L_.append(f"| {k} | {b[0]}-{b[1]}" + (f"-{b[2]}" if b[2] else "")
+                                + f" | {b[3]:+.2f} | {cv} |")
+                  L_.append("")
+
+              L_ += ["## Every pick", "",
+                     "| logged | sport | game | market | side | took | closed | CLV | result | units | driver | board said |",
+                     "|---|---|---|---|---|---|---|---|---|---|---|---|"]
+              for r in sorted(rows, key=lambda r: r.get("ts", ""), reverse=True):
+                  took = (f"{r.get('line'):g} " if r.get("line") is not None else "") + \
+                         (f"({r.get('price'):+d})" if r.get("price") is not None else "")
+                  cl = r.get("close_line")
+                  st = r.get("result") or r.get("status", "")
+                  L_.append(f"| {str(r.get('ts',''))[:16]} | {r.get('sport','')} | {r.get('game','')} | "
+                            f"{r.get('market','')} | {r.get('side','')} | {took} | "
+                            f"{cl if cl is not None else ''} | "
+                            f"{r.get('clv') if r.get('clv') is not None else ''} | **{st}** | "
+                            f"{r.get('net_units', '')} | {r.get('driver','')} | {r.get('board_rank','')} |")
+              if unm:
+                  L_ += ["", "## Unmatched — FLAGGED, not dropped", "",
+                         "These could not be joined to a graded game. They are listed rather than",
+                         "silently excluded, because a pick that quietly disappears is how a record",
+                         "flatters itself.", ""]
+                  for r in unm:
+                      L_.append(f"- `{r.get('ts','')}` {r.get('sport')} {r.get('game')} "
+                                f"{r.get('market')} {r.get('side')}")
+              return "\n".join(x for x in L_ if x is not None) + "\n"
+
+
+          if __name__ == "__main__":
+              rows = grade()
+              gen = dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
+              os.makedirs(C("picks"), exist_ok=True)
+              json.dump(rows, open(C("picks", "graded.json"), "w"), indent=1)
+              open(C("PICKS_SCORECARD.md"), "w").write(md(rows, gen))
+              g = [r for r in rows if r.get("status") == "graded"]
+              cl = [r["clv"] for r in g if r.get("clv") is not None]
+              print(f"{len(rows)} picks | {len(g)} graded | "
+                    f"{sum(1 for r in g if r['result']=='W')}-{sum(1 for r in g if r['result']=='L')}"
+                    f" | net {sum(r['net_units'] for r in g):+.2f}u"
+                    + (f" | CLV {sum(cl)/len(cl):+.2f}" if cl else ""))
+
+          PY
+      - name: commit
+        run: |
+          git config user.name propwatch
+          git config user.email propwatch@users.noreply.github.com
+          git add PICKS_SCORECARD.md picks
+          git diff --staged --quiet && exit 0
+          git commit -q -m "grade-picks $(date -u +%FT%TZ)"
+          for i in 1 2 3 4; do
+            git pull -q --rebase --autostash && git push -q && exit 0
+            sleep 9
+          done
+          exit 1
