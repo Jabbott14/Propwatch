@@ -130,7 +130,14 @@
   "driver": "price vs Pinnacle, $30k limit",
   "board_rank": "A +50.3 (lean agreed)",
   "stake": "paper",
-  "status": "pending"
+  "status": "graded",
+  "final": "3-26",
+  "result": "W",
+  "net_units": 0.455,
+  "clv": 0.0,
+  "close_line": -12.5,
+  "bets": 130160,
+  "vol_bucket": "4k+"
  },
  {
   "ts": "2026-11-19T17:10Z",
@@ -144,7 +151,14 @@
   "driver": "pin_rlm, Pinnacle moved + FanDuel held",
   "board_rank": "D -14.9 (OVERRIDE)",
   "stake": "paper",
-  "status": "pending"
+  "status": "graded",
+  "final": "69-82",
+  "result": "W",
+  "net_units": 0.455,
+  "clv": 0.0,
+  "close_line": 17.5,
+  "bets": 2327,
+  "vol_bucket": "2k-4k"
  },
  {
   "ts": "2026-11-19T17:10Z",
@@ -158,7 +172,14 @@
   "driver": "pin_rlm + price vs Pinnacle",
   "board_rank": "D -11.9 (OVERRIDE)",
   "stake": "paper",
-  "status": "pending"
+  "status": "graded",
+  "final": "77-84",
+  "result": "W",
+  "net_units": 0.455,
+  "clv": 1.0,
+  "close_line": 163.5,
+  "bets": 1913,
+  "vol_bucket": "1k-2k"
  },
  {
   "ts": "2026-11-19T19:30Z",
@@ -193,6 +214,13 @@
   "driver": "pin_rlm, Pinnacle 136.5->132 (4.5pts) on 10% tickets, money/tix 6.6; 9-0 agreement",
   "board_rank": "C +3.8 (lean agreed)",
   "stake": "paper",
-  "status": "pending"
+  "status": "graded",
+  "final": "84-69",
+  "result": "L",
+  "net_units": -0.5,
+  "clv": -2.0,
+  "close_line": 134.5,
+  "bets": 4018,
+  "vol_bucket": "4k+"
  }
 ]
