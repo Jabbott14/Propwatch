@@ -10,6 +10,7 @@
   "units": 1.0,
   "driver": "rlm_ratio + money ratio",
   "board_rank": "backfilled",
+  "stake": "paper",
   "status": "graded",
   "final": "91-109",
   "result": "W",
@@ -30,6 +31,7 @@
   "units": 1.0,
   "driver": "rlm_ratio + money ratio",
   "board_rank": "backfilled",
+  "stake": "paper",
   "status": "graded",
   "final": "65-85",
   "result": "L",
@@ -50,6 +52,7 @@
   "units": 0.5,
   "driver": "pin_rlm + price vs Pinnacle",
   "board_rank": "backfilled",
+  "stake": "paper",
   "status": "graded",
   "final": "68-74",
   "result": "L",
@@ -70,6 +73,7 @@
   "units": 0.5,
   "driver": "pin_rlm + price vs Pinnacle",
   "board_rank": "backfilled",
+  "stake": "paper",
   "status": "graded",
   "final": "90-70",
   "result": "L",
@@ -90,6 +94,7 @@
   "units": 0.5,
   "driver": "pin_rlm + price vs Pinnacle",
   "board_rank": "backfilled; taken at 172 not 171.5",
+  "stake": "paper",
   "status": "graded",
   "final": "71-101",
   "result": "P",
@@ -110,6 +115,7 @@
   "units": 0.5,
   "driver": "price vs Pinnacle only (board top band ignored)",
   "board_rank": "A +69.2 (lean agreed)",
+  "stake": "paper",
   "status": "pending"
  },
  {
@@ -123,6 +129,7 @@
   "units": 0.5,
   "driver": "price vs Pinnacle, $30k limit",
   "board_rank": "A +50.3 (lean agreed)",
+  "stake": "paper",
   "status": "pending"
  },
  {
@@ -136,6 +143,7 @@
   "units": 0.5,
   "driver": "pin_rlm, Pinnacle moved + FanDuel held",
   "board_rank": "D -14.9 (OVERRIDE)",
+  "stake": "paper",
   "status": "pending"
  },
  {
@@ -149,6 +157,42 @@
   "units": 0.5,
   "driver": "pin_rlm + price vs Pinnacle",
   "board_rank": "D -11.9 (OVERRIDE)",
+  "stake": "paper",
+  "status": "pending"
+ },
+ {
+  "ts": "2026-11-19T19:30Z",
+  "sport": "cbb",
+  "game": "WVU@FLA",
+  "market": "total",
+  "side": "under",
+  "line": 147.5,
+  "price": -105,
+  "units": 0.5,
+  "driver": "pin_rlm, Pinnacle 149.5->147.5 on 13% tickets; 10,395 bets (only 4k+ volume play)",
+  "board_rank": "C +5.3 (lean agreed)",
+  "stake": "paper",
+  "status": "graded",
+  "final": "72-85",
+  "result": "L",
+  "net_units": -0.5,
+  "clv": 0.0,
+  "close_line": 147.5,
+  "bets": 12803,
+  "vol_bucket": "4k+"
+ },
+ {
+  "ts": "2026-11-19T19:30Z",
+  "sport": "cbb",
+  "game": "UTEP@NMSU",
+  "market": "total",
+  "side": "under",
+  "line": 132.5,
+  "price": -110,
+  "units": 0.5,
+  "driver": "pin_rlm, Pinnacle 136.5->132 (4.5pts) on 10% tickets, money/tix 6.6; 9-0 agreement",
+  "board_rank": "C +3.8 (lean agreed)",
+  "stake": "paper",
   "status": "pending"
  }
 ]
