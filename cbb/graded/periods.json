@@ -84039,5 +84039,463 @@
     "took_default": true
    }
   }
+ },
+ {
+  "game": "West Virginia @ Florida",
+  "market": "2h|tt_home",
+  "period": "2h",
+  "kind": "tt_home",
+  "tip": "2026-11-19T19:30:00.000Z",
+  "ot": false,
+  "markets": {
+   "close": {
+    "t": "2026-11-19T1929Z",
+    "line": {
+     "over": 40.5,
+     "under": 40.5
+    },
+    "odds": {
+     "over": -125,
+     "under": -102
+    },
+    "open": 41.5,
+    "calls": {
+     "follow_move": "under"
+    },
+    "move": -1.0
+   },
+   "early": {
+    "t": "2026-11-19T0442Z",
+    "line": {
+     "over": 41.5,
+     "under": 41.5
+    },
+    "odds": {
+     "over": -115,
+     "under": -111
+    },
+    "open": 41.5,
+    "calls": {}
+   }
+  },
+  "default_res": "W",
+  "early_graded": {},
+  "close_graded": {
+   "follow_move": {
+    "side": "under",
+    "line": 40.5,
+    "odds": -102,
+    "res": "L",
+    "units": -1.0,
+    "took_default": false
+   }
+  }
+ },
+ {
+  "game": "West Virginia @ Florida",
+  "market": "2h|spread",
+  "period": "2h",
+  "kind": "spread",
+  "tip": "2026-11-19T19:30:00.000Z",
+  "ot": false,
+  "markets": {
+   "close": {
+    "t": "2026-11-19T1929Z",
+    "line": {
+     "home": -3.5,
+     "away": 3.5
+    },
+    "odds": {
+     "home": -104,
+     "away": -120
+    },
+    "open": -3.5,
+    "calls": {
+     "fd_juice": "away"
+    }
+   },
+   "early": {
+    "t": "2026-11-19T0442Z",
+    "line": {
+     "home": -3.5,
+     "away": 3.5
+    },
+    "odds": {
+     "home": -120,
+     "away": -104
+    },
+    "open": -3.5,
+    "calls": {}
+   }
+  },
+  "default_res": "L",
+  "early_graded": {},
+  "close_graded": {
+   "fd_juice": {
+    "side": "away",
+    "line": 3.5,
+    "odds": -120,
+    "res": "W",
+    "units": 0.833,
+    "took_default": false
+   }
+  }
+ },
+ {
+  "game": "Auburn @ Notre Dame",
+  "market": "1h|ml",
+  "period": "1h",
+  "kind": "ml",
+  "tip": "2026-11-19T22:00:00.000Z",
+  "ot": false,
+  "markets": {
+   "close": {
+    "t": "2026-11-19T2159Z",
+    "line": {
+     "home": 130,
+     "away": -160
+    },
+    "odds": {
+     "home": 130,
+     "away": -160
+    },
+    "open": 120,
+    "calls": {
+     "follow_move": "away"
+    },
+    "move": null
+   },
+   "early": {
+    "t": "2026-11-19T0742Z",
+    "line": {
+     "home": 120,
+     "away": -148
+    },
+    "odds": {
+     "home": 120,
+     "away": -148
+    },
+    "open": 120,
+    "calls": {}
+   }
+  },
+  "default_res": "L",
+  "early_graded": {},
+  "close_graded": {
+   "follow_move": {
+    "side": "away",
+    "line": -160,
+    "odds": -160,
+    "res": "L",
+    "units": -1.0,
+    "took_default": true
+   }
+  }
+ },
+ {
+  "game": "Auburn @ Notre Dame",
+  "market": "2h|tt_home",
+  "period": "2h",
+  "kind": "tt_home",
+  "tip": "2026-11-19T22:00:00.000Z",
+  "ot": false,
+  "markets": {
+   "close": {
+    "t": "2026-11-19T2159Z",
+    "line": {
+     "over": 39.5,
+     "under": 39.5
+    },
+    "odds": {
+     "over": -118,
+     "under": -108
+    },
+    "open": 40.5,
+    "calls": {
+     "follow_move": "under"
+    },
+    "move": -1.0
+   },
+   "early": {
+    "t": "2026-11-19T0742Z",
+    "line": {
+     "over": 40.5,
+     "under": 40.5
+    },
+    "odds": {
+     "over": -106,
+     "under": -120
+    },
+    "open": 40.5,
+    "calls": {}
+   }
+  },
+  "default_res": "L",
+  "early_graded": {},
+  "close_graded": {
+   "follow_move": {
+    "side": "under",
+    "line": 39.5,
+    "odds": -108,
+    "res": "W",
+    "units": 0.926,
+    "took_default": false
+   }
+  }
+ },
+ {
+  "game": "Auburn @ Notre Dame",
+  "market": "2h|spread",
+  "period": "2h",
+  "kind": "spread",
+  "tip": "2026-11-19T22:00:00.000Z",
+  "ot": false,
+  "markets": {
+   "close": {
+    "t": "2026-11-19T2159Z",
+    "line": {
+     "home": 1.5,
+     "away": -1.5
+    },
+    "odds": {
+     "home": -112,
+     "away": -114
+    },
+    "open": 0.5,
+    "calls": {
+     "follow_move": "away"
+    },
+    "move": 1.0
+   },
+   "early": {
+    "t": "2026-11-19T0742Z",
+    "line": {
+     "home": 0.5,
+     "away": -0.5
+    },
+    "odds": {
+     "home": -108,
+     "away": -116
+    },
+    "open": 0.5,
+    "calls": {}
+   }
+  },
+  "default_res": "L",
+  "early_graded": {},
+  "close_graded": {
+   "follow_move": {
+    "side": "away",
+    "line": -1.5,
+    "odds": -114,
+    "res": "L",
+    "units": -1.0,
+    "took_default": true
+   }
+  }
+ },
+ {
+  "game": "Murray State @ NC State",
+  "market": "2h|tt_away",
+  "period": "2h",
+  "kind": "tt_away",
+  "tip": "2026-11-19T23:00:32.000Z",
+  "ot": false,
+  "markets": {
+   "close": {
+    "t": "2026-11-19T2259Z",
+    "line": {
+     "over": 43.5,
+     "under": 43.5
+    },
+    "odds": {
+     "over": -102,
+     "under": -125
+    },
+    "open": 41.5,
+    "calls": {
+     "follow_move": "over"
+    },
+    "move": 2.0
+   },
+   "early": {
+    "t": "2026-11-19T1132Z",
+    "line": {
+     "over": 41.5,
+     "under": 41.5
+    },
+    "odds": {
+     "over": -108,
+     "under": -118
+    },
+    "open": 41.5,
+    "calls": {}
+   }
+  },
+  "default_res": "W",
+  "early_graded": {},
+  "close_graded": {
+   "follow_move": {
+    "side": "over",
+    "line": 43.5,
+    "odds": -102,
+    "res": "W",
+    "units": 0.98,
+    "took_default": true
+   }
+  }
+ },
+ {
+  "game": "Murray State @ NC State",
+  "market": "1h|total",
+  "period": "1h",
+  "kind": "total",
+  "tip": "2026-11-19T23:00:32.000Z",
+  "ot": false,
+  "markets": {
+   "close": {
+    "t": "2026-11-19T2259Z",
+    "line": {
+     "over": 77.5,
+     "under": 77.5
+    },
+    "odds": {
+     "over": -111,
+     "under": -115
+    },
+    "open": 76.5,
+    "calls": {
+     "follow_move": "over"
+    },
+    "move": 1.0
+   },
+   "early": {
+    "t": "2026-11-19T1132Z",
+    "line": {
+     "over": 76.5,
+     "under": 76.5
+    },
+    "odds": {
+     "over": -111,
+     "under": -115
+    },
+    "open": 76.5,
+    "calls": {}
+   }
+  },
+  "default_res": "L",
+  "early_graded": {},
+  "close_graded": {
+   "follow_move": {
+    "side": "over",
+    "line": 77.5,
+    "odds": -111,
+    "res": "L",
+    "units": -1.0,
+    "took_default": true
+   }
+  }
+ },
+ {
+  "game": "Murray State @ NC State",
+  "market": "2h|spread",
+  "period": "2h",
+  "kind": "spread",
+  "tip": "2026-11-19T23:00:32.000Z",
+  "ot": false,
+  "markets": {
+   "close": {
+    "t": "2026-11-19T2259Z",
+    "line": {
+     "home": -0.5,
+     "away": 0.5
+    },
+    "odds": {
+     "home": -120,
+     "away": -104
+    },
+    "open": -1.5,
+    "calls": {
+     "follow_move": "away"
+    },
+    "move": 1.0
+   },
+   "early": {
+    "t": "2026-11-19T1132Z",
+    "line": {
+     "home": -1.5,
+     "away": 1.5
+    },
+    "odds": {
+     "home": -114,
+     "away": -110
+    },
+    "open": -1.5,
+    "calls": {}
+   }
+  },
+  "default_res": "L",
+  "early_graded": {},
+  "close_graded": {
+   "follow_move": {
+    "side": "away",
+    "line": 0.5,
+    "odds": -104,
+    "res": "W",
+    "units": 0.962,
+    "took_default": false
+   }
+  }
+ },
+ {
+  "game": "Murray State @ NC State",
+  "market": "2h|tt_home",
+  "period": "2h",
+  "kind": "tt_home",
+  "tip": "2026-11-19T23:00:32.000Z",
+  "ot": false,
+  "markets": {
+   "close": {
+    "t": "2026-11-19T2259Z",
+    "line": {
+     "over": 44.5,
+     "under": 44.5
+    },
+    "odds": {
+     "over": 100,
+     "under": -128
+    },
+    "open": 42.5,
+    "calls": {
+     "follow_move": "over"
+    },
+    "move": 2.0
+   },
+   "early": {
+    "t": "2026-11-19T1132Z",
+    "line": {
+     "over": 42.5,
+     "under": 42.5
+    },
+    "odds": {
+     "over": -122,
+     "under": -104
+    },
+    "open": 42.5,
+    "calls": {}
+   }
+  },
+  "default_res": "W",
+  "early_graded": {},
+  "close_graded": {
+   "follow_move": {
+    "side": "over",
+    "line": 44.5,
+    "odds": 100,
+    "res": "W",
+    "units": 1.0,
+    "took_default": true
+   }
+  }
  }
 ]
