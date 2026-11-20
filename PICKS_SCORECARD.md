@@ -1,6 +1,6 @@
 # Picks scorecard — what was actually recommended
 
-Generated 2026-11-19 17:11 UTC. Every pick ever logged, graded at the price and number
+Generated 2026-11-20 00:44 UTC. Every pick ever logged, graded at the price and number
 taken. `picks.json` is append-only: nothing here is edited or removed after
 the fact, including the losers.
 
@@ -35,6 +35,13 @@ is losing.
 |---|---|---|---|
 | rlm_ratio + money ratio | 1-1 | -0.09 | +0.50 |
 | pin_rlm + price vs Pinnacle | 0-2-1 | -1.00 | -0.17 |
+
+## By market volume at close (PRE-DECLARED TEST)
+
+| | record | units | CLV avg |
+|---|---|---|---|
+| 1k-2k | 0-1-1 | -0.50 | -0.25 |
+| 2k-4k | 1-2 | -0.59 | +0.33 |
 
 ## By what the board said at the time
 
