@@ -46604,5 +46604,552 @@
     "units": 0.885
    }
   }
+ },
+ {
+  "game": "Indianapolis Colts @ Houston Texans",
+  "player": "david montgomery",
+  "stat": "anytime_td",
+  "kickoff": "2026-11-20T01:15:00.000Z",
+  "week": 11,
+  "actual": 0.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-20T0114Z",
+    "line": 0.5,
+    "odds": {
+     "over": -140,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {
+     "td_steam": "over"
+    },
+    "pin": 0.5,
+    "pin_lim": 2000,
+    "fair_over": 0.5342,
+    "td_open_odds": -110,
+    "td_move_pp": 6.0
+   },
+   "early": {
+    "t": "2026-11-16T0355Z",
+    "line": 0.5,
+    "odds": {
+     "over": -110,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {},
+    "td_open_odds": -110,
+    "td_move_pp": 0.0
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "td_steam": {
+    "side": "over",
+    "line": 0.5,
+    "odds": -140,
+    "res": "L",
+    "units": -1.0
+   }
+  }
+ },
+ {
+  "game": "Indianapolis Colts @ Houston Texans",
+  "player": "nico collins",
+  "stat": "anytime_td",
+  "kickoff": "2026-11-20T01:15:00.000Z",
+  "week": 11,
+  "actual": 0.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-20T0114Z",
+    "line": 0.5,
+    "odds": {
+     "over": 110,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {
+     "pin_price": "over"
+    },
+    "pin": 0.5,
+    "pin_lim": 2000,
+    "fair_over": 0.4848,
+    "edge_pct": 1.81,
+    "td_open_odds": 105,
+    "td_move_pp": -1.2
+   },
+   "early": {
+    "t": "2026-11-16T0355Z",
+    "line": 0.5,
+    "odds": {
+     "over": 105,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {},
+    "td_open_odds": 105,
+    "td_move_pp": 0.0
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "pin_price": {
+    "side": "over",
+    "line": 0.5,
+    "odds": 110,
+    "res": "L",
+    "units": -1.0
+   }
+  }
+ },
+ {
+  "game": "Indianapolis Colts @ Houston Texans",
+  "player": "xavier hutchinson",
+  "stat": "anytime_td",
+  "kickoff": "2026-11-20T01:15:00.000Z",
+  "week": 11,
+  "actual": 0.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-20T0114Z",
+    "line": 0.5,
+    "odds": {
+     "over": 210,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {
+     "td_steam": "over"
+    },
+    "pin": 0.5,
+    "pin_lim": 1000,
+    "fair_over": 0.3001,
+    "td_open_odds": 270,
+    "td_move_pp": 5.2
+   },
+   "early": {
+    "t": "2026-11-16T0355Z",
+    "line": 0.5,
+    "odds": {
+     "over": 270,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {},
+    "td_open_odds": 270,
+    "td_move_pp": 0.0
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "td_steam": {
+    "side": "over",
+    "line": 0.5,
+    "odds": 210,
+    "res": "L",
+    "units": -1.0
+   }
+  }
+ },
+ {
+  "game": "Indianapolis Colts @ Houston Texans",
+  "player": "kayshon boutte",
+  "stat": "anytime_td",
+  "kickoff": "2026-11-20T01:15:00.000Z",
+  "week": 11,
+  "actual": 0.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-20T0114Z",
+    "line": 0.5,
+    "odds": {
+     "over": 400,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {
+     "pin_price": "over"
+    },
+    "pin": 0.5,
+    "pin_lim": 1000,
+    "fair_over": 0.2236,
+    "edge_pct": 11.81,
+    "td_open_odds": 290,
+    "td_move_pp": -5.6
+   },
+   "early": {
+    "t": "2026-11-16T0355Z",
+    "line": 0.5,
+    "odds": {
+     "over": 280,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {},
+    "td_open_odds": 290,
+    "td_move_pp": 0.7
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "pin_price": {
+    "side": "over",
+    "line": 0.5,
+    "odds": 400,
+    "res": "L",
+    "units": -1.0
+   }
+  }
+ },
+ {
+  "game": "Indianapolis Colts @ Houston Texans",
+  "player": "seth mcgowan",
+  "stat": "anytime_td",
+  "kickoff": "2026-11-20T01:15:00.000Z",
+  "week": 11,
+  "actual": 0.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-20T0114Z",
+    "line": 0.5,
+    "odds": {
+     "over": 360,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {
+     "pin_price": "over"
+    },
+    "pin": 0.5,
+    "pin_lim": 500,
+    "fair_over": 0.2224,
+    "edge_pct": 2.32,
+    "td_open_odds": 320,
+    "td_move_pp": -2.1
+   },
+   "early": {
+    "t": "2026-11-16T0355Z",
+    "line": 0.5,
+    "odds": {
+     "over": 330,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {},
+    "td_open_odds": 320,
+    "td_move_pp": -0.6
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "pin_price": {
+    "side": "over",
+    "line": 0.5,
+    "odds": 360,
+    "res": "L",
+    "units": -1.0
+   }
+  }
+ },
+ {
+  "game": "Indianapolis Colts @ Houston Texans",
+  "player": "tyler warren",
+  "stat": "anytime_td",
+  "kickoff": "2026-11-20T01:15:00.000Z",
+  "week": 11,
+  "actual": 0.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-20T0114Z",
+    "line": 0.5,
+    "odds": {
+     "over": 320,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {
+     "pin_price": "over"
+    },
+    "pin": 0.5,
+    "pin_lim": 2000,
+    "fair_over": 0.2398,
+    "edge_pct": 0.73,
+    "td_open_odds": 320,
+    "td_move_pp": 0.0
+   },
+   "early": {
+    "t": "2026-11-16T0355Z",
+    "line": 0.5,
+    "odds": {
+     "over": 320,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {},
+    "td_open_odds": 320,
+    "td_move_pp": 0.0
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "pin_price": {
+    "side": "over",
+    "line": 0.5,
+    "odds": 320,
+    "res": "L",
+    "units": -1.0
+   }
+  }
+ },
+ {
+  "game": "Indianapolis Colts @ Houston Texans",
+  "player": "tank dell",
+  "stat": "anytime_td",
+  "kickoff": "2026-11-20T01:15:00.000Z",
+  "week": 11,
+  "actual": 0.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-20T0114Z",
+    "line": 0.5,
+    "odds": {
+     "over": 250,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {
+     "td_steam": "over"
+    },
+    "pin": 0.5,
+    "pin_lim": 1000,
+    "fair_over": 0.2726,
+    "td_open_odds": 330,
+    "td_move_pp": 5.3
+   },
+   "early": {
+    "t": "2026-11-16T0355Z",
+    "line": 0.5,
+    "odds": {
+     "over": 320,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {},
+    "td_open_odds": 330,
+    "td_move_pp": 0.6
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "td_steam": {
+    "side": "over",
+    "line": 0.5,
+    "odds": 250,
+    "res": "L",
+    "units": -1.0
+   }
+  }
+ },
+ {
+  "game": "Indianapolis Colts @ Houston Texans",
+  "player": "laquon treadwell",
+  "stat": "anytime_td",
+  "kickoff": "2026-11-20T01:15:00.000Z",
+  "week": 11,
+  "actual": 0.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-20T0114Z",
+    "line": 0.5,
+    "odds": {
+     "over": 550,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {
+     "pin_price": "over"
+    },
+    "pin": 0.5,
+    "pin_lim": 500,
+    "fair_over": 0.1557,
+    "edge_pct": 1.23,
+    "td_open_odds": 460,
+    "td_move_pp": -2.5
+   },
+   "early": {
+    "t": "2026-11-16T0355Z",
+    "line": 0.5,
+    "odds": {
+     "over": 460,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {},
+    "td_open_odds": 460,
+    "td_move_pp": 0.0
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "pin_price": {
+    "side": "over",
+    "line": 0.5,
+    "odds": 550,
+    "res": "L",
+    "units": -1.0
+   }
+  }
+ },
+ {
+  "game": "Indianapolis Colts @ Houston Texans",
+  "player": "daniel jones",
+  "stat": "anytime_td",
+  "kickoff": "2026-11-20T01:15:00.000Z",
+  "week": 11,
+  "actual": 0.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-20T0114Z",
+    "line": 0.5,
+    "odds": {
+     "over": 850,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {
+     "pin_price": "over"
+    },
+    "pin": 0.5,
+    "pin_lim": 1000,
+    "fair_over": 0.1183,
+    "edge_pct": 12.37,
+    "td_open_odds": 700,
+    "td_move_pp": -2.0
+   },
+   "early": {
+    "t": "2026-11-16T0355Z",
+    "line": 0.5,
+    "odds": {
+     "over": 700,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {},
+    "td_open_odds": 700,
+    "td_move_pp": 0.0
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "pin_price": {
+    "side": "over",
+    "line": 0.5,
+    "odds": 850,
+    "res": "L",
+    "units": -1.0
+   }
+  }
+ },
+ {
+  "game": "Indianapolis Colts @ Houston Texans",
+  "player": "deion burks",
+  "stat": "anytime_td",
+  "kickoff": "2026-11-20T01:15:00.000Z",
+  "week": 11,
+  "actual": 0.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-20T0114Z",
+    "line": 0.5,
+    "odds": {
+     "over": 850,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {
+     "pin_price": "over"
+    },
+    "pin": 0.5,
+    "pin_lim": 500,
+    "fair_over": 0.11,
+    "edge_pct": 4.47,
+    "td_open_odds": 700,
+    "td_move_pp": -2.0
+   },
+   "early": {
+    "t": "2026-11-16T0355Z",
+    "line": 0.5,
+    "odds": {
+     "over": 700,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {},
+    "td_open_odds": 700,
+    "td_move_pp": 0.0
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "pin_price": {
+    "side": "over",
+    "line": 0.5,
+    "odds": 850,
+    "res": "L",
+    "units": -1.0
+   }
+  }
+ },
+ {
+  "game": "Indianapolis Colts @ Houston Texans",
+  "player": "anthony gould",
+  "stat": "anytime_td",
+  "kickoff": "2026-11-20T01:15:00.000Z",
+  "week": 11,
+  "actual": 0.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-20T0114Z",
+    "line": 0.5,
+    "odds": {
+     "over": 800,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {
+     "pin_price": "over"
+    },
+    "pin": 0.5,
+    "pin_lim": 500,
+    "fair_over": 0.1134,
+    "edge_pct": 2.02,
+    "td_open_odds": 900,
+    "td_move_pp": 1.1
+   },
+   "early": {
+    "t": "2026-11-16T0355Z",
+    "line": 0.5,
+    "odds": {
+     "over": 900,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {},
+    "td_open_odds": 900,
+    "td_move_pp": 0.0
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "pin_price": {
+    "side": "over",
+    "line": 0.5,
+    "odds": 800,
+    "res": "L",
+    "units": -1.0
+   }
+  }
  }
 ]
