@@ -232,6 +232,30 @@ jobs:
                     if clvs else "- CLV: no graded picks yet",
                     f"- {len(pend)} pending, {len(unm)} unmatched" if (pend or unm) else "", ""]
 
+              # Real money vs paper. Every pick is graded either way -- the record exists to
+              # evaluate the engine, and dropping the paper ones would shrink the sample for no
+              # gain. But a dollar figure that mixes them is not a P&L, so report them apart.
+              # A pick with no `stake` field counts as paper: the money column must never
+              # flatter itself by assuming an unmarked pick was real.
+              UNIT = 100
+              real = [r for r in gr if r.get("stake") == "real"]
+              paper = [r for r in gr if r.get("stake") != "real"]
+              L_ += ["## Real money vs paper", "",
+                     "Both are graded. Only the `real` rows are a P&L; `paper` rows are",
+                     f"engine evidence. A pick with no `stake` field counts as paper. 1u = ${UNIT}.", "",
+                     "| | picks | record | units | dollars |", "|---|---|---|---|---|"]
+              for lbl, rows in (("**real**", real), ("paper", paper)):
+                  if not rows: continue
+                  w = sum(1 for r in rows if r["result"] == "W")
+                  l = sum(1 for r in rows if r["result"] == "L")
+                  p_ = sum(1 for r in rows if r["result"] == "P")
+                  n = sum(r["net_units"] for r in rows)
+                  L_ += [f"| {lbl} | {len(rows)} | {w}-{l}" + (f"-{p_}" if p_ else "")
+                         + f" | {n:+.2f}u | **{'-' if n < 0 else '+'}${abs(n)*UNIT:,.0f}** |"]
+              op = sum(float(r.get("units") or 1) for r in pend if r.get("stake") == "real")
+              L_ += ["", f"Open real-money risk: **{op:g}u = ${op*UNIT:,.0f}**" if op else
+                     "", "No open real-money risk." if not op else "", ""]
+
               for key, title in (("sport", "By sport"), ("driver", "By what drove the pick"),
                                  ("vol_bucket", "By market volume at close (PRE-DECLARED TEST)"),
                                  ("board_rank", "By what the board said at the time")):
