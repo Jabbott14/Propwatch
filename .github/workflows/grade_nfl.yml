@@ -94,7 +94,8 @@ jobs:
           SHRINK_K = 25         # a signal's edge is shrunk toward zero by n/(n+K)
           BREAKEVEN = 0.524            # -110
           PUBLIC_MIN = 60              # tickets% needed before a side counts as "the public side"
-          SIGNALS = ("pin_rlm", "pre_move", "follow_move", "rlm", "rlm_ratio", "money_level",
+          SIGNALS = ("rlm_quiet", "pin_move", "money_delta",
+                     "pin_rlm", "pre_move", "follow_move", "rlm", "rlm_ratio", "money_level",
                      "sharp_gap", "money_moving", "pin_value", "book_lag", "consensus_gap")
           # rlm_ratio is the conjunction, not a single variable. Measured on 1,862 CBB
           # side-observations: a minority-ticket side wins 42.9% on its own and 37.6% if you add a
@@ -103,7 +104,28 @@ jobs:
           # population goes to 52.7%, a ~14 point swing. That is the whole mechanism: the ratio
           # means nothing until the number moves against the crowd to confirm it.
           RLM_TIX_MAX = 45      # that side holds under this share of tickets
+          RLM_MNY_MAX = 45      # rlm_quiet: ...and under this share of money too
           RLM_RATIO_MIN = 1.2   # its money share is at least this multiple of its ticket share
+          # ---------------------------------------------------------------------------
+          # CHANGES, NOT STATES. Measured 2026-11-19 across 2,950 CBB markets where some
+          # signal fired, every state variable came back flat and every derivative carried
+          # information:
+          #   money LEVEL (peak >=95% of handle) ... 53.4%, a coin flip
+          #   money RISING (into a <50% ticket side) 57.1%, n=399
+          #   Pinnacle's POSITION vs FanDuel ....... no order at all across five buckets:
+          #                                          >=+1.0 pt -5.2%, same -3.5%, <=-1.0 -1.8%
+          #   Pinnacle MOVING ...................... orders outcomes at every level of
+          #                                          what FanDuel did
+          #   line UNMOVED ......................... -9.4%
+          #   line ALREADY MOVED 2+ pts ............ -2.3%
+          # The engine was built almost entirely on states -- money_level, sharp_gap and
+          # pin_value all read a snapshot at a checkpoint, and the one change-based signal,
+          # follow_move, reads FANDUEL's change, the book whose direction does not matter.
+          # These two signals read the changes that do.
+          PIN_MOVE_MIN = 0.5    # points Pinnacle's own number must have travelled
+          MONEY_DELTA_MIN = 5   # points of money share a side must have GAINED
+          MONEY_DELTA_TIX_MAX = 50   # ...while still holding under this share of tickets
+          # ---------------------------------------------------------------------------
           # pre_move is rlm_ratio's mirror image and the system's stated goal stated as a signal:
           # the money is on the minority-ticket side at an outsized ratio and the number has NOT
           # moved yet. rlm_ratio pays you for recognising a move that already happened; pre_move
@@ -130,7 +152,10 @@ jobs:
           # Nothing may be added to the fit period. If a threshold is ever changed, this
           # date moves forward to the day of the change and the forward test restarts --
           # that is the whole point, and it is the only cost of fiddling with the engine.
-          HOLDOUT_FROM = "2026-11-17"
+          # Bumped 2026-11-19 when pin_move and money_delta were added. Adding a signal is
+          # exactly the change this date exists to charge for: games through 2026-11-19 are
+          # the window those two were designed in, so they are fit, not evidence.
+          HOLDOUT_FROM = "2026-11-21"
           # ---------------------------------------------------------------------------
           # NFL volumes run 2k-120k bets a game, and Pinnacle NFL limits run $3k-$75k.
           NB_BUCKETS = ((0, 10000, "<10k bets"), (10000, 40000, "10-40k bets"), (40000, 10**9, "40k+ bets"))
@@ -430,6 +455,26 @@ jobs:
                                      else r["open"] if mkt in ("total", "tt_home", "tt_away")
                                      else (_g0[1] if _g0 else None))}
 
+
+              # --- money_delta: the money share on a side has RISEN, while that side still holds
+              #     a ticket minority. Level is a coin flip (a side peaking above 95% of the
+              #     handle covers 53.4% of the time); the DIRECTION is what carries -- money
+              #     rising into a 35-50% ticket side ran 57.1% over 399 markets, and money rising
+              #     into a MAJORITY ticket side ran 44.9%, the worst cell measured. So the ticket
+              #     cap is not decoration: without it this signal inverts.
+              #     Baseline is the first reading with real splits, never the 0/0 placeholder the
+              #     feed serves before any money is in -- that placeholder is what made
+              #     money_moving a duplicate of sharp_gap.
+              _b0 = next((x for x in A if x[3] not in (None, 0)), None)
+              _b1 = next((x for x in B if x[3] not in (None, 0)), None)
+              for _sd, _now, _base in ((s0, a, _b0), (s1, b, _b1)):
+                  if not _base or _now[4] is None or _base[4] is None or _now[3] is None: continue
+                  _d = _now[4] - _base[4]
+                  if _d >= MONEY_DELTA_MIN and _now[3] < MONEY_DELTA_TIX_MAX:
+                      prev = r.get("money_delta_pts")
+                      if prev is None or _d > prev:
+                          r["money_delta_pts"] = round(_d, 1)
+                          r["calls"]["money_delta"] = _sd
               # --- follow_move. spread: s0 (home) value FALLING = market moving toward home.
               #     total: value RISING = moving toward over.
               #     moneyline: no handicap, so the move is in PRICE -- the side whose implied
@@ -467,6 +512,23 @@ jobs:
                       r["mny_ratio"] = round(ratio, 2)
                       if t_ < RLM_TIX_MAX and ratio >= RLM_RATIO_MIN:
                           r["calls"]["rlm_ratio"] = moved_to
+
+                      # --- rlm_quiet: Justin's thesis, instrumented rather than argued about.
+                      #     The number moves toward a side holding a MINORITY of tickets AND a
+                      #     MINORITY of money. rlm_ratio explicitly excludes this case (it wants
+                      #     money/tix >= 1.2), so the engine had no record of it and it kept getting
+                      #     re-litigated in chat from whichever in-sample cut was handy.
+                      #     The claim: if the book moves a number when neither ticket count nor
+                      #     handle is forcing it, the little money that did arrive was respected
+                      #     money. A first in-sample pass over 671 CBB games read 22-39 pooled, but
+                      #     that is one cut at n=61 and this project's own rule is that in-sample
+                      #     numbers are hypotheses. It gets a forward record like everything else,
+                      #     and the forward record decides it. Cross-sport confirmation is the point
+                      #     of carrying it in NFL too.
+                      if t_ < RLM_TIX_MAX and m_ < RLM_MNY_MAX:
+                          r["calls"]["rlm_quiet"] = moved_to
+                          r["rlm_quiet_tix"] = t_
+                          r["rlm_quiet_mny"] = m_
 
               # --- pre_move: money is on the minority-ticket side at an outsized ratio and the
               #     number has NOT moved yet. The claim is that the move is still to come, which
@@ -537,8 +599,51 @@ jobs:
                           else:                      # FD total above Pinnacle -> under
                               r["calls"]["pin_value"] = s1 if a[1] > p[3] else s0
 
-                      # --- pin_rlm: PINNACLE moved against the public, splits confirm
                       p0 = next((x for x in prow if x[1] == mkt and x[2] == s0 and x[3] is not None), None)
+
+                      # --- pin_bounce: has the move we are citing already retraced? DISPLAY ONLY.
+                      #     pin_move and pin_rlm both compare FIRST-SEEN to CURRENT, so a number
+                      #     that travelled 136.5 -> 131 -> 135 reports as a 1.5pt drop and looks
+                      #     identical to one still on its way down. CBB UTEP@NMSU, 2026-11-19:
+                      #     Pinnacle bottomed at 131 at 09:42 ET and had been climbing for 4.5h when
+                      #     the board flagged it as "136.5 -> 132, the biggest move on the board".
+                      #     The pick bought the bottom of a finished move and sat 2pts the wrong side
+                      #     of the number within hours.
+                      #     Measured and PRINTED, never gated: gating this is a signal change and
+                      #     would reset the holdout. Decide that on evidence, not on one bad night.
+                      if p0 and p0[3] is not None and p[3] is not None:
+                          _s = [x[3] for x in prow
+                                if x[1] == mkt and x[2] == s0 and x[3] is not None and x[0] <= t]
+                          if mkt == "moneyline":
+                              _s = [100 * imp(v) for v in _s if imp(v) is not None]
+                          if len(_s) >= 2:
+                              _lo, _hi, _a, _z = min(_s), max(_s), _s[0], _s[-1]
+                              _b = ((_z - _lo) if _z < _a else (_hi - _z) if _z > _a
+                                    else max(_z - _lo, _hi - _z))
+                              r["pin_bounce"] = round(_b, 1)
+                              r["pin_extreme"] = round(_lo if _z <= _a else _hi, 1)
+
+                      # --- pin_move: Pinnacle's OWN number has travelled, and we take the side it
+                      #     travelled toward. No public test, no money-ratio test, no comparison
+                      #     with FanDuel -- that is the point. Pinnacle's POSITION relative to
+                      #     FanDuel orders nothing (>= +1.0pt returns -5.2%, <= -1.0pt returns
+                      #     -1.8%, no monotonicity across 2,950 markets); Pinnacle's MOTION orders
+                      #     outcomes at every level of what FanDuel did. This signal reads the
+                      #     motion and ignores the position.
+                      if p0 and p0[3] is not None and p[3] is not None:
+                          if mkt == "moneyline":
+                              i1, i0 = imp(p[3]), imp(p0[3])
+                              if i1 and i0 and abs(i1 - i0) >= 0.01:
+                                  r["pin_move_to"] = s0 if i1 > i0 else s1
+                                  r["pin_move_pts"] = round(100 * (i1 - i0), 1)
+                                  r["calls"]["pin_move"] = r["pin_move_to"]
+                          elif abs(p[3] - p0[3]) >= PIN_MOVE_MIN:
+                              up = p[3] > p0[3]
+                              to = (s1 if up else s0) if mkt == "spread" else (s0 if up else s1)
+                              r["pin_move_to"] = to
+                              r["pin_move_pts"] = round(abs(p[3] - p0[3]), 1)
+                              r["calls"]["pin_move"] = to
+
                       if p0 and p0[3] != p[3] and None not in (a[3], b[3]):
                           if mkt == "moneyline":
                               i1, i0 = imp(p[3]), imp(p0[3])
@@ -997,8 +1102,13 @@ jobs:
                    "tier, FanDuel's for the FanDuel tier. `FD now` is what you would actually be",
                    "buying. Those are two different books and this table used to print one next to",
                    "the other in a single row.", "",
-                   "| tier | game | market | side | book | moved | FD now | tickets | money/tix | record |",
-                   "|---|---|---|---|---|---|---|---|---|---|"]
+                   "`retraced` is how far Pinnacle's number has already come BACK against the move",
+                   "in the `moved` column. `moved` compares first-seen with current, so a number",
+                   "that went 136.5 -> 131 -> 135 prints as a drop while it is actually climbing.",
+                   "A large `retraced` means the move is finished and reversing, and you would be",
+                   "buying the wrong end of it. This is shown, not gated -- it is not a signal.", "",
+                   "| tier | game | market | side | book | moved | retraced | FD now | tickets | money/tix | record |",
+                   "|---|---|---|---|---|---|---|---|---|---|---|"]
               for _, tier, sig, sd, x, r in hits:
                   s = rec_of(sig)
                   pin = sig == "pin_rlm"
@@ -1017,8 +1127,10 @@ jobs:
                   # side only). Say so rather than printing "139 -> 139" as though it moved.
                   mv = ("" if None in (frm, to_) else
                         f"{frm:g} (other side moved)" if frm == to_ else f"{frm:g} -> {to_:g}")
+                  _bo = r.get("pin_bounce")
+                  bo = "" if _bo is None else ("—" if _bo < 0.5 else f"**+{_bo:g}**")
                   L.append(f"| {tier} | {label_of(x)} | {x.get('market', r.get('mkt',''))} | {sd} | "
-                           f"{book} | {mv} | {ln if ln is not None else ''} | "
+                           f"{book} | {mv} | {bo} | {ln if ln is not None else ''} | "
                            f"{tx}% | {rt} | {s} |")
               L.append("")
               return L
@@ -1202,6 +1314,12 @@ jobs:
                       pv = (r.get("pin_side") or {}).get(side, r.get("pin"))
                       pin = (f"{pv:g} (${r['pin_lim']:,.0f})"
                              if pv is not None and r.get("pin_lim") else "")
+                      # Flag a Pinnacle move that has already retraced against itself. Appended to
+                      # the Pin cell rather than given a column -- this table is wide enough, and
+                      # the note only wants the eye when there is something to see.
+                      _bo = r.get("pin_bounce")
+                      if pin and _bo is not None and _bo >= 1.0:
+                          pin += f" **retraced +{_bo:g}**"
                       ov = (r.get("open_side") or {}).get(side, r.get("open"))
                       op = f"{ov:g}" if ov is not None else ""
                       mv = f"{r['move_pts']:g}" if r.get("move_pts") else ""
