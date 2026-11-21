@@ -1,6 +1,6 @@
 # Picks scorecard — what was actually recommended
 
-Generated 2026-11-21 11:28 UTC. Every pick ever logged, graded at the price and number
+Generated 2026-11-21 19:33 UTC. Every pick ever logged, graded at the price and number
 taken. `picks.json` is append-only: nothing here is edited or removed after
 the fact, including the losers.
 
