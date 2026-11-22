@@ -1,6 +1,6 @@
 # CBB board
 
-Generated 2026-11-22 07:52 UTC. Upcoming games with a FanDuel line. Every game is listed;
+Generated 2026-11-22 07:58 UTC. Upcoming games with a FanDuel line. Every game is listed;
 nothing is cut.
 
 Ranked by **weighted ROI**: each agreeing signal contributes its own return per
