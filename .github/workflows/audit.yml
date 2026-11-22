@@ -1,0 +1,48 @@
+name: audit
+# Produces the research question nobody asked for, and commits it as AUDIT.md.
+#
+# The other workflows grade. The guards inside them fire when a measurement is already
+# wrong. Neither notices that something NEEDS investigating -- that only happened when
+# someone thought to look, which is the failure this repo kept repeating: an hour spent
+# 2026-11-22 on a question already answered 0-for-17 in propwatch-line-value-state.md.
+#
+# So this runs on its own schedule, not on demand:
+#   * RECORDED register items aged in days -- features computed and graded by nothing
+#   * every graded cell ranked by z against its OWN base rate, printed beside how many
+#     cells chance produces at that z, so a single cell can never be read alone
+#   * sign asymmetry: whether the forward tail leans negative, which the count test
+#     cannot see and which is where the information turned out to be on the first run
+#   * open questions aged, and holdout/forward-sample drift
+#
+# Daily at 13:07 UTC -- after the 3-hourly graders, before anyone looks at a card.
+# It exits 0 always. A gate that fails a run gets disabled; a prompt that shows up in
+# the log and in a committed file gets read.
+on:
+  schedule:
+    - cron: "7 13 * * *"
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: audit
+  cancel-in-progress: false
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: audit
+        run: python3 audit.py
+      - name: commit
+        run: |
+          git config user.name propwatch
+          git config user.email propwatch@users.noreply.github.com
+          git add AUDIT.md
+          git diff --staged --quiet && exit 0
+          git commit -q -m "audit $(date -u +%FT%TZ)"
+          for i in 1 2 3 4; do
+            git pull -q --rebase --autostash && git push -q && exit 0
+            sleep 9
+          done
+          exit 1

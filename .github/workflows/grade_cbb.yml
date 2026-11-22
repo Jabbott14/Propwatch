@@ -639,14 +639,46 @@ jobs:
 
 
           def print_idea_register():
-              n_rec = sum(1 for _, s, _ in IDEAS if s == "RECORDED")
-              n_open = sum(1 for _, s, _ in IDEAS if s in ("OPEN", "TESTED"))
-              print(f"  idea register: {sum(1 for _,s,_ in IDEAS if s=='SIGNAL')} signals, "
-                    f"{n_rec} recorded-but-unused, {n_open} open", flush=True)
-              for name, st, where in IDEAS:
-                  if st != "SIGNAL":
-                      print(f"     [{st:8}] {name}  --  {where}", flush=True)
+              """Print the register, and age it.
 
+              register.json at the repo root is the single source of truth -- audit.py reads the
+              same file. The IDEAS tuple above is a fallback for when this runs outside a checkout,
+              and it WILL drift, so the file wins whenever it is there. Two copies of the register
+              is the exact failure this register exists to prevent.
+
+              The age is the point. A RECORDED item is a feature computed on every run and read by
+              no grading code; without a date, "recorded" quietly becomes "forgotten", which is how
+              key numbers, limit cuts and the whole path-feature layer ended up accumulating into
+              nothing. audit.py escalates past 14 days."""
+              import datetime as _dt
+              items = None
+              for _p in ("register.json", os.path.join(REPO, "register.json")):
+                  try:
+                      _r = json.load(open(_p))
+                      items = [(i["idea"], i["state"], i.get("where", ""), i.get("recorded"))
+                               for i in _r.get("ideas", [])]
+                      break
+                  except Exception:
+                      continue
+              src = "register.json"
+              if items is None:
+                  items = [(a, b, c, None) for a, b, c in IDEAS]
+                  src = "inlined fallback -- register.json not found, this list may be stale"
+              _today = _dt.date.today()
+              def _age(d):
+                  try: return (_today - _dt.date.fromisoformat(d)).days
+                  except Exception: return None
+              n = lambda *st: sum(1 for _, s, _, _ in items if s in st)
+              print(f"  idea register [{src}]: {n('SIGNAL')} signals, {n('RECORDED')} "
+                    f"recorded-but-unused, {n('OPEN')} open, {n('TESTED')} tested, "
+                    f"{n('CLOSED')} closed", flush=True)
+              for name, st, where, rec in items:
+                  if st == "SIGNAL":
+                      continue
+                  d = _age(rec) if rec else None
+                  tag = f"{d}d" if d is not None else "  -"
+                  flag = "  <-- STALE" if st == "RECORDED" and d is not None and d >= 14 else ""
+                  print(f"     [{st:8}] {tag:>5}  {name}  --  {where}{flag}", flush=True)
 
           def read(gid, mkt, t, ser, openers, prow, books=None):
               """The system's read on one market at time t. Returns None if no FanDuel line yet."""
@@ -1505,7 +1537,6 @@ jobs:
                       print(f"  {r['checkpoint']:5} {r['signal']:13} {fmt_rec(r):>9}  hit {r['hit_pct']}"
                             f"  exp {r.get('expected_pct')}  edge {r.get('edge_pts')}"
                             f"  roi {r['roi_pct']}  clv {r.get('clv_avg', '-')}  {r['proposal']}")
-
           PY
       - name: commit
         run: |
