@@ -1,6 +1,6 @@
 # CBB period scorecard — halves and half team totals
 
-Generated 2026-11-22 11:45 UTC. 1661 graded period markets (150 had no unique final matched and are not graded).
+Generated 2026-11-22 19:53 UTC. 1661 graded period markets (204 had no unique final matched and are not graded).
 
 ## Read this first: fit vs forward
 
