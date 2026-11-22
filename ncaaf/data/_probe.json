@@ -22,12 +22,12 @@
    "name": "Football"
   }
  ],
- "run_utc": "2026-11-22T10:06:33Z",
+ "run_utc": "2026-11-22T15:26:49Z",
  "tried": [
   {
-   "bytes": 469765,
+   "bytes": 508239,
    "kind": "fd_lobby",
-   "score": 36,
+   "score": 45,
    "url": "https://sbapi.nj.sportsbook.fanduel.com/api/content-managed-page?page=CUSTOM&customPageId=ncaaf&_ak=<ak>"
   },
   {
@@ -49,21 +49,21 @@
    "url": "https://sbapi.nj.sportsbook.fanduel.com/api/content-managed-page?page=CUSTOM&customPageId=cfb&_ak=<ak>"
   },
   {
-   "bytes": 435160,
+   "bytes": 594363,
    "kind": "actionnet",
-   "score": 37,
+   "score": 45,
    "url": "https://api.actionnetwork.com/web/v2/scoreboard/ncaaf?period=game"
   },
   {
-   "bytes": 435160,
+   "bytes": 594363,
    "kind": "actionnet",
-   "score": 37,
+   "score": 45,
    "url": "https://api.actionnetwork.com/web/v2/scoreboard/ncaaf?period=game&date=20261122"
   },
   {
-   "bytes": 435160,
+   "bytes": 594363,
    "kind": "actionnet",
-   "score": 37,
+   "score": 45,
    "url": "https://api.actionnetwork.com/web/v2/scoreboard/ncaaf?period=game&division=FBS&date=20261122"
   },
   {
