@@ -1,0 +1,37 @@
+name: collect-ncaaf
+# College football collector. Each job snapshots every 10 min for ~5h20m.
+# Continuity: when a job finishes it immediately dispatches the next one, so there is
+# no gap waiting for a cron firing. The hourly cron is only a backstop in case a
+# dispatch fails; the concurrency group keeps a single runner at a time (overlapping
+# runs would fight over ncaaf/state/collector.json).
+#
+# It runs all week, not just Saturdays. Books post next Saturday's numbers days early
+# and the early number is the one worth having -- the whole reason this project exists
+# is movement between the opener and the close, and most of that movement in football
+# happens Sunday through Friday.
+#
+# Minute 11 so it does not collide with collect-cbb (:37) or the graders.
+on:
+  schedule:
+    - cron: "11 * * * *"
+  workflow_dispatch:
+permissions:
+  contents: write
+  actions: write
+concurrency:
+  group: collect-ncaaf
+  cancel-in-progress: false
+jobs:
+  snap:
+    runs-on: ubuntu-latest
+    timeout-minutes: 350
+    steps:
+      - uses: actions/checkout@v4
+      - name: collect loop
+        continue-on-error: true
+        run: python3 ncaaf/collect.py .
+      - name: start the next run
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run collect_ncaaf.yml --ref "${{ github.ref_name }}"
