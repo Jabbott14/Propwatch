@@ -433,6 +433,84 @@ jobs:
               return calls, info
 
 
+          # ---------------------------------------------------------------- path features
+          # Every signal above reads TWO observations -- first and current -- from series holding
+          # 200-470 of them. A number that drifted a point over six days and one that gapped a
+          # point in ten minutes produce identical calls; a money share that crossed 50% and came
+          # back looks exactly like one that never moved. Measured 2026-11-22 on NFL spreads:
+          # median 232 money observations per game, median swing 21 points, and the money MAJORITY
+          # changes sides in 28% of games -- none of which reaches a signal.
+          #
+          # These are RECORDED, not graded, and no signal consumes them yet. That is deliberate:
+          # recording changes no call, so the holdout does not reset, and the features accumulate
+          # on every market from today while also being recomputable over the whole archive. When
+          # one of them earns a signal, it gets a forward test like everything else rather than
+          # being promoted off the in-sample cut that discovered it.
+          KEY_NUMBERS = {"nfl": (3, 7, 10, 14, 6), "ncaaf": (3, 7, 10, 14), "cbb": ()}
+
+
+          def _pf_path(series, upto, val=1, share=4):
+              out = []
+              for x in series:
+                  if x[val] is None or x[0] > upto: continue
+                  out.append((x[0], x[val], x[share] if len(x) > share else None))
+              return out
+
+
+          def path_features(p, lim_rows=None, upto=None, sport="cbb"):
+              """p = [(ts, line, money_share)] oldest first."""
+              if len(p) < 5: return {}
+              line = [x[1] for x in p]
+              mny = [x[2] for x in p if x[2] is not None]
+              net = line[-1] - line[0]
+              gross = sum(abs(line[i] - line[i - 1]) for i in range(1, len(line)))
+              f = {"n_obs": len(p), "line_net": round(net, 2), "line_gross": round(gross, 2),
+                   "line_eff": round(abs(net) / gross, 3) if gross else None,
+                   "line_revs": sum(1 for i in range(2, len(line))
+                                    if (line[i] - line[i-1]) * (line[i-1] - line[i-2]) < 0)}
+              if len(mny) >= 5:
+                  f.update({"mny_net": round(mny[-1] - mny[0], 1),
+                            "mny_swing": round(max(mny) - min(mny), 1),
+                            "mny_last": mny[-1],
+                            # the majority of the handle changing sides -- invisible until now
+                            "mny_crossings": sum(1 for i in range(1, len(mny))
+                                                 if (mny[i] - 50) * (mny[i-1] - 50) < 0),
+                            # money that peaks and HOLDS reads 46.9% vs a 51.7% base (n=377,
+                            # in-sample, 2026-11-22). money_level cannot see this at all.
+                            "mny_gave_back": round(max(mny) - mny[-1], 1)})
+              pm = [(a, b, c) for a, b, c in p if c is not None]
+              if len(pm) >= 8:
+                  st = [(pm[i][1] - pm[i-1][1], pm[i][2] - pm[i-1][2]) for i in range(1, len(pm))]
+                  st = [(a, b) for a, b in st if a and b]
+                  if st:
+                      f["sync"] = round(sum(1 for a, b in st if a * b > 0) / len(st), 3)
+                      f["n_sync"] = len(st)
+                      f["against_money_pts"] = round(sum(abs(a) for a, b in st if a * b < 0), 2)
+              # Pinnacle limit as a PATH. A limit slashed mid-week is Pinnacle pulling back on news
+              # it has not finished pricing -- the cheapest news detector we have, needing no news
+              # feed. Raw dollars are not comparable across sports ($75k NFL side vs $1k CBB total),
+              # so lim_drop_frac rather than the level is the portable quantity.
+              if lim_rows:
+                  lv = [l for _, l in lim_rows if l]
+                  if len(lv) >= 3:
+                      pk, lst = max(lv), lv[-1]
+                      f["lim_peak"], f["lim_last"] = pk, lst
+                      f["lim_drop_frac"] = round(1 - lst / pk, 3) if pk else None
+                      f["lim_slashed"] = bool(f["lim_drop_frac"] and f["lim_drop_frac"] >= 0.5)
+              # Key numbers. ~15% of NFL games land on exactly 3, so -2.5 -> -3.5 eats the single
+              # most likely margin while -4.5 -> -5.5 is the same half point through empty space.
+              # CBB was verified to have none (3, 4 and 5 each land 5.5-5.9% over 6,300 games),
+              # which is why this is keyed by sport instead of applied everywhere.
+              keys = KEY_NUMBERS.get(sport, ())
+              if keys:
+                  a, b = abs(line[0]), abs(line[-1])
+                  lo, hi = min(a, b), max(a, b)
+                  f["key_crossed"] = [k for k in keys if lo < k < hi] or None
+                  f["key_landed_on"] = b if b in keys else None
+                  f["key_dist"] = round(min(abs(b - k) for k in keys), 1)
+              return f
+
+
           def read(gid, mkt, t, ser, openers, prow, books=None):
               """The system's read on one market at time t. Returns None if no FanDuel line yet."""
               s0, s1 = SIDES[mkt]
@@ -597,6 +675,13 @@ jobs:
                               r["pin_move_to"] = to
                               r["pin_move_pts"] = round(abs(p[3] - p0[3]), 1)
                               r["calls"]["pin_move"] = to
+
+                      # --- path features: recorded, never graded (see path_features above)
+                      _pp = _pf_path(A, t)
+                      if _pp:
+                          _lr = [(x[0], x[4]) for x in prow
+                                 if x[1] == mkt and x[2] == s0 and len(x) > 4 and x[0] <= t]
+                          r["path"] = path_features(_pp, _lr, t, "cbb")
 
                       # --- pin_bounce: has the move we are citing already retraced? DISPLAY ONLY.
                       #     pin_move and pin_rlm both compare FIRST-SEEN to CURRENT, so a number
