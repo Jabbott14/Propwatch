@@ -194,6 +194,65 @@ jobs:
 
 
           # ------------------------------------------------------------------ load
+
+          def dedupe_series(ser):
+              """One FanDuel quote per (game, market, side, timestamp).
+
+              Action Network returns SEVERAL rows for the same game, market and side at one
+              instant: the main line, which carries bet_info, plus alternate or stale quotes
+              that read tix=0/mny=0 and sometimes sit four or more points away. The grader
+              appended them all and sorted by time, so `at(A, t)` -- "the line at time t" --
+              could return either one.
+
+              Measured 2026-11-21 across 802 CBB totals: the graded CLOSE landed on one of
+              these alternates in 15.3% of markets. The close is the number every signal is
+              computed from, so a wrong close means a wrong follow_move, a wrong pin_value
+              gap, wrong CLV and a wrong base rate -- the same class of defect as the
+              moneyline opener reading index 0, where the signals were fine and the number
+              underneath them was not.
+
+              The main line is the one carrying splits. Before any bets exist every row reads
+              zero, so the fallback is the value that ALSO appears on the opposite side at
+              that instant: a total's over and under quote the same number and a spread's two
+              sides are negatives of each other, so a one-sided alternate exposes itself by
+              having no partner. Moneylines get no partner test -- the two sides carry
+              unrelated prices -- so they fall through to the first row, which is the old
+              behaviour. Last resort everywhere is the first row, so this can only ever
+              narrow a choice, never invent one.
+
+              NOT a signal change: no threshold or definition moves, so the holdout does not
+              reset. It IS retroactive, like the moneyline fix -- records computed against a
+              corrected close will shift."""
+              opp_of = {"home": "away", "away": "home", "over": "under", "under": "over"}
+              vals_at = {}
+              for (gid, mkt, side), rws in ser.items():
+                  d = {}
+                  for x in rws:
+                      if x[1] is not None: d.setdefault(x[0], set()).add(x[1])
+                  vals_at[(gid, mkt, side)] = d
+              for key in list(ser):
+                  gid, mkt, side = key
+                  byt = {}
+                  for x in ser[key]: byt.setdefault(x[0], []).append(x)
+                  if all(len(v) == 1 for v in byt.values()): continue
+                  opp = vals_at.get((gid, mkt, opp_of.get(side, side)), {})
+                  out = []
+                  for t in sorted(byt):
+                      c = byt[t]
+                      if len(c) == 1: out.append(c[0]); continue
+                      real = [x for x in c if x[1] is not None] or c
+                      split = [x for x in real if (x[3] or 0) > 0 or (x[4] or 0) > 0]
+                      if split: out.append(split[0]); continue
+                      if mkt in ("spread", "total"):
+                          seen = opp.get(t, ())
+                          match = [x for x in real
+                                   if (-x[1] if mkt == "spread" else x[1]) in seen]
+                          if match: out.append(match[0]); continue
+                      out.append(real[0])
+                  ser[key] = out
+              return ser
+
+
           def load():
               """Walk the raw archive. NFL keeps whole API responses, not a flattened layer, so
               this does the flattening the CBB collector does at write time."""
@@ -251,10 +310,9 @@ jobs:
                                (bi.get("money") or {}).get("percent"), nb))
               for v in ser.values():
                   v.sort()
-                  # collapse duplicate timestamps, keep last
-                  seen = {}
-                  for row in v: seen[row[0]] = row
-                  v[:] = [seen[k] for k in sorted(seen)]
+              # Was: collapse duplicate timestamps keeping the LAST row, which at a tie picked
+              # arbitrarily between the main line and Action Network's alternate quotes.
+              dedupe_series(ser)
 
               # Pinnacle: matchups name the game, prices carry the numbers. Same snapshot stamp.
               pin = collections.defaultdict(list)      # gid-agnostic key (home,away,kickoff-hour) -> rows

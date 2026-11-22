@@ -129,6 +129,65 @@ jobs:
 
 
           # ------------------------------------------------------------------ load
+
+          def dedupe_series(ser):
+              """One FanDuel quote per (game, market, side, timestamp).
+
+              Action Network returns SEVERAL rows for the same game, market and side at one
+              instant: the main line, which carries bet_info, plus alternate or stale quotes
+              that read tix=0/mny=0 and sometimes sit four or more points away. The grader
+              appended them all and sorted by time, so `at(A, t)` -- "the line at time t" --
+              could return either one.
+
+              Measured 2026-11-21 across 802 CBB totals: the graded CLOSE landed on one of
+              these alternates in 15.3% of markets. The close is the number every signal is
+              computed from, so a wrong close means a wrong follow_move, a wrong pin_value
+              gap, wrong CLV and a wrong base rate -- the same class of defect as the
+              moneyline opener reading index 0, where the signals were fine and the number
+              underneath them was not.
+
+              The main line is the one carrying splits. Before any bets exist every row reads
+              zero, so the fallback is the value that ALSO appears on the opposite side at
+              that instant: a total's over and under quote the same number and a spread's two
+              sides are negatives of each other, so a one-sided alternate exposes itself by
+              having no partner. Moneylines get no partner test -- the two sides carry
+              unrelated prices -- so they fall through to the first row, which is the old
+              behaviour. Last resort everywhere is the first row, so this can only ever
+              narrow a choice, never invent one.
+
+              NOT a signal change: no threshold or definition moves, so the holdout does not
+              reset. It IS retroactive, like the moneyline fix -- records computed against a
+              corrected close will shift."""
+              opp_of = {"home": "away", "away": "home", "over": "under", "under": "over"}
+              vals_at = {}
+              for (gid, mkt, side), rws in ser.items():
+                  d = {}
+                  for x in rws:
+                      if x[1] is not None: d.setdefault(x[0], set()).add(x[1])
+                  vals_at[(gid, mkt, side)] = d
+              for key in list(ser):
+                  gid, mkt, side = key
+                  byt = {}
+                  for x in ser[key]: byt.setdefault(x[0], []).append(x)
+                  if all(len(v) == 1 for v in byt.values()): continue
+                  opp = vals_at.get((gid, mkt, opp_of.get(side, side)), {})
+                  out = []
+                  for t in sorted(byt):
+                      c = byt[t]
+                      if len(c) == 1: out.append(c[0]); continue
+                      real = [x for x in c if x[1] is not None] or c
+                      split = [x for x in real if (x[3] or 0) > 0 or (x[4] or 0) > 0]
+                      if split: out.append(split[0]); continue
+                      if mkt in ("spread", "total"):
+                          seen = opp.get(t, ())
+                          match = [x for x in real
+                                   if (-x[1] if mkt == "spread" else x[1]) in seen]
+                          if match: out.append(match[0]); continue
+                      out.append(real[0])
+                  ser[key] = out
+              return ser
+
+
           def load():
               teams = jload(C("state", "teams.json"), {})
               openers = {}
@@ -143,6 +202,13 @@ jobs:
               games = {}
               for r in rows(C("splits", "*", "*.jsonl.gz")):
                   if r.get("m") not in MARKETS: continue
+                  # Action Network labels its live in-game quote and its alternate lines; the
+                  # collector now records both flags (2026-11-21). Rows written before that date
+                  # carry neither, so absence means "unknown, keep" and the dedupe below still
+                  # does the work for the historical archive. Once the archive has rolled over,
+                  # these two lines are the whole fix and the heuristic can go.
+                  if r.get("lv") is True or r.get("alt") is True: continue
+                  if r.get("per") not in (None, "event"): continue
                   if r.get("b") != FD:
                       if r.get("sd") == ("over" if r["m"] == "total" else "home"):
                           v = r.get("o") if r["m"] == "moneyline" else r.get("v")
@@ -158,6 +224,7 @@ jobs:
                   if r["m"] == "spread" and r.get("tid") is not None:
                       g[r["sd"] + "_name"] = (teams.get(str(r["tid"])) or {}).get("name")
               for v in ser.values(): v.sort()
+              dedupe_series(ser)
 
               pin = collections.defaultdict(list)           # (pin game, kickoff) -> rows
               for r in rows(C("pin", "*", "*.jsonl.gz")):
@@ -174,6 +241,46 @@ jobs:
 
           # ------------------------------------------------------------------ joins
           def norm(s): return "".join(ch for ch in (s or "").lower() if ch.isalnum())
+
+
+          def toks(s):
+              out, cur = [], ""
+              for ch in (s or "").lower():
+                  if ch.isalnum(): cur += ch
+                  elif cur: out.append(cur); cur = ""
+              if cur: out.append(cur)
+              return out
+
+
+          def name_match(an, pn):
+              """Does Pinnacle's school name `pn` denote Action Network's full name `an`?
+
+              Pass 1 is the original test: Pinnacle's name is a prefix of AN's, which covers
+              the mascot case ('Kentucky' vs 'Kentucky Wildcats').
+
+              Pass 2 handles the abbreviation class found 2026-11-20 on NCST@HALL, a game
+              with 4,791 bets that reached the board with no Pinnacle price at all. Pinnacle
+              writes 'NC State' where AN writes 'North Carolina State Wolfpack' -- no prefix
+              relationship exists in either direction, so pass 1 cannot see it. Here a short
+              leading token (2-4 letters) is expanded as an initialism against AN's leading
+              words ('nc' -> north, carolina), and Pinnacle's REMAINING tokens must then
+              prefix-match AN's remaining tokens in order.
+
+              That ordering constraint is what keeps it safe. 'NC State' matches 'North
+              Carolina State Wolfpack' but NOT 'North Carolina Tar Heels', because after
+              'nc' consumes 'north carolina' the token 'state' has nothing to match. This is
+              the same trap the docs record from the first matcher fix, where a naive
+              loosening made *Michigan* match *Michigan State*."""
+              a, p = norm(an), norm(pn)
+              if len(p) >= 4 and a.startswith(p): return True
+              A, P = toks(an), toks(pn)
+              if not A or not P: return False
+              head = P[0]
+              if not (2 <= len(head) <= 4) or len(A) < len(head): return False
+              if any(A[i][0] != head[i] for i in range(len(head))): return False
+              rest_a, rest_p = A[len(head):], P[1:]
+              if not rest_p or len(rest_p) > len(rest_a): return False
+              return all(rest_a[i].startswith(rest_p[i]) for i in range(len(rest_p)))
 
 
           def match_final(g, finals):
@@ -217,8 +324,8 @@ jobs:
               Pinnacle's home/away rows rather than threading the flag into read().
 
               Returns (name, key, swap) or None."""
-              a, h = norm(g.get("away_name")), norm(g.get("home_name"))
-              if not a or not h: return None
+              aw, hm = g.get("away_name"), g.get("home_name")
+              if not aw or not hm: return None
               tip = dt.datetime.fromisoformat(g["tip"].replace("Z", "+00:00"))
               cand = []
               for name, k in pin_keys:
@@ -227,17 +334,29 @@ jobs:
                   if abs((pk - tip).total_seconds()) > 5400: continue
                   parts = name.split(" @ ")
                   if len(parts) != 2: continue
-                  pa, ph = norm(parts[0]), norm(parts[1])
-                  if len(pa) < 4 or len(ph) < 4: continue
+                  pa, ph = parts[0], parts[1]
+                  if len(norm(pa)) < 4 or len(norm(ph)) < 4: continue
                   cand.append((name, k, pa, ph))
               for swap in (False, True):
-                  best = None
+                  hits = []
                   for name, k, pa, ph in cand:
                       x, y = (ph, pa) if swap else (pa, ph)
-                      if a.startswith(x) and h.startswith(y):
-                          if best is None or len(pa) + len(ph) > best[0]:
-                              best = (len(pa) + len(ph), (name, k, swap))
-                  if best: return best[1]
+                      if name_match(aw, x) and name_match(hm, y):
+                          hits.append((len(norm(pa)) + len(norm(ph)), name, k))
+                  if not hits: continue
+                  # One matchup can appear under several snapshot keys, so hits sharing a NAME
+                  # are the same game, not competing candidates -- collapse them and keep the
+                  # key nearest tip. Only genuinely different names are ambiguous, and there a
+                  # tie is a decline rather than a coin flip: a wrong Pinnacle price is worse
+                  # than none, because it reaches the board looking exactly like a right one.
+                  names = {h[1] for h in hits}
+                  if len(names) > 1:
+                      best = sorted(hits, reverse=True)
+                      if best[0][0] == best[1][0]: return None
+                      hits = [h for h in hits if h[1] == best[0][1]]
+                  pick = min(hits, key=lambda h: abs(
+                      (dt.datetime.fromisoformat(str(h[2]).replace("Z", "+00:00")) - tip).total_seconds()))
+                  return (pick[1], pick[2], swap)
               return None
 
 
