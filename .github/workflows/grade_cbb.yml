@@ -188,6 +188,9 @@ jobs:
               return ser
 
 
+          _SEEN = set()
+
+
           def load():
               teams = jload(C("state", "teams.json"), {})
               openers = {}
@@ -201,6 +204,7 @@ jobs:
               bk = collections.defaultdict(lambda: collections.defaultdict(dict))  # (gid,mkt)->t->book->v
               games = {}
               for r in rows(C("splits", "*", "*.jsonl.gz")):
+                  _SEEN.update(r.keys())
                   if r.get("m") not in MARKETS: continue
                   # Action Network labels its live in-game quote and its alternate lines; the
                   # collector now records both flags (2026-11-21). Rows written before that date
@@ -223,6 +227,18 @@ jobs:
                                              "hc": r.get("hc")})
                   if r["m"] == "spread" and r.get("tid") is not None:
                       g[r["sd"] + "_name"] = (teams.get(str(r["tid"])) or {}).get("name")
+              # Everything this grader reads out of a splits row. Anything the collector writes
+              # that is NOT in here is reported as unused on every run -- that list is how
+              # is_live, is_alt_market and the rotation numbers become visible without anyone
+              # thinking to look for them.
+              _CONSUMED = {"t","gid","g","st","ss","nb","ac","hc","b","m","sd","tid","v","o",
+                           "tx","mn","lv","alt","per","ls"}
+              _cov = field_coverage(_SEEN, _CONSUMED, "action_network_splits")
+              print(f"  field coverage [{_cov['source']}]: {_cov['n_consumed']}/{_cov['n_seen']} consumed", flush=True)
+              if _cov["unused"]:
+                  print(f"  !! UNUSED FIELDS IN THE DATA: {', '.join(_cov['unused'])}", flush=True)
+                  print(f"     Each is something the system could use and does not.", flush=True)
+
               for v in ser.values(): v.sort()
               dedupe_series(ser)
 
@@ -509,6 +525,85 @@ jobs:
                   f["key_landed_on"] = b if b in keys else None
                   f["key_dist"] = round(min(abs(b - k) for k in keys), 1)
               return f
+
+
+          # ---------------------------------------------------------------- mechanical guards
+          # Written 2026-11-22 after the operating rules were added to the state doc and then
+          # broken three times within hours. Rules did not work; what caught every error was
+          # something being absurd -- a $105 limit on a market Pinnacle risks $75,000 on, a 73.8%
+          # cover rate, 76% of books moving in the same second. These fire on their own.
+          # A -110 market cannot be beaten by much. Anything outside this band on real sample is
+          # a measurement bug until proven otherwise, not a finding.
+          PLAUSIBLE_LO, PLAUSIBLE_HI = 0.40, 0.60
+          BIG_N = 150
+
+
+          def check_rate(w, l, label="", base=None, lo=PLAUSIBLE_LO, hi=PLAUSIBLE_HI,
+                         priced_110=True):
+              """Return (hit, n, warnings). Warn loudly rather than silently returning a number.
+
+              The band is deliberately tight. A 57% true edge on n=500 would be the best
+              documented result in sports betting; seeing one in our data means checking the
+              measurement first and celebrating second."""
+              n = w + l
+              if not n: return None, 0, ["no decided outcomes"]
+              hit = w / n
+              warn = []
+              # The absolute band only applies where -110 pricing holds. Moneyline base rates sit
+              # at 70%+ because favourites win outright, so an unconditioned band fires on every
+              # pooled row that contains them -- 95 false alarms on the first CBB run, which would
+              # have trained everyone to scroll past the warning. The deviation-from-base check
+              # below is the one that generalises.
+              if priced_110 and n >= BIG_N and not (lo <= hit <= hi):
+                  warn.append(f"IMPLAUSIBLE: {label or 'rate'} {100*hit:.1f}% on n={n}. "
+                              f"A -110 market outside {100*lo:.0f}-{100*hi:.0f}% at this sample is a "
+                              f"measurement bug until proven otherwise. Recompute from source.")
+              if base is not None and n >= BIG_N and abs(hit - base) > 0.12:
+                  warn.append(f"CHECK: {label or 'rate'} sits {100*(hit-base):+.1f} pts from its base "
+                              f"({100*base:.1f}%). Verify the base is the right comparison and the "
+                              f"sample is not a composition artifact.")
+              return hit, n, warn
+
+
+          def composition(items, keyfn, label=""):
+              """What a pooled bucket is MADE OF. Call this before reporting any pooled rate.
+
+              On 2026-11-22 the <$750 Pinnacle-limit bucket read 60.5% and the $3k+ bucket 46.9%,
+              a clean monotonic trend across four buckets. The first bucket was 154 totals out of
+              167; the last was 177 spreads out of 228. The trend was market mix. Holding market
+              fixed, the effect survived in totals and vanished entirely on spreads."""
+              mix = {}
+              for it in items: mix[keyfn(it)] = mix.get(keyfn(it), 0) + 1
+              tot = sum(mix.values()) or 1
+              dom = max(mix.values()) / tot if mix else 0
+              warn = []
+              if len(mix) > 1 and dom >= 0.70:
+                  top = max(mix, key=mix.get)
+                  warn.append(f"COMPOSITION: {label or 'bucket'} is {100*dom:.0f}% {top}. "
+                              f"Any difference against another bucket may be composition, not effect. "
+                              f"Split by market and report both.")
+              return mix, warn
+
+
+          def field_coverage(seen_fields, consumed_fields, source=""):
+              """Fields the data carries that nothing reads.
+
+              Not a style check. Every field in the unused list is a thing the system could be
+              using and is not, and the list is how that becomes visible without anyone thinking
+              to look. `is_live`, `is_alt_market` and the rotation numbers all sat in this list
+              for a season before anyone noticed, at the cost of two matcher defects and ~10% of
+              graded closing lines."""
+              unused = sorted(set(seen_fields) - set(consumed_fields))
+              return {"source": source, "n_seen": len(set(seen_fields)),
+                      "n_consumed": len(set(consumed_fields) & set(seen_fields)),
+                      "unused": unused}
+
+
+          def report(warnings, where=""):
+              """Print warnings so they land in the Actions log where they cannot be scrolled past."""
+              for w in warnings:
+                  print(f"  !! {where+': ' if where else ''}{w}", flush=True)
+              return bool(warnings)
 
 
           def read(gid, mkt, t, ser, openers, prow, books=None):
@@ -924,6 +1019,14 @@ jobs:
                                           s = S[(sig, cp, mk, tag, pr)]
                                           rate = rate_for(pr)
                                           s["n"] += 1; s[x["res"]] += 1; s["units"] += x["units"]
+                                          # what this bucket is MADE of. A "both" row or a limit
+                                          # slice can be 92% one market, and then a difference
+                                          # against another bucket is composition, not effect --
+                                          # which is exactly how a monotonic Pinnacle-limit trend
+                                          # turned out to be 154-of-167 totals vs 177-of-228
+                                          # spreads on 2026-11-22.
+                                          s.setdefault("mkts", {})
+                                          s["mkts"][mkt] = s["mkts"].get(mkt, 0) + 1
                                           if "clv" in x: s["clv"].append(x["clv"])
                                           if x["res"] != "P" and x.get("took_fav") is not None:
                                               s["dec"] += 1
@@ -932,10 +1035,27 @@ jobs:
               out = []
               for (sig, cp, mk, tag, pr), s in S.items():
                   dec = s["W"] + s["L"]
+                  _mx = s.get("mkts") or {}
+                  if len(_mx) > 1:
+                      _tot = sum(_mx.values())
+                      row_mix = {k: round(100 * v / _tot) for k, v in sorted(_mx.items())}
+                      _dom = max(_mx.values()) / _tot
+                      # Only where composition actually confounds: the volume and limit SLICES,
+                      # which get compared against each other. A "both" row at tag="all" is pooled
+                      # by design and warning on it produced 108 alarms on the first run -- noise
+                      # that trains everyone to scroll past, the same failure as the 95 before it.
+                      if tag != "all" and _dom >= 0.85 and dec >= 100:
+                          _cw = [f"COMPOSITION: {sig}/{cp}/{mk}/{tag} is "
+                                 f"{100*_dom:.0f}% {max(_mx, key=_mx.get)} -- any difference vs "
+                                 f"another bucket may be mix, not effect. Split by market."]
+                          report(_cw, "")
+                  else:
+                      row_mix = None
                   hit = s["W"] / dec if dec else None
                   z = (s["W"] - dec * BREAKEVEN) / math.sqrt(dec * 0.25) if dec else None
                   z50 = (s["W"] - dec * 0.5) / math.sqrt(dec * 0.25) if dec else None
                   row = {"signal": sig, "checkpoint": cp, "market": mk, "slice": tag,
+                         "market_mix": row_mix,
                          "period": pr, "n": s["n"],
                          "W": s["W"], "L": s["L"], "P": s["P"],
                          "hit_pct": round(100 * hit, 1) if hit is not None else None,
@@ -961,6 +1081,18 @@ jobs:
                       # in-sample verdicts are guesses about the future, not findings about it
                       row["proposal"] = (f"HYPOTHESIS (in-sample) -- {verdict}" if pr == "fit"
                                          else verdict)
+                      # A -110 market cannot be beaten by 10+ points on real sample. When a row
+                      # reads outside 40-60% at n>=150 the measurement is wrong far more often
+                      # than the market is: the 2026-11-22 sequencing analysis read 65.4% and
+                      # 73.8% purely because results were inferred from another signal instead of
+                      # computed from the final score. Flag it in the row itself so it cannot be
+                      # quoted as a finding without the warning attached.
+                      _h, _n, _w = check_rate(s["W"], dec - s["W"], label=f"{sig} {cp} {mk} {tag}",
+                                              base=(exp / 100 if dec else None),
+                                              priced_110=(mk in ("spread", "total")))
+                      if _w:
+                          row["proposal"] = "!! " + _w[0] + "  ||  " + row["proposal"]
+                          report(_w, f"{sig}/{cp}/{mk}/{tag}")
                   else:
                       row["proposal"] = f"keep collecting ({dec}/{MIN_N})"
                   out.append(row)
