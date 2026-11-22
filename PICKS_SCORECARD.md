@@ -1,6 +1,6 @@
 # Picks scorecard — what was actually recommended
 
-Generated 2026-11-22 01:27 UTC. Every pick ever logged, graded at the price and number
+Generated 2026-11-22 11:43 UTC. Every pick ever logged, graded at the price and number
 taken. `picks.json` is append-only: nothing here is edited or removed after
 the fact, including the losers.
 
@@ -21,7 +21,7 @@ is losing.
 - **Record: 4-5-1**
 - **Net: -0.73 units** (ROI -13.3% on 5.5u risked)
 - **CLV: -0.05 average**, 20% of picks beat the close
-- 1 pending, 0 unmatched
+- 0 pending, 1 unmatched
 
 ## Real money vs paper
 
@@ -87,3 +87,11 @@ No open real-money risk.
 | 2026-11-18T22:45 | cbb | WEB@USU | total | over | 172 (-110) | 171.5 | -0.5 | **P** | 0.0 | pin_rlm + price vs Pinnacle | backfilled; taken at 172 not 171.5 |
 | 2026-11-17T21:40 | cbb | KENN@ALA | total | over | 177.5 (-110) | 179.5 | 2.0 | **W** | 0.909 | rlm_ratio + money ratio | backfilled |
 | 2026-11-17T21:40 | cbb | ODU@UVA | total | under | 144.5 (-105) | 145.5 | -1.0 | **L** | -1.0 | rlm_ratio + money ratio | backfilled |
+
+## Unmatched — FLAGGED, not dropped
+
+These could not be joined to a graded game. They are listed rather than
+silently excluded, because a pick that quietly disappears is how a record
+flatters itself.
+
+- `2026-11-19T04:30Z` nfl Las Vegas Raiders @ Denver Broncos spread home
