@@ -1,0 +1,842 @@
+{
+ "1326": {
+  "abbr": "UAB",
+  "conf": "AMERICAN",
+  "div": "FBS",
+  "name": "UAB Blazers"
+ },
+ "256": {
+  "abbr": "VT",
+  "conf": "ACC",
+  "div": "FBS",
+  "name": "Virginia Tech Hokies"
+ },
+ "257": {
+  "abbr": "LOU",
+  "conf": "ACC",
+  "div": "FBS",
+  "name": "Louisville Cardinals"
+ },
+ "258": {
+  "abbr": "WF",
+  "conf": "ACC",
+  "div": "FBS",
+  "name": "Wake Forest Demon Deacons"
+ },
+ "259": {
+  "abbr": "BC",
+  "conf": "ACC",
+  "div": "FBS",
+  "name": "Boston College Eagles"
+ },
+ "260": {
+  "abbr": "SYR",
+  "conf": "ACC",
+  "div": "FBS",
+  "name": "Syracuse Orange"
+ },
+ "261": {
+  "abbr": "CLEM",
+  "conf": "ACC",
+  "div": "FBS",
+  "name": "Clemson Tigers"
+ },
+ "262": {
+  "abbr": "FSU",
+  "conf": "ACC",
+  "div": "FBS",
+  "name": "Florida State Seminoles"
+ },
+ "263": {
+  "abbr": "MIA",
+  "conf": "ACC",
+  "div": "FBS",
+  "name": "Miami (FL) Hurricanes"
+ },
+ "264": {
+  "abbr": "UVA",
+  "conf": "ACC",
+  "div": "FBS",
+  "name": "Virginia Cavaliers"
+ },
+ "265": {
+  "abbr": "DUKE",
+  "conf": "ACC",
+  "div": "FBS",
+  "name": "Duke Blue Devils"
+ },
+ "266": {
+  "abbr": "NCST",
+  "conf": "ACC",
+  "div": "FBS",
+  "name": "North Carolina State Wolfpack"
+ },
+ "267": {
+  "abbr": "UCONN",
+  "conf": "IAINDEPENDENTS",
+  "div": "FBS",
+  "name": "UConn Huskies"
+ },
+ "268": {
+  "abbr": "PITT",
+  "conf": "ACC",
+  "div": "FBS",
+  "name": "Pittsburgh Panthers"
+ },
+ "269": {
+  "abbr": "UCF",
+  "conf": "BIG12",
+  "div": "FBS",
+  "name": "UCF Knights"
+ },
+ "270": {
+  "abbr": "CIN",
+  "conf": "BIG12",
+  "div": "FBS",
+  "name": "Cincinnati Bearcats"
+ },
+ "271": {
+  "abbr": "GT",
+  "conf": "ACC",
+  "div": "FBS",
+  "name": "Georgia Tech Yellow Jackets"
+ },
+ "272": {
+  "abbr": "TLSA",
+  "conf": "AMERICAN",
+  "div": "FBS",
+  "name": "Tulsa Golden Hurricane"
+ },
+ "273": {
+  "abbr": "USF",
+  "conf": "AMERICAN",
+  "div": "FBS",
+  "name": "South Florida Bulls"
+ },
+ "274": {
+  "abbr": "ECU",
+  "conf": "AMERICAN",
+  "div": "FBS",
+  "name": "East Carolina Pirates"
+ },
+ "275": {
+  "abbr": "UNC",
+  "conf": "ACC",
+  "div": "FBS",
+  "name": "North Carolina Tar Heels"
+ },
+ "276": {
+  "abbr": "TEM",
+  "conf": "AMERICAN",
+  "div": "FBS",
+  "name": "Temple Owls"
+ },
+ "277": {
+  "abbr": "HOU",
+  "conf": "BIG12",
+  "div": "FBS",
+  "name": "Houston Cougars"
+ },
+ "278": {
+  "abbr": "NAVY",
+  "conf": "AMERICAN",
+  "div": "FBS",
+  "name": "Navy Midshipmen"
+ },
+ "279": {
+  "abbr": "SMU",
+  "conf": "ACC",
+  "div": "FBS",
+  "name": "SMU Mustangs"
+ },
+ "280": {
+  "abbr": "MEM",
+  "conf": "AMERICAN",
+  "div": "FBS",
+  "name": "Memphis Tigers"
+ },
+ "281": {
+  "abbr": "TULN",
+  "conf": "AMERICAN",
+  "div": "FBS",
+  "name": "Tulane Green Wave"
+ },
+ "282": {
+  "abbr": "BAY",
+  "conf": "BIG12",
+  "div": "FBS",
+  "name": "Baylor Bears"
+ },
+ "283": {
+  "abbr": "KU",
+  "conf": "BIG12",
+  "div": "FBS",
+  "name": "Kansas Jayhawks"
+ },
+ "284": {
+  "abbr": "TCU",
+  "conf": "BIG12",
+  "div": "FBS",
+  "name": "TCU Horned Frogs"
+ },
+ "285": {
+  "abbr": "ISU",
+  "conf": "BIG12",
+  "div": "FBS",
+  "name": "Iowa State Cyclones"
+ },
+ "286": {
+  "abbr": "OKST",
+  "conf": "BIG12",
+  "div": "FBS",
+  "name": "Oklahoma State Cowboys"
+ },
+ "287": {
+  "abbr": "TEX",
+  "conf": "SEC",
+  "div": "FBS",
+  "name": "Texas Longhorns"
+ },
+ "288": {
+  "abbr": "WVU",
+  "conf": "BIG12",
+  "div": "FBS",
+  "name": "West Virginia Mountaineers"
+ },
+ "289": {
+  "abbr": "OU",
+  "conf": "SEC",
+  "div": "FBS",
+  "name": "Oklahoma Sooners"
+ },
+ "290": {
+  "abbr": "TTU",
+  "conf": "BIG12",
+  "div": "FBS",
+  "name": "Texas Tech Red Raiders"
+ },
+ "291": {
+  "abbr": "KSU",
+  "conf": "BIG12",
+  "div": "FBS",
+  "name": "Kansas State Wildcats"
+ },
+ "292": {
+  "abbr": "PSU",
+  "conf": "BIGTEN",
+  "div": "FBS",
+  "name": "Penn State Nittany Lions"
+ },
+ "293": {
+  "abbr": "RUT",
+  "conf": "BIGTEN",
+  "div": "FBS",
+  "name": "Rutgers Scarlet Knights"
+ },
+ "294": {
+  "abbr": "IU",
+  "conf": "BIGTEN",
+  "div": "FBS",
+  "name": "Indiana Hoosiers"
+ },
+ "295": {
+  "abbr": "OSU",
+  "conf": "BIGTEN",
+  "div": "FBS",
+  "name": "Ohio State Buckeyes"
+ },
+ "296": {
+  "abbr": "MSU",
+  "conf": "BIGTEN",
+  "div": "FBS",
+  "name": "Michigan State Spartans"
+ },
+ "297": {
+  "abbr": "UMD",
+  "conf": "BIGTEN",
+  "div": "FBS",
+  "name": "Maryland Terrapins"
+ },
+ "298": {
+  "abbr": "ILL",
+  "conf": "BIGTEN",
+  "div": "FBS",
+  "name": "Illinois Fighting Illini"
+ },
+ "299": {
+  "abbr": "IOWA",
+  "conf": "BIGTEN",
+  "div": "FBS",
+  "name": "Iowa Hawkeyes"
+ },
+ "300": {
+  "abbr": "WIS",
+  "conf": "BIGTEN",
+  "div": "FBS",
+  "name": "Wisconsin Badgers"
+ },
+ "301": {
+  "abbr": "NW",
+  "conf": "BIGTEN",
+  "div": "FBS",
+  "name": "Northwestern Wildcats"
+ },
+ "302": {
+  "abbr": "MINN",
+  "conf": "BIGTEN",
+  "div": "FBS",
+  "name": "Minnesota Golden Gophers"
+ },
+ "303": {
+  "abbr": "NEB",
+  "conf": "BIGTEN",
+  "div": "FBS",
+  "name": "Nebraska Cornhuskers"
+ },
+ "304": {
+  "abbr": "PUR",
+  "conf": "BIGTEN",
+  "div": "FBS",
+  "name": "Purdue Boilermakers"
+ },
+ "305": {
+  "abbr": "MICH",
+  "conf": "BIGTEN",
+  "div": "FBS",
+  "name": "Michigan Wolverines"
+ },
+ "306": {
+  "abbr": "CHA",
+  "conf": "AMERICAN",
+  "div": "FBS",
+  "name": "Charlotte 49ers"
+ },
+ "307": {
+  "abbr": "MTSU",
+  "conf": "CONFERENCEUSA",
+  "div": "FBS",
+  "name": "Middle Tennessee Blue Raiders"
+ },
+ "308": {
+  "abbr": "ODU",
+  "conf": "SUNBELT",
+  "div": "FBS",
+  "name": "Old Dominion Monarchs"
+ },
+ "309": {
+  "abbr": "LT",
+  "conf": "SUNBELT",
+  "div": "FBS",
+  "name": "Louisiana Tech Bulldogs"
+ },
+ "310": {
+  "abbr": "MRSH",
+  "conf": "SUNBELT",
+  "div": "FBS",
+  "name": "Marshall Thundering Herd"
+ },
+ "311": {
+  "abbr": "FAU",
+  "conf": "AMERICAN",
+  "div": "FBS",
+  "name": "Florida Atlantic Owls"
+ },
+ "312": {
+  "abbr": "WKU",
+  "conf": "CONFERENCEUSA",
+  "div": "FBS",
+  "name": "Western Kentucky Hilltoppers"
+ },
+ "313": {
+  "abbr": "FIU",
+  "conf": "CONFERENCEUSA",
+  "div": "FBS",
+  "name": "Florida International Panthers"
+ },
+ "314": {
+  "abbr": "UNT",
+  "conf": "AMERICAN",
+  "div": "FBS",
+  "name": "North Texas Mean Green"
+ },
+ "315": {
+  "abbr": "USM",
+  "conf": "SUNBELT",
+  "div": "FBS",
+  "name": "Southern Miss Golden Eagles"
+ },
+ "316": {
+  "abbr": "UTEP",
+  "conf": "MOUNTAINWEST",
+  "div": "FBS",
+  "name": "UTEP Miners"
+ },
+ "317": {
+  "abbr": "UTSA",
+  "conf": "AMERICAN",
+  "div": "FBS",
+  "name": "UTSA Roadrunners"
+ },
+ "318": {
+  "abbr": "RICE",
+  "conf": "AMERICAN",
+  "div": "FBS",
+  "name": "Rice Owls"
+ },
+ "319": {
+  "abbr": "ARMY",
+  "conf": "AMERICAN",
+  "div": "FBS",
+  "name": "Army Black Knights"
+ },
+ "320": {
+  "abbr": "BGSU",
+  "conf": "MIDAMERICAN",
+  "div": "FBS",
+  "name": "Bowling Green Falcons"
+ },
+ "321": {
+  "abbr": "BUFF",
+  "conf": "MIDAMERICAN",
+  "div": "FBS",
+  "name": "Buffalo Bulls"
+ },
+ "322": {
+  "abbr": "BYU",
+  "conf": "BIG12",
+  "div": "FBS",
+  "name": "BYU Cougars"
+ },
+ "323": {
+  "abbr": "MASS",
+  "conf": "MIDAMERICAN",
+  "div": "FBS",
+  "name": "UMass Minutemen"
+ },
+ "324": {
+  "abbr": "OHIO",
+  "conf": "MIDAMERICAN",
+  "div": "FBS",
+  "name": "Ohio Bobcats"
+ },
+ "325": {
+  "abbr": "ND",
+  "conf": "IAINDEPENDENTS",
+  "div": "FBS",
+  "name": "Notre Dame Fighting Irish"
+ },
+ "326": {
+  "abbr": "KENT",
+  "conf": "MIDAMERICAN",
+  "div": "FBS",
+  "name": "Kent State Golden Flashes"
+ },
+ "327": {
+  "abbr": "M-OH",
+  "conf": "MIDAMERICAN",
+  "div": "FBS",
+  "name": "Miami (OH) RedHawks"
+ },
+ "328": {
+  "abbr": "AKR",
+  "conf": "MIDAMERICAN",
+  "div": "FBS",
+  "name": "Akron Zips"
+ },
+ "329": {
+  "abbr": "CMU",
+  "conf": "MIDAMERICAN",
+  "div": "FBS",
+  "name": "Central Michigan Chippewas"
+ },
+ "330": {
+  "abbr": "TOL",
+  "conf": "MIDAMERICAN",
+  "div": "FBS",
+  "name": "Toledo Rockets"
+ },
+ "331": {
+  "abbr": "EMU",
+  "conf": "MIDAMERICAN",
+  "div": "FBS",
+  "name": "Eastern Michigan Eagles"
+ },
+ "332": {
+  "abbr": "BALL",
+  "conf": "MIDAMERICAN",
+  "div": "FBS",
+  "name": "Ball State Cardinals"
+ },
+ "333": {
+  "abbr": "NIU",
+  "conf": "MOUNTAINWEST",
+  "div": "FBS",
+  "name": "Northern Illinois Huskies"
+ },
+ "334": {
+  "abbr": "WMU",
+  "conf": "MIDAMERICAN",
+  "div": "FBS",
+  "name": "Western Michigan Broncos"
+ },
+ "335": {
+  "abbr": "USU",
+  "conf": "PAC12",
+  "div": "FBS",
+  "name": "Utah State Aggies"
+ },
+ "336": {
+  "abbr": "AFA",
+  "conf": "MOUNTAINWEST",
+  "div": "FBS",
+  "name": "Air Force Falcons"
+ },
+ "337": {
+  "abbr": "FRES",
+  "conf": "PAC12",
+  "div": "FBS",
+  "name": "Fresno State Bulldogs"
+ },
+ "338": {
+  "abbr": "BOISE",
+  "conf": "PAC12",
+  "div": "FBS",
+  "name": "Boise State Broncos"
+ },
+ "339": {
+  "abbr": "UNM",
+  "conf": "MOUNTAINWEST",
+  "div": "FBS",
+  "name": "New Mexico Lobos"
+ },
+ "340": {
+  "abbr": "CSU",
+  "conf": "PAC12",
+  "div": "FBS",
+  "name": "Colorado State Rams"
+ },
+ "341": {
+  "abbr": "UNLV",
+  "conf": "MOUNTAINWEST",
+  "div": "FBS",
+  "name": "UNLV Rebels"
+ },
+ "342": {
+  "abbr": "SJSU",
+  "conf": "MOUNTAINWEST",
+  "div": "FBS",
+  "name": "San Jose State Spartans"
+ },
+ "343": {
+  "abbr": "SDSU",
+  "conf": "PAC12",
+  "div": "FBS",
+  "name": "San Diego State Aztecs"
+ },
+ "344": {
+  "abbr": "WYO",
+  "conf": "MOUNTAINWEST",
+  "div": "FBS",
+  "name": "Wyoming Cowboys"
+ },
+ "345": {
+  "abbr": "HAW",
+  "conf": "MOUNTAINWEST",
+  "div": "FBS",
+  "name": "Hawai'i Warriors"
+ },
+ "346": {
+  "abbr": "NEV",
+  "conf": "MOUNTAINWEST",
+  "div": "FBS",
+  "name": "Nevada Wolf Pack"
+ },
+ "347": {
+  "abbr": "USC",
+  "conf": "BIGTEN",
+  "div": "FBS",
+  "name": "USC Trojans"
+ },
+ "348": {
+  "abbr": "CAL",
+  "conf": "ACC",
+  "div": "FBS",
+  "name": "California Golden Bears"
+ },
+ "349": {
+  "abbr": "ASU",
+  "conf": "BIG12",
+  "div": "FBS",
+  "name": "Arizona State Sun Devils"
+ },
+ "350": {
+  "abbr": "UCLA",
+  "conf": "BIGTEN",
+  "div": "FBS",
+  "name": "UCLA Bruins"
+ },
+ "351": {
+  "abbr": "UTAH",
+  "conf": "BIG12",
+  "div": "FBS",
+  "name": "Utah Utes"
+ },
+ "352": {
+  "abbr": "COLO",
+  "conf": "BIG12",
+  "div": "FBS",
+  "name": "Colorado Buffaloes"
+ },
+ "353": {
+  "abbr": "ARI",
+  "conf": "BIG12",
+  "div": "FBS",
+  "name": "Arizona Wildcats"
+ },
+ "354": {
+  "abbr": "ORST",
+  "conf": "PAC12",
+  "div": "FBS",
+  "name": "Oregon State Beavers"
+ },
+ "355": {
+  "abbr": "STAN",
+  "conf": "ACC",
+  "div": "FBS",
+  "name": "Stanford Cardinal"
+ },
+ "356": {
+  "abbr": "WSU",
+  "conf": "PAC12",
+  "div": "FBS",
+  "name": "Washington State Cougars"
+ },
+ "357": {
+  "abbr": "ORE",
+  "conf": "BIGTEN",
+  "div": "FBS",
+  "name": "Oregon Ducks"
+ },
+ "358": {
+  "abbr": "TA&M",
+  "conf": "SEC",
+  "div": "FBS",
+  "name": "Texas A&M Aggies"
+ },
+ "359": {
+  "abbr": "MSST",
+  "conf": "SEC",
+  "div": "FBS",
+  "name": "Mississippi State Bulldogs"
+ },
+ "360": {
+  "abbr": "WASH",
+  "conf": "BIGTEN",
+  "div": "FBS",
+  "name": "Washington Huskies"
+ },
+ "361": {
+  "abbr": "ARK",
+  "conf": "SEC",
+  "div": "FBS",
+  "name": "Arkansas Razorbacks"
+ },
+ "362": {
+  "abbr": "BAMA",
+  "conf": "SEC",
+  "div": "FBS",
+  "name": "Alabama Crimson Tide"
+ },
+ "363": {
+  "abbr": "MISS",
+  "conf": "SEC",
+  "div": "FBS",
+  "name": "Ole Miss Rebels"
+ },
+ "364": {
+  "abbr": "AUB",
+  "conf": "SEC",
+  "div": "FBS",
+  "name": "Auburn Tigers"
+ },
+ "365": {
+  "abbr": "LSU",
+  "conf": "SEC",
+  "div": "FBS",
+  "name": "LSU Tigers"
+ },
+ "366": {
+  "abbr": "UGA",
+  "conf": "SEC",
+  "div": "FBS",
+  "name": "Georgia Bulldogs"
+ },
+ "367": {
+  "abbr": "VAN",
+  "conf": "SEC",
+  "div": "FBS",
+  "name": "Vanderbilt Commodores"
+ },
+ "368": {
+  "abbr": "SC",
+  "conf": "SEC",
+  "div": "FBS",
+  "name": "South Carolina Gamecocks"
+ },
+ "369": {
+  "abbr": "NMSU",
+  "conf": "CONFERENCEUSA",
+  "div": "FBS",
+  "name": "New Mexico State Aggies"
+ },
+ "370": {
+  "abbr": "FLA",
+  "conf": "SEC",
+  "div": "FBS",
+  "name": "Florida Gators"
+ },
+ "371": {
+  "abbr": "TENN",
+  "conf": "SEC",
+  "div": "FBS",
+  "name": "Tennessee Volunteers"
+ },
+ "372": {
+  "abbr": "UK",
+  "conf": "SEC",
+  "div": "FBS",
+  "name": "Kentucky Wildcats"
+ },
+ "373": {
+  "abbr": "MIZ",
+  "conf": "SEC",
+  "div": "FBS",
+  "name": "Missouri Tigers"
+ },
+ "374": {
+  "abbr": "TXST",
+  "conf": "PAC12",
+  "div": "FBS",
+  "name": "Texas State Bobcats"
+ },
+ "375": {
+  "abbr": "GASO",
+  "conf": "SUNBELT",
+  "div": "FBS",
+  "name": "Georgia Southern Eagles"
+ },
+ "376": {
+  "abbr": "USA",
+  "conf": "SUNBELT",
+  "div": "FBS",
+  "name": "South Alabama Jaguars"
+ },
+ "377": {
+  "abbr": "GAST",
+  "conf": "SUNBELT",
+  "div": "FBS",
+  "name": "Georgia State Panthers"
+ },
+ "378": {
+  "abbr": "UL",
+  "conf": "SUNBELT",
+  "div": "FBS",
+  "name": "Louisiana Ragin' Cajuns"
+ },
+ "379": {
+  "abbr": "ULM",
+  "conf": "SUNBELT",
+  "div": "FBS",
+  "name": "UL-Monroe Warhawks"
+ },
+ "381": {
+  "abbr": "ARST",
+  "conf": "SUNBELT",
+  "div": "FBS",
+  "name": "Arkansas State Red Wolves"
+ },
+ "382": {
+  "abbr": "APP",
+  "conf": "SUNBELT",
+  "div": "FBS",
+  "name": "Appalachian State Mountaineers"
+ },
+ "383": {
+  "abbr": "TROY",
+  "conf": "SUNBELT",
+  "div": "FBS",
+  "name": "Troy Trojans"
+ },
+ "395": {
+  "abbr": "KENN",
+  "conf": "CONFERENCEUSA",
+  "div": "FBS",
+  "name": "Kennesaw State Owls"
+ },
+ "401": {
+  "abbr": "LIB",
+  "conf": "CONFERENCEUSA",
+  "div": "FBS",
+  "name": "Liberty Flames"
+ },
+ "407": {
+  "abbr": "DEL",
+  "conf": "CONFERENCEUSA",
+  "div": "FBS",
+  "name": "Delaware Fightin Blue Hens"
+ },
+ "415": {
+  "abbr": "CC",
+  "conf": "SUNBELT",
+  "div": "FBS",
+  "name": "Coastal Carolina Chanticleers"
+ },
+ "435": {
+  "abbr": "MOST",
+  "conf": "CONFERENCEUSA",
+  "div": "FBS",
+  "name": "Missouri State Bears"
+ },
+ "436": {
+  "abbr": "NDSU",
+  "conf": "MOUNTAINWEST",
+  "div": "FBS",
+  "name": "North Dakota State Bison"
+ },
+ "455": {
+  "abbr": "JVST",
+  "conf": "CONFERENCEUSA",
+  "div": "FBS",
+  "name": "Jacksonville State Gamecocks"
+ },
+ "456": {
+  "abbr": "TNT",
+  "conf": "SOUTHERN",
+  "div": "FCS",
+  "name": "Tennessee Tech Golden Eagles"
+ },
+ "481": {
+  "abbr": "SAM",
+  "conf": "SOUTHERN",
+  "div": "FCS",
+  "name": "Samford Bulldogs"
+ },
+ "485": {
+  "abbr": "CHT",
+  "conf": "SOUTHERN",
+  "div": "FCS",
+  "name": "Chattanooga Mocs"
+ },
+ "490": {
+  "abbr": "WOF",
+  "conf": "SOUTHERN",
+  "div": "FCS",
+  "name": "Wofford Terriers"
+ },
+ "493": {
+  "abbr": "SHSU",
+  "conf": "CONFERENCEUSA",
+  "div": "FBS",
+  "name": "Sam Houston State Bearkats"
+ }
+}

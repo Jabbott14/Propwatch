@@ -1,0 +1,93 @@
+{
+ "chosen": {
+  "an_dated": false,
+  "an_div": "",
+  "an_ok": true,
+  "fd_lobby": "https://sbapi.nj.sportsbook.fanduel.com/api/content-managed-page?page=CUSTOM&customPageId=ncaaf&_ak=<ak>",
+  "pin_league": 202331,
+  "pin_name": "NCAA FCS",
+  "pin_sport": 15,
+  "vsin": null
+ },
+ "pin_leagues": [
+  {
+   "id": 202331,
+   "n": 16,
+   "name": "NCAA FCS"
+  },
+  {
+   "id": 880,
+   "n": 8,
+   "name": "NCAA"
+  }
+ ],
+ "pin_sports": [
+  {
+   "id": 15,
+   "name": "Football"
+  }
+ ],
+ "run_utc": "2026-11-22T04:46:17Z",
+ "tried": [
+  {
+   "bytes": 382765,
+   "kind": "fd_lobby",
+   "score": 12,
+   "url": "https://sbapi.nj.sportsbook.fanduel.com/api/content-managed-page?page=CUSTOM&customPageId=ncaaf&_ak=<ak>"
+  },
+  {
+   "error": "HTTPError: HTTP Error 404: Not Found",
+   "kind": "fd_lobby",
+   "score": -1,
+   "url": "https://sbapi.nj.sportsbook.fanduel.com/api/content-managed-page?page=CUSTOM&customPageId=college-football&_ak=<ak>"
+  },
+  {
+   "error": "HTTPError: HTTP Error 404: Not Found",
+   "kind": "fd_lobby",
+   "score": -1,
+   "url": "https://sbapi.nj.sportsbook.fanduel.com/api/content-managed-page?page=CUSTOM&customPageId=ncaa-football&_ak=<ak>"
+  },
+  {
+   "error": "HTTPError: HTTP Error 404: Not Found",
+   "kind": "fd_lobby",
+   "score": -1,
+   "url": "https://sbapi.nj.sportsbook.fanduel.com/api/content-managed-page?page=CUSTOM&customPageId=cfb&_ak=<ak>"
+  },
+  {
+   "bytes": 2094384,
+   "kind": "actionnet",
+   "score": 70,
+   "url": "https://api.actionnetwork.com/web/v2/scoreboard/ncaaf?period=game"
+  },
+  {
+   "bytes": 2094384,
+   "kind": "actionnet",
+   "score": 70,
+   "url": "https://api.actionnetwork.com/web/v2/scoreboard/ncaaf?period=game&date=20261121"
+  },
+  {
+   "bytes": 2094384,
+   "kind": "actionnet",
+   "score": 70,
+   "url": "https://api.actionnetwork.com/web/v2/scoreboard/ncaaf?period=game&division=FBS&date=20261121"
+  },
+  {
+   "error": "HTTPError: HTTP Error 403: Forbidden",
+   "kind": "vsin",
+   "score": -1,
+   "url": "https://data.vsin.com/betting-splits/?sport=NCAAF"
+  },
+  {
+   "error": "HTTPError: HTTP Error 403: Forbidden",
+   "kind": "vsin",
+   "score": -1,
+   "url": "https://data.vsin.com/betting-splits/?sport=CFB"
+  },
+  {
+   "error": "HTTPError: HTTP Error 403: Forbidden",
+   "kind": "vsin",
+   "score": -1,
+   "url": "https://data.vsin.com/betting-splits/?sport=college-football"
+  }
+ ]
+}
