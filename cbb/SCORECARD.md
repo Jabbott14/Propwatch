@@ -1,6 +1,6 @@
 # CBB scorecard
 
-Generated 2026-11-22 07:29 UTC. 770 graded games (20 finished games had no final score matched and are not graded).
+Generated 2026-11-22 07:52 UTC. 770 graded games (20 finished games had no final score matched and are not graded).
 
 ## Read this first: fit vs forward
 
@@ -763,12 +763,12 @@ Games before 2026-11-21. The engine was built by looking at these, so a strong r
 | consensus_gap+rlm_quiet | moneyline | 7-36 | 16.3 | 28.8 | -12.5 | -8.64 | -20.1 |  |  | HYPOTHESIS (in-sample) -- DROP: below break-even |
 | follow_move+rlm_quiet | moneyline | 52-110 | 32.1 | 27.5 | 4.6 | -7.46 | -4.6 |  |  | redundant -- identical record to rlm_quiet alone, not independent confirmation |
 | consensus_gap+money_level | moneyline | 95-65 | 59.4 | 69.0 | -9.6 | -16.77 | -10.5 |  |  | HYPOTHESIS (in-sample) -- beats break-even but not its base rate -- directional bias, not signal |
-| consensus_gap+money_moving | moneyline | 55-153 | 26.4 | 39.9 | -13.4 | -23.75 | -11.4 |  |  | HYPOTHESIS (in-sample) -- DROP: below break-even |
+| consensus_gap+money_moving | moneyline | 55-153 | 26.4 | 39.9 | -13.4 | -23.75 | -11.4 |  |  | !! CHECK: consensus_gap+money_moving close moneyline all sits -13.4 pts from its base (39.9%). Verify the base is the right comparison and the sample is not a composition artifact.  ||  HYPOTHESIS (in-sample) -- DROP: below break-even |
 | follow_move+money_level | moneyline | 245-79 | 75.6 | 70.5 | 5.1 | -11.75 | -3.6 |  |  | HYPOTHESIS (in-sample) -- PROMOTE: beats break-even and its own base rate |
 | follow_move+money_moving | moneyline | 101-109 | 48.1 | 48.2 | -0.1 | -12.65 | -6.0 |  |  | HYPOTHESIS (in-sample) -- no edge shown yet |
 | money_delta+money_moving | moneyline | 46-148 | 23.7 | 27.8 | -4.1 | -29.89 | -15.4 |  |  | HYPOTHESIS (in-sample) -- DROP: below break-even |
 | money_delta+sharp_gap | moneyline | 44-147 | 23.0 | 27.9 | -4.8 | -31.08 | -16.3 |  |  | HYPOTHESIS (in-sample) -- DROP: below break-even |
-| consensus_gap+sharp_gap | moneyline | 53-158 | 25.1 | 38.8 | -13.7 | -26.63 | -12.6 |  |  | HYPOTHESIS (in-sample) -- DROP: below break-even |
+| consensus_gap+sharp_gap | moneyline | 53-158 | 25.1 | 38.8 | -13.7 | -26.63 | -12.6 |  |  | !! CHECK: consensus_gap+sharp_gap close moneyline all sits -13.7 pts from its base (38.8%). Verify the base is the right comparison and the sample is not a composition artifact.  ||  HYPOTHESIS (in-sample) -- DROP: below break-even |
 | follow_move+sharp_gap | moneyline | 98-108 | 47.6 | 47.3 | 0.3 | -12.08 | -5.9 |  |  | HYPOTHESIS (in-sample) -- no edge shown yet |
 | money_moving+rlm_quiet | moneyline | 23-67 | 25.6 | 27.7 | -2.1 | -5.91 | -6.6 |  |  | HYPOTHESIS (in-sample) -- DROP: below break-even |
 | rlm_quiet+sharp_gap | moneyline | 24-68 | 26.1 | 27.6 | -1.6 | -7.45 | -8.1 |  |  | HYPOTHESIS (in-sample) -- DROP: below break-even |
@@ -1276,12 +1276,12 @@ on with the games testing it. Use the forward table for any decision.
 | consensus_gap+rlm_quiet | moneyline | 8-41 | 16.3 | 29.1 | -12.8 | -12.64 | -25.8 |  |  | DROP: below break-even |
 | follow_move+rlm_quiet | moneyline | 60-135 | 30.8 | 27.9 | 2.8 | -11.58 | -5.9 |  |  | redundant -- identical record to rlm_quiet alone, not independent confirmation |
 | consensus_gap+money_level | moneyline | 115-70 | 62.2 | 69.1 | -6.9 | -13.49 | -7.3 |  |  | beats break-even but not its base rate -- directional bias, not signal |
-| consensus_gap+money_moving | moneyline | 65-161 | 28.8 | 41.5 | -12.8 | -22.97 | -10.2 |  |  | DROP: below break-even |
+| consensus_gap+money_moving | moneyline | 65-161 | 28.8 | 41.5 | -12.8 | -22.97 | -10.2 |  |  | !! CHECK: consensus_gap+money_moving close moneyline all sits -12.8 pts from its base (41.5%). Verify the base is the right comparison and the sample is not a composition artifact.  ||  DROP: below break-even |
 | follow_move+money_level | moneyline | 266-92 | 74.3 | 69.7 | 4.6 | -14.87 | -4.2 |  |  | beats break-even but not its base rate -- directional bias, not signal |
 | follow_move+money_moving | moneyline | 116-129 | 47.3 | 47.9 | -0.5 | -22.99 | -9.4 |  |  | DROP: below break-even |
 | money_delta+money_moving | moneyline | 54-163 | 24.9 | 28.3 | -3.4 | -31.5 | -14.5 |  |  | DROP: below break-even |
 | money_delta+sharp_gap | moneyline | 52-162 | 24.3 | 28.3 | -4.0 | -32.69 | -15.3 |  |  | DROP: below break-even |
-| consensus_gap+sharp_gap | moneyline | 62-167 | 27.1 | 40.4 | -13.3 | -26.99 | -11.8 |  |  | DROP: below break-even |
+| consensus_gap+sharp_gap | moneyline | 62-167 | 27.1 | 40.4 | -13.3 | -26.99 | -11.8 |  |  | !! CHECK: consensus_gap+sharp_gap close moneyline all sits -13.3 pts from its base (40.4%). Verify the base is the right comparison and the sample is not a composition artifact.  ||  DROP: below break-even |
 | follow_move+sharp_gap | moneyline | 113-131 | 46.3 | 46.8 | -0.5 | -25.41 | -10.4 |  |  | DROP: below break-even |
 | money_moving+rlm_quiet | moneyline | 25-80 | 23.8 | 28.1 | -4.3 | -16.59 | -15.8 |  |  | DROP: below break-even |
 | rlm_quiet+sharp_gap | moneyline | 26-84 | 23.6 | 28.1 | -4.4 | -21.13 | -19.2 |  |  | DROP: below break-even |
