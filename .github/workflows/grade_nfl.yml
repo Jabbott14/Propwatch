@@ -645,6 +645,48 @@ jobs:
               return bool(warnings)
 
 
+
+          # ---------------------------------------------------------------- idea register
+          # Justin's ideas and whether the engine actually consumes them. Printed on every run
+          # because a doc has to be opened and a run log does not.
+          #
+          # The failure this exists for: his core thesis -- the number moving toward a side
+          # holding a minority of BOTH tickets and money -- was not in the engine for weeks.
+          # rlm_ratio actively excluded it by requiring money/tix >= 1.2. He raised it repeatedly
+          # and it was argued about in chat from whichever in-sample cut was handy, rather than
+          # instrumented and left to accumulate a record. It became a signal on 2026-11-20 only
+          # after he asked why he kept having to correct us.
+          #
+          # RECORDED means the measurement sits on every market and no signal reads it. That is
+          # the same failure as is_live and the rotation numbers one level up: the data is there
+          # and nothing asks it a question. Promotion to SIGNAL resets the holdout, which is the
+          # honest reason these sit -- but it has to be a decision he makes, not a default that
+          # happens because nobody raised it. Full detail in claude/propwatch-idea-register.md.
+          IDEAS = [
+              ("reverse line movement + split confirmation", "SIGNAL",   "rlm, rlm_ratio"),
+              ("Pinnacle as fair value, retail gaps",        "SIGNAL",   "pin_value, pin_rlm"),
+              ("minority tickets AND money, line moves there","SIGNAL",  "rlm_quiet"),
+              ("most-bet games are where to fade the public", "RECORDED", "volume buckets; NO signal"),
+              ("key numbers 3 and 7",                        "RECORDED", "key_crossed, key_dist"),
+              ("limit slashed mid-week = unpriced news",     "RECORDED", "lim_slashed"),
+              ("money path across the week, switches",       "RECORDED", "path features"),
+              ("Pinnacle is not always right",               "TESTED",   "limit-conditioned; not a gate"),
+              ("CFB limits scale differently than NFL",      "OPEN",     "raw limits still compared"),
+              ("steam: many books moving at once",           "OPEN",     "breadth only; timestamps shared"),
+              ("our own lines / closing-line model",         "OPEN",     "needs hoopR"),
+          ]
+
+
+          def print_idea_register():
+              n_rec = sum(1 for _, s, _ in IDEAS if s == "RECORDED")
+              n_open = sum(1 for _, s, _ in IDEAS if s in ("OPEN", "TESTED"))
+              print(f"  idea register: {sum(1 for _,s,_ in IDEAS if s=='SIGNAL')} signals, "
+                    f"{n_rec} recorded-but-unused, {n_open} open", flush=True)
+              for name, st, where in IDEAS:
+                  if st != "SIGNAL":
+                      print(f"     [{st:8}] {name}  --  {where}", flush=True)
+
+
           def read(gid, mkt, t, ser, prow, true_open=None, books=None):
               """The system's read on one market at time t. None if no FanDuel line yet."""
               s0, s1 = SIDES[mkt]
@@ -1613,7 +1655,9 @@ jobs:
               return "\n".join(L) + "\n"
 
 
+
           if __name__ == "__main__":
+              print_idea_register()
               graded, upcoming, unmatched = build()
               brs = {p_: base_rates(graded, None if p_ == "all" else p_)
                      for p_ in ("all", "fit", "fwd")}
