@@ -1,6 +1,6 @@
 # CBB scorecard
 
-Generated 2026-11-22 12:00 UTC. 770 graded games (20 finished games had no final score matched and are not graded).
+Generated 2026-11-22 15:51 UTC. 770 graded games (20 finished games had no final score matched and are not graded).
 
 ## Read this first: fit vs forward
 
