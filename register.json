@@ -1,103 +1,277 @@
 {
-  "_what": "The idea register and the open-question queue, with dates, as data. Both graders print it; audit.py ages it. Edit this file, not the IDEAS list in the graders.",
-  "_states": {
-    "SIGNAL": "graded, in the scorecard, consumed by the board",
-    "RECORDED": "the feature is computed and stored, and NOTHING consumes it. This is the failure mode this repo is prone to -- audit.py ages these and escalates.",
-    "TESTED": "measured, result is in, no signal came out of it",
-    "OPEN": "not measurable yet, or not built",
-    "CLOSED": "measured and closed with evidence; do not relitigate without new data"
+ "_what": "The idea register and the open-question queue, with dates, as data. Both graders print it; audit.py ages it. Edit this file, not the IDEAS list in the graders.",
+ "_states": {
+  "SIGNAL": "graded, in the scorecard, consumed by the board",
+  "RECORDED": "the feature is computed and stored, and NOTHING consumes it. This is the failure mode this repo is prone to -- audit.py ages these and escalates.",
+  "TESTED": "measured, result is in, no signal came out of it",
+  "OPEN": "not measurable yet, or not built",
+  "CLOSED": "measured and closed with evidence; do not relitigate without new data"
+ },
+ "_dates": "recorded = the date the item entered THIS file. Items that predate the register (2026-11-22) carry that date, because earlier dates are not reliable. A stale date is honest about when it was last looked at, which is the point.",
+ "ideas": [
+  {
+   "id": "rlm",
+   "idea": "reverse line movement + public split confirmation",
+   "state": "SIGNAL",
+   "where": "rlm, rlm_ratio",
+   "recorded": "2026-11-22",
+   "source": "justin"
   },
-  "_dates": "recorded = the date the item entered THIS file. Items that predate the register (2026-11-22) carry that date, because earlier dates are not reliable. A stale date is honest about when it was last looked at, which is the point.",
-
-  "ideas": [
-    {"id": "rlm",          "idea": "reverse line movement + public split confirmation",
-     "state": "SIGNAL",   "where": "rlm, rlm_ratio", "recorded": "2026-11-22", "source": "justin"},
-    {"id": "pin_fair",     "idea": "Pinnacle is fair value; retail gaps are mispricings",
-     "state": "SIGNAL",   "where": "pin_value, pin_rlm", "recorded": "2026-11-22", "source": "justin"},
-    {"id": "rlm_quiet",    "idea": "minority tickets AND minority money, line moves there anyway -- the small money that did come in was the wiser money",
-     "state": "SIGNAL",   "where": "rlm_quiet", "recorded": "2026-11-21", "source": "justin",
-     "note": "his main personal thesis. 6-28 in NFL on a thin sample; kept because the mechanism is documented, not because he proposed it"},
-
-    {"id": "volume_fade",  "idea": "most-bet / most-watched games are where to fade the public -- NOT standalone, but combined with other signals",
-     "state": "OPEN",     "where": "volume slice runs on all 12 signals; audit.py section 5 now reports it per filter", "recorded": "2026-11-22",
-     "source": "justin",
-     "note": "HIS CORRECTION, 2026-11-22, and it was right. The standalone form is measured and dead: fading the public INVERTS with volume, 52.1% under 1k bets -> 47.4% at 4k+, spreads 4k+ 43.0% / -17.9% on n=114. But I then closed the whole idea on 3 of 12 signals, which is not a test of it. His words: 'maybe it isn't that easy of just fading public but looking at most bet games and fading public w other signals involved as well -- we have many other different signals too.' Re-run across all 12: n-weighted aggregate is FLAT in every market (|z| all under 1.5), so volume is not a blanket conditioner. Per-cell, 9 of 26 signal x market cells rise monotonically with volume against 4.3 expected by chance, 4 fall -- a mild excess on correlated cells. Spread and total disagree in direction for the same signal (rlm_quiet spread lift +1.3 -> +11.8 with volume; total lift -9.0 -> -22.0). STAYS OPEN: the aggregate says no, the per-cell picture is not flat, NFL cannot check it (0 forward cells at n>=30), and everything above is FIT."},
-
-    {"id": "key_numbers",  "idea": "key numbers 3 and 7 in football; CBB verified to have none",
-     "state": "RECORDED",  "where": "key_crossed, key_dist -- computed, graded by nothing", "recorded": "2026-11-22", "source": "justin+research"},
-    {"id": "lim_slashed",  "idea": "a Pinnacle limit cut mid-week is unpriced news",
-     "state": "RECORDED",  "where": "lim_slashed, lim_drop_frac -- computed, graded by nothing", "recorded": "2026-11-22", "source": "justin+research"},
-    {"id": "money_path",   "idea": "the PATH money takes across the week, not its endpoint -- switches, retracements, give-backs",
-     "state": "RECORDED",  "where": "path_features(): line_eff, line_revs, mny_crossings, mny_gave_back, sync, against_money_pts", "recorded": "2026-11-22", "source": "justin",
-     "note": "the two-photograph problem: every signal reads 2 observations from a series of 200-470. Median 232 money observations per NFL spread; the money majority flips in 28% of games. Recorded deliberately so grading it does not reset the holdout -- but recorded is not tested."},
-    {"id": "wrong_denom",  "idea": "signals that are strict SUBSETS of other signals are graded against the wrong thing",
-     "state": "RECORDED",  "where": "audit.py section 5 computes lift vs parent; the scorecard still grades vs base rate", "recorded": "2026-11-22", "source": "claude",
-     "note": "Found while re-testing volume properly. rlm_quiet fires 523/523 times where follow_move also fires -- 100%, by construction, since both require the line to have moved toward their side. rlm_ratio 477/477. pin_rlm 87.2% inside pin_move. They are FILTERS, not signals, and the comparison that matters is against the parent on the same games. Scored that way rlm_ratio lifts follow_move on CBB totals from 45.5% to 53.6%, ROI -13.1 to +2.6, n=252, z=+2.03 -- a row the base-rate scorecard reports as unremarkable. Also means the project does not have 12 independent signals: 8 pairs agree on side 100% of the time when both fire, so every 'two signals confirm' reading is in many cases one signal counted twice."},
-
-    {"id": "pin_bounce",   "idea": "retracement off the Pinnacle extreme -- a number that bottomed and climbed back is not the same as one still falling",
-     "state": "RECORDED",  "where": "pin_bounce, retraced -- display only", "recorded": "2026-11-22", "source": "claude",
-     "note": "built after quoting a stale 136.5 -> 132 Pinnacle move on UTEP that had actually bottomed at 131 and been climbing 4.5h"},
-
-    {"id": "pin_not_right","idea": "Pinnacle is not always right -- its limit is its own stake in its own number",
-     "state": "TESTED",   "where": "limit-conditioned reads; not a gate", "recorded": "2026-11-22", "tested": "2026-11-22", "source": "justin"},
-    {"id": "cfb_limits",   "idea": "CFB limits scale differently than NFL, so raw limit comparison is wrong across sports",
-     "state": "OPEN",     "where": "raw limits still compared", "recorded": "2026-11-22", "source": "justin+research"},
-    {"id": "steam",        "idea": "steam = many books moving at once",
-     "state": "OPEN",     "where": "breadth (books-per-interval) only -- ordering is PERMANENTLY unmeasurable, all 7 books share our snapshot timestamp", "recorded": "2026-11-22", "source": "claude",
-     "note": "data is in hand; the breadth measurement has not been built"},
-    {"id": "own_lines",    "idea": "our own closing-line model, to price independently of the books",
-     "state": "OPEN",     "where": "needs hoopR", "recorded": "2026-11-22", "source": "justin"},
-    {"id": "circa",        "idea": "Circa as a second sharp reference alongside Pinnacle",
-     "state": "OPEN",     "where": "raw/vsin_circa collected, never parsed", "recorded": "2026-11-22", "source": "claude"},
-    {"id": "book_times",   "idea": "record each book's OWN observed change time, not our snapshot time",
-     "state": "OPEN",     "where": "collector change, not made -- this is the only thing that would make lead-lag measurable going forward", "recorded": "2026-11-22", "source": "claude"},
-
-    {"id": "price_gate",   "idea": "gate plays on how far FanDuel's price sits from Pinnacle's",
-     "state": "CLOSED",   "where": "removed", "recorded": "2026-11-22", "source": "justin",
-     "note": "HIS CALL WAS RIGHT and overturned a gate that was costing plays. The gap is non-monotonic; being a point WORSE than Pinnacle was the best bucket."},
-    {"id": "dog_angle",    "idea": "dog weeks / systematically taking dogs",
-     "state": "CLOSED",   "where": "no general edge", "recorded": "2026-11-22", "source": "justin",
-     "note": "CBB dogs 52.4% on n=739 -- break-even. NFL's 34.9% is n=43."},
-    {"id": "rlm_no_pin",   "idea": "line moved against the money, without checking whether Pinnacle led",
-     "state": "CLOSED",   "where": "propwatch-line-value-state.md rule 22", "recorded": "2026-11-22", "source": "claude",
-     "note": "0-for-17. When Pinnacle LED, the money is chasing a repriced line. An hour was re-spent on this question on 2026-11-22 because the answer was unfindable."},
-    {"id": "hit_rate",     "idea": "hit rate as the scoring currency",
-     "state": "CLOSED",   "where": "ROI everywhere", "recorded": "2026-11-22", "source": "claude",
-     "note": "money_level hit 73.4% against a 69.8% base and returned -14.87 units, because it lays -880 favourites."}
-  ],
-
-  "questions": [
-    {"id": "q_lowlimit", "asked": "2026-11-22", "owner": "unassigned",
-     "q": "Is the low-limit CBB totals cell real or is it where this dataset's noise concentrates?",
-     "why": "pin_value reads 60.4% there vs 47.7% at high limits (totals only, spreads flat), and pin_rlm and rlm_ratio are ALSO better under $1k. The same corner keeps reappearing across unrelated signals. Either thin markets where Pinnacle has not done the work and FanDuel copies a lazy number, or noise. They look identical and it has never survived forward.",
-     "next": "forward-only test; the plausibility guard already flags it"},
-    {"id": "q_steam", "asked": "2026-11-22", "owner": "unassigned",
-     "q": "Does cross-book BREADTH (how many books move within an interval) predict anything, given ordering is unmeasurable?",
-     "why": "the only survivable form of the steam idea. Data is in hand.",
-     "next": "build the breadth measurement"},
-    {"id": "q_nfl_volume", "asked": "2026-11-22", "owner": "unassigned",
-     "q": "Does the volume/attention thesis hold in NFL, where public bias is stronger?",
-     "why": "it inverted in CBB, but NFL's n=43 cannot answer it either way. If the thesis is right anywhere it is probably NFL.",
-     "next": "most of a season of forward data"},
-    {"id": "q_unjoined", "asked": "2026-11-22", "owner": "unassigned",
-     "q": "Why do ~200 CBB finals never join to a graded game?",
-     "why": "unknown selection bias in everything measured off the graded set",
-     "next": "inspect the unmatched list"},
-    {"id": "q_filter_lift", "asked": "2026-11-22", "owner": "unassigned",
-     "q": "Does rlm_ratio's lift over follow_move on totals (+8.1 pts, ROI -13.1 to +2.6, n=252, z=+2.03) survive forward?",
-     "why": "the best-posed result the project has produced, because it is measured against the right denominator -- the parent signal on the same games, not a market base rate. pin_rlm shows the same direction on totals (+5.3 pts, ROI -9.2 to +1.3), which is weak support and not independent of it. FORWARD, 2026-11-22, once the date-field bug was fixed: lift +12.5 pts, ROI -34.8 to -11.0, n=28, z=+1.10. Direction reproduces out of sample. n=28 and z=1.10 are not evidence, but this is the FIRST thing in this project whose direction has held fit-to-forward at all, and note the parent is badly negative forward (34.0%) so part of the lift is the parent being bad.",
-     "next": "forward only, let n grow. Do not re-cut it in-sample. Watch whether the lift survives the parent improving."},
-    {"id": "q_quiet_vs_ratio", "asked": "2026-11-22", "owner": "unassigned",
-     "q": "Why does rlm_ratio hold forward while rlm_quiet gets worse, when both are Justin's same reverse-movement idea?",
-     "why": "they are both filters on follow_move and they split cleanly. rlm_ratio (minority tickets + money share at >=1.2x the ticket share + line confirms) forward lift +12.5 on totals. rlm_quiet (minority tickets AND minority money + line confirms) forward lift -18.2 on the same market. The difference between them is the money ratio: rlm_ratio requires the money to be disproportionately heavy on that side, rlm_quiet requires it to be light. Same line confirmation, opposite money condition, opposite result.",
-     "next": "this is a mechanism question, not a data-cut question. What kind of account moves a number while leaving a light money share behind?"},
-    {"id": "q_pair_rows", "asked": "2026-11-22", "owner": "unassigned",
-     "q": "Should the scorecard's signal-PAIR rows be dropped for pairs that agree 100% of the time?",
-     "why": "the pair rows exist on the theory that evidence combines. For follow_move+rlm_quiet, which agree 523/523, nothing combines -- the pair row is the child row with a different name, and both appeared in the forward anomaly list as separate cells with identical 24-61 records.",
-     "next": "decide whether to drop them or label them nested; either way the anomaly scan already excludes pairs"},
-    {"id": "q_mechanism", "asked": "2026-11-22", "owner": "unassigned",
-     "q": "For each of the 4 live signals: what mechanism does it trade against, documented OUTSIDE our archive?",
-     "why": "a correlation with no mechanism is a hypothesis. The Pinnacle limit/news research was 5 minutes of outside reading and produced two register items. Nothing has been read that way about the other signals.",
-     "next": "one signal per week of outside reading"}
-  ]
+  {
+   "id": "pin_fair",
+   "idea": "Pinnacle is fair value; retail gaps are mispricings",
+   "state": "SIGNAL",
+   "where": "pin_value, pin_rlm",
+   "recorded": "2026-11-22",
+   "source": "justin"
+  },
+  {
+   "id": "rlm_quiet",
+   "idea": "minority tickets AND minority money, line moves there anyway -- the small money that did come in was the wiser money",
+   "state": "SIGNAL",
+   "where": "rlm_quiet",
+   "recorded": "2026-11-21",
+   "source": "justin",
+   "note": "his main personal thesis. 6-28 in NFL on a thin sample; kept because the mechanism is documented, not because he proposed it"
+  },
+  {
+   "id": "volume_fade",
+   "idea": "most-bet / most-watched games are where to fade the public -- NOT standalone, but combined with other signals",
+   "state": "OPEN",
+   "where": "volume slice runs on all 12 signals; audit.py section 5 now reports it per filter",
+   "recorded": "2026-11-22",
+   "source": "justin",
+   "note": "HIS CORRECTION, 2026-11-22, and it was right. The standalone form is measured and dead: fading the public INVERTS with volume, 52.1% under 1k bets -> 47.4% at 4k+, spreads 4k+ 43.0% / -17.9% on n=114. But I then closed the whole idea on 3 of 12 signals, which is not a test of it. His words: 'maybe it isn't that easy of just fading public but looking at most bet games and fading public w other signals involved as well -- we have many other different signals too.' Re-run across all 12: n-weighted aggregate is FLAT in every market (|z| all under 1.5), so volume is not a blanket conditioner. Per-cell, 9 of 26 signal x market cells rise monotonically with volume against 4.3 expected by chance, 4 fall -- a mild excess on correlated cells. Spread and total disagree in direction for the same signal (rlm_quiet spread lift +1.3 -> +11.8 with volume; total lift -9.0 -> -22.0). STAYS OPEN: the aggregate says no, the per-cell picture is not flat, NFL cannot check it (0 forward cells at n>=30), and everything above is FIT."
+  },
+  {
+   "id": "key_numbers",
+   "idea": "key numbers 3 and 7 in football; CBB verified to have none",
+   "state": "RECORDED",
+   "where": "key_crossed, key_dist -- computed, graded by nothing",
+   "recorded": "2026-11-22",
+   "source": "justin+research"
+  },
+  {
+   "id": "lim_slashed",
+   "idea": "a Pinnacle limit cut mid-week is unpriced news",
+   "state": "RECORDED",
+   "where": "lim_slashed, lim_drop_frac -- computed, graded by nothing",
+   "recorded": "2026-11-22",
+   "source": "justin+research"
+  },
+  {
+   "id": "money_path",
+   "idea": "the PATH money takes across the week, not its endpoint -- switches, retracements, give-backs",
+   "state": "RECORDED",
+   "where": "path_features(): line_eff, line_revs, mny_crossings, mny_gave_back, sync, against_money_pts",
+   "recorded": "2026-11-22",
+   "source": "justin",
+   "note": "the two-photograph problem: every signal reads 2 observations from a series of 200-470. Median 232 money observations per NFL spread; the money majority flips in 28% of games. Recorded deliberately so grading it does not reset the holdout -- but recorded is not tested."
+  },
+  {
+   "id": "wrong_denom",
+   "idea": "signals that are strict SUBSETS of other signals are graded against the wrong thing",
+   "state": "RECORDED",
+   "where": "audit.py section 5 computes lift vs parent; the scorecard still grades vs base rate",
+   "recorded": "2026-11-22",
+   "source": "claude",
+   "note": "Found while re-testing volume properly. rlm_quiet fires 523/523 times where follow_move also fires -- 100%, by construction, since both require the line to have moved toward their side. rlm_ratio 477/477. pin_rlm 87.2% inside pin_move. They are FILTERS, not signals, and the comparison that matters is against the parent on the same games. Scored that way rlm_ratio lifts follow_move on CBB totals from 45.5% to 53.6%, ROI -13.1 to +2.6, n=252, z=+2.03 -- a row the base-rate scorecard reports as unremarkable. Also means the project does not have 12 independent signals: 8 pairs agree on side 100% of the time when both fire, so every 'two signals confirm' reading is in many cases one signal counted twice."
+  },
+  {
+   "id": "pin_bounce",
+   "idea": "retracement off the Pinnacle extreme -- a number that bottomed and climbed back is not the same as one still falling",
+   "state": "RECORDED",
+   "where": "pin_bounce, retraced -- display only",
+   "recorded": "2026-11-22",
+   "source": "claude",
+   "note": "built after quoting a stale 136.5 -> 132 Pinnacle move on UTEP that had actually bottomed at 131 and been climbing 4.5h"
+  },
+  {
+   "id": "pin_not_right",
+   "idea": "Pinnacle is not always right -- its limit is its own stake in its own number",
+   "state": "TESTED",
+   "where": "limit-conditioned reads; not a gate",
+   "recorded": "2026-11-22",
+   "tested": "2026-11-22",
+   "source": "justin"
+  },
+  {
+   "id": "cfb_limits",
+   "idea": "CFB limits scale differently than NFL, so raw limit comparison is wrong across sports",
+   "state": "OPEN",
+   "where": "raw limits still compared",
+   "recorded": "2026-11-22",
+   "source": "justin+research"
+  },
+  {
+   "id": "steam",
+   "idea": "steam = many books moving at once",
+   "state": "OPEN",
+   "where": "breadth (books-per-interval) only -- ordering is PERMANENTLY unmeasurable, all 7 books share our snapshot timestamp",
+   "recorded": "2026-11-22",
+   "source": "claude",
+   "note": "data is in hand; the breadth measurement has not been built"
+  },
+  {
+   "id": "own_lines",
+   "idea": "our own closing-line model, to price independently of the books",
+   "state": "OPEN",
+   "where": "needs hoopR",
+   "recorded": "2026-11-22",
+   "source": "justin"
+  },
+  {
+   "id": "circa",
+   "idea": "Circa as a second sharp reference alongside Pinnacle",
+   "state": "OPEN",
+   "where": "raw/vsin_circa collected, never parsed",
+   "recorded": "2026-11-22",
+   "source": "claude"
+  },
+  {
+   "id": "book_times",
+   "idea": "record each book's OWN observed change time, not our snapshot time",
+   "state": "OPEN",
+   "where": "collector change, not made -- this is the only thing that would make lead-lag measurable going forward",
+   "recorded": "2026-11-22",
+   "source": "claude"
+  },
+  {
+   "id": "price_gate",
+   "idea": "gate plays on how far FanDuel's price sits from Pinnacle's",
+   "state": "CLOSED",
+   "where": "removed",
+   "recorded": "2026-11-22",
+   "source": "justin",
+   "note": "HIS CALL WAS RIGHT and overturned a gate that was costing plays. The gap is non-monotonic; being a point WORSE than Pinnacle was the best bucket."
+  },
+  {
+   "id": "dog_angle",
+   "idea": "dog weeks / systematically taking dogs",
+   "state": "CLOSED",
+   "where": "no general edge",
+   "recorded": "2026-11-22",
+   "source": "justin",
+   "note": "CBB dogs 52.4% on n=739 -- break-even. NFL's 34.9% is n=43."
+  },
+  {
+   "id": "rlm_no_pin",
+   "idea": "line moved against the money, without checking whether Pinnacle led",
+   "state": "CLOSED",
+   "where": "propwatch-line-value-state.md rule 22",
+   "recorded": "2026-11-22",
+   "source": "claude",
+   "note": "0-for-17. When Pinnacle LED, the money is chasing a repriced line. An hour was re-spent on this question on 2026-11-22 because the answer was unfindable."
+  },
+  {
+   "id": "hit_rate",
+   "idea": "hit rate as the scoring currency",
+   "state": "CLOSED",
+   "where": "ROI everywhere",
+   "recorded": "2026-11-22",
+   "source": "claude",
+   "note": "money_level hit 73.4% against a 69.8% base and returned -14.87 units, because it lays -880 favourites."
+  },
+  {
+   "id": "house_needs",
+   "idea": "the BOOK'S OWN EXPOSURE -- which side the house needs. Upstream of why a number moves.",
+   "state": "OPEN",
+   "where": "not collected anywhere",
+   "recorded": "2026-11-22",
+   "source": "justin",
+   "note": "Justin shared a Patrick Everson / Prime Sportsbook post 2026-11-22 listing 'Biggest House Needs' (Lions -3.5, Panthers -2.5, Bills -16.5, Raiders +10.5, Giants +5.5) alongside sharp action and public plays. We collect tickets and money -- what BETTORS did. We have never had what the BOOK is holding. A book moves a number to balance its own book, so its liability is upstream of the move we measure; every signal in this system reads the move and infers backwards. HONEST LIMIT: this is not published as a feed. It appears in weekly columns written by people (Everson/Prime, VSIN liability reports, SuperBook). Treat it as a manual cross-check when Justin shares one, not a signal input, unless a structured source turns up. Also unresolved: Everson listed Lions -3.5 under BOTH 'Top Public Plays' and 'Biggest House Needs', which is not consistent under either reading of the term -- do not build on it until the convention is confirmed."
+  },
+  {
+   "id": "public_is_book_specific",
+   "idea": "'the public' is one book's clientele, not a fact about the world",
+   "state": "OPEN",
+   "where": "every public/fade signal reads Action Network book 69 only",
+   "recorded": "2026-11-22",
+   "source": "claude",
+   "note": "MATERIAL LIMIT ON THE WHOLE FADE-THE-PUBLIC THESIS, found 2026-11-22 by cross-checking Justin's Everson post. Prime listed 'Dolphins +16.5' as a top public play while our Action Network data read 60% of tickets on BUFFALO -- the opposite side. Prime listed public on Ravens +2.5 where we read 49/50, no lean at all. rlm, rlm_quiet, rlm_ratio, sharp_gap and the volume slices all define 'the public' as FanDuel's ticket split via Action Network. If two books disagree about which side the public is on, then a fade signal is fading one book's customers, and its record is a statement about that book, not about public money. Nothing in the archive can currently test this because we have only ever had one source of splits."
+  },
+  {
+   "id": "second_book_splits",
+   "idea": "splits from a book that is NOT FanDuel -- Circa, DK, South Point via VSIN",
+   "state": "OPEN",
+   "where": "raw/vsin and raw/vsin_circa: BROKEN, see note",
+   "recorded": "2026-11-22",
+   "source": "claude",
+   "note": "DEFECT, found 2026-11-22. Two problems. (1) What we archived is the VSIN page SHELL, not data -- the splits load from query params (?source=DK&view=topspreadhandle) and the fetched HTML contains the filter chips and zero numbers. 'Handle' appears 3 times, all in button labels; 'Tickets' appears 0 times. So the parse that was never written would have found nothing anyway. (2) Collection STOPPED on 2026-11-12 and nothing noticed for ten days. This is the fourth collected-but-never-parsed item after Circa, is_live/is_alt_market, and the rotation numbers. It is also the blocker on public_is_book_specific: a second book's splits is the only way to test whether 'the public' means anything beyond FanDuel."
+  }
+ ],
+ "questions": [
+  {
+   "id": "q_lowlimit",
+   "asked": "2026-11-22",
+   "owner": "unassigned",
+   "q": "Is the low-limit CBB totals cell real or is it where this dataset's noise concentrates?",
+   "why": "pin_value reads 60.4% there vs 47.7% at high limits (totals only, spreads flat), and pin_rlm and rlm_ratio are ALSO better under $1k. The same corner keeps reappearing across unrelated signals. Either thin markets where Pinnacle has not done the work and FanDuel copies a lazy number, or noise. They look identical and it has never survived forward.",
+   "next": "forward-only test; the plausibility guard already flags it"
+  },
+  {
+   "id": "q_steam",
+   "asked": "2026-11-22",
+   "owner": "unassigned",
+   "q": "Does cross-book BREADTH (how many books move within an interval) predict anything, given ordering is unmeasurable?",
+   "why": "the only survivable form of the steam idea. Data is in hand.",
+   "next": "build the breadth measurement"
+  },
+  {
+   "id": "q_nfl_volume",
+   "asked": "2026-11-22",
+   "owner": "unassigned",
+   "q": "Does the volume/attention thesis hold in NFL, where public bias is stronger?",
+   "why": "it inverted in CBB, but NFL's n=43 cannot answer it either way. If the thesis is right anywhere it is probably NFL.",
+   "next": "most of a season of forward data"
+  },
+  {
+   "id": "q_unjoined",
+   "asked": "2026-11-22",
+   "owner": "unassigned",
+   "q": "Why do ~200 CBB finals never join to a graded game?",
+   "why": "unknown selection bias in everything measured off the graded set",
+   "next": "inspect the unmatched list"
+  },
+  {
+   "id": "q_filter_lift",
+   "asked": "2026-11-22",
+   "owner": "unassigned",
+   "q": "Does rlm_ratio's lift over follow_move on totals (+8.1 pts, ROI -13.1 to +2.6, n=252, z=+2.03) survive forward?",
+   "why": "the best-posed result the project has produced, because it is measured against the right denominator -- the parent signal on the same games, not a market base rate. pin_rlm shows the same direction on totals (+5.3 pts, ROI -9.2 to +1.3), which is weak support and not independent of it. FORWARD, 2026-11-22, once the date-field bug was fixed: lift +12.5 pts, ROI -34.8 to -11.0, n=28, z=+1.10. Direction reproduces out of sample. n=28 and z=1.10 are not evidence, but this is the FIRST thing in this project whose direction has held fit-to-forward at all, and note the parent is badly negative forward (34.0%) so part of the lift is the parent being bad.",
+   "next": "forward only, let n grow. Do not re-cut it in-sample. Watch whether the lift survives the parent improving."
+  },
+  {
+   "id": "q_quiet_vs_ratio",
+   "asked": "2026-11-22",
+   "owner": "unassigned",
+   "q": "Why does rlm_ratio hold forward while rlm_quiet gets worse, when both are Justin's same reverse-movement idea?",
+   "why": "they are both filters on follow_move and they split cleanly. rlm_ratio (minority tickets + money share at >=1.2x the ticket share + line confirms) forward lift +12.5 on totals. rlm_quiet (minority tickets AND minority money + line confirms) forward lift -18.2 on the same market. The difference between them is the money ratio: rlm_ratio requires the money to be disproportionately heavy on that side, rlm_quiet requires it to be light. Same line confirmation, opposite money condition, opposite result.",
+   "next": "this is a mechanism question, not a data-cut question. What kind of account moves a number while leaving a light money share behind?"
+  },
+  {
+   "id": "q_pair_rows",
+   "asked": "2026-11-22",
+   "owner": "unassigned",
+   "q": "Should the scorecard's signal-PAIR rows be dropped for pairs that agree 100% of the time?",
+   "why": "the pair rows exist on the theory that evidence combines. For follow_move+rlm_quiet, which agree 523/523, nothing combines -- the pair row is the child row with a different name, and both appeared in the forward anomaly list as separate cells with identical 24-61 records.",
+   "next": "decide whether to drop them or label them nested; either way the anomaly scan already excludes pairs"
+  },
+  {
+   "id": "q_mechanism",
+   "asked": "2026-11-22",
+   "owner": "unassigned",
+   "q": "For each of the 4 live signals: what mechanism does it trade against, documented OUTSIDE our archive?",
+   "why": "a correlation with no mechanism is a hypothesis. The Pinnacle limit/news research was 5 minutes of outside reading and produced two register items. Nothing has been read that way about the other signals.",
+   "next": "one signal per week of outside reading"
+  },
+  {
+   "id": "q_follow_move_conflict",
+   "asked": "2026-11-22",
+   "owner": "unassigned",
+   "q": "Does an independent sharp source systematically disagree with follow_move after a number has already travelled?",
+   "why": "2026-11-22, Everson/Prime named sharp action on Saints +11.5 and Raiders +10 -- both the OPPOSITE side from our lean, and in both cases our lean came from follow_move chasing a 1-2 point move that had already happened. follow_move is our worst forward signal, mean z -0.76, +0.22 fit to negative forward. The same source CONFIRMED us where the move was still live: sharps took Bucs at +6.5/+5.5 (Pinnacle has since gone to 3.5) and Eagles at +4.5 (now 3.5). Two confirmations where we were early, two contradictions where we were late. That is a mechanism for the follow_move forward number, not a coincidence.",
+   "next": "log Everson's weekly post against our follow_move calls for the rest of the season. n will be tiny; it is a mechanism check, not a signal test."
+  }
+ ]
 }
