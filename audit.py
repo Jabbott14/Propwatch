@@ -279,7 +279,22 @@ def drift(sources):
 #    unremarkable row. Three signals have been graded against the wrong thing all along.
 #
 # Computing a lift changes no call, so the holdout does not reset.
-PARENT = {"rlm_quiet": "follow_move", "rlm_ratio": "follow_move", "pin_rlm": "pin_move"}
+# pre_move is deliberately NOT here: it fires 11 times in NFL and follow_move fires on
+# ZERO of them, because pre_move claims the move has not happened yet. It is the
+# COMPLEMENT of follow_move, not a subset -- genuinely independent, and the only signal in
+# the set that is.
+PARENT = {"rlm_quiet": "follow_move", "rlm_ratio": "follow_move",
+          "rlm": "follow_move",          # NFL only: 41/41 inside follow_move, same side
+          "pin_rlm": "pin_move"}
+
+
+def _gdate(gm):
+    """The graders do not agree on this field name and neither carries "date": CBB writes
+    `tip`, NFL writes `kickoff`. Reading `date` returned None for every game in both, so
+    "" < holdout classified the entire archive as FIT and the forward split was dead while
+    looking like it worked. Only the period="all" rows were being printed, so nothing
+    reported was wrong -- which is exactly why it survived."""
+    return ((gm.get("date") or gm.get("tip") or gm.get("kickoff") or "")[:10])
 
 
 def _vol(nb):
@@ -301,7 +316,7 @@ def filter_lift(sport, holdout):
     for child, parent in PARENT.items():
         acc = collections.defaultdict(lambda: collections.defaultdict(lambda: [0, 0, 0.0]))
         for gm in games:
-            per = "fit" if (gm.get("date") or "")[:10] < holdout else "fwd"
+            per = "fit" if _gdate(gm) < holdout else "fwd"
             for mkt, m in (gm.get("markets") or {}).items():
                 gr = m.get("close_graded") or {}
                 r = m.get("close") or {}
@@ -318,7 +333,8 @@ def filter_lift(sport, holdout):
         printed = False
         for mkt in ("spread", "total", "moneyline"):
             for sl in ("all", "<1k", "1-3k", "3k+"):
-                d = acc.get((mkt, sl, "all"))
+              for pr in ("all", "fwd"):
+                d = acc.get((mkt, sl, pr))
                 if not d:
                     continue
                 w, wo = d.get("with"), d.get("without")
@@ -327,6 +343,7 @@ def filter_lift(sport, holdout):
                 if not printed:
                     say(f"  does {child} improve on its parent {parent}?")
                     printed = True
+                lbl = f"{mkt:9} {sl:5}" + ("  FWD" if pr == "fwd" else "     ")
                 hw, hwo = 100 * w[0] / w[1], 100 * wo[0] / wo[1]
                 rw, rwo = 100 * w[2] / w[1], 100 * wo[2] / wo[1]
                 p = (w[0] + wo[0]) / (w[1] + wo[1])
@@ -339,7 +356,7 @@ def filter_lift(sport, holdout):
                 # hit rate -- pin_rlm reads -22.0 points of hit and +19.2 of ROI. This is
                 # the hit-rate trap the project already closed once, in a new place.
                 note = "   [ML: read ROI only, hit lift is a dog/fav artifact]" if mkt == "moneyline" else ""
-                say(f"    {mkt:9} {sl:5}  with {hw:5.1f}% n={w[1]:>3} ROI {rw:+6.1f}   "
+                say(f"    {lbl}  with {hw:5.1f}% n={w[1]:>3} ROI {rw:+6.1f}   "
                     f"without {hwo:5.1f}% n={wo[1]:>3} ROI {rwo:+6.1f}   "
                     f"lift {hw-hwo:+6.1f}pt / {rw-rwo:+6.1f}ROI  z {z:+5.2f}{note}")
         if printed:
