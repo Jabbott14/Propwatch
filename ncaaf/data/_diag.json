@@ -6,33 +6,37 @@
   "regular": 2880
  },
  "an_rows": 2880,
- "cycle": 12,
- "cycle_sec": 1.2,
+ "cycle": 15,
+ "cycle_sec": 1.1,
  "deferred_events": 0,
- "elapsed_min": 110.0,
+ "elapsed_min": 140.0,
  "errors": [],
  "event_rows": 0,
  "events_with_tabs": 2,
  "gz": {
   "pin": 0,
-  "props": 934,
-  "splits": 2448
+  "props": 898,
+  "raw_actionnet_wk": 98260,
+  "raw_fanduel": 54416,
+  "raw_pin_matchups": 3817,
+  "raw_pin_prices": 24861,
+  "splits": 4075
  },
- "gz_kb_total": 3.3,
+ "gz_kb_total": 182.0,
  "keyframe": false,
  "lobby_events": 75,
- "lobby_rows": 511,
+ "lobby_rows": 510,
  "new_openers_caught": 0,
  "pin_rows": 708,
  "pulls_fail": 0,
  "pulls_ok": 0,
- "raw": false,
+ "raw": true,
  "rows_written": {
   "pin": 0,
-  "props": 39,
-  "splits": 133
+  "props": 42,
+  "splits": 241
  },
- "run_utc": "2026-11-23T14:38:31Z",
+ "run_utc": "2026-11-23T15:08:31Z",
  "tiers": {
   "A": 0,
   "B": 0,
