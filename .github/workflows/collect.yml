@@ -1,10 +1,29 @@
 name: collect
+# NFL collector. Each job snapshots on a variable cadence for ~5h50m.
+#
+# Continuity: when a job finishes it immediately dispatches the next one, so there is no
+# gap waiting for a cron firing. The hourly cron is only a BACKSTOP.
+#
+# Why this exists (2026-11-23): this workflow had no self-dispatch and no concurrency
+# group, so it depended entirely on GitHub firing the hourly schedule. GitHub drops
+# scheduled runs under load, and on NFL Sunday it did: `snap` stopped at 01:12Z -- fifteen
+# minutes before the MIN@SF kickoff, so that game has no closing data -- then returned
+# after a 9.7h gap, died again, and was 7.6h cold the next afternoon. collect_cbb and
+# collect_ncaaf ran clean every 30 min throughout, because both already re-dispatch
+# themselves. This file was the odd one out.
+#
+# The concurrency group also stops the ~6 overlapping runs the old hourly-cron-plus-350min
+# design produced, which raced each other on git push.
 on:
   schedule:
     - cron: "7 * * * *"
   workflow_dispatch:
 permissions:
   contents: write
+  actions: write
+concurrency:
+  group: collect
+  cancel-in-progress: false
 jobs:
   snap:
     runs-on: ubuntu-latest
@@ -288,3 +307,8 @@ jobs:
           commit()
           print("DONE cycles:",cyc); sys.exit(0)
           PY
+      - name: start the next run
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run collect.yml --ref "${{ github.ref_name }}"
