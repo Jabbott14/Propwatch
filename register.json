@@ -198,6 +198,25 @@
    "recorded": "2026-11-22",
    "source": "claude",
    "note": "DEFECT, found 2026-11-22. Two problems. (1) What we archived is the VSIN page SHELL, not data -- the splits load from query params (?source=DK&view=topspreadhandle) and the fetched HTML contains the filter chips and zero numbers. 'Handle' appears 3 times, all in button labels; 'Tickets' appears 0 times. So the parse that was never written would have found nothing anyway. (2) Collection STOPPED on 2026-11-12 and nothing noticed for ten days. This is the fourth collected-but-never-parsed item after Circa, is_live/is_alt_market, and the rotation numbers. It is also the blocker on public_is_book_specific: a second book's splits is the only way to test whether 'the public' means anything beyond FanDuel."
+  },
+  {
+   "id": "collector_dies",
+   "idea": "the NFL collector dies silently and nothing notices",
+   "state": "RECORDED",
+   "where": "audit.py section 0 (heartbeat) now checks it; the workflow itself is NOT fixed",
+   "recorded": "2026-11-23",
+   "source": "claude",
+   "note": "DEFECT. `snap` ran every ~10 min then STOPPED 2026-11-23T01:12Z -- fifteen minutes before the MIN@SF kickoff -- so that game has no closing data. Came back 10:56Z, 9.7h gap. Died again, 3h gap. Last run 14:46Z and was 7.6h cold when Monday's card was being built. CBB and NCAAF ran clean every 30 min through all of it, which is exactly why nothing looked wrong. collect.yml is cron '7 * * * *' with timeout-minutes 350, so ~6 runs overlap by design, and `continue-on-error: true` means a failing step never surfaces. Suspected cause is Actions concurrency/queue pressure on NFL Sunday (6 overlapping 5h50m snap jobs plus cbb, ncaaf and the graders), but THIS IS UNVERIFIED -- the Actions API was not reachable from the session that found it. Justin needs to read the Actions tab. A stale feed is the worst failure this project has because downstream it does not look like an error, it looks like a quiet market."
+  },
+  {
+   "id": "tb_rlm_failed",
+   "idea": "the cleanest RLM setup of the week lost outright, not just late",
+   "state": "TESTED",
+   "where": "2026-11-22 TB@DET",
+   "recorded": "2026-11-23",
+   "tested": "2026-11-22",
+   "source": "claude",
+   "note": "Worth keeping because of how it was described at the time. TB +3.5: 81% of tickets on Detroit, Pinnacle moved 6.5 -> 3.5 (three full points), HELD 13.8h, $100,000 limit -- the largest on the board -- and Patrick Everson/Prime independently reported sharp action on Bucs +6.5/+5.5. Every condition in Justin's thesis, plus outside confirmation. Detroit won 31-21. It did not lose by a hook; it lost by ten. Through the day it was repeatedly called 'right side, price gone' -- that framing was wrong. The move being spent and the read being correct are different claims and only the first was supported. A spent move is not evidence the side is right."
   }
  ],
  "questions": [
@@ -272,6 +291,14 @@
    "q": "Does an independent sharp source systematically disagree with follow_move after a number has already travelled?",
    "why": "2026-11-22, Everson/Prime named sharp action on Saints +11.5 and Raiders +10 -- both the OPPOSITE side from our lean, and in both cases our lean came from follow_move chasing a 1-2 point move that had already happened. follow_move is our worst forward signal, mean z -0.76, +0.22 fit to negative forward. The same source CONFIRMED us where the move was still live: sharps took Bucs at +6.5/+5.5 (Pinnacle has since gone to 3.5) and Eagles at +4.5 (now 3.5). Two confirmations where we were early, two contradictions where we were late. That is a mechanism for the follow_move forward number, not a coincidence.",
    "next": "log Everson's weekly post against our follow_move calls for the rest of the season. n will be tiny; it is a mechanism check, not a signal test."
+  },
+  {
+   "id": "q_price_gate_recur",
+   "asked": "2026-11-23",
+   "owner": "unassigned",
+   "q": "Why did price gating come back after being closed with evidence, and what stops the next recurrence?",
+   "why": "On 2026-11-22 the whole NFL card was ranked by FanDuel-vs-Pinnacle edge, two artifacts were built around it, and it was described as 'the only column that does not depend on a signal record'. Price gating is in the brain doc's CLOSED list -- the gap is non-monotonic, being a point WORSE than Pinnacle was the best bucket, and it had already been removed once for cutting plays with no support. Justin caught it the second time too, in nearly the same words. CLAUDE.md lists the closed items but a closed item is a fact to recall, not a check that fires. Day-one evidence was mixed: the four signal-only plays that price gating had excluded went 2-2, and the biggest price play (ARI +15.5, $100k limit) lost.",
+   "next": "consider making audit.py assert that the current ranking rule is not one of the closed ones -- a closed item that only lives in prose gets re-derived"
   }
  ]
 }

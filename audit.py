@@ -57,6 +57,57 @@ def load(p):
         return None
 
 
+# ---------------------------------------------------------------- 0. collector heartbeat
+def heartbeat():
+    """Is the data still arriving? Nothing in this system asked that until two outages
+    were found by hand on consecutive days:
+
+      * VSIN stopped 2026-11-12 and nobody noticed for TEN DAYS -- and what it had been
+        archiving was the page shell with no numbers in it anyway.
+      * The NFL collector (`snap`) died 2026-11-23T01:12Z, fifteen minutes before the
+        MIN@SF kickoff, so that game has no closing data at all. It came back, died
+        again, and was 7h cold when the Monday card was being built. CBB and NCAAF ran
+        clean through all of it, which is why nothing looked wrong.
+
+    Every other check in this file reasons about data that is present. A measurement
+    computed from a feed that stopped is not wrong, it is stale, and stale looks exactly
+    like a quiet market. That is the worst failure mode this project has, because it is
+    invisible in every downstream number.
+
+    Thresholds are per-feed because the cadences differ: snap targets 3-10 min near a
+    kickoff, cbb and ncaaf 30 min.
+    """
+    import subprocess, datetime as dt
+    say("## 0. IS THE DATA STILL ARRIVING?")
+    say()
+    FEEDS = [("snap", 90, "NFL collector"), ("cbb", 90, "CBB collector"),
+             ("ncaaf", 120, "NCAAF collector"), ("nfl grade", 1440, "NFL grader"),
+             ("grade-cbb", 1440, "CBB grader")]
+    now = dt.datetime.now(dt.timezone.utc)
+    bad = 0
+    for prefix, max_min, label in FEEDS:
+        try:
+            out = subprocess.run(["git", "log", "-1", "--format=%cI", f"--grep=^{prefix}"],
+                                 cwd=ROOT, capture_output=True, text=True, timeout=30).stdout.strip()
+            if not out:
+                say(f"  {label:16} NO COMMITS FOUND  <-- never ran, or the message changed"); bad += 1; continue
+            age = (now - dt.datetime.fromisoformat(out)).total_seconds() / 60
+            flag = ""
+            if age > max_min:
+                flag = f"  <-- STALE, expected every ~{max_min}m"; bad += 1
+            say(f"  {label:16} last {age/60:6.1f}h ago  ({out}){flag}")
+        except Exception as e:
+            say(f"  {label:16} check failed: {e}")
+    say()
+    if bad:
+        say(f"  {bad} feed(s) stale. EVERY NUMBER BELOW THAT DEPENDS ON THEM IS SUSPECT --")
+        say("  a dead feed does not look like an error downstream, it looks like a quiet")
+        say("  market. Check the Actions tab before trusting anything in sections 2-5.")
+    else:
+        say("  all feeds current.")
+    say()
+
+
 # ---------------------------------------------------------------- 1. stale register
 def stale(reg):
     say("## 1. RECORDED AND CONSUMED BY NOTHING")
@@ -383,6 +434,8 @@ def main():
     say("Nobody asked for this. That is the point -- the knowledge base only gets read when")
     say("a session opens it, and the guards only fire once a measurement is already wrong.")
     say()
+
+    heartbeat()
 
     reg = load("register.json") or {}
     sources = {}
