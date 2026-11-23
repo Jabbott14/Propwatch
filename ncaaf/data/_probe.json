@@ -22,12 +22,12 @@
    "name": "Football"
   }
  ],
- "run_utc": "2026-11-23T02:07:44Z",
+ "run_utc": "2026-11-23T07:28:05Z",
  "tried": [
   {
-   "bytes": 665181,
+   "bytes": 711809,
    "kind": "fd_lobby",
-   "score": 70,
+   "score": 77,
    "url": "https://sbapi.nj.sportsbook.fanduel.com/api/content-managed-page?page=CUSTOM&customPageId=ncaaf&_ak=<ak>"
   },
   {
@@ -49,22 +49,22 @@
    "url": "https://sbapi.nj.sportsbook.fanduel.com/api/content-managed-page?page=CUSTOM&customPageId=cfb&_ak=<ak>"
   },
   {
-   "bytes": 1619711,
+   "bytes": 1622032,
    "kind": "actionnet",
    "score": 69,
    "url": "https://api.actionnetwork.com/web/v2/scoreboard/ncaaf?period=game"
   },
   {
-   "bytes": 1619711,
+   "bytes": 1622032,
    "kind": "actionnet",
    "score": 69,
-   "url": "https://api.actionnetwork.com/web/v2/scoreboard/ncaaf?period=game&date=20261122"
+   "url": "https://api.actionnetwork.com/web/v2/scoreboard/ncaaf?period=game&date=20261123"
   },
   {
-   "bytes": 1619711,
+   "bytes": 1622032,
    "kind": "actionnet",
    "score": 69,
-   "url": "https://api.actionnetwork.com/web/v2/scoreboard/ncaaf?period=game&division=FBS&date=20261122"
+   "url": "https://api.actionnetwork.com/web/v2/scoreboard/ncaaf?period=game&division=FBS&date=20261123"
   },
   {
    "error": "HTTPError: HTTP Error 403: Forbidden",
