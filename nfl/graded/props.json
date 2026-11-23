@@ -60675,6 +60675,205 @@
  },
  {
   "game": "Jacksonville Jaguars @ New York Giants",
+  "player": "jj mccarthy",
+  "stat": "pass_yds",
+  "kickoff": "2026-11-22T21:25:00.000Z",
+  "week": 11,
+  "actual": 173.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-22T2124Z",
+    "line": 214.5,
+    "odds": {
+     "over": -113,
+     "under": -113
+    },
+    "open": 217.5,
+    "calls": {
+     "fd_move": "under"
+    },
+    "pin": 214.5,
+    "pin_lim": 2000,
+    "fair_over": 0.4957,
+    "move_pts": -3.0
+   },
+   "early": {
+    "t": "2026-11-17T0644Z",
+    "line": 217.5,
+    "odds": {
+     "over": -114,
+     "under": -114
+    },
+    "open": 217.5,
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "fd_move": {
+    "side": "under",
+    "line": 214.5,
+    "odds": -113,
+    "res": "W",
+    "units": 0.885
+   }
+  }
+ },
+ {
+  "game": "Jacksonville Jaguars @ New York Giants",
+  "player": "jj mccarthy",
+  "stat": "pass_tds",
+  "kickoff": "2026-11-22T21:25:00.000Z",
+  "week": 11,
+  "actual": 1.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-22T2124Z",
+    "line": 1.5,
+    "odds": {
+     "over": 178,
+     "under": -240
+    },
+    "open": 1.5,
+    "calls": {
+     "fd_juice": "under"
+    },
+    "pin": 1.5,
+    "pin_lim": 1000,
+    "fair_over": 0.3575,
+    "juice_c": [
+     20,
+     -25
+    ]
+   },
+   "early": {
+    "t": "2026-11-17T0644Z",
+    "line": 1.5,
+    "odds": {
+     "over": 158,
+     "under": -215
+    },
+    "open": 1.5,
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "fd_juice": {
+    "side": "under",
+    "line": 1.5,
+    "odds": -240,
+    "res": "W",
+    "units": 0.417
+   }
+  }
+ },
+ {
+  "game": "Jacksonville Jaguars @ New York Giants",
+  "player": "trevor lawrence",
+  "stat": "pass_yds",
+  "kickoff": "2026-11-22T21:25:00.000Z",
+  "week": 11,
+  "actual": 301.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-22T2124Z",
+    "line": 240.5,
+    "odds": {
+     "over": -113,
+     "under": -113
+    },
+    "open": 242.5,
+    "calls": {
+     "fd_move": "under"
+    },
+    "pin": 240.5,
+    "pin_lim": 2000,
+    "fair_over": 0.4889,
+    "move_pts": -2.0
+   },
+   "early": {
+    "t": "2026-11-17T0644Z",
+    "line": 242.5,
+    "odds": {
+     "over": -114,
+     "under": -114
+    },
+    "open": 242.5,
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "fd_move": {
+    "side": "under",
+    "line": 240.5,
+    "odds": -113,
+    "res": "L",
+    "units": -1.0
+   }
+  }
+ },
+ {
+  "game": "Jacksonville Jaguars @ New York Giants",
+  "player": "trevor lawrence",
+  "stat": "pass_tds",
+  "kickoff": "2026-11-22T21:25:00.000Z",
+  "week": 11,
+  "actual": 1.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-22T2124Z",
+    "line": 1.5,
+    "odds": {
+     "over": -130,
+     "under": 100
+    },
+    "open": 1.5,
+    "calls": {
+     "pin_price": "over",
+     "fd_juice": "over"
+    },
+    "pin": 1.5,
+    "pin_lim": 1000,
+    "fair_over": 0.5716,
+    "edge_pct": 1.13,
+    "juice_c": [
+     -2,
+     202
+    ]
+   },
+   "early": {
+    "t": "2026-11-17T0644Z",
+    "line": 1.5,
+    "odds": {
+     "over": -128,
+     "under": -102
+    },
+    "open": 1.5,
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "pin_price": {
+    "side": "over",
+    "line": 1.5,
+    "odds": -130,
+    "res": "L",
+    "units": -1.0
+   },
+   "fd_juice": {
+    "side": "over",
+    "line": 1.5,
+    "odds": -130,
+    "res": "L",
+    "units": -1.0
+   }
+  }
+ },
+ {
+  "game": "Jacksonville Jaguars @ New York Giants",
   "player": "isaiah likely",
   "stat": "anytime_td",
   "kickoff": "2026-11-22T21:25:00.000Z",
@@ -60720,6 +60919,1156 @@
     "odds": 240,
     "res": "L",
     "units": -1.0
+   }
+  }
+ },
+ {
+  "game": "Jacksonville Jaguars @ New York Giants",
+  "player": "devin singletary",
+  "stat": "rush_yds",
+  "kickoff": "2026-11-22T21:25:00.000Z",
+  "week": 11,
+  "actual": 5.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-22T2124Z",
+    "line": 7.5,
+    "odds": {
+     "over": -113,
+     "under": -113
+    },
+    "open": 12.5,
+    "calls": {
+     "pin_value": "over",
+     "fd_move": "under"
+    },
+    "pin": 8.5,
+    "pin_lim": 500,
+    "fair_over": 0.487,
+    "pin_gap": -1.0,
+    "move_pts": -5.0
+   },
+   "early": {
+    "t": "2026-11-17T1812Z",
+    "line": 12.5,
+    "odds": {
+     "over": -114,
+     "under": -114
+    },
+    "open": 12.5,
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "pin_value": {
+    "side": "over",
+    "line": 7.5,
+    "odds": -113,
+    "res": "L",
+    "units": -1.0
+   },
+   "fd_move": {
+    "side": "under",
+    "line": 7.5,
+    "odds": -113,
+    "res": "W",
+    "units": 0.885
+   }
+  }
+ },
+ {
+  "game": "Jacksonville Jaguars @ New York Giants",
+  "player": "bhayshul tuten",
+  "stat": "rush_yds",
+  "kickoff": "2026-11-22T21:25:00.000Z",
+  "week": 11,
+  "actual": 33.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-22T2124Z",
+    "line": 68.5,
+    "odds": {
+     "over": -113,
+     "under": -113
+    },
+    "open": 74.5,
+    "calls": {
+     "fd_move": "under"
+    },
+    "pin": 68.5,
+    "pin_lim": 2000,
+    "fair_over": 0.5022,
+    "move_pts": -6.0
+   },
+   "early": {
+    "t": "2026-11-17T1812Z",
+    "line": 74.5,
+    "odds": {
+     "over": -114,
+     "under": -114
+    },
+    "open": 74.5,
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "fd_move": {
+    "side": "under",
+    "line": 68.5,
+    "odds": -113,
+    "res": "W",
+    "units": 0.885
+   }
+  }
+ },
+ {
+  "game": "Jacksonville Jaguars @ New York Giants",
+  "player": "trevor lawrence",
+  "stat": "rush_yds",
+  "kickoff": "2026-11-22T21:25:00.000Z",
+  "week": 11,
+  "actual": 7.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-22T2124Z",
+    "line": 12.5,
+    "odds": {
+     "over": -106,
+     "under": -120
+    },
+    "open": 8.5,
+    "calls": {
+     "fd_move": "over"
+    },
+    "pin": 12.5,
+    "pin_lim": 1000,
+    "fair_over": 0.4848,
+    "move_pts": 4.0
+   },
+   "early": {
+    "t": "2026-11-17T1812Z",
+    "line": 8.5,
+    "odds": {
+     "over": -114,
+     "under": -114
+    },
+    "open": 8.5,
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "fd_move": {
+    "side": "over",
+    "line": 12.5,
+    "odds": -106,
+    "res": "L",
+    "units": -1.0
+   }
+  }
+ },
+ {
+  "game": "Jacksonville Jaguars @ New York Giants",
+  "player": "chris rodriguez jr",
+  "stat": "rush_yds",
+  "kickoff": "2026-11-22T21:25:00.000Z",
+  "week": 11,
+  "actual": 28.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-22T2124Z",
+    "line": 18.5,
+    "odds": {
+     "over": -113,
+     "under": -113
+    },
+    "open": 19.5,
+    "calls": {
+     "pin_value": "over",
+     "pin_lead": "over",
+     "fd_move": "under"
+    },
+    "pin": 20.5,
+    "pin_lim": 1000,
+    "fair_over": 0.4463,
+    "pin_gap": -2.0,
+    "move_pts": -1.0
+   },
+   "early": {
+    "t": "2026-11-17T1812Z",
+    "line": 19.5,
+    "odds": {
+     "over": -114,
+     "under": -114
+    },
+    "open": 19.5,
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "pin_value": {
+    "side": "over",
+    "line": 18.5,
+    "odds": -113,
+    "res": "W",
+    "units": 0.885
+   },
+   "pin_lead": {
+    "side": "over",
+    "line": 18.5,
+    "odds": -113,
+    "res": "W",
+    "units": 0.885
+   },
+   "fd_move": {
+    "side": "under",
+    "line": 18.5,
+    "odds": -113,
+    "res": "L",
+    "units": -1.0
+   }
+  }
+ },
+ {
+  "game": "Jacksonville Jaguars @ New York Giants",
+  "player": "cam skattebo",
+  "stat": "rush_yds",
+  "kickoff": "2026-11-22T21:25:00.000Z",
+  "week": 11,
+  "actual": 34.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-22T2124Z",
+    "line": 57.5,
+    "odds": {
+     "over": -113,
+     "under": -113
+    },
+    "open": 57.5,
+    "calls": {
+     "pin_value": "under",
+     "pin_lead": "over"
+    },
+    "pin": 54.5,
+    "pin_lim": 2000,
+    "fair_over": 0.5432,
+    "pin_gap": 3.0
+   },
+   "early": {
+    "t": "2026-11-17T1812Z",
+    "line": 57.5,
+    "odds": {
+     "over": -114,
+     "under": -114
+    },
+    "open": 57.5,
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "pin_value": {
+    "side": "under",
+    "line": 57.5,
+    "odds": -113,
+    "res": "W",
+    "units": 0.885
+   },
+   "pin_lead": {
+    "side": "over",
+    "line": 57.5,
+    "odds": -113,
+    "res": "L",
+    "units": -1.0
+   }
+  }
+ },
+ {
+  "game": "Jacksonville Jaguars @ New York Giants",
+  "player": "jj mccarthy",
+  "stat": "rush_yds",
+  "kickoff": "2026-11-22T21:25:00.000Z",
+  "week": 11,
+  "actual": 33.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-22T2124Z",
+    "line": 16.5,
+    "odds": {
+     "over": -113,
+     "under": -113
+    },
+    "open": 16.5,
+    "calls": {
+     "pin_value": "under",
+     "pin_lead": "under"
+    },
+    "pin": 15.5,
+    "pin_lim": 1000,
+    "fair_over": 0.5065,
+    "pin_gap": 1.0
+   },
+   "early": {
+    "t": "2026-11-17T1812Z",
+    "line": 16.5,
+    "odds": {
+     "over": -114,
+     "under": -114
+    },
+    "open": 16.5,
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "pin_value": {
+    "side": "under",
+    "line": 16.5,
+    "odds": -113,
+    "res": "L",
+    "units": -1.0
+   },
+   "pin_lead": {
+    "side": "under",
+    "line": 16.5,
+    "odds": -113,
+    "res": "L",
+    "units": -1.0
+   }
+  }
+ },
+ {
+  "game": "Jacksonville Jaguars @ New York Giants",
+  "player": "brian thomas jr",
+  "stat": "recv_yds",
+  "kickoff": "2026-11-22T21:25:00.000Z",
+  "week": 11,
+  "actual": 18.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-22T2124Z",
+    "line": 14.5,
+    "odds": {
+     "over": -113,
+     "under": -113
+    },
+    "open": 12.5,
+    "calls": {
+     "fd_move": "over"
+    },
+    "move_pts": 2.0
+   },
+   "early": {
+    "t": "2026-11-17T2314Z",
+    "line": 12.5,
+    "odds": {
+     "over": -114,
+     "under": -114
+    },
+    "open": 12.5,
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "fd_move": {
+    "side": "over",
+    "line": 14.5,
+    "odds": -113,
+    "res": "W",
+    "units": 0.885
+   }
+  }
+ },
+ {
+  "game": "Jacksonville Jaguars @ New York Giants",
+  "player": "josh cameron",
+  "stat": "recv_yds",
+  "kickoff": "2026-11-22T21:25:00.000Z",
+  "week": 11,
+  "actual": 44.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-22T2124Z",
+    "line": 10.5,
+    "odds": {
+     "over": -113,
+     "under": -113
+    },
+    "open": 12.5,
+    "calls": {
+     "pin_value": "over",
+     "fd_move": "under"
+    },
+    "pin": 12.5,
+    "pin_lim": 1000,
+    "fair_over": 0.4482,
+    "pin_gap": -2.0,
+    "move_pts": -2.0
+   },
+   "early": {
+    "t": "2026-11-17T2314Z",
+    "line": 12.5,
+    "odds": {
+     "over": -114,
+     "under": -114
+    },
+    "open": 12.5,
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "pin_value": {
+    "side": "over",
+    "line": 10.5,
+    "odds": -113,
+    "res": "W",
+    "units": 0.885
+   },
+   "fd_move": {
+    "side": "under",
+    "line": 10.5,
+    "odds": -113,
+    "res": "L",
+    "units": -1.0
+   }
+  }
+ },
+ {
+  "game": "Jacksonville Jaguars @ New York Giants",
+  "player": "malachi fields",
+  "stat": "recv_yds",
+  "kickoff": "2026-11-22T21:25:00.000Z",
+  "week": 11,
+  "actual": 25.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-22T2124Z",
+    "line": 30.5,
+    "odds": {
+     "over": -113,
+     "under": -113
+    },
+    "open": 29.5,
+    "calls": {
+     "fd_move": "over"
+    },
+    "pin": 30.5,
+    "pin_lim": 1000,
+    "fair_over": 0.5,
+    "move_pts": 1.0
+   },
+   "early": {
+    "t": "2026-11-17T2314Z",
+    "line": 29.5,
+    "odds": {
+     "over": -114,
+     "under": -114
+    },
+    "open": 29.5,
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "fd_move": {
+    "side": "over",
+    "line": 30.5,
+    "odds": -113,
+    "res": "L",
+    "units": -1.0
+   }
+  }
+ },
+ {
+  "game": "Jacksonville Jaguars @ New York Giants",
+  "player": "theo johnson",
+  "stat": "receptions",
+  "kickoff": "2026-11-22T21:25:00.000Z",
+  "week": 11,
+  "actual": 1.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-22T2124Z",
+    "line": 0.5,
+    "odds": {
+     "over": -188,
+     "under": 140
+    },
+    "open": 0.5,
+    "calls": {
+     "fd_juice": "under"
+    },
+    "pin": 0.5,
+    "pin_lim": 1000,
+    "fair_over": 0.5935,
+    "juice_c": [
+     22,
+     -14
+    ]
+   },
+   "early": {
+    "t": "2026-11-17T2314Z",
+    "line": 0.5,
+    "odds": {
+     "over": -210,
+     "under": 154
+    },
+    "open": 0.5,
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "fd_juice": {
+    "side": "under",
+    "line": 0.5,
+    "odds": 140,
+    "res": "L",
+    "units": -1.0
+   }
+  }
+ },
+ {
+  "game": "Jacksonville Jaguars @ New York Giants",
+  "player": "brenton strange",
+  "stat": "recv_yds",
+  "kickoff": "2026-11-22T21:25:00.000Z",
+  "week": 11,
+  "actual": 16.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-22T2124Z",
+    "line": 31.5,
+    "odds": {
+     "over": -113,
+     "under": -113
+    },
+    "open": 32.5,
+    "calls": {
+     "fd_move": "under"
+    },
+    "pin": 31.5,
+    "pin_lim": 1000,
+    "fair_over": 0.5065,
+    "move_pts": -1.0
+   },
+   "early": {
+    "t": "2026-11-17T2314Z",
+    "line": 32.5,
+    "odds": {
+     "over": -114,
+     "under": -114
+    },
+    "open": 32.5,
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "fd_move": {
+    "side": "under",
+    "line": 31.5,
+    "odds": -113,
+    "res": "W",
+    "units": 0.885
+   }
+  }
+ },
+ {
+  "game": "Jacksonville Jaguars @ New York Giants",
+  "player": "parker washington",
+  "stat": "recv_yds",
+  "kickoff": "2026-11-22T21:25:00.000Z",
+  "week": 11,
+  "actual": 103.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-22T2124Z",
+    "line": 66.5,
+    "odds": {
+     "over": -113,
+     "under": -113
+    },
+    "open": 64.5,
+    "calls": {
+     "fd_move": "over"
+    },
+    "pin": 66.5,
+    "pin_lim": 2000,
+    "fair_over": 0.5152,
+    "move_pts": 2.0
+   },
+   "early": {
+    "t": "2026-11-17T2314Z",
+    "line": 64.5,
+    "odds": {
+     "over": -114,
+     "under": -114
+    },
+    "open": 64.5,
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "fd_move": {
+    "side": "over",
+    "line": 66.5,
+    "odds": -113,
+    "res": "W",
+    "units": 0.885
+   }
+  }
+ },
+ {
+  "game": "Jacksonville Jaguars @ New York Giants",
+  "player": "cam skattebo",
+  "stat": "recv_yds",
+  "kickoff": "2026-11-22T21:25:00.000Z",
+  "week": 11,
+  "actual": 14.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-22T2124Z",
+    "line": 14.5,
+    "odds": {
+     "over": -113,
+     "under": -113
+    },
+    "open": 13.5,
+    "calls": {
+     "fd_move": "over"
+    },
+    "pin": 14.5,
+    "pin_lim": 1000,
+    "fair_over": 0.5,
+    "move_pts": 1.0
+   },
+   "early": {
+    "t": "2026-11-17T2314Z",
+    "line": 13.5,
+    "odds": {
+     "over": -114,
+     "under": -114
+    },
+    "open": 13.5,
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "fd_move": {
+    "side": "over",
+    "line": 14.5,
+    "odds": -113,
+    "res": "L",
+    "units": -1.0
+   }
+  }
+ },
+ {
+  "game": "Jacksonville Jaguars @ New York Giants",
+  "player": "theo johnson",
+  "stat": "recv_yds",
+  "kickoff": "2026-11-22T21:25:00.000Z",
+  "week": 11,
+  "actual": 15.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-22T2124Z",
+    "line": 7.5,
+    "odds": {
+     "over": -113,
+     "under": -113
+    },
+    "open": 7.5,
+    "calls": {
+     "pin_value": "over",
+     "pin_lead": "over"
+    },
+    "pin": 8.5,
+    "pin_lim": 1000,
+    "fair_over": 0.4687,
+    "pin_gap": -1.0
+   },
+   "early": {
+    "t": "2026-11-17T2314Z",
+    "line": 7.5,
+    "odds": {
+     "over": -114,
+     "under": -114
+    },
+    "open": 7.5,
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "pin_value": {
+    "side": "over",
+    "line": 7.5,
+    "odds": -113,
+    "res": "W",
+    "units": 0.885
+   },
+   "pin_lead": {
+    "side": "over",
+    "line": 7.5,
+    "odds": -113,
+    "res": "W",
+    "units": 0.885
+   }
+  }
+ },
+ {
+  "game": "Jacksonville Jaguars @ New York Giants",
+  "player": "travis hunter",
+  "stat": "receptions",
+  "kickoff": "2026-11-22T21:25:00.000Z",
+  "week": 11,
+  "actual": 1.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-22T2124Z",
+    "line": 1.5,
+    "odds": {
+     "over": 168,
+     "under": -230
+    },
+    "open": 1.5,
+    "calls": {
+     "fd_juice": "under"
+    },
+    "pin": 1.5,
+    "pin_lim": 1000,
+    "fair_over": 0.3587,
+    "juice_c": [
+     14,
+     -20
+    ]
+   },
+   "early": {
+    "t": "2026-11-17T2314Z",
+    "line": 1.5,
+    "odds": {
+     "over": 154,
+     "under": -210
+    },
+    "open": 1.5,
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "fd_juice": {
+    "side": "under",
+    "line": 1.5,
+    "odds": -230,
+    "res": "W",
+    "units": 0.435
+   }
+  }
+ },
+ {
+  "game": "Jacksonville Jaguars @ New York Giants",
+  "player": "brian thomas jr",
+  "stat": "receptions",
+  "kickoff": "2026-11-22T21:25:00.000Z",
+  "week": 11,
+  "actual": 1.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-22T2124Z",
+    "line": 1.5,
+    "odds": {
+     "over": 130,
+     "under": -174
+    },
+    "open": 1.5,
+    "calls": {
+     "fd_juice": "over"
+    },
+    "juice_c": [
+     -38,
+     56
+    ]
+   },
+   "early": {
+    "t": "2026-11-17T2314Z",
+    "line": 1.5,
+    "odds": {
+     "over": 168,
+     "under": -230
+    },
+    "open": 1.5,
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "fd_juice": {
+    "side": "over",
+    "line": 1.5,
+    "odds": 130,
+    "res": "L",
+    "units": -1.0
+   }
+  }
+ },
+ {
+  "game": "Jacksonville Jaguars @ New York Giants",
+  "player": "cam skattebo",
+  "stat": "receptions",
+  "kickoff": "2026-11-22T21:25:00.000Z",
+  "week": 11,
+  "actual": 3.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-22T2124Z",
+    "line": 2.5,
+    "odds": {
+     "over": 116,
+     "under": -154
+    },
+    "open": 2.5,
+    "calls": {
+     "fd_juice": "over"
+    },
+    "pin": 2.5,
+    "pin_lim": 1000,
+    "fair_over": 0.4509,
+    "juice_c": [
+     -18,
+     26
+    ]
+   },
+   "early": {
+    "t": "2026-11-17T2314Z",
+    "line": 2.5,
+    "odds": {
+     "over": 134,
+     "under": -180
+    },
+    "open": 2.5,
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "fd_juice": {
+    "side": "over",
+    "line": 2.5,
+    "odds": 116,
+    "res": "W",
+    "units": 1.16
+   }
+  }
+ },
+ {
+  "game": "Jacksonville Jaguars @ New York Giants",
+  "player": "isaiah likely",
+  "stat": "receptions",
+  "kickoff": "2026-11-22T21:25:00.000Z",
+  "week": 11,
+  "actual": 1.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-22T2124Z",
+    "line": 5.5,
+    "odds": {
+     "over": 134,
+     "under": -180
+    },
+    "open": 5.5,
+    "calls": {
+     "fd_juice": "under"
+    },
+    "pin": 5.5,
+    "pin_lim": 1000,
+    "fair_over": 0.4208,
+    "juice_c": [
+     28,
+     -40
+    ]
+   },
+   "early": {
+    "t": "2026-11-17T2314Z",
+    "line": 5.5,
+    "odds": {
+     "over": 106,
+     "under": -140
+    },
+    "open": 5.5,
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "fd_juice": {
+    "side": "under",
+    "line": 5.5,
+    "odds": -180,
+    "res": "W",
+    "units": 0.556
+   }
+  }
+ },
+ {
+  "game": "Jacksonville Jaguars @ New York Giants",
+  "player": "parker washington",
+  "stat": "receptions",
+  "kickoff": "2026-11-22T21:25:00.000Z",
+  "week": 11,
+  "actual": 8.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-22T2124Z",
+    "line": 4.5,
+    "odds": {
+     "over": -108,
+     "under": -122
+    },
+    "open": 4.5,
+    "calls": {
+     "fd_juice": "over"
+    },
+    "pin": 4.5,
+    "pin_lim": 2000,
+    "fair_over": 0.4617,
+    "juice_c": [
+     -222,
+     30
+    ]
+   },
+   "early": {
+    "t": "2026-11-17T2314Z",
+    "line": 4.5,
+    "odds": {
+     "over": 114,
+     "under": -152
+    },
+    "open": 4.5,
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "fd_juice": {
+    "side": "over",
+    "line": 4.5,
+    "odds": -108,
+    "res": "W",
+    "units": 0.926
+   }
+  }
+ },
+ {
+  "game": "Jacksonville Jaguars @ New York Giants",
+  "player": "malik nabers",
+  "stat": "recv_yds",
+  "kickoff": "2026-11-22T21:25:00.000Z",
+  "week": 11,
+  "actual": 55.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-22T2124Z",
+    "line": 67.5,
+    "odds": {
+     "over": -113,
+     "under": -113
+    },
+    "open": 65.5,
+    "calls": {
+     "pin_value": "over",
+     "fd_move": "over"
+    },
+    "pin": 69.5,
+    "pin_lim": 2000,
+    "fair_over": 0.456,
+    "pin_gap": -2.0,
+    "move_pts": 2.0
+   },
+   "early": {
+    "t": "2026-11-17T2314Z",
+    "line": 65.5,
+    "odds": {
+     "over": -114,
+     "under": -114
+    },
+    "open": 65.5,
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "pin_value": {
+    "side": "over",
+    "line": 67.5,
+    "odds": -113,
+    "res": "L",
+    "units": -1.0
+   },
+   "fd_move": {
+    "side": "over",
+    "line": 67.5,
+    "odds": -113,
+    "res": "L",
+    "units": -1.0
+   }
+  }
+ },
+ {
+  "game": "Jacksonville Jaguars @ New York Giants",
+  "player": "travis hunter",
+  "stat": "recv_yds",
+  "kickoff": "2026-11-22T21:25:00.000Z",
+  "week": 11,
+  "actual": 3.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-22T2124Z",
+    "line": 7.5,
+    "odds": {
+     "over": -113,
+     "under": -113
+    },
+    "open": 8.5,
+    "calls": {
+     "fd_move": "under"
+    },
+    "pin": 7.5,
+    "pin_lim": 1000,
+    "fair_over": 0.4935,
+    "move_pts": -1.0
+   },
+   "early": {
+    "t": "2026-11-17T2314Z",
+    "line": 8.5,
+    "odds": {
+     "over": -114,
+     "under": -114
+    },
+    "open": 8.5,
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "fd_move": {
+    "side": "under",
+    "line": 7.5,
+    "odds": -113,
+    "res": "W",
+    "units": 0.885
+   }
+  }
+ },
+ {
+  "game": "Jacksonville Jaguars @ New York Giants",
+  "player": "josh cameron",
+  "stat": "receptions",
+  "kickoff": "2026-11-22T21:25:00.000Z",
+  "week": 11,
+  "actual": 3.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-22T2124Z",
+    "line": 1.5,
+    "odds": {
+     "over": 158,
+     "under": -215
+    },
+    "open": 1.5,
+    "calls": {
+     "fd_juice": "under"
+    },
+    "pin": 1.5,
+    "pin_lim": 1000,
+    "fair_over": 0.3771,
+    "juice_c": [
+     10,
+     -15
+    ]
+   },
+   "early": {
+    "t": "2026-11-17T2314Z",
+    "line": 1.5,
+    "odds": {
+     "over": 148,
+     "under": -200
+    },
+    "open": 1.5,
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "fd_juice": {
+    "side": "under",
+    "line": 1.5,
+    "odds": -215,
+    "res": "L",
+    "units": -1.0
+   }
+  }
+ },
+ {
+  "game": "Jacksonville Jaguars @ New York Giants",
+  "player": "isaiah likely",
+  "stat": "recv_yds",
+  "kickoff": "2026-11-22T21:25:00.000Z",
+  "week": 11,
+  "actual": 35.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-22T2124Z",
+    "line": 47.5,
+    "odds": {
+     "over": -113,
+     "under": -113
+    },
+    "open": 54.5,
+    "calls": {
+     "pin_value": "under",
+     "fd_move": "under"
+    },
+    "pin": 46.5,
+    "pin_lim": 250,
+    "fair_over": 0.5061,
+    "pin_gap": 1.0,
+    "move_pts": -7.0
+   },
+   "early": {
+    "t": "2026-11-17T2314Z",
+    "line": 54.5,
+    "odds": {
+     "over": -114,
+     "under": -114
+    },
+    "open": 54.5,
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "pin_value": {
+    "side": "under",
+    "line": 47.5,
+    "odds": -113,
+    "res": "W",
+    "units": 0.885
+   },
+   "fd_move": {
+    "side": "under",
+    "line": 47.5,
+    "odds": -113,
+    "res": "W",
+    "units": 0.885
    }
   }
  },
@@ -61876,6 +63225,156 @@
  },
  {
   "game": "Minnesota Vikings @ San Francisco 49ers",
+  "player": "brock purdy",
+  "stat": "pass_yds",
+  "kickoff": "2026-11-23T01:20:00.000Z",
+  "week": 11,
+  "actual": 255.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-23T0119Z",
+    "line": 239.5,
+    "odds": {
+     "over": -113,
+     "under": -113
+    },
+    "open": 246.5,
+    "calls": {
+     "pin_value": "under",
+     "fd_move": "under"
+    },
+    "pin": 229.5,
+    "pin_lim": 7500,
+    "fair_over": 0.5638,
+    "pin_gap": 10.0,
+    "move_pts": -7.0
+   },
+   "early": {
+    "t": "2026-11-17T0004Z",
+    "line": 246.5,
+    "odds": {
+     "over": -114,
+     "under": -114
+    },
+    "open": 246.5,
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "pin_value": {
+    "side": "under",
+    "line": 239.5,
+    "odds": -113,
+    "res": "L",
+    "units": -1.0
+   },
+   "fd_move": {
+    "side": "under",
+    "line": 239.5,
+    "odds": -113,
+    "res": "L",
+    "units": -1.0
+   }
+  }
+ },
+ {
+  "game": "Minnesota Vikings @ San Francisco 49ers",
+  "player": "kirk cousins",
+  "stat": "pass_tds",
+  "kickoff": "2026-11-23T01:20:00.000Z",
+  "week": 11,
+  "actual": 0.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-23T0119Z",
+    "line": 1.5,
+    "odds": {
+     "over": 128,
+     "under": -168
+    },
+    "open": 1.5,
+    "calls": {
+     "fd_juice": "under"
+    },
+    "pin": 1.5,
+    "pin_lim": 7500,
+    "fair_over": 0.4284,
+    "juice_c": [
+     14,
+     -16
+    ]
+   },
+   "early": {
+    "t": "2026-11-17T0004Z",
+    "line": 1.5,
+    "odds": {
+     "over": 114,
+     "under": -152
+    },
+    "open": 1.5,
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "fd_juice": {
+    "side": "under",
+    "line": 1.5,
+    "odds": -168,
+    "res": "W",
+    "units": 0.595
+   }
+  }
+ },
+ {
+  "game": "Minnesota Vikings @ San Francisco 49ers",
+  "player": "kirk cousins",
+  "stat": "pass_yds",
+  "kickoff": "2026-11-23T01:20:00.000Z",
+  "week": 11,
+  "actual": 235.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-23T0119Z",
+    "line": 231.5,
+    "odds": {
+     "over": -113,
+     "under": -113
+    },
+    "open": 232.5,
+    "calls": {
+     "fd_move": "under"
+    },
+    "pin": 231.5,
+    "pin_lim": 7500,
+    "fair_over": 0.5205,
+    "move_pts": -1.0
+   },
+   "early": {
+    "t": "2026-11-17T0004Z",
+    "line": 232.5,
+    "odds": {
+     "over": -114,
+     "under": -114
+    },
+    "open": 232.5,
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "fd_move": {
+    "side": "under",
+    "line": 231.5,
+    "odds": -113,
+    "res": "L",
+    "units": -1.0
+   }
+  }
+ },
+ {
+  "game": "Minnesota Vikings @ San Francisco 49ers",
   "player": "justin jefferson",
   "stat": "anytime_td",
   "kickoff": "2026-11-23T01:20:00.000Z",
@@ -61930,7 +63429,7 @@
   "stat": "anytime_td",
   "kickoff": "2026-11-23T01:20:00.000Z",
   "week": 11,
-  "actual": 0.0,
+  "actual": 1.0,
   "markets": {
    "close": {
     "t": "2026-11-23T0119Z",
@@ -61969,8 +63468,8 @@
     "side": "over",
     "line": 0.5,
     "odds": 190,
-    "res": "L",
-    "units": -1.0
+    "res": "W",
+    "units": 1.9
    }
   }
  },
@@ -61980,7 +63479,7 @@
   "stat": "anytime_td",
   "kickoff": "2026-11-23T01:20:00.000Z",
   "week": 11,
-  "actual": 0.0,
+  "actual": 2.0,
   "markets": {
    "close": {
     "t": "2026-11-23T0119Z",
@@ -62019,8 +63518,8 @@
     "side": "over",
     "line": 0.5,
     "odds": 190,
-    "res": "L",
-    "units": -1.0
+    "res": "W",
+    "units": 1.9
    }
   }
  },
@@ -62176,11 +63675,1006 @@
  },
  {
   "game": "Minnesota Vikings @ San Francisco 49ers",
+  "player": "justin jefferson",
+  "stat": "recv_yds",
+  "kickoff": "2026-11-23T01:20:00.000Z",
+  "week": 11,
+  "actual": 86.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-23T0119Z",
+    "line": 84.5,
+    "odds": {
+     "over": -113,
+     "under": -113
+    },
+    "open": 82.5,
+    "calls": {
+     "pin_value": "over",
+     "fd_move": "over"
+    },
+    "pin": 86.5,
+    "pin_lim": 10000,
+    "fair_over": 0.5108,
+    "pin_gap": -2.0,
+    "move_pts": 2.0
+   },
+   "early": {
+    "t": "2026-11-17T0014Z",
+    "line": 82.5,
+    "odds": {
+     "over": -114,
+     "under": -114
+    },
+    "open": 82.5,
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "pin_value": {
+    "side": "over",
+    "line": 84.5,
+    "odds": -113,
+    "res": "W",
+    "units": 0.885
+   },
+   "fd_move": {
+    "side": "over",
+    "line": 84.5,
+    "odds": -113,
+    "res": "W",
+    "units": 0.885
+   }
+  }
+ },
+ {
+  "game": "Minnesota Vikings @ San Francisco 49ers",
+  "player": "christian mccaffrey",
+  "stat": "recv_yds",
+  "kickoff": "2026-11-23T01:20:00.000Z",
+  "week": 11,
+  "actual": 13.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-23T0119Z",
+    "line": 32.5,
+    "odds": {
+     "over": -113,
+     "under": -113
+    },
+    "open": 33.5,
+    "calls": {
+     "pin_value": "over",
+     "fd_move": "under"
+    },
+    "pin": 33.5,
+    "pin_lim": 5000,
+    "fair_over": 0.5043,
+    "pin_gap": -1.0,
+    "move_pts": -1.0
+   },
+   "early": {
+    "t": "2026-11-17T0014Z",
+    "line": 33.5,
+    "odds": {
+     "over": -114,
+     "under": -114
+    },
+    "open": 33.5,
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "pin_value": {
+    "side": "over",
+    "line": 32.5,
+    "odds": -113,
+    "res": "L",
+    "units": -1.0
+   },
+   "fd_move": {
+    "side": "under",
+    "line": 32.5,
+    "odds": -113,
+    "res": "W",
+    "units": 0.885
+   }
+  }
+ },
+ {
+  "game": "Minnesota Vikings @ San Francisco 49ers",
+  "player": "justin jefferson",
+  "stat": "receptions",
+  "kickoff": "2026-11-23T01:20:00.000Z",
+  "week": 11,
+  "actual": 7.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-23T0119Z",
+    "line": 6.5,
+    "odds": {
+     "over": -172,
+     "under": 128
+    },
+    "open": 6.5,
+    "calls": {
+     "pin_value": "over",
+     "pin_lead": "over",
+     "fd_juice": "over"
+    },
+    "pin": 7.5,
+    "pin_lim": 10000,
+    "fair_over": 0.4568,
+    "pin_gap": -1.0,
+    "juice_c": [
+     -14,
+     10
+    ]
+   },
+   "early": {
+    "t": "2026-11-17T0014Z",
+    "line": 6.5,
+    "odds": {
+     "over": -158,
+     "under": 118
+    },
+    "open": 6.5,
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "pin_value": {
+    "side": "over",
+    "line": 6.5,
+    "odds": -172,
+    "res": "W",
+    "units": 0.581
+   },
+   "pin_lead": {
+    "side": "over",
+    "line": 6.5,
+    "odds": -172,
+    "res": "W",
+    "units": 0.581
+   },
+   "fd_juice": {
+    "side": "over",
+    "line": 6.5,
+    "odds": -172,
+    "res": "W",
+    "units": 0.581
+   }
+  }
+ },
+ {
+  "game": "Minnesota Vikings @ San Francisco 49ers",
+  "player": "christian mccaffrey",
+  "stat": "rush_yds",
+  "kickoff": "2026-11-23T01:20:00.000Z",
+  "week": 11,
+  "actual": 49.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-23T0119Z",
+    "line": 51.5,
+    "odds": {
+     "over": -113,
+     "under": -113
+    },
+    "open": 49.5,
+    "calls": {
+     "fd_move": "over"
+    },
+    "pin": 51.5,
+    "pin_lim": 7500,
+    "fair_over": 0.4892,
+    "move_pts": 2.0
+   },
+   "early": {
+    "t": "2026-11-17T0014Z",
+    "line": 49.5,
+    "odds": {
+     "over": -114,
+     "under": -114
+    },
+    "open": 49.5,
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "fd_move": {
+    "side": "over",
+    "line": 51.5,
+    "odds": -113,
+    "res": "L",
+    "units": -1.0
+   }
+  }
+ },
+ {
+  "game": "Minnesota Vikings @ San Francisco 49ers",
+  "player": "aaron jones",
+  "stat": "rush_yds",
+  "kickoff": "2026-11-23T01:20:00.000Z",
+  "week": 11,
+  "actual": 30.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-23T0119Z",
+    "line": 31.5,
+    "odds": {
+     "over": -113,
+     "under": -113
+    },
+    "open": 30.5,
+    "calls": {
+     "pin_value": "under",
+     "pin_lead": "under",
+     "fd_move": "over"
+    },
+    "pin": 29.5,
+    "pin_lim": 2000,
+    "fair_over": 0.5022,
+    "pin_gap": 2.0,
+    "move_pts": 1.0
+   },
+   "early": {
+    "t": "2026-11-17T0025Z",
+    "line": 30.5,
+    "odds": {
+     "over": -114,
+     "under": -114
+    },
+    "open": 30.5,
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "pin_value": {
+    "side": "under",
+    "line": 31.5,
+    "odds": -113,
+    "res": "W",
+    "units": 0.885
+   },
+   "pin_lead": {
+    "side": "under",
+    "line": 31.5,
+    "odds": -113,
+    "res": "W",
+    "units": 0.885
+   },
+   "fd_move": {
+    "side": "over",
+    "line": 31.5,
+    "odds": -113,
+    "res": "L",
+    "units": -1.0
+   }
+  }
+ },
+ {
+  "game": "Minnesota Vikings @ San Francisco 49ers",
+  "player": "jordan mason",
+  "stat": "rush_yds",
+  "kickoff": "2026-11-23T01:20:00.000Z",
+  "week": 11,
+  "actual": 38.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-23T0119Z",
+    "line": 38.5,
+    "odds": {
+     "over": -113,
+     "under": -113
+    },
+    "open": 46.5,
+    "calls": {
+     "fd_move": "under"
+    },
+    "pin": 38.5,
+    "pin_lim": 3000,
+    "fair_over": 0.5087,
+    "move_pts": -8.0
+   },
+   "early": {
+    "t": "2026-11-17T0025Z",
+    "line": 46.5,
+    "odds": {
+     "over": -114,
+     "under": -114
+    },
+    "open": 46.5,
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "fd_move": {
+    "side": "under",
+    "line": 38.5,
+    "odds": -113,
+    "res": "W",
+    "units": 0.885
+   }
+  }
+ },
+ {
+  "game": "Minnesota Vikings @ San Francisco 49ers",
+  "player": "george kittle",
+  "stat": "receptions",
+  "kickoff": "2026-11-23T01:20:00.000Z",
+  "week": 11,
+  "actual": 3.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-23T0119Z",
+    "line": 4.5,
+    "odds": {
+     "over": 106,
+     "under": -140
+    },
+    "open": 5.5,
+    "calls": {
+     "fd_move": "under"
+    },
+    "pin": 4.5,
+    "pin_lim": 7500,
+    "fair_over": 0.4444,
+    "move_pts": -1.0
+   },
+   "early": {
+    "t": "2026-11-17T0028Z",
+    "line": 5.5,
+    "odds": {
+     "over": -106,
+     "under": -125
+    },
+    "open": 5.5,
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "fd_move": {
+    "side": "under",
+    "line": 4.5,
+    "odds": -140,
+    "res": "W",
+    "units": 0.714
+   }
+  }
+ },
+ {
+  "game": "Minnesota Vikings @ San Francisco 49ers",
+  "player": "george kittle",
+  "stat": "recv_yds",
+  "kickoff": "2026-11-23T01:20:00.000Z",
+  "week": 11,
+  "actual": 34.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-23T0119Z",
+    "line": 47.5,
+    "odds": {
+     "over": -113,
+     "under": -113
+    },
+    "open": 64.5,
+    "calls": {
+     "fd_move": "under"
+    },
+    "pin": 47.5,
+    "pin_lim": 7500,
+    "fair_over": 0.5108,
+    "move_pts": -17.0
+   },
+   "early": {
+    "t": "2026-11-17T0028Z",
+    "line": 64.5,
+    "odds": {
+     "over": -114,
+     "under": -114
+    },
+    "open": 64.5,
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "fd_move": {
+    "side": "under",
+    "line": 47.5,
+    "odds": -113,
+    "res": "W",
+    "units": 0.885
+   }
+  }
+ },
+ {
+  "game": "Minnesota Vikings @ San Francisco 49ers",
+  "player": "kirk cousins",
+  "stat": "rush_yds",
+  "kickoff": "2026-11-23T01:20:00.000Z",
+  "week": 11,
+  "actual": 0.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-23T0119Z",
+    "line": 0.5,
+    "odds": {
+     "over": -113,
+     "under": -113
+    },
+    "open": 1.5,
+    "calls": {
+     "pin_value": "over",
+     "fd_move": "under"
+    },
+    "pin": 1.5,
+    "pin_lim": 1000,
+    "fair_over": 0.4588,
+    "pin_gap": -1.0,
+    "move_pts": -1.0
+   },
+   "early": {
+    "t": "2026-11-17T0031Z",
+    "line": 1.5,
+    "odds": {
+     "over": -138,
+     "under": 106
+    },
+    "open": 1.5,
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "pin_value": {
+    "side": "over",
+    "line": 0.5,
+    "odds": -113,
+    "res": "L",
+    "units": -1.0
+   },
+   "fd_move": {
+    "side": "under",
+    "line": 0.5,
+    "odds": -113,
+    "res": "W",
+    "units": 0.885
+   }
+  }
+ },
+ {
+  "game": "Minnesota Vikings @ San Francisco 49ers",
+  "player": "kaelon black",
+  "stat": "rush_yds",
+  "kickoff": "2026-11-23T01:20:00.000Z",
+  "week": 11,
+  "actual": 8.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-23T0119Z",
+    "line": 29.5,
+    "odds": {
+     "over": -113,
+     "under": -113
+    },
+    "open": 26.5,
+    "calls": {
+     "pin_value": "under",
+     "fd_move": "over"
+    },
+    "pin": 28.5,
+    "pin_lim": 2000,
+    "fair_over": 0.5279,
+    "pin_gap": 1.0,
+    "move_pts": 3.0
+   },
+   "early": {
+    "t": "2026-11-17T0444Z",
+    "line": 26.5,
+    "odds": {
+     "over": -114,
+     "under": -114
+    },
+    "open": 26.5,
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "pin_value": {
+    "side": "under",
+    "line": 29.5,
+    "odds": -113,
+    "res": "W",
+    "units": 0.885
+   },
+   "fd_move": {
+    "side": "over",
+    "line": 29.5,
+    "odds": -113,
+    "res": "L",
+    "units": -1.0
+   }
+  }
+ },
+ {
+  "game": "Minnesota Vikings @ San Francisco 49ers",
+  "player": "jauan jennings",
+  "stat": "recv_yds",
+  "kickoff": "2026-11-23T01:20:00.000Z",
+  "week": 11,
+  "actual": 20.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-23T0119Z",
+    "line": 21.5,
+    "odds": {
+     "over": -113,
+     "under": -113
+    },
+    "open": 18.5,
+    "calls": {
+     "pin_value": "under",
+     "fd_move": "over"
+    },
+    "pin": 19.5,
+    "pin_lim": 1000,
+    "fair_over": 0.5205,
+    "pin_gap": 2.0,
+    "move_pts": 3.0
+   },
+   "early": {
+    "t": "2026-11-19T0152Z",
+    "line": 18.5,
+    "odds": {
+     "over": -114,
+     "under": -114
+    },
+    "open": 18.5,
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "pin_value": {
+    "side": "under",
+    "line": 21.5,
+    "odds": -113,
+    "res": "W",
+    "units": 0.885
+   },
+   "fd_move": {
+    "side": "over",
+    "line": 21.5,
+    "odds": -113,
+    "res": "L",
+    "units": -1.0
+   }
+  }
+ },
+ {
+  "game": "Minnesota Vikings @ San Francisco 49ers",
+  "player": "jauan jennings",
+  "stat": "receptions",
+  "kickoff": "2026-11-23T01:20:00.000Z",
+  "week": 11,
+  "actual": 3.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-23T0119Z",
+    "line": 2.5,
+    "odds": {
+     "over": 114,
+     "under": -152
+    },
+    "open": 2.5,
+    "calls": {
+     "fd_juice": "under"
+    },
+    "pin": 2.5,
+    "pin_lim": 1000,
+    "fair_over": 0.4399,
+    "juice_c": [
+     216,
+     -22
+    ]
+   },
+   "early": {
+    "t": "2026-11-19T0152Z",
+    "line": 2.5,
+    "odds": {
+     "over": -102,
+     "under": -130
+    },
+    "open": 2.5,
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "fd_juice": {
+    "side": "under",
+    "line": 2.5,
+    "odds": -152,
+    "res": "L",
+    "units": -1.0
+   }
+  }
+ },
+ {
+  "game": "Minnesota Vikings @ San Francisco 49ers",
+  "player": "aaron jones",
+  "stat": "recv_yds",
+  "kickoff": "2026-11-23T01:20:00.000Z",
+  "week": 11,
+  "actual": 13.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-23T0119Z",
+    "line": 9.5,
+    "odds": {
+     "over": -113,
+     "under": -113
+    },
+    "open": 8.5,
+    "calls": {
+     "fd_move": "over"
+    },
+    "pin": 9.5,
+    "pin_lim": 1000,
+    "fair_over": 0.5,
+    "move_pts": 1.0
+   },
+   "early": {
+    "t": "2026-11-19T0152Z",
+    "line": 9.5,
+    "odds": {
+     "over": -114,
+     "under": -114
+    },
+    "open": 8.5,
+    "calls": {
+     "fd_move": "over"
+    },
+    "move_pts": 1.0
+   }
+  },
+  "early_graded": {
+   "fd_move": {
+    "side": "over",
+    "line": 9.5,
+    "odds": -114,
+    "res": "W",
+    "units": 0.877,
+    "clv": 0.0,
+    "clv_pct": -0.2
+   }
+  },
+  "close_graded": {
+   "fd_move": {
+    "side": "over",
+    "line": 9.5,
+    "odds": -113,
+    "res": "W",
+    "units": 0.885
+   }
+  }
+ },
+ {
+  "game": "Minnesota Vikings @ San Francisco 49ers",
+  "player": "aaron jones",
+  "stat": "receptions",
+  "kickoff": "2026-11-23T01:20:00.000Z",
+  "week": 11,
+  "actual": 1.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-23T0119Z",
+    "line": 1.5,
+    "odds": {
+     "over": -172,
+     "under": 128
+    },
+    "open": 1.5,
+    "calls": {
+     "fd_juice": "over"
+    },
+    "pin": 1.5,
+    "pin_lim": 1000,
+    "fair_over": 0.5919,
+    "juice_c": [
+     -24,
+     16
+    ]
+   },
+   "early": {
+    "t": "2026-11-19T0152Z",
+    "line": 1.5,
+    "odds": {
+     "over": -148,
+     "under": 112
+    },
+    "open": 1.5,
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "fd_juice": {
+    "side": "over",
+    "line": 1.5,
+    "odds": -172,
+    "res": "L",
+    "units": -1.0
+   }
+  }
+ },
+ {
+  "game": "Minnesota Vikings @ San Francisco 49ers",
+  "player": "tai felton",
+  "stat": "receptions",
+  "kickoff": "2026-11-23T01:20:00.000Z",
+  "week": 11,
+  "actual": 6.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-23T0119Z",
+    "line": 1.5,
+    "odds": {
+     "over": 102,
+     "under": -136
+    },
+    "open": 1.5,
+    "calls": {
+     "fd_juice": "under"
+    },
+    "pin": 1.5,
+    "pin_lim": 1000,
+    "fair_over": 0.4399,
+    "juice_c": [
+     234,
+     -236
+    ]
+   },
+   "early": {
+    "t": "2026-11-20T2102Z",
+    "line": 1.5,
+    "odds": {
+     "over": -132,
+     "under": 100
+    },
+    "open": 1.5,
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "fd_juice": {
+    "side": "under",
+    "line": 1.5,
+    "odds": -136,
+    "res": "L",
+    "units": -1.0
+   }
+  }
+ },
+ {
+  "game": "Minnesota Vikings @ San Francisco 49ers",
+  "player": "tj hockenson",
+  "stat": "recv_yds",
+  "kickoff": "2026-11-23T01:20:00.000Z",
+  "week": 11,
+  "actual": 55.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-23T0119Z",
+    "line": 45.5,
+    "odds": {
+     "over": -113,
+     "under": -113
+    },
+    "open": 48.5,
+    "calls": {
+     "pin_value": "under",
+     "fd_move": "under"
+    },
+    "pin": 44.5,
+    "pin_lim": 5000,
+    "fair_over": 0.5022,
+    "pin_gap": 1.0,
+    "move_pts": -3.0
+   },
+   "early": {
+    "t": "2026-11-20T2102Z",
+    "line": 48.5,
+    "odds": {
+     "over": -114,
+     "under": -114
+    },
+    "open": 48.5,
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "pin_value": {
+    "side": "under",
+    "line": 45.5,
+    "odds": -113,
+    "res": "L",
+    "units": -1.0
+   },
+   "fd_move": {
+    "side": "under",
+    "line": 45.5,
+    "odds": -113,
+    "res": "L",
+    "units": -1.0
+   }
+  }
+ },
+ {
+  "game": "Minnesota Vikings @ San Francisco 49ers",
+  "player": "tai felton",
+  "stat": "recv_yds",
+  "kickoff": "2026-11-23T01:20:00.000Z",
+  "week": 11,
+  "actual": 42.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-23T0119Z",
+    "line": 14.5,
+    "odds": {
+     "over": -113,
+     "under": -113
+    },
+    "open": 15.5,
+    "calls": {
+     "fd_move": "under"
+    },
+    "pin": 14.5,
+    "pin_lim": 1000,
+    "fair_over": 0.4978,
+    "move_pts": -1.0
+   },
+   "early": {
+    "t": "2026-11-20T2102Z",
+    "line": 15.5,
+    "odds": {
+     "over": -114,
+     "under": -114
+    },
+    "open": 15.5,
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "fd_move": {
+    "side": "under",
+    "line": 14.5,
+    "odds": -113,
+    "res": "L",
+    "units": -1.0
+   }
+  }
+ },
+ {
+  "game": "Minnesota Vikings @ San Francisco 49ers",
+  "player": "myles price",
+  "stat": "recv_yds",
+  "kickoff": "2026-11-23T01:20:00.000Z",
+  "week": 11,
+  "actual": 26.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-23T0119Z",
+    "line": 8.5,
+    "odds": {
+     "over": -113,
+     "under": -113
+    },
+    "open": 8.5,
+    "calls": {
+     "pin_value": "under",
+     "pin_lead": "under"
+    },
+    "pin": 7.5,
+    "pin_lim": 1000,
+    "fair_over": 0.5,
+    "pin_gap": 1.0
+   },
+   "early": {
+    "t": "2026-11-20T2102Z",
+    "line": 8.5,
+    "odds": {
+     "over": -114,
+     "under": -114
+    },
+    "open": 8.5,
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "pin_value": {
+    "side": "under",
+    "line": 8.5,
+    "odds": -113,
+    "res": "L",
+    "units": -1.0
+   },
+   "pin_lead": {
+    "side": "under",
+    "line": 8.5,
+    "odds": -113,
+    "res": "L",
+    "units": -1.0
+   }
+  }
+ },
+ {
+  "game": "Minnesota Vikings @ San Francisco 49ers",
+  "player": "tj hockenson",
+  "stat": "receptions",
+  "kickoff": "2026-11-23T01:20:00.000Z",
+  "week": 11,
+  "actual": 6.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-23T0119Z",
+    "line": 4.5,
+    "odds": {
+     "over": -136,
+     "under": 102
+    },
+    "open": 5.5,
+    "calls": {
+     "fd_move": "under"
+    },
+    "pin": 4.5,
+    "pin_lim": 5000,
+    "fair_over": 0.5392,
+    "move_pts": -1.0
+   },
+   "early": {
+    "t": "2026-11-20T2102Z",
+    "line": 5.5,
+    "odds": {
+     "over": 124,
+     "under": -166
+    },
+    "open": 5.5,
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "fd_move": {
+    "side": "under",
+    "line": 4.5,
+    "odds": 102,
+    "res": "L",
+    "units": -1.0
+   }
+  }
+ },
+ {
+  "game": "Minnesota Vikings @ San Francisco 49ers",
   "player": "mike evans",
   "stat": "anytime_td",
   "kickoff": "2026-11-23T01:20:00.000Z",
   "week": 11,
-  "actual": 0.0,
+  "actual": 1.0,
   "markets": {
    "close": {
     "t": "2026-11-23T0119Z",
@@ -62219,6 +64713,156 @@
     "side": "over",
     "line": 0.5,
     "odds": 200,
+    "res": "W",
+    "units": 2.0
+   }
+  }
+ },
+ {
+  "game": "Minnesota Vikings @ San Francisco 49ers",
+  "player": "keenan allen",
+  "stat": "recv_yds",
+  "kickoff": "2026-11-23T01:20:00.000Z",
+  "week": 11,
+  "actual": 38.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-23T0119Z",
+    "line": 26.5,
+    "odds": {
+     "over": -113,
+     "under": -113
+    },
+    "open": 23.5,
+    "calls": {
+     "pin_value": "under",
+     "fd_move": "over"
+    },
+    "pin": 24.5,
+    "pin_lim": 3000,
+    "fair_over": 0.5383,
+    "pin_gap": 2.0,
+    "move_pts": 3.0
+   },
+   "early": {
+    "t": "2026-11-21T2024Z",
+    "line": 23.5,
+    "odds": {
+     "over": -114,
+     "under": -114
+    },
+    "open": 23.5,
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "pin_value": {
+    "side": "under",
+    "line": 26.5,
+    "odds": -113,
+    "res": "L",
+    "units": -1.0
+   },
+   "fd_move": {
+    "side": "over",
+    "line": 26.5,
+    "odds": -113,
+    "res": "W",
+    "units": 0.885
+   }
+  }
+ },
+ {
+  "game": "Minnesota Vikings @ San Francisco 49ers",
+  "player": "jordan watkins",
+  "stat": "receptions",
+  "kickoff": "2026-11-23T01:20:00.000Z",
+  "week": 11,
+  "actual": 1.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-23T0119Z",
+    "line": 0.5,
+    "odds": {
+     "over": -136,
+     "under": 102
+    },
+    "open": 0.5,
+    "calls": {
+     "fd_juice": "under"
+    },
+    "pin": 0.5,
+    "pin_lim": 1000,
+    "fair_over": 0.5404,
+    "juice_c": [
+     22,
+     -16
+    ]
+   },
+   "early": {
+    "t": "2026-11-21T2024Z",
+    "line": 0.5,
+    "odds": {
+     "over": -158,
+     "under": 118
+    },
+    "open": 0.5,
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "fd_juice": {
+    "side": "under",
+    "line": 0.5,
+    "odds": 102,
+    "res": "L",
+    "units": -1.0
+   }
+  }
+ },
+ {
+  "game": "Minnesota Vikings @ San Francisco 49ers",
+  "player": "jordan watkins",
+  "stat": "recv_yds",
+  "kickoff": "2026-11-23T01:20:00.000Z",
+  "week": 11,
+  "actual": 19.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-23T0119Z",
+    "line": 8.5,
+    "odds": {
+     "over": -113,
+     "under": -113
+    },
+    "open": 9.5,
+    "calls": {
+     "fd_move": "under"
+    },
+    "pin": 8.5,
+    "pin_lim": 1000,
+    "fair_over": 0.5043,
+    "move_pts": -1.0
+   },
+   "early": {
+    "t": "2026-11-21T2024Z",
+    "line": 9.5,
+    "odds": {
+     "over": -114,
+     "under": -114
+    },
+    "open": 9.5,
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "fd_move": {
+    "side": "under",
+    "line": 8.5,
+    "odds": -113,
     "res": "L",
     "units": -1.0
    }
