@@ -27714,5 +27714,808 @@
     "took_default": false
    }
   }
+ },
+ {
+  "game": "Minnesota Vikings @ San Francisco 49ers",
+  "market": "q4|total",
+  "period": "q4",
+  "kind": "total",
+  "kickoff": "2026-11-23T01:20:00.000Z",
+  "markets": {
+   "close": {
+    "t": "2026-11-23T0119Z",
+    "line": {
+     "over": 12.5,
+     "under": 12.5
+    },
+    "odds": {
+     "over": -126,
+     "under": 104
+    },
+    "open": 13.5,
+    "open_odds": {
+     "over": -102,
+     "under": -118
+    },
+    "calls": {
+     "follow_move": "under"
+    },
+    "move": -1.0
+   },
+   "early": {
+    "t": "2026-11-16T2121Z",
+    "line": {
+     "over": 13.5,
+     "under": 13.5
+    },
+    "odds": {
+     "over": -102,
+     "under": -118
+    },
+    "open": 13.5,
+    "open_odds": {
+     "over": -102,
+     "under": -118
+    },
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "follow_move": {
+    "side": "under",
+    "line": 12.5,
+    "odds": 104,
+    "res": "W",
+    "units": 1.04,
+    "took_default": false
+   }
+  }
+ },
+ {
+  "game": "Minnesota Vikings @ San Francisco 49ers",
+  "market": "q4|ml",
+  "period": "q4",
+  "kind": "ml",
+  "kickoff": "2026-11-23T01:20:00.000Z",
+  "markets": {
+   "close": {
+    "t": "2026-11-23T0119Z",
+    "line": {
+     "home": -144,
+     "away": 118
+    },
+    "odds": {
+     "home": -144,
+     "away": 118
+    },
+    "open": -134,
+    "open_odds": {
+     "home": -134,
+     "away": 110
+    },
+    "calls": {
+     "follow_move": "home"
+    },
+    "move": -10
+   },
+   "early": {
+    "t": "2026-11-16T2121Z",
+    "line": {
+     "home": -134,
+     "away": 110
+    },
+    "odds": {
+     "home": -134,
+     "away": 110
+    },
+    "open": -134,
+    "open_odds": {
+     "home": -134,
+     "away": 110
+    },
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "follow_move": {
+    "side": "home",
+    "line": -144,
+    "odds": -144,
+    "res": "W",
+    "units": 0.694,
+    "took_default": true
+   }
+  }
+ },
+ {
+  "game": "Minnesota Vikings @ San Francisco 49ers",
+  "market": "1h|tt|home",
+  "period": "1h",
+  "kind": "tt",
+  "kickoff": "2026-11-23T01:20:00.000Z",
+  "markets": {
+   "close": {
+    "t": "2026-11-23T0119Z",
+    "line": {
+     "over": 12.5,
+     "under": 12.5
+    },
+    "odds": {
+     "over": -113,
+     "under": -113
+    },
+    "open": 11.5,
+    "open_odds": {
+     "over": -113,
+     "under": -113
+    },
+    "calls": {
+     "follow_move": "over",
+     "pin_price": "over"
+    },
+    "move": 1.0,
+    "pin": 12.5,
+    "pin_lim": 2000,
+    "edge_pct": 2.43
+   },
+   "early": {
+    "t": "2026-11-16T2121Z",
+    "line": {
+     "over": 11.5,
+     "under": 11.5
+    },
+    "odds": {
+     "over": -113,
+     "under": -113
+    },
+    "open": 11.5,
+    "open_odds": {
+     "over": -113,
+     "under": -113
+    },
+    "calls": {
+     "pin_value": "over"
+    },
+    "pin": 12.5,
+    "pin_lim": 2000,
+    "pin_gap": -1.0
+   }
+  },
+  "early_graded": {
+   "pin_value": {
+    "side": "over",
+    "line": 11.5,
+    "odds": -113,
+    "res": "W",
+    "units": 0.885,
+    "took_default": true,
+    "clv": 1.0
+   }
+  },
+  "close_graded": {
+   "follow_move": {
+    "side": "over",
+    "line": 12.5,
+    "odds": -113,
+    "res": "W",
+    "units": 0.885,
+    "took_default": true
+   },
+   "pin_price": {
+    "side": "over",
+    "line": 12.5,
+    "odds": -113,
+    "res": "W",
+    "units": 0.885,
+    "took_default": true
+   }
+  }
+ },
+ {
+  "game": "Minnesota Vikings @ San Francisco 49ers",
+  "market": "1h|ml",
+  "period": "1h",
+  "kind": "ml",
+  "kickoff": "2026-11-23T01:20:00.000Z",
+  "markets": {
+   "close": {
+    "t": "2026-11-23T0119Z",
+    "line": {
+     "home": -156,
+     "away": 128
+    },
+    "odds": {
+     "home": -156,
+     "away": 128
+    },
+    "open": -130,
+    "open_odds": {
+     "home": -130,
+     "away": 108
+    },
+    "calls": {
+     "follow_move": "home",
+     "pin_price": "home"
+    },
+    "move": -26,
+    "pin": -176,
+    "pin_lim": 30000,
+    "edge_pct": 1.61
+   },
+   "early": {
+    "t": "2026-11-16T2121Z",
+    "line": {
+     "home": -130,
+     "away": 108
+    },
+    "odds": {
+     "home": -130,
+     "away": 108
+    },
+    "open": -130,
+    "open_odds": {
+     "home": -130,
+     "away": 108
+    },
+    "calls": {
+     "pin_price": "home"
+    },
+    "pin": -145,
+    "pin_lim": 5000,
+    "edge_pct": 1.62
+   }
+  },
+  "early_graded": {
+   "pin_price": {
+    "side": "home",
+    "line": -130,
+    "odds": -130,
+    "res": "W",
+    "units": 0.769,
+    "took_default": true,
+    "clv": 4.4
+   }
+  },
+  "close_graded": {
+   "follow_move": {
+    "side": "home",
+    "line": -156,
+    "odds": -156,
+    "res": "W",
+    "units": 0.641,
+    "took_default": true
+   },
+   "pin_price": {
+    "side": "home",
+    "line": -156,
+    "odds": -156,
+    "res": "W",
+    "units": 0.641,
+    "took_default": true
+   }
+  }
+ },
+ {
+  "game": "Minnesota Vikings @ San Francisco 49ers",
+  "market": "1h|spread",
+  "period": "1h",
+  "kind": "spread",
+  "kickoff": "2026-11-23T01:20:00.000Z",
+  "markets": {
+   "close": {
+    "t": "2026-11-23T0119Z",
+    "line": {
+     "home": -2.5,
+     "away": 2.5
+    },
+    "odds": {
+     "home": -110,
+     "away": -110
+    },
+    "open": -1.5,
+    "open_odds": {
+     "home": 105,
+     "away": -130
+    },
+    "calls": {
+     "follow_move": "home",
+     "pin_price": "home"
+    },
+    "move": -1.0,
+    "pin": -2.5,
+    "pin_lim": 50000,
+    "edge_pct": 2.46
+   },
+   "early": {
+    "t": "2026-11-16T2121Z",
+    "line": {
+     "home": -1.5,
+     "away": 1.5
+    },
+    "odds": {
+     "home": 105,
+     "away": -130
+    },
+    "open": -1.5,
+    "open_odds": {
+     "home": 105,
+     "away": -130
+    },
+    "calls": {
+     "pin_value": "home"
+    },
+    "pin": -2.5,
+    "pin_lim": 5000,
+    "pin_gap": 1.0
+   }
+  },
+  "early_graded": {
+   "pin_value": {
+    "side": "home",
+    "line": -1.5,
+    "odds": 105,
+    "res": "W",
+    "units": 1.05,
+    "took_default": true,
+    "clv": 1.0
+   }
+  },
+  "close_graded": {
+   "follow_move": {
+    "side": "home",
+    "line": -2.5,
+    "odds": -110,
+    "res": "W",
+    "units": 0.909,
+    "took_default": true
+   },
+   "pin_price": {
+    "side": "home",
+    "line": -2.5,
+    "odds": -110,
+    "res": "W",
+    "units": 0.909,
+    "took_default": true
+   }
+  }
+ },
+ {
+  "game": "Minnesota Vikings @ San Francisco 49ers",
+  "market": "1h|tt|away",
+  "period": "1h",
+  "kind": "tt",
+  "kickoff": "2026-11-23T01:20:00.000Z",
+  "markets": {
+   "close": {
+    "t": "2026-11-23T0119Z",
+    "line": {
+     "over": 9.5,
+     "under": 9.5
+    },
+    "odds": {
+     "over": -148,
+     "under": 114
+    },
+    "open": 10.5,
+    "open_odds": {
+     "over": 114,
+     "under": -146
+    },
+    "calls": {
+     "follow_move": "under",
+     "pin_value": "over"
+    },
+    "move": -1.0,
+    "pin": 10.5,
+    "pin_lim": 2000,
+    "pin_gap": -1.0
+   },
+   "early": {
+    "t": "2026-11-16T2121Z",
+    "line": {
+     "over": 10.5,
+     "under": 10.5
+    },
+    "odds": {
+     "over": 114,
+     "under": -146
+    },
+    "open": 10.5,
+    "open_odds": {
+     "over": 114,
+     "under": -146
+    },
+    "calls": {},
+    "pin": 10.5,
+    "pin_lim": 2000
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "follow_move": {
+    "side": "under",
+    "line": 9.5,
+    "odds": 114,
+    "res": "L",
+    "units": -1.0,
+    "took_default": false
+   },
+   "pin_value": {
+    "side": "over",
+    "line": 9.5,
+    "odds": -148,
+    "res": "W",
+    "units": 0.676,
+    "took_default": true
+   }
+  }
+ },
+ {
+  "game": "Minnesota Vikings @ San Francisco 49ers",
+  "market": "1h|total",
+  "period": "1h",
+  "kind": "total",
+  "kickoff": "2026-11-23T01:20:00.000Z",
+  "markets": {
+   "close": {
+    "t": "2026-11-23T0119Z",
+    "line": {
+     "over": 22.5,
+     "under": 22.5
+    },
+    "odds": {
+     "over": -115,
+     "under": -105
+    },
+    "open": 22.5,
+    "open_odds": {
+     "over": -125,
+     "under": 105
+    },
+    "calls": {
+     "fd_juice": "under",
+     "pin_value": "over"
+    },
+    "pin": 23.5,
+    "pin_lim": 10000,
+    "pin_gap": -1.0
+   },
+   "early": {
+    "t": "2026-11-16T2121Z",
+    "line": {
+     "over": 22.5,
+     "under": 22.5
+    },
+    "odds": {
+     "over": -125,
+     "under": 105
+    },
+    "open": 22.5,
+    "open_odds": {
+     "over": -125,
+     "under": 105
+    },
+    "calls": {
+     "pin_value": "over"
+    },
+    "pin": 23.5,
+    "pin_lim": 3000,
+    "pin_gap": -1.0
+   }
+  },
+  "early_graded": {
+   "pin_value": {
+    "side": "over",
+    "line": 22.5,
+    "odds": -125,
+    "res": "W",
+    "units": 0.8,
+    "took_default": true,
+    "clv": 0.0
+   }
+  },
+  "close_graded": {
+   "fd_juice": {
+    "side": "under",
+    "line": 22.5,
+    "odds": -105,
+    "res": "L",
+    "units": -1.0,
+    "took_default": false
+   },
+   "pin_value": {
+    "side": "over",
+    "line": 22.5,
+    "odds": -115,
+    "res": "W",
+    "units": 0.87,
+    "took_default": true
+   }
+  }
+ },
+ {
+  "game": "Minnesota Vikings @ San Francisco 49ers",
+  "market": "2h|ml",
+  "period": "2h",
+  "kind": "ml",
+  "kickoff": "2026-11-23T01:20:00.000Z",
+  "markets": {
+   "close": {
+    "t": "2026-11-23T0119Z",
+    "line": {
+     "home": -178,
+     "away": 148
+    },
+    "odds": {
+     "home": -178,
+     "away": 148
+    },
+    "open": -174,
+    "open_odds": {
+     "home": -174,
+     "away": 148
+    },
+    "calls": {
+     "follow_move": "home"
+    },
+    "move": -4
+   },
+   "early": {
+    "t": "2026-11-16T2121Z",
+    "line": {
+     "home": -174,
+     "away": 148
+    },
+    "odds": {
+     "home": -174,
+     "away": 148
+    },
+    "open": -174,
+    "open_odds": {
+     "home": -174,
+     "away": 148
+    },
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "follow_move": {
+    "side": "home",
+    "line": -178,
+    "odds": -178,
+    "res": "W",
+    "units": 0.562,
+    "took_default": true
+   }
+  }
+ },
+ {
+  "game": "Minnesota Vikings @ San Francisco 49ers",
+  "market": "2h|total",
+  "period": "2h",
+  "kind": "total",
+  "kickoff": "2026-11-23T01:20:00.000Z",
+  "markets": {
+   "close": {
+    "t": "2026-11-23T0119Z",
+    "line": {
+     "over": 22.5,
+     "under": 22.5
+    },
+    "odds": {
+     "over": -110,
+     "under": -110
+    },
+    "open": 23.5,
+    "open_odds": {
+     "over": 100,
+     "under": -120
+    },
+    "calls": {
+     "follow_move": "under"
+    },
+    "move": -1.0
+   },
+   "early": {
+    "t": "2026-11-16T2121Z",
+    "line": {
+     "over": 23.5,
+     "under": 23.5
+    },
+    "odds": {
+     "over": 100,
+     "under": -120
+    },
+    "open": 23.5,
+    "open_odds": {
+     "over": 100,
+     "under": -120
+    },
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "follow_move": {
+    "side": "under",
+    "line": 22.5,
+    "odds": -110,
+    "res": "W",
+    "units": 0.909,
+    "took_default": false
+   }
+  }
+ },
+ {
+  "game": "Minnesota Vikings @ San Francisco 49ers",
+  "market": "2h|tt|home",
+  "period": "2h",
+  "kind": "tt",
+  "kickoff": "2026-11-23T01:20:00.000Z",
+  "markets": {
+   "close": {
+    "t": "2026-11-23T0119Z",
+    "line": {
+     "over": 12.5,
+     "under": 12.5
+    },
+    "odds": {
+     "over": -132,
+     "under": 104
+    },
+    "open": 13.5,
+    "open_odds": {
+     "over": 100,
+     "under": -128
+    },
+    "calls": {
+     "follow_move": "under"
+    },
+    "move": -1.0
+   },
+   "early": {
+    "t": "2026-11-16T2121Z",
+    "line": {
+     "over": 13.5,
+     "under": 13.5
+    },
+    "odds": {
+     "over": 100,
+     "under": -128
+    },
+    "open": 13.5,
+    "open_odds": {
+     "over": 100,
+     "under": -128
+    },
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "follow_move": {
+    "side": "under",
+    "line": 12.5,
+    "odds": 104,
+    "res": "W",
+    "units": 1.04,
+    "took_default": false
+   }
+  }
+ },
+ {
+  "game": "Minnesota Vikings @ San Francisco 49ers",
+  "market": "2h|tt|away",
+  "period": "2h",
+  "kind": "tt",
+  "kickoff": "2026-11-23T01:20:00.000Z",
+  "markets": {
+   "close": {
+    "t": "2026-11-23T0119Z",
+    "line": {
+     "over": 9.5,
+     "under": 9.5
+    },
+    "odds": {
+     "over": -130,
+     "under": 102
+    },
+    "open": 9.5,
+    "open_odds": {
+     "over": -148,
+     "under": 116
+    },
+    "calls": {
+     "fd_juice": "under"
+    }
+   },
+   "early": {
+    "t": "2026-11-16T2121Z",
+    "line": {
+     "over": 9.5,
+     "under": 9.5
+    },
+    "odds": {
+     "over": -148,
+     "under": 116
+    },
+    "open": 9.5,
+    "open_odds": {
+     "over": -148,
+     "under": 116
+    },
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "fd_juice": {
+    "side": "under",
+    "line": 9.5,
+    "odds": 102,
+    "res": "W",
+    "units": 1.02,
+    "took_default": false
+   }
+  }
+ },
+ {
+  "game": "Minnesota Vikings @ San Francisco 49ers",
+  "market": "2h|spread",
+  "period": "2h",
+  "kind": "spread",
+  "kickoff": "2026-11-23T01:20:00.000Z",
+  "markets": {
+   "close": {
+    "t": "2026-11-23T0119Z",
+    "line": {
+     "home": -2.5,
+     "away": 2.5
+    },
+    "odds": {
+     "home": -120,
+     "away": 100
+    },
+    "open": -2.5,
+    "open_odds": {
+     "home": -115,
+     "away": -105
+    },
+    "calls": {
+     "fd_juice": "home"
+    }
+   },
+   "early": {
+    "t": "2026-11-16T2121Z",
+    "line": {
+     "home": -2.5,
+     "away": 2.5
+    },
+    "odds": {
+     "home": -115,
+     "away": -105
+    },
+    "open": -2.5,
+    "open_odds": {
+     "home": -115,
+     "away": -105
+    },
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "fd_juice": {
+    "side": "home",
+    "line": -2.5,
+    "odds": -120,
+    "res": "W",
+    "units": 0.833,
+    "took_default": true
+   }
+  }
  }
 ]
