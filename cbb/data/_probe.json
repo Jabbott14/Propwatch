@@ -10,16 +10,16 @@
  "pin_leagues": [
   {
    "id": 493,
-   "n": 25,
+   "n": 33,
    "name": "NCAA"
   }
  ],
- "run_utc": "2026-11-23T12:59:16Z",
+ "run_utc": "2026-11-23T18:19:33Z",
  "tried": [
   {
-   "bytes": 428399,
+   "bytes": 474668,
    "kind": "fd_lobby",
-   "score": 30,
+   "score": 40,
    "url": "https://sbapi.nj.sportsbook.fanduel.com/api/content-managed-page?page=CUSTOM&customPageId=ncaab&_ak=<ak>"
   },
   {
@@ -41,15 +41,15 @@
    "url": "https://sbapi.nj.sportsbook.fanduel.com/api/content-managed-page?page=CUSTOM&customPageId=ncaa-basketball-men&_ak=<ak>"
   },
   {
-   "bytes": 86811,
+   "bytes": 104712,
    "kind": "actionnet",
    "score": 4,
    "url": "https://api.actionnetwork.com/web/v2/scoreboard/ncaab?period=game&date=20261123"
   },
   {
-   "bytes": 746189,
+   "bytes": 950052,
    "kind": "actionnet",
-   "score": 32,
+   "score": 34,
    "url": "https://api.actionnetwork.com/web/v2/scoreboard/ncaab?period=game&division=D1&date=20261123"
   },
   {
