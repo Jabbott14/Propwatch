@@ -1,10 +1,10 @@
 # Propwatch watch
 
-Generated 2026-11-24T13:03Z by `watch.py`.
+Generated 2026-11-24T13:59Z by `watch.py`.
 
 ```
 ====================================================================================
-PROPWATCH WATCH   2026-11-24T13:03Z
+PROPWATCH WATCH   2026-11-24T13:59Z
 ====================================================================================
 
 ## BROKEN — the number moved AGAINST heavy public money  (2)

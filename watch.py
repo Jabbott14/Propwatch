@@ -38,6 +38,42 @@ ROOT = os.path.dirname(os.path.abspath(__file__))
 PUBLIC_TIX = 65        # tickets % that counts as one-way
 PUBLIC_MNY = 65
 MOVE_EPS   = 1e-9
+PP_PER_PT  = 2.75      # probability points per point of NFL spread/total
+MIN_PP     = 1.0       # a move must be worth at least this much to count
+
+# A LINE MOVE WITH A PRICE MOVE AGAINST IT IS NOT A MOVE.
+# First run, 2026-11-24: NO@CIN showed FanDuel -10.5 -> -9.5 with 89% of tickets and 86%
+# of money on Cincinnati, and the detector called it the strongest setup on the board.
+# Verification killed it. The price went -100 -> -120 at the same instant, and all six
+# other books sat at -10. Half a point of spread is worth ~1.4 probability points; 20
+# cents of juice is worth ~4.5. The "move" was the same number repackaged, and what
+# little it was worth ran AGAINST the bettor.
+#
+# So movement is measured in probability points with the price included, never in line
+# points alone. The other books' consensus prints alongside, because a book that is
+# alone at its number is an outlier, not a market -- and xbook.py has already measured
+# that FanDuel is the one that lags (z = -3.49 over 1110 multi-book move events).
+
+
+def _imp(odds):
+    o = float(odds)
+    return 100.0 / (o + 100.0) if o > 0 else (-o) / ((-o) + 100.0)
+
+
+def eff_move(mk, side, o_v, o_odds, n_v, n_odds):
+    """Movement toward this side, in probability points, line and price together."""
+    if mk == "total":
+        line_pp = ((n_v - o_v) if side == "over" else (o_v - n_v)) * PP_PER_PT
+    else:
+        line_pp = (o_v - n_v) * PP_PER_PT      # this side's own handicap shrinking
+    price_pp = 0.0
+    try:
+        if o_odds is not None and n_odds is not None:
+            # a shorter price means the market likes this side more
+            price_pp = (_imp(n_odds) - _imp(o_odds)) * 100.0
+    except Exception:
+        pass
+    return round(line_pp + price_pp, 2), round(line_pp, 2), round(price_pp, 2)
 
 L = []
 def say(s=""):
@@ -126,6 +162,7 @@ def fd_series(days=3):
         if a and h:
             live.add((a, h))
     hist = collections.defaultdict(dict)
+    books_now = {}
     names = {}
     for f in fs:
         ts = os.path.basename(f).replace(".json.gz", "")
@@ -142,6 +179,14 @@ def fd_series(days=3):
             a, h = tm.get(g.get("away_team_id")), tm.get(g.get("home_team_id"))
             if (a, h) not in live:
                 continue
+            for bid, bm in (g.get("markets") or {}).items():
+                for mk2 in ("spread", "total"):
+                    for x in ((bm.get("event") or {}).get(mk2) or []):
+                        if x.get("is_alt_market") or x.get("is_live") or x.get("value") is None:
+                            continue
+                        sd2 = x.get("side")
+                        kk = sd2 if mk2 == "total" else (h if sd2 == "home" else a)
+                        books_now.setdefault((a, h, mk2, kk), {})[bid] = x["value"]
             fd = (g.get("markets") or {}).get("69", {}).get("event", {})
             bi = lambda x, k: (x.get("bet_info", {}).get(k, {}) or {}).get("percent")
             for mk in ("spread", "total"):
@@ -153,7 +198,7 @@ def fd_series(days=3):
                     hist[(a, h, mk, k2)][ts] = {
                         "v": x["value"], "odds": x.get("odds"), "tix": bi(x, "tickets"),
                         "mny": bi(x, "money"), "nb": g.get("num_bets"), "st": g.get("start_time")}
-    return hist, names
+    return hist, names, books_now
 
 
 def main():
@@ -164,7 +209,7 @@ def main():
     say()
 
     pin, pints = pin_now()
-    hist, names = fd_series()
+    hist, names, books_now = fd_series()
     if not hist:
         say("  no Action Network snapshots. Collector may be down -- check audit.py section 0.")
         return 0
@@ -189,19 +234,21 @@ def main():
         p = pin.get(cand[0]) if cand else None
 
         mv = round(cur["v"] - first["v"], 2)
+        pp, lpp, ppp = eff_move(mk, k2, first["v"], first.get("odds"),
+                                cur["v"], cur.get("odds"))
         public_here = cur["tix"] >= PUBLIC_TIX and (cur["mny"] or 0) >= PUBLIC_MNY
         if not public_here:
             continue
         # did the number move toward this (public) side?
-        if mk == "total":
-            toward = (mv > 0) if k2 == "over" else (mv < 0)
-        else:
-            toward = mv < 0          # this side's own handicap shrinking = market likes it
+        toward = pp > 0
         rec = {"g": f"{a}@{h}", "mk": mk, "side": k2, "open": first["v"], "now": cur["v"],
-               "mv": mv, "odds": cur["odds"], "tix": cur["tix"], "mny": cur["mny"],
+               "mv": mv, "pp": pp, "lpp": lpp, "ppp": ppp,
+               "o_odds": first.get("odds"), "odds": cur["odds"],
+               "tix": cur["tix"], "mny": cur["mny"],
                "nb": cur["nb"], "st": cur["st"], "snaps": len(tss),
-               "pin": (p or {}).get("pts"), "lim": (p or {}).get("lim")}
-        if abs(mv) < MOVE_EPS:
+               "pin": (p or {}).get("pts"), "lim": (p or {}).get("lim"),
+               "books": books_now.get((a, h, mk, k2), {})}
+        if abs(pp) < MIN_PP:
             loaded.append(rec)
         elif toward:
             followed.append(rec)
@@ -216,10 +263,16 @@ def main():
             say("   none"); say(); return
         for r in sorted(rows, key=lambda x: -(x["tix"] or 0)):
             pin_s = f"Pin {r['pin']:g}" + (f" ${r['lim']:,}" if r['lim'] else "") if r['pin'] is not None else "Pin ?"
+            bs = r.get("books") or {}
+            others = sorted({v for b, v in bs.items() if b not in ("69", "30")})
+            ostr = ("books " + "/".join(f"{v:g}" for v in others)) if others else ""
+            alone = len(others) == 1 and abs(others[0] - r["now"]) > 1e-9
             say(f"   {r['g']:10} {r['mk']:7} {str(r['side'])[:5]:5}  "
                 f"public {r['tix']:>3}%/{r['mny']:>3}%  "
-                f"open {r['open']:>6g} -> {r['now']:>6g} ({r['mv']:+g})  "
-                f"{pin_s:>18}  {r['nb'] or 0:>7,} bets  {r['st'][:16].replace('T',' ')}Z")
+                f"{r['open']:g} ({r['o_odds']:+d}) -> {r['now']:g} ({r['odds']:+d})  "
+                f"= {r['pp']:+5.1f}pp (line {r['lpp']:+.1f} price {r['ppp']:+.1f})  "
+                f"{pin_s}  {ostr}  {r['nb'] or 0:,} bets  {r['st'][:16].replace('T',' ')}Z"
+                + ("   <-- FanDuel alone at its number" if alone else ""))
         say()
 
     show(broken, "BROKEN — the number moved AGAINST heavy public money",
@@ -230,6 +283,9 @@ def main():
          "not a fade. Printed because these get mistaken for fades afterwards.")
 
     say("-" * 84)
+    say("Movement is in PROBABILITY POINTS with the price included, not line points: a")
+    say("half point of spread is ~1.4pp and 20 cents of juice is ~4.5pp, so a line move")
+    say("paired with worse juice can be a move against you. Threshold |pp| >= 1.0.")
     say("Public = >=65% of BOTH tickets and money. Pinnacle read from the current")
     say("snapshot, main lines only (isAlternate false), sides matched by team not by")
     say("home/away label. Movement measured from the earliest snapshot held, so a number")
