@@ -217,6 +217,25 @@
    "tested": "2026-11-22",
    "source": "claude",
    "note": "Worth keeping because of how it was described at the time. TB +3.5: 81% of tickets on Detroit, Pinnacle moved 6.5 -> 3.5 (three full points), HELD 13.8h, $100,000 limit -- the largest on the board -- and Patrick Everson/Prime independently reported sharp action on Bucs +6.5/+5.5. Every condition in Justin's thesis, plus outside confirmation. Detroit won 31-21. It did not lose by a hook; it lost by ten. Through the day it was repeatedly called 'right side, price gone' -- that framing was wrong. The move being spent and the read being correct are different claims and only the first was supported. A spent move is not evidence the side is right."
+  },
+  {
+   "id": "xbook_order",
+   "idea": "which book moves first -- measurable ACROSS snapshots, not within one",
+   "state": "TESTED",
+   "where": "xbook.py",
+   "recorded": "2026-11-24",
+   "tested": "2026-11-24",
+   "source": "claude",
+   "note": "CORRECTS A CLAIM THE PROJECT TREATED AS SETTLED. CLAUDE.md and the brain doc said cross-book lead-lag was 'permanently unmeasurable'. Books share a timestamp WITHIN a snapshot -- true -- but which snapshot a book FIRST shows a new number is recorded for all 7 books in every snapshot, which is ordering at 3/10/60 min resolution. The overstatement closed this line of analysis 2026-11-22 to 2026-11-24. Measured over 1227 snapshots, 1110 multi-book move events, scored against a null set by the SIZE of the groups each book appeared in (raw lead rates are meaningless -- a book mostly in 2-book events has a 50% baseline, one in 6-book events has 17%; comparing raw rates is the market-mix confound again). Result: FanDuel 38.7% actual vs 49.1% null, z=-3.49 (LAGS); book 75 58.5% vs 52.1%, z=+3.67 (LEADS); the other four flat at |z|<=1.05. Six books tested, chance gives ~0.3 at |z|>=2. Does NOT reopen rule 22 in propwatch-line-value-state (0-for-17) -- that tested Pinnacle vs FanDuel and is still closed."
+  },
+  {
+   "id": "book_names",
+   "idea": "name Action Network books 15, 49, 68, 71, 75",
+   "state": "OPEN",
+   "where": "nowhere -- only 69 (FanDuel) and 30 (opener) are identified in the codebase",
+   "recorded": "2026-11-24",
+   "source": "claude",
+   "note": "BLOCKING. xbook.py found that book 75 leads the market at z=+3.67 and nobody knows what book 75 is. The AN payload carries no book metadata -- no names, no books array. Identify by cross-referencing a known line at a known time against a named sportsbook, or by finding AN's book-list endpoint. Until then the strongest cross-book result in the project points at an anonymous book."
   }
  ],
  "questions": [

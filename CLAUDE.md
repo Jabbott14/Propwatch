@@ -101,9 +101,17 @@ that shows up in the data is a finding.
 - **NFL stores pin rows as `(t, ty, d, pts, PRICE, LIMIT)`; CBB stores
   `(t, ty, d, pts, LIMIT, price)`.** Fields 4 and 5 are swapped between the two graders.
   Reading index 4 as a limit in NFL produced "Pinnacle limit of $105".
-- Cross-book lead-lag is **permanently unmeasurable** with the existing archive — all
-  seven books share our snapshot timestamp. Steam must be measured as breadth
-  (books-per-interval), never as ordering.
+- Cross-book lead-lag is measurable ACROSS snapshots, not within one. All seven books
+  share our snapshot timestamp, so sub-snapshot ordering is gone — but which snapshot a
+  book first showed a new number is recorded for every book in every snapshot. That is
+  ordering at 3 min (inside 2h of kickoff) / 10 min / 60 min resolution. **This file
+  previously called it "permanently unmeasurable", which was wrong and closed the line
+  of analysis for two days.** `xbook.py` measures it: FanDuel lags at z = −3.49 and an
+  unnamed book 75 leads at z = +3.67, both after correcting for group size, on 1,110
+  multi-book move events. Steam as breadth is still valid and still unbuilt.
+- **Books 15, 49, 68, 71 and 75 are unnamed anywhere in this codebase** — only 69
+  (FanDuel) and 30 (the opener) are identified. The book that leads the market is
+  therefore anonymous, which is the blocking step on the finding above.
 - CBB series must be truncated at tip. Not doing so contaminated 26.7% of series and
   changed 10% of graded closes.
 - Moneyline openers are `[handicap, price]`; index 0 is a literal 0 for a moneyline.
