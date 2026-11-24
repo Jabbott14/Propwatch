@@ -28517,5 +28517,691 @@
     "took_default": true
    }
   }
+ },
+ {
+  "game": "Cincinnati Bengals @ Washington Commanders",
+  "market": "q4|total",
+  "period": "q4",
+  "kind": "total",
+  "kickoff": "2026-11-24T01:15:00.000Z",
+  "markets": {
+   "close": {
+    "t": "2026-11-24T0114Z",
+    "line": {
+     "over": 15.5,
+     "under": 15.5
+    },
+    "odds": {
+     "over": -104,
+     "under": -116
+    },
+    "open": 14.5,
+    "open_odds": {
+     "over": -108,
+     "under": -114
+    },
+    "calls": {
+     "follow_move": "over"
+    },
+    "move": 1.0
+   },
+   "early": {
+    "t": "2026-11-16T2121Z",
+    "line": {
+     "over": 14.5,
+     "under": 14.5
+    },
+    "odds": {
+     "over": -108,
+     "under": -114
+    },
+    "open": 14.5,
+    "open_odds": {
+     "over": -108,
+     "under": -114
+    },
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "follow_move": {
+    "side": "over",
+    "line": 15.5,
+    "odds": -104,
+    "res": "L",
+    "units": -1.0,
+    "took_default": true
+   }
+  }
+ },
+ {
+  "game": "Cincinnati Bengals @ Washington Commanders",
+  "market": "q4|ml",
+  "period": "q4",
+  "kind": "ml",
+  "kickoff": "2026-11-24T01:15:00.000Z",
+  "markets": {
+   "close": {
+    "t": "2026-11-24T0114Z",
+    "line": {
+     "home": 126,
+     "away": -154
+    },
+    "odds": {
+     "home": 126,
+     "away": -154
+    },
+    "open": 122,
+    "open_odds": {
+     "home": 122,
+     "away": -150
+    },
+    "calls": {
+     "follow_move": "away"
+    },
+    "move": 4
+   },
+   "early": {
+    "t": "2026-11-16T2121Z",
+    "line": {
+     "home": 122,
+     "away": -150
+    },
+    "odds": {
+     "home": 122,
+     "away": -150
+    },
+    "open": 122,
+    "open_odds": {
+     "home": 122,
+     "away": -150
+    },
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "follow_move": {
+    "side": "away",
+    "line": -154,
+    "odds": -154,
+    "res": "L",
+    "units": -1.0,
+    "took_default": true
+   }
+  }
+ },
+ {
+  "game": "Cincinnati Bengals @ Washington Commanders",
+  "market": "1h|tt|away",
+  "period": "1h",
+  "kind": "tt",
+  "kickoff": "2026-11-24T01:15:00.000Z",
+  "markets": {
+   "close": {
+    "t": "2026-11-24T0114Z",
+    "line": {
+     "over": 15.5,
+     "under": 15.5
+    },
+    "odds": {
+     "over": -120,
+     "under": -106
+    },
+    "open": 14.5,
+    "open_odds": {
+     "over": -111,
+     "under": -115
+    },
+    "calls": {
+     "follow_move": "over",
+     "pin_value": "under"
+    },
+    "move": 1.0,
+    "pin": 14.5,
+    "pin_lim": 5000,
+    "pin_gap": 1.0
+   },
+   "early": {
+    "t": "2026-11-16T2121Z",
+    "line": {
+     "over": 14.5,
+     "under": 14.5
+    },
+    "odds": {
+     "over": -111,
+     "under": -115
+    },
+    "open": 14.5,
+    "open_odds": {
+     "over": -111,
+     "under": -115
+    },
+    "calls": {},
+    "pin": 14.5,
+    "pin_lim": 500
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "follow_move": {
+    "side": "over",
+    "line": 15.5,
+    "odds": -120,
+    "res": "L",
+    "units": -1.0,
+    "took_default": true
+   },
+   "pin_value": {
+    "side": "under",
+    "line": 15.5,
+    "odds": -106,
+    "res": "W",
+    "units": 0.943,
+    "took_default": false
+   }
+  }
+ },
+ {
+  "game": "Cincinnati Bengals @ Washington Commanders",
+  "market": "1h|total",
+  "period": "1h",
+  "kind": "total",
+  "kickoff": "2026-11-24T01:15:00.000Z",
+  "markets": {
+   "close": {
+    "t": "2026-11-24T0114Z",
+    "line": {
+     "over": 26.5,
+     "under": 26.5
+    },
+    "odds": {
+     "over": -130,
+     "under": 110
+    },
+    "open": 26.5,
+    "open_odds": {
+     "over": -120,
+     "under": 100
+    },
+    "calls": {
+     "pin_value": "over"
+    },
+    "pin": 27.0,
+    "pin_lim": 10000,
+    "pin_gap": -0.5
+   },
+   "early": {
+    "t": "2026-11-16T2121Z",
+    "line": {
+     "over": 26.5,
+     "under": 26.5
+    },
+    "odds": {
+     "over": -120,
+     "under": 100
+    },
+    "open": 26.5,
+    "open_odds": {
+     "over": -120,
+     "under": 100
+    },
+    "calls": {
+     "pin_value": "over"
+    },
+    "pin": 27.0,
+    "pin_lim": 500,
+    "pin_gap": -0.5
+   }
+  },
+  "early_graded": {
+   "pin_value": {
+    "side": "over",
+    "line": 26.5,
+    "odds": -120,
+    "res": "L",
+    "units": -1.0,
+    "took_default": true,
+    "clv": 0.0
+   }
+  },
+  "close_graded": {
+   "pin_value": {
+    "side": "over",
+    "line": 26.5,
+    "odds": -130,
+    "res": "L",
+    "units": -1.0,
+    "took_default": true
+   }
+  }
+ },
+ {
+  "game": "Cincinnati Bengals @ Washington Commanders",
+  "market": "1h|tt|home",
+  "period": "1h",
+  "kind": "tt",
+  "kickoff": "2026-11-24T01:15:00.000Z",
+  "markets": {
+   "close": {
+    "t": "2026-11-24T0114Z",
+    "line": {
+     "over": 10.5,
+     "under": 10.5
+    },
+    "odds": {
+     "over": -102,
+     "under": -125
+    },
+    "open": 10.5,
+    "open_odds": {
+     "over": 100,
+     "under": -128
+    },
+    "calls": {
+     "fd_juice": "over"
+    },
+    "pin": 10.5,
+    "pin_lim": 5000
+   },
+   "early": {
+    "t": "2026-11-16T2121Z",
+    "line": {
+     "over": 10.5,
+     "under": 10.5
+    },
+    "odds": {
+     "over": 100,
+     "under": -128
+    },
+    "open": 10.5,
+    "open_odds": {
+     "over": 100,
+     "under": -128
+    },
+    "calls": {},
+    "pin": 10.5,
+    "pin_lim": 500
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "fd_juice": {
+    "side": "over",
+    "line": 10.5,
+    "odds": -102,
+    "res": "L",
+    "units": -1.0,
+    "took_default": true
+   }
+  }
+ },
+ {
+  "game": "Cincinnati Bengals @ Washington Commanders",
+  "market": "1h|ml",
+  "period": "1h",
+  "kind": "ml",
+  "kickoff": "2026-11-24T01:15:00.000Z",
+  "markets": {
+   "close": {
+    "t": "2026-11-24T0114Z",
+    "line": {
+     "home": 196,
+     "away": -245
+    },
+    "odds": {
+     "home": 196,
+     "away": -245
+    },
+    "open": 186,
+    "open_odds": {
+     "home": 186,
+     "away": -235
+    },
+    "calls": {
+     "follow_move": "away",
+     "pin_price": "home"
+    },
+    "move": 10,
+    "pin": 174,
+    "pin_lim": 20000,
+    "edge_pct": 4.72
+   },
+   "early": {
+    "t": "2026-11-16T2121Z",
+    "line": {
+     "home": 186,
+     "away": -235
+    },
+    "odds": {
+     "home": 186,
+     "away": -235
+    },
+    "open": 186,
+    "open_odds": {
+     "home": 186,
+     "away": -235
+    },
+    "calls": {},
+    "pin": 184,
+    "pin_lim": 500
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "follow_move": {
+    "side": "away",
+    "line": -245,
+    "odds": -245,
+    "res": "W",
+    "units": 0.408,
+    "took_default": true
+   },
+   "pin_price": {
+    "side": "home",
+    "line": 196,
+    "odds": 196,
+    "res": "L",
+    "units": -1.0,
+    "took_default": false
+   }
+  }
+ },
+ {
+  "game": "Cincinnati Bengals @ Washington Commanders",
+  "market": "1h|spread",
+  "period": "1h",
+  "kind": "spread",
+  "kickoff": "2026-11-24T01:15:00.000Z",
+  "markets": {
+   "close": {
+    "t": "2026-11-24T0114Z",
+    "line": {
+     "home": 4.5,
+     "away": -4.5
+    },
+    "odds": {
+     "home": -125,
+     "away": 105
+    },
+    "open": 3.5,
+    "open_odds": {
+     "home": 100,
+     "away": -120
+    },
+    "calls": {
+     "follow_move": "away",
+     "pin_value": "home"
+    },
+    "move": 1.0,
+    "pin": 3.5,
+    "pin_lim": 30000,
+    "pin_gap": 1.0
+   },
+   "early": {
+    "t": "2026-11-16T2121Z",
+    "line": {
+     "home": 3.5,
+     "away": -3.5
+    },
+    "odds": {
+     "home": 100,
+     "away": -120
+    },
+    "open": 3.5,
+    "open_odds": {
+     "home": 100,
+     "away": -120
+    },
+    "calls": {},
+    "pin": 3.5,
+    "pin_lim": 500
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "follow_move": {
+    "side": "away",
+    "line": -4.5,
+    "odds": 105,
+    "res": "L",
+    "units": -1.0,
+    "took_default": true
+   },
+   "pin_value": {
+    "side": "home",
+    "line": 4.5,
+    "odds": -125,
+    "res": "W",
+    "units": 0.8,
+    "took_default": false
+   }
+  }
+ },
+ {
+  "game": "Cincinnati Bengals @ Washington Commanders",
+  "market": "2h|ml",
+  "period": "2h",
+  "kind": "ml",
+  "kickoff": "2026-11-24T01:15:00.000Z",
+  "markets": {
+   "close": {
+    "t": "2026-11-24T0114Z",
+    "line": {
+     "home": 158,
+     "away": -186
+    },
+    "odds": {
+     "home": 158,
+     "away": -186
+    },
+    "open": 148,
+    "open_odds": {
+     "home": 148,
+     "away": -178
+    },
+    "calls": {
+     "follow_move": "away"
+    },
+    "move": 10
+   },
+   "early": {
+    "t": "2026-11-16T2121Z",
+    "line": {
+     "home": 148,
+     "away": -178
+    },
+    "odds": {
+     "home": 148,
+     "away": -178
+    },
+    "open": 148,
+    "open_odds": {
+     "home": 148,
+     "away": -178
+    },
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "follow_move": {
+    "side": "away",
+    "line": -186,
+    "odds": -186,
+    "res": "L",
+    "units": -1.0,
+    "took_default": true
+   }
+  }
+ },
+ {
+  "game": "Cincinnati Bengals @ Washington Commanders",
+  "market": "2h|spread",
+  "period": "2h",
+  "kind": "spread",
+  "kickoff": "2026-11-24T01:15:00.000Z",
+  "markets": {
+   "close": {
+    "t": "2026-11-24T0114Z",
+    "line": {
+     "home": 2.5,
+     "away": -2.5
+    },
+    "odds": {
+     "home": 100,
+     "away": -120
+    },
+    "open": 2.5,
+    "open_odds": {
+     "home": -110,
+     "away": -110
+    },
+    "calls": {
+     "fd_juice": "away"
+    }
+   },
+   "early": {
+    "t": "2026-11-16T2121Z",
+    "line": {
+     "home": 2.5,
+     "away": -2.5
+    },
+    "odds": {
+     "home": -110,
+     "away": -110
+    },
+    "open": 2.5,
+    "open_odds": {
+     "home": -110,
+     "away": -110
+    },
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "fd_juice": {
+    "side": "away",
+    "line": -2.5,
+    "odds": -120,
+    "res": "L",
+    "units": -1.0,
+    "took_default": true
+   }
+  }
+ },
+ {
+  "game": "Cincinnati Bengals @ Washington Commanders",
+  "market": "2h|tt|away",
+  "period": "2h",
+  "kind": "tt",
+  "kickoff": "2026-11-24T01:15:00.000Z",
+  "markets": {
+   "close": {
+    "t": "2026-11-24T0114Z",
+    "line": {
+     "over": 14.5,
+     "under": 14.5
+    },
+    "odds": {
+     "over": -104,
+     "under": -122
+    },
+    "open": 14.5,
+    "open_odds": {
+     "over": 112,
+     "under": -142
+    },
+    "calls": {
+     "fd_juice": "over"
+    }
+   },
+   "early": {
+    "t": "2026-11-16T2121Z",
+    "line": {
+     "over": 14.5,
+     "under": 14.5
+    },
+    "odds": {
+     "over": 112,
+     "under": -142
+    },
+    "open": 14.5,
+    "open_odds": {
+     "over": 112,
+     "under": -142
+    },
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "fd_juice": {
+    "side": "over",
+    "line": 14.5,
+    "odds": -104,
+    "res": "L",
+    "units": -1.0,
+    "took_default": true
+   }
+  }
+ },
+ {
+  "game": "Cincinnati Bengals @ Washington Commanders",
+  "market": "2h|total",
+  "period": "2h",
+  "kind": "total",
+  "kickoff": "2026-11-24T01:15:00.000Z",
+  "markets": {
+   "close": {
+    "t": "2026-11-24T0114Z",
+    "line": {
+     "over": 26.5,
+     "under": 26.5
+    },
+    "odds": {
+     "over": -120,
+     "under": 100
+    },
+    "open": 26.5,
+    "open_odds": {
+     "over": -110,
+     "under": -110
+    },
+    "calls": {
+     "fd_juice": "over"
+    }
+   },
+   "early": {
+    "t": "2026-11-16T2121Z",
+    "line": {
+     "over": 26.5,
+     "under": 26.5
+    },
+    "odds": {
+     "over": -110,
+     "under": -110
+    },
+    "open": 26.5,
+    "open_odds": {
+     "over": -110,
+     "under": -110
+    },
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "fd_juice": {
+    "side": "over",
+    "line": 26.5,
+    "odds": -120,
+    "res": "L",
+    "units": -1.0,
+    "took_default": true
+   }
+  }
  }
 ]
