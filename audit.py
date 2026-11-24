@@ -90,7 +90,21 @@ def heartbeat():
             out = subprocess.run(["git", "log", "-1", "--format=%cI", f"--grep=^{prefix}"],
                                  cwd=ROOT, capture_output=True, text=True, timeout=30).stdout.strip()
             if not out:
-                say(f"  {label:16} NO COMMITS FOUND  <-- never ran, or the message changed"); bad += 1; continue
+                # A shallow clone holds only the most recent commits, so a feed that
+                # commits less often than the others legitimately has none in range.
+                # Saying "never ran" there is a false alarm, and a guard that cries wolf
+                # trains people to scroll past it -- the check_rate lesson, which fired
+                # 95 times on its first calibration.
+                depth = subprocess.run(["git", "rev-list", "--count", "HEAD"],
+                                       cwd=ROOT, capture_output=True, text=True).stdout.strip()
+                shallow = subprocess.run(["git", "rev-parse", "--is-shallow-repository"],
+                                         cwd=ROOT, capture_output=True, text=True).stdout.strip()
+                if shallow == "true":
+                    say(f"  {label:16} not in the last {depth} commits (shallow clone — not a failure)")
+                else:
+                    say(f"  {label:16} NO COMMITS FOUND  <-- never ran, or the message changed")
+                    bad += 1
+                continue
             age = (now - dt.datetime.fromisoformat(out)).total_seconds() / 60
             flag = ""
             if age > max_min:
@@ -99,8 +113,41 @@ def heartbeat():
         except Exception as e:
             say(f"  {label:16} check failed: {e}")
     say()
+    bad_feeds = 0
+
+    # --- did any SOURCE fail? The feed check above only sees whether commits arrive.
+    #     A collector can run perfectly, commit on schedule, and be silently failing to
+    #     fetch one of its sources -- which is exactly what happened: VSIN has returned
+    #     HTTP 403 on EVERY cycle since 2026-11-12 and data/_diag.json recorded it every
+    #     time. Nobody read it for twelve days.
+    #
+    #     Worse, the diag's own health line says `pulls_fail: 0` while two pulls fail,
+    #     because ok/fail count only the per-game FanDuel prop requests. archive()
+    #     failures land in attempts[].error and are counted nowhere. The one number a
+    #     person would check was structurally incapable of showing the problem.
+    for diagp in ("data/_diag.json", "cbb/data/_diag.json", "ncaaf/data/_diag.json"):
+        fp = os.path.join(ROOT, diagp)
+        if not os.path.exists(fp):
+            continue
+        try:
+            dg = json.load(open(fp))
+        except Exception:
+            continue
+        bad = [a for a in (dg.get("attempts") or []) if a.get("error")]
+        tag = diagp.split("/")[0] if "/" in diagp else "nfl"
+        if bad:
+            say(f"  {tag:16} SOURCES FAILING as of {dg.get('run_utc','?')}:")
+            for a in bad:
+                say(f"      {a.get('name','?'):14} {a.get('error','?')}")
+            say(f"      (that run reported pulls_fail={dg.get('pulls_fail')} — the counter")
+            say("       covers prop requests only, not these)")
+            bad_feeds += 1
+        else:
+            say(f"  {tag:16} all sources OK as of {dg.get('run_utc','?')}")
+    say()
+    bad += bad_feeds
     if bad:
-        say(f"  {bad} feed(s) stale. EVERY NUMBER BELOW THAT DEPENDS ON THEM IS SUSPECT --")
+        say(f"  {bad} feed/source problem(s). EVERY NUMBER BELOW THAT DEPENDS ON THEM IS SUSPECT --")
         say("  a dead feed does not look like an error downstream, it looks like a quiet")
         say("  market. Check the Actions tab before trusting anything in sections 2-5.")
     else:

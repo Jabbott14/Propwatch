@@ -193,11 +193,11 @@
   {
    "id": "second_book_splits",
    "idea": "splits from a book that is NOT FanDuel -- Circa, DK, South Point via VSIN",
-   "state": "OPEN",
+   "state": "CLOSED",
    "where": "raw/vsin and raw/vsin_circa: BROKEN, see note",
    "recorded": "2026-11-22",
    "source": "claude",
-   "note": "DEFECT, found 2026-11-22. Two problems. (1) What we archived is the VSIN page SHELL, not data -- the splits load from query params (?source=DK&view=topspreadhandle) and the fetched HTML contains the filter chips and zero numbers. 'Handle' appears 3 times, all in button labels; 'Tickets' appears 0 times. So the parse that was never written would have found nothing anyway. (2) Collection STOPPED on 2026-11-12 and nothing noticed for ten days. This is the fourth collected-but-never-parsed item after Circa, is_live/is_alt_market, and the rotation numbers. It is also the blocker on public_is_book_specific: a second book's splits is the only way to test whether 'the public' means anything beyond FanDuel."
+   "note": "ROOT CAUSE FOUND 2026-11-24, and it was recorded all along. VSIN returns HTTP 403 Forbidden on EVERY cycle since 2026-11-12, and data/_diag.json logged it every single time: {'name':'vsin','error':'HTTPError: HTTP Error 403: Forbidden'}. Nobody read it for twelve days. The collector already sends a full browser User-Agent, so this is active bot-blocking of GitHub Actions' datacenter IPs, not a missing header -- not patchable from our side. The earlier note here said the problem was that we archived the page shell; that was true of the pre-11-12 files but it is not why collection stopped. THE REAL DEFECT IS THE REPORTING: the diag's health line reads pulls_fail=0 while two pulls fail every cycle, because ok/fail count only the per-game FanDuel prop requests -- archive() failures land in attempts[].error and are counted nowhere. The one number a person would check was structurally incapable of showing the problem. audit.py section 0 now reads _diag.json for all three sports and surfaces any attempt carrying an error. CLOSED as 'cannot fix the source'; the second-book-splits goal now needs a different provider, so it lives on under public_is_book_specific."
   },
   {
    "id": "collector_dies",
