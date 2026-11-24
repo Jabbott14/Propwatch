@@ -1,10 +1,10 @@
 # NFL prop scorecard
 
-Generated 2026-11-23 13:42 UTC. 1290 graded props (161 had no nflverse result and are not graded).
+Generated 2026-11-24 02:37 UTC. 1294 graded props (203 had no nflverse result and are not graded).
 
 ## Read this first: fit vs forward
 
-**890 props before 2026-11-17 (fit) · 400 on or after it (forward).**
+**890 props before 2026-11-17 (fit) · 404 on or after it (forward).**
 
 Every signal and threshold here was chosen by looking at the props before
 2026-11-17. `pin_lead` read 17-8 on Nov 15 and 22-22 a week later; the only
@@ -31,7 +31,7 @@ price moves 12+ cents one way. Break-even at -110 is 52.4%.
 numbers never move. **CLV price** is the real one: percentage points of implied
 probability gained on the taken side between the early read and the close.
 
-Base rate: the over hit **45.2%** of 1290 graded props, but `expected %`
+Base rate: the over hit **45.1%** of 1294 graded props, but `expected %`
 uses **each stat's own rate**, not that pooled one. A yardage over is near a coin
 flip; an anytime-TD over 0.5 is a longshot. Scored against one pooled number every
 anytime-TD signal would be charged an expectation it could never meet:
@@ -39,7 +39,7 @@ anytime-TD signal would be charged an expectation it could never meet:
 - **recv_yds**: over hit 49.3% of 446
 - **receptions**: over hit 44.0% of 352
 - **rush_yds**: over hit 47.6% of 229
-- **anytime_td**: over hit 25.4% of 118
+- **anytime_td**: over hit 24.6% of 122
 - **pass_yds**: over hit 52.4% of 82
 - **pass_tds**: over hit 41.3% of 63
 
@@ -47,7 +47,7 @@ Proposals appear at 50 decided props. Nothing changes automatically.
 
 # FORWARD (out-of-sample — this is the evidence)
 
-Props for games kicking off on or after 2026-11-17. n=400, over rate 45.8% of 400.
+Props for games kicking off on or after 2026-11-17. n=404, over rate 45.3% of 404.
 
 ## EARLY  (fwd)
 
@@ -61,14 +61,14 @@ Props for games kicking off on or after 2026-11-17. n=400, over rate 45.8% of 40
 | signal | record | hit % | expected % | edge | units | ROI % | CLV pts | CLV price | CLV + % | status |
 |---|---|---|---|---|---|---|---|---|---|---|
 | pin_value | 46-41 | 52.9 | 50.3 | 2.6 | -0.77 | -0.9 |  |  |  | no edge shown yet |
-| pin_price | 12-30 | 28.6 | 27.9 | 0.6 | -10.35 | -24.6 |  |  |  | keep collecting (42/50) |
+| pin_price | 12-34 | 26.1 | 26.1 | -0.0 | -14.35 | -31.2 |  |  |  | keep collecting (46/50) |
 | fd_move | 120-107 | 52.9 | 50.1 | 2.7 | +2.85 | 1.3 |  |  |  | no edge shown yet |
 | fd_juice | 63-46 | 57.8 | 50.3 | 7.5 | +5.24 | 4.8 |  |  |  | no edge shown yet |
 | pin_lead | 15-7 | 68.2 | 49.9 | 18.3 | +5.97 | 27.1 |  |  |  | keep collecting (22/50) |
-| td_steam | 2-19 | 9.5 | 18.0 | -8.5 | -11.0 | -52.4 |  |  |  | keep collecting (21/50) |
-| fd_move+pin_value | 8-9 | 47.1 | 50.5 | -3.4 | -1.92 | -11.3 |  |  |  | keep collecting (17/50) |
+| td_steam | 2-19 | 9.5 | 16.7 | -7.1 | -11.0 | -52.4 |  |  |  | keep collecting (21/50) |
+| fd_move+pin_value | 8-9 | 47.1 | 50.5 | -3.5 | -1.92 | -11.3 |  |  |  | keep collecting (17/50) |
 | pin_lead+pin_value | 7-5 | 58.3 | 49.6 | 8.7 | +0.89 | 7.4 |  |  |  | keep collecting (12/50) |
-| fd_juice+pin_price | 2-2 | 50.0 | 49.6 | 0.4 | -0.29 | -7.3 |  |  |  | keep collecting (4/50) |
+| fd_juice+pin_price | 2-2 | 50.0 | 49.5 | 0.5 | -0.29 | -7.3 |  |  |  | keep collecting (4/50) |
 | fd_move+pin_price | 1-1 | 50.0 | 47.9 | 2.1 | -0.11 | -5.8 |  |  |  | keep collecting (2/50) |
 | fd_juice+pin_lead | 1-0 | 100.0 | 49.1 | 50.9 | +0.58 | 58.1 |  |  |  | keep collecting (1/50) |
 | fd_juice+pin_value | 1-0 | 100.0 | 49.1 | 50.9 | +0.58 | 58.1 |  |  |  | keep collecting (1/50) |
@@ -114,21 +114,21 @@ chosen on with the props testing them.
 | signal | record | hit % | expected % | edge | units | ROI % | CLV pts | CLV price | CLV + % | status |
 |---|---|---|---|---|---|---|---|---|---|---|
 | pin_value | 17-12 | 58.6 | 50.0 | 8.6 | +2.8 | 9.7 | -0.55 | -0.03 | 0.0 | keep collecting (29/50) |
-| pin_price | 6-3 | 66.7 | 38.8 | 27.9 | +6.09 | 67.7 | 0.0 | 0.49 | 44.4 | keep collecting (9/50) |
+| pin_price | 6-3 | 66.7 | 38.4 | 28.2 | +6.09 | 67.7 | 0.0 | 0.49 | 44.4 | keep collecting (9/50) |
 | fd_move | 38-15 | 71.7 | 49.8 | 21.9 | +18.89 | 35.6 | 1.92 | -0.1 | 3.8 | PROMOTE: beats break-even and its own base rate |
 | fd_juice | 23-9 | 71.9 | 50.6 | 21.3 | +12.64 | 39.5 | 0.0 | 2.67 | 56.2 | keep collecting (32/50) |
-| td_steam | 0-1 | 0.0 | 25.4 | -25.4 | -1.0 | -100.0 | 0.0 | 8.3 | 100.0 | keep collecting (1/50) |
+| td_steam | 0-1 | 0.0 | 24.6 | -24.6 | -1.0 | -100.0 | 0.0 | 8.3 | 100.0 | keep collecting (1/50) |
 
 ## CLOSE  (pooled)
 
 | signal | record | hit % | expected % | edge | units | ROI % | CLV pts | CLV price | CLV + % | status |
 |---|---|---|---|---|---|---|---|---|---|---|
 | pin_value | 187-168 | 52.7 | 50.0 | 2.7 | -5.23 | -1.5 |  |  |  | no edge shown yet |
-| pin_price | 63-87 | 42.0 | 39.5 | 2.5 | -2.31 | -1.5 |  |  |  | DROP: below break-even |
+| pin_price | 63-91 | 40.9 | 38.7 | 2.2 | -6.31 | -4.1 |  |  |  | DROP: below break-even |
 | fd_move | 360-338 | 51.6 | 50.0 | 1.6 | -11.13 | -1.6 |  |  |  | no edge shown yet |
 | fd_juice | 191-148 | 56.3 | 51.4 | 4.9 | +10.32 | 3.0 |  |  |  | no edge shown yet |
 | pin_lead | 37-29 | 56.1 | 49.8 | 6.3 | +3.01 | 4.6 |  |  |  | no edge shown yet |
-| td_steam | 11-43 | 20.4 | 25.4 | -5.1 | -11.18 | -20.7 |  |  |  | DROP: below break-even |
+| td_steam | 11-43 | 20.4 | 24.6 | -4.2 | -11.18 | -20.7 |  |  |  | DROP: below break-even |
 | pin_lead+pin_value | 25-21 | 54.3 | 50.0 | 4.4 | +0.39 | 0.8 |  |  |  | keep collecting (46/50) |
 | fd_juice+pin_price | 7-4 | 63.6 | 52.5 | 11.2 | +1.65 | 15.0 |  |  |  | keep collecting (11/50) |
 | fd_move+pin_value | 32-26 | 55.2 | 49.9 | 5.3 | +2.32 | 4.0 |  |  |  | no edge shown yet |
@@ -148,12 +148,12 @@ chosen on with the props testing them.
 | pin_value | close | receptions | 6-4 | 60.0 | 11.2 | -2.7 |
 | pin_value | close | recv_yds | 106-94 | 53.0 | 3.0 | -0.1 |
 | pin_value | close | rush_yds | 55-51 | 51.9 | 2.2 | -2.1 |
-| pin_price | close | anytime_td | 19-45 | 29.7 | 4.3 | -5.3 |
+| pin_price | close | anytime_td | 19-49 | 27.9 | 3.4 | -10.9 |
 | pin_price | close | pass_tds | 4-5 | 44.4 | -10.4 | 2.5 |
 | pin_price | close | pass_yds | 3-4 | 42.9 | -7.5 | -19.2 |
-| pin_price | close | pin $1k+ | 40-54 | 42.6 | 3.5 | 4.2 |
-| pin_price | close | pin $400-1k | 21-30 | 41.2 | 0.9 | -10.8 |
-| pin_price | close | pin limit <$400 | 2-3 | 40.0 | 2.4 | -13.8 |
+| pin_price | close | pin $1k+ | 40-55 | 42.1 | 3.5 | 3.1 |
+| pin_price | close | pin $400-1k | 21-33 | 38.9 | -0.2 | -15.8 |
+| pin_price | close | pin limit <$400 | 2-3 | 40.0 | 2.7 | -13.8 |
 | pin_price | close | receptions | 16-18 | 47.1 | -1.5 | -4.4 |
 | pin_price | close | recv_yds | 12-11 | 52.2 | 2.6 | -1.7 |
 | pin_price | close | rush_yds | 9-4 | 69.2 | 19.0 | 31.5 |
@@ -179,10 +179,10 @@ chosen on with the props testing them.
 | pin_lead | close | receptions | 1-0 | 100.0 | 56.0 | 58.1 |
 | pin_lead | close | recv_yds | 19-13 | 59.4 | 9.5 | 11.9 |
 | pin_lead | close | rush_yds | 11-10 | 52.4 | 3.2 | -1.3 |
-| td_steam | close | anytime_td | 11-43 | 20.4 | -5.1 | -20.7 |
-| td_steam | close | pin $1k+ | 2-6 | 25.0 | -0.4 | -53.2 |
-| td_steam | close | pin $400-1k | 1-1 | 50.0 | 24.6 | -27.2 |
-| td_steam | close | pin limit <$400 | 1-1 | 50.0 | 24.6 | -33.4 |
+| td_steam | close | anytime_td | 11-43 | 20.4 | -4.2 | -20.7 |
+| td_steam | close | pin $1k+ | 2-6 | 25.0 | 0.4 | -53.2 |
+| td_steam | close | pin $400-1k | 1-1 | 50.0 | 25.4 | -27.2 |
+| td_steam | close | pin limit <$400 | 1-1 | 50.0 | 25.4 | -33.4 |
 | pin_lead+pin_value | close | pass_tds | 1-1 | 50.0 | -8.7 | -27.2 |
 | fd_juice+pin_lead | close | pass_tds | 0-1 | 0.0 | -58.7 | -100.0 |
 | fd_juice+pin_value | close | pass_tds | 0-1 | 0.0 | -58.7 | -100.0 |
@@ -222,9 +222,9 @@ chosen on with the props testing them.
 | pin_value | early | receptions | 1-0 | 100.0 | 44.0 | 64.9 |
 | pin_value | early | recv_yds | 8-6 | 57.1 | 7.1 | 7.7 |
 | pin_value | early | rush_yds | 7-5 | 58.3 | 9.1 | 9.9 |
-| pin_price | early | anytime_td | 2-2 | 50.0 | 24.6 | 82.5 |
-| pin_price | early | pin $1k+ | 6-1 | 85.7 | 45.7 | 115.6 |
-| pin_price | early | pin $400-1k | 0-2 | 0.0 | -34.7 | -100.0 |
+| pin_price | early | anytime_td | 2-2 | 50.0 | 25.4 | 82.5 |
+| pin_price | early | pin $1k+ | 6-1 | 85.7 | 46.1 | 115.6 |
+| pin_price | early | pin $400-1k | 0-2 | 0.0 | -34.3 | -100.0 |
 | pin_price | early | receptions | 3-1 | 75.0 | 25.0 | 41.3 |
 | pin_price | early | rush_yds | 1-0 | 100.0 | 52.4 | 114.0 |
 | fd_move | early | pass_yds | 5-2 | 71.4 | 22.5 | 34.1 |
@@ -235,4 +235,4 @@ chosen on with the props testing them.
 | fd_juice | early | pass_tds | 4-0 | 100.0 | 50.0 | 102.5 |
 | fd_juice | early | receptions | 18-9 | 66.7 | 16.0 | 28.8 |
 | fd_juice | early | recv_yds | 1-0 | 100.0 | 49.3 | 76.9 |
-| td_steam | early | anytime_td | 0-1 | 0.0 | -25.4 | -100.0 |
+| td_steam | early | anytime_td | 0-1 | 0.0 | -24.6 | -100.0 |

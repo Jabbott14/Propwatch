@@ -64867,5 +64867,205 @@
     "units": -1.0
    }
   }
+ },
+ {
+  "game": "Cincinnati Bengals @ Washington Commanders",
+  "player": "jayden daniels",
+  "stat": "anytime_td",
+  "kickoff": "2026-11-24T01:15:00.000Z",
+  "week": 11,
+  "actual": 0.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-24T0114Z",
+    "line": 0.5,
+    "odds": {
+     "over": 240,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {
+     "pin_price": "over"
+    },
+    "pin": 0.5,
+    "pin_lim": 500,
+    "fair_over": 0.3029,
+    "edge_pct": 3.0,
+    "td_open_odds": 230,
+    "td_move_pp": -0.9
+   },
+   "early": {
+    "t": "2026-11-17T0025Z",
+    "line": 0.5,
+    "odds": {
+     "over": 230,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {},
+    "td_open_odds": 230,
+    "td_move_pp": 0.0
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "pin_price": {
+    "side": "over",
+    "line": 0.5,
+    "odds": 240,
+    "res": "L",
+    "units": -1.0
+   }
+  }
+ },
+ {
+  "game": "Cincinnati Bengals @ Washington Commanders",
+  "player": "austin ekeler",
+  "stat": "anytime_td",
+  "kickoff": "2026-11-24T01:15:00.000Z",
+  "week": 11,
+  "actual": 0.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-24T0114Z",
+    "line": 0.5,
+    "odds": {
+     "over": 450,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {
+     "pin_price": "over"
+    },
+    "pin": 0.5,
+    "pin_lim": 500,
+    "fair_over": 0.1989,
+    "edge_pct": 9.38,
+    "td_open_odds": 230,
+    "td_move_pp": -12.1
+   },
+   "early": {
+    "t": "2026-11-17T0031Z",
+    "line": 0.5,
+    "odds": {
+     "over": 240,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {},
+    "td_open_odds": 230,
+    "td_move_pp": -0.9
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "pin_price": {
+    "side": "over",
+    "line": 0.5,
+    "odds": 450,
+    "res": "L",
+    "units": -1.0
+   }
+  }
+ },
+ {
+  "game": "Cincinnati Bengals @ Washington Commanders",
+  "player": "antonio williams",
+  "stat": "anytime_td",
+  "kickoff": "2026-11-24T01:15:00.000Z",
+  "week": 11,
+  "actual": 0.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-24T0114Z",
+    "line": 0.5,
+    "odds": {
+     "over": 320,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {
+     "pin_price": "over"
+    },
+    "pin": 0.5,
+    "pin_lim": 1000,
+    "fair_over": 0.2594,
+    "edge_pct": 8.95,
+    "td_open_odds": 250,
+    "td_move_pp": -4.8
+   },
+   "early": {
+    "t": "2026-11-17T0047Z",
+    "line": 0.5,
+    "odds": {
+     "over": 250,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {},
+    "td_open_odds": 250,
+    "td_move_pp": 0.0
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "pin_price": {
+    "side": "over",
+    "line": 0.5,
+    "odds": 320,
+    "res": "L",
+    "units": -1.0
+   }
+  }
+ },
+ {
+  "game": "Cincinnati Bengals @ Washington Commanders",
+  "player": "ben sinnott",
+  "stat": "anytime_td",
+  "kickoff": "2026-11-24T01:15:00.000Z",
+  "week": 11,
+  "actual": 0.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-24T0114Z",
+    "line": 0.5,
+    "odds": {
+     "over": 1100,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {
+     "pin_price": "over"
+    },
+    "pin": 0.5,
+    "pin_lim": 500,
+    "fair_over": 0.0906,
+    "edge_pct": 8.67,
+    "td_open_odds": 900,
+    "td_move_pp": -1.7
+   },
+   "early": {
+    "t": "2026-11-17T0054Z",
+    "line": 0.5,
+    "odds": {
+     "over": 750,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {},
+    "td_open_odds": 900,
+    "td_move_pp": 1.8
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "pin_price": {
+    "side": "over",
+    "line": 0.5,
+    "odds": 1100,
+    "res": "L",
+    "units": -1.0
+   }
+  }
  }
 ]
