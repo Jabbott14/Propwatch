@@ -1,6 +1,6 @@
 # Picks scorecard — what was actually recommended
 
-Generated 2026-11-24 02:25 UTC. Every pick ever logged, graded at the price and number
+Generated 2026-11-24 14:00 UTC. Every pick ever logged, graded at the price and number
 taken. `picks.json` is append-only: nothing here is edited or removed after
 the fact, including the losers.
 
@@ -21,7 +21,7 @@ is losing.
 - **Record: 5-5-1**
 - **Net: -0.31 units** (ROI -5.2% on 6u risked)
 - **CLV: +0.14 average**, 27% of picks beat the close
-
+- 8 pending, 0 unmatched
 
 ## Real money vs paper
 
