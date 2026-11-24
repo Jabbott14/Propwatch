@@ -141,5 +141,149 @@
   "driver": "pin_rlm, Pinnacle 136.5->132 (4.5pts) on 10% tickets, money/tix 6.6; 9-0 agreement",
   "board_rank": "C +3.8 (lean agreed)",
   "stake": "paper"
+ },
+ {
+  "ts": "2026-11-22T17:40Z",
+  "sport": "nfl",
+  "game": "LV@DEN",
+  "market": "spread",
+  "side": "home",
+  "line": -10.5,
+  "price": -115,
+  "units": 1.0,
+  "driver": "BOTH filters: public fade + Pinnacle + price. 64% tickets on LV, Pinnacle -10.5->-11.5 ($75k), FanDuel unmoved -- 1.0pt better. Only market of 48 passing the three-way filter WITH price left. Against: Pinnacle move 0.8h old; Everson/Prime reported sharps on LV +10.",
+  "board_rank": "D -68.8",
+  "stake": "paper",
+  "result": "W",
+  "final": {
+   "away": 24,
+   "home": 38
+  }
+ },
+ {
+  "ts": "2026-11-22T17:40Z",
+  "sport": "nfl",
+  "game": "ARI@KC",
+  "market": "spread",
+  "side": "away",
+  "line": 15.5,
+  "price": -110,
+  "units": 1.0,
+  "driver": "PRICE ONLY. Pinnacle ARI +16.5->+14.5 held 3.3h, $100,000 limit (largest on board), FD a point behind. FAILS the public-fade filter -- 65% of tickets ON Arizona, a public FOLLOW. Our rlm signals leaned KC -15.5; FD moved KC -15->-15.5 while Pinnacle moved KC -16.5->-14.5, books going opposite directions.",
+  "board_rank": "not a board lean",
+  "stake": "paper",
+  "result": "L",
+  "final": {
+   "away": 7,
+   "home": 34
+  }
+ },
+ {
+  "ts": "2026-11-22T17:40Z",
+  "sport": "nfl",
+  "game": "MIN@SF",
+  "market": "total",
+  "side": "under",
+  "line": 46.5,
+  "price": -115,
+  "units": 1.0,
+  "driver": "PRICE ONLY, largest edge on board +1.5. Pinnacle 46->45 held 2.5h, FD still 46.5. 89% tickets / 84% money already on the under -- opposite of a fade. Board leaned OVER.",
+  "board_rank": "D -26.7 (other side)",
+  "stake": "paper",
+  "result": "W",
+  "final": {
+   "away": 10,
+   "home": 35
+  }
+ },
+ {
+  "ts": "2026-11-22T17:40Z",
+  "sport": "nfl",
+  "game": "JAX@NYG",
+  "market": "total",
+  "side": "under",
+  "line": 45.5,
+  "price": -110,
+  "units": 0.5,
+  "driver": "BOTH filters. Pinnacle 46.5->45 HELD 14.8h, limit $3k->$10k->$15k while holding. 82% tickets on over. Was +1.5 at 10:28 ET, FD came to 45.5 during the session, only +0.5 left -- sized down.",
+  "board_rank": "D -12.4",
+  "stake": "paper",
+  "result": "W",
+  "final": {
+   "away": 18,
+   "home": 23
+  }
+ },
+ {
+  "ts": "2026-11-22T17:40Z",
+  "sport": "nfl",
+  "game": "MIA@BUF",
+  "market": "spread",
+  "side": "home",
+  "line": -16.5,
+  "price": -115,
+  "units": 0.5,
+  "driver": "PRICE ONLY. 0.5pt better than Pinnacle -17 on $75k. Pinnacle unmoved 65h. No fade (60% tickets on BUF, same side).",
+  "board_rank": "A +57.7 SPLIT",
+  "stake": "paper",
+  "result": "W",
+  "final": {
+   "away": 9,
+   "home": 26
+  }
+ },
+ {
+  "ts": "2026-11-22T17:40Z",
+  "sport": "nfl",
+  "game": "TEN@DAL",
+  "market": "spread",
+  "side": "home",
+  "line": -7.5,
+  "price": -105,
+  "units": 0.5,
+  "driver": "PRICE ONLY. 0.5pt better than Pinnacle -8 on $100k. Pinnacle unmoved 65h.",
+  "board_rank": "D -33.5 SPLIT",
+  "stake": "paper",
+  "result": "W",
+  "final": {
+   "away": 30,
+   "home": 51
+  }
+ },
+ {
+  "ts": "2026-11-24T00:10Z",
+  "sport": "nfl",
+  "game": "CIN@WAS",
+  "market": "total",
+  "side": "under",
+  "line": 53.5,
+  "price": -100,
+  "units": 1.0,
+  "driver": "SIGNAL, recomputed live after the 13:33Z board went stale. Pinnacle 55->54 and TRIPLED its limit ($10k->$30k); FD over money drained 66%->52%; total topped 54.5 and retraced to 53.5. pin_move flipped from over to under. Against: follow_move still read over on net; the half-point gap favoured the over -- a price argument, deliberately ignored per Justin's correction.",
+  "board_rank": "board said OVER (stale)",
+  "stake": "paper",
+  "result": "W",
+  "final": {
+   "away": 20,
+   "home": 22
+  }
+ },
+ {
+  "ts": "2026-11-24T00:10Z",
+  "sport": "nfl",
+  "game": "CIN@WAS",
+  "market": "spread",
+  "side": "home",
+  "line": 6.5,
+  "price": -112,
+  "units": 1.0,
+  "driver": "SIGNAL, CORRECTED READ. Earlier I called a flat Pinnacle line 'agreement with the crowd' -- wrong. A number holding against 77% of the money is ABSORPTION. Pinnacle held -6.5 for 23h+ on $100,000 while shading price toward CIN (-103->-106, ML -288->-294): taxing the public side instead of moving. FD walked -4->-6.5, a retail book correcting a soft opener, not real movement. BetMGM trading manager (via Everson) reported sharp play on Washington spread and ML against 'overwhelming support for the Bengals'. 116,680 bets, biggest game of the week. Against: FD -112 vs Pinnacle -104; MGM quote is a book describing its own position.",
+  "board_rank": "board said CIN away (stale)",
+  "stake": "paper",
+  "result": "W",
+  "final": {
+   "away": 20,
+   "home": 22
+  }
  }
 ]
