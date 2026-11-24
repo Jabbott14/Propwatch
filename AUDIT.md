@@ -12,19 +12,19 @@ a session opens it, and the guards only fire once a measurement is already wrong
 
 ## 0. IS THE DATA STILL ARRIVING?
 
-  NFL collector    last    0.2h ago  (2026-11-24T08:03:53-05:00)
-  CBB collector    last    0.1h ago  (2026-11-24T13:10:37+00:00)
-  NCAAF collector  last    0.3h ago  (2026-11-24T13:00:04+00:00)
-  NFL grader       not in the last 51 commits (shallow clone — not a failure)
-  CBB grader       not in the last 51 commits (shallow clone — not a failure)
+  NFL collector    not in the last 1 commits (shallow clone — not a failure)
+  CBB collector    last    0.1h ago  (2026-11-24T22:51:22Z)
+  NCAAF collector  not in the last 1 commits (shallow clone — not a failure)
+  NFL grader       not in the last 1 commits (shallow clone — not a failure)
+  CBB grader       not in the last 1 commits (shallow clone — not a failure)
 
-  data             SOURCES FAILING as of 2026-11-24T12:47:22Z:
+  data             SOURCES FAILING as of 2026-11-24T21:38:38Z:
       vsin           HTTPError: HTTP Error 403: Forbidden
       vsin_circa     HTTPError: HTTP Error 403: Forbidden
       (that run reported pulls_fail=0 — the counter
        covers prop requests only, not these)
-  cbb              all sources OK as of 2026-11-24T13:10:33Z
-  ncaaf            all sources OK as of 2026-11-24T12:59:59Z
+  cbb              all sources OK as of 2026-11-24T22:51:11Z
+  ncaaf            all sources OK as of 2026-11-24T22:40:44Z
 
   1 feed/source problem(s). EVERY NUMBER BELOW THAT DEPENDS ON THEM IS SUSPECT --
   a dead feed does not look like an error downstream, it looks like a quiet
@@ -32,25 +32,15 @@ a session opens it, and the guards only fire once a measurement is already wrong
 
 ## 1. RECORDED AND CONSUMED BY NOTHING
 
-  6 RECORDED (computed, graded by nothing) | 9 OPEN (not built)
-
-  [RECORDED]       2d  key numbers 3 and 7 in football; CBB verified to have none
-             key_crossed, key_dist -- computed, graded by nothing
-
-  [RECORDED]       2d  a Pinnacle limit cut mid-week is unpriced news
-             lim_slashed, lim_drop_frac -- computed, graded by nothing
-
-  [RECORDED]       2d  the PATH money takes across the week, not its endpoint -- switches, retracements, give-backs
-             path_features(): line_eff, line_revs, mny_crossings, mny_gave_back, sync, against_money_pts
-             note: the two-photograph problem: every signal reads 2 observations from a series of 200-470. Median 232 money observations per NFL spread; the money majority flips in 28% of games. Recorded deliberately so grading it does not reset the holdout -- but recorded is not tested.
+  3 RECORDED (computed, graded by nothing) | 9 OPEN (not built)
 
   [RECORDED]       2d  signals that are strict SUBSETS of other signals are graded against the wrong thing
              audit.py section 5 computes lift vs parent; the scorecard still grades vs base rate
-             note: Found while re-testing volume properly. rlm_quiet fires 523/523 times where follow_move also fires -- 100%, by construction, since both require the line to have moved toward their side. rlm_ratio 477/477. pin_rlm 87.2% inside pin_move. They are FILTERS, not signals, and the comparison that matters is against the parent on the same games. Scored that way rlm_ratio lifts follow_move on CBB totals from 45.5% to 53.6%, ROI -13.1 to +2.6, n=252, z=+2.03 -- a row the base-rate scorecard reports as unremarkable. Also means the project does not have 12 independent signals: 8 pairs agree on side 100% of the time when both fire, so every 'two signals confirm' reading is in many cases one signal counted twice.
+             note: audit.py section 5 computes filter lift vs parent. Still RECORDED because the live SCORECARD continues to grade rlm_quiet/rlm_ratio/rlm/pin_rlm against a market base rate rather than their parent, so the board a person reads still shows the wrong comparison.
 
   [RECORDED]       2d  retracement off the Pinnacle extreme -- a number that bottomed and climbed back is not the same as one still falling
              pin_bounce, retraced -- display only
-             note: built after quoting a stale 136.5 -> 132 Pinnacle move on UTEP that had actually bottomed at 131 and been climbing 4.5h
+             note: pin_bounce and pin_extreme are stored on every close row but are not yet in the audit's feature list -- the path-layer features were graded first. Next one to wire in.
 
   [RECORDED]       1d  the NFL collector dies silently and nothing notices
              audit.py section 0 (heartbeat) now checks it; the workflow itself is NOT fixed
@@ -91,15 +81,15 @@ a session opens it, and the guards only fire once a measurement is already wrong
 ## 2. ANOMALY SCAN, WITH THE MULTIPLE-COMPARISONS DENOMINATOR
 
   excluded as non-independent or unscoreable:
-      1514  period=all (fit+fwd re-counted)
-       720  market=both (pools base rates)
-       649  signal pair (derived from singles)
+      1532  period=all (fit+fwd re-counted)
+       743  market=both (pools base rates)
+       666  signal pair (derived from singles)
 
-  independent-ish cells with >=30 decisions: 336
+  independent-ish cells with >=30 decisions: 347
   z is hit rate against each cell's OWN base rate, not against break-even.
-    |z| >= 1.65  observed 35    expected-by-chance   33.2   nothing here
-    |z| >= 2.0   observed 16    expected-by-chance   15.3   nothing here
-    |z| >= 2.5   observed 5     expected-by-chance    4.2   nothing here
+    |z| >= 1.65  observed 40    expected-by-chance   34.3   nothing here
+    |z| >= 2.0   observed 16    expected-by-chance   15.8   nothing here
+    |z| >= 2.5   observed 5     expected-by-chance    4.3   nothing here
     |z| >= 3.0   observed 3     expected-by-chance    0.9   ABOVE CHANCE -- worth a look
 
   The expected column is not a caveat. It is the comparison. A cell is only
@@ -108,13 +98,13 @@ a session opens it, and the guards only fire once a measurement is already wrong
 
   ### SIGN ASYMMETRY (direction, which the count test cannot see)
 
-  FWD    81 cells   32 positive / 49 negative   mean z -0.18   sign test p=0.075
-         rlm_quiet          n=  4  mean z -0.78
-         rlm_ratio          n=  3  mean z -0.75
-         follow_move        n= 16  mean z -0.62
-         pin_value          n=  6  mean z +0.51
-         money_delta        n=  3  mean z +0.53
-         consensus_gap      n=  7  mean z +0.80
+  FWD    92 cells   35 positive / 57 negative   mean z -0.32   sign test p=0.028
+         rlm_quiet          n=  5  mean z -0.99
+         rlm_ratio          n=  4  mean z -0.92
+         follow_move        n= 17  mean z -0.82
+         money_delta        n=  4  mean z +0.22
+         pin_value          n=  8  mean z +0.73
+         consensus_gap      n=  7  mean z +0.75
 
   FIT   255 cells   151 positive / 104 negative   mean z +0.07   sign test p=0.004
          consensus_gap      n= 27  mean z -0.43
@@ -129,21 +119,21 @@ a session opens it, and the guards only fire once a measurement is already wrong
   and the cells are not independent of each other (same games, nested slices), so
   the p-value above is optimistic. Treat it as a question, not a result.
 
-  ### FORWARD (out of sample -- evidence)  (81 cells)
+  ### FORWARD (out of sample -- evidence)  (92 cells)
 
   sport signal                 cp     mkt       slice             W-L   hit%  base%   edge    ROI%      z
-  cbb   follow_move            early  spread    all             22-36   37.9   51.4  -13.4   -26.7  -2.05
-  cbb   pin_move               close  total     all             31-50   38.3   49.6  -11.3   -26.8  -2.04
-  cbb   follow_move            early  spread    <1k bets        21-34   38.2   51.0  -12.8   -26.2  -1.90
-  cbb   follow_move            close  total     pin limit <$    12-23   34.3   49.1  -14.8   -34.5  -1.75
-  cbb   pin_value              close  spread    1-3k bets       27-16   62.8   49.8   13.0    17.1   1.70
-  cbb   consensus_gap          close  moneyline pin $2k+         24-9   72.7   59.1   13.6    26.2   1.59
-  cbb   follow_move            close  total     all             54-75   41.9   48.7   -6.9   -19.8  -1.55
-  cbb   pin_move               close  moneyline 1-3k bets       21-15   58.3   45.6   12.7    19.9   1.53
-  cbb   pin_move               close  total     pin $1-2k       19-30   38.8   49.6  -10.8   -25.7  -1.52
-  cbb   sharp_gap              close  total     pin limit <$    12-22   35.3   48.1  -12.8   -32.7  -1.49
-  cbb   pin_move               close  total     1-3k bets       22-34   39.3   49.1   -9.8   -25.0  -1.47
-  cbb   money_moving           close  total     pin limit <$    14-24   36.8   48.6  -11.8   -29.8  -1.45
+  cbb   follow_move            close  total     all             57-85   40.1   48.9   -8.8   -23.0  -2.09
+  cbb   pin_move               close  total     all             35-56   38.5   49.3  -10.9   -26.4  -2.07
+  cbb   follow_move            early  spread    all             24-38   38.7   51.3  -12.6   -25.2  -1.98
+  cbb   follow_move            early  spread    <1k bets        22-36   37.9   50.9  -13.0   -26.7  -1.98
+  cbb   sharp_gap              close  total     pin limit <$    13-26   33.3   49.0  -15.7   -36.3  -1.96
+  cbb   pin_value              close  spread    1-3k bets       32-19   62.7   49.3   13.4    16.9   1.92
+  cbb   money_moving           close  total     pin limit <$    15-28   34.9   49.4  -14.5   -33.5  -1.90
+  cbb   follow_move            close  total     pin limit <$    14-26   35.0   49.5  -14.5   -33.0  -1.83
+  cbb   pin_move               close  total     pin $1-2k       20-34   37.0   49.2  -12.2   -28.9  -1.79
+  cbb   rlm_quiet              close  total     all             23-44   34.3   44.8  -10.5   -33.7  -1.72
+  cbb   consensus_gap          close  moneyline pin $2k+         25-9   73.5   59.8   13.7    27.4   1.63
+  cbb   follow_move            early  moneyline <1k bets        43-32   57.3   48.0    9.3     5.9   1.62
 
   ### FIT (in sample -- hypotheses only)  (255 cells)
 
@@ -175,10 +165,6 @@ a session opens it, and the guards only fire once a measurement is already wrong
            why: it inverted in CBB, but NFL's n=43 cannot answer it either way. If the thesis is right anywhere it is probably NFL.
            next: most of a season of forward data  (owner: unassigned)
 
-  [    2d] Why do ~200 CBB finals never join to a graded game?
-           why: unknown selection bias in everything measured off the graded set
-           next: inspect the unmatched list  (owner: unassigned)
-
   [    2d] Does rlm_ratio's lift over follow_move on totals (+8.1 pts, ROI -13.1 to +2.6, n=252, z=+2.03) survive forward?
            why: the best-posed result the project has produced, because it is measured against the right denominator -- the parent signal on the same games, not a market base rate. pin_rlm shows the same direction on totals (+5.3 pts, ROI -9.2 to +1.3), which is weak support and not independent of it. FORWARD, 2026-11-22, once the date-field bug was fixed: lift +12.5 pts, ROI -34.8 to -11.0, n=28, z=+1.10. Direction reproduces out of sample. n=28 and z=1.10 are not evidence, but this is the FIRST thing in this project whose direction has held fit-to-forward at all, and note the parent is badly negative forward (34.0%) so part of the lift is the parent being bad.
            next: forward only, let n grow. Do not re-cut it in-sample. Watch whether the lift survives the parent improving.  (owner: unassigned)
@@ -203,6 +189,10 @@ a session opens it, and the guards only fire once a measurement is already wrong
            why: On 2026-11-22 the whole NFL card was ranked by FanDuel-vs-Pinnacle edge, two artifacts were built around it, and it was described as 'the only column that does not depend on a signal record'. Price gating is in the brain doc's CLOSED list -- the gap is non-monotonic, being a point WORSE than Pinnacle was the best bucket, and it had already been removed once for cutting plays with no support. Justin caught it the second time too, in nearly the same words. CLAUDE.md lists the closed items but a closed item is a fact to recall, not a check that fires. Day-one evidence was mixed: the four signal-only plays that price gating had excluded went 2-2, and the biggest price play (ARI +15.5, $100k limit) lost.
            next: consider making audit.py assert that the current ranking rule is not one of the closed ones -- a closed item that only lives in prose gets re-derived  (owner: unassigned)
 
+  [    0d] Does line_reversed hold forward as n grows? It is the only path feature on both sides of the holdout in both sports.
+           why: CBB fit totals 58.2% n=402 ROI +11.3 (z=+3.43); CBB FORWARD moneylines 55.2% n=192 ROI +17.0 (z=+1.85); NFL fit moneylines z=+2.05. A number that reverses at least once behaving differently from one that travels straight is also mechanically plausible -- a reversal means two opposing flows rather than one, so the close is a contested number rather than a settled one. 44 comparisons were made and ~2.2 were expected at |z|>=2, and the cells are not independent.
+           next: forward only, let n grow. Do not promote to a SIGNAL yet -- that moves the holdout.  (owner: unassigned)
+
 ## 5. FILTER LIFT -- signals that are subsets of other signals
 
   rlm_quiet and rlm_ratio fire only where follow_move also fires, 100% of the
@@ -213,47 +203,49 @@ a session opens it, and the guards only fire once a measurement is already wrong
   ### CBB
 
   does rlm_quiet improve on its parent follow_move?
-    spread    all         with  49.1% n=110 ROI   -5.3   without  48.3% n=487 ROI   -8.0   lift   +0.8pt /   +2.8ROI  z +0.16
-    spread    1-3k        with  52.1% n= 71 ROI   +0.5   without  48.5% n=326 ROI   -7.5   lift   +3.6pt /   +8.1ROI  z +0.56
-    spread    3k+         with  51.9% n= 27 ROI   +0.2   without  44.9% n= 89 ROI  -14.8   lift   +6.9pt /  +15.0ROI  z +0.63
-    total     all         with  43.1% n=248 ROI  -17.2   without  51.3% n=474 ROI   -2.1   lift   -8.1pt /  -15.1ROI  z -2.07
-    total     all    FWD  with  36.1% n= 61 ROI  -30.4   without  47.1% n= 68 ROI  -10.3   lift  -11.0pt /  -20.1ROI  z -1.26
+    spread    all         with  48.7% n=115 ROI   -6.0   without  48.1% n=491 ROI   -8.4   lift   +0.6pt /   +2.4ROI  z +0.12
+    spread    all    FWD  with  42.3% n= 26 ROI  -17.7   without  47.2% n= 72 ROI   -9.5   lift   -4.9pt /   -8.2ROI  z -0.43
+    spread    1-3k        with  51.4% n= 74 ROI   -0.9   without  48.2% n=330 ROI   -8.1   lift   +3.2pt /   +7.2ROI  z +0.49
+    spread    3k+         with  51.7% n= 29 ROI   -0.1   without  44.9% n= 89 ROI  -14.8   lift   +6.8pt /  +14.7ROI  z +0.64
+    total     all         with  42.5% n=254 ROI  -18.4   without  50.9% n=481 ROI   -2.7   lift   -8.4pt /  -15.7ROI  z -2.17
+    total     all    FWD  with  34.3% n= 67 ROI  -33.7   without  45.3% n= 75 ROI  -13.5   lift  -11.0pt /  -20.2ROI  z -1.34
     total     <1k         with  53.1% n= 32 ROI   +2.0   without  39.7% n= 63 ROI  -23.9   lift  +13.4pt /  +25.8ROI  z +1.25
-    total     1-3k        with  43.0% n=165 ROI  -17.5   without  52.0% n=306 ROI   -0.8   lift   -8.9pt /  -16.7ROI  z -1.85
-    total     1-3k   FWD  with  36.4% n= 44 ROI  -29.8   without  48.9% n= 47 ROI   -6.9   lift  -12.6pt /  -22.9ROI  z -1.21
-    total     3k+         with  37.3% n= 51 ROI  -28.2   without  56.2% n=105 ROI   +7.2   lift  -18.9pt /  -35.4ROI  z -2.22
-    moneyline all         with  30.9% n=220 ROI   -8.3   without  71.9% n=417 ROI   -4.5   lift  -41.0pt /   -3.8ROI  z -9.97   [ML: read ROI only, hit lift is a dog/fav artifact]
-    moneyline all    FWD  with  27.6% n= 58 ROI  -18.7   without  63.9% n= 61 ROI   -0.8   lift  -36.3pt /  -17.9ROI  z -3.98   [ML: read ROI only, hit lift is a dog/fav artifact]
+    total     1-3k        with  42.4% n=170 ROI  -18.8   without  51.6% n=310 ROI   -1.4   lift   -9.3pt /  -17.4ROI  z -1.94
+    total     1-3k   FWD  with  34.7% n= 49 ROI  -33.0   without  47.1% n= 51 ROI  -10.4   lift  -12.4pt /  -22.6ROI  z -1.26
+    total     3k+         with  36.5% n= 52 ROI  -29.6   without  55.6% n=108 ROI   +6.0   lift  -19.0pt /  -35.6ROI  z -2.25
+    moneyline all         with  30.8% n=227 ROI   -8.3   without  71.9% n=423 ROI   -4.5   lift  -41.0pt /   -3.8ROI  z -10.09   [ML: read ROI only, hit lift is a dog/fav artifact]
+    moneyline all    FWD  with  27.7% n= 65 ROI  -17.4   without  64.2% n= 67 ROI   -0.8   lift  -36.5pt /  -16.6ROI  z -4.20   [ML: read ROI only, hit lift is a dog/fav artifact]
     moneyline <1k         with  22.2% n= 27 ROI  -39.6   without  72.4% n= 76 ROI   -8.3   lift  -50.1pt /  -31.3ROI  z -4.55   [ML: read ROI only, hit lift is a dog/fav artifact]
-    moneyline 1-3k        with  31.3% n=147 ROI   -2.5   without  74.6% n=244 ROI   -2.8   lift  -43.3pt /   +0.3ROI  z -8.41   [ML: read ROI only, hit lift is a dog/fav artifact]
-    moneyline 1-3k   FWD  with  36.6% n= 41 ROI   +9.1   without  60.0% n= 40 ROI   -2.9   lift  -23.4pt /  +12.0ROI  z -2.11   [ML: read ROI only, hit lift is a dog/fav artifact]
-    moneyline 3k+         with  34.8% n= 46 ROI   -8.6   without  64.9% n= 97 ROI   -6.0   lift  -30.2pt /   -2.7ROI  z -3.39   [ML: read ROI only, hit lift is a dog/fav artifact]
+    moneyline 1-3k        with  31.6% n=152 ROI   -1.4   without  74.1% n=247 ROI   -3.2   lift  -42.5pt /   +1.8ROI  z -8.35   [ML: read ROI only, hit lift is a dog/fav artifact]
+    moneyline 1-3k   FWD  with  37.0% n= 46 ROI  +11.4   without  58.1% n= 43 ROI   -5.5   lift  -21.2pt /  +16.9ROI  z -2.00   [ML: read ROI only, hit lift is a dog/fav artifact]
+    moneyline 3k+         with  33.3% n= 48 ROI  -12.4   without  66.0% n=100 ROI   -4.6   lift  -32.7pt /   -7.8ROI  z -3.74   [ML: read ROI only, hit lift is a dog/fav artifact]
 
   does rlm_ratio improve on its parent follow_move?
-    spread    all         with  48.3% n= 87 ROI   -7.9   without  48.4% n=510 ROI   -7.5   lift   -0.2pt /   -0.5ROI  z -0.03
-    spread    1-3k        with  47.3% n= 55 ROI  -10.0   without  49.4% n=342 ROI   -5.5   lift   -2.1pt /   -4.5ROI  z -0.29
-    total     all         with  53.0% n=266 ROI   +1.6   without  45.8% n=456 ROI  -12.4   lift   +7.2pt /  +14.0ROI  z +1.86
-    total     all    FWD  with  45.2% n= 42 ROI  -13.1   without  40.2% n= 87 ROI  -23.0   lift   +5.0pt /   +9.8ROI  z +0.54
+    spread    all         with  48.3% n= 87 ROI   -7.9   without  48.2% n=519 ROI   -8.0   lift   +0.1pt /   +0.0ROI  z +0.02
+    spread    1-3k        with  47.3% n= 55 ROI  -10.0   without  49.0% n=349 ROI   -6.3   lift   -1.7pt /   -3.7ROI  z -0.24
+    total     all         with  52.0% n=271 ROI   -0.3   without  45.7% n=464 ROI  -12.7   lift   +6.3pt /  +12.4ROI  z +1.66
+    total     all    FWD  with  40.4% n= 47 ROI  -22.4   without  40.0% n= 95 ROI  -23.3   lift   +0.4pt /   +0.9ROI  z +0.05
     total     <1k         with  57.1% n= 35 ROI  +10.0   without  36.7% n= 60 ROI  -29.8   lift  +20.5pt /  +39.8ROI  z +1.94
-    total     1-3k        with  51.4% n=179 ROI   -1.6   without  47.3% n=292 ROI   -9.7   lift   +4.1pt /   +8.1ROI  z +0.87
-    total     1-3k   FWD  with  42.9% n= 28 ROI  -17.9   without  42.9% n= 63 ROI  -18.0   lift   +0.0pt /   +0.2ROI  z +0.00
-    total     3k+         with  55.8% n= 52 ROI   +6.9   without  47.1% n=104 ROI  -10.0   lift   +8.7pt /  +16.9ROI  z +1.02
-    moneyline all         with  29.9% n=157 ROI  -13.0   without  66.9% n=480 ROI   -3.5   lift  -36.9pt /   -9.5ROI  z -8.13   [ML: read ROI only, hit lift is a dog/fav artifact]
-    moneyline all    FWD  with  25.0% n= 40 ROI  -44.1   without  57.0% n= 79 ROI   +8.0   lift  -32.0pt /  -52.1ROI  z -3.30   [ML: read ROI only, hit lift is a dog/fav artifact]
-    moneyline 1-3k        with  27.3% n=110 ROI  -18.0   without  70.5% n=281 ROI   +3.3   lift  -43.2pt /  -21.4ROI  z -7.79   [ML: read ROI only, hit lift is a dog/fav artifact]
-    moneyline 1-3k   FWD  with  28.1% n= 32 ROI  -37.5   without  61.2% n= 49 ROI  +29.7   lift  -33.1pt /  -67.2ROI  z -2.91   [ML: read ROI only, hit lift is a dog/fav artifact]
-    moneyline 3k+         with  41.4% n= 29 ROI  +18.6   without  58.8% n=114 ROI  -13.3   lift  -17.4pt /  +31.9ROI  z -1.68   [ML: read ROI only, hit lift is a dog/fav artifact]
+    total     1-3k        with  50.3% n=183 ROI   -3.8   without  47.1% n=297 ROI   -9.9   lift   +3.1pt /   +6.1ROI  z +0.67
+    total     1-3k   FWD  with  37.5% n= 32 ROI  -28.1   without  42.6% n= 68 ROI  -18.3   lift   -5.1pt /   -9.8ROI  z -0.49
+    total     3k+         with  54.7% n= 53 ROI   +4.9   without  46.7% n=107 ROI  -10.7   lift   +8.0pt /  +15.6ROI  z +0.95
+    moneyline all         with  29.8% n=161 ROI  -12.6   without  66.7% n=489 ROI   -3.6   lift  -36.9pt /   -9.0ROI  z -8.21   [ML: read ROI only, hit lift is a dog/fav artifact]
+    moneyline all    FWD  with  25.0% n= 44 ROI  -39.7   without  56.8% n= 88 ROI   +6.4   lift  -31.8pt /  -46.1ROI  z -3.46   [ML: read ROI only, hit lift is a dog/fav artifact]
+    moneyline 1-3k        with  27.7% n=112 ROI  -15.8   without  69.7% n=287 ROI   +2.6   lift  -42.0pt /  -18.4ROI  z -7.64   [ML: read ROI only, hit lift is a dog/fav artifact]
+    moneyline 1-3k   FWD  with  29.4% n= 34 ROI  -28.8   without  58.2% n= 55 ROI  +23.1   lift  -28.8pt /  -51.9ROI  z -2.64   [ML: read ROI only, hit lift is a dog/fav artifact]
+    moneyline 3k+         with  38.7% n= 31 ROI  +11.0   without  59.8% n=117 ROI  -12.0   lift  -21.1pt /  +22.9ROI  z -2.10   [ML: read ROI only, hit lift is a dog/fav artifact]
 
   does pin_rlm improve on its parent pin_move?
-    spread    all         with  53.1% n= 49 ROI   +1.4   without  48.3% n=418 ROI   -7.7   lift   +4.7pt /   +9.1ROI  z +0.63
-    spread    1-3k        with  53.1% n= 32 ROI   +1.4   without  49.6% n=272 ROI   -5.2   lift   +3.5pt /   +6.7ROI  z +0.37
-    total     all         with  52.4% n=164 ROI   +0.5   without  47.2% n=305 ROI   -9.8   lift   +5.2pt /  +10.3ROI  z +1.08
+    spread    all         with  53.1% n= 49 ROI   +1.4   without  48.1% n=426 ROI   -8.1   lift   +4.9pt /   +9.5ROI  z +0.66
+    spread    1-3k        with  53.1% n= 32 ROI   +1.4   without  49.3% n=278 ROI   -5.9   lift   +3.8pt /   +7.3ROI  z +0.41
+    total     all         with  51.2% n=168 ROI   -1.9   without  47.6% n=311 ROI   -9.1   lift   +3.6pt /   +7.2ROI  z +0.75
+    total     all    FWD  with  33.3% n= 27 ROI  -35.9   without  40.6% n= 64 ROI  -22.4   lift   -7.3pt /  -13.5ROI  z -0.65
     total     <1k         with  59.3% n= 27 ROI  +13.9   without  51.4% n= 37 ROI   -1.5   lift   +7.9pt /  +15.3ROI  z +0.63
-    total     1-3k        with  53.5% n=101 ROI   +2.3   without  46.8% n=203 ROI  -10.7   lift   +6.7pt /  +13.0ROI  z +1.10
-    total     3k+         with  44.4% n= 36 ROI  -14.6   without  46.2% n= 65 ROI  -11.8   lift   -1.7pt /   -2.8ROI  z -0.17
-    moneyline all         with  37.5% n= 88 ROI  +17.2   without  57.4% n=169 ROI   -4.3   lift  -19.9pt /  +21.5ROI  z -3.03   [ML: read ROI only, hit lift is a dog/fav artifact]
-    moneyline 1-3k        with  41.5% n= 53 ROI  +31.6   without  58.7% n= 92 ROI   -2.2   lift  -17.2pt /  +33.8ROI  z -2.00   [ML: read ROI only, hit lift is a dog/fav artifact]
-    moneyline 3k+         with  32.0% n= 25 ROI   -4.8   without  56.6% n= 53 ROI   -4.4   lift  -24.6pt /   -0.4ROI  z -2.03   [ML: read ROI only, hit lift is a dog/fav artifact]
+    total     1-3k        with  51.9% n=104 ROI   -0.6   without  47.6% n=208 ROI   -9.1   lift   +4.3pt /   +8.5ROI  z +0.72
+    total     3k+         with  43.2% n= 37 ROI  -16.9   without  45.5% n= 66 ROI  -13.1   lift   -2.2pt /   -3.8ROI  z -0.22
+    moneyline all         with  37.0% n= 92 ROI  +16.7   without  57.3% n=171 ROI   -4.6   lift  -20.4pt /  +21.3ROI  z -3.15   [ML: read ROI only, hit lift is a dog/fav artifact]
+    moneyline 1-3k        with  41.1% n= 56 ROI  +32.1   without  58.1% n= 93 ROI   -3.2   lift  -17.0pt /  +35.3ROI  z -2.01   [ML: read ROI only, hit lift is a dog/fav artifact]
+    moneyline 3k+         with  30.8% n= 26 ROI   -8.4   without  57.4% n= 54 ROI   -3.8   lift  -26.6pt /   -4.7ROI  z -2.23   [ML: read ROI only, hit lift is a dog/fav artifact]
 
   ### NFL
 
@@ -262,54 +254,55 @@ a session opens it, and the guards only fire once a measurement is already wrong
   Splitting calls already made. No call changes, so the holdout does NOT move.
   This is what 'RECORDED and consumed by nothing' was costing.
 
-  44 comparisons made. Chance alone gives ~2.2 at |z|>=2.0 and
-  ~4.4 at |z|>=1.65. Read every row below against those two numbers.
+  45 comparisons made. Chance alone gives ~2.2 at |z|>=2.0 and
+  ~4.5 at |z|>=1.65. Read every row below against those two numbers.
 
   sport per  feature        mkt                         WITH                WITHOUT      z
   nfl   fit  deep_series    spread         36.9% n=179 -30.0       73.5% n=34 +36.8  -3.96
   cbb   fit  line_reversed  total          58.2% n=402 +11.3      49.1% n=3098 -6.2   3.43
   cbb   fit  lim_slashed    spread          72.9% n=48 +41.5      49.5% n=2990 -6.1   3.22
   nfl   fit  mny_crossed    moneyline       21.1% n=38 -55.8      48.4% n=223 -15.8  -3.14
+  cbb   fwd  mny_gave_back  moneyline      43.1% n=274 -20.0      54.9% n=306 +24.3  -2.85
   cbb   fit  line_ineff     moneyline      43.0% n=1022 -1.7      48.7% n=1192 +0.4  -2.68
-  cbb   fwd  mny_gave_back  moneyline      43.8% n=251 -19.0      55.5% n=274 +22.9  -2.67
   cbb   fit  lim_slashed    total           65.7% n=67 +25.6      49.9% n=3433 -4.7   2.56
   nfl   fit  line_ineff     moneyline      40.7% n=209 -30.9       59.6% n=52 +15.6  -2.46
   nfl   fit  mny_crossed    total           59.6% n=89 +13.4      43.4% n=113 -16.9   2.28
   cbb   fit  mny_crossed    total          49.3% n=2821 -5.9       53.9% n=679 +3.1  -2.17
   nfl   fit  line_reversed  moneyline       50.4% n=139 -8.2      37.7% n=122 -37.0   2.05
-  cbb   fwd  line_reversed  moneyline      55.2% n=192 +17.0       46.8% n=333 -5.3   1.85
   cbb   fit  mny_gave_back  spread         51.9% n=1157 -1.1      48.5% n=1881 -8.0   1.82
-  cbb   fwd  mny_crossed    moneyline       52.5% n=345 +8.7       45.0% n=180 -8.3   1.62
+  cbb   fwd  line_reversed  moneyline      54.1% n=207 +14.9       46.6% n=373 -3.1   1.72
+  nfl   fwd  line_ineff     total           76.0% n=25 +45.4        56.6% n=53 +8.1   1.65
   nfl   fit  key_crossed    spread          31.7% n=41 -38.9      45.3% n=172 -14.7  -1.59
-  cbb   fwd  line_ineff     spread          56.4% n=140 +7.1       48.3% n=290 -8.1   1.58
   nfl   fit  mny_gave_back  moneyline        51.1% n=90 +7.8      40.9% n=171 -37.1   1.57
   cbb   fit  line_ineff     total           52.9% n=681 +1.1      49.5% n=2819 -5.4   1.57
   cbb   fit  line_reversed  moneyline       47.9% n=941 +9.4      44.6% n=1273 -7.9   1.54
   nfl   fit  mny_gave_back  total           41.8% n=55 -20.1       53.7% n=147 +2.6  -1.51
-  cbb   fwd  line_ineff     moneyline       46.3% n=214 +1.9       52.4% n=311 +3.6  -1.38
   cbb   fit  mny_gave_back  moneyline       44.3% n=902 -3.4      47.2% n=1312 +1.5  -1.31
+  cbb   fwd  line_ineff     spread          54.2% n=155 +2.9       47.9% n=351 -9.1   1.31
+  cbb   fwd  mny_gave_back  total           48.0% n=446 -8.3      43.4% n=332 -17.3   1.28
   cbb   fit  mny_gave_back  total          49.3% n=1954 -5.8      51.3% n=1546 -2.1  -1.18
+  nfl   fwd  mny_gave_back  total            55.9% n=34 +8.1       68.2% n=44 +29.3  -1.11
+  cbb   fwd  line_ineff     moneyline       46.5% n=230 +2.0       51.1% n=350 +4.2  -1.09
   nfl   fit  mny_crossed    spread          33.3% n=27 -37.2      44.1% n=186 -16.8  -1.06
-  cbb   fwd  mny_gave_back  spread           56.0% n=75 +5.6       49.9% n=355 -5.0   0.97
+  nfl   fwd  deep_series    moneyline        46.9% n=32 +9.7       35.3% n=51 -38.9   1.05
   cbb   fit  mny_crossed    spread         49.3% n=2111 -6.6       51.1% n=927 -2.5  -0.95
+  cbb   fwd  mny_crossed    moneyline       50.6% n=387 +4.0       46.6% n=193 +2.1   0.91
+  cbb   fwd  mny_gave_back  spread           54.0% n=87 +1.8       48.9% n=419 -6.9   0.87
   cbb   fit  line_ineff     spread          48.5% n=715 -8.0      50.2% n=2323 -4.6  -0.80
-  cbb   fwd  line_ineff     total           49.8% n=203 -5.0      46.4% n=491 -11.4   0.80
-  nfl   fwd  mny_gave_back  total           59.3% n=27 +13.9       68.2% n=44 +29.3  -0.76
-  nfl   fwd  deep_series    moneyline       44.0% n=25 -14.8       35.3% n=51 -38.9   0.73
-  cbb   fwd  mny_crossed    total          46.9% n=620 -10.3        51.4% n=74 -2.4  -0.72
-  nfl   fwd  deep_series    spread           52.0% n=25 +2.1       43.2% n=44 -17.1   0.71
-  cbb   fwd  mny_gave_back  total           48.4% n=411 -7.5      45.9% n=283 -12.4   0.64
+  nfl   fwd  deep_series    total           58.8% n=34 +12.1       65.9% n=44 +26.2  -0.64
   nfl   fit  deep_series    moneyline      43.6% n=218 -23.0       48.8% n=43 -14.7  -0.63
-  cbb   fwd  line_reversed  total           44.2% n=77 -16.5       47.8% n=617 -8.6  -0.61
   cbb   fit  lim_slashed    moneyline        41.5% n=41 -8.5      46.1% n=2173 -0.4  -0.59
   nfl   fit  line_ineff     total            53.4% n=58 +1.6       49.3% n=144 -5.7   0.53
+  cbb   fwd  mny_crossed    total          45.7% n=674 -12.7       48.1% n=104 -8.3  -0.45
   nfl   fit  mny_gave_back  spread          44.4% n=72 -15.4      41.8% n=141 -21.4   0.36
+  cbb   fwd  line_reversed  total           44.2% n=77 -16.5      46.2% n=701 -11.6  -0.34
+  cbb   fwd  line_reversed  spread           51.6% n=64 -2.1       49.5% n=442 -5.9   0.30
+  nfl   fwd  deep_series    spread           46.7% n=30 -8.6       43.2% n=44 -17.1   0.30
   nfl   fit  deep_series    total           50.8% n=177 -2.8        48.0% n=25 -8.8   0.27
   cbb   fit  mny_crossed    moneyline      46.2% n=1458 -0.9       45.6% n=756 +0.2   0.27
-  nfl   fwd  deep_series    total           63.0% n=27 +19.0       65.9% n=44 +26.2  -0.25
+  cbb   fwd  line_ineff     total          46.7% n=229 -10.8      45.7% n=549 -12.6   0.26
+  cbb   fwd  mny_crossed    spread          50.2% n=321 -4.9       49.2% n=185 -6.4   0.21
   cbb   fit  line_reversed  spread          50.2% n=233 -5.4      49.8% n=2805 -5.4   0.12
-  cbb   fwd  line_reversed  spread           51.6% n=64 -2.1       50.8% n=366 -3.3   0.11
-  cbb   fwd  mny_crossed    spread          50.7% n=272 -3.6       51.3% n=158 -2.3  -0.11
 
   FIT is a hypothesis, FORWARD is evidence. A feature that only appears in FIT
   rows has not been tested; one that holds in both, and across sports, is the
@@ -321,11 +314,11 @@ a session opens it, and the guards only fire once a measurement is already wrong
 ## 4. HOLDOUT AND FORWARD SAMPLE
 
   cbb: holdout from 2026-11-21 (3d ago)
-         684 fit games, 138 forward games
+         684 fit games, 155 forward games
 
   nfl: holdout from 2026-11-21 (3d ago)
-         43 fit games, 11 forward games
-         forward sample is 11 games. Nothing measured forward can
+         43 fit games, 12 forward games
+         forward sample is 12 games. Nothing measured forward can
          distinguish a 55% signal from a 50% one yet. Do not promote on it.
 
 ------------------------------------------------------------------------------
