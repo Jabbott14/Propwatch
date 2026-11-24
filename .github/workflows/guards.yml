@@ -1,0 +1,164 @@
+name: guards
+# The first thing in this repo that ENFORCES rather than informs.
+#
+# Three guards already run inside the graders -- check_rate (plausibility), composition
+# (market mix) and field_coverage. They print to the Actions log. In the two weeks since
+# they were written, the log has not been read once, and in that time:
+#
+#   * VSIN returned HTTP 403 on every cycle for twelve days and _diag.json recorded it
+#     every time
+#   * the NFL collector died twice, once fifteen minutes before a kickoff
+#   * five register items sat RECORDED, computed every run and graded by nothing
+#
+# None of those were found by the guards. All were found by a person looking. A guard
+# that prints is a guard that depends on someone reading, which is the same failure mode
+# as the prose rules in CLAUDE.md that have now been broken five times.
+#
+# So this runs on every push and FAILS the check when something is actually wrong. A red
+# X on a commit is seen; a line 400 deep in a log is not.
+#
+# Deliberately narrow. It fails only on conditions that are unambiguously broken, never
+# on a judgement call, because a check that fires on judgement gets disabled and then
+# enforces nothing at all. check_rate's first calibration fired 95 times and had to be
+# recalibrated to 5; composition fired 108 and came down to 37. Same lesson.
+on:
+  push:
+    branches: [main]
+    paths-ignore:
+      - 'raw/**'          # the collector pushes these every hour; not worth a run
+      - '**/data/**'
+      - 'WATCH.md'
+      - 'AUDIT.md'
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: guards-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: python files parse
+        run: |
+          fail=0
+          for f in audit.py watch.py xbook.py; do
+            [ -f "$f" ] || continue
+            python3 -c "import ast,sys; ast.parse(open('$f').read())" \
+              && echo "ok    $f" || { echo "FAIL  $f does not parse"; fail=1; }
+          done
+          for f in cbb/collect.py ncaaf/collect.py; do
+            [ -f "$f" ] || continue
+            python3 -c "import ast,sys; ast.parse(open('$f').read())" \
+              && echo "ok    $f" || { echo "FAIL  $f does not parse"; fail=1; }
+          done
+          exit $fail
+
+      - name: embedded collector/grader python parses
+        # The graders and the NFL collector live inside heredocs in their workflow files.
+        # A syntax error there is invisible until the next scheduled run fails, which is
+        # hours later and silent because continue-on-error is set.
+        run: |
+          python3 - <<'PY'
+          import glob, ast, sys, re
+          bad = 0
+          for p in sorted(glob.glob('.github/workflows/*.yml')):
+              src = open(p).read()
+              for m in re.finditer(r"<<'PY'\n(.*?)\n\s*PY\n", src, re.S):
+                  body = m.group(1)
+                  indent = min((len(l) - len(l.lstrip()) for l in body.split('\n') if l.strip()),
+                               default=0)
+                  code = '\n'.join(l[indent:] if len(l) >= indent else l
+                                   for l in body.split('\n'))
+                  try:
+                      ast.parse(code)
+                      print(f'ok    {p} (embedded, {len(code)} bytes)')
+                  except SyntaxError as e:
+                      print(f'FAIL  {p} embedded python: line {e.lineno}: {e.msg}')
+                      bad = 1
+          sys.exit(bad)
+          PY
+
+      - name: workflows are valid YAML
+        run: |
+          python3 - <<'PY'
+          import glob, sys, yaml
+          bad = 0
+          for p in sorted(glob.glob('.github/workflows/*.yml')):
+              try:
+                  yaml.safe_load(open(p)); print(f'ok    {p}')
+              except Exception as e:
+                  print(f'FAIL  {p}: {e}'); bad = 1
+          sys.exit(bad)
+          PY
+
+      - name: register and picks are valid, and self-consistent
+        run: |
+          python3 - <<'PY'
+          import json, sys, datetime as dt
+          bad = 0
+          try:
+              r = json.load(open('register.json'))
+          except Exception as e:
+              print(f'FAIL  register.json: {e}'); sys.exit(1)
+          STATES = {'SIGNAL','RECORDED','TESTED','OPEN','CLOSED'}
+          ids = set()
+          for i in r.get('ideas', []):
+              for k in ('id','idea','state','recorded'):
+                  if not i.get(k):
+                      print(f"FAIL  register idea missing {k}: {i.get('id','?')}"); bad = 1
+              if i.get('state') not in STATES:
+                  print(f"FAIL  unknown state {i.get('state')!r} on {i.get('id')}"); bad = 1
+              if i.get('id') in ids:
+                  print(f"FAIL  duplicate register id {i.get('id')}"); bad = 1
+              ids.add(i.get('id'))
+              try:
+                  dt.date.fromisoformat(i.get('recorded',''))
+              except Exception:
+                  print(f"FAIL  bad recorded date on {i.get('id')}"); bad = 1
+          print(f'ok    register.json: {len(r.get("ideas",[]))} ideas, '
+                f'{len(r.get("questions",[]))} questions')
+
+          try:
+              p = json.load(open('picks.json'))
+          except Exception as e:
+              print(f'FAIL  picks.json: {e}'); sys.exit(1)
+          for x in p:
+              for k in ('ts','game','market','units'):
+                  if k not in x:
+                      print(f"FAIL  pick missing {k}: {x.get('game','?')}"); bad = 1
+              # picks.json logs what the SYSTEM suggested, not what Justin bet.
+              # A pick with a result must carry the reasoning that produced it, or the
+              # scorecard measures nothing you can learn from.
+              if x.get('result') and not x.get('driver'):
+                  print(f"FAIL  graded pick with no driver: {x.get('game')} {x.get('ts')}"); bad = 1
+          print(f'ok    picks.json: {len(p)} picks')
+          sys.exit(bad)
+          PY
+
+      - name: closed items are not being used as filters
+        # Price gating is CLOSED with evidence and has been rebuilt by mistake twice,
+        # both times caught by Justin rather than by anything here. This is the narrowest
+        # possible mechanical check on it: the register must still carry it as CLOSED, so
+        # a future session cannot quietly flip it back without the change showing up here.
+        run: |
+          python3 - <<'PY'
+          import json, sys
+          r = json.load(open('register.json'))
+          by = {i['id']: i for i in r.get('ideas', [])}
+          bad = 0
+          for cid in ('price_gate', 'dog_angle', 'rlm_no_pin', 'hit_rate'):
+              i = by.get(cid)
+              if not i:
+                  print(f'FAIL  closed item {cid} is missing from the register'); bad = 1
+              elif i['state'] != 'CLOSED':
+                  print(f'FAIL  {cid} was CLOSED with evidence and is now {i["state"]!r}. '
+                        f'Reopening needs new data and a note saying what it is.'); bad = 1
+              else:
+                  print(f'ok    {cid} still CLOSED')
+          sys.exit(bad)
+          PY
