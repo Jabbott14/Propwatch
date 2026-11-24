@@ -241,6 +241,16 @@
    "recorded": "2026-11-24",
    "source": "claude",
    "note": "BLOCKING. xbook.py found that book 75 leads the market at z=+3.67 and nobody knows what book 75 is. The AN payload carries no book metadata -- no names, no books array. Identify by cross-referencing a known line at a known time against a named sportsbook, or by finding AN's book-list endpoint. Until then the strongest cross-book result in the project points at an anonymous book."
+  },
+  {
+   "id": "cbb_coverage",
+   "idea": "what the CBB graded set actually is: competitive games only",
+   "state": "TESTED",
+   "where": "cbb/finals vs cbb/graded/games.json",
+   "recorded": "2026-11-24",
+   "tested": "2026-11-24",
+   "source": "claude",
+   "note": "RESOLVES the '~200 unjoined CBB finals' item, whose framing was wrong. ALL 822 graded games have a final -- there is no missing-result defect. The real situation is the other direction: we hold 1,269 D-I finals and 645 of them never had odds collected at all (the team pair appears nowhere in graded, at any date, so it is not a matcher bug). AND THEY ARE SYSTEMATICALLY DIFFERENT GAMES: uncollected median margin 25 with 51.0% blowouts (>=25 pts); collected median margin 12 with 21.4% blowouts. Total points are identical (151 vs 150), so it is competitiveness, not pace. FanDuel posts splits for games people bet, and nobody bets a 40-point November mismatch. This is a SELECTION STATEMENT, not a defect: every base rate and every signal record in this project describes games that drew a betting market, which are the competitive half. It is benign for betting (you cannot bet a game with no line) but it means no claim here generalises to 'CBB' -- only to CBB games with a market. Two of my three join attempts while establishing this were wrong (ESPN ids vs Action Network gids, then abbreviations vs full names, both returning 0 matches); rule 4 -- an empty filter is evidence about the filter first -- caught both."
   }
  ],
  "questions": [
@@ -267,14 +277,6 @@
    "q": "Does the volume/attention thesis hold in NFL, where public bias is stronger?",
    "why": "it inverted in CBB, but NFL's n=43 cannot answer it either way. If the thesis is right anywhere it is probably NFL.",
    "next": "most of a season of forward data"
-  },
-  {
-   "id": "q_unjoined",
-   "asked": "2026-11-22",
-   "owner": "unassigned",
-   "q": "Why do ~200 CBB finals never join to a graded game?",
-   "why": "unknown selection bias in everything measured off the graded set",
-   "next": "inspect the unmatched list"
   },
   {
    "id": "q_filter_lift",
