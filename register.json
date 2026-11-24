@@ -46,27 +46,32 @@
   {
    "id": "key_numbers",
    "idea": "key numbers 3 and 7 in football; CBB verified to have none",
-   "state": "RECORDED",
+   "state": "TESTED",
    "where": "key_crossed, key_dist -- computed, graded by nothing",
    "recorded": "2026-11-22",
-   "source": "justin+research"
+   "source": "justin+research",
+   "note": "GRADED 2026-11-24 as a conditioner. NFL spread, crossing a key number: 31.5% n=54 vs 46.5% n=228, z=-2.00 -- NEGATIVE, and only in-sample. No support so far.",
+   "tested": "2026-11-24"
   },
   {
    "id": "lim_slashed",
    "idea": "a Pinnacle limit cut mid-week is unpriced news",
-   "state": "RECORDED",
+   "state": "TESTED",
    "where": "lim_slashed, lim_drop_frac -- computed, graded by nothing",
    "recorded": "2026-11-22",
-   "source": "justin+research"
+   "source": "justin+research",
+   "note": "GRADED 2026-11-24 as a conditioner. STRONGEST in-sample result in the feature set and ZERO forward observations, because the holdout moved 2026-11-21 and limit cuts are rare: CBB spread 72.9% n=48 ROI +41.5 vs 49.5% / -6.1 (z=+3.22); CBB total 65.7% n=67 ROI +25.6 vs 49.9% / -4.7 (z=+2.56). Justin's own research item, and it has the documented outside mechanism CLAUDE.md asks for -- a limit cut is unpriced news. But n=48 and n=67 with no forward test is a hypothesis, not a finding, and the project has been burned by exactly this shape before (pin_value 108-68 in-sample, 8-11 forward).",
+   "tested": "2026-11-24"
   },
   {
    "id": "money_path",
    "idea": "the PATH money takes across the week, not its endpoint -- switches, retracements, give-backs",
-   "state": "RECORDED",
+   "state": "TESTED",
    "where": "path_features(): line_eff, line_revs, mny_crossings, mny_gave_back, sync, against_money_pts",
    "recorded": "2026-11-22",
    "source": "justin",
-   "note": "the two-photograph problem: every signal reads 2 observations from a series of 200-470. Median 232 money observations per NFL spread; the money majority flips in 28% of games. Recorded deliberately so grading it does not reset the holdout -- but recorded is not tested."
+   "note": "GRADED 2026-11-24 as a CONDITIONER, which changes no call so the holdout did not move. This is what two days of RECORDED was costing. audit.py section 6 splits every graded call by each path feature. 44 comparisons, ~2.2 expected at |z|>=2.0, 11 observed. The one that matters: line_reversed (the number reversed at least once) is positive in CBB fit totals (58.2% n=402, ROI +11.3, z=+3.43), CBB fit moneylines (+9.4 ROI), CBB FORWARD moneylines (55.2% n=192, ROI +17.0, z=+1.85) and NFL fit moneylines (z=+2.05) -- the only feature appearing on both sides of the holdout AND in both sports, which is the project's own stated standard. line_ineff runs the other way on moneylines in both sports. Cells are NOT independent (same games, nested signals), so 44 is not 44 independent tests.",
+   "tested": "2026-11-24"
   },
   {
    "id": "wrong_denom",
@@ -75,7 +80,7 @@
    "where": "audit.py section 5 computes lift vs parent; the scorecard still grades vs base rate",
    "recorded": "2026-11-22",
    "source": "claude",
-   "note": "Found while re-testing volume properly. rlm_quiet fires 523/523 times where follow_move also fires -- 100%, by construction, since both require the line to have moved toward their side. rlm_ratio 477/477. pin_rlm 87.2% inside pin_move. They are FILTERS, not signals, and the comparison that matters is against the parent on the same games. Scored that way rlm_ratio lifts follow_move on CBB totals from 45.5% to 53.6%, ROI -13.1 to +2.6, n=252, z=+2.03 -- a row the base-rate scorecard reports as unremarkable. Also means the project does not have 12 independent signals: 8 pairs agree on side 100% of the time when both fire, so every 'two signals confirm' reading is in many cases one signal counted twice."
+   "note": "audit.py section 5 computes filter lift vs parent. Still RECORDED because the live SCORECARD continues to grade rlm_quiet/rlm_ratio/rlm/pin_rlm against a market base rate rather than their parent, so the board a person reads still shows the wrong comparison."
   },
   {
    "id": "pin_bounce",
@@ -84,7 +89,7 @@
    "where": "pin_bounce, retraced -- display only",
    "recorded": "2026-11-22",
    "source": "claude",
-   "note": "built after quoting a stale 136.5 -> 132 Pinnacle move on UTEP that had actually bottomed at 131 and been climbing 4.5h"
+   "note": "pin_bounce and pin_extreme are stored on every close row but are not yet in the audit's feature list -- the path-layer features were graded first. Next one to wire in."
   },
   {
    "id": "pin_not_right",
@@ -318,6 +323,14 @@
    "q": "Why did price gating come back after being closed with evidence, and what stops the next recurrence?",
    "why": "On 2026-11-22 the whole NFL card was ranked by FanDuel-vs-Pinnacle edge, two artifacts were built around it, and it was described as 'the only column that does not depend on a signal record'. Price gating is in the brain doc's CLOSED list -- the gap is non-monotonic, being a point WORSE than Pinnacle was the best bucket, and it had already been removed once for cutting plays with no support. Justin caught it the second time too, in nearly the same words. CLAUDE.md lists the closed items but a closed item is a fact to recall, not a check that fires. Day-one evidence was mixed: the four signal-only plays that price gating had excluded went 2-2, and the biggest price play (ARI +15.5, $100k limit) lost.",
    "next": "consider making audit.py assert that the current ranking rule is not one of the closed ones -- a closed item that only lives in prose gets re-derived"
+  },
+  {
+   "id": "q_line_reversed",
+   "asked": "2026-11-24",
+   "owner": "unassigned",
+   "q": "Does line_reversed hold forward as n grows? It is the only path feature on both sides of the holdout in both sports.",
+   "why": "CBB fit totals 58.2% n=402 ROI +11.3 (z=+3.43); CBB FORWARD moneylines 55.2% n=192 ROI +17.0 (z=+1.85); NFL fit moneylines z=+2.05. A number that reverses at least once behaving differently from one that travels straight is also mechanically plausible -- a reversal means two opposing flows rather than one, so the close is a contested number rather than a settled one. 44 comparisons were made and ~2.2 were expected at |z|>=2, and the cells are not independent.",
+   "next": "forward only, let n grow. Do not promote to a SIGNAL yet -- that moves the holdout."
   }
  ]
 }

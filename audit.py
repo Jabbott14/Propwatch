@@ -133,11 +133,11 @@ def heartbeat():
             dg = json.load(open(fp))
         except Exception:
             continue
-        bad = [a for a in (dg.get("attempts") or []) if a.get("error")]
+        badsrc = [a for a in (dg.get("attempts") or []) if a.get("error")]
         tag = diagp.split("/")[0] if "/" in diagp else "nfl"
-        if bad:
+        if badsrc:
             say(f"  {tag:16} SOURCES FAILING as of {dg.get('run_utc','?')}:")
-            for a in bad:
+            for a in badsrc:
                 say(f"      {a.get('name','?'):14} {a.get('error','?')}")
             say(f"      (that run reported pulls_fail={dg.get('pulls_fail')} — the counter")
             say("       covers prop requests only, not these)")
@@ -473,6 +473,109 @@ def filters(sources):
         filter_lift(sport, s.get("holdout_from") or "9999-01-01")
 
 
+
+# ---------------------------------------------------------------- 6. recorded features
+# Five register items have sat RECORDED for days: key numbers, Pinnacle limit cuts, the
+# path layer, retracement, and filter-lift. Every one is computed on every run and read
+# by nothing. That is this repo's characteristic failure, and audit.py has been flagging
+# it as stale without doing anything about it.
+#
+# The reason they were never graded is real: promoting a feature to a SIGNAL changes
+# which plays the board emits, which moves HOLDOUT_FROM and restarts the forward test.
+# That cost is deliberate and should not be paid on a hunch.
+#
+# But scoring a feature as a CONDITIONER on calls that were already made changes no call
+# at all. The holdout does not move. So there is no reason these have gone unmeasured,
+# and this section measures them: split every graded call by the feature, compare the
+# two halves, and print the number of tests alongside, because 8 features x 3 markets is
+# 24 comparisons and roughly one will clear |z|>=2 on noise alone.
+FEATURES = [
+    ("lim_slashed",   lambda p: bool(p.get("lim_slashed")),                 "Pinnacle cut its limit"),
+    ("line_reversed", lambda p: (p.get("line_revs") or 0) >= 1,             "the number reversed at least once"),
+    ("mny_crossed",   lambda p: (p.get("mny_crossings") or 0) >= 1,         "money majority changed sides"),
+    ("mny_gave_back", lambda p: (p.get("mny_gave_back") or 0) >= 10,        "money peaked then retreated >=10pts"),
+    ("line_ineff",    lambda p: (p.get("line_eff") is not None and p["line_eff"] < 0.5),
+                                                                            "the number wandered (efficiency <0.5)"),
+    ("key_crossed",   lambda p: bool(p.get("key_crossed")),                 "crossed a key number (3/7)"),
+    ("deep_series",   lambda p: (p.get("n_obs") or 0) >= 200,               "200+ observations in the series"),
+]
+
+
+def _gper(gm, holdout):
+    d = (gm.get("date") or gm.get("tip") or gm.get("kickoff") or "")[:10]
+    return "fit" if d < holdout else "fwd"
+
+
+def features(sports, holdouts):
+    say("## 6. RECORDED FEATURES, SCORED AS CONDITIONERS")
+    say()
+    say("  Splitting calls already made. No call changes, so the holdout does NOT move.")
+    say("  This is what 'RECORDED and consumed by nothing' was costing.")
+    say()
+    tests = 0
+    out = []
+    for sport in sports:
+        path = os.path.join(ROOT, sport, "graded", "games.json")
+        if not os.path.exists(path):
+            continue
+        try:
+            games = json.load(open(path))
+        except Exception:
+            continue
+        for fname, fn, desc in FEATURES:
+            acc = collections.defaultdict(lambda: collections.defaultdict(lambda: [0, 0, 0.0]))
+            ho = holdouts.get(sport) or "9999-01-01"
+            for gm in games:
+                per = _gper(gm, ho)
+                for mkt, m in (gm.get("markets") or {}).items():
+                    c = m.get("close") or {}
+                    p = c.get("path")
+                    if not p:
+                        continue
+                    try:
+                        flag = fn(p)
+                    except Exception:
+                        continue
+                    for sig, r in (m.get("close_graded") or {}).items():
+                        if r.get("res") == "P":
+                            continue
+                        a = acc[(mkt, per)]["yes" if flag else "no"]
+                        a[0] += r["res"] == "W"; a[1] += 1; a[2] += r.get("units", 0)
+            for (mkt, per), d in acc.items():
+                y, n = d.get("yes"), d.get("no")
+                if not y or not n or y[1] < 25 or n[1] < 25:
+                    continue
+                tests += 1
+                hy, hn = 100 * y[0] / y[1], 100 * n[0] / n[1]
+                ry, rn = 100 * y[2] / y[1], 100 * n[2] / n[1]
+                pp = (y[0] + n[0]) / (y[1] + n[1])
+                se = math.sqrt(pp * (1 - pp) * (1 / y[1] + 1 / n[1]))
+                z = ((y[0] / y[1]) - (n[0] / n[1])) / se if se else 0.0
+                out.append((abs(z), sport, per, fname, mkt, hy, y[1], ry, hn, n[1], rn, z, desc))
+    if not out:
+        say("  no feature reached 40 decisions on both sides of a split.")
+        say()
+        return
+    out.sort(reverse=True)
+    say(f"  {tests} comparisons made. Chance alone gives ~{tests*0.05:.1f} at |z|>=2.0 and")
+    say(f"  ~{tests*0.10:.1f} at |z|>=1.65. Read every row below against those two numbers.")
+    say()
+    say(f"  {'sport':5} {'per':4} {'feature':14} {'mkt':9} {'WITH':>22} {'WITHOUT':>22} {'z':>6}")
+    for _, sport, per, fname, mkt, hy, ny, ry, hn, nn, rn, z, desc in out:
+        say(f"  {sport:5} {per:4} {fname:14} {mkt:9} "
+            f"{f'{hy:.1f}% n={ny} {ry:+.1f}':>22} {f'{hn:.1f}% n={nn} {rn:+.1f}':>22} {z:>6.2f}")
+    say()
+    say("  FIT is a hypothesis, FORWARD is evidence. A feature that only appears in FIT")
+    say("  rows has not been tested; one that holds in both, and across sports, is the")
+    say("  project's own standard for believing anything.")
+    say()
+    hits = [o for o in out if abs(o[11]) >= 2.0]
+    say(f"  {len(hits)} at |z|>=2.0 against ~{tests*0.05:.1f} expected. " +
+        ("Nothing here." if len(hits) <= tests * 0.05 * 1.5 else "Above chance — worth a look."))
+    say("  ROI is the currency, not hit rate: money_level hit 73.4% and lost 14.87 units.")
+    say()
+
+
 def main():
     say("=" * 78)
     say(f"PROPWATCH AUDIT   {TODAY.isoformat()}")
@@ -505,6 +608,7 @@ def main():
         questions(reg)
     if sources:
         filters(sources)
+        features(list(sources), {k: (v.get('holdout_from') or '9999-01-01') for k, v in sources.items()})
         drift(sources)
 
     say("-" * 78)

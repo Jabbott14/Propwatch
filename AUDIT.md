@@ -12,13 +12,21 @@ a session opens it, and the guards only fire once a measurement is already wrong
 
 ## 0. IS THE DATA STILL ARRIVING?
 
-  NFL collector    last    0.1h ago  (2026-11-24T08:03:53-05:00)
-  CBB collector    NO COMMITS FOUND  <-- never ran, or the message changed
-  NCAAF collector  last    0.1h ago  (2026-11-24T13:00:04+00:00)
-  NFL grader       NO COMMITS FOUND  <-- never ran, or the message changed
-  CBB grader       NO COMMITS FOUND  <-- never ran, or the message changed
+  NFL collector    last    0.2h ago  (2026-11-24T08:03:53-05:00)
+  CBB collector    last    0.1h ago  (2026-11-24T13:10:37+00:00)
+  NCAAF collector  last    0.3h ago  (2026-11-24T13:00:04+00:00)
+  NFL grader       not in the last 51 commits (shallow clone — not a failure)
+  CBB grader       not in the last 51 commits (shallow clone — not a failure)
 
-  3 feed(s) stale. EVERY NUMBER BELOW THAT DEPENDS ON THEM IS SUSPECT --
+  data             SOURCES FAILING as of 2026-11-24T12:47:22Z:
+      vsin           HTTPError: HTTP Error 403: Forbidden
+      vsin_circa     HTTPError: HTTP Error 403: Forbidden
+      (that run reported pulls_fail=0 — the counter
+       covers prop requests only, not these)
+  cbb              all sources OK as of 2026-11-24T13:10:33Z
+  ncaaf            all sources OK as of 2026-11-24T12:59:59Z
+
+  1 feed/source problem(s). EVERY NUMBER BELOW THAT DEPENDS ON THEM IS SUSPECT --
   a dead feed does not look like an error downstream, it looks like a quiet
   market. Check the Actions tab before trusting anything in sections 2-5.
 
@@ -76,9 +84,9 @@ a session opens it, and the guards only fire once a measurement is already wrong
              every public/fade signal reads Action Network book 69 only
              note: MATERIAL LIMIT ON THE WHOLE FADE-THE-PUBLIC THESIS, found 2026-11-22 by cross-checking Justin's Everson post. Prime listed 'Dolphins +16.5' as a top public play while our Action Network data read 60% of tickets on BUFFALO -- the opposite side. Prime listed public on Ravens +2.5 where we read 49/50, no lean at all. rlm, rlm_quiet, rlm_ratio, sharp_gap and the volume slices all define 'the public' as FanDuel's ticket split via Action Network. If two books disagree about which side the public is on, then a fade signal is fading one book's customers, and its record is a statement about that book, not about public money. Nothing in the archive can currently test this because we have only ever had one source of splits.
 
-  [OPEN    ]       2d  splits from a book that is NOT FanDuel -- Circa, DK, South Point via VSIN
-             raw/vsin and raw/vsin_circa: BROKEN, see note
-             note: DEFECT, found 2026-11-22. Two problems. (1) What we archived is the VSIN page SHELL, not data -- the splits load from query params (?source=DK&view=topspreadhandle) and the fetched HTML contains the filter chips and zero numbers. 'Handle' appears 3 times, all in button labels; 'Tickets' appears 0 times. So the parse that was never written would have found nothing anyway. (2) Collection STOPPED on 2026-11-12 and nothing noticed for ten days. This is the fourth collected-but-never-parsed item after Circa, is_live/is_alt_market, and the rotation numbers. It is also the blocker on public_is_book_specific: a second book's splits is the only way to test whether 'the public' means anything beyond FanDuel.
+  [OPEN    ]       0d  name Action Network books 15, 49, 68, 71, 75
+             nowhere -- only 69 (FanDuel) and 30 (opener) are identified in the codebase
+             note: BLOCKING. xbook.py found that book 75 leads the market at z=+3.67 and nobody knows what book 75 is. The AN payload carries no book metadata -- no names, no books array. Identify by cross-referencing a known line at a known time against a named sportsbook, or by finding AN's book-list endpoint. Until then the strongest cross-book result in the project points at an anonymous book.
 
 ## 2. ANOMALY SCAN, WITH THE MULTIPLE-COMPARISONS DENOMINATOR
 
@@ -248,6 +256,67 @@ a session opens it, and the guards only fire once a measurement is already wrong
     moneyline 3k+         with  32.0% n= 25 ROI   -4.8   without  56.6% n= 53 ROI   -4.4   lift  -24.6pt /   -0.4ROI  z -2.03   [ML: read ROI only, hit lift is a dog/fav artifact]
 
   ### NFL
+
+## 6. RECORDED FEATURES, SCORED AS CONDITIONERS
+
+  Splitting calls already made. No call changes, so the holdout does NOT move.
+  This is what 'RECORDED and consumed by nothing' was costing.
+
+  44 comparisons made. Chance alone gives ~2.2 at |z|>=2.0 and
+  ~4.4 at |z|>=1.65. Read every row below against those two numbers.
+
+  sport per  feature        mkt                         WITH                WITHOUT      z
+  nfl   fit  deep_series    spread         36.9% n=179 -30.0       73.5% n=34 +36.8  -3.96
+  cbb   fit  line_reversed  total          58.2% n=402 +11.3      49.1% n=3098 -6.2   3.43
+  cbb   fit  lim_slashed    spread          72.9% n=48 +41.5      49.5% n=2990 -6.1   3.22
+  nfl   fit  mny_crossed    moneyline       21.1% n=38 -55.8      48.4% n=223 -15.8  -3.14
+  cbb   fit  line_ineff     moneyline      43.0% n=1022 -1.7      48.7% n=1192 +0.4  -2.68
+  cbb   fwd  mny_gave_back  moneyline      43.8% n=251 -19.0      55.5% n=274 +22.9  -2.67
+  cbb   fit  lim_slashed    total           65.7% n=67 +25.6      49.9% n=3433 -4.7   2.56
+  nfl   fit  line_ineff     moneyline      40.7% n=209 -30.9       59.6% n=52 +15.6  -2.46
+  nfl   fit  mny_crossed    total           59.6% n=89 +13.4      43.4% n=113 -16.9   2.28
+  cbb   fit  mny_crossed    total          49.3% n=2821 -5.9       53.9% n=679 +3.1  -2.17
+  nfl   fit  line_reversed  moneyline       50.4% n=139 -8.2      37.7% n=122 -37.0   2.05
+  cbb   fwd  line_reversed  moneyline      55.2% n=192 +17.0       46.8% n=333 -5.3   1.85
+  cbb   fit  mny_gave_back  spread         51.9% n=1157 -1.1      48.5% n=1881 -8.0   1.82
+  cbb   fwd  mny_crossed    moneyline       52.5% n=345 +8.7       45.0% n=180 -8.3   1.62
+  nfl   fit  key_crossed    spread          31.7% n=41 -38.9      45.3% n=172 -14.7  -1.59
+  cbb   fwd  line_ineff     spread          56.4% n=140 +7.1       48.3% n=290 -8.1   1.58
+  nfl   fit  mny_gave_back  moneyline        51.1% n=90 +7.8      40.9% n=171 -37.1   1.57
+  cbb   fit  line_ineff     total           52.9% n=681 +1.1      49.5% n=2819 -5.4   1.57
+  cbb   fit  line_reversed  moneyline       47.9% n=941 +9.4      44.6% n=1273 -7.9   1.54
+  nfl   fit  mny_gave_back  total           41.8% n=55 -20.1       53.7% n=147 +2.6  -1.51
+  cbb   fwd  line_ineff     moneyline       46.3% n=214 +1.9       52.4% n=311 +3.6  -1.38
+  cbb   fit  mny_gave_back  moneyline       44.3% n=902 -3.4      47.2% n=1312 +1.5  -1.31
+  cbb   fit  mny_gave_back  total          49.3% n=1954 -5.8      51.3% n=1546 -2.1  -1.18
+  nfl   fit  mny_crossed    spread          33.3% n=27 -37.2      44.1% n=186 -16.8  -1.06
+  cbb   fwd  mny_gave_back  spread           56.0% n=75 +5.6       49.9% n=355 -5.0   0.97
+  cbb   fit  mny_crossed    spread         49.3% n=2111 -6.6       51.1% n=927 -2.5  -0.95
+  cbb   fit  line_ineff     spread          48.5% n=715 -8.0      50.2% n=2323 -4.6  -0.80
+  cbb   fwd  line_ineff     total           49.8% n=203 -5.0      46.4% n=491 -11.4   0.80
+  nfl   fwd  mny_gave_back  total           59.3% n=27 +13.9       68.2% n=44 +29.3  -0.76
+  nfl   fwd  deep_series    moneyline       44.0% n=25 -14.8       35.3% n=51 -38.9   0.73
+  cbb   fwd  mny_crossed    total          46.9% n=620 -10.3        51.4% n=74 -2.4  -0.72
+  nfl   fwd  deep_series    spread           52.0% n=25 +2.1       43.2% n=44 -17.1   0.71
+  cbb   fwd  mny_gave_back  total           48.4% n=411 -7.5      45.9% n=283 -12.4   0.64
+  nfl   fit  deep_series    moneyline      43.6% n=218 -23.0       48.8% n=43 -14.7  -0.63
+  cbb   fwd  line_reversed  total           44.2% n=77 -16.5       47.8% n=617 -8.6  -0.61
+  cbb   fit  lim_slashed    moneyline        41.5% n=41 -8.5      46.1% n=2173 -0.4  -0.59
+  nfl   fit  line_ineff     total            53.4% n=58 +1.6       49.3% n=144 -5.7   0.53
+  nfl   fit  mny_gave_back  spread          44.4% n=72 -15.4      41.8% n=141 -21.4   0.36
+  nfl   fit  deep_series    total           50.8% n=177 -2.8        48.0% n=25 -8.8   0.27
+  cbb   fit  mny_crossed    moneyline      46.2% n=1458 -0.9       45.6% n=756 +0.2   0.27
+  nfl   fwd  deep_series    total           63.0% n=27 +19.0       65.9% n=44 +26.2  -0.25
+  cbb   fit  line_reversed  spread          50.2% n=233 -5.4      49.8% n=2805 -5.4   0.12
+  cbb   fwd  line_reversed  spread           51.6% n=64 -2.1       50.8% n=366 -3.3   0.11
+  cbb   fwd  mny_crossed    spread          50.7% n=272 -3.6       51.3% n=158 -2.3  -0.11
+
+  FIT is a hypothesis, FORWARD is evidence. A feature that only appears in FIT
+  rows has not been tested; one that holds in both, and across sports, is the
+  project's own standard for believing anything.
+
+  11 at |z|>=2.0 against ~2.2 expected. Above chance — worth a look.
+  ROI is the currency, not hit rate: money_level hit 73.4% and lost 14.87 units.
 
 ## 4. HOLDOUT AND FORWARD SAMPLE
 
