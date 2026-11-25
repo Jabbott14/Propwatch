@@ -1,14 +1,14 @@
 {
- "run_utc": "2026-11-25T23:25:18Z",
- "cycle": 26,
+ "run_utc": "2026-11-25T23:28:29Z",
+ "cycle": 27,
  "heavy": false,
  "games": 16,
  "rows": 5218,
- "props_gz": 50512,
+ "props_gz": 50503,
  "pulls_ok": 112,
  "pulls_fail": 0,
- "elapsed_min": 196.7,
- "next_kickoff_h": 1.6,
+ "elapsed_min": 199.8,
+ "next_kickoff_h": 1.5,
  "cadence_min": 3,
  "closing_window": true,
  "pin_signals": 10,
@@ -30,8 +30,8 @@
   },
   {
    "name": "sbr",
-   "bytes": 540350,
-   "gz": 50695
+   "bytes": 540366,
+   "gz": 50709
   }
  ]
 }
