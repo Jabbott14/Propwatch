@@ -12,6 +12,19 @@ name: collect
 # collect_ncaaf ran clean every 30 min throughout, because both already re-dispatch
 # themselves. This file was the odd one out.
 #
+# 2026-11-24 (weekly review): the self-dispatch above fixed the dropped-cron holes, but
+# three faults still lost kickoff windows, and the 11-22 18:00Z slate (7 games) closed at
+# T-66 because of them:
+#   1. RUNFOR (350) == job timeout (350), and the closing-window extension pushed RUNFOR
+#      past it. The platform killed the job inside the window, losing up to 3 uncommitted
+#      cycles. Now: RUNFOR 300, may stretch to 325 inside a window; step 340, job 355.
+#   2. KO was empty on cycle 1, so a fresh run always slept 60 min after its first snap --
+#      a run handed over at T-60 next snapped AFTER kickoff. Now KO is seeded from the
+#      lobby before the loop, and the sleep is cut short at the next window boundary.
+#   3. Inside a closing window commits were every 3rd cycle; a kill lost them. Now every
+#      cycle inside the window, and pull uses -X theirs with abort + 3 retries, and
+#      signals/ is archived (it was written every cycle and never added).
+#
 # The concurrency group also stops the ~6 overlapping runs the old hourly-cron-plus-350min
 # design produced, which raced each other on git push.
 on:
@@ -27,11 +40,12 @@ concurrency:
 jobs:
   snap:
     runs-on: ubuntu-latest
-    timeout-minutes: 350
+    timeout-minutes: 355
     steps:
       - uses: actions/checkout@v4
       - name: collect loop
         continue-on-error: true
+        timeout-minutes: 340
         run: |
           python3 - <<'PY'
           import gzip, json, os, subprocess, sys, time
@@ -55,7 +69,8 @@ jobs:
           CYCLE_FAR   = 3600   # 60 min otherwise
           CLOSE_H     = 2
           NEAR_H      = 12
-          RUNFOR  = 350*60     # ~5h50m; hourly cron overlaps runs so a dropped firing leaves no hole
+          RUNFOR  = 300*60     # 5h; the last step dispatches the next run, so no hole
+          MAX_RUN = 325*60     # hard ceiling even inside a closing window (step timeout 340)
           HEAVY_N = 6          # full raw set every Nth dense cycle; every cycle when sparse
           PUSH_N  = 3          # commit every Nth cycle (30 min)
           TABS    = ["passing-props","receiving-props","rushing-props",
@@ -154,19 +169,60 @@ jobs:
 
           def commit():
               try:
-                  subprocess.run(["git","add","-A","data/","raw/","props/"],check=False)
+                  paths=[p for p in ("data/","raw/","props/","signals/") if os.path.isdir(p)]
+                  subprocess.run(["git","add","-A",*paths],check=False)
                   if subprocess.run(["git","diff","--staged","--quiet"]).returncode != 0:
                       subprocess.run(["git","commit","-q","-m",
                           f"snap {datetime.now(timezone.utc).strftime('%FT%TZ')}"],check=False)
-                  subprocess.run(["git","pull","-q","--rebase","--autostash"],check=False)
-                  subprocess.run(["git","push","-q"],check=False)
+                  for i in range(3):
+                      r=subprocess.run(["git","pull","-q","--rebase","-X","theirs","--autostash"])
+                      if r.returncode!=0:
+                          subprocess.run(["git","rebase","--abort"],check=False)
+                          time.sleep(5*(i+1)); continue
+                      if subprocess.run(["git","push","-q"]).returncode==0: return
+                      time.sleep(5*(i+1))
+                  print("commit: push failed after 3 tries; will retry next cycle",flush=True)
               except Exception as e: print("commit err",e)
+
+          def next_ko(now):
+              nxt=None
+              for od in KO.values():
+                  try: k=datetime.fromisoformat(od.replace("Z","+00:00"))
+                  except Exception: continue
+                  if k>now and (nxt is None or k<nxt): nxt=k
+              return nxt
+
+          def cadence(now):
+              """-> (seconds, close?) for the cadence that applies at `now`."""
+              nxt=next_ko(now)
+              hrs=((nxt-now).total_seconds()/3600) if nxt else 999
+              if hrs<=CLOSE_H: return CYCLE_CLOSE, True, hrs
+              if hrs<=NEAR_H:  return CYCLE_NEAR, False, hrs
+              return CYCLE_FAR, False, hrs
+
+          def sleep_for(now):
+              """Sleep the current cadence, but wake at the next window boundary
+              (T-NEAR_H, T-CLOSE_H) so a 60-min sleep can never run past a kickoff."""
+              c,_,hrs=cadence(now)
+              if hrs<999:
+                  for edge in (NEAR_H, CLOSE_H):
+                      to_edge=(hrs-edge)*3600
+                      if to_edge>0: c=min(c, max(30, to_edge))
+              return c
 
           subprocess.run(["git","config","user.name","propwatch"],check=False)
           subprocess.run(["git","config","user.email",
                           "propwatch@users.noreply.github.com"],check=False)
 
           KO={}; PINHIST={}; LASTPIN={}
+          # Seed kickoffs BEFORE the first cadence decision (fault 2 above).
+          try:
+              _l=json.loads(get(f"{FD}/content-managed-page?page=CUSTOM&customPageId=nfl&_ak={AK}"))
+              for k,v in _l["attachments"]["events"].items():
+                  nm=str(v.get("name","")); od=str(v.get("openDate",""))
+                  if "@" in nm and od: KO[str(v.get("eventId") or k)]=od
+          except Exception as e: print("KO seed failed:",e,flush=True)
+          print(f"KO seeded: {len(KO)} events",flush=True)
           t0=time.time(); cyc=0
           while time.time()-t0 < RUNFOR:
               cyc+=1
@@ -174,17 +230,12 @@ jobs:
               ts=now.strftime("%Y-%m-%dT%H%MZ"); day=now.strftime("%Y-%m-%d")
               horizon=(now+timedelta(days=8)).strftime("%Y-%m-%d")
               diag=[]
-              nxt=None
-              for od in KO.values():
-                  try: k=datetime.fromisoformat(od.replace("Z","+00:00"))
-                  except Exception: continue
-                  if k>now and (nxt is None or k<nxt): nxt=k
-              hrs=((nxt-now).total_seconds()/3600) if nxt else 999
-              close=hrs<=CLOSE_H
+              CYCLE,close,hrs=cadence(now)
               near=hrs<=NEAR_H
-              CYCLE=CYCLE_CLOSE if close else (CYCLE_NEAR if near else CYCLE_FAR)
-              # never let the run expire while a kickoff is imminent
-              if close: RUNFOR=max(RUNFOR, (time.time()-t0)+CLOSE_H*3600+900)
+              # stretch inside a closing window, but never past MAX_RUN: the job would be
+              # killed there anyway, and the dispatched successor (KO seeded) picks up at
+              # 3-min cadence immediately.
+              if close: RUNFOR=min(MAX_RUN, max(RUNFOR, (time.time()-t0)+CLOSE_H*3600+900))
               heavy = (cyc % HEAVY_N == 1) or not near
 
               # every cycle: the signal sources
@@ -299,10 +350,10 @@ jobs:
                     f"{'CLOSE ' if close else ''}games={len(games)} rows={len(rows)} gz={gz_sz//1024}KB "
                     f"ok={ok} fail={fail} heavy={heavy}", flush=True)
 
-              if cyc % PUSH_N == 0: commit()
+              if close or cyc % PUSH_N == 0: commit()
               left=RUNFOR-(time.time()-t0)
               if left <= 0: break
-              time.sleep(min(CYCLE, max(5,left)))
+              time.sleep(min(sleep_for(datetime.now(timezone.utc)), max(5,left)))
 
           commit()
           print("DONE cycles:",cyc); sys.exit(0)
@@ -311,4 +362,11 @@ jobs:
         if: always()
         env:
           GH_TOKEN: ${{ github.token }}
-        run: gh workflow run collect.yml --ref "${{ github.ref_name }}"
+        run: |
+          gh workflow run collect.yml --ref "${{ github.ref_name }}"
+          # The graders' 3-hourly crons are being dropped (2-4 of 8 fired per day, 11-17..11-24).
+          # Each collect run ends ~every 5h; nudge the graders then as a backstop. Their own
+          # concurrency groups stop overlaps. Failure here must never block the dispatch above.
+          for w in grade_nfl.yml grade_periods.yml grade_props.yml; do
+            gh workflow run "$w" --ref "${{ github.ref_name }}" || true
+          done
