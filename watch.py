@@ -236,8 +236,36 @@ def main():
         mv = round(cur["v"] - first["v"], 2)
         pp, lpp, ppp = eff_move(mk, k2, first["v"], first.get("odds"),
                                 cur["v"], cur.get("odds"))
-        public_here = cur["tix"] >= PUBLIC_TIX and (cur["mny"] or 0) >= PUBLIC_MNY
-        if not public_here:
+        # QUALIFY ON THE ENTRY SNAPSHOT'S SPLIT, NOT THE CURRENT ONE.
+        # Runs 4 and 5 of the scheduled watch each lost a run to this, in opposite
+        # directions. Run 4: DEN@PIT's over money fell 70% -> 64%, dropped below
+        # PUBLIC_MNY, and the market vanished from the board entirely -- with the
+        # two-point move still sitting there. The public being wrong and the money
+        # leaving is the thing the setup is WAITING for, so a market that did what
+        # the thesis wants deleted itself while one where the public never budges
+        # stays visible forever. Run 5: the same market re-entered BROKEN on a
+        # four-point money tick back to 68%, manufacturing a crossing out of a
+        # spent move. So the test is whether this market was ever one-way, and the
+        # current split prints alongside so the decay is visible instead of fatal.
+        # how many of the trailing snapshots the CURRENT FanDuel (number, price) has
+        # held. Every market shares the same total snapshot count, so printing that
+        # alone was uninformative; the hold length is the figure every run's
+        # verification reaches for by hand.
+        held = 0
+        for t in reversed(tss):
+            r0 = series[t]
+            if (r0.get("v"), r0.get("odds")) == (cur.get("v"), cur.get("odds")):
+                held += 1
+            else:
+                break
+        entry = None
+        for t in tss:
+            r0 = series[t]
+            if r0.get("tix") is not None and r0["tix"] >= PUBLIC_TIX \
+                    and (r0.get("mny") or 0) >= PUBLIC_MNY:
+                entry = (t, r0["tix"], r0["mny"])
+                break
+        if entry is None:
             continue
         # did the number move toward this (public) side?
         toward = pp > 0
@@ -245,7 +273,8 @@ def main():
                "mv": mv, "pp": pp, "lpp": lpp, "ppp": ppp,
                "o_odds": first.get("odds"), "odds": cur["odds"],
                "tix": cur["tix"], "mny": cur["mny"],
-               "nb": cur["nb"], "st": cur["st"], "snaps": len(tss),
+               "e_ts": entry[0], "e_tix": entry[1], "e_mny": entry[2],
+               "nb": cur["nb"], "st": cur["st"], "snaps": len(tss), "held": held,
                "pin": (p or {}).get("pts"), "lim": (p or {}).get("lim"),
                "books": books_now.get((a, h, mk, k2), {})}
         if abs(pp) < MIN_PP:
@@ -267,9 +296,11 @@ def main():
             others = sorted({v for b, v in bs.items() if b not in ("69", "30")})
             ostr = ("books " + "/".join(f"{v:g}" for v in others)) if others else ""
             alone = len(others) == 1 and abs(others[0] - r["now"]) > 1e-9
+            dec = "" if (r["e_tix"], r["e_mny"]) == (r["tix"], r["mny"]) else \
+                  f" (entry {r['e_tix']}%/{r['e_mny']}%)"
             say(f"   {r['g']:10} {r['mk']:7} {str(r['side'])[:5]:5}  "
-                f"public {r['tix']:>3}%/{r['mny']:>3}%  "
-                f"{r['open']:g} ({r['o_odds']:+d}) -> {r['now']:g} ({r['odds']:+d})  "
+                f"public {r['tix']:>3}%/{r['mny']:>3}%{dec}  "
+                f"{r['open']:g} ({r['o_odds']:+d}) -> {r['now']:g} ({r['odds']:+d}) [held {r['held']}/{r['snaps']}s]  "
                 f"= {r['pp']:+5.1f}pp (line {r['lpp']:+.1f} price {r['ppp']:+.1f})  "
                 f"{pin_s}  {ostr}  {r['nb'] or 0:,} bets  {r['st'][:16].replace('T',' ')}Z"
                 + ("   <-- FanDuel alone at its number" if alone else ""))
@@ -286,7 +317,16 @@ def main():
     say("Movement is in PROBABILITY POINTS with the price included, not line points: a")
     say("half point of spread is ~1.4pp and 20 cents of juice is ~4.5pp, so a line move")
     say("paired with worse juice can be a move against you. Threshold |pp| >= 1.0.")
-    say("Public = >=65% of BOTH tickets and money. Pinnacle read from the current")
+    say("Public = >=65% of BOTH tickets and money AT THE ENTRY SNAPSHOT, carried")
+    say("forward; the current split prints first and the entry split in brackets when")
+    say("they differ, so a market whose money has left stays on the board instead of")
+    say("deleting itself. [held N/Ms] is how many of the M snapshots we hold for this")
+    say("market the current FanDuel number AND price have survived -- a count, NOT a")
+    say("duration: the collector ran at ~60 min up to 2026-11-25T1300Z and ~10 min")
+    say("after it, so 6 prints before that change is an hour and 6 after it is ten")
+    say("minutes. M is also the same for every market in a week that entered the feed")
+    say("together, so \"open\" is the earliest value we hold, never a week opener.")
+    say("Pinnacle read from the current")
     say("snapshot, main lines only (isAlternate false), sides matched by team not by")
     say("home/away label. Movement measured from the earliest snapshot held, so a number")
     say("that opened before our first snapshot shows less movement than it really had.")
