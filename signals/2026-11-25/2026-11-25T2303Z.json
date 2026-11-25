@@ -1,0 +1,151 @@
+{
+ "ts": "2026-11-25T2303Z",
+ "signals": {
+  "New Orleans Saints @ Cincinnati Bengals": {
+   "spread": {
+    "pin_open": -10.0,
+    "pin_now": -10.0,
+    "pin_moved": 0.0,
+    "retail_open": -9.5,
+    "retail_now": -9.5,
+    "retail_moved": 0.0,
+    "gap": 0.5,
+    "limit": 5000,
+    "flags": [
+     "RETAIL_SOFT"
+    ]
+   },
+   "total": {
+    "pin_open": 49.0,
+    "pin_now": 49.0,
+    "pin_moved": 0.0,
+    "retail_open": 49.5,
+    "retail_now": 49.5,
+    "retail_moved": 0.0,
+    "gap": 0.5,
+    "limit": 3000,
+    "flags": [
+     "RETAIL_SOFT"
+    ]
+   }
+  },
+  "New England Patriots @ Los Angeles Chargers": {
+   "spread": {
+    "pin_open": -1.0,
+    "pin_now": -1.0,
+    "pin_moved": 0.0,
+    "retail_open": -1.5,
+    "retail_now": 1.5,
+    "retail_moved": 3.0,
+    "gap": 2.5,
+    "limit": 5000,
+    "flags": [
+     "RETAIL_SOFT"
+    ]
+   }
+  },
+  "Seattle Seahawks @ San Francisco 49ers": {
+   "total": {
+    "pin_open": 44.0,
+    "pin_now": 44.0,
+    "pin_moved": 0.0,
+    "retail_open": 44.5,
+    "retail_now": 44.5,
+    "retail_moved": 0.0,
+    "gap": 0.5,
+    "limit": 3000,
+    "flags": [
+     "RETAIL_SOFT"
+    ]
+   }
+  },
+  "Washington Commanders @ Arizona Cardinals": {
+   "spread": {
+    "pin_open": 7.5,
+    "pin_now": 7.5,
+    "pin_moved": 0.0,
+    "retail_open": 7,
+    "retail_now": 7,
+    "retail_moved": 0,
+    "gap": -0.5,
+    "limit": 5000,
+    "flags": [
+     "RETAIL_SOFT"
+    ]
+   }
+  },
+  "New York Giants @ Indianapolis Colts": {
+   "total": {
+    "pin_open": 42.0,
+    "pin_now": 42.0,
+    "pin_moved": 0.0,
+    "retail_open": 42.5,
+    "retail_now": 42.5,
+    "retail_moved": 0.0,
+    "gap": 0.5,
+    "limit": 3000,
+    "flags": [
+     "RETAIL_SOFT"
+    ]
+   }
+  },
+  "Denver Broncos @ Pittsburgh Steelers": {
+   "total": {
+    "pin_open": 36.0,
+    "pin_now": 36.0,
+    "pin_moved": 0.0,
+    "retail_open": 36.5,
+    "retail_now": 36.5,
+    "retail_moved": 0.0,
+    "gap": 0.5,
+    "limit": 3000,
+    "flags": [
+     "RETAIL_SOFT"
+    ]
+   }
+  },
+  "New York Jets @ Miami Dolphins": {
+   "spread": {
+    "pin_open": 3.5,
+    "pin_now": 4.0,
+    "pin_moved": 0.5,
+    "retail_open": 3.5,
+    "retail_now": 4.5,
+    "retail_moved": 1.0,
+    "gap": 0.5,
+    "limit": 10000,
+    "flags": [
+     "RETAIL_SOFT"
+    ]
+   },
+   "total": {
+    "pin_open": 41.0,
+    "pin_now": 41.0,
+    "pin_moved": 0.0,
+    "retail_open": 40.5,
+    "retail_now": 40.5,
+    "retail_moved": 0.0,
+    "gap": -0.5,
+    "limit": 3000,
+    "flags": [
+     "RETAIL_SOFT"
+    ]
+   }
+  },
+  "Chicago Bears @ Detroit Lions": {
+   "spread": {
+    "pin_open": 1.0,
+    "pin_now": 1.0,
+    "pin_moved": 0.0,
+    "retail_open": 1.5,
+    "retail_now": 1.5,
+    "retail_moved": 0.0,
+    "gap": 0.5,
+    "limit": 30000,
+    "flags": [
+     "RETAIL_SOFT"
+    ]
+   }
+  }
+ }
+}
