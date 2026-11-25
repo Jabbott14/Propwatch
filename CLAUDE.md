@@ -90,6 +90,28 @@ rate as the currency.
 are computed and consumed by nothing. `audit.py` prints how long each has sat there.
 Recorded-and-forgotten is the failure mode this repo is prone to.
 
+## The scheduled line watch
+
+`watch.py` runs on a schedule, writes `WATCH.md` and commits it every run. BROKEN /
+LOADED / FOLLOWED. The committed `WATCH.md` IS the prior state — compare against it via
+git history, never against memory, and **before calling anything a new crossing, diff the
+FILE** (`git diff <last WATCH.md commit> HEAD -- watch.py`), not the commit list, which is
+noisy from collector commits. A detector change makes two consecutive boards
+non-comparable; when one has happened, run the previous version against the current
+snapshot before saying a market moved. That rule exists because a rewrite on 2026-11-24
+put a market in BROKEN with no market event behind it.
+
+Run logs, and they are a CHAIN that casual search does not surface:
+`claude/propwatch-watch-runs.md` holds runs 1-3 **and the procedure above**, then
+`claude/propwatch-watch-run4.md`, `-run5.md`, `-run6.md`, one per run. **Read the latest
+one before reading any `WATCH.md` bucket as a new setup** — most entries on any given
+board are re-reports with the kill already written down, and each run ends with
+pre-declared conditions that the next run is expected to resolve by name.
+
+Standing debts as of run 6: **no closers have ever been stored for a declined board**
+(ten of them now), so the watch has no feedback loop; and the single positive price rung
+has decayed to nothing by the following run five runs running, which is latency, not edge.
+
 ## Before building a signal from a data cut
 
 Ask what mechanism it trades against, and whether that mechanism is documented anywhere
