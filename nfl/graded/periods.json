@@ -29203,5 +29203,452 @@
     "took_default": true
    }
   }
+ },
+ {
+  "game": "Green Bay Packers @ Los Angeles Rams",
+  "market": "1h|total",
+  "period": "1h",
+  "kind": "total",
+  "kickoff": "2026-11-26T01:00:00.000Z",
+  "markets": {
+   "close": {
+    "t": "2026-11-26T0059Z",
+    "line": {
+     "over": 21.5,
+     "under": 21.5
+    },
+    "odds": {
+     "over": -110,
+     "under": -110
+    },
+    "open": 22.5,
+    "open_odds": {
+     "over": -125,
+     "under": 105
+    },
+    "calls": {
+     "follow_move": "under",
+     "pin_value": "over"
+    },
+    "move": -1.0,
+    "pin": 23.0,
+    "pin_lim": 5000,
+    "pin_gap": -1.5
+   },
+   "early": {
+    "t": "2026-11-23T0142Z",
+    "line": {
+     "over": 23.5,
+     "under": 23.5
+    },
+    "odds": {
+     "over": 105,
+     "under": -125
+    },
+    "open": 22.5,
+    "open_odds": {
+     "over": -125,
+     "under": 105
+    },
+    "calls": {
+     "follow_move": "over",
+     "pin_value": "under",
+     "pin_lead": "under"
+    },
+    "move": 1.0,
+    "pin": 23.0,
+    "pin_lim": 3000,
+    "pin_gap": 0.5
+   }
+  },
+  "early_graded": {
+   "follow_move": {
+    "side": "over",
+    "line": 23.5,
+    "odds": 105,
+    "res": "W",
+    "units": 1.05,
+    "took_default": true,
+    "clv": -2.0
+   },
+   "pin_value": {
+    "side": "under",
+    "line": 23.5,
+    "odds": -125,
+    "res": "L",
+    "units": -1.0,
+    "took_default": false,
+    "clv": 2.0
+   },
+   "pin_lead": {
+    "side": "under",
+    "line": 23.5,
+    "odds": -125,
+    "res": "L",
+    "units": -1.0,
+    "took_default": false,
+    "clv": 2.0
+   }
+  },
+  "close_graded": {
+   "follow_move": {
+    "side": "under",
+    "line": 21.5,
+    "odds": -110,
+    "res": "L",
+    "units": -1.0,
+    "took_default": false
+   },
+   "pin_value": {
+    "side": "over",
+    "line": 21.5,
+    "odds": -110,
+    "res": "W",
+    "units": 0.909,
+    "took_default": true
+   }
+  }
+ },
+ {
+  "game": "Green Bay Packers @ Los Angeles Rams",
+  "market": "1h|tt|home",
+  "period": "1h",
+  "kind": "tt",
+  "kickoff": "2026-11-26T01:00:00.000Z",
+  "markets": {
+   "close": {
+    "t": "2026-11-26T0059Z",
+    "line": {
+     "over": 10.5,
+     "under": 10.5
+    },
+    "odds": {
+     "over": 102,
+     "under": -130
+    },
+    "open": 12.5,
+    "open_odds": {
+     "over": -113,
+     "under": -113
+    },
+    "calls": {
+     "follow_move": "under",
+     "pin_value": "over"
+    },
+    "move": -2.0,
+    "pin": 12.5,
+    "pin_lim": 2000,
+    "pin_gap": -2.0
+   },
+   "early": {
+    "t": "2026-11-23T0142Z",
+    "line": {
+     "over": 12.5,
+     "under": 12.5
+    },
+    "odds": {
+     "over": -111,
+     "under": -115
+    },
+    "open": 12.5,
+    "open_odds": {
+     "over": -113,
+     "under": -113
+    },
+    "calls": {},
+    "pin": 12.5,
+    "pin_lim": 2000
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "follow_move": {
+    "side": "under",
+    "line": 10.5,
+    "odds": -130,
+    "res": "L",
+    "units": -1.0,
+    "took_default": false
+   },
+   "pin_value": {
+    "side": "over",
+    "line": 10.5,
+    "odds": 102,
+    "res": "W",
+    "units": 1.02,
+    "took_default": true
+   }
+  }
+ },
+ {
+  "game": "Green Bay Packers @ Los Angeles Rams",
+  "market": "1h|tt|away",
+  "period": "1h",
+  "kind": "tt",
+  "kickoff": "2026-11-26T01:00:00.000Z",
+  "markets": {
+   "close": {
+    "t": "2026-11-26T0059Z",
+    "line": {
+     "over": 9.5,
+     "under": 9.5
+    },
+    "odds": {
+     "over": -150,
+     "under": 118
+    },
+    "open": 10.5,
+    "open_odds": {
+     "over": 114,
+     "under": -146
+    },
+    "calls": {
+     "follow_move": "under",
+     "pin_value": "over"
+    },
+    "move": -1.0,
+    "pin": 10.5,
+    "pin_lim": 2000,
+    "pin_gap": -1.0
+   },
+   "early": {
+    "t": "2026-11-23T0142Z",
+    "line": {
+     "over": 10.5,
+     "under": 10.5
+    },
+    "odds": {
+     "over": 112,
+     "under": -142
+    },
+    "open": 10.5,
+    "open_odds": {
+     "over": 114,
+     "under": -146
+    },
+    "calls": {
+     "pin_price": "under"
+    },
+    "pin": 10.5,
+    "pin_lim": 2000,
+    "edge_pct": 0.9
+   }
+  },
+  "early_graded": {
+   "pin_price": {
+    "side": "under",
+    "line": 10.5,
+    "odds": -142,
+    "res": "L",
+    "units": -1.0,
+    "took_default": false,
+    "clv": 1.0
+   }
+  },
+  "close_graded": {
+   "follow_move": {
+    "side": "under",
+    "line": 9.5,
+    "odds": 118,
+    "res": "L",
+    "units": -1.0,
+    "took_default": false
+   },
+   "pin_value": {
+    "side": "over",
+    "line": 9.5,
+    "odds": -150,
+    "res": "W",
+    "units": 0.667,
+    "took_default": true
+   }
+  }
+ },
+ {
+  "game": "Green Bay Packers @ Los Angeles Rams",
+  "market": "1h|ml",
+  "period": "1h",
+  "kind": "ml",
+  "kickoff": "2026-11-26T01:00:00.000Z",
+  "markets": {
+   "close": {
+    "t": "2026-11-26T0059Z",
+    "line": {
+     "home": -132,
+     "away": 108
+    },
+    "odds": {
+     "home": -132,
+     "away": 108
+    },
+    "open": -136,
+    "open_odds": {
+     "home": -136,
+     "away": 112
+    },
+    "calls": {
+     "follow_move": "away"
+    },
+    "move": 4,
+    "pin": -120,
+    "pin_lim": 20000
+   },
+   "early": {
+    "t": "2026-11-23T0142Z",
+    "line": {
+     "home": -136,
+     "away": 110
+    },
+    "odds": {
+     "home": -136,
+     "away": 110
+    },
+    "open": -136,
+    "open_odds": {
+     "home": -136,
+     "away": 112
+    },
+    "calls": {},
+    "pin": -143,
+    "pin_lim": 3000
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "follow_move": {
+    "side": "away",
+    "line": 108,
+    "odds": 108,
+    "res": "P",
+    "units": 0.0,
+    "took_default": false
+   }
+  }
+ },
+ {
+  "game": "Green Bay Packers @ Los Angeles Rams",
+  "market": "2h|total",
+  "period": "2h",
+  "kind": "total",
+  "kickoff": "2026-11-26T01:00:00.000Z",
+  "markets": {
+   "close": {
+    "t": "2026-11-26T0059Z",
+    "line": {
+     "over": 21.5,
+     "under": 21.5
+    },
+    "odds": {
+     "over": 100,
+     "under": -120
+    },
+    "open": 21.5,
+    "open_odds": {
+     "over": -110,
+     "under": -110
+    },
+    "calls": {
+     "fd_juice": "under"
+    }
+   },
+   "early": {
+    "t": "2026-11-23T0142Z",
+    "line": {
+     "over": 21.5,
+     "under": 21.5
+    },
+    "odds": {
+     "over": -110,
+     "under": -110
+    },
+    "open": 21.5,
+    "open_odds": {
+     "over": -110,
+     "under": -110
+    },
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "fd_juice": {
+    "side": "under",
+    "line": 21.5,
+    "odds": -120,
+    "res": "W",
+    "units": 0.833,
+    "took_default": false
+   }
+  }
+ },
+ {
+  "game": "Green Bay Packers @ Los Angeles Rams",
+  "market": "2h|ml",
+  "period": "2h",
+  "kind": "ml",
+  "kickoff": "2026-11-26T01:00:00.000Z",
+  "markets": {
+   "close": {
+    "t": "2026-11-26T0059Z",
+    "line": {
+     "home": -128,
+     "away": 110
+    },
+    "odds": {
+     "home": -128,
+     "away": 110
+    },
+    "open": -132,
+    "open_odds": {
+     "home": -132,
+     "away": 114
+    },
+    "calls": {
+     "follow_move": "away"
+    },
+    "move": 4
+   },
+   "early": {
+    "t": "2026-11-23T0142Z",
+    "line": {
+     "home": -134,
+     "away": 114
+    },
+    "odds": {
+     "home": -134,
+     "away": 114
+    },
+    "open": -132,
+    "open_odds": {
+     "home": -132,
+     "away": 114
+    },
+    "calls": {
+     "follow_move": "home"
+    },
+    "move": -2
+   }
+  },
+  "early_graded": {
+   "follow_move": {
+    "side": "home",
+    "line": -134,
+    "odds": -134,
+    "res": "W",
+    "units": 0.746,
+    "took_default": true,
+    "clv": -1.1
+   }
+  },
+  "close_graded": {
+   "follow_move": {
+    "side": "away",
+    "line": 110,
+    "odds": 110,
+    "res": "L",
+    "units": -1.0,
+    "took_default": false
+   }
+  }
  }
 ]
