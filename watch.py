@@ -258,6 +258,25 @@ def main():
                 held += 1
             else:
                 break
+        # HOW OLD IS THE LINE LEG ON ITS OWN, ignoring the price?
+        # Runs 7 and 8 each lost their only "new crossing" to the same artifact in a
+        # different leg. Run 7: WAS@ARI crossed because FanDuel's juice went -115 back
+        # to -105, netting the price leg to zero and leaving a 30-hour-old half point
+        # as the whole move. Run 8: ATL@MIN crossed because the public MONEY rose
+        # through 65%, 31 hours after FanDuel's only line move, with Pinnacle's number
+        # unchanged for 63.6 hours. In both the pp figure was real and the line leg
+        # behind it was a day and a half stale, and in both the detector presented it
+        # as today's event. So print the line leg's own age next to pp: `line L/Ms` is
+        # how many trailing snapshots the current NUMBER has survived with the price
+        # ignored. L close to M with a non-zero line leg means the move is old and the
+        # crossing came from somewhere else. Classification is untouched -- this is a
+        # print, and consecutive boards stay comparable.
+        lheld = 0
+        for t in reversed(tss):
+            if series[t].get("v") == cur.get("v"):
+                lheld += 1
+            else:
+                break
         entry = None
         for t in tss:
             r0 = series[t]
@@ -275,6 +294,7 @@ def main():
                "tix": cur["tix"], "mny": cur["mny"],
                "e_ts": entry[0], "e_tix": entry[1], "e_mny": entry[2],
                "nb": cur["nb"], "st": cur["st"], "snaps": len(tss), "held": held,
+               "lheld": lheld,
                "pin": (p or {}).get("pts"), "lim": (p or {}).get("lim"),
                "books": books_now.get((a, h, mk, k2), {})}
         if abs(pp) < MIN_PP:
@@ -300,7 +320,8 @@ def main():
                   f" (entry {r['e_tix']}%/{r['e_mny']}%)"
             say(f"   {r['g']:10} {r['mk']:7} {str(r['side'])[:5]:5}  "
                 f"public {r['tix']:>3}%/{r['mny']:>3}%{dec}  "
-                f"{r['open']:g} ({r['o_odds']:+d}) -> {r['now']:g} ({r['odds']:+d}) [held {r['held']}/{r['snaps']}s]  "
+                f"{r['open']:g} ({r['o_odds']:+d}) -> {r['now']:g} ({r['odds']:+d}) "
+                f"[held {r['held']}/{r['snaps']}s, line {r['lheld']}/{r['snaps']}s]  "
                 f"= {r['pp']:+5.1f}pp (line {r['lpp']:+.1f} price {r['ppp']:+.1f})  "
                 f"{pin_s}  {ostr}  {r['nb'] or 0:,} bets  {r['st'][:16].replace('T',' ')}Z"
                 + ("   <-- FanDuel alone at its number" if alone else ""))
@@ -320,12 +341,17 @@ def main():
     say("Public = >=65% of BOTH tickets and money AT THE ENTRY SNAPSHOT, carried")
     say("forward; the current split prints first and the entry split in brackets when")
     say("they differ, so a market whose money has left stays on the board instead of")
-    say("deleting itself. [held N/Ms] is how many of the M snapshots we hold for this")
-    say("market the current FanDuel number AND price have survived -- a count, NOT a")
+    say("deleting itself. [held N/Ms, line L/Ms] is how many of the M snapshots we hold")
+    say("for this market the current FanDuel number AND price (N), and the number ALONE")
+    say("with the price ignored (L), have survived -- counts, NOT a")
     say("duration: the collector ran at ~60 min up to 2026-11-25T1300Z and ~10 min")
     say("after it, so 6 prints before that change is an hour and 6 after it is ten")
     say("minutes. M is also the same for every market in a week that entered the feed")
     say("together, so \"open\" is the earliest value we hold, never a week opener.")
+    say("L at or near M with a non-zero line leg means the HANDICAP has not moved in the")
+    say("whole window and whatever put this market on the board today is the price leg or")
+    say("the public split crossing the threshold, not a market event. Runs 7 and 8 each")
+    say("lost their only new crossing to exactly that, in opposite legs.")
     say("Pinnacle read from the current")
     say("snapshot, main lines only (isAlternate false), sides matched by team not by")
     say("home/away label. Movement measured from the earliest snapshot held, so a number")
