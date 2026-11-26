@@ -1,13 +1,13 @@
 {
- "run_utc": "2026-11-26T17:33:04Z",
- "cycle": 11,
+ "run_utc": "2026-11-26T17:36:22Z",
+ "cycle": 12,
  "heavy": false,
  "games": 16,
  "rows": 5093,
- "props_gz": 50125,
+ "props_gz": 50111,
  "pulls_ok": 112,
  "pulls_fail": 0,
- "elapsed_min": 32.9,
+ "elapsed_min": 36.1,
  "next_kickoff_h": 0.4,
  "cadence_min": 3,
  "closing_window": true,
@@ -16,7 +16,7 @@
   {
    "name": "actionnet",
    "bytes": 504899,
-   "gz": 27512
+   "gz": 27480
   },
   {
    "name": "pin_prices",
