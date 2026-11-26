@@ -1,0 +1,662 @@
+[
+ {
+  "book_closes": {
+   "15": {
+    "spread|away": {
+     "money_pct": 55,
+     "odds": -104,
+     "tickets_pct": 50,
+     "value": 2.5
+    },
+    "spread|home": {
+     "money_pct": 45,
+     "odds": -114,
+     "tickets_pct": 50,
+     "value": -2.5
+    },
+    "total|over": {
+     "money_pct": 5,
+     "odds": -105,
+     "tickets_pct": 9,
+     "value": 43.5
+    },
+    "total|under": {
+     "money_pct": 95,
+     "odds": -112,
+     "tickets_pct": 91,
+     "value": 43.5
+    }
+   },
+   "30": {
+    "spread|away": {
+     "money_pct": null,
+     "odds": -110,
+     "tickets_pct": null,
+     "value": 4.5
+    },
+    "spread|home": {
+     "money_pct": null,
+     "odds": -110,
+     "tickets_pct": null,
+     "value": -4.5
+    },
+    "total|over": {
+     "money_pct": null,
+     "odds": -110,
+     "tickets_pct": null,
+     "value": 48.5
+    },
+    "total|under": {
+     "money_pct": null,
+     "odds": -115,
+     "tickets_pct": null,
+     "value": 48.5
+    }
+   },
+   "49": {
+    "spread|away": {
+     "money_pct": 55,
+     "odds": -106,
+     "tickets_pct": 50,
+     "value": 2.5
+    },
+    "spread|home": {
+     "money_pct": 45,
+     "odds": -114,
+     "tickets_pct": 50,
+     "value": -2.5
+    },
+    "total|over": {
+     "money_pct": 5,
+     "odds": -109,
+     "tickets_pct": 9,
+     "value": 43.5
+    },
+    "total|under": {
+     "money_pct": 95,
+     "odds": -112,
+     "tickets_pct": 91,
+     "value": 43.5
+    }
+   },
+   "68": {
+    "spread|away": {
+     "money_pct": 55,
+     "odds": -104,
+     "tickets_pct": 50,
+     "value": 2.5
+    },
+    "spread|home": {
+     "money_pct": 45,
+     "odds": -115,
+     "tickets_pct": 50,
+     "value": -2.5
+    },
+    "total|over": {
+     "money_pct": 5,
+     "odds": -112,
+     "tickets_pct": 9,
+     "value": 43.5
+    },
+    "total|under": {
+     "money_pct": 95,
+     "odds": -107,
+     "tickets_pct": 91,
+     "value": 43.5
+    }
+   },
+   "69": {
+    "spread|away": {
+     "money_pct": 55,
+     "odds": -105,
+     "tickets_pct": 50,
+     "value": 2.5
+    },
+    "spread|home": {
+     "money_pct": 45,
+     "odds": -115,
+     "tickets_pct": 50,
+     "value": -2.5
+    },
+    "total|over": {
+     "money_pct": 5,
+     "odds": -105,
+     "tickets_pct": 9,
+     "value": 43.5
+    },
+    "total|under": {
+     "money_pct": 95,
+     "odds": -115,
+     "tickets_pct": 91,
+     "value": 43.5
+    }
+   },
+   "71": {
+    "spread|away": {
+     "money_pct": 55,
+     "odds": -106,
+     "tickets_pct": 50,
+     "value": 2.5
+    },
+    "spread|home": {
+     "money_pct": 45,
+     "odds": -115,
+     "tickets_pct": 50,
+     "value": -2.5
+    },
+    "total|over": {
+     "money_pct": 5,
+     "odds": -110,
+     "tickets_pct": 9,
+     "value": 43.5
+    },
+    "total|under": {
+     "money_pct": 95,
+     "odds": -108,
+     "tickets_pct": 91,
+     "value": 43.5
+    }
+   },
+   "75": {
+    "spread|away": {
+     "money_pct": 55,
+     "odds": -102,
+     "tickets_pct": 50,
+     "value": 2.5
+    },
+    "spread|home": {
+     "money_pct": 45,
+     "odds": -110,
+     "tickets_pct": 50,
+     "value": -2.5
+    },
+    "total|over": {
+     "money_pct": 5,
+     "odds": -112,
+     "tickets_pct": 9,
+     "value": 43
+    },
+    "total|under": {
+     "money_pct": 95,
+     "odds": -105,
+     "tickets_pct": 91,
+     "value": 43
+    }
+   }
+  },
+  "captured_at": "2026-11-26T2250Z",
+  "close_snap": "2026-11-26T0100Z",
+  "final": {
+   "away": "GB",
+   "away_pts": 13,
+   "home": "LA",
+   "home_pts": 26,
+   "total": 39
+  },
+  "game": "GB@LA",
+  "key": "GB@LA|2026-11-26T0100Z",
+  "kickoff": "2026-11-26T0100Z",
+  "num_bets_at_close": 138930,
+  "pinnacle_close": {
+   "spread|Green Bay Packers": {
+    "limit": 100000,
+    "price": -104,
+    "pts": 2.5
+   },
+   "spread|Los Angeles Rams": {
+    "limit": 100000,
+    "price": -106,
+    "pts": -2.5
+   },
+   "total|over": {
+    "limit": 50000,
+    "price": 101,
+    "pts": 43.5
+   },
+   "total|under": {
+    "limit": 50000,
+    "price": -114,
+    "pts": 43.5
+   }
+  },
+  "status": "complete"
+ },
+ {
+  "book_closes": {
+   "15": {
+    "spread|away": {
+     "money_pct": 48,
+     "odds": -109,
+     "tickets_pct": 52,
+     "value": -1.5
+    },
+    "spread|home": {
+     "money_pct": 52,
+     "odds": -111,
+     "tickets_pct": 48,
+     "value": 1.5
+    },
+    "total|over": {
+     "money_pct": 13,
+     "odds": -107,
+     "tickets_pct": 17,
+     "value": 56.5
+    },
+    "total|under": {
+     "money_pct": 87,
+     "odds": -109,
+     "tickets_pct": 83,
+     "value": 56.5
+    }
+   },
+   "30": {
+    "spread|away": {
+     "money_pct": null,
+     "odds": -105,
+     "tickets_pct": null,
+     "value": 2.5
+    },
+    "spread|home": {
+     "money_pct": null,
+     "odds": -115,
+     "tickets_pct": null,
+     "value": -2.5
+    },
+    "total|over": {
+     "money_pct": null,
+     "odds": -110,
+     "tickets_pct": null,
+     "value": 53.5
+    },
+    "total|under": {
+     "money_pct": null,
+     "odds": -110,
+     "tickets_pct": null,
+     "value": 53.5
+    }
+   },
+   "49": {
+    "spread|away": {
+     "money_pct": 48,
+     "odds": -105,
+     "tickets_pct": 52,
+     "value": -1
+    },
+    "spread|home": {
+     "money_pct": 52,
+     "odds": -115,
+     "tickets_pct": 48,
+     "value": 1
+    },
+    "total|over": {
+     "money_pct": 13,
+     "odds": -112,
+     "tickets_pct": 17,
+     "value": 56
+    },
+    "total|under": {
+     "money_pct": 87,
+     "odds": -108,
+     "tickets_pct": 83,
+     "value": 56
+    }
+   },
+   "68": {
+    "spread|away": {
+     "money_pct": 48,
+     "odds": -103,
+     "tickets_pct": 52,
+     "value": -1.5
+    },
+    "spread|home": {
+     "money_pct": 52,
+     "odds": -117,
+     "tickets_pct": 48,
+     "value": 1.5
+    },
+    "total|over": {
+     "money_pct": 13,
+     "odds": -106,
+     "tickets_pct": 17,
+     "value": 56.5
+    },
+    "total|under": {
+     "money_pct": 87,
+     "odds": -113,
+     "tickets_pct": 83,
+     "value": 56.5
+    }
+   },
+   "69": {
+    "spread|away": {
+     "money_pct": 48,
+     "odds": -108,
+     "tickets_pct": 52,
+     "value": -1.5
+    },
+    "spread|home": {
+     "money_pct": 52,
+     "odds": -112,
+     "tickets_pct": 48,
+     "value": 1.5
+    },
+    "total|over": {
+     "money_pct": 13,
+     "odds": -108,
+     "tickets_pct": 17,
+     "value": 56.5
+    },
+    "total|under": {
+     "money_pct": 87,
+     "odds": -112,
+     "tickets_pct": 83,
+     "value": 56.5
+    }
+   },
+   "71": {
+    "spread|away": {
+     "money_pct": 48,
+     "odds": -113,
+     "tickets_pct": 52,
+     "value": -1.5
+    },
+    "spread|home": {
+     "money_pct": 52,
+     "odds": -108,
+     "tickets_pct": 48,
+     "value": 1.5
+    },
+    "total|over": {
+     "money_pct": 13,
+     "odds": -112,
+     "tickets_pct": 17,
+     "value": 56
+    },
+    "total|under": {
+     "money_pct": 87,
+     "odds": -109,
+     "tickets_pct": 83,
+     "value": 56
+    }
+   },
+   "75": {
+    "spread|away": {
+     "money_pct": 48,
+     "odds": -102,
+     "tickets_pct": 52,
+     "value": -1
+    },
+    "spread|home": {
+     "money_pct": 52,
+     "odds": -108,
+     "tickets_pct": 48,
+     "value": 1
+    },
+    "total|over": {
+     "money_pct": 13,
+     "odds": -110,
+     "tickets_pct": 17,
+     "value": 56
+    },
+    "total|under": {
+     "money_pct": 87,
+     "odds": -110,
+     "tickets_pct": 83,
+     "value": 56
+    }
+   }
+  },
+  "captured_at": "2026-11-26T2250Z",
+  "close_snap": "2026-11-26T1759Z",
+  "final": {
+   "away": "CHI",
+   "away_pts": 39,
+   "home": "DET",
+   "home_pts": 35,
+   "total": 74
+  },
+  "game": "CHI@DET",
+  "key": "CHI@DET|2026-11-26T1800Z",
+  "kickoff": "2026-11-26T1800Z",
+  "num_bets_at_close": 185858,
+  "pinnacle_close": {
+   "spread|Chicago Bears": {
+    "limit": 150000,
+    "price": -101,
+    "pts": -1.0
+   },
+   "spread|Detroit Lions": {
+    "limit": 150000,
+    "price": -109,
+    "pts": 1.0
+   },
+   "total|over": {
+    "limit": 50000,
+    "price": -104,
+    "pts": 56.5
+   },
+   "total|under": {
+    "limit": 50000,
+    "price": -108,
+    "pts": 56.5
+   }
+  },
+  "status": "complete"
+ },
+ {
+  "book_closes": {
+   "15": {
+    "spread|away": {
+     "money_pct": 39,
+     "odds": -106,
+     "tickets_pct": 40,
+     "value": 8.5
+    },
+    "spread|home": {
+     "money_pct": 61,
+     "odds": -110,
+     "tickets_pct": 60,
+     "value": -8.5
+    },
+    "total|over": {
+     "money_pct": 8,
+     "odds": -109,
+     "tickets_pct": 8,
+     "value": 49.5
+    },
+    "total|under": {
+     "money_pct": 92,
+     "odds": -108,
+     "tickets_pct": 92,
+     "value": 49.5
+    }
+   },
+   "30": {
+    "spread|away": {
+     "money_pct": null,
+     "odds": -115,
+     "tickets_pct": null,
+     "value": 1.5
+    },
+    "spread|home": {
+     "money_pct": null,
+     "odds": -105,
+     "tickets_pct": null,
+     "value": -1.5
+    },
+    "total|over": {
+     "money_pct": null,
+     "odds": -115,
+     "tickets_pct": null,
+     "value": 49.5
+    },
+    "total|under": {
+     "money_pct": null,
+     "odds": -105,
+     "tickets_pct": null,
+     "value": 49.5
+    }
+   },
+   "49": {
+    "spread|away": {
+     "money_pct": 39,
+     "odds": -109,
+     "tickets_pct": 40,
+     "value": 8.5
+    },
+    "spread|home": {
+     "money_pct": 61,
+     "odds": -110,
+     "tickets_pct": 60,
+     "value": -8.5
+    },
+    "total|over": {
+     "money_pct": 8,
+     "odds": -108,
+     "tickets_pct": 8,
+     "value": 49.5
+    },
+    "total|under": {
+     "money_pct": 92,
+     "odds": -112,
+     "tickets_pct": 92,
+     "value": 49.5
+    }
+   },
+   "68": {
+    "spread|away": {
+     "money_pct": 39,
+     "odds": -110,
+     "tickets_pct": 40,
+     "value": 8.5
+    },
+    "spread|home": {
+     "money_pct": 61,
+     "odds": -109,
+     "tickets_pct": 60,
+     "value": -8.5
+    },
+    "total|over": {
+     "money_pct": 8,
+     "odds": -117,
+     "tickets_pct": 8,
+     "value": 49.5
+    },
+    "total|under": {
+     "money_pct": 92,
+     "odds": -103,
+     "tickets_pct": 92,
+     "value": 49.5
+    }
+   },
+   "69": {
+    "spread|away": {
+     "money_pct": 39,
+     "odds": -108,
+     "tickets_pct": 40,
+     "value": 8.5
+    },
+    "spread|home": {
+     "money_pct": 61,
+     "odds": -112,
+     "tickets_pct": 60,
+     "value": -8.5
+    },
+    "total|over": {
+     "money_pct": 8,
+     "odds": -115,
+     "tickets_pct": 8,
+     "value": 48.5
+    },
+    "total|under": {
+     "money_pct": 92,
+     "odds": -105,
+     "tickets_pct": 92,
+     "value": 48.5
+    }
+   },
+   "71": {
+    "spread|away": {
+     "money_pct": 39,
+     "odds": -109,
+     "tickets_pct": 40,
+     "value": 8.5
+    },
+    "spread|home": {
+     "money_pct": 61,
+     "odds": -112,
+     "tickets_pct": 60,
+     "value": -8.5
+    },
+    "total|over": {
+     "money_pct": 8,
+     "odds": -113,
+     "tickets_pct": 8,
+     "value": 49
+    },
+    "total|under": {
+     "money_pct": 92,
+     "odds": -108,
+     "tickets_pct": 92,
+     "value": 49
+    }
+   },
+   "75": {
+    "spread|away": {
+     "money_pct": 39,
+     "odds": -105,
+     "tickets_pct": 40,
+     "value": 8.5
+    },
+    "spread|home": {
+     "money_pct": 61,
+     "odds": -105,
+     "tickets_pct": 60,
+     "value": -8.5
+    },
+    "total|over": {
+     "money_pct": 8,
+     "odds": -108,
+     "tickets_pct": 8,
+     "value": 49.5
+    },
+    "total|under": {
+     "money_pct": 92,
+     "odds": -110,
+     "tickets_pct": 92,
+     "value": 49.5
+    }
+   }
+  },
+  "captured_at": "2026-11-26T2250Z",
+  "close_snap": "2026-11-26T2130Z",
+  "final": null,
+  "game": "PHI@DAL",
+  "key": "PHI@DAL|2026-11-26T2130Z",
+  "kickoff": "2026-11-26T2130Z",
+  "num_bets_at_close": 138077,
+  "pinnacle_close": {
+   "spread|Dallas Cowboys": {
+    "limit": 100000,
+    "price": -104,
+    "pts": -8.5
+   },
+   "spread|Philadelphia Eagles": {
+    "limit": 100000,
+    "price": -106,
+    "pts": 8.5
+   },
+   "total|over": {
+    "limit": 20000,
+    "price": -105,
+    "pts": 49.5
+   },
+   "total|under": {
+    "limit": 20000,
+    "price": -107,
+    "pts": 49.5
+   }
+  },
+  "status": "inprogress"
+ }
+]
