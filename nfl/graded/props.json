@@ -68645,5 +68645,1855 @@
     "units": 0.885
    }
   }
+ },
+ {
+  "game": "Chicago Bears @ Detroit Lions",
+  "player": "jared goff",
+  "stat": "pass_tds",
+  "kickoff": "2026-11-26T18:00:00.000Z",
+  "week": 12,
+  "actual": 1.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-26T1759Z",
+    "line": 2.5,
+    "odds": {
+     "over": 165,
+     "under": -220
+    },
+    "open": 1.5,
+    "calls": {
+     "fd_move": "over"
+    },
+    "pin": 2.5,
+    "pin_lim": 20000,
+    "fair_over": 0.3409,
+    "move_pts": 1.0
+   },
+   "early": {
+    "t": "2026-11-23T0956Z",
+    "line": 1.5,
+    "odds": {
+     "over": -210,
+     "under": 154
+    },
+    "open": 1.5,
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "fd_move": {
+    "side": "over",
+    "line": 2.5,
+    "odds": 165,
+    "res": "L",
+    "units": -1.0
+   }
+  }
+ },
+ {
+  "game": "Chicago Bears @ Detroit Lions",
+  "player": "caleb williams",
+  "stat": "pass_yds",
+  "kickoff": "2026-11-26T18:00:00.000Z",
+  "week": 12,
+  "actual": 345.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-26T1759Z",
+    "line": 263.5,
+    "odds": {
+     "over": -113,
+     "under": -113
+    },
+    "open": 258.5,
+    "calls": {
+     "fd_move": "over"
+    },
+    "pin": 263.5,
+    "pin_lim": 20001,
+    "fair_over": 0.5,
+    "move_pts": 5.0
+   },
+   "early": {
+    "t": "2026-11-23T0956Z",
+    "line": 258.5,
+    "odds": {
+     "over": -114,
+     "under": -114
+    },
+    "open": 258.5,
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "fd_move": {
+    "side": "over",
+    "line": 263.5,
+    "odds": -113,
+    "res": "W",
+    "units": 0.885
+   }
+  }
+ },
+ {
+  "game": "Chicago Bears @ Detroit Lions",
+  "player": "jared goff",
+  "stat": "pass_yds",
+  "kickoff": "2026-11-26T18:00:00.000Z",
+  "week": 12,
+  "actual": 313.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-26T1759Z",
+    "line": 279.5,
+    "odds": {
+     "over": -113,
+     "under": -113
+    },
+    "open": 278.5,
+    "calls": {
+     "pin_value": "over",
+     "fd_move": "over"
+    },
+    "pin": 280.5,
+    "pin_lim": 20000,
+    "fair_over": 0.4913,
+    "pin_gap": -1.0,
+    "move_pts": 1.0
+   },
+   "early": {
+    "t": "2026-11-23T0956Z",
+    "line": 278.5,
+    "odds": {
+     "over": -114,
+     "under": -114
+    },
+    "open": 278.5,
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "pin_value": {
+    "side": "over",
+    "line": 279.5,
+    "odds": -113,
+    "res": "W",
+    "units": 0.885
+   },
+   "fd_move": {
+    "side": "over",
+    "line": 279.5,
+    "odds": -113,
+    "res": "W",
+    "units": 0.885
+   }
+  }
+ },
+ {
+  "game": "Chicago Bears @ Detroit Lions",
+  "player": "sam laporta",
+  "stat": "recv_yds",
+  "kickoff": "2026-11-26T18:00:00.000Z",
+  "week": 12,
+  "actual": 44.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-26T1759Z",
+    "line": 48.5,
+    "odds": {
+     "over": -113,
+     "under": -113
+    },
+    "open": 44.5,
+    "calls": {
+     "fd_move": "over"
+    },
+    "pin": 48.5,
+    "pin_lim": 20000,
+    "fair_over": 0.5,
+    "move_pts": 4.0
+   },
+   "early": {
+    "t": "2026-11-23T0956Z",
+    "line": 44.5,
+    "odds": {
+     "over": -114,
+     "under": -114
+    },
+    "open": 44.5,
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "fd_move": {
+    "side": "over",
+    "line": 48.5,
+    "odds": -113,
+    "res": "L",
+    "units": -1.0
+   }
+  }
+ },
+ {
+  "game": "Chicago Bears @ Detroit Lions",
+  "player": "kalif raymond",
+  "stat": "receptions",
+  "kickoff": "2026-11-26T18:00:00.000Z",
+  "week": 12,
+  "actual": 3.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-26T1759Z",
+    "line": 2.5,
+    "odds": {
+     "over": -132,
+     "under": 100
+    },
+    "open": 2.5,
+    "calls": {
+     "fd_juice": "over"
+    },
+    "pin": 2.5,
+    "pin_lim": 5000,
+    "fair_over": 0.5383,
+    "juice_c": [
+     -236,
+     238
+    ]
+   },
+   "early": {
+    "t": "2026-11-23T0956Z",
+    "line": 2.5,
+    "odds": {
+     "over": 104,
+     "under": -138
+    },
+    "open": 2.5,
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "fd_juice": {
+    "side": "over",
+    "line": 2.5,
+    "odds": -132,
+    "res": "W",
+    "units": 0.758
+   }
+  }
+ },
+ {
+  "game": "Chicago Bears @ Detroit Lions",
+  "player": "amonra st brown",
+  "stat": "recv_yds",
+  "kickoff": "2026-11-26T18:00:00.000Z",
+  "week": 12,
+  "actual": 146.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-26T1759Z",
+    "line": 82.5,
+    "odds": {
+     "over": -113,
+     "under": -113
+    },
+    "open": 89.5,
+    "calls": {
+     "pin_value": "over",
+     "fd_move": "under"
+    },
+    "pin": 83.5,
+    "pin_lim": 20000,
+    "fair_over": 0.5,
+    "pin_gap": -1.0,
+    "move_pts": -7.0
+   },
+   "early": {
+    "t": "2026-11-23T0956Z",
+    "line": 89.5,
+    "odds": {
+     "over": -114,
+     "under": -114
+    },
+    "open": 89.5,
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "pin_value": {
+    "side": "over",
+    "line": 82.5,
+    "odds": -113,
+    "res": "W",
+    "units": 0.885
+   },
+   "fd_move": {
+    "side": "under",
+    "line": 82.5,
+    "odds": -113,
+    "res": "L",
+    "units": -1.0
+   }
+  }
+ },
+ {
+  "game": "Chicago Bears @ Detroit Lions",
+  "player": "isaac teslaa",
+  "stat": "recv_yds",
+  "kickoff": "2026-11-26T18:00:00.000Z",
+  "week": 12,
+  "actual": 0.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-26T1759Z",
+    "line": 16.5,
+    "odds": {
+     "over": -113,
+     "under": -113
+    },
+    "open": 19.5,
+    "calls": {
+     "pin_value": "over",
+     "fd_move": "under"
+    },
+    "pin": 17.5,
+    "pin_lim": 5000,
+    "fair_over": 0.5022,
+    "pin_gap": -1.0,
+    "move_pts": -3.0
+   },
+   "early": {
+    "t": "2026-11-23T0956Z",
+    "line": 19.5,
+    "odds": {
+     "over": -114,
+     "under": -114
+    },
+    "open": 19.5,
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "pin_value": {
+    "side": "over",
+    "line": 16.5,
+    "odds": -113,
+    "res": "L",
+    "units": -1.0
+   },
+   "fd_move": {
+    "side": "under",
+    "line": 16.5,
+    "odds": -113,
+    "res": "W",
+    "units": 0.885
+   }
+  }
+ },
+ {
+  "game": "Chicago Bears @ Detroit Lions",
+  "player": "jahmyr gibbs",
+  "stat": "recv_yds",
+  "kickoff": "2026-11-26T18:00:00.000Z",
+  "week": 12,
+  "actual": 47.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-26T1759Z",
+    "line": 35.5,
+    "odds": {
+     "over": -113,
+     "under": -113
+    },
+    "open": 37.5,
+    "calls": {
+     "fd_move": "under"
+    },
+    "pin": 35.5,
+    "pin_lim": 15000,
+    "fair_over": 0.5,
+    "move_pts": -2.0
+   },
+   "early": {
+    "t": "2026-11-23T0956Z",
+    "line": 37.5,
+    "odds": {
+     "over": -114,
+     "under": -114
+    },
+    "open": 37.5,
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "fd_move": {
+    "side": "under",
+    "line": 35.5,
+    "odds": -113,
+    "res": "L",
+    "units": -1.0
+   }
+  }
+ },
+ {
+  "game": "Chicago Bears @ Detroit Lions",
+  "player": "sam laporta",
+  "stat": "receptions",
+  "kickoff": "2026-11-26T18:00:00.000Z",
+  "week": 12,
+  "actual": 4.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-26T1759Z",
+    "line": 4.5,
+    "odds": {
+     "over": -102,
+     "under": -130
+    },
+    "open": 4.5,
+    "calls": {
+     "fd_juice": "over"
+    },
+    "pin": 4.5,
+    "pin_lim": 20000,
+    "fair_over": 0.4548,
+    "juice_c": [
+     -214,
+     18
+    ]
+   },
+   "early": {
+    "t": "2026-11-23T0956Z",
+    "line": 4.5,
+    "odds": {
+     "over": 112,
+     "under": -148
+    },
+    "open": 4.5,
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "fd_juice": {
+    "side": "over",
+    "line": 4.5,
+    "odds": -102,
+    "res": "L",
+    "units": -1.0
+   }
+  }
+ },
+ {
+  "game": "Chicago Bears @ Detroit Lions",
+  "player": "colston loveland",
+  "stat": "recv_yds",
+  "kickoff": "2026-11-26T18:00:00.000Z",
+  "week": 12,
+  "actual": 5.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-26T1759Z",
+    "line": 53.5,
+    "odds": {
+     "over": -113,
+     "under": -113
+    },
+    "open": 54.5,
+    "calls": {
+     "pin_value": "under",
+     "fd_move": "under"
+    },
+    "pin": 52.5,
+    "pin_lim": 15000,
+    "fair_over": 0.5108,
+    "pin_gap": 1.0,
+    "move_pts": -1.0
+   },
+   "early": {
+    "t": "2026-11-23T0956Z",
+    "line": 54.5,
+    "odds": {
+     "over": -114,
+     "under": -114
+    },
+    "open": 54.5,
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "pin_value": {
+    "side": "under",
+    "line": 53.5,
+    "odds": -113,
+    "res": "W",
+    "units": 0.885
+   },
+   "fd_move": {
+    "side": "under",
+    "line": 53.5,
+    "odds": -113,
+    "res": "W",
+    "units": 0.885
+   }
+  }
+ },
+ {
+  "game": "Chicago Bears @ Detroit Lions",
+  "player": "colston loveland",
+  "stat": "receptions",
+  "kickoff": "2026-11-26T18:00:00.000Z",
+  "week": 12,
+  "actual": 1.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-26T1759Z",
+    "line": 5.5,
+    "odds": {
+     "over": 116,
+     "under": -154
+    },
+    "open": 5.5,
+    "calls": {
+     "fd_juice": "under"
+    },
+    "pin": 5.5,
+    "pin_lim": 15000,
+    "fair_over": 0.4013,
+    "juice_c": [
+     218,
+     -24
+    ]
+   },
+   "early": {
+    "t": "2026-11-23T0956Z",
+    "line": 5.5,
+    "odds": {
+     "over": -102,
+     "under": -130
+    },
+    "open": 5.5,
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "fd_juice": {
+    "side": "under",
+    "line": 5.5,
+    "odds": -154,
+    "res": "W",
+    "units": 0.649
+   }
+  }
+ },
+ {
+  "game": "Chicago Bears @ Detroit Lions",
+  "player": "dandre swift",
+  "stat": "receptions",
+  "kickoff": "2026-11-26T18:00:00.000Z",
+  "week": 12,
+  "actual": 7.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-26T1759Z",
+    "line": 2.5,
+    "odds": {
+     "over": 116,
+     "under": -154
+    },
+    "open": 2.5,
+    "calls": {
+     "fd_juice": "under"
+    },
+    "pin": 2.5,
+    "pin_lim": 10000,
+    "fair_over": 0.4225,
+    "juice_c": [
+     10,
+     -14
+    ]
+   },
+   "early": {
+    "t": "2026-11-23T0956Z",
+    "line": 2.5,
+    "odds": {
+     "over": 106,
+     "under": -140
+    },
+    "open": 2.5,
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "fd_juice": {
+    "side": "under",
+    "line": 2.5,
+    "odds": -154,
+    "res": "L",
+    "units": -1.0
+   }
+  }
+ },
+ {
+  "game": "Chicago Bears @ Detroit Lions",
+  "player": "luther burden iii",
+  "stat": "recv_yds",
+  "kickoff": "2026-11-26T18:00:00.000Z",
+  "week": 12,
+  "actual": 44.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-26T1759Z",
+    "line": 64.5,
+    "odds": {
+     "over": -113,
+     "under": -113
+    },
+    "open": 63.5,
+    "calls": {
+     "fd_move": "over"
+    },
+    "move_pts": 1.0
+   },
+   "early": {
+    "t": "2026-11-23T0956Z",
+    "line": 63.5,
+    "odds": {
+     "over": -114,
+     "under": -114
+    },
+    "open": 63.5,
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "fd_move": {
+    "side": "over",
+    "line": 64.5,
+    "odds": -113,
+    "res": "L",
+    "units": -1.0
+   }
+  }
+ },
+ {
+  "game": "Chicago Bears @ Detroit Lions",
+  "player": "isaac teslaa",
+  "stat": "receptions",
+  "kickoff": "2026-11-26T18:00:00.000Z",
+  "week": 12,
+  "actual": 0.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-26T1759Z",
+    "line": 1.5,
+    "odds": {
+     "over": 110,
+     "under": -146
+    },
+    "open": 1.5,
+    "calls": {
+     "fd_juice": "over"
+    },
+    "pin": 1.5,
+    "pin_lim": 5000,
+    "fair_over": 0.4417,
+    "juice_c": [
+     -14,
+     20
+    ]
+   },
+   "early": {
+    "t": "2026-11-23T0956Z",
+    "line": 1.5,
+    "odds": {
+     "over": 124,
+     "under": -166
+    },
+    "open": 1.5,
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "fd_juice": {
+    "side": "over",
+    "line": 1.5,
+    "odds": 110,
+    "res": "L",
+    "units": -1.0
+   }
+  }
+ },
+ {
+  "game": "Chicago Bears @ Detroit Lions",
+  "player": "rome odunze",
+  "stat": "recv_yds",
+  "kickoff": "2026-11-26T18:00:00.000Z",
+  "week": 12,
+  "actual": 87.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-26T1759Z",
+    "line": 48.5,
+    "odds": {
+     "over": -113,
+     "under": -113
+    },
+    "open": 48.5,
+    "calls": {
+     "pin_lead": "over"
+    },
+    "pin": 48.5,
+    "pin_lim": 15000,
+    "fair_over": 0.5022
+   },
+   "early": {
+    "t": "2026-11-23T0956Z",
+    "line": 48.5,
+    "odds": {
+     "over": -114,
+     "under": -114
+    },
+    "open": 48.5,
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "pin_lead": {
+    "side": "over",
+    "line": 48.5,
+    "odds": -113,
+    "res": "W",
+    "units": 0.885
+   }
+  }
+ },
+ {
+  "game": "Chicago Bears @ Detroit Lions",
+  "player": "kalif raymond",
+  "stat": "recv_yds",
+  "kickoff": "2026-11-26T18:00:00.000Z",
+  "week": 12,
+  "actual": 20.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-26T1759Z",
+    "line": 25.5,
+    "odds": {
+     "over": -113,
+     "under": -113
+    },
+    "open": 22.5,
+    "calls": {
+     "fd_move": "over"
+    },
+    "pin": 25.5,
+    "pin_lim": 5000,
+    "fair_over": 0.5108,
+    "move_pts": 3.0
+   },
+   "early": {
+    "t": "2026-11-23T0956Z",
+    "line": 22.5,
+    "odds": {
+     "over": -114,
+     "under": -114
+    },
+    "open": 22.5,
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "fd_move": {
+    "side": "over",
+    "line": 25.5,
+    "odds": -113,
+    "res": "L",
+    "units": -1.0
+   }
+  }
+ },
+ {
+  "game": "Chicago Bears @ Detroit Lions",
+  "player": "jameson williams",
+  "stat": "receptions",
+  "kickoff": "2026-11-26T18:00:00.000Z",
+  "week": 12,
+  "actual": 6.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-26T1759Z",
+    "line": 3.5,
+    "odds": {
+     "over": -130,
+     "under": -102
+    },
+    "open": 3.5,
+    "calls": {
+     "fd_juice": "under"
+    },
+    "pin": 3.5,
+    "pin_lim": 20000,
+    "fair_over": 0.5248,
+    "juice_c": [
+     8,
+     -206
+    ]
+   },
+   "early": {
+    "t": "2026-11-23T0956Z",
+    "line": 3.5,
+    "odds": {
+     "over": -138,
+     "under": 104
+    },
+    "open": 3.5,
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "fd_juice": {
+    "side": "under",
+    "line": 3.5,
+    "odds": -102,
+    "res": "L",
+    "units": -1.0
+   }
+  }
+ },
+ {
+  "game": "Chicago Bears @ Detroit Lions",
+  "player": "amonra st brown",
+  "stat": "receptions",
+  "kickoff": "2026-11-26T18:00:00.000Z",
+  "week": 12,
+  "actual": 7.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-26T1759Z",
+    "line": 6.5,
+    "odds": {
+     "over": -158,
+     "under": 118
+    },
+    "open": 7.5,
+    "calls": {
+     "fd_move": "under"
+    },
+    "pin": 6.5,
+    "pin_lim": 20000,
+    "fair_over": 0.5775,
+    "move_pts": -1.0
+   },
+   "early": {
+    "t": "2026-11-23T0956Z",
+    "line": 7.5,
+    "odds": {
+     "over": 102,
+     "under": -136
+    },
+    "open": 7.5,
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "fd_move": {
+    "side": "under",
+    "line": 6.5,
+    "odds": 118,
+    "res": "L",
+    "units": -1.0
+   }
+  }
+ },
+ {
+  "game": "Chicago Bears @ Detroit Lions",
+  "player": "kyle monangai",
+  "stat": "rush_yds",
+  "kickoff": "2026-11-26T18:00:00.000Z",
+  "week": 12,
+  "actual": 15.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-26T1759Z",
+    "line": 33.5,
+    "odds": {
+     "over": -113,
+     "under": -113
+    },
+    "open": 34.5,
+    "calls": {
+     "fd_move": "under"
+    },
+    "pin": 33.5,
+    "pin_lim": 7500,
+    "fair_over": 0.4795,
+    "move_pts": -1.0
+   },
+   "early": {
+    "t": "2026-11-23T0956Z",
+    "line": 34.5,
+    "odds": {
+     "over": -114,
+     "under": -114
+    },
+    "open": 34.5,
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "fd_move": {
+    "side": "under",
+    "line": 33.5,
+    "odds": -113,
+    "res": "W",
+    "units": 0.885
+   }
+  }
+ },
+ {
+  "game": "Chicago Bears @ Detroit Lions",
+  "player": "dandre swift",
+  "stat": "rush_yds",
+  "kickoff": "2026-11-26T18:00:00.000Z",
+  "week": 12,
+  "actual": 65.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-26T1759Z",
+    "line": 45.5,
+    "odds": {
+     "over": -113,
+     "under": -113
+    },
+    "open": 53.5,
+    "calls": {
+     "pin_value": "over",
+     "fd_move": "under"
+    },
+    "pin": 46.5,
+    "pin_lim": 15000,
+    "fair_over": 0.5,
+    "pin_gap": -1.0,
+    "move_pts": -8.0
+   },
+   "early": {
+    "t": "2026-11-23T0956Z",
+    "line": 53.5,
+    "odds": {
+     "over": -114,
+     "under": -114
+    },
+    "open": 53.5,
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "pin_value": {
+    "side": "over",
+    "line": 45.5,
+    "odds": -113,
+    "res": "W",
+    "units": 0.885
+   },
+   "fd_move": {
+    "side": "under",
+    "line": 45.5,
+    "odds": -113,
+    "res": "L",
+    "units": -1.0
+   }
+  }
+ },
+ {
+  "game": "Chicago Bears @ Detroit Lions",
+  "player": "jahmyr gibbs",
+  "stat": "rush_yds",
+  "kickoff": "2026-11-26T18:00:00.000Z",
+  "week": 12,
+  "actual": 205.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-26T1759Z",
+    "line": 94.5,
+    "odds": {
+     "over": -113,
+     "under": -113
+    },
+    "open": 90.5,
+    "calls": {
+     "pin_value": "over",
+     "fd_move": "over"
+    },
+    "pin": 95.5,
+    "pin_lim": 20000,
+    "fair_over": 0.5,
+    "pin_gap": -1.0,
+    "move_pts": 4.0
+   },
+   "early": {
+    "t": "2026-11-23T0956Z",
+    "line": 90.5,
+    "odds": {
+     "over": -114,
+     "under": -114
+    },
+    "open": 90.5,
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "pin_value": {
+    "side": "over",
+    "line": 94.5,
+    "odds": -113,
+    "res": "W",
+    "units": 0.885
+   },
+   "fd_move": {
+    "side": "over",
+    "line": 94.5,
+    "odds": -113,
+    "res": "W",
+    "units": 0.885
+   }
+  }
+ },
+ {
+  "game": "Chicago Bears @ Detroit Lions",
+  "player": "sione vaki",
+  "stat": "rush_yds",
+  "kickoff": "2026-11-26T18:00:00.000Z",
+  "week": 12,
+  "actual": 19.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-26T1759Z",
+    "line": 8.5,
+    "odds": {
+     "over": -113,
+     "under": -113
+    },
+    "open": 9.5,
+    "calls": {
+     "pin_value": "over",
+     "fd_move": "under"
+    },
+    "pin": 9.5,
+    "pin_lim": 1000,
+    "fair_over": 0.4773,
+    "pin_gap": -1.0,
+    "move_pts": -1.0
+   },
+   "early": {
+    "t": "2026-11-23T0956Z",
+    "line": 9.5,
+    "odds": {
+     "over": -114,
+     "under": -114
+    },
+    "open": 9.5,
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "pin_value": {
+    "side": "over",
+    "line": 8.5,
+    "odds": -113,
+    "res": "W",
+    "units": 0.885
+   },
+   "fd_move": {
+    "side": "under",
+    "line": 8.5,
+    "odds": -113,
+    "res": "L",
+    "units": -1.0
+   }
+  }
+ },
+ {
+  "game": "Chicago Bears @ Detroit Lions",
+  "player": "jared goff",
+  "stat": "rush_yds",
+  "kickoff": "2026-11-26T18:00:00.000Z",
+  "week": 12,
+  "actual": 10.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-26T1759Z",
+    "line": 1.5,
+    "odds": {
+     "over": 108,
+     "under": -138
+    },
+    "open": 1.5,
+    "calls": {
+     "fd_juice": "under"
+    },
+    "pin": 1.5,
+    "pin_lim": 1000,
+    "fair_over": 0.4608,
+    "juice_c": [
+     222,
+     -24
+    ]
+   },
+   "early": {
+    "t": "2026-11-23T0956Z",
+    "line": 1.5,
+    "odds": {
+     "over": -114,
+     "under": -114
+    },
+    "open": 1.5,
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "fd_juice": {
+    "side": "under",
+    "line": 1.5,
+    "odds": -138,
+    "res": "L",
+    "units": -1.0
+   }
+  }
+ },
+ {
+  "game": "Chicago Bears @ Detroit Lions",
+  "player": "dandre swift",
+  "stat": "anytime_td",
+  "kickoff": "2026-11-26T18:00:00.000Z",
+  "week": 12,
+  "actual": 1.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-26T1759Z",
+    "line": 0.5,
+    "odds": {
+     "over": -145,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {
+     "td_steam": "over"
+    },
+    "pin": 0.5,
+    "pin_lim": 10000,
+    "fair_over": 0.53,
+    "td_open_odds": -120,
+    "td_move_pp": 4.6
+   },
+   "early": {
+    "t": "2026-11-23T0956Z",
+    "line": 0.5,
+    "odds": {
+     "over": -120,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {},
+    "td_open_odds": -120,
+    "td_move_pp": 0.0
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "td_steam": {
+    "side": "over",
+    "line": 0.5,
+    "odds": -145,
+    "res": "W",
+    "units": 0.69
+   }
+  }
+ },
+ {
+  "game": "Chicago Bears @ Detroit Lions",
+  "player": "zavion thomas",
+  "stat": "anytime_td",
+  "kickoff": "2026-11-26T18:00:00.000Z",
+  "week": 12,
+  "actual": 0.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-26T1759Z",
+    "line": 0.5,
+    "odds": {
+     "over": 750,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {
+     "pin_price": "over"
+    },
+    "pin": 0.5,
+    "pin_lim": 1000,
+    "fair_over": 0.1193,
+    "edge_pct": 1.42,
+    "td_open_odds": 800,
+    "td_move_pp": 0.7
+   },
+   "early": {
+    "t": "2026-11-23T0956Z",
+    "line": 0.5,
+    "odds": {
+     "over": 800,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {},
+    "td_open_odds": 800,
+    "td_move_pp": 0.0
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "pin_price": {
+    "side": "over",
+    "line": 0.5,
+    "odds": 750,
+    "res": "L",
+    "units": -1.0
+   }
+  }
+ },
+ {
+  "game": "Chicago Bears @ Detroit Lions",
+  "player": "brock wright",
+  "stat": "anytime_td",
+  "kickoff": "2026-11-26T18:00:00.000Z",
+  "week": 12,
+  "actual": 0.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-26T1759Z",
+    "line": 0.5,
+    "odds": {
+     "over": 1100,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {
+     "pin_price": "over"
+    },
+    "pin": 0.5,
+    "pin_lim": 1000,
+    "fair_over": 0.0881,
+    "edge_pct": 5.67,
+    "td_open_odds": 1000,
+    "td_move_pp": -0.8
+   },
+   "early": {
+    "t": "2026-11-23T0956Z",
+    "line": 0.5,
+    "odds": {
+     "over": 1000,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {},
+    "td_open_odds": 1000,
+    "td_move_pp": 0.0
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "pin_price": {
+    "side": "over",
+    "line": 0.5,
+    "odds": 1100,
+    "res": "L",
+    "units": -1.0
+   }
+  }
+ },
+ {
+  "game": "Chicago Bears @ Detroit Lions",
+  "player": "jared goff",
+  "stat": "anytime_td",
+  "kickoff": "2026-11-26T18:00:00.000Z",
+  "week": 12,
+  "actual": 0.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-26T1759Z",
+    "line": 0.5,
+    "odds": {
+     "over": 1200,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {
+     "pin_price": "over"
+    },
+    "pin": 0.5,
+    "pin_lim": 250,
+    "fair_over": 0.0851,
+    "edge_pct": 10.68,
+    "td_open_odds": 1100,
+    "td_move_pp": -0.6
+   },
+   "early": {
+    "t": "2026-11-23T0956Z",
+    "line": 0.5,
+    "odds": {
+     "over": 1100,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {},
+    "td_open_odds": 1100,
+    "td_move_pp": 0.0
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "pin_price": {
+    "side": "over",
+    "line": 0.5,
+    "odds": 1200,
+    "res": "L",
+    "units": -1.0
+   }
+  }
+ },
+ {
+  "game": "Chicago Bears @ Detroit Lions",
+  "player": "sam roush",
+  "stat": "recv_yds",
+  "kickoff": "2026-11-26T18:00:00.000Z",
+  "week": 12,
+  "actual": 31.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-26T1759Z",
+    "line": 6.5,
+    "odds": {
+     "over": -113,
+     "under": -113
+    },
+    "open": 5.5,
+    "calls": {
+     "fd_move": "over"
+    },
+    "move_pts": 1.0
+   },
+   "early": {
+    "t": "2026-11-23T2214Z",
+    "line": 5.5,
+    "odds": {
+     "over": -114,
+     "under": -114
+    },
+    "open": 5.5,
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "fd_move": {
+    "side": "over",
+    "line": 6.5,
+    "odds": -113,
+    "res": "W",
+    "units": 0.885
+   }
+  }
+ },
+ {
+  "game": "Chicago Bears @ Detroit Lions",
+  "player": "brock wright",
+  "stat": "receptions",
+  "kickoff": "2026-11-26T18:00:00.000Z",
+  "week": 12,
+  "actual": 0.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-26T1759Z",
+    "line": 0.5,
+    "odds": {
+     "over": -188,
+     "under": 140
+    },
+    "open": 0.5,
+    "calls": {
+     "fd_juice": "over"
+    },
+    "pin": 0.5,
+    "pin_lim": 1000,
+    "fair_over": 0.5956,
+    "juice_c": [
+     -30,
+     22
+    ]
+   },
+   "early": {
+    "t": "2026-11-23T2214Z",
+    "line": 0.5,
+    "odds": {
+     "over": -158,
+     "under": 118
+    },
+    "open": 0.5,
+    "calls": {},
+    "pin": 0.5,
+    "pin_lim": 250,
+    "fair_over": 0.5717
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "fd_juice": {
+    "side": "over",
+    "line": 0.5,
+    "odds": -188,
+    "res": "L",
+    "units": -1.0
+   }
+  }
+ },
+ {
+  "game": "Chicago Bears @ Detroit Lions",
+  "player": "brock wright",
+  "stat": "recv_yds",
+  "kickoff": "2026-11-26T18:00:00.000Z",
+  "week": 12,
+  "actual": 0.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-26T1759Z",
+    "line": 5.5,
+    "odds": {
+     "over": -113,
+     "under": -113
+    },
+    "open": 3.5,
+    "calls": {
+     "pin_value": "under",
+     "fd_move": "over"
+    },
+    "pin": 4.5,
+    "pin_lim": 1000,
+    "fair_over": 0.4817,
+    "pin_gap": 1.0,
+    "move_pts": 2.0
+   },
+   "early": {
+    "t": "2026-11-23T2214Z",
+    "line": 3.5,
+    "odds": {
+     "over": -102,
+     "under": -128
+    },
+    "open": 3.5,
+    "calls": {},
+    "pin": 3.5,
+    "pin_lim": 250,
+    "fair_over": 0.4735
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "pin_value": {
+    "side": "under",
+    "line": 5.5,
+    "odds": -113,
+    "res": "W",
+    "units": 0.885
+   },
+   "fd_move": {
+    "side": "over",
+    "line": 5.5,
+    "odds": -113,
+    "res": "L",
+    "units": -1.0
+   }
+  }
+ },
+ {
+  "game": "Chicago Bears @ Detroit Lions",
+  "player": "zavion thomas",
+  "stat": "recv_yds",
+  "kickoff": "2026-11-26T18:00:00.000Z",
+  "week": 12,
+  "actual": 0.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-26T1759Z",
+    "line": 11.5,
+    "odds": {
+     "over": -113,
+     "under": -113
+    },
+    "open": 10.5,
+    "calls": {
+     "pin_value": "under",
+     "fd_move": "over"
+    },
+    "pin": 10.5,
+    "pin_lim": 5000,
+    "fair_over": 0.5043,
+    "pin_gap": 1.0,
+    "move_pts": 1.0
+   },
+   "early": {
+    "t": "2026-11-23T2214Z",
+    "line": 10.5,
+    "odds": {
+     "over": -114,
+     "under": -114
+    },
+    "open": 10.5,
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "pin_value": {
+    "side": "under",
+    "line": 11.5,
+    "odds": -113,
+    "res": "W",
+    "units": 0.885
+   },
+   "fd_move": {
+    "side": "over",
+    "line": 11.5,
+    "odds": -113,
+    "res": "L",
+    "units": -1.0
+   }
+  }
+ },
+ {
+  "game": "Chicago Bears @ Detroit Lions",
+  "player": "sione vaki",
+  "stat": "receptions",
+  "kickoff": "2026-11-26T18:00:00.000Z",
+  "week": 12,
+  "actual": 2.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-26T1759Z",
+    "line": 0.5,
+    "odds": {
+     "over": -188,
+     "under": 140
+    },
+    "open": 0.5,
+    "calls": {
+     "fd_juice": "over"
+    },
+    "pin": 0.5,
+    "pin_lim": 1000,
+    "fair_over": 0.587,
+    "juice_c": [
+     -40,
+     28
+    ]
+   },
+   "early": {
+    "t": "2026-11-23T2214Z",
+    "line": 0.5,
+    "odds": {
+     "over": -148,
+     "under": 112
+    },
+    "open": 0.5,
+    "calls": {},
+    "pin": 0.5,
+    "pin_lim": 250,
+    "fair_over": 0.5585
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "fd_juice": {
+    "side": "over",
+    "line": 0.5,
+    "odds": -188,
+    "res": "W",
+    "units": 0.532
+   }
+  }
+ },
+ {
+  "game": "Chicago Bears @ Detroit Lions",
+  "player": "sione vaki",
+  "stat": "recv_yds",
+  "kickoff": "2026-11-26T18:00:00.000Z",
+  "week": 12,
+  "actual": -4.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-26T1759Z",
+    "line": 3.5,
+    "odds": {
+     "over": -128,
+     "under": 100
+    },
+    "open": 2.5,
+    "calls": {
+     "pin_value": "under",
+     "fd_move": "over"
+    },
+    "pin": 2.5,
+    "pin_lim": 1000,
+    "fair_over": 0.514,
+    "pin_gap": 1.0,
+    "move_pts": 1.0
+   },
+   "early": {
+    "t": "2026-11-23T2214Z",
+    "line": 2.5,
+    "odds": {
+     "over": -102,
+     "under": -128
+    },
+    "open": 2.5,
+    "calls": {},
+    "pin": 2.5,
+    "pin_lim": 250,
+    "fair_over": 0.4735
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "pin_value": {
+    "side": "under",
+    "line": 3.5,
+    "odds": 100,
+    "res": "W",
+    "units": 1.0
+   },
+   "fd_move": {
+    "side": "over",
+    "line": 3.5,
+    "odds": -128,
+    "res": "L",
+    "units": -1.0
+   }
+  }
+ },
+ {
+  "game": "Chicago Bears @ Detroit Lions",
+  "player": "zavion thomas",
+  "stat": "receptions",
+  "kickoff": "2026-11-26T18:00:00.000Z",
+  "week": 12,
+  "actual": 0.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-26T1759Z",
+    "line": 1.5,
+    "odds": {
+     "over": 144,
+     "under": -194
+    },
+    "open": 1.5,
+    "calls": {
+     "fd_juice": "under"
+    },
+    "pin": 1.5,
+    "pin_lim": 5000,
+    "fair_over": 0.3535,
+    "juice_c": [
+     10,
+     -14
+    ]
+   },
+   "early": {
+    "t": "2026-11-23T2214Z",
+    "line": 1.5,
+    "odds": {
+     "over": 134,
+     "under": -180
+    },
+    "open": 1.5,
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "fd_juice": {
+    "side": "under",
+    "line": 1.5,
+    "odds": -194,
+    "res": "W",
+    "units": 0.515
+   }
+  }
+ },
+ {
+  "game": "Chicago Bears @ Detroit Lions",
+  "player": "luther burden iii",
+  "stat": "rush_yds",
+  "kickoff": "2026-11-26T18:00:00.000Z",
+  "week": 12,
+  "actual": 1.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-26T1759Z",
+    "line": 2.5,
+    "odds": {
+     "over": 126,
+     "under": -162
+    },
+    "open": 2.5,
+    "calls": {
+     "fd_juice": "under"
+    },
+    "juice_c": [
+     24,
+     -30
+    ]
+   },
+   "early": {
+    "t": "2026-11-23T2214Z",
+    "line": 2.5,
+    "odds": {
+     "over": 102,
+     "under": -132
+    },
+    "open": 2.5,
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "fd_juice": {
+    "side": "under",
+    "line": 2.5,
+    "odds": -162,
+    "res": "W",
+    "units": 0.617
+   }
+  }
+ },
+ {
+  "game": "Philadelphia Eagles @ Dallas Cowboys",
+  "player": "dallas goedert",
+  "stat": "anytime_td",
+  "kickoff": "2026-11-26T21:30:00.000Z",
+  "week": 12,
+  "actual": 0.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-26T2129Z",
+    "line": 0.5,
+    "odds": {
+     "over": 330,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {
+     "pin_price": "over"
+    },
+    "pin": 0.5,
+    "pin_lim": 10000,
+    "fair_over": 0.234,
+    "edge_pct": 0.62,
+    "td_open_odds": 310,
+    "td_move_pp": -1.1
+   },
+   "early": {
+    "t": "2026-11-23T0956Z",
+    "line": 0.5,
+    "odds": {
+     "over": 310,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {},
+    "td_open_odds": 310,
+    "td_move_pp": 0.0
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "pin_price": {
+    "side": "over",
+    "line": 0.5,
+    "odds": 330,
+    "res": "L",
+    "units": -1.0
+   }
+  }
+ },
+ {
+  "game": "Philadelphia Eagles @ Dallas Cowboys",
+  "player": "makai lemon",
+  "stat": "anytime_td",
+  "kickoff": "2026-11-26T21:30:00.000Z",
+  "week": 12,
+  "actual": 0.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-26T2129Z",
+    "line": 0.5,
+    "odds": {
+     "over": 430,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {
+     "pin_price": "over"
+    },
+    "pin": 0.5,
+    "pin_lim": 2000,
+    "fair_over": 0.1913,
+    "edge_pct": 1.4,
+    "td_open_odds": 400,
+    "td_move_pp": -1.1
+   },
+   "early": {
+    "t": "2026-11-23T0956Z",
+    "line": 0.5,
+    "odds": {
+     "over": 400,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {},
+    "td_open_odds": 400,
+    "td_move_pp": 0.0
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "pin_price": {
+    "side": "over",
+    "line": 0.5,
+    "odds": 430,
+    "res": "L",
+    "units": -1.0
+   }
+  }
  }
 ]
