@@ -67041,5 +67041,1609 @@
     "units": -1.0
    }
   }
+ },
+ {
+  "game": "Green Bay Packers @ Los Angeles Rams",
+  "player": "matthew stafford",
+  "stat": "pass_yds",
+  "kickoff": "2026-11-26T01:00:00.000Z",
+  "week": 12,
+  "actual": 140.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-26T0059Z",
+    "line": 230.5,
+    "odds": {
+     "over": -113,
+     "under": -113
+    },
+    "open": 234.5,
+    "calls": {
+     "pin_value": "over",
+     "fd_move": "under"
+    },
+    "pin": 232.5,
+    "pin_lim": 7500,
+    "fair_over": 0.4889,
+    "pin_gap": -2.0,
+    "move_pts": -4.0
+   },
+   "early": {
+    "t": "2026-11-23T0956Z",
+    "line": 234.5,
+    "odds": {
+     "over": -114,
+     "under": -114
+    },
+    "open": 234.5,
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "pin_value": {
+    "side": "over",
+    "line": 230.5,
+    "odds": -113,
+    "res": "L",
+    "units": -1.0
+   },
+   "fd_move": {
+    "side": "under",
+    "line": 230.5,
+    "odds": -113,
+    "res": "W",
+    "units": 0.885
+   }
+  }
+ },
+ {
+  "game": "Green Bay Packers @ Los Angeles Rams",
+  "player": "jordan love",
+  "stat": "pass_tds",
+  "kickoff": "2026-11-26T01:00:00.000Z",
+  "week": 12,
+  "actual": 1.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-26T0059Z",
+    "line": 1.5,
+    "odds": {
+     "over": -102,
+     "under": -128
+    },
+    "open": 1.5,
+    "calls": {
+     "fd_juice": "under"
+    },
+    "pin": 1.5,
+    "pin_lim": 7500,
+    "fair_over": 0.4911,
+    "juice_c": [
+     12,
+     -14
+    ]
+   },
+   "early": {
+    "t": "2026-11-23T0956Z",
+    "line": 1.5,
+    "odds": {
+     "over": -114,
+     "under": -114
+    },
+    "open": 1.5,
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "fd_juice": {
+    "side": "under",
+    "line": 1.5,
+    "odds": -128,
+    "res": "W",
+    "units": 0.781
+   }
+  }
+ },
+ {
+  "game": "Green Bay Packers @ Los Angeles Rams",
+  "player": "matthew stafford",
+  "stat": "pass_tds",
+  "kickoff": "2026-11-26T01:00:00.000Z",
+  "week": 12,
+  "actual": 0.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-26T0059Z",
+    "line": 1.5,
+    "odds": {
+     "over": 128,
+     "under": -168
+    },
+    "open": 1.5,
+    "calls": {
+     "fd_juice": "under"
+    },
+    "pin": 1.5,
+    "pin_lim": 7500,
+    "fair_over": 0.4336,
+    "juice_c": [
+     232,
+     -40
+    ]
+   },
+   "early": {
+    "t": "2026-11-23T0956Z",
+    "line": 1.5,
+    "odds": {
+     "over": -104,
+     "under": -128
+    },
+    "open": 1.5,
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "fd_juice": {
+    "side": "under",
+    "line": 1.5,
+    "odds": -168,
+    "res": "W",
+    "units": 0.595
+   }
+  }
+ },
+ {
+  "game": "Green Bay Packers @ Los Angeles Rams",
+  "player": "jordan love",
+  "stat": "pass_yds",
+  "kickoff": "2026-11-26T01:00:00.000Z",
+  "week": 12,
+  "actual": 198.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-26T0059Z",
+    "line": 262.5,
+    "odds": {
+     "over": -113,
+     "under": -113
+    },
+    "open": 273.5,
+    "calls": {
+     "pin_value": "over",
+     "fd_move": "under"
+    },
+    "pin": 263.5,
+    "pin_lim": 7500,
+    "fair_over": 0.5045,
+    "pin_gap": -1.0,
+    "move_pts": -11.0
+   },
+   "early": {
+    "t": "2026-11-23T0956Z",
+    "line": 273.5,
+    "odds": {
+     "over": -114,
+     "under": -114
+    },
+    "open": 273.5,
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "pin_value": {
+    "side": "over",
+    "line": 262.5,
+    "odds": -113,
+    "res": "L",
+    "units": -1.0
+   },
+   "fd_move": {
+    "side": "under",
+    "line": 262.5,
+    "odds": -113,
+    "res": "W",
+    "units": 0.885
+   }
+  }
+ },
+ {
+  "game": "Green Bay Packers @ Los Angeles Rams",
+  "player": "konata mumpfield",
+  "stat": "recv_yds",
+  "kickoff": "2026-11-26T01:00:00.000Z",
+  "week": 12,
+  "actual": 69.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-26T0059Z",
+    "line": 34.5,
+    "odds": {
+     "over": -113,
+     "under": -113
+    },
+    "open": 37.5,
+    "calls": {
+     "fd_move": "under"
+    },
+    "pin": 34.5,
+    "pin_lim": 2000,
+    "fair_over": 0.4978,
+    "move_pts": -3.0
+   },
+   "early": {
+    "t": "2026-11-23T0956Z",
+    "line": 37.5,
+    "odds": {
+     "over": -114,
+     "under": -114
+    },
+    "open": 37.5,
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "fd_move": {
+    "side": "under",
+    "line": 34.5,
+    "odds": -113,
+    "res": "L",
+    "units": -1.0
+   }
+  }
+ },
+ {
+  "game": "Green Bay Packers @ Los Angeles Rams",
+  "player": "colby parkinson",
+  "stat": "recv_yds",
+  "kickoff": "2026-11-26T01:00:00.000Z",
+  "week": 12,
+  "actual": -1.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-26T0059Z",
+    "line": 18.5,
+    "odds": {
+     "over": -113,
+     "under": -113
+    },
+    "open": 21.5,
+    "calls": {
+     "pin_value": "under",
+     "fd_move": "under"
+    },
+    "pin": 17.5,
+    "pin_lim": 2000,
+    "fair_over": 0.5045,
+    "pin_gap": 1.0,
+    "move_pts": -3.0
+   },
+   "early": {
+    "t": "2026-11-23T0956Z",
+    "line": 21.5,
+    "odds": {
+     "over": -114,
+     "under": -114
+    },
+    "open": 21.5,
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "pin_value": {
+    "side": "under",
+    "line": 18.5,
+    "odds": -113,
+    "res": "W",
+    "units": 0.885
+   },
+   "fd_move": {
+    "side": "under",
+    "line": 18.5,
+    "odds": -113,
+    "res": "W",
+    "units": 0.885
+   }
+  }
+ },
+ {
+  "game": "Green Bay Packers @ Los Angeles Rams",
+  "player": "tucker kraft",
+  "stat": "recv_yds",
+  "kickoff": "2026-11-26T01:00:00.000Z",
+  "week": 12,
+  "actual": 24.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-26T0059Z",
+    "line": 35.5,
+    "odds": {
+     "over": -113,
+     "under": -113
+    },
+    "open": 37.5,
+    "calls": {
+     "pin_value": "over",
+     "fd_move": "under"
+    },
+    "pin": 36.5,
+    "pin_lim": 7500,
+    "fair_over": 0.5,
+    "pin_gap": -1.0,
+    "move_pts": -2.0
+   },
+   "early": {
+    "t": "2026-11-23T0956Z",
+    "line": 37.5,
+    "odds": {
+     "over": -114,
+     "under": -114
+    },
+    "open": 37.5,
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "pin_value": {
+    "side": "over",
+    "line": 35.5,
+    "odds": -113,
+    "res": "L",
+    "units": -1.0
+   },
+   "fd_move": {
+    "side": "under",
+    "line": 35.5,
+    "odds": -113,
+    "res": "W",
+    "units": 0.885
+   }
+  }
+ },
+ {
+  "game": "Green Bay Packers @ Los Angeles Rams",
+  "player": "christian watson",
+  "stat": "recv_yds",
+  "kickoff": "2026-11-26T01:00:00.000Z",
+  "week": 12,
+  "actual": 65.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-26T0059Z",
+    "line": 73.5,
+    "odds": {
+     "over": -113,
+     "under": -113
+    },
+    "open": 76.5,
+    "calls": {
+     "pin_value": "under",
+     "fd_move": "under"
+    },
+    "pin": 72.5,
+    "pin_lim": 7500,
+    "fair_over": 0.4889,
+    "pin_gap": 1.0,
+    "move_pts": -3.0
+   },
+   "early": {
+    "t": "2026-11-23T0956Z",
+    "line": 76.5,
+    "odds": {
+     "over": -114,
+     "under": -114
+    },
+    "open": 76.5,
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "pin_value": {
+    "side": "under",
+    "line": 73.5,
+    "odds": -113,
+    "res": "W",
+    "units": 0.885
+   },
+   "fd_move": {
+    "side": "under",
+    "line": 73.5,
+    "odds": -113,
+    "res": "W",
+    "units": 0.885
+   }
+  }
+ },
+ {
+  "game": "Green Bay Packers @ Los Angeles Rams",
+  "player": "konata mumpfield",
+  "stat": "receptions",
+  "kickoff": "2026-11-26T01:00:00.000Z",
+  "week": 12,
+  "actual": 4.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-26T0059Z",
+    "line": 2.5,
+    "odds": {
+     "over": -158,
+     "under": 118
+    },
+    "open": 3.5,
+    "calls": {
+     "fd_move": "under"
+    },
+    "pin": 2.5,
+    "pin_lim": 2000,
+    "fair_over": 0.5583,
+    "move_pts": -1.0
+   },
+   "early": {
+    "t": "2026-11-23T0956Z",
+    "line": 3.5,
+    "odds": {
+     "over": 118,
+     "under": -158
+    },
+    "open": 3.5,
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "fd_move": {
+    "side": "under",
+    "line": 2.5,
+    "odds": 118,
+    "res": "L",
+    "units": -1.0
+   }
+  }
+ },
+ {
+  "game": "Green Bay Packers @ Los Angeles Rams",
+  "player": "davis allen",
+  "stat": "recv_yds",
+  "kickoff": "2026-11-26T01:00:00.000Z",
+  "week": 12,
+  "actual": 14.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-26T0059Z",
+    "line": 10.5,
+    "odds": {
+     "over": -113,
+     "under": -113
+    },
+    "open": 11.5,
+    "calls": {
+     "pin_value": "over",
+     "fd_move": "under"
+    },
+    "pin": 11.5,
+    "pin_lim": 1000,
+    "fair_over": 0.4651,
+    "pin_gap": -1.0,
+    "move_pts": -1.0
+   },
+   "early": {
+    "t": "2026-11-23T0956Z",
+    "line": 11.5,
+    "odds": {
+     "over": -114,
+     "under": -114
+    },
+    "open": 11.5,
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "pin_value": {
+    "side": "over",
+    "line": 10.5,
+    "odds": -113,
+    "res": "W",
+    "units": 0.885
+   },
+   "fd_move": {
+    "side": "under",
+    "line": 10.5,
+    "odds": -113,
+    "res": "L",
+    "units": -1.0
+   }
+  }
+ },
+ {
+  "game": "Green Bay Packers @ Los Angeles Rams",
+  "player": "tyler higbee",
+  "stat": "receptions",
+  "kickoff": "2026-11-26T01:00:00.000Z",
+  "week": 12,
+  "actual": 1.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-26T0059Z",
+    "line": 3.5,
+    "odds": {
+     "over": 106,
+     "under": -140
+    },
+    "open": 3.5,
+    "calls": {
+     "fd_juice": "under"
+    },
+    "pin": 3.5,
+    "pin_lim": 2000,
+    "fair_over": 0.463,
+    "juice_c": [
+     220,
+     -26
+    ]
+   },
+   "early": {
+    "t": "2026-11-23T0956Z",
+    "line": 3.5,
+    "odds": {
+     "over": -114,
+     "under": -114
+    },
+    "open": 3.5,
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "fd_juice": {
+    "side": "under",
+    "line": 3.5,
+    "odds": -140,
+    "res": "W",
+    "units": 0.714
+   }
+  }
+ },
+ {
+  "game": "Green Bay Packers @ Los Angeles Rams",
+  "player": "colby parkinson",
+  "stat": "receptions",
+  "kickoff": "2026-11-26T01:00:00.000Z",
+  "week": 12,
+  "actual": 2.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-26T0059Z",
+    "line": 2.5,
+    "odds": {
+     "over": -138,
+     "under": 104
+    },
+    "open": 2.5,
+    "calls": {
+     "fd_juice": "under"
+    },
+    "pin": 2.5,
+    "pin_lim": 2000,
+    "fair_over": 0.5166,
+    "juice_c": [
+     34,
+     -24
+    ]
+   },
+   "early": {
+    "t": "2026-11-23T0956Z",
+    "line": 2.5,
+    "odds": {
+     "over": -172,
+     "under": 128
+    },
+    "open": 2.5,
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "fd_juice": {
+    "side": "under",
+    "line": 2.5,
+    "odds": 104,
+    "res": "W",
+    "units": 1.04
+   }
+  }
+ },
+ {
+  "game": "Green Bay Packers @ Los Angeles Rams",
+  "player": "tyler higbee",
+  "stat": "recv_yds",
+  "kickoff": "2026-11-26T01:00:00.000Z",
+  "week": 12,
+  "actual": 14.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-26T0059Z",
+    "line": 30.5,
+    "odds": {
+     "over": -113,
+     "under": -113
+    },
+    "open": 33.5,
+    "calls": {
+     "pin_value": "under",
+     "fd_move": "under"
+    },
+    "pin": 29.5,
+    "pin_lim": 2000,
+    "fair_over": 0.5276,
+    "pin_gap": 1.0,
+    "move_pts": -3.0
+   },
+   "early": {
+    "t": "2026-11-23T0956Z",
+    "line": 33.5,
+    "odds": {
+     "over": -114,
+     "under": -114
+    },
+    "open": 33.5,
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "pin_value": {
+    "side": "under",
+    "line": 30.5,
+    "odds": -113,
+    "res": "W",
+    "units": 0.885
+   },
+   "fd_move": {
+    "side": "under",
+    "line": 30.5,
+    "odds": -113,
+    "res": "W",
+    "units": 0.885
+   }
+  }
+ },
+ {
+  "game": "Green Bay Packers @ Los Angeles Rams",
+  "player": "jordan love",
+  "stat": "rush_yds",
+  "kickoff": "2026-11-26T01:00:00.000Z",
+  "week": 12,
+  "actual": 7.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-26T0059Z",
+    "line": 3.5,
+    "odds": {
+     "over": -113,
+     "under": -113
+    },
+    "open": 5.5,
+    "calls": {
+     "fd_move": "under"
+    },
+    "pin": 3.5,
+    "pin_lim": 2000,
+    "fair_over": 0.4978,
+    "move_pts": -2.0
+   },
+   "early": {
+    "t": "2026-11-23T0956Z",
+    "line": 5.5,
+    "odds": {
+     "over": -114,
+     "under": -114
+    },
+    "open": 5.5,
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "fd_move": {
+    "side": "under",
+    "line": 3.5,
+    "odds": -113,
+    "res": "L",
+    "units": -1.0
+   }
+  }
+ },
+ {
+  "game": "Green Bay Packers @ Los Angeles Rams",
+  "player": "savion williams",
+  "stat": "receptions",
+  "kickoff": "2026-11-26T01:00:00.000Z",
+  "week": 12,
+  "actual": 1.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-26T0059Z",
+    "line": 1.5,
+    "odds": {
+     "over": -172,
+     "under": 128
+    },
+    "open": 2.5,
+    "calls": {
+     "pin_value": "over",
+     "fd_move": "under"
+    },
+    "pin": 2.5,
+    "pin_lim": 1000,
+    "fair_over": 0.369,
+    "pin_gap": -1.0,
+    "move_pts": -1.0
+   },
+   "early": {
+    "t": "2026-11-23T1457Z",
+    "line": 2.5,
+    "odds": {
+     "over": 112,
+     "under": -148
+    },
+    "open": 2.5,
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "pin_value": {
+    "side": "over",
+    "line": 1.5,
+    "odds": -172,
+    "res": "L",
+    "units": -1.0
+   },
+   "fd_move": {
+    "side": "under",
+    "line": 1.5,
+    "odds": 128,
+    "res": "W",
+    "units": 1.28
+   }
+  }
+ },
+ {
+  "game": "Green Bay Packers @ Los Angeles Rams",
+  "player": "xavier smith",
+  "stat": "receptions",
+  "kickoff": "2026-11-26T01:00:00.000Z",
+  "week": 12,
+  "actual": 1.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-26T0059Z",
+    "line": 0.5,
+    "odds": {
+     "over": -158,
+     "under": 118
+    },
+    "open": 0.5,
+    "calls": {
+     "fd_juice": "under"
+    },
+    "pin": 0.5,
+    "pin_lim": 1000,
+    "fair_over": 0.5439,
+    "juice_c": [
+     82,
+     -56
+    ]
+   },
+   "early": {
+    "t": "2026-11-23T1457Z",
+    "line": 0.5,
+    "odds": {
+     "over": -240,
+     "under": 174
+    },
+    "open": 0.5,
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "fd_juice": {
+    "side": "under",
+    "line": 0.5,
+    "odds": 118,
+    "res": "L",
+    "units": -1.0
+   }
+  }
+ },
+ {
+  "game": "Green Bay Packers @ Los Angeles Rams",
+  "player": "xavier smith",
+  "stat": "recv_yds",
+  "kickoff": "2026-11-26T01:00:00.000Z",
+  "week": 12,
+  "actual": 4.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-26T0059Z",
+    "line": 6.5,
+    "odds": {
+     "over": -102,
+     "under": -125
+    },
+    "open": 9.5,
+    "calls": {
+     "fd_move": "under"
+    },
+    "pin": 6.5,
+    "pin_lim": 1000,
+    "fair_over": 0.463,
+    "move_pts": -3.0
+   },
+   "early": {
+    "t": "2026-11-23T1457Z",
+    "line": 9.5,
+    "odds": {
+     "over": -114,
+     "under": -114
+    },
+    "open": 9.5,
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "fd_move": {
+    "side": "under",
+    "line": 6.5,
+    "odds": -125,
+    "res": "W",
+    "units": 0.8
+   }
+  }
+ },
+ {
+  "game": "Green Bay Packers @ Los Angeles Rams",
+  "player": "savion williams",
+  "stat": "recv_yds",
+  "kickoff": "2026-11-26T01:00:00.000Z",
+  "week": 12,
+  "actual": 3.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-26T0059Z",
+    "line": 15.5,
+    "odds": {
+     "over": -113,
+     "under": -113
+    },
+    "open": 18.5,
+    "calls": {
+     "pin_price": "over",
+     "fd_move": "under"
+    },
+    "pin": 15.5,
+    "pin_lim": 1000,
+    "fair_over": 0.5328,
+    "edge_pct": 0.43,
+    "move_pts": -3.0
+   },
+   "early": {
+    "t": "2026-11-23T1457Z",
+    "line": 18.5,
+    "odds": {
+     "over": -114,
+     "under": -114
+    },
+    "open": 18.5,
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "pin_price": {
+    "side": "over",
+    "line": 15.5,
+    "odds": -113,
+    "res": "L",
+    "units": -1.0
+   },
+   "fd_move": {
+    "side": "under",
+    "line": 15.5,
+    "odds": -113,
+    "res": "W",
+    "units": 0.885
+   }
+  }
+ },
+ {
+  "game": "Green Bay Packers @ Los Angeles Rams",
+  "player": "savion williams",
+  "stat": "rush_yds",
+  "kickoff": "2026-11-26T01:00:00.000Z",
+  "week": 12,
+  "actual": 18.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-26T0059Z",
+    "line": 4.5,
+    "odds": {
+     "over": -102,
+     "under": -125
+    },
+    "open": 4.5,
+    "calls": {
+     "fd_juice": "under"
+    },
+    "pin": 4.5,
+    "pin_lim": 500,
+    "fair_over": 0.4767,
+    "juice_c": [
+     12,
+     -11
+    ]
+   },
+   "early": {
+    "t": "2026-11-23T1457Z",
+    "line": 4.5,
+    "odds": {
+     "over": -114,
+     "under": -114
+    },
+    "open": 4.5,
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "fd_juice": {
+    "side": "under",
+    "line": 4.5,
+    "odds": -125,
+    "res": "L",
+    "units": -1.0
+   }
+  }
+ },
+ {
+  "game": "Green Bay Packers @ Los Angeles Rams",
+  "player": "chris brooks",
+  "stat": "recv_yds",
+  "kickoff": "2026-11-26T01:00:00.000Z",
+  "week": 12,
+  "actual": 22.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-26T0059Z",
+    "line": 6.5,
+    "odds": {
+     "over": -113,
+     "under": -113
+    },
+    "open": 8.5,
+    "calls": {
+     "pin_value": "over",
+     "fd_move": "under"
+    },
+    "pin": 7.5,
+    "pin_lim": 1000,
+    "fair_over": 0.4672,
+    "pin_gap": -1.0,
+    "move_pts": -2.0
+   },
+   "early": {
+    "t": "2026-11-23T2214Z",
+    "line": 8.5,
+    "odds": {
+     "over": -114,
+     "under": -114
+    },
+    "open": 8.5,
+    "calls": {
+     "pin_value": "over"
+    },
+    "pin": 9.5,
+    "pin_lim": 250,
+    "fair_over": 0.4657,
+    "pin_gap": -1.0
+   }
+  },
+  "early_graded": {
+   "pin_value": {
+    "side": "over",
+    "line": 8.5,
+    "odds": -114,
+    "res": "W",
+    "units": 0.877,
+    "clv": -2.0,
+    "clv_pct": -0.2
+   }
+  },
+  "close_graded": {
+   "pin_value": {
+    "side": "over",
+    "line": 6.5,
+    "odds": -113,
+    "res": "W",
+    "units": 0.885
+   },
+   "fd_move": {
+    "side": "under",
+    "line": 6.5,
+    "odds": -113,
+    "res": "L",
+    "units": -1.0
+   }
+  }
+ },
+ {
+  "game": "Green Bay Packers @ Los Angeles Rams",
+  "player": "blake corum",
+  "stat": "recv_yds",
+  "kickoff": "2026-11-26T01:00:00.000Z",
+  "week": 12,
+  "actual": 21.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-26T0059Z",
+    "line": 13.5,
+    "odds": {
+     "over": -113,
+     "under": -113
+    },
+    "open": 10.5,
+    "calls": {
+     "fd_move": "over"
+    },
+    "pin": 13.5,
+    "pin_lim": 3000,
+    "fair_over": 0.5,
+    "move_pts": 3.0
+   },
+   "early": {
+    "t": "2026-11-23T2214Z",
+    "line": 10.5,
+    "odds": {
+     "over": -114,
+     "under": -114
+    },
+    "open": 10.5,
+    "calls": {},
+    "pin": 10.5,
+    "pin_lim": 250,
+    "fair_over": 0.5
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "fd_move": {
+    "side": "over",
+    "line": 13.5,
+    "odds": -113,
+    "res": "W",
+    "units": 0.885
+   }
+  }
+ },
+ {
+  "game": "Green Bay Packers @ Los Angeles Rams",
+  "player": "chris brooks",
+  "stat": "receptions",
+  "kickoff": "2026-11-26T01:00:00.000Z",
+  "week": 12,
+  "actual": 4.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-26T0059Z",
+    "line": 1.5,
+    "odds": {
+     "over": 112,
+     "under": -148
+    },
+    "open": 1.5,
+    "calls": {
+     "fd_juice": "under"
+    },
+    "pin": 1.5,
+    "pin_lim": 1000,
+    "fair_over": 0.423,
+    "juice_c": [
+     260,
+     -260
+    ]
+   },
+   "early": {
+    "t": "2026-11-23T2214Z",
+    "line": 1.5,
+    "odds": {
+     "over": -148,
+     "under": 112
+    },
+    "open": 1.5,
+    "calls": {
+     "pin_price": "under"
+    },
+    "pin": 1.5,
+    "pin_lim": 250,
+    "fair_over": 0.496,
+    "edge_pct": 6.86
+   }
+  },
+  "early_graded": {
+   "pin_price": {
+    "side": "under",
+    "line": 1.5,
+    "odds": 112,
+    "res": "L",
+    "units": -1.0,
+    "clv": -0.0,
+    "clv_pct": 12.5
+   }
+  },
+  "close_graded": {
+   "fd_juice": {
+    "side": "under",
+    "line": 1.5,
+    "odds": -148,
+    "res": "L",
+    "units": -1.0
+   }
+  }
+ },
+ {
+  "game": "Green Bay Packers @ Los Angeles Rams",
+  "player": "kyren williams",
+  "stat": "recv_yds",
+  "kickoff": "2026-11-26T01:00:00.000Z",
+  "week": 12,
+  "actual": 19.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-26T0059Z",
+    "line": 23.5,
+    "odds": {
+     "over": -113,
+     "under": -113
+    },
+    "open": 20.5,
+    "calls": {
+     "pin_value": "under",
+     "fd_move": "over"
+    },
+    "pin": 21.5,
+    "pin_lim": 3000,
+    "fair_over": 0.5089,
+    "pin_gap": 2.0,
+    "move_pts": 3.0
+   },
+   "early": {
+    "t": "2026-11-23T2214Z",
+    "line": 20.5,
+    "odds": {
+     "over": -114,
+     "under": -114
+    },
+    "open": 20.5,
+    "calls": {},
+    "pin": 20.5,
+    "pin_lim": 250,
+    "fair_over": 0.5
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "pin_value": {
+    "side": "under",
+    "line": 23.5,
+    "odds": -113,
+    "res": "W",
+    "units": 0.885
+   },
+   "fd_move": {
+    "side": "over",
+    "line": 23.5,
+    "odds": -113,
+    "res": "L",
+    "units": -1.0
+   }
+  }
+ },
+ {
+  "game": "Green Bay Packers @ Los Angeles Rams",
+  "player": "marshawn lloyd",
+  "stat": "recv_yds",
+  "kickoff": "2026-11-26T01:00:00.000Z",
+  "week": 12,
+  "actual": 6.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-26T0059Z",
+    "line": 7.5,
+    "odds": {
+     "over": -113,
+     "under": -113
+    },
+    "open": 7.5,
+    "calls": {
+     "pin_value": "under",
+     "pin_lead": "under"
+    },
+    "pin": 6.5,
+    "pin_lim": 1000,
+    "fair_over": 0.4955,
+    "pin_gap": 1.0
+   },
+   "early": {
+    "t": "2026-11-23T2214Z",
+    "line": 7.5,
+    "odds": {
+     "over": -114,
+     "under": -114
+    },
+    "open": 7.5,
+    "calls": {},
+    "pin": 7.5,
+    "pin_lim": 250,
+    "fair_over": 0.5
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "pin_value": {
+    "side": "under",
+    "line": 7.5,
+    "odds": -113,
+    "res": "W",
+    "units": 0.885
+   },
+   "pin_lead": {
+    "side": "under",
+    "line": 7.5,
+    "odds": -113,
+    "res": "W",
+    "units": 0.885
+   }
+  }
+ },
+ {
+  "game": "Green Bay Packers @ Los Angeles Rams",
+  "player": "blake corum",
+  "stat": "receptions",
+  "kickoff": "2026-11-26T01:00:00.000Z",
+  "week": 12,
+  "actual": 2.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-26T0059Z",
+    "line": 1.5,
+    "odds": {
+     "over": -205,
+     "under": 152
+    },
+    "open": 1.5,
+    "calls": {
+     "fd_juice": "over"
+    },
+    "pin": 1.5,
+    "pin_lim": 3000,
+    "fair_over": 0.6179,
+    "juice_c": [
+     -57,
+     40
+    ]
+   },
+   "early": {
+    "t": "2026-11-23T2214Z",
+    "line": 1.5,
+    "odds": {
+     "over": -148,
+     "under": 112
+    },
+    "open": 1.5,
+    "calls": {},
+    "pin": 1.5,
+    "pin_lim": 250,
+    "fair_over": 0.5592
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "fd_juice": {
+    "side": "over",
+    "line": 1.5,
+    "odds": -205,
+    "res": "W",
+    "units": 0.488
+   }
+  }
+ },
+ {
+  "game": "Green Bay Packers @ Los Angeles Rams",
+  "player": "marshawn lloyd",
+  "stat": "receptions",
+  "kickoff": "2026-11-26T01:00:00.000Z",
+  "week": 12,
+  "actual": 1.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-26T0059Z",
+    "line": 1.5,
+    "odds": {
+     "over": -125,
+     "under": -106
+    },
+    "open": 1.5,
+    "calls": {
+     "pin_price": "under"
+    },
+    "pin": 1.5,
+    "pin_lim": 1000,
+    "fair_over": 0.4812,
+    "edge_pct": 0.83
+   },
+   "early": {
+    "t": "2026-11-23T2214Z",
+    "line": 1.5,
+    "odds": {
+     "over": -130,
+     "under": -102
+    },
+    "open": 1.5,
+    "calls": {
+     "pin_price": "under"
+    },
+    "pin": 1.5,
+    "pin_lim": 250,
+    "fair_over": 0.4878,
+    "edge_pct": 1.43
+   }
+  },
+  "early_graded": {
+   "pin_price": {
+    "side": "under",
+    "line": 1.5,
+    "odds": -102,
+    "res": "W",
+    "units": 0.98,
+    "clv": -0.0,
+    "clv_pct": 1.0
+   }
+  },
+  "close_graded": {
+   "pin_price": {
+    "side": "under",
+    "line": 1.5,
+    "odds": -106,
+    "res": "W",
+    "units": 0.943
+   }
+  }
+ },
+ {
+  "game": "Green Bay Packers @ Los Angeles Rams",
+  "player": "kyren williams",
+  "stat": "receptions",
+  "kickoff": "2026-11-26T01:00:00.000Z",
+  "week": 12,
+  "actual": 4.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-26T0059Z",
+    "line": 3.5,
+    "odds": {
+     "over": -106,
+     "under": -125
+    },
+    "open": 3.5,
+    "calls": {
+     "fd_juice": "over"
+    },
+    "pin": 3.5,
+    "pin_lim": 3000,
+    "fair_over": 0.4911,
+    "juice_c": [
+     -220,
+     27
+    ]
+   },
+   "early": {
+    "t": "2026-11-23T2214Z",
+    "line": 3.5,
+    "odds": {
+     "over": 114,
+     "under": -152
+    },
+    "open": 3.5,
+    "calls": {},
+    "pin": 3.5,
+    "pin_lim": 250,
+    "fair_over": 0.4365
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "fd_juice": {
+    "side": "over",
+    "line": 3.5,
+    "odds": -106,
+    "res": "W",
+    "units": 0.943
+   }
+  }
+ },
+ {
+  "game": "Green Bay Packers @ Los Angeles Rams",
+  "player": "kyren williams",
+  "stat": "rush_yds",
+  "kickoff": "2026-11-26T01:00:00.000Z",
+  "week": 12,
+  "actual": 46.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-26T0059Z",
+    "line": 49.5,
+    "odds": {
+     "over": -113,
+     "under": -113
+    },
+    "open": 54.5,
+    "calls": {
+     "pin_value": "over",
+     "fd_move": "under"
+    },
+    "pin": 50.5,
+    "pin_lim": 7500,
+    "fair_over": 0.4866,
+    "pin_gap": -1.0,
+    "move_pts": -5.0
+   },
+   "early": {
+    "t": "2026-11-23T2214Z",
+    "line": 54.5,
+    "odds": {
+     "over": -114,
+     "under": -114
+    },
+    "open": 54.5,
+    "calls": {},
+    "pin": 54.5,
+    "pin_lim": 250,
+    "fair_over": 0.5
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "pin_value": {
+    "side": "over",
+    "line": 49.5,
+    "odds": -113,
+    "res": "L",
+    "units": -1.0
+   },
+   "fd_move": {
+    "side": "under",
+    "line": 49.5,
+    "odds": -113,
+    "res": "W",
+    "units": 0.885
+   }
+  }
+ },
+ {
+  "game": "Green Bay Packers @ Los Angeles Rams",
+  "player": "kaleb johnson",
+  "stat": "rush_yds",
+  "kickoff": "2026-11-26T01:00:00.000Z",
+  "week": 12,
+  "actual": 13.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-26T0059Z",
+    "line": 31.5,
+    "odds": {
+     "over": -113,
+     "under": -113
+    },
+    "open": 32.5,
+    "calls": {
+     "fd_move": "under"
+    },
+    "pin": 31.5,
+    "pin_lim": 3000,
+    "fair_over": 0.5156,
+    "move_pts": -1.0
+   },
+   "early": {
+    "t": "2026-11-23T2214Z",
+    "line": 32.5,
+    "odds": {
+     "over": -114,
+     "under": -114
+    },
+    "open": 32.5,
+    "calls": {},
+    "pin": 32.5,
+    "pin_lim": 250,
+    "fair_over": 0.5
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "fd_move": {
+    "side": "under",
+    "line": 31.5,
+    "odds": -113,
+    "res": "W",
+    "units": 0.885
+   }
+  }
+ },
+ {
+  "game": "Green Bay Packers @ Los Angeles Rams",
+  "player": "blake corum",
+  "stat": "rush_yds",
+  "kickoff": "2026-11-26T01:00:00.000Z",
+  "week": 12,
+  "actual": 184.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-26T0059Z",
+    "line": 60.5,
+    "odds": {
+     "over": -113,
+     "under": -113
+    },
+    "open": 55.5,
+    "calls": {
+     "pin_value": "under",
+     "fd_move": "over"
+    },
+    "pin": 59.5,
+    "pin_lim": 7500,
+    "fair_over": 0.4955,
+    "pin_gap": 1.0,
+    "move_pts": 5.0
+   },
+   "early": {
+    "t": "2026-11-23T2214Z",
+    "line": 55.5,
+    "odds": {
+     "over": -114,
+     "under": -114
+    },
+    "open": 55.5,
+    "calls": {},
+    "pin": 55.5,
+    "pin_lim": 250,
+    "fair_over": 0.5
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "pin_value": {
+    "side": "under",
+    "line": 60.5,
+    "odds": -113,
+    "res": "L",
+    "units": -1.0
+   },
+   "fd_move": {
+    "side": "over",
+    "line": 60.5,
+    "odds": -113,
+    "res": "W",
+    "units": 0.885
+   }
+  }
  }
 ]
