@@ -29650,5 +29650,687 @@
     "took_default": false
    }
   }
+ },
+ {
+  "game": "Chicago Bears @ Detroit Lions",
+  "market": "q4|total",
+  "period": "q4",
+  "kind": "total",
+  "kickoff": "2026-11-26T18:00:00.000Z",
+  "markets": {
+   "close": {
+    "t": "2026-11-26T1759Z",
+    "line": {
+     "over": 15.5,
+     "under": 15.5
+    },
+    "odds": {
+     "over": -116,
+     "under": -106
+    },
+    "open": 15.5,
+    "open_odds": {
+     "over": -104,
+     "under": -118
+    },
+    "calls": {
+     "fd_juice": "over"
+    }
+   },
+   "early": {
+    "t": "2026-11-23T0956Z",
+    "line": {
+     "over": 15.5,
+     "under": 15.5
+    },
+    "odds": {
+     "over": -104,
+     "under": -118
+    },
+    "open": 15.5,
+    "open_odds": {
+     "over": -104,
+     "under": -118
+    },
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "fd_juice": {
+    "side": "over",
+    "line": 15.5,
+    "odds": -116,
+    "res": "W",
+    "units": 0.862,
+    "took_default": true
+   }
+  }
+ },
+ {
+  "game": "Chicago Bears @ Detroit Lions",
+  "market": "q4|ml",
+  "period": "q4",
+  "kind": "ml",
+  "kickoff": "2026-11-26T18:00:00.000Z",
+  "markets": {
+   "close": {
+    "t": "2026-11-26T1759Z",
+    "line": {
+     "home": -110,
+     "away": -110
+    },
+    "odds": {
+     "home": -110,
+     "away": -110
+    },
+    "open": -105,
+    "open_odds": {
+     "home": -105,
+     "away": -115
+    },
+    "calls": {
+     "follow_move": "home"
+    },
+    "move": -5
+   },
+   "early": {
+    "t": "2026-11-23T0956Z",
+    "line": {
+     "home": -105,
+     "away": -115
+    },
+    "odds": {
+     "home": -105,
+     "away": -115
+    },
+    "open": -105,
+    "open_odds": {
+     "home": -105,
+     "away": -115
+    },
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "follow_move": {
+    "side": "home",
+    "line": -110,
+    "odds": -110,
+    "res": "L",
+    "units": -1.0,
+    "took_default": false
+   }
+  }
+ },
+ {
+  "game": "Chicago Bears @ Detroit Lions",
+  "market": "q4|spread",
+  "period": "q4",
+  "kind": "spread",
+  "kickoff": "2026-11-26T18:00:00.000Z",
+  "markets": {
+   "close": {
+    "t": "2026-11-26T1759Z",
+    "line": {
+     "home": 1.5,
+     "away": -1.5
+    },
+    "odds": {
+     "home": -166,
+     "away": 136
+    },
+    "open": 1.5,
+    "open_odds": {
+     "home": -154,
+     "away": 126
+    },
+    "calls": {
+     "fd_juice": "home"
+    }
+   },
+   "early": {
+    "t": "2026-11-23T0956Z",
+    "line": {
+     "home": 1.5,
+     "away": -1.5
+    },
+    "odds": {
+     "home": -154,
+     "away": 126
+    },
+    "open": 1.5,
+    "open_odds": {
+     "home": -154,
+     "away": 126
+    },
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "fd_juice": {
+    "side": "home",
+    "line": 1.5,
+    "odds": -166,
+    "res": "L",
+    "units": -1.0,
+    "took_default": false
+   }
+  }
+ },
+ {
+  "game": "Chicago Bears @ Detroit Lions",
+  "market": "1h|ml",
+  "period": "1h",
+  "kind": "ml",
+  "kickoff": "2026-11-26T18:00:00.000Z",
+  "markets": {
+   "close": {
+    "t": "2026-11-26T1759Z",
+    "line": {
+     "home": -102,
+     "away": -118
+    },
+    "odds": {
+     "home": -102,
+     "away": -118
+    },
+    "open": 106,
+    "open_odds": {
+     "home": 106,
+     "away": -128
+    },
+    "calls": {
+     "follow_move": "home",
+     "pin_price": "home"
+    },
+    "move": -208,
+    "pin": -109,
+    "pin_lim": 20000,
+    "edge_pct": 0.38
+   },
+   "early": {
+    "t": "2026-11-23T0956Z",
+    "line": {
+     "home": 106,
+     "away": -128
+    },
+    "odds": {
+     "home": 106,
+     "away": -128
+    },
+    "open": 106,
+    "open_odds": {
+     "home": 106,
+     "away": -128
+    },
+    "calls": {},
+    "pin": 116,
+    "pin_lim": 2000
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "follow_move": {
+    "side": "home",
+    "line": -102,
+    "odds": -102,
+    "res": "W",
+    "units": 0.98,
+    "took_default": false
+   },
+   "pin_price": {
+    "side": "home",
+    "line": -102,
+    "odds": -102,
+    "res": "W",
+    "units": 0.98,
+    "took_default": false
+   }
+  }
+ },
+ {
+  "game": "Chicago Bears @ Detroit Lions",
+  "market": "1h|tt|home",
+  "period": "1h",
+  "kind": "tt",
+  "kickoff": "2026-11-26T18:00:00.000Z",
+  "markets": {
+   "close": {
+    "t": "2026-11-26T1759Z",
+    "line": {
+     "over": 13.5,
+     "under": 13.5
+    },
+    "odds": {
+     "over": -130,
+     "under": 102
+    },
+    "open": 13.5,
+    "open_odds": {
+     "over": -120,
+     "under": -106
+    },
+    "calls": {
+     "fd_juice": "over",
+     "pin_price": "over"
+    },
+    "pin": 13.5,
+    "pin_lim": 2000,
+    "edge_pct": 0.6
+   },
+   "early": {
+    "t": "2026-11-23T0956Z",
+    "line": {
+     "over": 13.5,
+     "under": 13.5
+    },
+    "odds": {
+     "over": -120,
+     "under": -106
+    },
+    "open": 13.5,
+    "open_odds": {
+     "over": -120,
+     "under": -106
+    },
+    "calls": {},
+    "pin": 13.5,
+    "pin_lim": 2000
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "fd_juice": {
+    "side": "over",
+    "line": 13.5,
+    "odds": -130,
+    "res": "W",
+    "units": 0.769,
+    "took_default": true
+   },
+   "pin_price": {
+    "side": "over",
+    "line": 13.5,
+    "odds": -130,
+    "res": "W",
+    "units": 0.769,
+    "took_default": true
+   }
+  }
+ },
+ {
+  "game": "Chicago Bears @ Detroit Lions",
+  "market": "1h|spread",
+  "period": "1h",
+  "kind": "spread",
+  "kickoff": "2026-11-26T18:00:00.000Z",
+  "markets": {
+   "close": {
+    "t": "2026-11-26T1759Z",
+    "line": {
+     "home": 1.5,
+     "away": -1.5
+    },
+    "odds": {
+     "home": -135,
+     "away": 115
+    },
+    "open": 1.5,
+    "open_odds": {
+     "home": -125,
+     "away": 105
+    },
+    "calls": {
+     "pin_value": "home"
+    },
+    "pin": 0.5,
+    "pin_lim": 30000,
+    "pin_gap": 1.0
+   },
+   "early": {
+    "t": "2026-11-23T0956Z",
+    "line": {
+     "home": 1.5,
+     "away": -1.5
+    },
+    "odds": {
+     "home": -125,
+     "away": 105
+    },
+    "open": 1.5,
+    "open_odds": {
+     "home": -125,
+     "away": 105
+    },
+    "calls": {
+     "pin_value": "home"
+    },
+    "pin": 0.5,
+    "pin_lim": 3000,
+    "pin_gap": 1.0
+   }
+  },
+  "early_graded": {
+   "pin_value": {
+    "side": "home",
+    "line": 1.5,
+    "odds": -125,
+    "res": "W",
+    "units": 0.8,
+    "took_default": false,
+    "clv": 0.0
+   }
+  },
+  "close_graded": {
+   "pin_value": {
+    "side": "home",
+    "line": 1.5,
+    "odds": -135,
+    "res": "W",
+    "units": 0.741,
+    "took_default": false
+   }
+  }
+ },
+ {
+  "game": "Chicago Bears @ Detroit Lions",
+  "market": "1h|tt|away",
+  "period": "1h",
+  "kind": "tt",
+  "kickoff": "2026-11-26T18:00:00.000Z",
+  "markets": {
+   "close": {
+    "t": "2026-11-26T1759Z",
+    "line": {
+     "over": 13.5,
+     "under": 13.5
+    },
+    "odds": {
+     "over": -142,
+     "under": 112
+    },
+    "open": 14.5,
+    "open_odds": {
+     "over": 116,
+     "under": -148
+    },
+    "calls": {
+     "follow_move": "under",
+     "pin_value": "over"
+    },
+    "move": -1.0,
+    "pin": 14.5,
+    "pin_lim": 2000,
+    "pin_gap": -1.0
+   },
+   "early": {
+    "t": "2026-11-23T0956Z",
+    "line": {
+     "over": 14.5,
+     "under": 14.5
+    },
+    "odds": {
+     "over": 116,
+     "under": -148
+    },
+    "open": 14.5,
+    "open_odds": {
+     "over": 116,
+     "under": -148
+    },
+    "calls": {},
+    "pin": 14.5,
+    "pin_lim": 2000
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "follow_move": {
+    "side": "under",
+    "line": 13.5,
+    "odds": 112,
+    "res": "W",
+    "units": 1.12,
+    "took_default": false
+   },
+   "pin_value": {
+    "side": "over",
+    "line": 13.5,
+    "odds": -142,
+    "res": "L",
+    "units": -1.0,
+    "took_default": true
+   }
+  }
+ },
+ {
+  "game": "Chicago Bears @ Detroit Lions",
+  "market": "2h|tt|home",
+  "period": "2h",
+  "kind": "tt",
+  "kickoff": "2026-11-26T18:00:00.000Z",
+  "markets": {
+   "close": {
+    "t": "2026-11-26T1759Z",
+    "line": {
+     "over": 13.5,
+     "under": 13.5
+    },
+    "odds": {
+     "over": -136,
+     "under": 106
+    },
+    "open": 13.5,
+    "open_odds": {
+     "over": -113,
+     "under": -115
+    },
+    "calls": {
+     "fd_juice": "over"
+    }
+   },
+   "early": {
+    "t": "2026-11-23T0956Z",
+    "line": {
+     "over": 13.5,
+     "under": 13.5
+    },
+    "odds": {
+     "over": -113,
+     "under": -115
+    },
+    "open": 13.5,
+    "open_odds": {
+     "over": -113,
+     "under": -115
+    },
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "fd_juice": {
+    "side": "over",
+    "line": 13.5,
+    "odds": -136,
+    "res": "W",
+    "units": 0.735,
+    "took_default": true
+   }
+  }
+ },
+ {
+  "game": "Chicago Bears @ Detroit Lions",
+  "market": "2h|tt|away",
+  "period": "2h",
+  "kind": "tt",
+  "kickoff": "2026-11-26T18:00:00.000Z",
+  "markets": {
+   "close": {
+    "t": "2026-11-26T1759Z",
+    "line": {
+     "over": 14.5,
+     "under": 14.5
+    },
+    "odds": {
+     "over": 110,
+     "under": -140
+    },
+    "open": 13.5,
+    "open_odds": {
+     "over": -136,
+     "under": 106
+    },
+    "calls": {
+     "follow_move": "over"
+    },
+    "move": 1.0
+   },
+   "early": {
+    "t": "2026-11-23T0956Z",
+    "line": {
+     "over": 13.5,
+     "under": 13.5
+    },
+    "odds": {
+     "over": -136,
+     "under": 106
+    },
+    "open": 13.5,
+    "open_odds": {
+     "over": -136,
+     "under": 106
+    },
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "follow_move": {
+    "side": "over",
+    "line": 14.5,
+    "odds": 110,
+    "res": "W",
+    "units": 1.1,
+    "took_default": true
+   }
+  }
+ },
+ {
+  "game": "Chicago Bears @ Detroit Lions",
+  "market": "2h|ml",
+  "period": "2h",
+  "kind": "ml",
+  "kickoff": "2026-11-26T18:00:00.000Z",
+  "markets": {
+   "close": {
+    "t": "2026-11-26T1759Z",
+    "line": {
+     "home": 100,
+     "away": -116
+    },
+    "odds": {
+     "home": 100,
+     "away": -116
+    },
+    "open": 108,
+    "open_odds": {
+     "home": 108,
+     "away": -128
+    },
+    "calls": {
+     "follow_move": "home"
+    },
+    "move": -8
+   },
+   "early": {
+    "t": "2026-11-23T0956Z",
+    "line": {
+     "home": 108,
+     "away": -128
+    },
+    "odds": {
+     "home": 108,
+     "away": -128
+    },
+    "open": 108,
+    "open_odds": {
+     "home": 108,
+     "away": -128
+    },
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "follow_move": {
+    "side": "home",
+    "line": 100,
+    "odds": 100,
+    "res": "L",
+    "units": -1.0,
+    "took_default": false
+   }
+  }
+ },
+ {
+  "game": "Chicago Bears @ Detroit Lions",
+  "market": "2h|total",
+  "period": "2h",
+  "kind": "total",
+  "kickoff": "2026-11-26T18:00:00.000Z",
+  "markets": {
+   "close": {
+    "t": "2026-11-26T1759Z",
+    "line": {
+     "over": 27.5,
+     "under": 27.5
+    },
+    "odds": {
+     "over": -120,
+     "under": 100
+    },
+    "open": 26.5,
+    "open_odds": {
+     "over": -120,
+     "under": 100
+    },
+    "calls": {
+     "follow_move": "over"
+    },
+    "move": 1.0
+   },
+   "early": {
+    "t": "2026-11-23T0956Z",
+    "line": {
+     "over": 26.5,
+     "under": 26.5
+    },
+    "odds": {
+     "over": -120,
+     "under": 100
+    },
+    "open": 26.5,
+    "open_odds": {
+     "over": -120,
+     "under": 100
+    },
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "follow_move": {
+    "side": "over",
+    "line": 27.5,
+    "odds": -120,
+    "res": "W",
+    "units": 0.833,
+    "took_default": true
+   }
+  }
  }
 ]
