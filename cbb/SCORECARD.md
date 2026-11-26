@@ -1,10 +1,10 @@
 # CBB scorecard
 
-Generated 2026-11-26 03:48 UTC. 958 graded games (37 finished games had no final score matched and are not graded).
+Generated 2026-11-26 13:14 UTC. 970 graded games (28 finished games had no final score matched and are not graded).
 
 ## Read this first: fit vs forward
 
-**684 games before 2026-11-21 (fit) · 274 on or after it (forward).**
+**684 games before 2026-11-21 (fit) · 286 on or after it (forward).**
 
 Every signal, threshold and PROMOTE/DROP label here was chosen while looking at
 the games before 2026-11-21. `pin_value` went 108-68 in first halves --
@@ -29,7 +29,7 @@ value; positive means the number you would have taken beat the close.
 `expected %` is the base rate of the sides that signal actually picked, measured
 on this sample. `edge` is hit% minus that. A signal that is structurally long
 favourites or overs beats 50% whenever those run, which is not an edge -- this
-sample ran **47.0% favourites** (n=957) and **50.4% overs** (n=958) and **71.4% moneyline favourites** (n=837).
+sample ran **46.7% favourites** (n=969) and **50.5% overs** (n=970) and **71.5% moneyline favourites** (n=848).
 
 Moneyline has no handicap: `follow_move` reads price, CLV is percentage points
 of implied probability, and `pin_value` is a pure price comparison.
@@ -39,457 +39,459 @@ automatically.
 
 # FORWARD (out-of-sample — this is the evidence)
 
-Games tipping on or after 2026-11-21. Nothing in the engine was chosen using these. n=274 games.
+Games tipping on or after 2026-11-21. Nothing in the engine was chosen using these. n=286 games.
 
 ## EARLY  (fwd)
 
 | signal | market | record | hit % | expected % | edge | units | ROI % | CLV avg | CLV + % | status |
 |---|---|---|---|---|---|---|---|---|---|---|
-| rlm_quiet | both | 26-32 | 44.8 | 38.6 | 6.2 | +4.11 | 7.1 | 0.82 | 48.3 | no edge shown yet |
-| pin_move | both | 6-11 | 35.3 | 48.7 | -13.4 | -5.47 | -32.2 | 0.18 | 29.4 | keep collecting (17/30) |
-| money_delta | both | 4-5 | 44.4 | 37.9 | 6.5 | +1.47 | 16.3 | 3.02 | 100.0 | keep collecting (9/30) |
+| rlm_quiet | both | 26-34 | 43.3 | 38.6 | 4.7 | +2.11 | 3.5 | 0.82 | 50.0 | no edge shown yet |
+| pin_move | both | 9-16 | 36.0 | 49.9 | -13.9 | -8.09 | -32.4 | 0.49 | 40.0 | keep collecting (25/30) |
+| money_delta | both | 4-5 | 44.4 | 37.7 | 6.8 | +1.47 | 16.3 | 3.02 | 100.0 | keep collecting (9/30) |
 | pin_rlm | both | 0-2 | 0.0 | 50.0 | -50.0 | -2.0 | -100.0 | 0.75 | 50.0 | keep collecting (2/30) |
-| follow_move | both | 219-240 | 47.7 | 48.8 | -1.1 | -41.74 | -9.1 | 0.01 | 37.5 | DROP: below break-even |
-| rlm_ratio | both | 10-16 | 38.5 | 41.4 | -2.9 | -1.99 | -7.6 | 0.4 | 53.8 | keep collecting (26/30) |
-| money_level | both | 72-61 | 54.1 | 57.5 | -3.3 | -17.44 | -13.1 | -0.39 | 36.1 | no edge shown yet |
-| sharp_gap | both | 55-63 | 46.6 | 50.2 | -3.6 | -13.3 | -11.3 | 0.25 | 46.6 | no edge shown yet |
-| money_moving | both | 45-43 | 51.1 | 49.1 | 2.0 | -2.65 | -3.0 | 0.62 | 51.1 | no edge shown yet |
-| pin_value | both | 21-18 | 53.8 | 49.6 | 4.2 | +0.67 | 1.7 | 0.04 | 33.3 | no edge shown yet |
-| consensus_gap | both | 135-118 | 53.4 | 52.9 | 0.4 | -17.24 | -6.8 | 0.54 | 49.8 | no edge shown yet |
-| follow_move+money_level | both | 26-18 | 59.1 | 57.0 | 2.1 | -4.93 | -11.2 | 0.11 | 36.4 | no edge shown yet |
-| follow_move+sharp_gap | both | 24-26 | 48.0 | 48.0 | -0.0 | -2.98 | -6.0 | 0.62 | 46.0 | no edge shown yet |
-| money_level+sharp_gap | both | 37-37 | 50.0 | 55.8 | -5.8 | -12.24 | -16.5 | -0.17 | 41.9 | no edge shown yet |
-| follow_move+money_moving | both | 19-19 | 50.0 | 47.7 | 2.3 | +0.13 | 0.4 | 0.67 | 44.7 | no edge shown yet |
-| money_level+money_moving | both | 21-17 | 55.3 | 55.3 | 0.0 | -1.84 | -4.8 | 0.49 | 50.0 | no edge shown yet |
-| consensus_gap+money_level | both | 24-17 | 58.5 | 61.6 | -3.0 | -5.2 | -12.7 | -0.54 | 31.7 | no edge shown yet |
-| follow_move+rlm_quiet | both | 26-32 | 44.8 | 38.6 | 6.2 | +4.11 | 7.1 | 0.82 | 48.3 | redundant -- identical record to rlm_quiet alone, not independent confirmation |
-| follow_move+rlm_ratio | both | 10-16 | 38.5 | 41.4 | -2.9 | -1.99 | -7.6 | 0.4 | 53.8 | redundant -- identical record to rlm_ratio alone, not independent confirmation |
-| rlm_quiet+rlm_ratio | both | 9-10 | 47.4 | 39.2 | 8.2 | +3.1 | 16.3 | 0.32 | 47.4 | keep collecting (19/30) |
-| rlm_quiet+sharp_gap | both | 10-12 | 45.5 | 40.4 | 5.1 | +2.01 | 9.2 | 0.5 | 45.5 | keep collecting (22/30) |
-| rlm_ratio+sharp_gap | both | 10-16 | 38.5 | 41.4 | -2.9 | -1.99 | -7.6 | 0.4 | 53.8 | redundant -- identical record to rlm_ratio alone, not independent confirmation |
-| consensus_gap+follow_move | both | 17-19 | 47.2 | 55.1 | -7.9 | -7.68 | -21.3 | 0.82 | 58.3 | no edge shown yet |
-| money_moving+rlm_quiet | both | 9-10 | 47.4 | 39.2 | 8.2 | +2.99 | 15.7 | 0.91 | 47.4 | keep collecting (19/30) |
-| money_moving+rlm_ratio | both | 7-6 | 53.8 | 40.4 | 13.5 | +4.05 | 31.1 | 1.58 | 69.2 | keep collecting (13/30) |
-| money_moving+sharp_gap | both | 24-28 | 46.2 | 47.0 | -0.9 | -2.41 | -4.6 | 0.93 | 57.7 | no edge shown yet |
+| follow_move | both | 232-252 | 47.9 | 48.7 | -0.8 | -41.28 | -8.5 | 0.03 | 37.6 | DROP: below break-even |
+| rlm_ratio | both | 10-16 | 38.5 | 41.2 | -2.8 | -1.99 | -7.6 | 0.4 | 53.8 | keep collecting (26/30) |
+| money_level | both | 74-61 | 54.8 | 57.6 | -2.8 | -15.7 | -11.6 | -0.4 | 35.6 | no edge shown yet |
+| sharp_gap | both | 57-63 | 47.5 | 50.3 | -2.8 | -11.56 | -9.6 | 0.22 | 45.8 | no edge shown yet |
+| money_moving | both | 47-43 | 52.2 | 49.1 | 3.1 | -0.91 | -1.0 | 0.58 | 50.0 | no edge shown yet |
+| pin_value | both | 23-20 | 53.5 | 49.5 | 4.0 | +0.49 | 1.1 | 0.11 | 34.9 | no edge shown yet |
+| consensus_gap | both | 138-123 | 52.9 | 52.9 | -0.1 | -20.31 | -7.8 | 0.5 | 49.0 | no edge shown yet |
+| follow_move+money_level | both | 26-18 | 59.1 | 57.2 | 1.9 | -4.93 | -11.2 | 0.11 | 36.4 | no edge shown yet |
+| follow_move+sharp_gap | both | 24-26 | 48.0 | 48.0 | 0.0 | -2.98 | -6.0 | 0.62 | 46.0 | no edge shown yet |
+| money_level+sharp_gap | both | 39-37 | 51.3 | 55.8 | -4.5 | -10.5 | -13.8 | -0.19 | 40.8 | no edge shown yet |
+| follow_move+money_moving | both | 19-19 | 50.0 | 47.6 | 2.4 | +0.13 | 0.4 | 0.67 | 44.7 | no edge shown yet |
+| money_level+money_moving | both | 23-17 | 57.5 | 55.3 | 2.2 | -0.1 | -0.3 | 0.42 | 47.5 | no edge shown yet |
+| consensus_gap+money_level | both | 24-17 | 58.5 | 61.7 | -3.2 | -5.2 | -12.7 | -0.54 | 31.7 | no edge shown yet |
+| follow_move+rlm_quiet | both | 26-34 | 43.3 | 38.6 | 4.7 | +2.11 | 3.5 | 0.82 | 50.0 | redundant -- identical record to rlm_quiet alone, not independent confirmation |
+| follow_move+rlm_ratio | both | 10-16 | 38.5 | 41.2 | -2.8 | -1.99 | -7.6 | 0.4 | 53.8 | redundant -- identical record to rlm_ratio alone, not independent confirmation |
+| rlm_quiet+rlm_ratio | both | 9-10 | 47.4 | 39.0 | 8.4 | +3.1 | 16.3 | 0.32 | 47.4 | keep collecting (19/30) |
+| rlm_quiet+sharp_gap | both | 10-12 | 45.5 | 40.1 | 5.3 | +2.01 | 9.2 | 0.5 | 45.5 | keep collecting (22/30) |
+| rlm_ratio+sharp_gap | both | 10-16 | 38.5 | 41.2 | -2.8 | -1.99 | -7.6 | 0.4 | 53.8 | redundant -- identical record to rlm_ratio alone, not independent confirmation |
+| consensus_gap+follow_move | both | 18-20 | 47.4 | 55.2 | -7.9 | -8.16 | -21.5 | 0.79 | 57.9 | no edge shown yet |
+| money_moving+rlm_quiet | both | 9-10 | 47.4 | 39.0 | 8.4 | +2.99 | 15.7 | 0.91 | 47.4 | keep collecting (19/30) |
+| money_moving+rlm_ratio | both | 7-6 | 53.8 | 40.2 | 13.6 | +4.05 | 31.1 | 1.58 | 69.2 | keep collecting (13/30) |
+| money_moving+sharp_gap | both | 26-28 | 48.1 | 47.2 | 0.9 | -0.67 | -1.2 | 0.86 | 55.6 | no edge shown yet |
 | consensus_gap+money_moving | both | 10-5 | 66.7 | 55.1 | 11.6 | +0.97 | 6.5 | 1.23 | 60.0 | keep collecting (15/30) |
-| consensus_gap+sharp_gap | both | 15-15 | 50.0 | 57.0 | -7.0 | -6.39 | -21.3 | -0.38 | 36.7 | no edge shown yet |
-| money_level+rlm_ratio | both | 1-6 | 14.3 | 47.4 | -33.1 | -5.09 | -72.7 | 0.64 | 71.4 | keep collecting (7/30) |
-| follow_move+pin_move | both | 2-6 | 25.0 | 46.3 | -21.3 | -4.15 | -51.9 | 0.12 | 25.0 | keep collecting (8/30) |
-| follow_move+money_delta | both | 3-2 | 60.0 | 38.9 | 21.1 | +3.56 | 71.2 | 2.74 | 100.0 | keep collecting (5/30) |
-| money_delta+money_level | both | 1-3 | 25.0 | 40.4 | -15.4 | -2.09 | -52.3 | 1.68 | 100.0 | keep collecting (4/30) |
-| money_delta+money_moving | both | 4-5 | 44.4 | 37.9 | 6.5 | +1.47 | 16.3 | 3.02 | 100.0 | redundant -- identical record to money_delta alone, not independent confirmation |
-| money_delta+rlm_ratio | both | 3-2 | 60.0 | 38.9 | 21.1 | +3.56 | 71.2 | 2.74 | 100.0 | keep collecting (5/30) |
-| money_delta+sharp_gap | both | 4-5 | 44.4 | 37.9 | 6.5 | +1.47 | 16.3 | 3.02 | 100.0 | redundant -- identical record to money_delta alone, not independent confirmation |
-| follow_move+pin_value | both | 4-4 | 50.0 | 48.7 | 1.3 | -0.36 | -4.5 | -0.62 | 25.0 | keep collecting (8/30) |
-| consensus_gap+pin_move | both | 2-1 | 66.7 | 51.7 | 15.0 | +0.86 | 28.7 | 0.33 | 33.3 | keep collecting (3/30) |
-| consensus_gap+pin_value | both | 10-3 | 76.9 | 49.2 | 27.8 | +5.9 | 45.4 | -0.15 | 30.8 | keep collecting (13/30) |
+| consensus_gap+sharp_gap | both | 15-15 | 50.0 | 57.1 | -7.1 | -6.39 | -21.3 | -0.38 | 36.7 | no edge shown yet |
+| money_level+rlm_ratio | both | 1-6 | 14.3 | 47.3 | -33.0 | -5.09 | -72.7 | 0.64 | 71.4 | keep collecting (7/30) |
+| follow_move+pin_move | both | 4-8 | 33.3 | 47.2 | -13.9 | -4.29 | -35.7 | 0.58 | 41.7 | keep collecting (12/30) |
+| follow_move+money_delta | both | 3-2 | 60.0 | 38.6 | 21.4 | +3.56 | 71.2 | 2.74 | 100.0 | keep collecting (5/30) |
+| money_delta+money_level | both | 1-3 | 25.0 | 40.1 | -15.1 | -2.09 | -52.3 | 1.68 | 100.0 | keep collecting (4/30) |
+| money_delta+money_moving | both | 4-5 | 44.4 | 37.7 | 6.8 | +1.47 | 16.3 | 3.02 | 100.0 | redundant -- identical record to money_delta alone, not independent confirmation |
+| money_delta+rlm_ratio | both | 3-2 | 60.0 | 38.6 | 21.4 | +3.56 | 71.2 | 2.74 | 100.0 | keep collecting (5/30) |
+| money_delta+sharp_gap | both | 4-5 | 44.4 | 37.7 | 6.8 | +1.47 | 16.3 | 3.02 | 100.0 | redundant -- identical record to money_delta alone, not independent confirmation |
+| follow_move+pin_value | both | 5-5 | 50.0 | 49.2 | 0.8 | -0.41 | -4.1 | -0.3 | 30.0 | keep collecting (10/30) |
+| consensus_gap+pin_move | both | 2-1 | 66.7 | 52.0 | 14.7 | +0.86 | 28.7 | 0.33 | 33.3 | keep collecting (3/30) |
+| consensus_gap+pin_value | both | 10-3 | 76.9 | 49.0 | 27.9 | +5.9 | 45.4 | -0.15 | 30.8 | keep collecting (13/30) |
 | money_level+pin_move | both | 2-4 | 33.3 | 47.8 | -14.4 | -2.15 | -35.8 | 0.17 | 16.7 | keep collecting (6/30) |
-| money_level+pin_value | both | 3-3 | 50.0 | 53.9 | -3.9 | -0.27 | -4.5 | 0.78 | 50.0 | keep collecting (6/30) |
-| pin_move+pin_value | both | 3-6 | 33.3 | 49.6 | -16.3 | -3.23 | -35.9 | 0.44 | 33.3 | keep collecting (9/30) |
-| money_moving+pin_value | both | 3-2 | 60.0 | 53.1 | 6.9 | +0.77 | 15.4 | 1.14 | 100.0 | keep collecting (5/30) |
-| pin_value+sharp_gap | both | 1-4 | 20.0 | 54.9 | -34.9 | -3.09 | -61.8 | 1.34 | 80.0 | keep collecting (5/30) |
-| consensus_gap+money_delta | both | 1-0 | 100.0 | 47.8 | 52.2 | +0.91 | 90.9 | 1.0 | 100.0 | keep collecting (1/30) |
-| consensus_gap+rlm_ratio | both | 1-0 | 100.0 | 47.8 | 52.2 | +0.91 | 90.9 | 1.0 | 100.0 | keep collecting (1/30) |
-| money_delta+pin_value | both | 1-0 | 100.0 | 47.8 | 52.2 | +0.91 | 90.9 | 1.0 | 100.0 | keep collecting (1/30) |
-| pin_value+rlm_ratio | both | 1-0 | 100.0 | 47.8 | 52.2 | +0.91 | 90.9 | 1.0 | 100.0 | keep collecting (1/30) |
+| money_level+pin_value | both | 4-3 | 57.1 | 53.9 | 3.3 | +0.6 | 8.5 | 0.53 | 42.9 | keep collecting (7/30) |
+| pin_move+pin_value | both | 4-8 | 33.3 | 49.4 | -16.1 | -4.28 | -35.7 | 0.67 | 41.7 | keep collecting (12/30) |
+| money_moving+pin_value | both | 4-2 | 66.7 | 53.1 | 13.6 | +1.64 | 27.3 | 0.78 | 83.3 | keep collecting (6/30) |
+| pin_value+sharp_gap | both | 2-4 | 33.3 | 54.7 | -21.4 | -2.22 | -37.0 | 0.95 | 66.7 | keep collecting (6/30) |
+| consensus_gap+money_delta | both | 1-0 | 100.0 | 47.6 | 52.4 | +0.91 | 90.9 | 1.0 | 100.0 | keep collecting (1/30) |
+| consensus_gap+rlm_ratio | both | 1-0 | 100.0 | 47.6 | 52.4 | +0.91 | 90.9 | 1.0 | 100.0 | keep collecting (1/30) |
+| money_delta+pin_value | both | 1-0 | 100.0 | 47.6 | 52.4 | +0.91 | 90.9 | 1.0 | 100.0 | keep collecting (1/30) |
+| pin_value+rlm_ratio | both | 1-0 | 100.0 | 47.6 | 52.4 | +0.91 | 90.9 | 1.0 | 100.0 | keep collecting (1/30) |
 | follow_move+pin_rlm | both | 0-2 | 0.0 | 50.0 | -50.0 | -2.0 | -100.0 | 0.75 | 50.0 | redundant -- identical record to pin_rlm alone, not independent confirmation |
 | money_level+pin_rlm | both | 0-2 | 0.0 | 50.0 | -50.0 | -2.0 | -100.0 | 0.75 | 50.0 | redundant -- identical record to pin_rlm alone, not independent confirmation |
 | pin_rlm+rlm_ratio | both | 0-2 | 0.0 | 50.0 | -50.0 | -2.0 | -100.0 | 0.75 | 50.0 | redundant -- identical record to pin_rlm alone, not independent confirmation |
 | pin_rlm+sharp_gap | both | 0-2 | 0.0 | 50.0 | -50.0 | -2.0 | -100.0 | 0.75 | 50.0 | redundant -- identical record to pin_rlm alone, not independent confirmation |
-| pin_move+sharp_gap | both | 0-3 | 0.0 | 45.8 | -45.8 | -3.0 | -100.0 | 1.0 | 33.3 | keep collecting (3/30) |
-| money_delta+rlm_quiet | both | 2-1 | 66.7 | 32.9 | 33.7 | +3.65 | 121.7 | 3.57 | 100.0 | keep collecting (3/30) |
-| consensus_gap+rlm_quiet | both | 1-1 | 50.0 | 32.9 | 17.1 | +0.6 | 30.0 | 1.1 | 100.0 | keep collecting (2/30) |
-| money_moving+pin_move | both | 1-1 | 50.0 | 47.8 | 2.2 | -0.05 | -2.4 | 1.0 | 100.0 | keep collecting (2/30) |
-| pin_move+pin_rlm | both | 0-1 | 0.0 | 32.9 | -32.9 | -1.0 | -100.0 | 0.0 | 0.0 | keep collecting (1/30) |
-| pin_move+rlm_ratio | both | 0-1 | 0.0 | 32.9 | -32.9 | -1.0 | -100.0 | 0.0 | 0.0 | keep collecting (1/30) |
-| rlm_quiet | moneyline | 15-21 | 41.7 | 32.9 | 8.7 | +5.11 | 14.2 | 0.87 | 44.4 | no edge shown yet |
-| rlm_quiet | total | 11-11 | 50.0 | 47.8 | 2.2 | -1.0 | -4.5 | 0.73 | 54.5 | keep collecting (22/30) |
-| pin_move | moneyline | 0-1 | 0.0 | 32.9 | -32.9 | -1.0 | -100.0 | 0.0 | 0.0 | keep collecting (1/30) |
-| pin_move | spread | 1-3 | 25.0 | 47.4 | -22.4 | -2.06 | -51.4 | -0.25 | 0.0 | keep collecting (4/30) |
-| pin_move | total | 5-7 | 41.7 | 50.4 | -8.7 | -2.41 | -20.1 | 0.33 | 41.7 | keep collecting (12/30) |
-| money_delta | moneyline | 2-4 | 33.3 | 32.9 | 0.4 | +0.65 | 10.8 | 2.7 | 100.0 | keep collecting (6/30) |
-| money_delta | total | 2-1 | 66.7 | 47.8 | 18.9 | +0.82 | 27.3 | 3.67 | 100.0 | keep collecting (3/30) |
+| pin_move+sharp_gap | both | 0-3 | 0.0 | 45.9 | -45.9 | -3.0 | -100.0 | 1.0 | 33.3 | keep collecting (3/30) |
+| money_delta+rlm_quiet | both | 2-1 | 66.7 | 32.7 | 34.0 | +3.65 | 121.7 | 3.57 | 100.0 | keep collecting (3/30) |
+| consensus_gap+rlm_quiet | both | 1-1 | 50.0 | 32.7 | 17.3 | +0.6 | 30.0 | 1.1 | 100.0 | keep collecting (2/30) |
+| money_moving+pin_move | both | 1-1 | 50.0 | 47.6 | 2.4 | -0.05 | -2.4 | 1.0 | 100.0 | keep collecting (2/30) |
+| pin_move+pin_rlm | both | 0-1 | 0.0 | 32.7 | -32.7 | -1.0 | -100.0 | 0.0 | 0.0 | keep collecting (1/30) |
+| pin_move+rlm_ratio | both | 0-1 | 0.0 | 32.7 | -32.7 | -1.0 | -100.0 | 0.0 | 0.0 | keep collecting (1/30) |
+| pin_move+rlm_quiet | both | 0-1 | 0.0 | 47.6 | -47.6 | -1.0 | -100.0 | 1.0 | 100.0 | keep collecting (1/30) |
+| rlm_quiet | moneyline | 15-21 | 41.7 | 32.7 | 9.0 | +5.11 | 14.2 | 0.87 | 44.4 | no edge shown yet |
+| rlm_quiet | total | 11-13 | 45.8 | 47.6 | -1.7 | -3.0 | -12.5 | 0.75 | 58.3 | keep collecting (24/30) |
+| pin_move | moneyline | 1-2 | 33.3 | 55.8 | -22.4 | -1.48 | -49.5 | 0.77 | 33.3 | keep collecting (3/30) |
+| pin_move | spread | 1-6 | 14.3 | 47.5 | -33.2 | -5.06 | -72.2 | 0.0 | 14.3 | keep collecting (7/30) |
+| pin_move | total | 7-8 | 46.7 | 49.8 | -3.2 | -1.55 | -10.3 | 0.67 | 53.3 | keep collecting (15/30) |
+| money_delta | moneyline | 2-4 | 33.3 | 32.7 | 0.6 | +0.65 | 10.8 | 2.7 | 100.0 | keep collecting (6/30) |
+| money_delta | total | 2-1 | 66.7 | 47.6 | 19.1 | +0.82 | 27.3 | 3.67 | 100.0 | keep collecting (3/30) |
 | pin_rlm | moneyline | 0-2 | 0.0 | 50.0 | -50.0 | -2.0 | -100.0 | 0.75 | 50.0 | keep collecting (2/30) |
-| follow_move | moneyline | 92-83 | 52.6 | 47.0 | 5.6 | -1.43 | -0.8 | -0.3 | 34.3 | no edge shown yet |
-| follow_move | spread | 49-63 | 43.8 | 50.6 | -6.9 | -17.56 | -15.7 | 0.03 | 29.5 | DROP: below break-even |
-| follow_move | total | 78-94 | 45.3 | 49.5 | -4.2 | -22.76 | -13.2 | 0.31 | 45.9 | DROP: below break-even |
-| rlm_ratio | moneyline | 4-10 | 28.6 | 35.4 | -6.8 | -1.44 | -10.3 | -0.25 | 35.7 | keep collecting (14/30) |
-| rlm_ratio | spread | 0-1 | 0.0 | 55.1 | -55.1 | -1.0 | -100.0 | 5.0 | 100.0 | keep collecting (1/30) |
-| rlm_ratio | total | 6-5 | 54.5 | 47.8 | 6.7 | +0.45 | 4.1 | 0.82 | 72.7 | keep collecting (11/30) |
-| money_level | moneyline | 37-31 | 54.4 | 63.0 | -8.6 | -19.29 | -28.4 | -0.48 | 35.3 | no edge shown yet |
+| follow_move | moneyline | 97-88 | 52.4 | 46.5 | 5.9 | -1.44 | -0.8 | -0.27 | 34.6 | no edge shown yet |
+| follow_move | spread | 51-67 | 43.2 | 50.9 | -7.7 | -19.67 | -16.7 | 0.02 | 28.0 | DROP: below break-even |
+| follow_move | total | 84-97 | 46.4 | 49.4 | -3.0 | -20.17 | -11.1 | 0.34 | 47.0 | DROP: below break-even |
+| rlm_ratio | moneyline | 4-10 | 28.6 | 35.2 | -6.6 | -1.44 | -10.3 | -0.25 | 35.7 | keep collecting (14/30) |
+| rlm_ratio | spread | 0-1 | 0.0 | 55.9 | -55.9 | -1.0 | -100.0 | 5.0 | 100.0 | keep collecting (1/30) |
+| rlm_ratio | total | 6-5 | 54.5 | 47.6 | 7.0 | +0.45 | 4.1 | 0.82 | 72.7 | keep collecting (11/30) |
+| money_level | moneyline | 37-31 | 54.4 | 63.2 | -8.8 | -19.29 | -28.4 | -0.48 | 35.3 | no edge shown yet |
 | money_level | spread | 1-1 | 50.0 | 50.0 | 0.0 | -0.06 | -2.9 | 2.0 | 50.0 | keep collecting (2/30) |
-| money_level | total | 34-29 | 54.0 | 51.7 | 2.3 | +1.9 | 3.0 | -0.37 | 36.5 | no edge shown yet |
+| money_level | total | 36-29 | 55.4 | 51.9 | 3.5 | +3.64 | 5.6 | -0.38 | 35.4 | no edge shown yet |
 | sharp_gap | moneyline | 24-35 | 40.7 | 50.3 | -9.6 | -13.48 | -22.9 | -0.03 | 47.5 | DROP: below break-even |
-| sharp_gap | spread | 0-2 | 0.0 | 55.1 | -55.1 | -2.0 | -100.0 | 3.0 | 100.0 | keep collecting (2/30) |
-| sharp_gap | total | 31-26 | 54.4 | 50.0 | 4.4 | +2.18 | 3.8 | 0.44 | 43.9 | no edge shown yet |
+| sharp_gap | spread | 0-2 | 0.0 | 55.9 | -55.9 | -2.0 | -100.0 | 3.0 | 100.0 | keep collecting (2/30) |
+| sharp_gap | total | 33-26 | 55.9 | 50.0 | 5.9 | +3.92 | 6.6 | 0.39 | 42.4 | no edge shown yet |
 | money_moving | moneyline | 19-21 | 47.5 | 48.3 | -0.8 | -4.4 | -11.0 | 0.94 | 60.0 | no edge shown yet |
-| money_moving | spread | 0-2 | 0.0 | 55.1 | -55.1 | -2.0 | -100.0 | 3.0 | 100.0 | keep collecting (2/30) |
-| money_moving | total | 26-20 | 56.5 | 49.5 | 7.0 | +3.75 | 8.2 | 0.24 | 41.3 | no edge shown yet |
-| pin_value | moneyline | 0-1 | 0.0 | 67.1 | -67.1 | -1.0 | -100.0 | 1.7 | 100.0 | keep collecting (1/30) |
-| pin_value | spread | 11-9 | 55.0 | 48.0 | 7.0 | +0.58 | 2.9 | 0.05 | 25.0 | keep collecting (20/30) |
-| pin_value | total | 10-8 | 55.6 | 50.5 | 5.1 | +1.09 | 6.1 | -0.06 | 38.9 | keep collecting (18/30) |
-| consensus_gap | moneyline | 66-57 | 53.7 | 56.8 | -3.1 | -17.52 | -14.2 | 0.44 | 49.6 | no edge shown yet |
-| consensus_gap | spread | 29-18 | 61.7 | 48.2 | 13.6 | +7.18 | 15.3 | 0.23 | 34.0 | no edge shown yet |
-| consensus_gap | total | 40-43 | 48.2 | 49.9 | -1.7 | -6.9 | -8.3 | 0.87 | 59.0 | no edge shown yet |
-| consensus_gap+money_level | moneyline | 19-14 | 57.6 | 64.0 | -6.4 | -6.71 | -20.3 | -0.58 | 33.3 | no edge shown yet |
-| follow_move+rlm_quiet | moneyline | 15-21 | 41.7 | 32.9 | 8.7 | +5.11 | 14.2 | 0.87 | 44.4 | redundant -- identical record to rlm_quiet alone, not independent confirmation |
-| follow_move+rlm_ratio | moneyline | 4-10 | 28.6 | 35.4 | -6.8 | -1.44 | -10.3 | -0.25 | 35.7 | redundant -- identical record to rlm_ratio alone, not independent confirmation |
-| follow_move+sharp_gap | moneyline | 9-12 | 42.9 | 45.9 | -3.1 | -2.66 | -12.7 | 0.24 | 33.3 | keep collecting (21/30) |
-| rlm_quiet+rlm_ratio | moneyline | 4-7 | 36.4 | 32.9 | 3.4 | +1.56 | 14.2 | 0.09 | 36.4 | keep collecting (11/30) |
-| rlm_quiet+sharp_gap | moneyline | 4-7 | 36.4 | 32.9 | 3.4 | +1.56 | 14.2 | 0.09 | 36.4 | keep collecting (11/30) |
-| rlm_ratio+sharp_gap | moneyline | 4-10 | 28.6 | 35.4 | -6.8 | -1.44 | -10.3 | -0.25 | 35.7 | redundant -- identical record to rlm_ratio alone, not independent confirmation |
-| consensus_gap+follow_move | moneyline | 11-7 | 61.1 | 61.4 | -0.3 | -1.14 | -6.3 | 0.14 | 44.4 | keep collecting (18/30) |
-| consensus_gap+money_moving | moneyline | 7-4 | 63.6 | 57.8 | 5.9 | -0.8 | -7.3 | 1.5 | 54.5 | keep collecting (11/30) |
-| consensus_gap+sharp_gap | moneyline | 12-10 | 54.5 | 59.3 | -4.8 | -4.08 | -18.5 | -0.47 | 36.4 | keep collecting (22/30) |
-| money_level+money_moving | moneyline | 8-8 | 50.0 | 60.7 | -10.7 | -4.74 | -29.6 | 1.11 | 56.2 | keep collecting (16/30) |
-| money_level+sharp_gap | moneyline | 17-21 | 44.7 | 59.9 | -15.1 | -14.42 | -38.0 | -0.48 | 39.5 | INVERT candidate: wrong well beyond its base rate |
-| money_moving+sharp_gap | moneyline | 7-16 | 30.4 | 43.3 | -12.9 | -5.94 | -25.8 | 1.45 | 73.9 | keep collecting (23/30) |
-| follow_move+money_level | moneyline | 14-7 | 66.7 | 63.8 | 2.9 | -4.91 | -23.4 | -0.4 | 19.0 | keep collecting (21/30) |
-| follow_move+money_moving | moneyline | 10-8 | 55.6 | 46.2 | 9.3 | +2.91 | 16.2 | 0.46 | 38.9 | keep collecting (18/30) |
-| money_moving+rlm_quiet | moneyline | 5-6 | 45.5 | 32.9 | 12.5 | +3.35 | 30.5 | 1.3 | 54.5 | keep collecting (11/30) |
-| money_moving+rlm_ratio | moneyline | 3-4 | 42.9 | 32.9 | 9.9 | +2.41 | 34.4 | 1.37 | 57.1 | keep collecting (7/30) |
-| money_level+pin_value | moneyline | 0-1 | 0.0 | 67.1 | -67.1 | -1.0 | -100.0 | 1.7 | 100.0 | redundant -- identical record to pin_value alone, not independent confirmation |
-| money_moving+pin_value | moneyline | 0-1 | 0.0 | 67.1 | -67.1 | -1.0 | -100.0 | 1.7 | 100.0 | redundant -- identical record to pin_value alone, not independent confirmation |
-| pin_value+sharp_gap | moneyline | 0-1 | 0.0 | 67.1 | -67.1 | -1.0 | -100.0 | 1.7 | 100.0 | redundant -- identical record to pin_value alone, not independent confirmation |
+| money_moving | spread | 0-2 | 0.0 | 55.9 | -55.9 | -2.0 | -100.0 | 3.0 | 100.0 | keep collecting (2/30) |
+| money_moving | total | 28-20 | 58.3 | 49.6 | 8.7 | +5.49 | 11.4 | 0.19 | 39.6 | no edge shown yet |
+| pin_value | moneyline | 0-1 | 0.0 | 67.3 | -67.3 | -1.0 | -100.0 | 1.7 | 100.0 | keep collecting (1/30) |
+| pin_value | spread | 11-11 | 50.0 | 47.8 | 2.2 | -1.42 | -6.5 | 0.14 | 27.3 | keep collecting (22/30) |
+| pin_value | total | 12-8 | 60.0 | 50.5 | 9.5 | +2.92 | 14.6 | 0.0 | 40.0 | keep collecting (20/30) |
+| consensus_gap | moneyline | 68-59 | 53.5 | 56.9 | -3.4 | -18.43 | -14.5 | 0.39 | 48.8 | no edge shown yet |
+| consensus_gap | spread | 30-18 | 62.5 | 47.8 | 14.7 | +8.01 | 16.7 | 0.23 | 33.3 | no edge shown yet |
+| consensus_gap | total | 40-46 | 46.5 | 49.9 | -3.4 | -9.9 | -11.5 | 0.81 | 58.1 | no edge shown yet |
+| consensus_gap+money_level | moneyline | 19-14 | 57.6 | 64.1 | -6.6 | -6.71 | -20.3 | -0.58 | 33.3 | no edge shown yet |
+| follow_move+rlm_quiet | moneyline | 15-21 | 41.7 | 32.7 | 9.0 | +5.11 | 14.2 | 0.87 | 44.4 | redundant -- identical record to rlm_quiet alone, not independent confirmation |
+| follow_move+rlm_ratio | moneyline | 4-10 | 28.6 | 35.2 | -6.6 | -1.44 | -10.3 | -0.25 | 35.7 | redundant -- identical record to rlm_ratio alone, not independent confirmation |
+| follow_move+sharp_gap | moneyline | 9-12 | 42.9 | 45.9 | -3.0 | -2.66 | -12.7 | 0.24 | 33.3 | keep collecting (21/30) |
+| rlm_quiet+rlm_ratio | moneyline | 4-7 | 36.4 | 32.7 | 3.7 | +1.56 | 14.2 | 0.09 | 36.4 | keep collecting (11/30) |
+| rlm_quiet+sharp_gap | moneyline | 4-7 | 36.4 | 32.7 | 3.7 | +1.56 | 14.2 | 0.09 | 36.4 | keep collecting (11/30) |
+| rlm_ratio+sharp_gap | moneyline | 4-10 | 28.6 | 35.2 | -6.6 | -1.44 | -10.3 | -0.25 | 35.7 | redundant -- identical record to rlm_ratio alone, not independent confirmation |
+| consensus_gap+follow_move | moneyline | 12-7 | 63.2 | 61.8 | 1.3 | -0.62 | -3.2 | 0.11 | 42.1 | keep collecting (19/30) |
+| consensus_gap+money_moving | moneyline | 7-4 | 63.6 | 57.9 | 5.8 | -0.8 | -7.3 | 1.5 | 54.5 | keep collecting (11/30) |
+| consensus_gap+sharp_gap | moneyline | 12-10 | 54.5 | 59.4 | -4.9 | -4.08 | -18.5 | -0.47 | 36.4 | keep collecting (22/30) |
+| money_level+money_moving | moneyline | 8-8 | 50.0 | 60.8 | -10.8 | -4.74 | -29.6 | 1.11 | 56.2 | keep collecting (16/30) |
+| money_level+sharp_gap | moneyline | 17-21 | 44.7 | 60.0 | -15.3 | -14.42 | -38.0 | -0.48 | 39.5 | INVERT candidate: wrong well beyond its base rate |
+| money_moving+sharp_gap | moneyline | 7-16 | 30.4 | 43.2 | -12.8 | -5.94 | -25.8 | 1.45 | 73.9 | keep collecting (23/30) |
+| follow_move+money_level | moneyline | 14-7 | 66.7 | 64.0 | 2.7 | -4.91 | -23.4 | -0.4 | 19.0 | keep collecting (21/30) |
+| follow_move+money_moving | moneyline | 10-8 | 55.6 | 46.2 | 9.4 | +2.91 | 16.2 | 0.46 | 38.9 | keep collecting (18/30) |
+| money_moving+rlm_quiet | moneyline | 5-6 | 45.5 | 32.7 | 12.7 | +3.35 | 30.5 | 1.3 | 54.5 | keep collecting (11/30) |
+| money_moving+rlm_ratio | moneyline | 3-4 | 42.9 | 32.7 | 10.2 | +2.41 | 34.4 | 1.37 | 57.1 | keep collecting (7/30) |
+| money_level+pin_value | moneyline | 0-1 | 0.0 | 67.3 | -67.3 | -1.0 | -100.0 | 1.7 | 100.0 | redundant -- identical record to pin_value alone, not independent confirmation |
+| money_moving+pin_value | moneyline | 0-1 | 0.0 | 67.3 | -67.3 | -1.0 | -100.0 | 1.7 | 100.0 | redundant -- identical record to pin_value alone, not independent confirmation |
+| pin_value+sharp_gap | moneyline | 0-1 | 0.0 | 67.3 | -67.3 | -1.0 | -100.0 | 1.7 | 100.0 | redundant -- identical record to pin_value alone, not independent confirmation |
 | follow_move+pin_rlm | moneyline | 0-2 | 0.0 | 50.0 | -50.0 | -2.0 | -100.0 | 0.75 | 50.0 | redundant -- identical record to pin_rlm alone, not independent confirmation |
 | money_level+pin_rlm | moneyline | 0-2 | 0.0 | 50.0 | -50.0 | -2.0 | -100.0 | 0.75 | 50.0 | redundant -- identical record to pin_rlm alone, not independent confirmation |
-| money_level+rlm_ratio | moneyline | 0-3 | 0.0 | 44.3 | -44.3 | -3.0 | -100.0 | -1.5 | 33.3 | keep collecting (3/30) |
+| money_level+rlm_ratio | moneyline | 0-3 | 0.0 | 44.2 | -44.2 | -3.0 | -100.0 | -1.5 | 33.3 | keep collecting (3/30) |
 | pin_rlm+rlm_ratio | moneyline | 0-2 | 0.0 | 50.0 | -50.0 | -2.0 | -100.0 | 0.75 | 50.0 | redundant -- identical record to pin_rlm alone, not independent confirmation |
 | pin_rlm+sharp_gap | moneyline | 0-2 | 0.0 | 50.0 | -50.0 | -2.0 | -100.0 | 0.75 | 50.0 | redundant -- identical record to pin_rlm alone, not independent confirmation |
-| money_delta+money_moving | moneyline | 2-4 | 33.3 | 32.9 | 0.4 | +0.65 | 10.8 | 2.7 | 100.0 | redundant -- identical record to money_delta alone, not independent confirmation |
-| money_delta+sharp_gap | moneyline | 2-4 | 33.3 | 32.9 | 0.4 | +0.65 | 10.8 | 2.7 | 100.0 | redundant -- identical record to money_delta alone, not independent confirmation |
-| money_delta+money_level | moneyline | 0-2 | 0.0 | 32.9 | -32.9 | -2.0 | -100.0 | 1.85 | 100.0 | keep collecting (2/30) |
-| follow_move+money_delta | moneyline | 2-1 | 66.7 | 32.9 | 33.7 | +3.65 | 121.7 | 3.57 | 100.0 | keep collecting (3/30) |
-| money_delta+rlm_quiet | moneyline | 2-1 | 66.7 | 32.9 | 33.7 | +3.65 | 121.7 | 3.57 | 100.0 | keep collecting (3/30) |
-| money_delta+rlm_ratio | moneyline | 2-1 | 66.7 | 32.9 | 33.7 | +3.65 | 121.7 | 3.57 | 100.0 | keep collecting (3/30) |
-| consensus_gap+rlm_quiet | moneyline | 1-1 | 50.0 | 32.9 | 17.1 | +0.6 | 30.0 | 1.1 | 100.0 | keep collecting (2/30) |
-| follow_move+pin_move | moneyline | 0-1 | 0.0 | 32.9 | -32.9 | -1.0 | -100.0 | 0.0 | 0.0 | redundant -- identical record to pin_move alone, not independent confirmation |
-| money_level+pin_move | moneyline | 0-1 | 0.0 | 32.9 | -32.9 | -1.0 | -100.0 | 0.0 | 0.0 | redundant -- identical record to pin_move alone, not independent confirmation |
-| pin_move+pin_rlm | moneyline | 0-1 | 0.0 | 32.9 | -32.9 | -1.0 | -100.0 | 0.0 | 0.0 | redundant -- identical record to pin_move alone, not independent confirmation |
-| pin_move+rlm_ratio | moneyline | 0-1 | 0.0 | 32.9 | -32.9 | -1.0 | -100.0 | 0.0 | 0.0 | redundant -- identical record to pin_move alone, not independent confirmation |
-| pin_move+sharp_gap | moneyline | 0-1 | 0.0 | 32.9 | -32.9 | -1.0 | -100.0 | 0.0 | 0.0 | redundant -- identical record to pin_move alone, not independent confirmation |
+| money_delta+money_moving | moneyline | 2-4 | 33.3 | 32.7 | 0.6 | +0.65 | 10.8 | 2.7 | 100.0 | redundant -- identical record to money_delta alone, not independent confirmation |
+| money_delta+sharp_gap | moneyline | 2-4 | 33.3 | 32.7 | 0.6 | +0.65 | 10.8 | 2.7 | 100.0 | redundant -- identical record to money_delta alone, not independent confirmation |
+| money_delta+money_level | moneyline | 0-2 | 0.0 | 32.7 | -32.7 | -2.0 | -100.0 | 1.85 | 100.0 | keep collecting (2/30) |
+| follow_move+money_delta | moneyline | 2-1 | 66.7 | 32.7 | 34.0 | +3.65 | 121.7 | 3.57 | 100.0 | keep collecting (3/30) |
+| money_delta+rlm_quiet | moneyline | 2-1 | 66.7 | 32.7 | 34.0 | +3.65 | 121.7 | 3.57 | 100.0 | keep collecting (3/30) |
+| money_delta+rlm_ratio | moneyline | 2-1 | 66.7 | 32.7 | 34.0 | +3.65 | 121.7 | 3.57 | 100.0 | keep collecting (3/30) |
+| consensus_gap+rlm_quiet | moneyline | 1-1 | 50.0 | 32.7 | 17.3 | +0.6 | 30.0 | 1.1 | 100.0 | keep collecting (2/30) |
+| follow_move+pin_move | moneyline | 0-1 | 0.0 | 32.7 | -32.7 | -1.0 | -100.0 | 0.0 | 0.0 | keep collecting (1/30) |
+| money_level+pin_move | moneyline | 0-1 | 0.0 | 32.7 | -32.7 | -1.0 | -100.0 | 0.0 | 0.0 | keep collecting (1/30) |
+| pin_move+pin_rlm | moneyline | 0-1 | 0.0 | 32.7 | -32.7 | -1.0 | -100.0 | 0.0 | 0.0 | keep collecting (1/30) |
+| pin_move+rlm_ratio | moneyline | 0-1 | 0.0 | 32.7 | -32.7 | -1.0 | -100.0 | 0.0 | 0.0 | keep collecting (1/30) |
+| pin_move+sharp_gap | moneyline | 0-1 | 0.0 | 32.7 | -32.7 | -1.0 | -100.0 | 0.0 | 0.0 | keep collecting (1/30) |
 | follow_move+money_level | spread | 1-1 | 50.0 | 50.0 | 0.0 | -0.06 | -2.9 | 2.0 | 50.0 | redundant -- identical record to money_level alone, not independent confirmation |
-| follow_move+money_moving | spread | 0-1 | 0.0 | 55.1 | -55.1 | -1.0 | -100.0 | 5.0 | 100.0 | keep collecting (1/30) |
-| follow_move+rlm_ratio | spread | 0-1 | 0.0 | 55.1 | -55.1 | -1.0 | -100.0 | 5.0 | 100.0 | redundant -- identical record to rlm_ratio alone, not independent confirmation |
-| follow_move+sharp_gap | spread | 0-1 | 0.0 | 55.1 | -55.1 | -1.0 | -100.0 | 5.0 | 100.0 | keep collecting (1/30) |
-| money_level+money_moving | spread | 0-1 | 0.0 | 55.1 | -55.1 | -1.0 | -100.0 | 5.0 | 100.0 | keep collecting (1/30) |
-| money_level+rlm_ratio | spread | 0-1 | 0.0 | 55.1 | -55.1 | -1.0 | -100.0 | 5.0 | 100.0 | redundant -- identical record to rlm_ratio alone, not independent confirmation |
-| money_level+sharp_gap | spread | 0-1 | 0.0 | 55.1 | -55.1 | -1.0 | -100.0 | 5.0 | 100.0 | keep collecting (1/30) |
-| money_moving+rlm_ratio | spread | 0-1 | 0.0 | 55.1 | -55.1 | -1.0 | -100.0 | 5.0 | 100.0 | redundant -- identical record to rlm_ratio alone, not independent confirmation |
-| money_moving+sharp_gap | spread | 0-2 | 0.0 | 55.1 | -55.1 | -2.0 | -100.0 | 3.0 | 100.0 | redundant -- identical record to money_moving alone, not independent confirmation |
-| rlm_ratio+sharp_gap | spread | 0-1 | 0.0 | 55.1 | -55.1 | -1.0 | -100.0 | 5.0 | 100.0 | redundant -- identical record to rlm_ratio alone, not independent confirmation |
-| follow_move+pin_value | spread | 1-1 | 50.0 | 44.9 | 5.1 | -0.09 | -4.5 | -0.5 | 0.0 | keep collecting (2/30) |
-| pin_move+pin_value | spread | 0-2 | 0.0 | 44.9 | -44.9 | -2.0 | -100.0 | 0.0 | 0.0 | keep collecting (2/30) |
-| consensus_gap+pin_value | spread | 4-1 | 80.0 | 46.9 | 33.1 | +2.41 | 48.1 | -0.4 | 0.0 | keep collecting (5/30) |
-| follow_move+pin_move | spread | 1-1 | 50.0 | 44.9 | 5.1 | -0.06 | -2.9 | -0.5 | 0.0 | keep collecting (2/30) |
-| consensus_gap+pin_move | spread | 0-1 | 0.0 | 55.1 | -55.1 | -1.0 | -100.0 | 0.0 | 0.0 | keep collecting (1/30) |
-| consensus_gap+follow_move | spread | 0-1 | 0.0 | 44.9 | -44.9 | -1.0 | -100.0 | 4.0 | 100.0 | keep collecting (1/30) |
-| money_level+pin_move | spread | 1-0 | 100.0 | 44.9 | 55.1 | +0.94 | 94.3 | -1.0 | 0.0 | keep collecting (1/30) |
-| money_moving+pin_value | spread | 0-1 | 0.0 | 55.1 | -55.1 | -1.0 | -100.0 | 1.0 | 100.0 | keep collecting (1/30) |
-| pin_value+sharp_gap | spread | 0-1 | 0.0 | 55.1 | -55.1 | -1.0 | -100.0 | 1.0 | 100.0 | keep collecting (1/30) |
-| follow_move+money_level | total | 11-10 | 52.4 | 50.9 | 1.4 | +0.04 | 0.2 | 0.43 | 52.4 | keep collecting (21/30) |
-| follow_move+sharp_gap | total | 15-13 | 53.6 | 49.4 | 4.2 | +0.68 | 2.4 | 0.75 | 53.6 | keep collecting (28/30) |
-| money_level+sharp_gap | total | 20-15 | 57.1 | 51.3 | 5.8 | +3.18 | 9.1 | 0.03 | 42.9 | no edge shown yet |
-| follow_move+money_moving | total | 9-10 | 47.4 | 48.7 | -1.4 | -1.78 | -9.3 | 0.63 | 47.4 | keep collecting (19/30) |
-| money_level+money_moving | total | 13-8 | 61.9 | 51.1 | 10.8 | +3.89 | 18.5 | -0.19 | 42.9 | keep collecting (21/30) |
-| follow_move+rlm_quiet | total | 11-11 | 50.0 | 47.8 | 2.2 | -1.0 | -4.5 | 0.73 | 54.5 | redundant -- identical record to rlm_quiet alone, not independent confirmation |
-| follow_move+rlm_ratio | total | 6-5 | 54.5 | 47.8 | 6.7 | +0.45 | 4.1 | 0.82 | 72.7 | redundant -- identical record to rlm_ratio alone, not independent confirmation |
-| rlm_quiet+rlm_ratio | total | 5-3 | 62.5 | 47.8 | 14.7 | +1.55 | 19.3 | 0.62 | 62.5 | keep collecting (8/30) |
-| rlm_quiet+sharp_gap | total | 6-5 | 54.5 | 47.8 | 6.7 | +0.45 | 4.1 | 0.91 | 54.5 | keep collecting (11/30) |
-| rlm_ratio+sharp_gap | total | 6-5 | 54.5 | 47.8 | 6.7 | +0.45 | 4.1 | 0.82 | 72.7 | redundant -- identical record to rlm_ratio alone, not independent confirmation |
-| money_moving+rlm_quiet | total | 4-4 | 50.0 | 47.8 | 2.2 | -0.36 | -4.5 | 0.38 | 37.5 | keep collecting (8/30) |
-| money_moving+rlm_ratio | total | 4-1 | 80.0 | 47.8 | 32.2 | +2.64 | 52.7 | 1.2 | 80.0 | keep collecting (5/30) |
-| money_moving+sharp_gap | total | 17-10 | 63.0 | 49.6 | 13.4 | +5.53 | 20.5 | 0.33 | 40.7 | keep collecting (27/30) |
-| follow_move+pin_move | total | 1-4 | 20.0 | 49.6 | -29.6 | -3.09 | -61.8 | 0.4 | 40.0 | keep collecting (5/30) |
-| consensus_gap+follow_move | total | 6-11 | 35.3 | 49.1 | -13.8 | -5.55 | -32.6 | 1.35 | 70.6 | keep collecting (17/30) |
-| consensus_gap+money_level | total | 5-3 | 62.5 | 51.6 | 10.9 | +1.51 | 18.8 | -0.38 | 25.0 | keep collecting (8/30) |
-| consensus_gap+sharp_gap | total | 3-5 | 37.5 | 50.5 | -13.0 | -2.31 | -28.9 | -0.12 | 37.5 | keep collecting (8/30) |
-| follow_move+money_delta | total | 1-1 | 50.0 | 47.8 | 2.2 | -0.09 | -4.5 | 1.5 | 100.0 | keep collecting (2/30) |
-| money_delta+money_level | total | 1-1 | 50.0 | 47.8 | 2.2 | -0.09 | -4.5 | 1.5 | 100.0 | keep collecting (2/30) |
-| money_delta+money_moving | total | 2-1 | 66.7 | 47.8 | 18.9 | +0.82 | 27.3 | 3.67 | 100.0 | redundant -- identical record to money_delta alone, not independent confirmation |
-| money_delta+rlm_ratio | total | 1-1 | 50.0 | 47.8 | 2.2 | -0.09 | -4.5 | 1.5 | 100.0 | keep collecting (2/30) |
-| money_delta+sharp_gap | total | 2-1 | 66.7 | 47.8 | 18.9 | +0.82 | 27.3 | 3.67 | 100.0 | redundant -- identical record to money_delta alone, not independent confirmation |
-| money_level+rlm_ratio | total | 1-2 | 33.3 | 47.8 | -14.5 | -1.09 | -36.4 | 1.33 | 100.0 | keep collecting (3/30) |
-| follow_move+pin_value | total | 3-3 | 50.0 | 50.0 | 0.0 | -0.27 | -4.5 | -0.67 | 33.3 | keep collecting (6/30) |
+| follow_move+money_moving | spread | 0-1 | 0.0 | 55.9 | -55.9 | -1.0 | -100.0 | 5.0 | 100.0 | keep collecting (1/30) |
+| follow_move+rlm_ratio | spread | 0-1 | 0.0 | 55.9 | -55.9 | -1.0 | -100.0 | 5.0 | 100.0 | redundant -- identical record to rlm_ratio alone, not independent confirmation |
+| follow_move+sharp_gap | spread | 0-1 | 0.0 | 55.9 | -55.9 | -1.0 | -100.0 | 5.0 | 100.0 | keep collecting (1/30) |
+| money_level+money_moving | spread | 0-1 | 0.0 | 55.9 | -55.9 | -1.0 | -100.0 | 5.0 | 100.0 | keep collecting (1/30) |
+| money_level+rlm_ratio | spread | 0-1 | 0.0 | 55.9 | -55.9 | -1.0 | -100.0 | 5.0 | 100.0 | redundant -- identical record to rlm_ratio alone, not independent confirmation |
+| money_level+sharp_gap | spread | 0-1 | 0.0 | 55.9 | -55.9 | -1.0 | -100.0 | 5.0 | 100.0 | keep collecting (1/30) |
+| money_moving+rlm_ratio | spread | 0-1 | 0.0 | 55.9 | -55.9 | -1.0 | -100.0 | 5.0 | 100.0 | redundant -- identical record to rlm_ratio alone, not independent confirmation |
+| money_moving+sharp_gap | spread | 0-2 | 0.0 | 55.9 | -55.9 | -2.0 | -100.0 | 3.0 | 100.0 | redundant -- identical record to money_moving alone, not independent confirmation |
+| rlm_ratio+sharp_gap | spread | 0-1 | 0.0 | 55.9 | -55.9 | -1.0 | -100.0 | 5.0 | 100.0 | redundant -- identical record to rlm_ratio alone, not independent confirmation |
+| follow_move+pin_value | spread | 1-2 | 33.3 | 48.0 | -14.7 | -1.09 | -36.4 | -0.33 | 0.0 | keep collecting (3/30) |
+| pin_move+pin_value | spread | 0-4 | 0.0 | 47.0 | -47.0 | -4.0 | -100.0 | 0.5 | 25.0 | keep collecting (4/30) |
+| consensus_gap+pin_value | spread | 4-1 | 80.0 | 46.4 | 33.6 | +2.41 | 48.1 | -0.4 | 0.0 | keep collecting (5/30) |
+| follow_move+pin_move | spread | 1-2 | 33.3 | 48.0 | -14.7 | -1.06 | -35.2 | -0.33 | 0.0 | keep collecting (3/30) |
+| consensus_gap+pin_move | spread | 0-1 | 0.0 | 55.9 | -55.9 | -1.0 | -100.0 | 0.0 | 0.0 | keep collecting (1/30) |
+| consensus_gap+follow_move | spread | 0-1 | 0.0 | 44.1 | -44.1 | -1.0 | -100.0 | 4.0 | 100.0 | keep collecting (1/30) |
+| money_level+pin_move | spread | 1-0 | 100.0 | 44.1 | 55.9 | +0.94 | 94.3 | -1.0 | 0.0 | keep collecting (1/30) |
+| money_moving+pin_value | spread | 0-1 | 0.0 | 55.9 | -55.9 | -1.0 | -100.0 | 1.0 | 100.0 | keep collecting (1/30) |
+| pin_value+sharp_gap | spread | 0-1 | 0.0 | 55.9 | -55.9 | -1.0 | -100.0 | 1.0 | 100.0 | keep collecting (1/30) |
+| follow_move+money_level | total | 11-10 | 52.4 | 51.0 | 1.3 | +0.04 | 0.2 | 0.43 | 52.4 | keep collecting (21/30) |
+| follow_move+sharp_gap | total | 15-13 | 53.6 | 49.3 | 4.3 | +0.68 | 2.4 | 0.75 | 53.6 | keep collecting (28/30) |
+| money_level+sharp_gap | total | 22-15 | 59.5 | 51.5 | 7.9 | +4.92 | 13.3 | -0.03 | 40.5 | no edge shown yet |
+| follow_move+money_moving | total | 9-10 | 47.4 | 48.6 | -1.2 | -1.78 | -9.3 | 0.63 | 47.4 | keep collecting (19/30) |
+| money_level+money_moving | total | 15-8 | 65.2 | 51.4 | 13.8 | +5.63 | 24.5 | -0.26 | 39.1 | keep collecting (23/30) |
+| follow_move+rlm_quiet | total | 11-13 | 45.8 | 47.6 | -1.7 | -3.0 | -12.5 | 0.75 | 58.3 | redundant -- identical record to rlm_quiet alone, not independent confirmation |
+| follow_move+rlm_ratio | total | 6-5 | 54.5 | 47.6 | 7.0 | +0.45 | 4.1 | 0.82 | 72.7 | redundant -- identical record to rlm_ratio alone, not independent confirmation |
+| rlm_quiet+rlm_ratio | total | 5-3 | 62.5 | 47.6 | 14.9 | +1.55 | 19.3 | 0.62 | 62.5 | keep collecting (8/30) |
+| rlm_quiet+sharp_gap | total | 6-5 | 54.5 | 47.6 | 7.0 | +0.45 | 4.1 | 0.91 | 54.5 | keep collecting (11/30) |
+| rlm_ratio+sharp_gap | total | 6-5 | 54.5 | 47.6 | 7.0 | +0.45 | 4.1 | 0.82 | 72.7 | redundant -- identical record to rlm_ratio alone, not independent confirmation |
+| money_moving+rlm_quiet | total | 4-4 | 50.0 | 47.6 | 2.4 | -0.36 | -4.5 | 0.38 | 37.5 | keep collecting (8/30) |
+| money_moving+rlm_ratio | total | 4-1 | 80.0 | 47.6 | 32.4 | +2.64 | 52.7 | 1.2 | 80.0 | keep collecting (5/30) |
+| money_moving+sharp_gap | total | 19-10 | 65.5 | 49.7 | 15.8 | +7.27 | 25.1 | 0.24 | 37.9 | keep collecting (29/30) |
+| follow_move+pin_move | total | 3-5 | 37.5 | 48.8 | -11.3 | -2.23 | -27.9 | 1.0 | 62.5 | keep collecting (8/30) |
+| consensus_gap+follow_move | total | 6-12 | 33.3 | 48.9 | -15.6 | -6.55 | -36.4 | 1.33 | 72.2 | keep collecting (18/30) |
+| consensus_gap+money_level | total | 5-3 | 62.5 | 51.8 | 10.7 | +1.51 | 18.8 | -0.38 | 25.0 | keep collecting (8/30) |
+| consensus_gap+sharp_gap | total | 3-5 | 37.5 | 50.6 | -13.1 | -2.31 | -28.9 | -0.12 | 37.5 | keep collecting (8/30) |
+| follow_move+money_delta | total | 1-1 | 50.0 | 47.6 | 2.4 | -0.09 | -4.5 | 1.5 | 100.0 | keep collecting (2/30) |
+| money_delta+money_level | total | 1-1 | 50.0 | 47.6 | 2.4 | -0.09 | -4.5 | 1.5 | 100.0 | keep collecting (2/30) |
+| money_delta+money_moving | total | 2-1 | 66.7 | 47.6 | 19.1 | +0.82 | 27.3 | 3.67 | 100.0 | redundant -- identical record to money_delta alone, not independent confirmation |
+| money_delta+rlm_ratio | total | 1-1 | 50.0 | 47.6 | 2.4 | -0.09 | -4.5 | 1.5 | 100.0 | keep collecting (2/30) |
+| money_delta+sharp_gap | total | 2-1 | 66.7 | 47.6 | 19.1 | +0.82 | 27.3 | 3.67 | 100.0 | redundant -- identical record to money_delta alone, not independent confirmation |
+| money_level+rlm_ratio | total | 1-2 | 33.3 | 47.6 | -14.2 | -1.09 | -36.4 | 1.33 | 100.0 | keep collecting (3/30) |
+| follow_move+pin_value | total | 4-3 | 57.1 | 49.7 | 7.5 | +0.68 | 9.7 | -0.29 | 42.9 | keep collecting (7/30) |
 | consensus_gap+pin_move | total | 2-0 | 100.0 | 50.0 | 50.0 | +1.86 | 93.0 | 0.5 | 50.0 | keep collecting (2/30) |
-| consensus_gap+pin_value | total | 6-2 | 75.0 | 50.5 | 24.5 | +3.5 | 43.7 | 0.0 | 50.0 | keep collecting (8/30) |
-| money_level+pin_move | total | 1-3 | 25.0 | 52.2 | -27.2 | -2.09 | -52.3 | 0.5 | 25.0 | keep collecting (4/30) |
-| money_level+pin_value | total | 3-2 | 60.0 | 51.3 | 8.7 | +0.73 | 14.5 | 0.6 | 40.0 | keep collecting (5/30) |
-| pin_move+pin_value | total | 3-4 | 42.9 | 50.9 | -8.1 | -1.23 | -17.6 | 0.57 | 42.9 | keep collecting (7/30) |
-| consensus_gap+money_delta | total | 1-0 | 100.0 | 47.8 | 52.2 | +0.91 | 90.9 | 1.0 | 100.0 | keep collecting (1/30) |
-| consensus_gap+money_moving | total | 3-1 | 75.0 | 47.8 | 27.2 | +1.77 | 44.2 | 0.5 | 75.0 | keep collecting (4/30) |
-| consensus_gap+rlm_ratio | total | 1-0 | 100.0 | 47.8 | 52.2 | +0.91 | 90.9 | 1.0 | 100.0 | keep collecting (1/30) |
-| money_delta+pin_value | total | 1-0 | 100.0 | 47.8 | 52.2 | +0.91 | 90.9 | 1.0 | 100.0 | keep collecting (1/30) |
-| money_moving+pin_value | total | 3-0 | 100.0 | 47.8 | 52.2 | +2.77 | 92.3 | 1.0 | 100.0 | keep collecting (3/30) |
-| pin_value+rlm_ratio | total | 1-0 | 100.0 | 47.8 | 52.2 | +0.91 | 90.9 | 1.0 | 100.0 | keep collecting (1/30) |
-| pin_value+sharp_gap | total | 1-2 | 33.3 | 50.7 | -17.4 | -1.09 | -36.4 | 1.33 | 66.7 | keep collecting (3/30) |
-| pin_move+sharp_gap | total | 0-2 | 0.0 | 52.2 | -52.2 | -2.0 | -100.0 | 1.5 | 50.0 | keep collecting (2/30) |
-| money_moving+pin_move | total | 1-1 | 50.0 | 47.8 | 2.2 | -0.05 | -2.4 | 1.0 | 100.0 | keep collecting (2/30) |
+| consensus_gap+pin_value | total | 6-2 | 75.0 | 50.6 | 24.4 | +3.5 | 43.7 | 0.0 | 50.0 | keep collecting (8/30) |
+| money_level+pin_move | total | 1-3 | 25.0 | 52.4 | -27.4 | -2.09 | -52.3 | 0.5 | 25.0 | keep collecting (4/30) |
+| money_level+pin_value | total | 4-2 | 66.7 | 51.6 | 15.0 | +1.6 | 26.6 | 0.33 | 33.3 | keep collecting (6/30) |
+| pin_move+pin_value | total | 4-4 | 50.0 | 50.6 | -0.6 | -0.28 | -3.5 | 0.75 | 50.0 | keep collecting (8/30) |
+| consensus_gap+money_delta | total | 1-0 | 100.0 | 47.6 | 52.4 | +0.91 | 90.9 | 1.0 | 100.0 | keep collecting (1/30) |
+| consensus_gap+money_moving | total | 3-1 | 75.0 | 47.6 | 27.4 | +1.77 | 44.2 | 0.5 | 75.0 | keep collecting (4/30) |
+| consensus_gap+rlm_ratio | total | 1-0 | 100.0 | 47.6 | 52.4 | +0.91 | 90.9 | 1.0 | 100.0 | keep collecting (1/30) |
+| money_delta+pin_value | total | 1-0 | 100.0 | 47.6 | 52.4 | +0.91 | 90.9 | 1.0 | 100.0 | keep collecting (1/30) |
+| money_moving+pin_value | total | 4-0 | 100.0 | 48.8 | 51.2 | +3.64 | 91.0 | 0.5 | 75.0 | keep collecting (4/30) |
+| pin_value+rlm_ratio | total | 1-0 | 100.0 | 47.6 | 52.4 | +0.91 | 90.9 | 1.0 | 100.0 | keep collecting (1/30) |
+| pin_value+sharp_gap | total | 2-2 | 50.0 | 51.2 | -1.2 | -0.22 | -5.5 | 0.75 | 50.0 | keep collecting (4/30) |
+| pin_move+sharp_gap | total | 0-2 | 0.0 | 52.4 | -52.4 | -2.0 | -100.0 | 1.5 | 50.0 | keep collecting (2/30) |
+| money_moving+pin_move | total | 1-1 | 50.0 | 47.6 | 2.4 | -0.05 | -2.4 | 1.0 | 100.0 | keep collecting (2/30) |
+| pin_move+rlm_quiet | total | 0-1 | 0.0 | 47.6 | -47.6 | -1.0 | -100.0 | 1.0 | 100.0 | keep collecting (1/30) |
 
 ## CLOSE  (fwd)
 
 | signal | market | record | hit % | expected % | edge | units | ROI % | CLV avg | CLV + % | status |
 |---|---|---|---|---|---|---|---|---|---|---|
-| rlm_quiet | both | 108-167 | 39.3 | 43.0 | -3.7 | -36.94 | -13.4 |  |  | DROP: below break-even |
-| pin_move | both | 195-212 | 47.9 | 49.5 | -1.5 | -23.83 | -5.9 |  |  | DROP: below break-even |
-| money_delta | both | 99-115 | 46.3 | 44.4 | 1.9 | -11.51 | -5.4 |  |  | DROP: below break-even |
-| pin_rlm | both | 41-60 | 40.6 | 42.3 | -1.7 | -14.28 | -14.1 |  |  | DROP: below break-even |
-| follow_move | both | 313-348 | 47.4 | 49.2 | -1.9 | -64.0 | -9.7 |  |  | DROP: below break-even |
-| rlm_ratio | both | 69-107 | 39.2 | 42.6 | -3.4 | -31.71 | -18.0 |  |  | DROP: below break-even |
-| money_level | both | 404-314 | 56.3 | 55.0 | 1.3 | -31.89 | -4.4 |  |  | beats break-even but not its base rate -- directional bias, not signal |
-| sharp_gap | both | 312-360 | 46.4 | 48.5 | -2.1 | -75.57 | -11.2 |  |  | DROP: below break-even |
-| money_moving | both | 325-351 | 48.1 | 48.9 | -0.8 | -60.06 | -8.9 |  |  | DROP: below break-even |
-| pin_value | both | 149-146 | 50.5 | 49.7 | 0.8 | +1.6 | 0.5 |  |  | no edge shown yet |
-| consensus_gap | both | 130-103 | 55.8 | 52.5 | 3.3 | +2.4 | 1.0 |  |  | no edge shown yet |
-| follow_move+pin_move | both | 131-168 | 43.8 | 49.0 | -5.2 | -45.38 | -15.2 |  |  | DROP: below break-even |
-| money_delta+money_moving | both | 74-88 | 45.7 | 42.9 | 2.7 | -7.57 | -4.7 |  |  | DROP: below break-even |
-| money_delta+sharp_gap | both | 74-87 | 46.0 | 42.9 | 3.1 | -6.57 | -4.1 |  |  | DROP: below break-even |
-| money_moving+sharp_gap | both | 303-339 | 47.2 | 48.6 | -1.4 | -60.46 | -9.4 |  |  | DROP: below break-even |
-| consensus_gap+money_level | both | 85-53 | 61.6 | 58.3 | 3.3 | -2.56 | -1.9 |  |  | beats break-even but not its base rate -- directional bias, not signal |
-| follow_move+rlm_quiet | both | 108-167 | 39.3 | 43.0 | -3.7 | -36.94 | -13.4 |  |  | redundant -- identical record to rlm_quiet alone, not independent confirmation |
-| pin_move+rlm_quiet | both | 52-78 | 40.0 | 44.2 | -4.2 | -18.14 | -14.0 |  |  | DROP: below break-even |
-| consensus_gap+follow_move | both | 35-35 | 50.0 | 51.0 | -1.0 | -7.91 | -11.3 |  |  | no edge shown yet |
-| follow_move+money_level | both | 152-125 | 54.9 | 55.2 | -0.3 | -19.41 | -7.0 |  |  | no edge shown yet |
-| money_level+money_moving | both | 220-196 | 52.9 | 52.8 | 0.1 | -23.7 | -5.7 |  |  | no edge shown yet |
-| money_level+sharp_gap | both | 208-197 | 51.4 | 52.5 | -1.2 | -30.66 | -7.6 |  |  | no edge shown yet |
-| consensus_gap+money_moving | both | 44-52 | 45.8 | 50.6 | -4.7 | -12.1 | -12.6 |  |  | no edge shown yet |
-| consensus_gap+pin_move | both | 37-23 | 61.7 | 50.4 | 11.3 | +14.92 | 24.9 |  |  | no edge shown yet |
-| consensus_gap+pin_value | both | 43-40 | 51.8 | 49.4 | 2.4 | +2.09 | 2.5 |  |  | no edge shown yet |
-| consensus_gap+sharp_gap | both | 44-56 | 44.0 | 50.0 | -6.0 | -15.96 | -16.0 |  |  | DROP: below break-even |
-| follow_move+money_moving | both | 162-187 | 46.4 | 48.5 | -2.0 | -40.9 | -11.7 |  |  | DROP: below break-even |
-| follow_move+pin_value | both | 48-45 | 51.6 | 50.1 | 1.5 | +7.78 | 8.4 |  |  | no edge shown yet |
-| follow_move+sharp_gap | both | 158-190 | 45.4 | 48.2 | -2.8 | -43.61 | -12.5 |  |  | DROP: below break-even |
-| money_level+pin_move | both | 89-83 | 51.7 | 53.6 | -1.8 | -13.59 | -7.9 |  |  | no edge shown yet |
-| money_level+pin_value | both | 67-66 | 50.4 | 50.6 | -0.3 | -7.39 | -5.6 |  |  | no edge shown yet |
-| money_moving+pin_move | both | 93-103 | 47.4 | 48.6 | -1.1 | -16.36 | -8.3 |  |  | no edge shown yet |
-| money_moving+pin_value | both | 57-67 | 46.0 | 49.7 | -3.8 | -12.85 | -10.4 |  |  | no edge shown yet |
-| pin_move+pin_value | both | 61-65 | 48.4 | 50.9 | -2.5 | -10.41 | -8.3 |  |  | no edge shown yet |
-| pin_move+sharp_gap | both | 88-109 | 44.7 | 48.1 | -3.5 | -25.48 | -12.9 |  |  | DROP: below break-even |
-| pin_value+sharp_gap | both | 56-71 | 44.1 | 50.0 | -5.9 | -17.75 | -14.0 |  |  | DROP: below break-even |
-| follow_move+money_delta | both | 51-73 | 41.1 | 44.4 | -3.3 | -21.85 | -17.6 |  |  | DROP: below break-even |
-| money_delta+pin_move | both | 31-39 | 44.3 | 44.8 | -0.5 | -9.01 | -12.9 |  |  | no edge shown yet |
-| money_delta+rlm_quiet | both | 29-49 | 37.2 | 42.2 | -5.0 | -18.07 | -23.2 |  |  | DROP: below break-even |
-| follow_move+rlm_ratio | both | 69-107 | 39.2 | 42.6 | -3.4 | -31.71 | -18.0 |  |  | redundant -- identical record to rlm_ratio alone, not independent confirmation |
-| money_moving+rlm_quiet | both | 50-85 | 37.0 | 41.9 | -4.9 | -27.7 | -20.5 |  |  | DROP: below break-even |
-| money_moving+rlm_ratio | both | 67-101 | 39.9 | 42.8 | -2.9 | -28.34 | -16.9 |  |  | DROP: below break-even |
-| rlm_quiet+rlm_ratio | both | 36-76 | 32.1 | 40.6 | -8.5 | -32.22 | -28.8 |  |  | DROP: below break-even |
-| rlm_quiet+sharp_gap | both | 50-87 | 36.5 | 41.9 | -5.4 | -29.6 | -21.6 |  |  | DROP: below break-even |
-| rlm_ratio+sharp_gap | both | 69-107 | 39.2 | 42.6 | -3.4 | -31.71 | -18.0 |  |  | redundant -- identical record to rlm_ratio alone, not independent confirmation |
-| money_delta+money_level | both | 26-24 | 52.0 | 47.6 | 4.4 | +1.44 | 2.9 |  |  | no edge shown yet |
-| consensus_gap+rlm_quiet | both | 9-17 | 34.6 | 40.0 | -5.3 | -6.72 | -25.9 |  |  | keep collecting (26/30) |
-| consensus_gap+rlm_ratio | both | 8-11 | 42.1 | 40.4 | 1.7 | -1.75 | -9.2 |  |  | keep collecting (19/30) |
-| money_delta+rlm_ratio | both | 34-55 | 38.2 | 42.5 | -4.3 | -19.44 | -21.8 |  |  | DROP: below break-even |
-| consensus_gap+pin_rlm | both | 7-7 | 50.0 | 44.0 | 6.0 | +1.58 | 11.3 |  |  | keep collecting (14/30) |
-| money_level+pin_rlm | both | 13-15 | 46.4 | 46.4 | 0.0 | -2.66 | -9.5 |  |  | keep collecting (28/30) |
-| money_moving+pin_rlm | both | 41-54 | 43.2 | 42.8 | 0.4 | -8.28 | -8.7 |  |  | DROP: below break-even |
-| pin_rlm+sharp_gap | both | 41-60 | 40.6 | 42.3 | -1.7 | -14.28 | -14.1 |  |  | redundant -- identical record to pin_rlm alone, not independent confirmation |
-| money_level+rlm_ratio | both | 26-24 | 52.0 | 46.8 | 5.2 | +0.34 | 0.7 |  |  | no edge shown yet |
-| consensus_gap+money_delta | both | 14-9 | 60.9 | 43.5 | 17.4 | +7.9 | 34.3 |  |  | keep collecting (23/30) |
-| follow_move+pin_rlm | both | 34-52 | 39.5 | 42.0 | -2.5 | -13.35 | -15.5 |  |  | DROP: below break-even |
-| money_delta+pin_rlm | both | 21-30 | 41.2 | 42.4 | -1.2 | -8.67 | -17.0 |  |  | DROP: below break-even |
-| pin_move+pin_rlm | both | 38-52 | 42.2 | 43.1 | -0.9 | -10.36 | -11.5 |  |  | DROP: below break-even |
-| pin_move+rlm_ratio | both | 34-49 | 41.0 | 43.4 | -2.4 | -11.82 | -14.2 |  |  | DROP: below break-even |
-| pin_rlm+rlm_quiet | both | 19-38 | 33.3 | 40.4 | -7.1 | -13.8 | -24.2 |  |  | DROP: below break-even |
-| pin_rlm+rlm_ratio | both | 34-52 | 39.5 | 42.0 | -2.5 | -13.35 | -15.5 |  |  | DROP: below break-even |
-| money_delta+pin_value | both | 21-10 | 67.7 | 48.5 | 19.3 | +13.02 | 42.0 |  |  | PROMOTE: beats break-even and its own base rate |
-| pin_value+rlm_quiet | both | 13-16 | 44.8 | 47.9 | -3.1 | +6.0 | 20.7 |  |  | keep collecting (29/30) |
-| pin_value+rlm_ratio | both | 7-7 | 50.0 | 48.2 | 1.8 | -0.31 | -2.2 |  |  | keep collecting (14/30) |
-| pin_rlm+pin_value | both | 8-9 | 47.1 | 49.2 | -2.1 | -1.33 | -7.8 |  |  | keep collecting (17/30) |
-| rlm_quiet | moneyline | 39-76 | 33.9 | 33.5 | 0.4 | -10.38 | -9.0 |  |  | DROP: below break-even |
-| rlm_quiet | spread | 22-26 | 45.8 | 53.6 | -7.8 | -5.32 | -11.1 |  |  | no edge shown yet |
-| rlm_quiet | total | 47-65 | 42.0 | 48.1 | -6.1 | -21.24 | -19.0 |  |  | DROP: below break-even |
-| pin_move | moneyline | 58-50 | 53.7 | 46.5 | 7.2 | +13.45 | 12.5 |  |  | no edge shown yet |
-| pin_move | spread | 65-72 | 47.4 | 51.5 | -4.0 | -13.16 | -9.6 |  |  | no edge shown yet |
-| pin_move | total | 72-90 | 44.4 | 49.7 | -5.3 | -24.12 | -14.9 |  |  | DROP: below break-even |
-| money_delta | moneyline | 27-46 | 37.0 | 35.7 | 1.2 | -8.77 | -12.0 |  |  | DROP: below break-even |
-| money_delta | spread | 19-17 | 52.8 | 50.9 | 1.9 | +0.46 | 1.3 |  |  | no edge shown yet |
-| money_delta | total | 53-52 | 50.5 | 48.1 | 2.3 | -3.2 | -3.0 |  |  | no edge shown yet |
-| pin_rlm | moneyline | 16-30 | 34.8 | 34.4 | 0.4 | -7.12 | -15.5 |  |  | DROP: below break-even |
-| pin_rlm | spread | 5-3 | 62.5 | 51.3 | 11.2 | +1.51 | 18.9 |  |  | keep collecting (8/30) |
-| pin_rlm | total | 20-27 | 42.6 | 48.6 | -6.0 | -8.68 | -18.5 |  |  | no edge shown yet |
-| follow_move | moneyline | 112-120 | 48.3 | 47.6 | 0.6 | -20.51 | -8.8 |  |  | no edge shown yet |
-| follow_move | spread | 88-95 | 48.1 | 50.9 | -2.8 | -14.13 | -7.7 |  |  | no edge shown yet |
-| follow_move | total | 113-133 | 45.9 | 49.5 | -3.5 | -29.36 | -11.9 |  |  | DROP: below break-even |
-| rlm_ratio | moneyline | 24-52 | 31.6 | 33.8 | -2.3 | -17.8 | -23.4 |  |  | DROP: below break-even |
-| rlm_ratio | spread | 11-9 | 55.0 | 52.0 | 3.0 | +0.89 | 4.4 |  |  | keep collecting (20/30) |
-| rlm_ratio | total | 34-46 | 42.5 | 48.6 | -6.1 | -14.79 | -18.5 |  |  | DROP: below break-even |
-| money_level | moneyline | 163-90 | 64.4 | 63.8 | 0.6 | -24.74 | -9.8 |  |  | beats break-even but not its base rate -- directional bias, not signal |
-| money_level | spread | 100-93 | 51.8 | 48.6 | 3.2 | -3.3 | -1.7 |  |  | no edge shown yet |
-| money_level | total | 141-131 | 51.8 | 51.3 | 0.5 | -3.85 | -1.4 |  |  | no edge shown yet |
-| sharp_gap | moneyline | 96-129 | 42.7 | 45.7 | -3.0 | -40.3 | -17.9 |  |  | DROP: below break-even |
-| sharp_gap | spread | 98-95 | 50.8 | 49.5 | 1.2 | -6.69 | -3.5 |  |  | no edge shown yet |
-| sharp_gap | total | 118-136 | 46.5 | 50.2 | -3.7 | -28.57 | -11.2 |  |  | DROP: below break-even |
-| money_moving | moneyline | 105-118 | 47.1 | 46.9 | 0.2 | -26.4 | -11.8 |  |  | DROP: below break-even |
-| money_moving | spread | 98-95 | 50.8 | 49.5 | 1.2 | -6.69 | -3.5 |  |  | no edge shown yet |
-| money_moving | total | 122-138 | 46.9 | 50.2 | -3.3 | -26.97 | -10.4 |  |  | DROP: below break-even |
-| pin_value | moneyline | 7-13 | 35.0 | 44.9 | -9.9 | +9.11 | 45.6 |  |  | keep collecting (20/30) |
-| pin_value | spread | 71-61 | 53.8 | 49.6 | 4.2 | +0.48 | 0.4 |  |  | no edge shown yet |
-| pin_value | total | 71-72 | 49.7 | 50.4 | -0.8 | -8.0 | -5.6 |  |  | no edge shown yet |
-| consensus_gap | moneyline | 68-52 | 56.7 | 54.8 | 1.8 | -1.16 | -1.0 |  |  | no edge shown yet |
-| consensus_gap | spread | 27-21 | 56.2 | 48.9 | 7.3 | +2.38 | 5.0 |  |  | no edge shown yet |
-| consensus_gap | total | 35-30 | 53.8 | 50.9 | 2.9 | +1.18 | 1.8 |  |  | no edge shown yet |
-| consensus_gap+money_level | moneyline | 52-23 | 69.3 | 64.8 | 4.5 | -1.5 | -2.0 |  |  | beats break-even but not its base rate -- directional bias, not signal |
-| follow_move+pin_move | moneyline | 42-45 | 48.3 | 45.9 | 2.4 | -3.91 | -4.5 |  |  | no edge shown yet |
-| follow_move+rlm_quiet | moneyline | 39-76 | 33.9 | 33.5 | 0.4 | -10.38 | -9.0 |  |  | redundant -- identical record to rlm_quiet alone, not independent confirmation |
-| pin_move+rlm_quiet | moneyline | 19-29 | 39.6 | 33.7 | 5.9 | +0.03 | 0.1 |  |  | DROP: below break-even |
-| consensus_gap+follow_move | moneyline | 20-18 | 52.6 | 51.8 | 0.8 | -4.36 | -11.5 |  |  | no edge shown yet |
-| follow_move+money_level | moneyline | 64-39 | 62.1 | 63.1 | -0.9 | -13.39 | -13.0 |  |  | beats break-even but not its base rate -- directional bias, not signal |
-| money_moving+sharp_gap | moneyline | 91-113 | 44.6 | 45.8 | -1.2 | -26.52 | -13.0 |  |  | DROP: below break-even |
-| follow_move+money_moving | moneyline | 57-68 | 45.6 | 45.5 | 0.1 | -17.75 | -14.2 |  |  | DROP: below break-even |
-| follow_move+sharp_gap | moneyline | 52-71 | 42.3 | 44.6 | -2.3 | -21.36 | -17.4 |  |  | DROP: below break-even |
-| money_level+money_moving | moneyline | 67-44 | 60.4 | 60.3 | 0.1 | -9.47 | -8.5 |  |  | beats break-even but not its base rate -- directional bias, not signal |
-| money_level+sharp_gap | moneyline | 59-47 | 55.7 | 59.7 | -4.0 | -14.87 | -14.0 |  |  | no edge shown yet |
-| follow_move+rlm_ratio | moneyline | 24-52 | 31.6 | 33.8 | -2.3 | -17.8 | -23.4 |  |  | redundant -- identical record to rlm_ratio alone, not independent confirmation |
-| money_moving+rlm_quiet | moneyline | 20-42 | 32.3 | 32.9 | -0.7 | -12.48 | -20.1 |  |  | DROP: below break-even |
-| money_moving+rlm_ratio | moneyline | 23-48 | 32.4 | 33.9 | -1.5 | -15.52 | -21.9 |  |  | DROP: below break-even |
-| rlm_quiet+rlm_ratio | moneyline | 17-41 | 29.3 | 32.9 | -3.6 | -14.72 | -25.4 |  |  | DROP: below break-even |
-| rlm_quiet+sharp_gap | moneyline | 20-43 | 31.7 | 32.9 | -1.2 | -13.34 | -21.2 |  |  | DROP: below break-even |
-| rlm_ratio+sharp_gap | moneyline | 24-52 | 31.6 | 33.8 | -2.3 | -17.8 | -23.4 |  |  | redundant -- identical record to rlm_ratio alone, not independent confirmation |
-| consensus_gap+money_moving | moneyline | 21-25 | 45.7 | 50.7 | -5.1 | -5.48 | -11.9 |  |  | no edge shown yet |
-| consensus_gap+rlm_quiet | moneyline | 3-12 | 20.0 | 32.9 | -12.9 | -7.22 | -48.1 |  |  | keep collecting (15/30) |
-| consensus_gap+rlm_ratio | moneyline | 3-7 | 30.0 | 32.9 | -2.9 | -2.22 | -22.2 |  |  | keep collecting (10/30) |
-| consensus_gap+sharp_gap | moneyline | 21-28 | 42.9 | 49.7 | -6.8 | -8.34 | -17.0 |  |  | no edge shown yet |
-| consensus_gap+pin_rlm | moneyline | 4-3 | 57.1 | 37.8 | 19.3 | +2.88 | 41.1 |  |  | keep collecting (7/30) |
-| money_level+pin_rlm | moneyline | 3-5 | 37.5 | 41.5 | -4.0 | -1.8 | -22.5 |  |  | keep collecting (8/30) |
-| money_moving+pin_rlm | moneyline | 16-25 | 39.0 | 34.6 | 4.4 | -2.12 | -5.2 |  |  | DROP: below break-even |
-| pin_rlm+sharp_gap | moneyline | 16-30 | 34.8 | 34.4 | 0.4 | -7.12 | -15.5 |  |  | redundant -- identical record to pin_rlm alone, not independent confirmation |
-| consensus_gap+pin_value | moneyline | 4-6 | 40.0 | 43.2 | -3.2 | +1.84 | 18.4 |  |  | keep collecting (10/30) |
-| money_level+rlm_ratio | moneyline | 4-9 | 30.8 | 38.2 | -7.4 | -4.66 | -35.9 |  |  | keep collecting (13/30) |
+| rlm_quiet | both | 111-177 | 38.5 | 42.8 | -4.3 | -43.27 | -15.0 |  |  | DROP: below break-even |
+| pin_move | both | 205-217 | 48.6 | 49.4 | -0.8 | -18.63 | -4.4 |  |  | DROP: below break-even |
+| money_delta | both | 100-129 | 43.7 | 44.0 | -0.3 | -24.55 | -10.7 |  |  | DROP: below break-even |
+| pin_rlm | both | 42-63 | 40.0 | 42.0 | -2.0 | -16.33 | -15.6 |  |  | DROP: below break-even |
+| follow_move | both | 329-365 | 47.4 | 49.1 | -1.7 | -66.71 | -9.6 |  |  | DROP: below break-even |
+| rlm_ratio | both | 71-117 | 37.8 | 42.4 | -4.6 | -39.92 | -21.2 |  |  | DROP: below break-even |
+| money_level | both | 424-328 | 56.4 | 55.0 | 1.4 | -31.3 | -4.2 |  |  | beats break-even but not its base rate -- directional bias, not signal |
+| sharp_gap | both | 324-383 | 45.8 | 48.5 | -2.6 | -89.08 | -12.6 |  |  | DROP: below break-even |
+| money_moving | both | 337-374 | 47.4 | 48.9 | -1.5 | -73.57 | -10.3 |  |  | DROP: below break-even |
+| pin_value | both | 156-153 | 50.5 | 49.6 | 0.9 | +1.62 | 0.5 |  |  | no edge shown yet |
+| consensus_gap | both | 138-108 | 56.1 | 52.8 | 3.3 | +2.91 | 1.2 |  |  | no edge shown yet |
+| follow_move+pin_move | both | 140-173 | 44.7 | 48.9 | -4.2 | -41.13 | -13.1 |  |  | DROP: below break-even |
+| money_delta+money_moving | both | 75-100 | 42.9 | 42.6 | 0.2 | -18.61 | -10.6 |  |  | DROP: below break-even |
+| money_delta+sharp_gap | both | 75-99 | 43.1 | 42.6 | 0.5 | -17.61 | -10.1 |  |  | DROP: below break-even |
+| money_moving+sharp_gap | both | 315-362 | 46.5 | 48.6 | -2.1 | -73.97 | -10.9 |  |  | DROP: below break-even |
+| consensus_gap+money_level | both | 92-55 | 62.6 | 58.7 | 3.9 | -0.0 | -0.0 |  |  | beats break-even but not its base rate -- directional bias, not signal |
+| follow_move+rlm_quiet | both | 111-177 | 38.5 | 42.8 | -4.3 | -43.27 | -15.0 |  |  | redundant -- identical record to rlm_quiet alone, not independent confirmation |
+| pin_move+rlm_quiet | both | 54-80 | 40.3 | 43.8 | -3.5 | -17.34 | -12.9 |  |  | DROP: below break-even |
+| consensus_gap+follow_move | both | 38-36 | 51.4 | 51.0 | 0.3 | -6.64 | -9.0 |  |  | no edge shown yet |
+| follow_move+money_level | both | 160-131 | 55.0 | 55.1 | -0.2 | -19.38 | -6.7 |  |  | no edge shown yet |
+| money_level+money_moving | both | 229-208 | 52.4 | 52.8 | -0.4 | -28.86 | -6.6 |  |  | no edge shown yet |
+| money_level+sharp_gap | both | 217-209 | 50.9 | 52.5 | -1.6 | -35.82 | -8.4 |  |  | no edge shown yet |
+| consensus_gap+money_moving | both | 47-56 | 45.6 | 50.9 | -5.3 | -13.82 | -13.4 |  |  | no edge shown yet |
+| consensus_gap+pin_move | both | 38-23 | 62.3 | 50.4 | 11.9 | +15.83 | 25.9 |  |  | PROMOTE: beats break-even and its own base rate |
+| consensus_gap+pin_value | both | 45-41 | 52.3 | 49.2 | 3.1 | +2.95 | 3.4 |  |  | no edge shown yet |
+| consensus_gap+sharp_gap | both | 47-60 | 43.9 | 50.4 | -6.5 | -17.69 | -16.5 |  |  | DROP: below break-even |
+| follow_move+money_moving | both | 171-202 | 45.8 | 48.4 | -2.6 | -49.07 | -13.2 |  |  | DROP: below break-even |
+| follow_move+pin_value | both | 51-47 | 52.0 | 50.2 | 1.8 | +8.39 | 8.6 |  |  | no edge shown yet |
+| follow_move+sharp_gap | both | 167-205 | 44.9 | 48.1 | -3.2 | -51.78 | -13.9 |  |  | DROP: below break-even |
+| money_level+pin_move | both | 93-86 | 52.0 | 53.6 | -1.6 | -12.87 | -7.2 |  |  | no edge shown yet |
+| money_level+pin_value | both | 69-72 | 48.9 | 50.6 | -1.6 | -11.57 | -8.2 |  |  | no edge shown yet |
+| money_moving+pin_move | both | 99-108 | 47.8 | 48.5 | -0.7 | -15.85 | -7.7 |  |  | no edge shown yet |
+| money_moving+pin_value | both | 60-72 | 45.5 | 49.8 | -4.3 | -15.23 | -11.5 |  |  | DROP: below break-even |
+| pin_move+pin_value | both | 63-66 | 48.8 | 51.0 | -2.2 | -9.67 | -7.5 |  |  | no edge shown yet |
+| pin_move+sharp_gap | both | 94-114 | 45.2 | 48.1 | -2.9 | -24.97 | -12.0 |  |  | DROP: below break-even |
+| pin_value+sharp_gap | both | 59-76 | 43.7 | 50.0 | -6.3 | -20.14 | -14.9 |  |  | DROP: below break-even |
+| follow_move+money_delta | both | 52-84 | 38.2 | 43.9 | -5.6 | -31.9 | -23.5 |  |  | DROP: below break-even |
+| money_delta+pin_move | both | 32-41 | 43.8 | 44.4 | -0.6 | -10.06 | -13.8 |  |  | no edge shown yet |
+| money_delta+rlm_quiet | both | 29-57 | 33.7 | 41.8 | -8.1 | -26.07 | -30.3 |  |  | DROP: below break-even |
+| follow_move+rlm_ratio | both | 71-117 | 37.8 | 42.4 | -4.6 | -39.92 | -21.2 |  |  | redundant -- identical record to rlm_ratio alone, not independent confirmation |
+| money_moving+rlm_quiet | both | 51-93 | 35.4 | 41.8 | -6.4 | -34.83 | -24.2 |  |  | DROP: below break-even |
+| money_moving+rlm_ratio | both | 69-111 | 38.3 | 42.6 | -4.2 | -36.55 | -20.3 |  |  | DROP: below break-even |
+| rlm_quiet+rlm_ratio | both | 36-84 | 30.0 | 40.4 | -10.4 | -40.22 | -33.5 |  |  | DROP: below break-even |
+| rlm_quiet+sharp_gap | both | 51-95 | 34.9 | 41.8 | -6.8 | -36.73 | -25.2 |  |  | DROP: below break-even |
+| rlm_ratio+sharp_gap | both | 71-117 | 37.8 | 42.4 | -4.6 | -39.92 | -21.2 |  |  | redundant -- identical record to rlm_ratio alone, not independent confirmation |
+| money_delta+money_level | both | 26-27 | 49.1 | 47.2 | 1.9 | -1.56 | -2.9 |  |  | no edge shown yet |
+| consensus_gap+rlm_quiet | both | 9-17 | 34.6 | 39.8 | -5.2 | -6.72 | -25.9 |  |  | keep collecting (26/30) |
+| consensus_gap+rlm_ratio | both | 9-12 | 42.9 | 40.6 | 2.2 | -1.92 | -9.1 |  |  | keep collecting (21/30) |
+| money_delta+rlm_ratio | both | 35-64 | 35.4 | 41.9 | -6.6 | -27.49 | -27.8 |  |  | DROP: below break-even |
+| consensus_gap+pin_rlm | both | 7-7 | 50.0 | 43.9 | 6.1 | +1.58 | 11.3 |  |  | keep collecting (14/30) |
+| money_level+pin_rlm | both | 13-15 | 46.4 | 46.2 | 0.2 | -2.66 | -9.5 |  |  | keep collecting (28/30) |
+| money_moving+pin_rlm | both | 42-57 | 42.4 | 42.4 | 0.1 | -10.33 | -10.4 |  |  | DROP: below break-even |
+| pin_rlm+sharp_gap | both | 42-63 | 40.0 | 42.0 | -2.0 | -16.33 | -15.6 |  |  | redundant -- identical record to pin_rlm alone, not independent confirmation |
+| money_level+rlm_ratio | both | 27-25 | 51.9 | 46.7 | 5.3 | +0.17 | 0.3 |  |  | no edge shown yet |
+| consensus_gap+money_delta | both | 14-10 | 58.3 | 43.0 | 15.4 | +6.9 | 28.7 |  |  | keep collecting (24/30) |
+| follow_move+pin_rlm | both | 35-55 | 38.9 | 41.6 | -2.7 | -15.4 | -17.1 |  |  | DROP: below break-even |
+| money_delta+pin_rlm | both | 22-33 | 40.0 | 41.8 | -1.8 | -10.72 | -19.5 |  |  | DROP: below break-even |
+| pin_move+pin_rlm | both | 39-54 | 41.9 | 42.8 | -0.8 | -11.41 | -12.3 |  |  | DROP: below break-even |
+| pin_move+rlm_ratio | both | 35-51 | 40.7 | 43.0 | -2.3 | -12.87 | -15.0 |  |  | DROP: below break-even |
+| pin_rlm+rlm_quiet | both | 19-41 | 31.7 | 39.9 | -8.2 | -16.8 | -28.0 |  |  | DROP: below break-even |
+| pin_rlm+rlm_ratio | both | 35-55 | 38.9 | 41.6 | -2.7 | -15.4 | -17.1 |  |  | DROP: below break-even |
+| money_delta+pin_value | both | 21-11 | 65.6 | 48.5 | 17.1 | +12.02 | 37.6 |  |  | no edge shown yet |
+| pin_value+rlm_quiet | both | 14-16 | 46.7 | 48.1 | -1.4 | +6.87 | 22.9 |  |  | no edge shown yet |
+| pin_value+rlm_ratio | both | 7-7 | 50.0 | 48.1 | 1.9 | -0.31 | -2.2 |  |  | keep collecting (14/30) |
+| pin_rlm+pin_value | both | 8-9 | 47.1 | 49.2 | -2.2 | -1.33 | -7.8 |  |  | keep collecting (17/30) |
+| rlm_quiet | moneyline | 41-80 | 33.9 | 33.3 | 0.6 | -11.58 | -9.6 |  |  | DROP: below break-even |
+| rlm_quiet | spread | 22-28 | 44.0 | 54.0 | -10.0 | -7.32 | -14.6 |  |  | no edge shown yet |
+| rlm_quiet | total | 48-69 | 41.0 | 47.9 | -6.9 | -24.37 | -20.8 |  |  | DROP: below break-even |
+| pin_move | moneyline | 60-53 | 53.1 | 46.2 | 6.9 | +13.25 | 11.7 |  |  | no edge shown yet |
+| pin_move | spread | 69-73 | 48.6 | 51.7 | -3.1 | -10.52 | -7.4 |  |  | no edge shown yet |
+| pin_move | total | 76-91 | 45.5 | 49.6 | -4.1 | -21.36 | -12.8 |  |  | DROP: below break-even |
+| money_delta | moneyline | 27-53 | 33.8 | 35.3 | -1.6 | -15.77 | -19.7 |  |  | DROP: below break-even |
+| money_delta | spread | 19-19 | 50.0 | 50.6 | -0.6 | -1.54 | -4.0 |  |  | no edge shown yet |
+| money_delta | total | 54-57 | 48.6 | 47.9 | 0.7 | -7.24 | -6.5 |  |  | no edge shown yet |
+| pin_rlm | moneyline | 16-33 | 32.7 | 34.1 | -1.5 | -10.12 | -20.7 |  |  | DROP: below break-even |
+| pin_rlm | spread | 5-3 | 62.5 | 51.5 | 11.0 | +1.51 | 18.9 |  |  | keep collecting (8/30) |
+| pin_rlm | total | 21-27 | 43.8 | 48.4 | -4.6 | -7.72 | -16.1 |  |  | no edge shown yet |
+| follow_move | moneyline | 116-127 | 47.7 | 47.4 | 0.4 | -24.14 | -9.9 |  |  | no edge shown yet |
+| follow_move | spread | 93-100 | 48.2 | 51.1 | -2.9 | -14.7 | -7.6 |  |  | no edge shown yet |
+| follow_move | total | 120-138 | 46.5 | 49.4 | -2.8 | -27.87 | -10.8 |  |  | DROP: below break-even |
+| rlm_ratio | moneyline | 24-58 | 29.3 | 33.6 | -4.3 | -23.8 | -29.0 |  |  | DROP: below break-even |
+| rlm_ratio | spread | 12-9 | 57.1 | 52.5 | 4.6 | +1.72 | 8.2 |  |  | keep collecting (21/30) |
+| rlm_ratio | total | 35-50 | 41.2 | 48.4 | -7.2 | -17.84 | -21.0 |  |  | DROP: below break-even |
+| money_level | moneyline | 170-94 | 64.4 | 64.0 | 0.4 | -25.87 | -9.8 |  |  | beats break-even but not its base rate -- directional bias, not signal |
+| money_level | spread | 105-99 | 51.5 | 48.4 | 3.1 | -4.9 | -2.4 |  |  | no edge shown yet |
+| money_level | total | 149-135 | 52.5 | 51.4 | 1.1 | -0.53 | -0.2 |  |  | no edge shown yet |
+| sharp_gap | moneyline | 98-138 | 41.5 | 45.7 | -4.2 | -48.73 | -20.6 |  |  | DROP: below break-even |
+| sharp_gap | spread | 104-101 | 50.7 | 49.4 | 1.3 | -7.46 | -3.6 |  |  | no edge shown yet |
+| sharp_gap | total | 122-144 | 45.9 | 50.1 | -4.3 | -32.89 | -12.4 |  |  | DROP: below break-even |
+| money_moving | moneyline | 107-127 | 45.7 | 46.9 | -1.2 | -34.83 | -14.9 |  |  | DROP: below break-even |
+| money_moving | spread | 104-101 | 50.7 | 49.4 | 1.3 | -7.46 | -3.6 |  |  | no edge shown yet |
+| money_moving | total | 126-146 | 46.3 | 50.1 | -3.8 | -31.28 | -11.5 |  |  | DROP: below break-even |
+| pin_value | moneyline | 8-14 | 36.4 | 43.7 | -7.3 | +9.75 | 44.3 |  |  | keep collecting (22/30) |
+| pin_value | spread | 74-64 | 53.6 | 49.7 | 4.0 | +0.18 | 0.1 |  |  | no edge shown yet |
+| pin_value | total | 74-75 | 49.7 | 50.5 | -0.8 | -8.31 | -5.6 |  |  | no edge shown yet |
+| consensus_gap | moneyline | 72-56 | 56.2 | 55.1 | 1.1 | -3.21 | -2.5 |  |  | no edge shown yet |
+| consensus_gap | spread | 29-21 | 58.0 | 49.0 | 9.0 | +4.16 | 8.3 |  |  | no edge shown yet |
+| consensus_gap | total | 37-31 | 54.4 | 51.0 | 3.4 | +1.96 | 2.9 |  |  | no edge shown yet |
+| consensus_gap+money_level | moneyline | 56-25 | 69.1 | 65.2 | 4.0 | -1.56 | -1.9 |  |  | beats break-even but not its base rate -- directional bias, not signal |
+| follow_move+pin_move | moneyline | 44-48 | 47.8 | 45.5 | 2.3 | -4.11 | -4.5 |  |  | no edge shown yet |
+| follow_move+rlm_quiet | moneyline | 41-80 | 33.9 | 33.3 | 0.6 | -11.58 | -9.6 |  |  | redundant -- identical record to rlm_quiet alone, not independent confirmation |
+| pin_move+rlm_quiet | moneyline | 21-31 | 40.4 | 33.4 | 7.0 | +0.83 | 1.6 |  |  | DROP: below break-even |
+| consensus_gap+follow_move | moneyline | 21-19 | 52.5 | 51.7 | 0.8 | -4.82 | -12.1 |  |  | no edge shown yet |
+| follow_move+money_level | moneyline | 66-41 | 61.7 | 63.1 | -1.4 | -14.83 | -13.9 |  |  | beats break-even but not its base rate -- directional bias, not signal |
+| money_moving+sharp_gap | moneyline | 93-122 | 43.3 | 45.9 | -2.6 | -34.95 | -16.3 |  |  | DROP: below break-even |
+| follow_move+money_moving | moneyline | 59-75 | 44.0 | 45.4 | -1.3 | -24.18 | -18.0 |  |  | DROP: below break-even |
+| follow_move+sharp_gap | moneyline | 54-78 | 40.9 | 44.5 | -3.6 | -27.8 | -21.1 |  |  | DROP: below break-even |
+| money_level+money_moving | moneyline | 69-48 | 59.0 | 60.5 | -1.5 | -12.9 | -11.0 |  |  | no edge shown yet |
+| money_level+sharp_gap | moneyline | 61-51 | 54.5 | 59.9 | -5.4 | -18.3 | -16.3 |  |  | no edge shown yet |
+| follow_move+rlm_ratio | moneyline | 24-58 | 29.3 | 33.6 | -4.3 | -23.8 | -29.0 |  |  | redundant -- identical record to rlm_ratio alone, not independent confirmation |
+| money_moving+rlm_quiet | moneyline | 20-46 | 30.3 | 32.7 | -2.4 | -16.48 | -25.0 |  |  | DROP: below break-even |
+| money_moving+rlm_ratio | moneyline | 23-54 | 29.9 | 33.6 | -3.7 | -21.52 | -28.0 |  |  | DROP: below break-even |
+| rlm_quiet+rlm_ratio | moneyline | 17-45 | 27.4 | 32.7 | -5.3 | -18.72 | -30.2 |  |  | DROP: below break-even |
+| rlm_quiet+sharp_gap | moneyline | 20-47 | 29.9 | 32.7 | -2.9 | -17.34 | -25.9 |  |  | DROP: below break-even |
+| rlm_ratio+sharp_gap | moneyline | 24-58 | 29.3 | 33.6 | -4.3 | -23.8 | -29.0 |  |  | redundant -- identical record to rlm_ratio alone, not independent confirmation |
+| consensus_gap+money_moving | moneyline | 22-28 | 44.0 | 51.4 | -7.4 | -7.95 | -15.9 |  |  | no edge shown yet |
+| consensus_gap+rlm_quiet | moneyline | 3-12 | 20.0 | 32.7 | -12.7 | -7.22 | -48.1 |  |  | keep collecting (15/30) |
+| consensus_gap+rlm_ratio | moneyline | 3-8 | 27.3 | 32.7 | -5.4 | -3.22 | -29.3 |  |  | keep collecting (11/30) |
+| consensus_gap+sharp_gap | moneyline | 22-31 | 41.5 | 50.3 | -8.8 | -10.81 | -20.4 |  |  | DROP: below break-even |
+| consensus_gap+pin_rlm | moneyline | 4-3 | 57.1 | 37.6 | 19.5 | +2.88 | 41.1 |  |  | keep collecting (7/30) |
+| money_level+pin_rlm | moneyline | 3-5 | 37.5 | 41.4 | -3.9 | -1.8 | -22.5 |  |  | keep collecting (8/30) |
+| money_moving+pin_rlm | moneyline | 16-28 | 36.4 | 34.3 | 2.1 | -5.12 | -11.6 |  |  | DROP: below break-even |
+| pin_rlm+sharp_gap | moneyline | 16-33 | 32.7 | 34.1 | -1.5 | -10.12 | -20.7 |  |  | redundant -- identical record to pin_rlm alone, not independent confirmation |
+| consensus_gap+pin_value | moneyline | 4-7 | 36.4 | 42.1 | -5.8 | +0.84 | 7.7 |  |  | keep collecting (11/30) |
+| money_level+rlm_ratio | moneyline | 4-10 | 28.6 | 37.6 | -9.1 | -5.66 | -40.5 |  |  | keep collecting (14/30) |
 | consensus_gap+pin_move | moneyline | 21-5 | 80.8 | 50.0 | 30.8 | +18.81 | 72.4 |  |  | keep collecting (26/30) |
-| money_level+pin_move | moneyline | 28-16 | 63.6 | 62.4 | 1.2 | -1.29 | -2.9 |  |  | no edge shown yet |
-| consensus_gap+money_delta | moneyline | 5-6 | 45.5 | 36.0 | 9.4 | +2.83 | 25.7 |  |  | keep collecting (11/30) |
-| follow_move+money_delta | moneyline | 15-30 | 33.3 | 36.7 | -3.4 | -11.89 | -26.4 |  |  | DROP: below break-even |
-| follow_move+pin_rlm | moneyline | 13-25 | 34.2 | 33.8 | 0.4 | -5.58 | -14.7 |  |  | DROP: below break-even |
-| money_delta+money_moving | moneyline | 25-43 | 36.8 | 34.9 | 1.8 | -7.51 | -11.0 |  |  | DROP: below break-even |
-| money_delta+pin_move | moneyline | 9-11 | 45.0 | 34.6 | 10.4 | -1.14 | -5.7 |  |  | keep collecting (20/30) |
-| money_delta+pin_rlm | moneyline | 9-14 | 39.1 | 34.4 | 4.7 | -3.72 | -16.2 |  |  | keep collecting (23/30) |
-| money_delta+rlm_quiet | moneyline | 9-24 | 27.3 | 32.9 | -5.7 | -11.69 | -35.4 |  |  | DROP: below break-even |
-| money_delta+rlm_ratio | moneyline | 11-28 | 28.2 | 34.7 | -6.5 | -13.47 | -34.5 |  |  | DROP: below break-even |
-| money_delta+sharp_gap | moneyline | 25-43 | 36.8 | 34.9 | 1.8 | -7.51 | -11.0 |  |  | DROP: below break-even |
-| money_moving+pin_move | moneyline | 24-23 | 51.1 | 43.1 | 8.0 | +1.35 | 2.9 |  |  | no edge shown yet |
-| pin_move+pin_rlm | moneyline | 13-22 | 37.1 | 33.9 | 3.2 | -3.2 | -9.1 |  |  | DROP: below break-even |
-| pin_move+rlm_ratio | moneyline | 10-21 | 32.3 | 34.0 | -1.8 | -5.66 | -18.3 |  |  | DROP: below break-even |
-| pin_move+sharp_gap | moneyline | 22-28 | 44.0 | 41.8 | 2.2 | -4.04 | -8.1 |  |  | no edge shown yet |
-| pin_rlm+rlm_quiet | moneyline | 10-20 | 33.3 | 32.9 | 0.4 | -4.08 | -13.6 |  |  | DROP: below break-even |
-| pin_rlm+rlm_ratio | moneyline | 13-25 | 34.2 | 33.8 | 0.4 | -5.58 | -14.7 |  |  | DROP: below break-even |
+| money_level+pin_move | moneyline | 28-17 | 62.2 | 62.7 | -0.5 | -2.29 | -5.1 |  |  | no edge shown yet |
+| consensus_gap+money_delta | moneyline | 5-7 | 41.7 | 35.6 | 6.1 | +1.83 | 15.2 |  |  | keep collecting (12/30) |
+| follow_move+money_delta | moneyline | 15-36 | 29.4 | 36.1 | -6.7 | -17.89 | -35.1 |  |  | DROP: below break-even |
+| follow_move+pin_rlm | moneyline | 13-28 | 31.7 | 33.6 | -1.8 | -8.58 | -20.9 |  |  | DROP: below break-even |
+| money_delta+money_moving | moneyline | 25-49 | 33.8 | 34.6 | -0.8 | -13.51 | -18.3 |  |  | DROP: below break-even |
+| money_delta+pin_move | moneyline | 9-13 | 40.9 | 34.3 | 6.6 | -3.14 | -14.3 |  |  | keep collecting (22/30) |
+| money_delta+pin_rlm | moneyline | 9-17 | 34.6 | 34.0 | 0.6 | -6.72 | -25.8 |  |  | keep collecting (26/30) |
+| money_delta+rlm_quiet | moneyline | 9-28 | 24.3 | 32.7 | -8.4 | -15.69 | -42.4 |  |  | DROP: below break-even |
+| money_delta+rlm_ratio | moneyline | 11-34 | 24.4 | 34.2 | -9.8 | -19.47 | -43.3 |  |  | DROP: below break-even |
+| money_delta+sharp_gap | moneyline | 25-49 | 33.8 | 34.6 | -0.8 | -13.51 | -18.3 |  |  | DROP: below break-even |
+| money_moving+pin_move | moneyline | 24-26 | 48.0 | 43.1 | 4.9 | -1.65 | -3.3 |  |  | no edge shown yet |
+| pin_move+pin_rlm | moneyline | 13-24 | 35.1 | 33.6 | 1.5 | -5.2 | -14.1 |  |  | DROP: below break-even |
+| pin_move+rlm_ratio | moneyline | 10-23 | 30.3 | 33.8 | -3.5 | -7.66 | -23.2 |  |  | DROP: below break-even |
+| pin_move+sharp_gap | moneyline | 22-31 | 41.5 | 41.8 | -0.3 | -7.04 | -13.3 |  |  | DROP: below break-even |
+| pin_rlm+rlm_quiet | moneyline | 10-23 | 30.3 | 32.7 | -2.4 | -7.08 | -21.5 |  |  | DROP: below break-even |
+| pin_rlm+rlm_ratio | moneyline | 13-28 | 31.7 | 33.6 | -1.8 | -8.58 | -20.9 |  |  | DROP: below break-even |
 | follow_move+pin_value | moneyline | 3-3 | 50.0 | 50.0 | 0.0 | +9.55 | 159.1 |  |  | keep collecting (6/30) |
-| pin_value+rlm_quiet | moneyline | 2-1 | 66.7 | 32.9 | 33.7 | +10.98 | 366.0 |  |  | keep collecting (3/30) |
-| money_delta+money_level | moneyline | 7-4 | 63.6 | 45.3 | 18.3 | +4.11 | 37.4 |  |  | keep collecting (11/30) |
-| money_level+pin_value | moneyline | 1-6 | 14.3 | 62.2 | -47.9 | -5.43 | -77.6 |  |  | keep collecting (7/30) |
-| pin_move+pin_value | moneyline | 3-4 | 42.9 | 52.4 | -9.6 | -0.97 | -13.9 |  |  | keep collecting (7/30) |
-| money_delta+pin_value | moneyline | 2-0 | 100.0 | 32.9 | 67.1 | +5.88 | 294.0 |  |  | keep collecting (2/30) |
-| money_moving+pin_value | moneyline | 3-4 | 42.9 | 42.7 | 0.2 | +2.45 | 35.0 |  |  | keep collecting (7/30) |
-| pin_value+sharp_gap | moneyline | 3-6 | 33.3 | 48.1 | -14.8 | +0.45 | 5.0 |  |  | keep collecting (9/30) |
-| pin_rlm+pin_value | moneyline | 1-0 | 100.0 | 32.9 | 67.1 | +1.38 | 138.0 |  |  | keep collecting (1/30) |
-| pin_value+rlm_ratio | moneyline | 1-0 | 100.0 | 32.9 | 67.1 | +1.38 | 138.0 |  |  | keep collecting (1/30) |
-| follow_move+pin_move | spread | 38-51 | 42.7 | 51.3 | -8.6 | -16.29 | -18.3 |  |  | DROP: below break-even |
-| money_moving+sharp_gap | spread | 98-95 | 50.8 | 49.5 | 1.2 | -6.69 | -3.5 |  |  | redundant -- identical record to money_moving alone, not independent confirmation |
-| follow_move+rlm_quiet | spread | 22-26 | 45.8 | 53.6 | -7.8 | -5.32 | -11.1 |  |  | redundant -- identical record to rlm_quiet alone, not independent confirmation |
-| money_level+money_moving | spread | 73-68 | 51.8 | 48.7 | 3.0 | -2.55 | -1.8 |  |  | no edge shown yet |
-| money_level+sharp_gap | spread | 73-68 | 51.8 | 48.7 | 3.0 | -2.55 | -1.8 |  |  | no edge shown yet |
-| pin_move+rlm_quiet | spread | 12-18 | 40.0 | 53.7 | -13.7 | -6.75 | -22.5 |  |  | no edge shown yet |
-| consensus_gap+pin_value | spread | 20-15 | 57.1 | 49.6 | 7.6 | +2.37 | 6.8 |  |  | no edge shown yet |
-| follow_move+money_level | spread | 32-28 | 53.3 | 50.0 | 3.3 | +1.12 | 1.9 |  |  | no edge shown yet |
-| follow_move+money_moving | spread | 38-36 | 51.4 | 51.0 | 0.4 | -1.37 | -1.8 |  |  | no edge shown yet |
-| follow_move+sharp_gap | spread | 38-36 | 51.4 | 51.0 | 0.4 | -1.37 | -1.8 |  |  | no edge shown yet |
-| money_level+pin_move | spread | 23-25 | 47.9 | 50.0 | -2.1 | -4.67 | -9.7 |  |  | no edge shown yet |
-| money_moving+pin_move | spread | 29-29 | 50.0 | 50.9 | -0.9 | -3.14 | -5.4 |  |  | no edge shown yet |
-| pin_move+sharp_gap | spread | 29-29 | 50.0 | 50.9 | -0.9 | -3.14 | -5.4 |  |  | no edge shown yet |
-| money_delta+money_level | spread | 7-5 | 58.3 | 47.4 | 10.9 | +1.27 | 10.6 |  |  | keep collecting (12/30) |
-| money_delta+money_moving | spread | 13-12 | 52.0 | 49.8 | 2.2 | -0.24 | -1.0 |  |  | keep collecting (25/30) |
-| money_delta+sharp_gap | spread | 13-12 | 52.0 | 49.8 | 2.2 | -0.24 | -1.0 |  |  | keep collecting (25/30) |
-| consensus_gap+money_level | spread | 9-12 | 42.9 | 47.8 | -5.0 | -4.24 | -20.2 |  |  | keep collecting (21/30) |
-| consensus_gap+money_moving | spread | 7-9 | 43.8 | 49.4 | -5.6 | -2.92 | -18.2 |  |  | keep collecting (16/30) |
-| consensus_gap+sharp_gap | spread | 7-9 | 43.8 | 49.4 | -5.6 | -2.92 | -18.2 |  |  | keep collecting (16/30) |
-| money_level+pin_value | spread | 28-25 | 52.8 | 48.0 | 4.9 | -0.96 | -1.8 |  |  | no edge shown yet |
-| money_moving+pin_value | spread | 26-29 | 47.3 | 49.5 | -2.3 | -6.52 | -11.9 |  |  | no edge shown yet |
-| pin_value+sharp_gap | spread | 26-29 | 47.3 | 49.5 | -2.3 | -6.52 | -11.9 |  |  | no edge shown yet |
-| follow_move+money_delta | spread | 8-6 | 57.1 | 52.2 | 5.0 | +1.21 | 8.7 |  |  | keep collecting (14/30) |
-| follow_move+rlm_ratio | spread | 11-9 | 55.0 | 52.0 | 3.0 | +0.89 | 4.4 |  |  | redundant -- identical record to rlm_ratio alone, not independent confirmation |
-| money_delta+rlm_ratio | spread | 3-4 | 42.9 | 50.7 | -7.9 | -1.4 | -20.0 |  |  | keep collecting (7/30) |
-| money_moving+rlm_ratio | spread | 11-9 | 55.0 | 52.0 | 3.0 | +0.89 | 4.4 |  |  | redundant -- identical record to rlm_ratio alone, not independent confirmation |
-| rlm_ratio+sharp_gap | spread | 11-9 | 55.0 | 52.0 | 3.0 | +0.89 | 4.4 |  |  | redundant -- identical record to rlm_ratio alone, not independent confirmation |
-| follow_move+pin_value | spread | 18-15 | 54.5 | 50.5 | 4.1 | +0.79 | 2.4 |  |  | no edge shown yet |
-| pin_move+pin_value | spread | 31-27 | 53.4 | 51.6 | 1.9 | +0.16 | 0.3 |  |  | no edge shown yet |
-| consensus_gap+pin_move | spread | 9-10 | 47.4 | 50.8 | -3.4 | -2.14 | -11.3 |  |  | keep collecting (19/30) |
-| consensus_gap+follow_move | spread | 5-5 | 50.0 | 50.0 | -0.0 | -0.52 | -5.2 |  |  | keep collecting (10/30) |
-| consensus_gap+rlm_quiet | spread | 2-0 | 100.0 | 55.1 | 44.9 | +1.82 | 90.9 |  |  | keep collecting (2/30) |
-| pin_value+rlm_quiet | spread | 3-3 | 50.0 | 55.1 | -5.1 | -0.33 | -5.6 |  |  | keep collecting (6/30) |
-| money_delta+rlm_quiet | spread | 4-3 | 57.1 | 55.1 | 2.0 | +0.78 | 11.1 |  |  | keep collecting (7/30) |
-| money_moving+rlm_quiet | spread | 8-8 | 50.0 | 54.5 | -4.5 | -0.62 | -3.9 |  |  | keep collecting (16/30) |
-| rlm_quiet+rlm_ratio | spread | 1-4 | 20.0 | 55.1 | -35.1 | -3.13 | -62.6 |  |  | keep collecting (5/30) |
-| rlm_quiet+sharp_gap | spread | 8-8 | 50.0 | 54.5 | -4.5 | -0.62 | -3.9 |  |  | keep collecting (16/30) |
-| consensus_gap+money_delta | spread | 3-1 | 75.0 | 55.1 | 19.9 | +1.63 | 40.8 |  |  | keep collecting (4/30) |
-| money_delta+pin_move | spread | 7-4 | 63.6 | 52.3 | 11.3 | +2.19 | 19.9 |  |  | keep collecting (11/30) |
-| money_delta+pin_value | spread | 6-3 | 66.7 | 52.8 | 13.8 | +2.32 | 25.8 |  |  | keep collecting (9/30) |
-| money_moving+pin_rlm | spread | 5-3 | 62.5 | 51.3 | 11.2 | +1.51 | 18.9 |  |  | redundant -- identical record to pin_rlm alone, not independent confirmation |
-| pin_move+pin_rlm | spread | 5-3 | 62.5 | 51.3 | 11.2 | +1.51 | 18.9 |  |  | redundant -- identical record to pin_rlm alone, not independent confirmation |
-| pin_rlm+pin_value | spread | 3-1 | 75.0 | 55.1 | 19.9 | +1.7 | 42.4 |  |  | keep collecting (4/30) |
-| pin_rlm+sharp_gap | spread | 5-3 | 62.5 | 51.3 | 11.2 | +1.51 | 18.9 |  |  | redundant -- identical record to pin_rlm alone, not independent confirmation |
-| consensus_gap+rlm_ratio | spread | 2-0 | 100.0 | 50.0 | 50.0 | +1.76 | 87.8 |  |  | keep collecting (2/30) |
-| money_level+rlm_ratio | spread | 9-2 | 81.8 | 51.4 | 30.4 | +6.11 | 55.5 |  |  | keep collecting (11/30) |
-| pin_move+rlm_ratio | spread | 5-2 | 71.4 | 50.7 | 20.7 | +2.42 | 34.6 |  |  | keep collecting (7/30) |
-| pin_value+rlm_ratio | spread | 1-0 | 100.0 | 55.1 | 44.9 | +0.85 | 84.7 |  |  | keep collecting (1/30) |
-| follow_move+pin_rlm | spread | 2-2 | 50.0 | 47.4 | 2.6 | -0.18 | -4.5 |  |  | keep collecting (4/30) |
-| money_delta+pin_rlm | spread | 3-2 | 60.0 | 53.1 | 6.9 | +0.7 | 13.9 |  |  | keep collecting (5/30) |
-| pin_rlm+rlm_quiet | spread | 0-1 | 0.0 | 55.1 | -55.1 | -1.0 | -100.0 |  |  | keep collecting (1/30) |
-| pin_rlm+rlm_ratio | spread | 2-2 | 50.0 | 47.4 | 2.6 | -0.18 | -4.5 |  |  | keep collecting (4/30) |
-| money_level+pin_rlm | spread | 2-2 | 50.0 | 47.4 | 2.6 | -0.18 | -4.5 |  |  | keep collecting (4/30) |
-| consensus_gap+pin_rlm | spread | 2-1 | 66.7 | 51.7 | 15.0 | +0.79 | 26.2 |  |  | keep collecting (3/30) |
-| money_delta+money_moving | total | 36-33 | 52.2 | 48.3 | 3.9 | +0.18 | 0.3 |  |  | no edge shown yet |
-| money_delta+sharp_gap | total | 36-32 | 52.9 | 48.3 | 4.6 | +1.18 | 1.7 |  |  | no edge shown yet |
-| money_moving+sharp_gap | total | 114-131 | 46.5 | 50.2 | -3.7 | -27.24 | -11.1 |  |  | DROP: below break-even |
-| follow_move+rlm_quiet | total | 47-65 | 42.0 | 48.1 | -6.1 | -21.24 | -19.0 |  |  | redundant -- identical record to rlm_quiet alone, not independent confirmation |
-| consensus_gap+follow_move | total | 10-12 | 45.5 | 50.2 | -4.7 | -3.04 | -13.8 |  |  | keep collecting (22/30) |
-| consensus_gap+money_level | total | 24-18 | 57.1 | 52.1 | 5.1 | +3.17 | 7.6 |  |  | no edge shown yet |
-| consensus_gap+money_moving | total | 16-18 | 47.1 | 50.9 | -3.8 | -3.7 | -10.9 |  |  | no edge shown yet |
-| consensus_gap+pin_move | total | 7-8 | 46.7 | 50.4 | -3.8 | -1.75 | -11.7 |  |  | keep collecting (15/30) |
-| consensus_gap+pin_value | total | 19-19 | 50.0 | 50.8 | -0.8 | -2.12 | -5.6 |  |  | no edge shown yet |
-| consensus_gap+sharp_gap | total | 16-19 | 45.7 | 50.8 | -5.1 | -4.7 | -13.4 |  |  | no edge shown yet |
-| follow_move+money_level | total | 56-58 | 49.1 | 50.8 | -1.6 | -7.14 | -6.3 |  |  | no edge shown yet |
-| follow_move+money_moving | total | 67-83 | 44.7 | 49.7 | -5.0 | -21.78 | -14.5 |  |  | DROP: below break-even |
-| follow_move+pin_move | total | 51-72 | 41.5 | 49.6 | -8.2 | -25.19 | -20.5 |  |  | DROP: below break-even |
-| follow_move+pin_value | total | 27-27 | 50.0 | 49.9 | 0.1 | -2.56 | -4.7 |  |  | no edge shown yet |
-| follow_move+sharp_gap | total | 68-83 | 45.0 | 49.7 | -4.7 | -20.88 | -13.8 |  |  | DROP: below break-even |
-| money_level+money_moving | total | 80-84 | 48.8 | 51.1 | -2.4 | -11.68 | -7.1 |  |  | no edge shown yet |
-| money_level+pin_move | total | 38-42 | 47.5 | 50.9 | -3.4 | -7.64 | -9.6 |  |  | no edge shown yet |
-| money_level+pin_value | total | 38-35 | 52.1 | 51.5 | 0.6 | -1.0 | -1.4 |  |  | no edge shown yet |
-| money_level+sharp_gap | total | 76-82 | 48.1 | 51.2 | -3.1 | -13.24 | -8.4 |  |  | no edge shown yet |
-| money_moving+pin_move | total | 40-51 | 44.0 | 49.9 | -6.0 | -14.57 | -16.0 |  |  | DROP: below break-even |
-| money_moving+pin_value | total | 28-34 | 45.2 | 50.7 | -5.5 | -8.78 | -14.2 |  |  | no edge shown yet |
-| pin_move+pin_value | total | 27-34 | 44.3 | 50.1 | -5.8 | -9.59 | -15.7 |  |  | no edge shown yet |
-| pin_move+sharp_gap | total | 37-52 | 41.6 | 49.9 | -8.3 | -18.3 | -20.6 |  |  | DROP: below break-even |
-| pin_value+sharp_gap | total | 27-36 | 42.9 | 50.7 | -7.8 | -11.68 | -18.5 |  |  | DROP: below break-even |
-| follow_move+money_delta | total | 28-37 | 43.1 | 48.1 | -5.0 | -11.17 | -17.2 |  |  | DROP: below break-even |
-| money_delta+pin_move | total | 15-24 | 38.5 | 47.9 | -9.5 | -10.06 | -25.8 |  |  | DROP: below break-even |
-| money_delta+rlm_quiet | total | 16-22 | 42.1 | 47.8 | -5.7 | -7.16 | -18.8 |  |  | no edge shown yet |
-| pin_move+rlm_quiet | total | 21-31 | 40.4 | 48.3 | -7.9 | -11.43 | -22.0 |  |  | DROP: below break-even |
-| follow_move+rlm_ratio | total | 34-46 | 42.5 | 48.6 | -6.1 | -14.79 | -18.5 |  |  | redundant -- identical record to rlm_ratio alone, not independent confirmation |
-| money_delta+rlm_ratio | total | 20-23 | 46.5 | 48.2 | -1.7 | -4.57 | -10.6 |  |  | no edge shown yet |
-| money_moving+rlm_quiet | total | 22-35 | 38.6 | 48.2 | -9.6 | -14.6 | -25.6 |  |  | DROP: below break-even |
-| money_moving+rlm_ratio | total | 33-44 | 42.9 | 48.7 | -5.8 | -13.7 | -17.8 |  |  | DROP: below break-even |
-| rlm_quiet+rlm_ratio | total | 18-31 | 36.7 | 48.3 | -11.5 | -14.37 | -29.3 |  |  | DROP: below break-even |
-| rlm_quiet+sharp_gap | total | 22-36 | 37.9 | 48.2 | -10.3 | -15.65 | -27.0 |  |  | DROP: below break-even |
-| rlm_ratio+sharp_gap | total | 34-46 | 42.5 | 48.6 | -6.1 | -14.79 | -18.5 |  |  | redundant -- identical record to rlm_ratio alone, not independent confirmation |
-| consensus_gap+money_delta | total | 6-2 | 75.0 | 47.8 | 27.2 | +3.44 | 43.0 |  |  | keep collecting (8/30) |
-| consensus_gap+rlm_quiet | total | 4-5 | 44.4 | 48.3 | -3.9 | -1.32 | -14.7 |  |  | keep collecting (9/30) |
-| consensus_gap+rlm_ratio | total | 3-4 | 42.9 | 48.4 | -5.6 | -1.29 | -18.4 |  |  | keep collecting (7/30) |
-| money_delta+pin_value | total | 13-7 | 65.0 | 48.0 | 17.0 | +4.82 | 24.1 |  |  | keep collecting (20/30) |
-| pin_value+rlm_quiet | total | 8-12 | 40.0 | 48.0 | -8.0 | -4.64 | -23.2 |  |  | keep collecting (20/30) |
-| pin_value+rlm_ratio | total | 5-7 | 41.7 | 48.9 | -7.2 | -2.53 | -21.1 |  |  | keep collecting (12/30) |
-| follow_move+pin_rlm | total | 19-25 | 43.2 | 48.6 | -5.4 | -7.58 | -17.2 |  |  | no edge shown yet |
-| money_delta+money_level | total | 12-15 | 44.4 | 48.6 | -4.2 | -3.94 | -14.6 |  |  | keep collecting (27/30) |
-| money_delta+pin_rlm | total | 9-14 | 39.1 | 48.0 | -8.9 | -5.65 | -24.6 |  |  | keep collecting (23/30) |
-| money_level+pin_rlm | total | 8-8 | 50.0 | 48.6 | 1.4 | -0.68 | -4.3 |  |  | keep collecting (16/30) |
-| money_level+rlm_ratio | total | 13-13 | 50.0 | 49.2 | 0.8 | -1.11 | -4.3 |  |  | keep collecting (26/30) |
-| money_moving+pin_rlm | total | 20-26 | 43.5 | 48.6 | -5.1 | -7.68 | -16.7 |  |  | no edge shown yet |
-| pin_move+pin_rlm | total | 20-27 | 42.6 | 48.6 | -6.0 | -8.68 | -18.5 |  |  | redundant -- identical record to pin_rlm alone, not independent confirmation |
-| pin_move+rlm_ratio | total | 19-26 | 42.2 | 48.7 | -6.5 | -8.58 | -19.1 |  |  | no edge shown yet |
-| pin_rlm+rlm_ratio | total | 19-25 | 43.2 | 48.6 | -5.4 | -7.58 | -17.2 |  |  | no edge shown yet |
-| pin_rlm+sharp_gap | total | 20-27 | 42.6 | 48.6 | -6.0 | -8.68 | -18.5 |  |  | redundant -- identical record to pin_rlm alone, not independent confirmation |
-| pin_rlm+rlm_quiet | total | 9-17 | 34.6 | 48.5 | -13.9 | -8.72 | -33.5 |  |  | keep collecting (26/30) |
-| consensus_gap+pin_rlm | total | 1-3 | 25.0 | 48.9 | -23.9 | -2.09 | -52.3 |  |  | keep collecting (4/30) |
-| pin_rlm+pin_value | total | 4-8 | 33.3 | 48.5 | -15.2 | -4.4 | -36.7 |  |  | keep collecting (12/30) |
+| pin_value+rlm_quiet | moneyline | 2-1 | 66.7 | 32.7 | 34.0 | +10.98 | 366.0 |  |  | keep collecting (3/30) |
+| money_delta+money_level | moneyline | 7-5 | 58.3 | 44.2 | 14.1 | +3.11 | 25.9 |  |  | keep collecting (12/30) |
+| money_level+pin_value | moneyline | 1-6 | 14.3 | 62.4 | -48.1 | -5.43 | -77.6 |  |  | keep collecting (7/30) |
+| pin_move+pin_value | moneyline | 3-4 | 42.9 | 52.5 | -9.6 | -0.97 | -13.9 |  |  | keep collecting (7/30) |
+| money_delta+pin_value | moneyline | 2-0 | 100.0 | 32.7 | 67.3 | +5.88 | 294.0 |  |  | keep collecting (2/30) |
+| money_moving+pin_value | moneyline | 3-4 | 42.9 | 42.6 | 0.3 | +2.45 | 35.0 |  |  | keep collecting (7/30) |
+| pin_value+sharp_gap | moneyline | 3-6 | 33.3 | 48.1 | -14.7 | +0.45 | 5.0 |  |  | keep collecting (9/30) |
+| pin_rlm+pin_value | moneyline | 1-0 | 100.0 | 32.7 | 67.3 | +1.38 | 138.0 |  |  | keep collecting (1/30) |
+| pin_value+rlm_ratio | moneyline | 1-0 | 100.0 | 32.7 | 67.3 | +1.38 | 138.0 |  |  | keep collecting (1/30) |
+| follow_move+pin_move | spread | 41-52 | 44.1 | 51.6 | -7.5 | -14.6 | -15.7 |  |  | DROP: below break-even |
+| money_moving+sharp_gap | spread | 104-101 | 50.7 | 49.4 | 1.3 | -7.46 | -3.6 |  |  | redundant -- identical record to money_moving alone, not independent confirmation |
+| follow_move+rlm_quiet | spread | 22-28 | 44.0 | 54.0 | -10.0 | -7.32 | -14.6 |  |  | redundant -- identical record to rlm_quiet alone, not independent confirmation |
+| money_level+money_moving | spread | 78-74 | 51.3 | 48.5 | 2.8 | -4.14 | -2.7 |  |  | no edge shown yet |
+| money_level+sharp_gap | spread | 78-74 | 51.3 | 48.5 | 2.8 | -4.14 | -2.7 |  |  | no edge shown yet |
+| pin_move+rlm_quiet | spread | 12-18 | 40.0 | 54.4 | -14.4 | -6.75 | -22.5 |  |  | no edge shown yet |
+| consensus_gap+pin_value | spread | 21-15 | 58.3 | 49.7 | 8.7 | +3.32 | 9.2 |  |  | no edge shown yet |
+| follow_move+money_level | spread | 34-31 | 52.3 | 50.1 | 2.2 | -0.14 | -0.2 |  |  | no edge shown yet |
+| follow_move+money_moving | spread | 41-39 | 51.2 | 51.2 | 0.1 | -1.79 | -2.2 |  |  | no edge shown yet |
+| follow_move+sharp_gap | spread | 41-39 | 51.2 | 51.2 | 0.1 | -1.79 | -2.2 |  |  | no edge shown yet |
+| money_level+pin_move | spread | 25-26 | 49.0 | 49.9 | -0.9 | -3.8 | -7.5 |  |  | no edge shown yet |
+| money_moving+pin_move | spread | 32-30 | 51.6 | 51.0 | 0.7 | -1.45 | -2.3 |  |  | no edge shown yet |
+| pin_move+sharp_gap | spread | 32-30 | 51.6 | 51.0 | 0.7 | -1.45 | -2.3 |  |  | no edge shown yet |
+| money_delta+money_level | spread | 7-6 | 53.8 | 46.8 | 7.0 | +0.27 | 2.1 |  |  | keep collecting (13/30) |
+| money_delta+money_moving | spread | 13-13 | 50.0 | 49.5 | 0.5 | -1.24 | -4.8 |  |  | keep collecting (26/30) |
+| money_delta+sharp_gap | spread | 13-13 | 50.0 | 49.5 | 0.5 | -1.24 | -4.8 |  |  | keep collecting (26/30) |
+| consensus_gap+money_level | spread | 10-12 | 45.5 | 47.8 | -2.4 | -3.4 | -15.5 |  |  | keep collecting (22/30) |
+| consensus_gap+money_moving | spread | 8-9 | 47.1 | 49.7 | -2.6 | -2.08 | -12.2 |  |  | keep collecting (17/30) |
+| consensus_gap+sharp_gap | spread | 8-9 | 47.1 | 49.7 | -2.6 | -2.08 | -12.2 |  |  | keep collecting (17/30) |
+| money_level+pin_value | spread | 28-28 | 50.0 | 47.7 | 2.3 | -3.96 | -7.1 |  |  | no edge shown yet |
+| money_moving+pin_value | spread | 27-32 | 45.8 | 49.5 | -3.7 | -8.69 | -14.7 |  |  | no edge shown yet |
+| pin_value+sharp_gap | spread | 27-32 | 45.8 | 49.5 | -3.7 | -8.69 | -14.7 |  |  | no edge shown yet |
+| follow_move+money_delta | spread | 8-8 | 50.0 | 51.5 | -1.5 | -0.79 | -4.9 |  |  | keep collecting (16/30) |
+| follow_move+rlm_ratio | spread | 12-9 | 57.1 | 52.5 | 4.6 | +1.72 | 8.2 |  |  | redundant -- identical record to rlm_ratio alone, not independent confirmation |
+| money_delta+rlm_ratio | spread | 3-4 | 42.9 | 50.8 | -8.0 | -1.4 | -20.0 |  |  | keep collecting (7/30) |
+| money_moving+rlm_ratio | spread | 12-9 | 57.1 | 52.5 | 4.6 | +1.72 | 8.2 |  |  | redundant -- identical record to rlm_ratio alone, not independent confirmation |
+| rlm_ratio+sharp_gap | spread | 12-9 | 57.1 | 52.5 | 4.6 | +1.72 | 8.2 |  |  | redundant -- identical record to rlm_ratio alone, not independent confirmation |
+| follow_move+pin_value | spread | 19-16 | 54.3 | 50.8 | 3.4 | +0.62 | 1.8 |  |  | no edge shown yet |
+| pin_move+pin_value | spread | 32-27 | 54.2 | 51.9 | 2.3 | +0.99 | 1.7 |  |  | no edge shown yet |
+| consensus_gap+pin_move | spread | 9-10 | 47.4 | 50.9 | -3.6 | -2.14 | -11.3 |  |  | keep collecting (19/30) |
+| consensus_gap+follow_move | spread | 6-5 | 54.5 | 50.5 | 4.0 | +0.32 | 2.9 |  |  | keep collecting (11/30) |
+| consensus_gap+rlm_quiet | spread | 2-0 | 100.0 | 55.9 | 44.1 | +1.82 | 90.9 |  |  | keep collecting (2/30) |
+| pin_value+rlm_quiet | spread | 3-3 | 50.0 | 55.9 | -5.9 | -0.33 | -5.6 |  |  | keep collecting (6/30) |
+| money_delta+rlm_quiet | spread | 4-4 | 50.0 | 54.5 | -4.5 | -0.22 | -2.8 |  |  | keep collecting (8/30) |
+| money_moving+rlm_quiet | spread | 8-8 | 50.0 | 55.2 | -5.2 | -0.62 | -3.9 |  |  | keep collecting (16/30) |
+| rlm_quiet+rlm_ratio | spread | 1-4 | 20.0 | 55.9 | -35.9 | -3.13 | -62.6 |  |  | keep collecting (5/30) |
+| rlm_quiet+sharp_gap | spread | 8-8 | 50.0 | 55.2 | -5.2 | -0.62 | -3.9 |  |  | keep collecting (16/30) |
+| consensus_gap+money_delta | spread | 3-1 | 75.0 | 55.9 | 19.1 | +1.63 | 40.8 |  |  | keep collecting (4/30) |
+| money_delta+pin_move | spread | 7-4 | 63.6 | 52.7 | 10.9 | +2.19 | 19.9 |  |  | keep collecting (11/30) |
+| money_delta+pin_value | spread | 6-3 | 66.7 | 53.3 | 13.4 | +2.32 | 25.8 |  |  | keep collecting (9/30) |
+| money_moving+pin_rlm | spread | 5-3 | 62.5 | 51.5 | 11.0 | +1.51 | 18.9 |  |  | redundant -- identical record to pin_rlm alone, not independent confirmation |
+| pin_move+pin_rlm | spread | 5-3 | 62.5 | 51.5 | 11.0 | +1.51 | 18.9 |  |  | redundant -- identical record to pin_rlm alone, not independent confirmation |
+| pin_rlm+pin_value | spread | 3-1 | 75.0 | 55.9 | 19.1 | +1.7 | 42.4 |  |  | keep collecting (4/30) |
+| pin_rlm+sharp_gap | spread | 5-3 | 62.5 | 51.5 | 11.0 | +1.51 | 18.9 |  |  | redundant -- identical record to pin_rlm alone, not independent confirmation |
+| consensus_gap+rlm_ratio | spread | 3-0 | 100.0 | 52.0 | 48.0 | +2.59 | 86.3 |  |  | keep collecting (3/30) |
+| money_level+rlm_ratio | spread | 10-2 | 83.3 | 52.0 | 31.4 | +6.94 | 57.9 |  |  | keep collecting (12/30) |
+| pin_move+rlm_ratio | spread | 5-2 | 71.4 | 50.8 | 20.6 | +2.42 | 34.6 |  |  | keep collecting (7/30) |
+| pin_value+rlm_ratio | spread | 1-0 | 100.0 | 55.9 | 44.1 | +0.85 | 84.7 |  |  | keep collecting (1/30) |
+| follow_move+pin_rlm | spread | 2-2 | 50.0 | 47.0 | 3.0 | -0.18 | -4.5 |  |  | keep collecting (4/30) |
+| money_delta+pin_rlm | spread | 3-2 | 60.0 | 53.6 | 6.4 | +0.7 | 13.9 |  |  | keep collecting (5/30) |
+| pin_rlm+rlm_quiet | spread | 0-1 | 0.0 | 55.9 | -55.9 | -1.0 | -100.0 |  |  | keep collecting (1/30) |
+| pin_rlm+rlm_ratio | spread | 2-2 | 50.0 | 47.0 | 3.0 | -0.18 | -4.5 |  |  | keep collecting (4/30) |
+| money_level+pin_rlm | spread | 2-2 | 50.0 | 47.0 | 3.0 | -0.18 | -4.5 |  |  | keep collecting (4/30) |
+| consensus_gap+pin_rlm | spread | 2-1 | 66.7 | 52.0 | 14.7 | +0.79 | 26.2 |  |  | keep collecting (3/30) |
+| money_delta+money_moving | total | 37-38 | 49.3 | 48.1 | 1.2 | -3.87 | -5.2 |  |  | no edge shown yet |
+| money_delta+sharp_gap | total | 37-37 | 50.0 | 48.1 | 1.9 | -2.87 | -3.9 |  |  | no edge shown yet |
+| money_moving+sharp_gap | total | 118-139 | 45.9 | 50.1 | -4.2 | -31.56 | -12.3 |  |  | DROP: below break-even |
+| follow_move+rlm_quiet | total | 48-69 | 41.0 | 47.9 | -6.9 | -24.37 | -20.8 |  |  | redundant -- identical record to rlm_quiet alone, not independent confirmation |
+| consensus_gap+follow_move | total | 11-12 | 47.8 | 50.1 | -2.3 | -2.13 | -9.3 |  |  | keep collecting (23/30) |
+| consensus_gap+money_level | total | 26-18 | 59.1 | 52.2 | 6.9 | +4.95 | 11.3 |  |  | no edge shown yet |
+| consensus_gap+money_moving | total | 17-19 | 47.2 | 51.0 | -3.7 | -3.79 | -10.5 |  |  | no edge shown yet |
+| consensus_gap+pin_move | total | 8-8 | 50.0 | 50.3 | -0.3 | -0.84 | -5.3 |  |  | keep collecting (16/30) |
+| consensus_gap+pin_value | total | 20-19 | 51.3 | 50.8 | 0.5 | -1.21 | -3.1 |  |  | no edge shown yet |
+| consensus_gap+sharp_gap | total | 17-20 | 45.9 | 50.9 | -4.9 | -4.79 | -13.0 |  |  | no edge shown yet |
+| follow_move+money_level | total | 60-59 | 50.4 | 50.8 | -0.3 | -4.42 | -3.7 |  |  | no edge shown yet |
+| follow_move+money_moving | total | 71-88 | 44.7 | 49.6 | -4.9 | -23.1 | -14.5 |  |  | DROP: below break-even |
+| follow_move+pin_move | total | 55-73 | 43.0 | 49.5 | -6.5 | -22.42 | -17.5 |  |  | DROP: below break-even |
+| follow_move+pin_value | total | 29-28 | 50.9 | 49.9 | 1.0 | -1.78 | -3.1 |  |  | no edge shown yet |
+| follow_move+sharp_gap | total | 72-88 | 45.0 | 49.6 | -4.6 | -22.2 | -13.9 |  |  | DROP: below break-even |
+| money_level+money_moving | total | 82-86 | 48.8 | 51.2 | -2.4 | -11.82 | -7.0 |  |  | no edge shown yet |
+| money_level+pin_move | total | 40-43 | 48.2 | 50.9 | -2.7 | -6.78 | -8.2 |  |  | no edge shown yet |
+| money_level+pin_value | total | 40-38 | 51.3 | 51.6 | -0.3 | -2.18 | -2.8 |  |  | no edge shown yet |
+| money_level+sharp_gap | total | 78-84 | 48.1 | 51.2 | -3.1 | -13.38 | -8.3 |  |  | no edge shown yet |
+| money_moving+pin_move | total | 43-52 | 45.3 | 49.8 | -4.6 | -12.75 | -13.4 |  |  | no edge shown yet |
+| money_moving+pin_value | total | 30-36 | 45.5 | 50.7 | -5.3 | -9.0 | -13.6 |  |  | no edge shown yet |
+| pin_move+pin_value | total | 28-35 | 44.4 | 50.0 | -5.6 | -9.69 | -15.4 |  |  | no edge shown yet |
+| pin_move+sharp_gap | total | 40-53 | 43.0 | 49.8 | -6.8 | -16.49 | -17.7 |  |  | DROP: below break-even |
+| pin_value+sharp_gap | total | 29-38 | 43.3 | 50.7 | -7.4 | -11.91 | -17.8 |  |  | no edge shown yet |
+| follow_move+money_delta | total | 29-40 | 42.0 | 47.8 | -5.8 | -13.22 | -19.2 |  |  | DROP: below break-even |
+| money_delta+pin_move | total | 16-24 | 40.0 | 47.7 | -7.7 | -9.11 | -22.8 |  |  | DROP: below break-even |
+| money_delta+rlm_quiet | total | 16-25 | 39.0 | 47.6 | -8.5 | -10.16 | -24.8 |  |  | DROP: below break-even |
+| pin_move+rlm_quiet | total | 21-31 | 40.4 | 48.1 | -7.7 | -11.43 | -22.0 |  |  | DROP: below break-even |
+| follow_move+rlm_ratio | total | 35-50 | 41.2 | 48.4 | -7.2 | -17.84 | -21.0 |  |  | redundant -- identical record to rlm_ratio alone, not independent confirmation |
+| money_delta+rlm_ratio | total | 21-26 | 44.7 | 48.0 | -3.3 | -6.62 | -14.1 |  |  | no edge shown yet |
+| money_moving+rlm_quiet | total | 23-39 | 37.1 | 48.0 | -10.9 | -17.73 | -28.6 |  |  | DROP: below break-even |
+| money_moving+rlm_ratio | total | 34-48 | 41.5 | 48.4 | -7.0 | -16.75 | -20.4 |  |  | DROP: below break-even |
+| rlm_quiet+rlm_ratio | total | 18-35 | 34.0 | 48.0 | -14.1 | -18.37 | -34.7 |  |  | DROP: below break-even |
+| rlm_quiet+sharp_gap | total | 23-40 | 36.5 | 48.0 | -11.5 | -18.78 | -29.8 |  |  | DROP: below break-even |
+| rlm_ratio+sharp_gap | total | 35-50 | 41.2 | 48.4 | -7.2 | -17.84 | -21.0 |  |  | redundant -- identical record to rlm_ratio alone, not independent confirmation |
+| consensus_gap+money_delta | total | 6-2 | 75.0 | 47.6 | 27.4 | +3.44 | 43.0 |  |  | keep collecting (8/30) |
+| consensus_gap+rlm_quiet | total | 4-5 | 44.4 | 48.1 | -3.7 | -1.32 | -14.7 |  |  | keep collecting (9/30) |
+| consensus_gap+rlm_ratio | total | 3-4 | 42.9 | 48.3 | -5.4 | -1.29 | -18.4 |  |  | keep collecting (7/30) |
+| money_delta+pin_value | total | 13-8 | 61.9 | 48.0 | 13.9 | +3.82 | 18.2 |  |  | keep collecting (21/30) |
+| pin_value+rlm_quiet | total | 9-12 | 42.9 | 48.0 | -5.2 | -3.77 | -18.0 |  |  | keep collecting (21/30) |
+| pin_value+rlm_ratio | total | 5-7 | 41.7 | 48.8 | -7.1 | -2.53 | -21.1 |  |  | keep collecting (12/30) |
+| follow_move+pin_rlm | total | 20-25 | 44.4 | 48.4 | -4.0 | -6.63 | -14.7 |  |  | no edge shown yet |
+| money_delta+money_level | total | 12-16 | 42.9 | 48.6 | -5.7 | -4.94 | -17.6 |  |  | keep collecting (28/30) |
+| money_delta+pin_rlm | total | 10-14 | 41.7 | 47.8 | -6.1 | -4.7 | -19.6 |  |  | keep collecting (24/30) |
+| money_level+pin_rlm | total | 8-8 | 50.0 | 48.5 | 1.5 | -0.68 | -4.3 |  |  | keep collecting (16/30) |
+| money_level+rlm_ratio | total | 13-13 | 50.0 | 49.1 | 0.9 | -1.11 | -4.3 |  |  | keep collecting (26/30) |
+| money_moving+pin_rlm | total | 21-26 | 44.7 | 48.4 | -3.7 | -6.72 | -14.3 |  |  | no edge shown yet |
+| pin_move+pin_rlm | total | 21-27 | 43.8 | 48.4 | -4.6 | -7.72 | -16.1 |  |  | redundant -- identical record to pin_rlm alone, not independent confirmation |
+| pin_move+rlm_ratio | total | 20-26 | 43.5 | 48.5 | -5.0 | -7.63 | -16.6 |  |  | no edge shown yet |
+| pin_rlm+rlm_ratio | total | 20-25 | 44.4 | 48.4 | -4.0 | -6.63 | -14.7 |  |  | no edge shown yet |
+| pin_rlm+sharp_gap | total | 21-27 | 43.8 | 48.4 | -4.6 | -7.72 | -16.1 |  |  | redundant -- identical record to pin_rlm alone, not independent confirmation |
+| pin_rlm+rlm_quiet | total | 9-17 | 34.6 | 48.3 | -13.7 | -8.72 | -33.5 |  |  | keep collecting (26/30) |
+| consensus_gap+pin_rlm | total | 1-3 | 25.0 | 48.8 | -23.8 | -2.09 | -52.3 |  |  | keep collecting (4/30) |
+| pin_rlm+pin_value | total | 4-8 | 33.3 | 48.4 | -15.0 | -4.4 | -36.7 |  |  | keep collecting (12/30) |
 
 # FIT (in-sample — this is the hypothesis)
 
@@ -1011,113 +1013,114 @@ on with the games testing it. Use the forward table for any decision.
 
 | signal | market | record | hit % | expected % | edge | units | ROI % | CLV avg | CLV + % | status |
 |---|---|---|---|---|---|---|---|---|---|---|
-| rlm_quiet | both | 56-68 | 45.2 | 36.7 | 8.4 | +14.7 | 11.9 | 0.48 | 46.0 | DROP: below break-even |
-| pin_move | both | 11-20 | 35.5 | 48.4 | -12.9 | -10.57 | -34.1 | 0.2 | 38.7 | DROP: below break-even |
-| money_delta | both | 14-12 | 53.8 | 40.0 | 13.9 | +5.9 | 22.7 | 0.9 | 53.8 | keep collecting (26/30) |
+| rlm_quiet | both | 56-70 | 44.4 | 36.9 | 7.6 | +12.7 | 10.1 | 0.49 | 46.8 | DROP: below break-even |
+| pin_move | both | 14-25 | 35.9 | 49.7 | -13.8 | -13.19 | -33.8 | 0.39 | 43.6 | DROP: below break-even |
+| money_delta | both | 14-12 | 53.8 | 39.9 | 13.9 | +5.9 | 22.7 | 0.9 | 53.8 | keep collecting (26/30) |
 | pin_rlm | both | 1-4 | 20.0 | 37.1 | -17.1 | -3.07 | -61.5 | -0.3 | 60.0 | keep collecting (5/30) |
-| follow_move | both | 693-642 | 51.9 | 51.0 | 0.9 | -86.22 | -6.5 | 0.13 | 40.4 | no edge shown yet |
+| follow_move | both | 706-654 | 51.9 | 50.9 | 1.1 | -85.76 | -6.3 | 0.13 | 40.4 | no edge shown yet |
 | rlm_ratio | both | 39-33 | 54.2 | 39.6 | 14.6 | +18.55 | 25.8 | 0.41 | 52.8 | no edge shown yet |
-| money_level | both | 241-170 | 58.6 | 58.4 | 0.2 | -28.78 | -7.0 | -0.21 | 38.2 | beats break-even but not its base rate -- directional bias, not signal |
-| sharp_gap | both | 198-183 | 52.0 | 49.0 | 3.0 | +5.79 | 1.5 | 0.27 | 44.4 | no edge shown yet |
-| money_moving | both | 147-123 | 54.4 | 50.5 | 4.0 | -1.46 | -0.5 | 0.23 | 44.8 | no edge shown yet |
-| pin_value | both | 71-67 | 51.4 | 48.8 | 2.6 | -3.93 | -2.8 | 0.08 | 36.2 | no edge shown yet |
-| book_lag | both | 1-4 | 20.0 | 51.8 | -31.8 | -3.09 | -61.8 | -1.0 | 20.0 | keep collecting (5/30) |
-| consensus_gap | both | 354-408 | 46.5 | 49.5 | -3.1 | -78.7 | -10.3 | 0.44 | 46.6 | DROP: below break-even |
+| money_level | both | 243-170 | 58.8 | 58.4 | 0.4 | -27.04 | -6.5 | -0.21 | 38.0 | beats break-even but not its base rate -- directional bias, not signal |
+| sharp_gap | both | 200-183 | 52.2 | 49.0 | 3.2 | +7.53 | 2.0 | 0.27 | 44.1 | no edge shown yet |
+| money_moving | both | 149-123 | 54.8 | 50.4 | 4.3 | +0.28 | 0.1 | 0.22 | 44.5 | no edge shown yet |
+| pin_value | both | 73-69 | 51.4 | 48.8 | 2.6 | -4.11 | -2.9 | 0.1 | 36.6 | no edge shown yet |
+| book_lag | both | 1-4 | 20.0 | 52.0 | -32.0 | -3.09 | -61.8 | -1.0 | 20.0 | keep collecting (5/30) |
+| consensus_gap | both | 357-413 | 46.4 | 49.6 | -3.2 | -81.78 | -10.6 | 0.43 | 46.4 | DROP: below break-even |
 | consensus_gap+money_level | both | 56-45 | 55.4 | 63.1 | -7.6 | -14.91 | -14.8 | -0.02 | 41.6 | no edge shown yet |
-| consensus_gap+money_moving | both | 27-28 | 49.1 | 49.7 | -0.6 | -5.45 | -9.9 | 0.52 | 47.3 | no edge shown yet |
-| consensus_gap+pin_value | both | 30-31 | 49.2 | 47.3 | 1.9 | -4.8 | -7.9 | 0.27 | 44.3 | no edge shown yet |
-| follow_move+rlm_quiet | both | 56-68 | 45.2 | 36.7 | 8.4 | +14.7 | 11.9 | 0.48 | 46.0 | redundant -- identical record to rlm_quiet alone, not independent confirmation |
+| consensus_gap+money_moving | both | 27-28 | 49.1 | 49.6 | -0.5 | -5.45 | -9.9 | 0.52 | 47.3 | no edge shown yet |
+| consensus_gap+pin_value | both | 30-31 | 49.2 | 47.2 | 2.0 | -4.8 | -7.9 | 0.27 | 44.3 | no edge shown yet |
+| follow_move+rlm_quiet | both | 56-70 | 44.4 | 36.9 | 7.6 | +12.7 | 10.1 | 0.49 | 46.8 | redundant -- identical record to rlm_quiet alone, not independent confirmation |
 | follow_move+rlm_ratio | both | 39-33 | 54.2 | 39.6 | 14.6 | +18.55 | 25.8 | 0.41 | 52.8 | redundant -- identical record to rlm_ratio alone, not independent confirmation |
 | follow_move+sharp_gap | both | 99-63 | 61.1 | 49.3 | 11.8 | +22.33 | 13.8 | 0.45 | 47.5 | PROMOTE: beats break-even and its own base rate |
-| money_level+money_moving | both | 85-56 | 60.3 | 57.1 | 3.2 | -1.71 | -1.2 | 0.01 | 47.5 | beats break-even but not its base rate -- directional bias, not signal |
-| money_level+pin_value | both | 14-12 | 53.8 | 50.4 | 3.4 | +0.54 | 2.1 | 0.49 | 46.2 | keep collecting (26/30) |
-| money_moving+pin_value | both | 12-8 | 60.0 | 50.8 | 9.2 | +2.65 | 13.2 | 0.48 | 50.0 | keep collecting (20/30) |
+| money_level+money_moving | both | 87-56 | 60.8 | 57.0 | 3.9 | +0.03 | 0.0 | -0.01 | 46.9 | beats break-even but not its base rate -- directional bias, not signal |
+| money_level+pin_value | both | 15-12 | 55.6 | 50.4 | 5.1 | +1.41 | 5.2 | 0.43 | 44.4 | keep collecting (27/30) |
+| money_moving+pin_value | both | 13-8 | 61.9 | 50.7 | 11.2 | +3.52 | 16.7 | 0.41 | 47.6 | keep collecting (21/30) |
 | rlm_quiet+rlm_ratio | both | 25-20 | 55.6 | 37.0 | 18.6 | +17.35 | 38.6 | 0.1 | 48.9 | no edge shown yet |
-| rlm_quiet+sharp_gap | both | 28-25 | 52.8 | 37.7 | 15.1 | +15.08 | 28.4 | 0.16 | 47.2 | no edge shown yet |
+| rlm_quiet+sharp_gap | both | 28-25 | 52.8 | 37.7 | 15.2 | +15.08 | 28.4 | 0.16 | 47.2 | no edge shown yet |
 | rlm_ratio+sharp_gap | both | 39-33 | 54.2 | 39.6 | 14.6 | +18.55 | 25.8 | 0.41 | 52.8 | redundant -- identical record to rlm_ratio alone, not independent confirmation |
-| money_level+sharp_gap | both | 134-97 | 58.0 | 55.6 | 2.4 | -8.08 | -3.5 | 0.04 | 42.9 | beats break-even but not its base rate -- directional bias, not signal |
-| money_moving+sharp_gap | both | 84-75 | 52.8 | 48.0 | 4.8 | +3.59 | 2.3 | 0.43 | 49.1 | no edge shown yet |
+| money_level+sharp_gap | both | 136-97 | 58.4 | 55.6 | 2.8 | -6.34 | -2.7 | 0.03 | 42.5 | beats break-even but not its base rate -- directional bias, not signal |
+| money_moving+sharp_gap | both | 86-75 | 53.4 | 48.0 | 5.4 | +5.33 | 3.3 | 0.42 | 48.4 | no edge shown yet |
 | money_delta+money_level | both | 4-5 | 44.4 | 43.0 | 1.4 | -0.63 | -7.0 | 1.39 | 77.8 | keep collecting (9/30) |
 | money_delta+money_moving | both | 13-12 | 52.0 | 39.6 | 12.4 | +4.99 | 20.0 | 0.94 | 56.0 | keep collecting (25/30) |
 | money_delta+pin_value | both | 4-1 | 80.0 | 49.9 | 30.1 | +2.52 | 50.4 | 0.2 | 40.0 | keep collecting (5/30) |
 | money_delta+sharp_gap | both | 11-10 | 52.4 | 38.8 | 13.6 | +5.25 | 25.0 | 1.12 | 66.7 | keep collecting (21/30) |
-| pin_value+sharp_gap | both | 14-12 | 53.8 | 50.0 | 3.9 | +0.57 | 2.2 | 0.11 | 42.3 | keep collecting (26/30) |
-| book_lag+pin_move | both | 0-1 | 0.0 | 50.4 | -50.4 | -1.0 | -100.0 | -1.0 | 0.0 | keep collecting (1/30) |
-| consensus_gap+follow_move | both | 49-60 | 45.0 | 52.9 | -8.0 | -22.7 | -20.8 | 0.76 | 56.0 | DROP: below break-even |
-| consensus_gap+rlm_quiet | both | 5-8 | 38.5 | 36.4 | 2.0 | -2.39 | -18.4 | 0.97 | 76.9 | keep collecting (13/30) |
-| follow_move+pin_value | both | 24-22 | 52.2 | 48.8 | 3.3 | -0.95 | -2.1 | -0.2 | 28.3 | no edge shown yet |
-| pin_value+rlm_quiet | both | 1-5 | 16.7 | 42.9 | -26.2 | -4.17 | -69.5 | -0.63 | 33.3 | keep collecting (6/30) |
+| pin_value+sharp_gap | both | 15-12 | 55.6 | 50.0 | 5.6 | +1.44 | 5.3 | 0.07 | 40.7 | keep collecting (27/30) |
+| book_lag+pin_move | both | 0-1 | 0.0 | 50.5 | -50.5 | -1.0 | -100.0 | -1.0 | 0.0 | keep collecting (1/30) |
+| consensus_gap+follow_move | both | 50-61 | 45.0 | 53.0 | -8.0 | -23.18 | -20.9 | 0.75 | 55.9 | DROP: below break-even |
+| consensus_gap+rlm_quiet | both | 5-8 | 38.5 | 36.4 | 2.1 | -2.39 | -18.4 | 0.97 | 76.9 | keep collecting (13/30) |
+| follow_move+pin_value | both | 25-23 | 52.1 | 48.9 | 3.2 | -1.0 | -2.1 | -0.15 | 29.2 | no edge shown yet |
+| pin_value+rlm_quiet | both | 1-5 | 16.7 | 42.8 | -26.2 | -4.17 | -69.5 | -0.63 | 33.3 | keep collecting (6/30) |
 | consensus_gap+sharp_gap | both | 41-60 | 40.6 | 49.5 | -8.9 | -16.69 | -16.5 | 0.51 | 45.5 | DROP: below break-even |
 | follow_move+money_level | both | 117-62 | 65.4 | 59.1 | 6.3 | -3.69 | -2.1 | 0.03 | 41.9 | PROMOTE: beats break-even and its own base rate |
 | money_level+rlm_ratio | both | 12-13 | 48.0 | 43.5 | 4.5 | -0.66 | -2.6 | 1.06 | 64.0 | keep collecting (25/30) |
 | pin_value+rlm_ratio | both | 3-2 | 60.0 | 45.5 | 14.5 | +0.73 | 14.5 | -1.16 | 40.0 | keep collecting (5/30) |
 | follow_move+money_moving | both | 72-47 | 60.5 | 51.2 | 9.3 | +10.93 | 9.2 | 0.42 | 49.6 | PROMOTE: beats break-even and its own base rate |
-| consensus_gap+money_delta | both | 4-0 | 100.0 | 49.4 | 50.6 | +3.52 | 88.0 | 0.25 | 25.0 | keep collecting (4/30) |
-| follow_move+money_delta | both | 8-5 | 61.5 | 39.7 | 21.8 | +7.51 | 57.8 | 1.08 | 61.5 | keep collecting (13/30) |
-| money_delta+rlm_quiet | both | 4-3 | 57.1 | 34.2 | 22.9 | +5.18 | 74.0 | 0.33 | 42.9 | keep collecting (7/30) |
-| money_moving+rlm_quiet | both | 20-20 | 50.0 | 37.4 | 12.6 | +7.85 | 19.6 | 0.59 | 45.0 | no edge shown yet |
-| money_moving+rlm_ratio | both | 19-13 | 59.4 | 40.6 | 18.8 | +11.71 | 36.6 | 0.77 | 56.2 | no edge shown yet |
-| consensus_gap+rlm_ratio | both | 5-4 | 55.6 | 40.2 | 15.3 | +1.0 | 11.1 | 0.72 | 66.7 | keep collecting (9/30) |
-| pin_move+pin_value | both | 4-10 | 28.6 | 49.3 | -20.7 | -6.32 | -45.1 | 0.36 | 28.6 | keep collecting (14/30) |
-| follow_move+pin_move | both | 7-9 | 43.8 | 49.0 | -5.2 | -3.25 | -20.3 | 0.28 | 43.8 | keep collecting (16/30) |
+| consensus_gap+money_delta | both | 4-0 | 100.0 | 49.3 | 50.7 | +3.52 | 88.0 | 0.25 | 25.0 | keep collecting (4/30) |
+| follow_move+money_delta | both | 8-5 | 61.5 | 39.7 | 21.9 | +7.51 | 57.8 | 1.08 | 61.5 | keep collecting (13/30) |
+| money_delta+rlm_quiet | both | 4-3 | 57.1 | 34.1 | 23.0 | +5.18 | 74.0 | 0.33 | 42.9 | keep collecting (7/30) |
+| money_moving+rlm_quiet | both | 20-20 | 50.0 | 37.3 | 12.7 | +7.85 | 19.6 | 0.59 | 45.0 | no edge shown yet |
+| money_moving+rlm_ratio | both | 19-13 | 59.4 | 40.5 | 18.8 | +11.71 | 36.6 | 0.77 | 56.2 | no edge shown yet |
+| consensus_gap+rlm_ratio | both | 5-4 | 55.6 | 40.2 | 15.4 | +1.0 | 11.1 | 0.72 | 66.7 | keep collecting (9/30) |
+| pin_move+pin_value | both | 5-12 | 29.4 | 49.3 | -19.9 | -7.37 | -43.3 | 0.53 | 35.3 | keep collecting (17/30) |
+| follow_move+pin_move | both | 9-11 | 45.0 | 49.2 | -4.2 | -3.39 | -16.9 | 0.52 | 50.0 | keep collecting (20/30) |
 | consensus_gap+pin_move | both | 2-6 | 25.0 | 46.9 | -21.9 | -4.14 | -51.7 | 0.29 | 50.0 | keep collecting (8/30) |
 | money_level+pin_move | both | 4-6 | 40.0 | 49.9 | -9.9 | -3.02 | -30.2 | 0.14 | 30.0 | keep collecting (10/30) |
-| consensus_gap+pin_rlm | both | 0-1 | 0.0 | 28.6 | -28.6 | -1.0 | -100.0 | -4.8 | 0.0 | keep collecting (1/30) |
+| consensus_gap+pin_rlm | both | 0-1 | 0.0 | 28.5 | -28.5 | -1.0 | -100.0 | -4.8 | 0.0 | keep collecting (1/30) |
 | follow_move+pin_rlm | both | 1-3 | 25.0 | 39.3 | -14.3 | -2.07 | -51.8 | -0.7 | 50.0 | keep collecting (4/30) |
-| pin_rlm+pin_value | both | 0-1 | 0.0 | 28.6 | -28.6 | -1.0 | -100.0 | -4.8 | 0.0 | keep collecting (1/30) |
-| pin_rlm+rlm_quiet | both | 0-1 | 0.0 | 28.6 | -28.6 | -1.0 | -100.0 | -4.8 | 0.0 | keep collecting (1/30) |
+| pin_rlm+pin_value | both | 0-1 | 0.0 | 28.5 | -28.5 | -1.0 | -100.0 | -4.8 | 0.0 | keep collecting (1/30) |
+| pin_rlm+rlm_quiet | both | 0-1 | 0.0 | 28.5 | -28.5 | -1.0 | -100.0 | -4.8 | 0.0 | keep collecting (1/30) |
 | pin_rlm+rlm_ratio | both | 1-3 | 25.0 | 39.3 | -14.3 | -2.07 | -51.8 | -0.7 | 50.0 | keep collecting (4/30) |
 | pin_rlm+sharp_gap | both | 1-4 | 20.0 | 37.1 | -17.1 | -3.07 | -61.5 | -0.3 | 60.0 | redundant -- identical record to pin_rlm alone, not independent confirmation |
-| book_lag+consensus_gap | both | 0-2 | 0.0 | 51.3 | -51.3 | -2.0 | -100.0 | -0.5 | 50.0 | keep collecting (2/30) |
-| book_lag+pin_value | both | 0-1 | 0.0 | 49.6 | -49.6 | -1.0 | -100.0 | 1.0 | 100.0 | keep collecting (1/30) |
-| pin_move+sharp_gap | both | 2-4 | 33.3 | 46.6 | -13.3 | -2.87 | -47.8 | 0.47 | 33.3 | keep collecting (6/30) |
-| money_level+pin_rlm | both | 1-2 | 33.3 | 42.9 | -9.5 | -1.07 | -35.8 | 0.67 | 66.7 | keep collecting (3/30) |
-| pin_move+pin_rlm | both | 1-1 | 50.0 | 28.6 | 21.4 | -0.07 | -3.7 | 0.25 | 50.0 | keep collecting (2/30) |
-| pin_move+rlm_ratio | both | 1-1 | 50.0 | 28.6 | 21.4 | -0.07 | -3.7 | 0.25 | 50.0 | keep collecting (2/30) |
+| book_lag+consensus_gap | both | 0-2 | 0.0 | 51.4 | -51.4 | -2.0 | -100.0 | -0.5 | 50.0 | keep collecting (2/30) |
+| book_lag+pin_value | both | 0-1 | 0.0 | 49.5 | -49.5 | -1.0 | -100.0 | 1.0 | 100.0 | keep collecting (1/30) |
+| pin_move+sharp_gap | both | 2-4 | 33.3 | 46.7 | -13.3 | -2.87 | -47.8 | 0.47 | 33.3 | keep collecting (6/30) |
+| money_level+pin_rlm | both | 1-2 | 33.3 | 42.8 | -9.5 | -1.07 | -35.8 | 0.67 | 66.7 | keep collecting (3/30) |
+| pin_move+pin_rlm | both | 1-1 | 50.0 | 28.5 | 21.5 | -0.07 | -3.7 | 0.25 | 50.0 | keep collecting (2/30) |
+| pin_move+rlm_ratio | both | 1-1 | 50.0 | 28.5 | 21.5 | -0.07 | -3.7 | 0.25 | 50.0 | keep collecting (2/30) |
 | money_delta+rlm_ratio | both | 5-3 | 62.5 | 36.4 | 26.1 | +6.9 | 86.2 | 2.04 | 87.5 | keep collecting (8/30) |
-| money_moving+pin_rlm | both | 0-1 | 0.0 | 28.6 | -28.6 | -1.0 | -100.0 | 1.3 | 100.0 | keep collecting (1/30) |
-| money_moving+pin_move | both | 1-1 | 50.0 | 49.6 | 0.4 | -0.05 | -2.4 | 1.0 | 100.0 | keep collecting (2/30) |
-| rlm_quiet | moneyline | 31-45 | 40.8 | 28.6 | 12.2 | +15.0 | 19.7 | 0.39 | 44.7 | DROP: below break-even |
-| rlm_quiet | spread | 3-2 | 60.0 | 49.4 | 10.6 | +0.65 | 13.0 | -0.8 | 0.0 | keep collecting (5/30) |
-| rlm_quiet | total | 22-21 | 51.2 | 49.7 | 1.5 | -0.96 | -2.2 | 0.79 | 53.5 | no edge shown yet |
-| pin_move | moneyline | 2-4 | 33.3 | 42.9 | -9.5 | -2.87 | -47.8 | 0.02 | 50.0 | keep collecting (6/30) |
-| pin_move | spread | 2-7 | 22.2 | 49.0 | -26.8 | -5.15 | -57.2 | 0.11 | 22.2 | keep collecting (9/30) |
-| pin_move | total | 7-9 | 43.8 | 50.1 | -6.3 | -2.55 | -15.9 | 0.31 | 43.8 | keep collecting (16/30) |
-| money_delta | moneyline | 4-8 | 33.3 | 28.6 | 4.8 | +0.99 | 8.2 | 0.62 | 66.7 | keep collecting (12/30) |
+| money_moving+pin_rlm | both | 0-1 | 0.0 | 28.5 | -28.5 | -1.0 | -100.0 | 1.3 | 100.0 | keep collecting (1/30) |
+| money_moving+pin_move | both | 1-1 | 50.0 | 49.5 | 0.5 | -0.05 | -2.4 | 1.0 | 100.0 | keep collecting (2/30) |
+| pin_move+rlm_quiet | both | 0-1 | 0.0 | 49.5 | -49.5 | -1.0 | -100.0 | 1.0 | 100.0 | keep collecting (1/30) |
+| rlm_quiet | moneyline | 31-45 | 40.8 | 28.5 | 12.3 | +15.0 | 19.7 | 0.39 | 44.7 | DROP: below break-even |
+| rlm_quiet | spread | 3-2 | 60.0 | 49.3 | 10.7 | +0.65 | 13.0 | -0.8 | 0.0 | keep collecting (5/30) |
+| rlm_quiet | total | 22-23 | 48.9 | 49.6 | -0.7 | -2.96 | -6.6 | 0.8 | 55.6 | no edge shown yet |
+| pin_move | moneyline | 3-5 | 37.5 | 50.0 | -12.5 | -3.35 | -41.9 | 0.3 | 50.0 | keep collecting (8/30) |
+| pin_move | spread | 2-10 | 16.7 | 48.9 | -32.2 | -8.15 | -67.9 | 0.17 | 25.0 | keep collecting (12/30) |
+| pin_move | total | 9-10 | 47.4 | 50.0 | -2.6 | -1.69 | -8.9 | 0.58 | 52.6 | keep collecting (19/30) |
+| money_delta | moneyline | 4-8 | 33.3 | 28.5 | 4.8 | +0.99 | 8.2 | 0.62 | 66.7 | keep collecting (12/30) |
 | money_delta | spread | 1-1 | 50.0 | 50.0 | 0.0 | -0.17 | -8.4 | 0.5 | 50.0 | keep collecting (2/30) |
 | money_delta | total | 9-3 | 75.0 | 49.7 | 25.3 | +5.08 | 42.3 | 1.25 | 41.7 | keep collecting (12/30) |
 | pin_rlm | moneyline | 1-4 | 20.0 | 37.1 | -17.1 | -3.07 | -61.5 | -0.3 | 60.0 | keep collecting (5/30) |
-| follow_move | moneyline | 287-209 | 57.9 | 52.8 | 5.1 | -25.52 | -5.1 | 0.02 | 41.9 | PROMOTE: beats break-even and its own base rate |
-| follow_move | spread | 177-203 | 46.6 | 49.8 | -3.2 | -39.76 | -10.5 | 0.02 | 32.9 | DROP: below break-even |
-| follow_move | total | 229-230 | 49.9 | 50.0 | -0.1 | -20.94 | -4.6 | 0.33 | 45.1 | no edge shown yet |
+| follow_move | moneyline | 292-214 | 57.7 | 52.5 | 5.2 | -25.53 | -5.0 | 0.02 | 41.9 | PROMOTE: beats break-even and its own base rate |
+| follow_move | spread | 179-207 | 46.4 | 49.8 | -3.5 | -41.87 | -10.8 | 0.02 | 32.4 | DROP: below break-even |
+| follow_move | total | 235-233 | 50.2 | 50.0 | 0.2 | -18.36 | -3.9 | 0.34 | 45.5 | no edge shown yet |
 | rlm_ratio | moneyline | 17-20 | 45.9 | 29.7 | 16.2 | +11.27 | 30.4 | 0.18 | 51.4 | no edge shown yet |
-| rlm_ratio | spread | 3-3 | 50.0 | 52.0 | -2.0 | -0.16 | -2.7 | 0.33 | 16.7 | keep collecting (6/30) |
-| rlm_ratio | total | 19-10 | 65.5 | 49.6 | 15.9 | +7.44 | 25.7 | 0.72 | 62.1 | keep collecting (29/30) |
+| rlm_ratio | spread | 3-3 | 50.0 | 52.2 | -2.2 | -0.16 | -2.7 | 0.33 | 16.7 | keep collecting (6/30) |
+| rlm_ratio | total | 19-10 | 65.5 | 49.6 | 16.0 | +7.44 | 25.7 | 0.72 | 62.1 | keep collecting (29/30) |
 | money_level | moneyline | 133-70 | 65.5 | 67.0 | -1.5 | -26.8 | -13.2 | -0.33 | 41.4 | beats break-even but not its base rate -- directional bias, not signal |
-| money_level | spread | 18-18 | 50.0 | 49.0 | 1.0 | -1.75 | -4.8 | 0.94 | 50.0 | no edge shown yet |
-| money_level | total | 90-82 | 52.3 | 50.2 | 2.1 | -0.23 | -0.1 | -0.31 | 32.0 | no edge shown yet |
+| money_level | spread | 18-18 | 50.0 | 48.9 | 1.1 | -1.75 | -4.8 | 0.94 | 50.0 | no edge shown yet |
+| money_level | total | 92-82 | 52.9 | 50.3 | 2.6 | +1.51 | 0.9 | -0.32 | 31.6 | no edge shown yet |
 | sharp_gap | moneyline | 85-96 | 47.0 | 48.0 | -1.0 | -9.89 | -5.5 | 0.21 | 49.2 | no edge shown yet |
 | sharp_gap | spread | 20-16 | 55.6 | 49.8 | 5.7 | +2.0 | 5.6 | 0.78 | 41.7 | no edge shown yet |
-| sharp_gap | total | 93-71 | 56.7 | 49.9 | 6.8 | +13.67 | 8.3 | 0.24 | 39.6 | no edge shown yet |
+| sharp_gap | total | 95-71 | 57.2 | 49.9 | 7.3 | +15.41 | 9.3 | 0.22 | 39.2 | no edge shown yet |
 | money_moving | moneyline | 63-62 | 50.4 | 51.2 | -0.8 | -16.8 | -13.4 | 0.2 | 51.2 | no edge shown yet |
-| money_moving | spread | 18-7 | 72.0 | 49.2 | 22.8 | +9.18 | 36.7 | 0.52 | 48.0 | keep collecting (25/30) |
-| money_moving | total | 66-54 | 55.0 | 50.0 | 5.0 | +6.17 | 5.1 | 0.2 | 37.5 | no edge shown yet |
+| money_moving | spread | 18-7 | 72.0 | 49.1 | 22.9 | +9.18 | 36.7 | 0.52 | 48.0 | keep collecting (25/30) |
+| money_moving | total | 68-54 | 55.7 | 50.0 | 5.8 | +7.91 | 6.5 | 0.18 | 36.9 | no edge shown yet |
 | pin_value | moneyline | 2-7 | 22.2 | 38.1 | -15.9 | -5.31 | -59.0 | 0.12 | 55.6 | keep collecting (9/30) |
-| pin_value | spread | 36-29 | 55.4 | 49.1 | 6.3 | +2.57 | 3.9 | 0.18 | 33.8 | no edge shown yet |
-| pin_value | total | 33-31 | 51.6 | 50.0 | 1.5 | -1.19 | -1.9 | -0.03 | 35.9 | no edge shown yet |
-| book_lag | spread | 1-2 | 33.3 | 53.0 | -19.6 | -1.09 | -36.4 | -1.67 | 0.0 | keep collecting (3/30) |
+| pin_value | spread | 36-31 | 53.7 | 49.1 | 4.7 | +0.57 | 0.8 | 0.21 | 34.3 | no edge shown yet |
+| pin_value | total | 35-31 | 53.0 | 50.0 | 3.0 | +0.63 | 1.0 | -0.02 | 36.4 | no edge shown yet |
+| book_lag | spread | 1-2 | 33.3 | 53.3 | -19.9 | -1.09 | -36.4 | -1.67 | 0.0 | keep collecting (3/30) |
 | book_lag | total | 0-2 | 0.0 | 50.0 | -50.0 | -2.0 | -100.0 | 0.0 | 50.0 | keep collecting (2/30) |
-| consensus_gap | moneyline | 155-221 | 41.2 | 49.5 | -8.3 | -68.12 | -18.1 | 0.24 | 44.7 | DROP: below break-even |
-| consensus_gap | spread | 93-79 | 54.1 | 48.9 | 5.2 | +2.1 | 1.2 | 0.31 | 38.4 | no edge shown yet |
-| consensus_gap | total | 106-108 | 49.5 | 50.0 | -0.5 | -12.68 | -5.9 | 0.89 | 56.5 | no edge shown yet |
+| consensus_gap | moneyline | 157-223 | 41.3 | 49.7 | -8.3 | -69.03 | -18.2 | 0.23 | 44.5 | DROP: below break-even |
+| consensus_gap | spread | 94-79 | 54.3 | 48.8 | 5.6 | +2.93 | 1.7 | 0.31 | 38.2 | no edge shown yet |
+| consensus_gap | total | 106-111 | 48.8 | 50.0 | -1.2 | -15.68 | -7.2 | 0.87 | 56.2 | no edge shown yet |
 | money_level+sharp_gap | moneyline | 63-40 | 61.2 | 62.7 | -1.5 | -15.52 | -15.1 | -0.15 | 48.5 | beats break-even but not its base rate -- directional bias, not signal |
-| consensus_gap+follow_move | moneyline | 22-29 | 43.1 | 57.1 | -14.0 | -15.83 | -31.0 | 0.18 | 51.0 | no edge shown yet |
+| consensus_gap+follow_move | moneyline | 23-29 | 44.2 | 57.4 | -13.2 | -15.31 | -29.4 | 0.17 | 50.0 | no edge shown yet |
 | consensus_gap+pin_value | moneyline | 2-6 | 25.0 | 33.9 | -8.9 | -4.31 | -53.8 | -0.08 | 50.0 | keep collecting (8/30) |
-| consensus_gap+rlm_quiet | moneyline | 2-6 | 25.0 | 28.6 | -3.6 | -3.08 | -38.5 | 1.07 | 87.5 | keep collecting (8/30) |
-| follow_move+pin_value | moneyline | 1-2 | 33.3 | 42.9 | -9.5 | -1.29 | -42.9 | -1.43 | 33.3 | keep collecting (3/30) |
-| follow_move+rlm_quiet | moneyline | 31-45 | 40.8 | 28.6 | 12.2 | +15.0 | 19.7 | 0.39 | 44.7 | redundant -- identical record to rlm_quiet alone, not independent confirmation |
+| consensus_gap+rlm_quiet | moneyline | 2-6 | 25.0 | 28.5 | -3.5 | -3.08 | -38.5 | 1.07 | 87.5 | keep collecting (8/30) |
+| follow_move+pin_value | moneyline | 1-2 | 33.3 | 42.8 | -9.5 | -1.29 | -42.9 | -1.43 | 33.3 | keep collecting (3/30) |
+| follow_move+rlm_quiet | moneyline | 31-45 | 40.8 | 28.5 | 12.3 | +15.0 | 19.7 | 0.39 | 44.7 | redundant -- identical record to rlm_quiet alone, not independent confirmation |
 | money_level+money_moving | moneyline | 38-21 | 64.4 | 67.1 | -2.7 | -9.64 | -16.3 | -0.19 | 52.5 | beats break-even but not its base rate -- directional bias, not signal |
-| pin_value+rlm_quiet | moneyline | 0-2 | 0.0 | 28.6 | -28.6 | -2.0 | -100.0 | -1.9 | 50.0 | keep collecting (2/30) |
+| pin_value+rlm_quiet | moneyline | 0-2 | 0.0 | 28.5 | -28.5 | -2.0 | -100.0 | -1.9 | 50.0 | keep collecting (2/30) |
 | consensus_gap+sharp_gap | moneyline | 27-46 | 37.0 | 49.7 | -12.7 | -15.11 | -20.7 | 0.5 | 46.6 | DROP: below break-even |
 | follow_move+money_level | moneyline | 72-23 | 75.8 | 67.4 | 8.4 | -5.65 | -6.0 | -0.29 | 40.0 | PROMOTE: beats break-even and its own base rate |
 | follow_move+money_moving | moneyline | 38-20 | 65.5 | 53.0 | 12.6 | +6.83 | 11.8 | 0.2 | 50.0 | PROMOTE: beats break-even and its own base rate |
@@ -1126,781 +1129,782 @@ on with the games testing it. Use the forward table for any decision.
 | money_moving+sharp_gap | moneyline | 29-41 | 41.4 | 45.7 | -4.3 | -12.48 | -17.8 | 0.5 | 60.0 | DROP: below break-even |
 | consensus_gap+money_moving | moneyline | 15-25 | 37.5 | 50.0 | -12.5 | -13.06 | -32.7 | 0.59 | 50.0 | DROP: below break-even |
 | follow_move+rlm_ratio | moneyline | 17-20 | 45.9 | 29.7 | 16.2 | +11.27 | 30.4 | 0.18 | 51.4 | redundant -- identical record to rlm_ratio alone, not independent confirmation |
-| rlm_quiet+rlm_ratio | moneyline | 13-14 | 48.1 | 28.6 | 19.6 | +12.4 | 45.9 | -0.1 | 44.4 | keep collecting (27/30) |
-| rlm_quiet+sharp_gap | moneyline | 13-17 | 43.3 | 28.6 | 14.8 | +9.4 | 31.3 | -0.22 | 43.3 | no edge shown yet |
+| rlm_quiet+rlm_ratio | moneyline | 13-14 | 48.1 | 28.5 | 19.6 | +12.4 | 45.9 | -0.1 | 44.4 | keep collecting (27/30) |
+| rlm_quiet+sharp_gap | moneyline | 13-17 | 43.3 | 28.5 | 14.8 | +9.4 | 31.3 | -0.22 | 43.3 | no edge shown yet |
 | rlm_ratio+sharp_gap | moneyline | 17-20 | 45.9 | 29.7 | 16.2 | +11.27 | 30.4 | 0.18 | 51.4 | redundant -- identical record to rlm_ratio alone, not independent confirmation |
-| consensus_gap+rlm_ratio | moneyline | 1-3 | 25.0 | 28.6 | -3.6 | -1.68 | -42.0 | 1.12 | 75.0 | keep collecting (4/30) |
-| money_moving+rlm_quiet | moneyline | 10-13 | 43.5 | 28.6 | 14.9 | +5.84 | 25.4 | 0.85 | 52.2 | keep collecting (23/30) |
-| money_moving+rlm_ratio | moneyline | 7-7 | 50.0 | 28.6 | 21.4 | +6.63 | 47.4 | 0.82 | 57.1 | keep collecting (14/30) |
-| money_delta+money_moving | moneyline | 4-8 | 33.3 | 28.6 | 4.8 | +0.99 | 8.2 | 0.62 | 66.7 | redundant -- identical record to money_delta alone, not independent confirmation |
-| money_delta+sharp_gap | moneyline | 4-7 | 36.4 | 28.6 | 7.8 | +1.99 | 18.1 | 0.68 | 72.7 | keep collecting (11/30) |
-| consensus_gap+pin_move | moneyline | 0-3 | 0.0 | 42.9 | -42.9 | -3.0 | -100.0 | 0.1 | 66.7 | keep collecting (3/30) |
+| consensus_gap+rlm_ratio | moneyline | 1-3 | 25.0 | 28.5 | -3.5 | -1.68 | -42.0 | 1.12 | 75.0 | keep collecting (4/30) |
+| money_moving+rlm_quiet | moneyline | 10-13 | 43.5 | 28.5 | 14.9 | +5.84 | 25.4 | 0.85 | 52.2 | keep collecting (23/30) |
+| money_moving+rlm_ratio | moneyline | 7-7 | 50.0 | 28.5 | 21.5 | +6.63 | 47.4 | 0.82 | 57.1 | keep collecting (14/30) |
+| money_delta+money_moving | moneyline | 4-8 | 33.3 | 28.5 | 4.8 | +0.99 | 8.2 | 0.62 | 66.7 | redundant -- identical record to money_delta alone, not independent confirmation |
+| money_delta+sharp_gap | moneyline | 4-7 | 36.4 | 28.5 | 7.8 | +1.99 | 18.1 | 0.68 | 72.7 | keep collecting (11/30) |
+| consensus_gap+pin_move | moneyline | 0-3 | 0.0 | 42.8 | -42.8 | -3.0 | -100.0 | 0.1 | 66.7 | keep collecting (3/30) |
 | follow_move+pin_move | moneyline | 2-2 | 50.0 | 50.0 | 0.0 | -0.87 | -21.8 | 0.1 | 50.0 | keep collecting (4/30) |
 | money_level+pin_move | moneyline | 2-2 | 50.0 | 50.0 | 0.0 | -0.87 | -21.8 | 0.1 | 50.0 | keep collecting (4/30) |
-| consensus_gap+pin_rlm | moneyline | 0-1 | 0.0 | 28.6 | -28.6 | -1.0 | -100.0 | -4.8 | 0.0 | keep collecting (1/30) |
+| consensus_gap+pin_rlm | moneyline | 0-1 | 0.0 | 28.5 | -28.5 | -1.0 | -100.0 | -4.8 | 0.0 | keep collecting (1/30) |
 | follow_move+pin_rlm | moneyline | 1-3 | 25.0 | 39.3 | -14.3 | -2.07 | -51.8 | -0.7 | 50.0 | keep collecting (4/30) |
-| pin_rlm+pin_value | moneyline | 0-1 | 0.0 | 28.6 | -28.6 | -1.0 | -100.0 | -4.8 | 0.0 | keep collecting (1/30) |
-| pin_rlm+rlm_quiet | moneyline | 0-1 | 0.0 | 28.6 | -28.6 | -1.0 | -100.0 | -4.8 | 0.0 | keep collecting (1/30) |
+| pin_rlm+pin_value | moneyline | 0-1 | 0.0 | 28.5 | -28.5 | -1.0 | -100.0 | -4.8 | 0.0 | keep collecting (1/30) |
+| pin_rlm+rlm_quiet | moneyline | 0-1 | 0.0 | 28.5 | -28.5 | -1.0 | -100.0 | -4.8 | 0.0 | keep collecting (1/30) |
 | pin_rlm+rlm_ratio | moneyline | 1-3 | 25.0 | 39.3 | -14.3 | -2.07 | -51.8 | -0.7 | 50.0 | keep collecting (4/30) |
 | pin_rlm+sharp_gap | moneyline | 1-4 | 20.0 | 37.1 | -17.1 | -3.07 | -61.5 | -0.3 | 60.0 | redundant -- identical record to pin_rlm alone, not independent confirmation |
-| pin_value+rlm_ratio | moneyline | 0-1 | 0.0 | 28.6 | -28.6 | -1.0 | -100.0 | -4.8 | 0.0 | keep collecting (1/30) |
+| pin_value+rlm_ratio | moneyline | 0-1 | 0.0 | 28.5 | -28.5 | -1.0 | -100.0 | -4.8 | 0.0 | keep collecting (1/30) |
 | pin_value+sharp_gap | moneyline | 0-2 | 0.0 | 50.0 | -50.0 | -2.0 | -100.0 | -1.55 | 50.0 | keep collecting (2/30) |
-| pin_move+sharp_gap | moneyline | 2-1 | 66.7 | 42.9 | 23.8 | +0.13 | 4.3 | -0.07 | 33.3 | keep collecting (3/30) |
+| pin_move+sharp_gap | moneyline | 2-1 | 66.7 | 42.8 | 23.8 | +0.13 | 4.3 | -0.07 | 33.3 | keep collecting (3/30) |
 | money_level+rlm_ratio | moneyline | 4-6 | 40.0 | 32.8 | 7.2 | -1.13 | -11.3 | 0.95 | 70.0 | keep collecting (10/30) |
-| money_level+pin_rlm | moneyline | 1-2 | 33.3 | 42.9 | -9.5 | -1.07 | -35.8 | 0.67 | 66.7 | keep collecting (3/30) |
-| pin_move+pin_rlm | moneyline | 1-1 | 50.0 | 28.6 | 21.4 | -0.07 | -3.7 | 0.25 | 50.0 | keep collecting (2/30) |
-| pin_move+rlm_ratio | moneyline | 1-1 | 50.0 | 28.6 | 21.4 | -0.07 | -3.7 | 0.25 | 50.0 | keep collecting (2/30) |
-| follow_move+money_delta | moneyline | 4-2 | 66.7 | 28.6 | 38.1 | +6.99 | 116.5 | 1.02 | 66.7 | keep collecting (6/30) |
-| money_delta+rlm_quiet | moneyline | 3-2 | 60.0 | 28.6 | 31.4 | +5.35 | 107.0 | 0.46 | 60.0 | keep collecting (5/30) |
-| money_delta+rlm_ratio | moneyline | 4-1 | 80.0 | 28.6 | 51.4 | +7.99 | 159.8 | 2.26 | 80.0 | keep collecting (5/30) |
-| money_moving+pin_rlm | moneyline | 0-1 | 0.0 | 28.6 | -28.6 | -1.0 | -100.0 | 1.3 | 100.0 | keep collecting (1/30) |
-| money_delta+money_level | moneyline | 1-2 | 33.3 | 28.6 | 4.8 | -0.36 | -12.0 | 2.5 | 100.0 | keep collecting (3/30) |
-| money_level+pin_value | moneyline | 0-1 | 0.0 | 71.4 | -71.4 | -1.0 | -100.0 | 1.7 | 100.0 | keep collecting (1/30) |
-| money_moving+pin_value | moneyline | 0-1 | 0.0 | 71.4 | -71.4 | -1.0 | -100.0 | 1.7 | 100.0 | keep collecting (1/30) |
-| consensus_gap+money_level | spread | 5-6 | 45.5 | 47.0 | -1.6 | -1.68 | -15.3 | 1.73 | 72.7 | keep collecting (11/30) |
-| consensus_gap+money_moving | spread | 5-1 | 83.3 | 47.0 | 36.3 | +3.32 | 55.3 | 0.83 | 50.0 | keep collecting (6/30) |
-| consensus_gap+pin_value | spread | 15-9 | 62.5 | 48.3 | 14.2 | +3.84 | 16.0 | 0.29 | 37.5 | keep collecting (24/30) |
-| follow_move+rlm_quiet | spread | 3-2 | 60.0 | 49.4 | 10.6 | +0.65 | 13.0 | -0.8 | 0.0 | redundant -- identical record to rlm_quiet alone, not independent confirmation |
-| follow_move+rlm_ratio | spread | 3-3 | 50.0 | 52.0 | -2.0 | -0.16 | -2.7 | 0.33 | 16.7 | redundant -- identical record to rlm_ratio alone, not independent confirmation |
-| follow_move+sharp_gap | spread | 10-7 | 58.8 | 48.8 | 10.0 | +2.09 | 12.3 | 0.88 | 41.2 | keep collecting (17/30) |
-| money_level+money_moving | spread | 10-6 | 62.5 | 48.5 | 14.0 | +3.12 | 19.5 | 1.19 | 68.8 | keep collecting (16/30) |
-| money_level+pin_value | spread | 3-4 | 42.9 | 48.7 | -5.9 | -1.43 | -20.4 | 0.71 | 71.4 | keep collecting (7/30) |
-| money_moving+pin_value | spread | 4-3 | 57.1 | 49.6 | 7.6 | +0.41 | 5.8 | 0.57 | 57.1 | keep collecting (7/30) |
+| money_level+pin_rlm | moneyline | 1-2 | 33.3 | 42.8 | -9.5 | -1.07 | -35.8 | 0.67 | 66.7 | keep collecting (3/30) |
+| pin_move+pin_rlm | moneyline | 1-1 | 50.0 | 28.5 | 21.5 | -0.07 | -3.7 | 0.25 | 50.0 | keep collecting (2/30) |
+| pin_move+rlm_ratio | moneyline | 1-1 | 50.0 | 28.5 | 21.5 | -0.07 | -3.7 | 0.25 | 50.0 | keep collecting (2/30) |
+| follow_move+money_delta | moneyline | 4-2 | 66.7 | 28.5 | 38.1 | +6.99 | 116.5 | 1.02 | 66.7 | keep collecting (6/30) |
+| money_delta+rlm_quiet | moneyline | 3-2 | 60.0 | 28.5 | 31.5 | +5.35 | 107.0 | 0.46 | 60.0 | keep collecting (5/30) |
+| money_delta+rlm_ratio | moneyline | 4-1 | 80.0 | 28.5 | 51.5 | +7.99 | 159.8 | 2.26 | 80.0 | keep collecting (5/30) |
+| money_moving+pin_rlm | moneyline | 0-1 | 0.0 | 28.5 | -28.5 | -1.0 | -100.0 | 1.3 | 100.0 | keep collecting (1/30) |
+| money_delta+money_level | moneyline | 1-2 | 33.3 | 28.5 | 4.8 | -0.36 | -12.0 | 2.5 | 100.0 | keep collecting (3/30) |
+| money_level+pin_value | moneyline | 0-1 | 0.0 | 71.5 | -71.5 | -1.0 | -100.0 | 1.7 | 100.0 | keep collecting (1/30) |
+| money_moving+pin_value | moneyline | 0-1 | 0.0 | 71.5 | -71.5 | -1.0 | -100.0 | 1.7 | 100.0 | keep collecting (1/30) |
+| consensus_gap+money_level | spread | 5-6 | 45.5 | 46.7 | -1.3 | -1.68 | -15.3 | 1.73 | 72.7 | keep collecting (11/30) |
+| consensus_gap+money_moving | spread | 5-1 | 83.3 | 46.7 | 36.6 | +3.32 | 55.3 | 0.83 | 50.0 | keep collecting (6/30) |
+| consensus_gap+pin_value | spread | 15-9 | 62.5 | 48.1 | 14.4 | +3.84 | 16.0 | 0.29 | 37.5 | keep collecting (24/30) |
+| follow_move+rlm_quiet | spread | 3-2 | 60.0 | 49.3 | 10.7 | +0.65 | 13.0 | -0.8 | 0.0 | redundant -- identical record to rlm_quiet alone, not independent confirmation |
+| follow_move+rlm_ratio | spread | 3-3 | 50.0 | 52.2 | -2.2 | -0.16 | -2.7 | 0.33 | 16.7 | redundant -- identical record to rlm_ratio alone, not independent confirmation |
+| follow_move+sharp_gap | spread | 10-7 | 58.8 | 48.7 | 10.2 | +2.09 | 12.3 | 0.88 | 41.2 | keep collecting (17/30) |
+| money_level+money_moving | spread | 10-6 | 62.5 | 48.4 | 14.1 | +3.12 | 19.5 | 1.19 | 68.8 | keep collecting (16/30) |
+| money_level+pin_value | spread | 3-4 | 42.9 | 48.6 | -5.7 | -1.43 | -20.4 | 0.71 | 71.4 | keep collecting (7/30) |
+| money_moving+pin_value | spread | 4-3 | 57.1 | 49.5 | 7.6 | +0.41 | 5.8 | 0.57 | 57.1 | keep collecting (7/30) |
 | rlm_quiet+rlm_ratio | spread | 1-1 | 50.0 | 50.0 | 0.0 | -0.09 | -4.5 | -1.5 | 0.0 | keep collecting (2/30) |
 | rlm_quiet+sharp_gap | spread | 1-1 | 50.0 | 50.0 | 0.0 | -0.09 | -4.5 | -1.5 | 0.0 | keep collecting (2/30) |
-| rlm_ratio+sharp_gap | spread | 3-3 | 50.0 | 52.0 | -2.0 | -0.16 | -2.7 | 0.33 | 16.7 | redundant -- identical record to rlm_ratio alone, not independent confirmation |
-| money_delta+money_level | spread | 0-1 | 0.0 | 53.0 | -53.0 | -1.0 | -100.0 | 1.0 | 100.0 | keep collecting (1/30) |
+| rlm_ratio+sharp_gap | spread | 3-3 | 50.0 | 52.2 | -2.2 | -0.16 | -2.7 | 0.33 | 16.7 | redundant -- identical record to rlm_ratio alone, not independent confirmation |
+| money_delta+money_level | spread | 0-1 | 0.0 | 53.3 | -53.3 | -1.0 | -100.0 | 1.0 | 100.0 | keep collecting (1/30) |
 | money_delta+money_moving | spread | 1-1 | 50.0 | 50.0 | 0.0 | -0.17 | -8.4 | 0.5 | 50.0 | redundant -- identical record to money_delta alone, not independent confirmation |
 | money_delta+pin_value | spread | 1-1 | 50.0 | 50.0 | 0.0 | -0.17 | -8.4 | 0.5 | 50.0 | redundant -- identical record to money_delta alone, not independent confirmation |
-| money_delta+sharp_gap | spread | 0-1 | 0.0 | 53.0 | -53.0 | -1.0 | -100.0 | 1.0 | 100.0 | keep collecting (1/30) |
-| money_level+sharp_gap | spread | 14-12 | 53.8 | 49.1 | 4.8 | +0.62 | 2.4 | 1.15 | 46.2 | keep collecting (26/30) |
-| money_moving+sharp_gap | spread | 10-5 | 66.7 | 49.4 | 17.3 | +4.04 | 26.9 | 0.87 | 53.3 | keep collecting (15/30) |
+| money_delta+sharp_gap | spread | 0-1 | 0.0 | 53.3 | -53.3 | -1.0 | -100.0 | 1.0 | 100.0 | keep collecting (1/30) |
+| money_level+sharp_gap | spread | 14-12 | 53.8 | 49.0 | 4.8 | +0.62 | 2.4 | 1.15 | 46.2 | keep collecting (26/30) |
+| money_moving+sharp_gap | spread | 10-5 | 66.7 | 49.3 | 17.3 | +4.04 | 26.9 | 0.87 | 53.3 | keep collecting (15/30) |
 | pin_value+sharp_gap | spread | 2-2 | 50.0 | 50.0 | 0.0 | -0.26 | -6.5 | 0.75 | 75.0 | keep collecting (4/30) |
-| consensus_gap+follow_move | spread | 9-12 | 42.9 | 47.9 | -5.0 | -4.2 | -20.0 | 1.0 | 47.6 | keep collecting (21/30) |
-| consensus_gap+sharp_gap | spread | 5-3 | 62.5 | 47.0 | 15.5 | +1.32 | 16.5 | 2.12 | 75.0 | keep collecting (8/30) |
-| follow_move+money_level | spread | 12-10 | 54.5 | 48.4 | 6.2 | +0.98 | 4.5 | 0.82 | 45.5 | keep collecting (22/30) |
-| follow_move+pin_value | spread | 13-8 | 61.9 | 48.4 | 13.5 | +3.36 | 16.0 | 0.19 | 28.6 | keep collecting (21/30) |
-| consensus_gap+money_delta | spread | 1-0 | 100.0 | 47.0 | 53.0 | +0.83 | 83.3 | 0.0 | 0.0 | keep collecting (1/30) |
-| consensus_gap+rlm_quiet | spread | 1-0 | 100.0 | 47.0 | 53.0 | +0.83 | 83.3 | 0.0 | 0.0 | keep collecting (1/30) |
-| follow_move+money_delta | spread | 1-0 | 100.0 | 47.0 | 53.0 | +0.83 | 83.3 | 0.0 | 0.0 | keep collecting (1/30) |
-| follow_move+money_moving | spread | 9-3 | 75.0 | 48.0 | 27.0 | +5.22 | 43.5 | 0.75 | 50.0 | keep collecting (12/30) |
-| money_delta+rlm_quiet | spread | 1-0 | 100.0 | 47.0 | 53.0 | +0.83 | 83.3 | 0.0 | 0.0 | keep collecting (1/30) |
-| money_moving+rlm_quiet | spread | 2-0 | 100.0 | 47.0 | 53.0 | +1.74 | 87.1 | -1.0 | 0.0 | keep collecting (2/30) |
+| consensus_gap+follow_move | spread | 9-12 | 42.9 | 47.7 | -4.8 | -4.2 | -20.0 | 1.0 | 47.6 | keep collecting (21/30) |
+| consensus_gap+sharp_gap | spread | 5-3 | 62.5 | 46.7 | 15.8 | +1.32 | 16.5 | 2.12 | 75.0 | keep collecting (8/30) |
+| follow_move+money_level | spread | 12-10 | 54.5 | 48.2 | 6.3 | +0.98 | 4.5 | 0.82 | 45.5 | keep collecting (22/30) |
+| follow_move+pin_value | spread | 13-9 | 59.1 | 48.5 | 10.6 | +2.36 | 10.7 | 0.18 | 27.3 | keep collecting (22/30) |
+| consensus_gap+money_delta | spread | 1-0 | 100.0 | 46.7 | 53.3 | +0.83 | 83.3 | 0.0 | 0.0 | keep collecting (1/30) |
+| consensus_gap+rlm_quiet | spread | 1-0 | 100.0 | 46.7 | 53.3 | +0.83 | 83.3 | 0.0 | 0.0 | keep collecting (1/30) |
+| follow_move+money_delta | spread | 1-0 | 100.0 | 46.7 | 53.3 | +0.83 | 83.3 | 0.0 | 0.0 | keep collecting (1/30) |
+| follow_move+money_moving | spread | 9-3 | 75.0 | 47.8 | 27.2 | +5.22 | 43.5 | 0.75 | 50.0 | keep collecting (12/30) |
+| money_delta+rlm_quiet | spread | 1-0 | 100.0 | 46.7 | 53.3 | +0.83 | 83.3 | 0.0 | 0.0 | keep collecting (1/30) |
+| money_moving+rlm_quiet | spread | 2-0 | 100.0 | 46.7 | 53.3 | +1.74 | 87.1 | -1.0 | 0.0 | keep collecting (2/30) |
 | pin_value+rlm_quiet | spread | 1-1 | 50.0 | 50.0 | 0.0 | -0.17 | -8.4 | 0.0 | 0.0 | keep collecting (2/30) |
-| money_level+rlm_ratio | spread | 2-2 | 50.0 | 53.0 | -3.0 | -0.07 | -1.7 | 1.25 | 25.0 | keep collecting (4/30) |
-| money_moving+rlm_ratio | spread | 2-1 | 66.7 | 51.0 | 15.7 | +0.86 | 28.7 | 1.0 | 33.3 | keep collecting (3/30) |
-| pin_move+pin_value | spread | 1-5 | 16.7 | 48.0 | -31.3 | -4.09 | -68.2 | 0.17 | 16.7 | keep collecting (6/30) |
-| consensus_gap+pin_move | spread | 0-3 | 0.0 | 49.0 | -49.0 | -3.0 | -100.0 | 0.33 | 33.3 | keep collecting (3/30) |
-| follow_move+pin_move | spread | 2-3 | 40.0 | 47.0 | -7.0 | -1.15 | -23.0 | 0.0 | 20.0 | keep collecting (5/30) |
-| book_lag+consensus_gap | spread | 0-1 | 0.0 | 53.0 | -53.0 | -1.0 | -100.0 | -2.0 | 0.0 | keep collecting (1/30) |
-| money_level+pin_move | spread | 1-0 | 100.0 | 47.0 | 53.0 | +0.94 | 94.3 | -1.0 | 0.0 | keep collecting (1/30) |
-| follow_move+rlm_quiet | total | 22-21 | 51.2 | 49.7 | 1.5 | -0.96 | -2.2 | 0.79 | 53.5 | redundant -- identical record to rlm_quiet alone, not independent confirmation |
-| money_level+money_moving | total | 37-29 | 56.1 | 50.2 | 5.9 | +4.82 | 7.3 | -0.11 | 37.9 | no edge shown yet |
-| money_level+sharp_gap | total | 57-45 | 55.9 | 50.1 | 5.8 | +6.82 | 6.7 | -0.05 | 36.3 | no edge shown yet |
-| money_moving+sharp_gap | total | 45-29 | 60.8 | 49.9 | 10.9 | +12.03 | 16.3 | 0.28 | 37.8 | no edge shown yet |
-| book_lag+pin_move | total | 0-1 | 0.0 | 50.4 | -50.4 | -1.0 | -100.0 | -1.0 | 0.0 | keep collecting (1/30) |
-| money_level+pin_value | total | 11-7 | 61.1 | 50.0 | 11.2 | +2.96 | 16.4 | 0.33 | 33.3 | keep collecting (18/30) |
-| money_moving+pin_value | total | 8-4 | 66.7 | 49.8 | 16.9 | +3.24 | 27.0 | 0.33 | 41.7 | keep collecting (12/30) |
-| pin_value+sharp_gap | total | 12-8 | 60.0 | 50.0 | 10.0 | +2.83 | 14.1 | 0.15 | 35.0 | keep collecting (20/30) |
-| follow_move+money_level | total | 33-29 | 53.2 | 50.2 | 3.1 | +0.99 | 1.6 | 0.24 | 43.5 | no edge shown yet |
-| follow_move+pin_value | total | 10-12 | 45.5 | 50.0 | -4.6 | -3.03 | -13.8 | -0.41 | 27.3 | keep collecting (22/30) |
-| follow_move+rlm_ratio | total | 19-10 | 65.5 | 49.6 | 15.9 | +7.44 | 25.7 | 0.72 | 62.1 | redundant -- identical record to rlm_ratio alone, not independent confirmation |
-| follow_move+sharp_gap | total | 44-27 | 62.0 | 49.9 | 12.0 | +13.1 | 18.4 | 0.56 | 47.9 | PROMOTE: beats break-even and its own base rate |
-| money_level+rlm_ratio | total | 6-5 | 54.5 | 49.7 | 4.9 | +0.54 | 4.9 | 1.09 | 72.7 | keep collecting (11/30) |
-| pin_value+rlm_ratio | total | 3-1 | 75.0 | 49.8 | 25.2 | +1.73 | 43.2 | -0.25 | 50.0 | keep collecting (4/30) |
-| rlm_ratio+sharp_gap | total | 19-10 | 65.5 | 49.6 | 15.9 | +7.44 | 25.7 | 0.72 | 62.1 | redundant -- identical record to rlm_ratio alone, not independent confirmation |
-| follow_move+money_moving | total | 25-24 | 51.0 | 49.9 | 1.1 | -1.12 | -2.3 | 0.59 | 49.0 | no edge shown yet |
+| money_level+rlm_ratio | spread | 2-2 | 50.0 | 53.3 | -3.3 | -0.07 | -1.7 | 1.25 | 25.0 | keep collecting (4/30) |
+| money_moving+rlm_ratio | spread | 2-1 | 66.7 | 51.1 | 15.6 | +0.86 | 28.7 | 1.0 | 33.3 | keep collecting (3/30) |
+| pin_move+pin_value | spread | 1-7 | 12.5 | 48.4 | -35.9 | -6.09 | -76.1 | 0.38 | 25.0 | keep collecting (8/30) |
+| consensus_gap+pin_move | spread | 0-3 | 0.0 | 48.9 | -48.9 | -3.0 | -100.0 | 0.33 | 33.3 | keep collecting (3/30) |
+| follow_move+pin_move | spread | 2-4 | 33.3 | 47.8 | -14.5 | -2.15 | -35.8 | 0.0 | 16.7 | keep collecting (6/30) |
+| book_lag+consensus_gap | spread | 0-1 | 0.0 | 53.3 | -53.3 | -1.0 | -100.0 | -2.0 | 0.0 | keep collecting (1/30) |
+| money_level+pin_move | spread | 1-0 | 100.0 | 46.7 | 53.3 | +0.94 | 94.3 | -1.0 | 0.0 | keep collecting (1/30) |
+| follow_move+rlm_quiet | total | 22-23 | 48.9 | 49.6 | -0.7 | -2.96 | -6.6 | 0.8 | 55.6 | redundant -- identical record to rlm_quiet alone, not independent confirmation |
+| money_level+money_moving | total | 39-29 | 57.4 | 50.2 | 7.2 | +6.56 | 9.6 | -0.13 | 36.8 | no edge shown yet |
+| money_level+sharp_gap | total | 59-45 | 56.7 | 50.2 | 6.6 | +8.56 | 8.2 | -0.07 | 35.6 | no edge shown yet |
+| money_moving+sharp_gap | total | 47-29 | 61.8 | 49.9 | 11.9 | +13.77 | 18.1 | 0.25 | 36.8 | PROMOTE: beats break-even and its own base rate |
+| book_lag+pin_move | total | 0-1 | 0.0 | 50.5 | -50.5 | -1.0 | -100.0 | -1.0 | 0.0 | keep collecting (1/30) |
+| money_level+pin_value | total | 12-7 | 63.2 | 50.0 | 13.2 | +3.83 | 20.2 | 0.26 | 31.6 | keep collecting (19/30) |
+| money_moving+pin_value | total | 9-4 | 69.2 | 49.8 | 19.4 | +4.11 | 31.6 | 0.23 | 38.5 | keep collecting (13/30) |
+| pin_value+sharp_gap | total | 13-8 | 61.9 | 50.0 | 11.9 | +3.7 | 17.6 | 0.1 | 33.3 | keep collecting (21/30) |
+| follow_move+money_level | total | 33-29 | 53.2 | 50.2 | 3.0 | +0.99 | 1.6 | 0.24 | 43.5 | no edge shown yet |
+| follow_move+pin_value | total | 11-12 | 47.8 | 50.0 | -2.2 | -2.08 | -9.0 | -0.3 | 30.4 | keep collecting (23/30) |
+| follow_move+rlm_ratio | total | 19-10 | 65.5 | 49.6 | 16.0 | +7.44 | 25.7 | 0.72 | 62.1 | redundant -- identical record to rlm_ratio alone, not independent confirmation |
+| follow_move+sharp_gap | total | 44-27 | 62.0 | 49.9 | 12.1 | +13.1 | 18.4 | 0.56 | 47.9 | PROMOTE: beats break-even and its own base rate |
+| money_level+rlm_ratio | total | 6-5 | 54.5 | 49.6 | 5.0 | +0.54 | 4.9 | 1.09 | 72.7 | keep collecting (11/30) |
+| pin_value+rlm_ratio | total | 3-1 | 75.0 | 49.7 | 25.3 | +1.73 | 43.2 | -0.25 | 50.0 | keep collecting (4/30) |
+| rlm_ratio+sharp_gap | total | 19-10 | 65.5 | 49.6 | 16.0 | +7.44 | 25.7 | 0.72 | 62.1 | redundant -- identical record to rlm_ratio alone, not independent confirmation |
+| follow_move+money_moving | total | 25-24 | 51.0 | 49.9 | 1.2 | -1.12 | -2.3 | 0.59 | 49.0 | no edge shown yet |
 | consensus_gap+money_level | total | 9-6 | 60.0 | 50.3 | 9.7 | +2.03 | 13.5 | -0.4 | 20.0 | keep collecting (15/30) |
-| consensus_gap+money_moving | total | 7-2 | 77.8 | 50.0 | 27.8 | +4.3 | 47.7 | 0.0 | 33.3 | keep collecting (9/30) |
+| consensus_gap+money_moving | total | 7-2 | 77.8 | 49.9 | 27.8 | +4.3 | 47.7 | 0.0 | 33.3 | keep collecting (9/30) |
 | consensus_gap+pin_value | total | 13-16 | 44.8 | 50.1 | -5.3 | -4.34 | -14.9 | 0.34 | 48.3 | keep collecting (29/30) |
-| consensus_gap+sharp_gap | total | 9-11 | 45.0 | 50.0 | -5.0 | -2.89 | -14.5 | -0.1 | 30.0 | keep collecting (20/30) |
-| money_moving+rlm_ratio | total | 10-5 | 66.7 | 49.7 | 17.0 | +4.22 | 28.1 | 0.67 | 60.0 | keep collecting (15/30) |
-| consensus_gap+follow_move | total | 18-19 | 48.6 | 49.9 | -1.3 | -2.67 | -7.2 | 1.41 | 67.6 | no edge shown yet |
-| consensus_gap+money_delta | total | 3-0 | 100.0 | 50.1 | 49.9 | +2.69 | 89.6 | 0.33 | 33.3 | keep collecting (3/30) |
+| consensus_gap+sharp_gap | total | 9-11 | 45.0 | 49.9 | -4.9 | -2.89 | -14.5 | -0.1 | 30.0 | keep collecting (20/30) |
+| money_moving+rlm_ratio | total | 10-5 | 66.7 | 49.6 | 17.0 | +4.22 | 28.1 | 0.67 | 60.0 | keep collecting (15/30) |
+| consensus_gap+follow_move | total | 18-20 | 47.4 | 49.9 | -2.6 | -3.67 | -9.7 | 1.39 | 68.4 | no edge shown yet |
+| consensus_gap+money_delta | total | 3-0 | 100.0 | 50.2 | 49.8 | +2.69 | 89.6 | 0.33 | 33.3 | keep collecting (3/30) |
 | follow_move+money_delta | total | 3-3 | 50.0 | 49.7 | 0.3 | -0.31 | -5.2 | 1.33 | 66.7 | keep collecting (6/30) |
-| money_delta+money_moving | total | 8-3 | 72.7 | 49.7 | 23.0 | +4.17 | 37.9 | 1.36 | 45.5 | keep collecting (11/30) |
-| money_delta+pin_value | total | 3-0 | 100.0 | 49.9 | 50.1 | +2.69 | 89.6 | 0.0 | 33.3 | keep collecting (3/30) |
-| money_delta+sharp_gap | total | 7-2 | 77.8 | 49.8 | 28.0 | +4.26 | 47.4 | 1.67 | 55.6 | keep collecting (9/30) |
-| money_moving+rlm_quiet | total | 8-7 | 53.3 | 49.6 | 3.7 | +0.27 | 1.8 | 0.4 | 40.0 | keep collecting (15/30) |
+| money_delta+money_moving | total | 8-3 | 72.7 | 49.7 | 23.1 | +4.17 | 37.9 | 1.36 | 45.5 | keep collecting (11/30) |
+| money_delta+pin_value | total | 3-0 | 100.0 | 49.8 | 50.2 | +2.69 | 89.6 | 0.0 | 33.3 | keep collecting (3/30) |
+| money_delta+sharp_gap | total | 7-2 | 77.8 | 49.7 | 28.1 | +4.26 | 47.4 | 1.67 | 55.6 | keep collecting (9/30) |
+| money_moving+rlm_quiet | total | 8-7 | 53.3 | 49.6 | 3.8 | +0.27 | 1.8 | 0.4 | 40.0 | keep collecting (15/30) |
 | pin_value+rlm_quiet | total | 0-2 | 0.0 | 50.0 | -50.0 | -2.0 | -100.0 | 0.0 | 50.0 | keep collecting (2/30) |
-| rlm_quiet+rlm_ratio | total | 11-5 | 68.8 | 49.6 | 19.1 | +5.04 | 31.5 | 0.62 | 62.5 | keep collecting (16/30) |
-| rlm_quiet+sharp_gap | total | 14-7 | 66.7 | 49.6 | 17.0 | +5.77 | 27.5 | 0.86 | 57.1 | keep collecting (21/30) |
-| follow_move+pin_move | total | 3-4 | 42.9 | 49.8 | -7.0 | -1.23 | -17.6 | 0.57 | 57.1 | keep collecting (7/30) |
-| book_lag+consensus_gap | total | 0-1 | 0.0 | 49.6 | -49.6 | -1.0 | -100.0 | 1.0 | 100.0 | keep collecting (1/30) |
-| book_lag+pin_value | total | 0-1 | 0.0 | 49.6 | -49.6 | -1.0 | -100.0 | 1.0 | 100.0 | keep collecting (1/30) |
+| rlm_quiet+rlm_ratio | total | 11-5 | 68.8 | 49.5 | 19.2 | +5.04 | 31.5 | 0.62 | 62.5 | keep collecting (16/30) |
+| rlm_quiet+sharp_gap | total | 14-7 | 66.7 | 49.5 | 17.1 | +5.77 | 27.5 | 0.86 | 57.1 | keep collecting (21/30) |
+| follow_move+pin_move | total | 5-5 | 50.0 | 49.7 | 0.3 | -0.37 | -3.7 | 1.0 | 70.0 | keep collecting (10/30) |
+| book_lag+consensus_gap | total | 0-1 | 0.0 | 49.5 | -49.5 | -1.0 | -100.0 | 1.0 | 100.0 | keep collecting (1/30) |
+| book_lag+pin_value | total | 0-1 | 0.0 | 49.5 | -49.5 | -1.0 | -100.0 | 1.0 | 100.0 | keep collecting (1/30) |
 | money_delta+money_level | total | 3-2 | 60.0 | 49.7 | 10.3 | +0.73 | 14.5 | 0.8 | 60.0 | keep collecting (5/30) |
-| consensus_gap+rlm_quiet | total | 2-2 | 50.0 | 49.6 | 0.4 | -0.14 | -3.5 | 1.0 | 75.0 | keep collecting (4/30) |
-| consensus_gap+rlm_ratio | total | 4-1 | 80.0 | 49.6 | 30.4 | +2.68 | 53.6 | 0.4 | 60.0 | keep collecting (5/30) |
-| money_level+pin_move | total | 1-4 | 20.0 | 50.4 | -30.4 | -3.09 | -61.8 | 0.4 | 20.0 | keep collecting (5/30) |
-| pin_move+pin_value | total | 3-5 | 37.5 | 50.2 | -12.7 | -2.23 | -27.9 | 0.5 | 37.5 | keep collecting (8/30) |
-| pin_move+sharp_gap | total | 0-3 | 0.0 | 50.4 | -50.4 | -3.0 | -100.0 | 1.0 | 33.3 | keep collecting (3/30) |
-| money_delta+rlm_quiet | total | 0-1 | 0.0 | 49.6 | -49.6 | -1.0 | -100.0 | 0.0 | 0.0 | keep collecting (1/30) |
-| money_delta+rlm_ratio | total | 1-2 | 33.3 | 49.6 | -16.2 | -1.09 | -36.4 | 1.67 | 100.0 | keep collecting (3/30) |
+| consensus_gap+rlm_quiet | total | 2-2 | 50.0 | 49.5 | 0.5 | -0.14 | -3.5 | 1.0 | 75.0 | keep collecting (4/30) |
+| consensus_gap+rlm_ratio | total | 4-1 | 80.0 | 49.5 | 30.5 | +2.68 | 53.6 | 0.4 | 60.0 | keep collecting (5/30) |
+| money_level+pin_move | total | 1-4 | 20.0 | 50.5 | -30.5 | -3.09 | -61.8 | 0.4 | 20.0 | keep collecting (5/30) |
+| pin_move+pin_value | total | 4-5 | 44.4 | 50.2 | -5.7 | -1.28 | -14.2 | 0.67 | 44.4 | keep collecting (9/30) |
+| pin_move+sharp_gap | total | 0-3 | 0.0 | 50.5 | -50.5 | -3.0 | -100.0 | 1.0 | 33.3 | keep collecting (3/30) |
+| money_delta+rlm_quiet | total | 0-1 | 0.0 | 49.5 | -49.5 | -1.0 | -100.0 | 0.0 | 0.0 | keep collecting (1/30) |
+| money_delta+rlm_ratio | total | 1-2 | 33.3 | 49.5 | -16.2 | -1.09 | -36.4 | 1.67 | 100.0 | keep collecting (3/30) |
 | consensus_gap+pin_move | total | 2-0 | 100.0 | 50.0 | 50.0 | +1.86 | 93.0 | 0.5 | 50.0 | keep collecting (2/30) |
-| money_moving+pin_move | total | 1-1 | 50.0 | 49.6 | 0.4 | -0.05 | -2.4 | 1.0 | 100.0 | keep collecting (2/30) |
+| money_moving+pin_move | total | 1-1 | 50.0 | 49.5 | 0.5 | -0.05 | -2.4 | 1.0 | 100.0 | keep collecting (2/30) |
+| pin_move+rlm_quiet | total | 0-1 | 0.0 | 49.5 | -49.5 | -1.0 | -100.0 | 1.0 | 100.0 | keep collecting (1/30) |
 
 ## CLOSE  (pooled)
 
 | signal | market | record | hit % | expected % | edge | units | ROI % | CLV avg | CLV + % | status |
 |---|---|---|---|---|---|---|---|---|---|---|
-| rlm_quiet | both | 290-423 | 40.7 | 42.1 | -1.4 | -70.86 | -9.9 |  |  | DROP: below break-even |
-| pin_move | both | 691-712 | 49.3 | 49.7 | -0.4 | -57.33 | -4.1 |  |  | DROP: below break-even |
-| money_delta | both | 415-537 | 43.6 | 44.3 | -0.7 | -68.68 | -7.2 |  |  | DROP: below break-even |
-| pin_rlm | both | 181-221 | 45.0 | 42.2 | 2.8 | +13.0 | 3.2 |  |  | DROP: below break-even |
-| follow_move | both | 1169-1111 | 51.3 | 50.9 | 0.3 | -153.6 | -6.7 |  |  | no edge shown yet |
-| rlm_ratio | both | 269-332 | 44.8 | 43.8 | 1.0 | -30.56 | -5.1 |  |  | DROP: below break-even |
-| money_level | both | 1486-1118 | 57.1 | 55.3 | 1.8 | -98.73 | -3.8 |  |  | beats break-even but not its base rate -- directional bias, not signal |
-| sharp_gap | both | 1157-1335 | 46.4 | 47.7 | -1.3 | -194.16 | -7.8 |  |  | DROP: below break-even |
-| money_moving | both | 1171-1326 | 46.9 | 48.0 | -1.1 | -186.26 | -7.5 |  |  | DROP: below break-even |
-| pin_value | both | 504-506 | 49.9 | 48.4 | 1.5 | +5.37 | 0.5 |  |  | DROP: below break-even |
-| book_lag | both | 2-1 | 66.7 | 51.0 | 15.7 | +0.75 | 25.1 |  |  | keep collecting (3/30) |
-| consensus_gap | both | 460-551 | 45.5 | 48.7 | -3.2 | -85.21 | -8.4 |  |  | DROP: below break-even |
-| consensus_gap+follow_move | both | 162-162 | 50.0 | 51.1 | -1.1 | -23.14 | -7.1 |  |  | no edge shown yet |
-| consensus_gap+money_moving | both | 191-293 | 39.5 | 45.9 | -6.4 | -43.9 | -9.1 |  |  | DROP: below break-even |
-| consensus_gap+pin_move | both | 118-108 | 52.2 | 50.6 | 1.6 | +16.03 | 7.1 |  |  | no edge shown yet |
+| rlm_quiet | both | 293-433 | 40.4 | 42.1 | -1.7 | -77.19 | -10.6 |  |  | DROP: below break-even |
+| pin_move | both | 701-717 | 49.4 | 49.7 | -0.2 | -52.12 | -3.7 |  |  | DROP: below break-even |
+| money_delta | both | 416-551 | 43.0 | 44.2 | -1.2 | -81.73 | -8.5 |  |  | DROP: below break-even |
+| pin_rlm | both | 182-224 | 44.8 | 42.1 | 2.7 | +10.95 | 2.7 |  |  | DROP: below break-even |
+| follow_move | both | 1185-1128 | 51.2 | 50.9 | 0.4 | -156.31 | -6.8 |  |  | no edge shown yet |
+| rlm_ratio | both | 271-342 | 44.2 | 43.7 | 0.5 | -38.77 | -6.3 |  |  | DROP: below break-even |
+| money_level | both | 1506-1132 | 57.1 | 55.3 | 1.8 | -98.14 | -3.7 |  |  | beats break-even but not its base rate -- directional bias, not signal |
+| sharp_gap | both | 1169-1358 | 46.3 | 47.7 | -1.4 | -207.67 | -8.2 |  |  | DROP: below break-even |
+| money_moving | both | 1183-1349 | 46.7 | 48.0 | -1.3 | -199.77 | -7.9 |  |  | DROP: below break-even |
+| pin_value | both | 511-513 | 49.9 | 48.4 | 1.5 | +5.39 | 0.5 |  |  | DROP: below break-even |
+| book_lag | both | 2-1 | 66.7 | 51.1 | 15.6 | +0.75 | 25.1 |  |  | keep collecting (3/30) |
+| consensus_gap | both | 468-556 | 45.7 | 48.8 | -3.1 | -84.69 | -8.3 |  |  | DROP: below break-even |
+| consensus_gap+follow_move | both | 165-163 | 50.3 | 51.1 | -0.8 | -21.86 | -6.7 |  |  | no edge shown yet |
+| consensus_gap+money_moving | both | 194-297 | 39.5 | 46.0 | -6.5 | -45.63 | -9.3 |  |  | DROP: below break-even |
+| consensus_gap+pin_move | both | 119-108 | 52.4 | 50.6 | 1.8 | +16.94 | 7.5 |  |  | no edge shown yet |
 | consensus_gap+pin_rlm | both | 30-47 | 39.0 | 38.9 | 0.1 | +10.61 | 13.8 |  |  | DROP: below break-even |
-| consensus_gap+pin_value | both | 178-187 | 48.8 | 46.6 | 2.2 | +7.44 | 2.0 |  |  | no edge shown yet |
-| consensus_gap+rlm_ratio | both | 33-54 | 37.9 | 40.2 | -2.2 | -3.42 | -3.9 |  |  | DROP: below break-even |
-| consensus_gap+sharp_gap | both | 190-301 | 38.7 | 45.4 | -6.7 | -48.75 | -9.9 |  |  | DROP: below break-even |
-| follow_move+money_moving | both | 619-673 | 47.9 | 49.0 | -1.0 | -107.22 | -8.3 |  |  | DROP: below break-even |
-| follow_move+pin_move | both | 488-524 | 48.2 | 49.7 | -1.5 | -78.12 | -7.7 |  |  | DROP: below break-even |
-| follow_move+pin_rlm | both | 142-166 | 46.1 | 43.5 | 2.6 | -8.78 | -2.8 |  |  | DROP: below break-even |
-| follow_move+pin_value | both | 173-166 | 51.0 | 49.2 | 1.9 | -1.87 | -0.6 |  |  | no edge shown yet |
-| follow_move+rlm_ratio | both | 269-332 | 44.8 | 43.8 | 1.0 | -30.56 | -5.1 |  |  | redundant -- identical record to rlm_ratio alone, not independent confirmation |
-| follow_move+sharp_gap | both | 620-673 | 48.0 | 48.7 | -0.8 | -99.81 | -7.7 |  |  | DROP: below break-even |
-| money_moving+pin_move | both | 392-434 | 47.5 | 48.5 | -1.0 | -44.34 | -5.4 |  |  | DROP: below break-even |
-| money_moving+pin_rlm | both | 175-211 | 45.3 | 42.4 | 3.0 | +17.04 | 4.4 |  |  | DROP: below break-even |
-| money_moving+pin_value | both | 214-253 | 45.8 | 47.8 | -2.0 | -27.97 | -6.0 |  |  | DROP: below break-even |
-| money_moving+rlm_ratio | both | 259-319 | 44.8 | 43.9 | 0.9 | -28.1 | -4.9 |  |  | DROP: below break-even |
-| money_moving+sharp_gap | both | 1114-1276 | 46.6 | 47.8 | -1.2 | -170.68 | -7.1 |  |  | DROP: below break-even |
-| pin_move+pin_rlm | both | 167-186 | 47.3 | 43.9 | 3.4 | +11.13 | 3.2 |  |  | DROP: below break-even |
-| pin_move+pin_value | both | 218-222 | 49.5 | 49.5 | 0.0 | -16.41 | -3.7 |  |  | no edge shown yet |
-| pin_move+rlm_ratio | both | 150-162 | 48.1 | 45.0 | 3.1 | +0.43 | 0.1 |  |  | DROP: below break-even |
-| pin_move+sharp_gap | both | 394-441 | 47.2 | 48.3 | -1.1 | -48.22 | -5.8 |  |  | DROP: below break-even |
-| pin_rlm+pin_value | both | 48-51 | 48.5 | 46.5 | 2.0 | +10.26 | 10.4 |  |  | no edge shown yet |
-| pin_rlm+rlm_ratio | both | 142-166 | 46.1 | 43.5 | 2.6 | -8.78 | -2.8 |  |  | DROP: below break-even |
-| pin_rlm+sharp_gap | both | 181-221 | 45.0 | 42.2 | 2.8 | +13.0 | 3.2 |  |  | redundant -- identical record to pin_rlm alone, not independent confirmation |
+| consensus_gap+pin_value | both | 180-188 | 48.9 | 46.5 | 2.4 | +8.3 | 2.3 |  |  | no edge shown yet |
+| consensus_gap+rlm_ratio | both | 34-55 | 38.2 | 40.2 | -2.0 | -3.58 | -4.0 |  |  | DROP: below break-even |
+| consensus_gap+sharp_gap | both | 193-305 | 38.8 | 45.5 | -6.8 | -50.47 | -10.1 |  |  | DROP: below break-even |
+| follow_move+money_moving | both | 628-688 | 47.7 | 48.9 | -1.2 | -115.39 | -8.8 |  |  | DROP: below break-even |
+| follow_move+pin_move | both | 497-529 | 48.4 | 49.7 | -1.2 | -73.87 | -7.2 |  |  | DROP: below break-even |
+| follow_move+pin_rlm | both | 143-169 | 45.8 | 43.4 | 2.4 | -10.83 | -3.5 |  |  | DROP: below break-even |
+| follow_move+pin_value | both | 176-168 | 51.2 | 49.2 | 2.0 | -1.26 | -0.4 |  |  | no edge shown yet |
+| follow_move+rlm_ratio | both | 271-342 | 44.2 | 43.7 | 0.5 | -38.77 | -6.3 |  |  | redundant -- identical record to rlm_ratio alone, not independent confirmation |
+| follow_move+sharp_gap | both | 629-688 | 47.8 | 48.7 | -0.9 | -107.99 | -8.2 |  |  | DROP: below break-even |
+| money_moving+pin_move | both | 398-439 | 47.6 | 48.5 | -0.9 | -43.83 | -5.2 |  |  | DROP: below break-even |
+| money_moving+pin_rlm | both | 176-214 | 45.1 | 42.2 | 2.9 | +14.99 | 3.8 |  |  | DROP: below break-even |
+| money_moving+pin_value | both | 217-258 | 45.7 | 47.8 | -2.1 | -30.35 | -6.4 |  |  | DROP: below break-even |
+| money_moving+rlm_ratio | both | 261-329 | 44.2 | 43.8 | 0.5 | -36.32 | -6.2 |  |  | DROP: below break-even |
+| money_moving+sharp_gap | both | 1126-1299 | 46.4 | 47.8 | -1.3 | -184.19 | -7.6 |  |  | DROP: below break-even |
+| pin_move+pin_rlm | both | 168-188 | 47.2 | 43.8 | 3.4 | +10.09 | 2.8 |  |  | DROP: below break-even |
+| pin_move+pin_value | both | 220-223 | 49.7 | 49.5 | 0.2 | -15.67 | -3.5 |  |  | no edge shown yet |
+| pin_move+rlm_ratio | both | 151-164 | 47.9 | 44.9 | 3.1 | -0.62 | -0.2 |  |  | DROP: below break-even |
+| pin_move+sharp_gap | both | 400-446 | 47.3 | 48.3 | -1.0 | -47.71 | -5.6 |  |  | DROP: below break-even |
+| pin_rlm+pin_value | both | 48-51 | 48.5 | 46.4 | 2.0 | +10.26 | 10.4 |  |  | no edge shown yet |
+| pin_rlm+rlm_ratio | both | 143-169 | 45.8 | 43.4 | 2.4 | -10.83 | -3.5 |  |  | DROP: below break-even |
+| pin_rlm+sharp_gap | both | 182-224 | 44.8 | 42.1 | 2.7 | +10.95 | 2.7 |  |  | redundant -- identical record to pin_rlm alone, not independent confirmation |
 | pin_value+rlm_ratio | both | 45-40 | 52.9 | 48.5 | 4.4 | +1.43 | 1.7 |  |  | no edge shown yet |
-| pin_value+sharp_gap | both | 215-258 | 45.5 | 47.9 | -2.4 | -32.08 | -6.8 |  |  | DROP: below break-even |
-| rlm_ratio+sharp_gap | both | 269-332 | 44.8 | 43.8 | 1.0 | -30.56 | -5.1 |  |  | redundant -- identical record to rlm_ratio alone, not independent confirmation |
-| follow_move+money_delta | both | 202-249 | 44.8 | 45.5 | -0.8 | -44.32 | -9.8 |  |  | DROP: below break-even |
-| money_level+money_moving | both | 816-727 | 52.9 | 52.4 | 0.5 | -70.01 | -4.5 |  |  | no edge shown yet |
-| money_level+sharp_gap | both | 795-719 | 52.5 | 52.2 | 0.4 | -69.51 | -4.6 |  |  | no edge shown yet |
-| follow_move+money_level | both | 716-526 | 57.6 | 56.0 | 1.7 | -64.0 | -5.2 |  |  | beats break-even but not its base rate -- directional bias, not signal |
-| money_level+rlm_ratio | both | 121-105 | 53.5 | 47.9 | 5.6 | +11.02 | 4.9 |  |  | no edge shown yet |
-| consensus_gap+money_level | both | 287-218 | 56.8 | 58.0 | -1.2 | -26.15 | -5.2 |  |  | beats break-even but not its base rate -- directional bias, not signal |
-| money_level+pin_move | both | 382-352 | 52.0 | 53.1 | -1.0 | -42.36 | -5.8 |  |  | no edge shown yet |
-| money_level+pin_value | both | 241-225 | 51.7 | 50.0 | 1.7 | -15.12 | -3.2 |  |  | no edge shown yet |
+| pin_value+sharp_gap | both | 218-263 | 45.3 | 47.9 | -2.6 | -34.46 | -7.2 |  |  | DROP: below break-even |
+| rlm_ratio+sharp_gap | both | 271-342 | 44.2 | 43.7 | 0.5 | -38.77 | -6.3 |  |  | redundant -- identical record to rlm_ratio alone, not independent confirmation |
+| follow_move+money_delta | both | 203-260 | 43.8 | 45.3 | -1.5 | -54.36 | -11.7 |  |  | DROP: below break-even |
+| money_level+money_moving | both | 825-739 | 52.7 | 52.3 | 0.4 | -75.18 | -4.8 |  |  | no edge shown yet |
+| money_level+sharp_gap | both | 804-731 | 52.4 | 52.1 | 0.2 | -74.68 | -4.9 |  |  | no edge shown yet |
+| follow_move+money_level | both | 724-532 | 57.6 | 55.9 | 1.7 | -63.97 | -5.1 |  |  | beats break-even but not its base rate -- directional bias, not signal |
+| money_level+rlm_ratio | both | 122-106 | 53.5 | 47.8 | 5.7 | +10.85 | 4.8 |  |  | no edge shown yet |
+| consensus_gap+money_level | both | 294-220 | 57.2 | 58.1 | -0.9 | -23.59 | -4.6 |  |  | beats break-even but not its base rate -- directional bias, not signal |
+| money_level+pin_move | both | 386-355 | 52.1 | 53.1 | -1.0 | -41.63 | -5.6 |  |  | no edge shown yet |
+| money_level+pin_value | both | 243-231 | 51.3 | 49.9 | 1.3 | -19.3 | -4.1 |  |  | no edge shown yet |
 | consensus_gap+rlm_quiet | both | 28-64 | 30.4 | 37.5 | -7.0 | -15.79 | -17.2 |  |  | DROP: below break-even |
-| follow_move+rlm_quiet | both | 290-423 | 40.7 | 42.1 | -1.4 | -70.86 | -9.9 |  |  | redundant -- identical record to rlm_quiet alone, not independent confirmation |
-| rlm_quiet+sharp_gap | both | 148-236 | 38.5 | 41.6 | -3.1 | -50.33 | -13.1 |  |  | DROP: below break-even |
-| money_delta+money_moving | both | 300-418 | 41.8 | 42.7 | -0.9 | -55.74 | -7.8 |  |  | DROP: below break-even |
-| consensus_gap+money_delta | both | 55-118 | 31.8 | 38.4 | -6.6 | -22.78 | -13.2 |  |  | DROP: below break-even |
-| money_delta+money_level | both | 143-135 | 51.4 | 47.2 | 4.2 | +13.03 | 4.7 |  |  | no edge shown yet |
-| money_delta+pin_value | both | 89-82 | 52.0 | 47.5 | 4.6 | +6.45 | 3.8 |  |  | no edge shown yet |
-| money_delta+sharp_gap | both | 297-412 | 41.9 | 42.7 | -0.8 | -52.91 | -7.5 |  |  | DROP: below break-even |
-| rlm_quiet+rlm_ratio | both | 115-198 | 36.7 | 40.2 | -3.5 | -43.85 | -14.0 |  |  | DROP: below break-even |
-| money_moving+rlm_quiet | both | 140-231 | 37.7 | 41.5 | -3.8 | -51.33 | -13.8 |  |  | DROP: below break-even |
-| money_delta+rlm_quiet | both | 78-136 | 36.4 | 42.4 | -6.0 | -48.86 | -22.8 |  |  | DROP: below break-even |
-| pin_move+rlm_quiet | both | 140-186 | 42.9 | 43.9 | -0.9 | -24.39 | -7.5 |  |  | DROP: below break-even |
-| pin_rlm+rlm_quiet | both | 61-102 | 37.4 | 40.4 | -3.0 | -24.29 | -14.9 |  |  | DROP: below break-even |
+| follow_move+rlm_quiet | both | 293-433 | 40.4 | 42.1 | -1.7 | -77.19 | -10.6 |  |  | redundant -- identical record to rlm_quiet alone, not independent confirmation |
+| rlm_quiet+sharp_gap | both | 149-244 | 37.9 | 41.6 | -3.7 | -57.46 | -14.6 |  |  | DROP: below break-even |
+| money_delta+money_moving | both | 301-430 | 41.2 | 42.7 | -1.5 | -66.79 | -9.1 |  |  | DROP: below break-even |
+| consensus_gap+money_delta | both | 55-119 | 31.6 | 38.3 | -6.7 | -23.78 | -13.7 |  |  | DROP: below break-even |
+| money_delta+money_level | both | 143-138 | 50.9 | 47.1 | 3.7 | +10.03 | 3.6 |  |  | no edge shown yet |
+| money_delta+pin_value | both | 89-83 | 51.7 | 47.5 | 4.3 | +5.45 | 3.2 |  |  | no edge shown yet |
+| money_delta+sharp_gap | both | 298-424 | 41.3 | 42.6 | -1.4 | -63.96 | -8.9 |  |  | DROP: below break-even |
+| rlm_quiet+rlm_ratio | both | 115-206 | 35.8 | 40.2 | -4.3 | -51.85 | -16.2 |  |  | DROP: below break-even |
+| money_moving+rlm_quiet | both | 141-239 | 37.1 | 41.5 | -4.4 | -58.46 | -15.4 |  |  | DROP: below break-even |
+| money_delta+rlm_quiet | both | 78-144 | 35.1 | 42.3 | -7.2 | -56.86 | -25.6 |  |  | DROP: below break-even |
+| pin_move+rlm_quiet | both | 142-188 | 43.0 | 43.7 | -0.6 | -23.59 | -7.1 |  |  | DROP: below break-even |
+| pin_rlm+rlm_quiet | both | 61-105 | 36.7 | 40.1 | -3.4 | -27.29 | -16.4 |  |  | DROP: below break-even |
 | book_lag+money_delta | both | 1-1 | 50.0 | 50.0 | 0.0 | -0.12 | -6.2 |  |  | keep collecting (2/30) |
 | book_lag+money_level | both | 1-1 | 50.0 | 50.0 | 0.0 | -0.12 | -6.2 |  |  | keep collecting (2/30) |
 | book_lag+money_moving | both | 1-1 | 50.0 | 50.0 | 0.0 | -0.12 | -6.2 |  |  | keep collecting (2/30) |
-| book_lag+pin_move | both | 2-1 | 66.7 | 51.0 | 15.7 | +0.75 | 25.1 |  |  | redundant -- identical record to book_lag alone, not independent confirmation |
+| book_lag+pin_move | both | 2-1 | 66.7 | 51.1 | 15.6 | +0.75 | 25.1 |  |  | redundant -- identical record to book_lag alone, not independent confirmation |
 | book_lag+sharp_gap | both | 1-1 | 50.0 | 50.0 | 0.0 | -0.12 | -6.2 |  |  | keep collecting (2/30) |
-| money_delta+pin_move | both | 149-178 | 45.6 | 46.2 | -0.6 | -18.94 | -5.8 |  |  | DROP: below break-even |
+| money_delta+pin_move | both | 150-180 | 45.5 | 46.1 | -0.6 | -19.99 | -6.1 |  |  | DROP: below break-even |
 | money_level+pin_rlm | both | 76-59 | 56.3 | 46.7 | 9.6 | +15.58 | 11.5 |  |  | no edge shown yet |
-| money_delta+pin_rlm | both | 103-125 | 45.2 | 42.4 | 2.8 | +2.76 | 1.2 |  |  | DROP: below break-even |
-| money_delta+rlm_ratio | both | 144-171 | 45.7 | 44.1 | 1.6 | -19.54 | -6.2 |  |  | DROP: below break-even |
-| pin_value+rlm_quiet | both | 37-52 | 41.6 | 47.5 | -5.9 | -7.57 | -8.5 |  |  | DROP: below break-even |
-| book_lag+pin_rlm | both | 1-0 | 100.0 | 49.6 | 50.4 | +0.88 | 87.7 |  |  | keep collecting (1/30) |
-| rlm_quiet | moneyline | 91-186 | 32.9 | 29.3 | 3.5 | -17.84 | -6.4 |  |  | DROP: below break-even |
-| rlm_quiet | spread | 67-70 | 48.9 | 51.3 | -2.4 | -7.64 | -5.6 |  |  | no edge shown yet |
-| rlm_quiet | total | 132-167 | 44.1 | 49.7 | -5.6 | -45.38 | -15.2 |  |  | DROP: below break-even |
-| pin_move | moneyline | 161-153 | 51.3 | 48.1 | 3.2 | +18.44 | 5.9 |  |  | no edge shown yet |
-| pin_move | spread | 259-280 | 48.1 | 50.4 | -2.3 | -44.31 | -8.2 |  |  | DROP: below break-even |
-| pin_move | total | 271-279 | 49.3 | 49.9 | -0.6 | -31.46 | -5.7 |  |  | no edge shown yet |
-| money_delta | moneyline | 76-211 | 26.5 | 30.5 | -4.0 | -52.7 | -18.4 |  |  | DROP: below break-even |
-| money_delta | spread | 141-142 | 49.8 | 51.0 | -1.2 | -13.45 | -4.8 |  |  | no edge shown yet |
-| money_delta | total | 198-184 | 51.8 | 49.7 | 2.1 | -2.53 | -0.7 |  |  | no edge shown yet |
-| pin_rlm | moneyline | 54-104 | 34.2 | 30.2 | 4.0 | +13.85 | 8.8 |  |  | DROP: below break-even |
-| pin_rlm | spread | 30-26 | 53.6 | 51.2 | 2.4 | +1.3 | 2.3 |  |  | no edge shown yet |
-| pin_rlm | total | 97-91 | 51.6 | 49.7 | 1.9 | -2.15 | -1.1 |  |  | no edge shown yet |
-| follow_move | moneyline | 425-325 | 56.7 | 53.1 | 3.5 | -46.35 | -6.2 |  |  | beats break-even but not its base rate -- directional bias, not signal |
-| follow_move | spread | 335-356 | 48.5 | 49.7 | -1.2 | -50.88 | -7.4 |  |  | DROP: below break-even |
-| follow_move | total | 409-430 | 48.7 | 50.0 | -1.2 | -56.37 | -6.7 |  |  | DROP: below break-even |
-| rlm_ratio | moneyline | 61-132 | 31.6 | 30.8 | 0.8 | -20.58 | -10.7 |  |  | DROP: below break-even |
-| rlm_ratio | spread | 52-52 | 50.0 | 50.4 | -0.4 | -4.87 | -4.7 |  |  | no edge shown yet |
-| rlm_ratio | total | 156-148 | 51.3 | 49.8 | 1.6 | -5.1 | -1.7 |  |  | no edge shown yet |
-| money_level | moneyline | 579-247 | 70.1 | 67.4 | 2.6 | -47.52 | -5.8 |  |  | beats break-even but not its base rate -- directional bias, not signal |
-| money_level | spread | 415-419 | 49.8 | 49.1 | 0.7 | -45.15 | -5.4 |  |  | DROP: below break-even |
-| money_level | total | 492-452 | 52.1 | 50.1 | 2.0 | -6.06 | -0.6 |  |  | no edge shown yet |
-| sharp_gap | moneyline | 297-455 | 39.5 | 43.0 | -3.5 | -94.45 | -12.6 |  |  | DROP: below break-even |
-| sharp_gap | spread | 421-405 | 51.0 | 49.5 | 1.4 | -25.25 | -3.1 |  |  | no edge shown yet |
-| sharp_gap | total | 439-475 | 48.0 | 49.9 | -1.9 | -74.46 | -8.1 |  |  | DROP: below break-even |
-| money_moving | moneyline | 314-434 | 42.0 | 44.1 | -2.1 | -71.51 | -9.6 |  |  | DROP: below break-even |
-| money_moving | spread | 418-408 | 50.6 | 49.5 | 1.1 | -31.12 | -3.8 |  |  | no edge shown yet |
-| money_moving | total | 439-484 | 47.6 | 49.9 | -2.4 | -83.63 | -9.1 |  |  | DROP: below break-even |
-| pin_value | moneyline | 25-67 | 27.2 | 34.6 | -7.4 | +19.98 | 21.7 |  |  | DROP: below break-even |
-| pin_value | spread | 230-209 | 52.4 | 49.6 | 2.8 | -8.79 | -2.0 |  |  | no edge shown yet |
-| pin_value | total | 249-230 | 52.0 | 50.1 | 1.9 | -5.83 | -1.2 |  |  | no edge shown yet |
-| book_lag | spread | 1-0 | 100.0 | 53.0 | 47.0 | +0.88 | 87.7 |  |  | keep collecting (1/30) |
+| money_delta+pin_rlm | both | 104-128 | 44.8 | 42.2 | 2.6 | +0.71 | 0.3 |  |  | DROP: below break-even |
+| money_delta+rlm_ratio | both | 145-180 | 44.6 | 43.9 | 0.7 | -27.59 | -8.5 |  |  | DROP: below break-even |
+| pin_value+rlm_quiet | both | 38-52 | 42.2 | 47.5 | -5.2 | -6.7 | -7.4 |  |  | DROP: below break-even |
+| book_lag+pin_rlm | both | 1-0 | 100.0 | 49.5 | 50.5 | +0.88 | 87.7 |  |  | keep collecting (1/30) |
+| rlm_quiet | moneyline | 93-190 | 32.9 | 29.3 | 3.6 | -19.04 | -6.7 |  |  | DROP: below break-even |
+| rlm_quiet | spread | 67-72 | 48.2 | 51.4 | -3.2 | -9.64 | -6.9 |  |  | no edge shown yet |
+| rlm_quiet | total | 133-171 | 43.8 | 49.7 | -5.9 | -48.51 | -16.0 |  |  | DROP: below break-even |
+| pin_move | moneyline | 163-156 | 51.1 | 47.9 | 3.2 | +18.24 | 5.7 |  |  | no edge shown yet |
+| pin_move | spread | 263-281 | 48.3 | 50.4 | -2.1 | -41.67 | -7.7 |  |  | DROP: below break-even |
+| pin_move | total | 275-280 | 49.5 | 49.9 | -0.3 | -28.7 | -5.2 |  |  | no edge shown yet |
+| money_delta | moneyline | 76-218 | 25.9 | 30.4 | -4.6 | -59.7 | -20.3 |  |  | DROP: below break-even |
+| money_delta | spread | 141-144 | 49.5 | 51.1 | -1.6 | -15.45 | -5.4 |  |  | no edge shown yet |
+| money_delta | total | 199-189 | 51.3 | 49.7 | 1.6 | -6.58 | -1.7 |  |  | no edge shown yet |
+| pin_rlm | moneyline | 54-107 | 33.5 | 30.1 | 3.4 | +10.85 | 6.7 |  |  | DROP: below break-even |
+| pin_rlm | spread | 30-26 | 53.6 | 51.3 | 2.3 | +1.3 | 2.3 |  |  | no edge shown yet |
+| pin_rlm | total | 98-91 | 51.9 | 49.7 | 2.2 | -1.2 | -0.6 |  |  | no edge shown yet |
+| follow_move | moneyline | 429-332 | 56.4 | 53.0 | 3.4 | -49.99 | -6.6 |  |  | beats break-even but not its base rate -- directional bias, not signal |
+| follow_move | spread | 340-361 | 48.5 | 49.7 | -1.2 | -51.45 | -7.3 |  |  | DROP: below break-even |
+| follow_move | total | 416-435 | 48.9 | 49.9 | -1.1 | -54.87 | -6.4 |  |  | DROP: below break-even |
+| rlm_ratio | moneyline | 61-138 | 30.7 | 30.7 | -0.0 | -26.58 | -13.4 |  |  | DROP: below break-even |
+| rlm_ratio | spread | 53-52 | 50.5 | 50.5 | 0.0 | -4.04 | -3.8 |  |  | no edge shown yet |
+| rlm_ratio | total | 157-152 | 50.8 | 49.7 | 1.1 | -8.15 | -2.6 |  |  | no edge shown yet |
+| money_level | moneyline | 586-251 | 70.0 | 67.5 | 2.5 | -48.65 | -5.8 |  |  | beats break-even but not its base rate -- directional bias, not signal |
+| money_level | spread | 420-425 | 49.7 | 49.0 | 0.7 | -46.74 | -5.5 |  |  | DROP: below break-even |
+| money_level | total | 500-456 | 52.3 | 50.2 | 2.1 | -2.74 | -0.3 |  |  | no edge shown yet |
+| sharp_gap | moneyline | 299-464 | 39.2 | 43.1 | -3.9 | -102.88 | -13.5 |  |  | DROP: below break-even |
+| sharp_gap | spread | 427-411 | 51.0 | 49.5 | 1.5 | -26.02 | -3.1 |  |  | no edge shown yet |
+| sharp_gap | total | 443-483 | 47.8 | 49.9 | -2.1 | -78.77 | -8.5 |  |  | DROP: below break-even |
+| money_moving | moneyline | 316-443 | 41.6 | 44.1 | -2.5 | -79.94 | -10.5 |  |  | DROP: below break-even |
+| money_moving | spread | 424-414 | 50.6 | 49.4 | 1.1 | -31.89 | -3.8 |  |  | no edge shown yet |
+| money_moving | total | 443-492 | 47.4 | 49.9 | -2.6 | -87.95 | -9.4 |  |  | DROP: below break-even |
+| pin_value | moneyline | 26-68 | 27.7 | 34.5 | -6.8 | +20.62 | 21.9 |  |  | DROP: below break-even |
+| pin_value | spread | 233-212 | 52.4 | 49.5 | 2.8 | -9.1 | -2.0 |  |  | no edge shown yet |
+| pin_value | total | 252-233 | 52.0 | 50.1 | 1.9 | -6.14 | -1.3 |  |  | no edge shown yet |
+| book_lag | spread | 1-0 | 100.0 | 53.3 | 46.7 | +0.88 | 87.7 |  |  | keep collecting (1/30) |
 | book_lag | total | 1-1 | 50.0 | 50.0 | 0.0 | -0.12 | -6.2 |  |  | keep collecting (2/30) |
-| consensus_gap | moneyline | 208-324 | 39.1 | 47.7 | -8.6 | -78.5 | -14.8 |  |  | DROP: below break-even |
-| consensus_gap | spread | 112-96 | 53.8 | 49.1 | 4.8 | -0.16 | -0.1 |  |  | no edge shown yet |
-| consensus_gap | total | 140-131 | 51.7 | 50.2 | 1.5 | -6.55 | -2.4 |  |  | no edge shown yet |
-| money_level+money_moving | moneyline | 212-127 | 62.5 | 62.3 | 0.2 | -16.17 | -4.8 |  |  | beats break-even but not its base rate -- directional bias, not signal |
-| money_level+sharp_gap | moneyline | 195-128 | 60.4 | 61.8 | -1.4 | -21.19 | -6.6 |  |  | beats break-even but not its base rate -- directional bias, not signal |
-| money_moving+sharp_gap | moneyline | 278-415 | 40.1 | 43.0 | -2.9 | -67.91 | -9.8 |  |  | DROP: below break-even |
-| consensus_gap+follow_move | moneyline | 72-85 | 45.9 | 52.9 | -7.0 | -24.78 | -15.8 |  |  | DROP: below break-even |
+| consensus_gap | moneyline | 212-328 | 39.3 | 47.9 | -8.7 | -80.55 | -14.9 |  |  | DROP: below break-even |
+| consensus_gap | spread | 114-96 | 54.3 | 49.0 | 5.3 | +1.63 | 0.8 |  |  | no edge shown yet |
+| consensus_gap | total | 142-132 | 51.8 | 50.3 | 1.6 | -5.77 | -2.1 |  |  | no edge shown yet |
+| money_level+money_moving | moneyline | 214-131 | 62.0 | 62.4 | -0.4 | -19.6 | -5.7 |  |  | beats break-even but not its base rate -- directional bias, not signal |
+| money_level+sharp_gap | moneyline | 197-132 | 59.9 | 61.8 | -1.9 | -24.62 | -7.5 |  |  | beats break-even but not its base rate -- directional bias, not signal |
+| money_moving+sharp_gap | moneyline | 280-424 | 39.8 | 43.0 | -3.3 | -76.34 | -10.8 |  |  | DROP: below break-even |
+| consensus_gap+follow_move | moneyline | 73-86 | 45.9 | 52.8 | -6.9 | -25.25 | -15.9 |  |  | DROP: below break-even |
 | consensus_gap+rlm_quiet | moneyline | 10-48 | 17.2 | 30.0 | -12.8 | -15.86 | -27.3 |  |  | DROP: below break-even |
-| follow_move+rlm_quiet | moneyline | 91-186 | 32.9 | 29.3 | 3.5 | -17.84 | -6.4 |  |  | redundant -- identical record to rlm_quiet alone, not independent confirmation |
-| consensus_gap+money_level | moneyline | 147-88 | 62.6 | 67.8 | -5.2 | -18.27 | -7.8 |  |  | beats break-even but not its base rate -- directional bias, not signal |
-| consensus_gap+money_moving | moneyline | 76-178 | 29.9 | 42.6 | -12.6 | -29.23 | -11.5 |  |  | !! CHECK: consensus_gap+money_moving close moneyline all sits -12.6 pts from its base (42.6%). Verify the base is the right comparison and the sample is not a composition artifact.  ||  DROP: below break-even |
-| follow_move+money_level | moneyline | 309-118 | 72.4 | 68.2 | 4.1 | -25.14 | -5.9 |  |  | beats break-even but not its base rate -- directional bias, not signal |
-| follow_move+money_moving | moneyline | 158-177 | 47.2 | 46.9 | 0.3 | -30.41 | -9.1 |  |  | DROP: below break-even |
-| money_delta+money_moving | moneyline | 71-191 | 27.1 | 30.0 | -2.9 | -37.4 | -14.3 |  |  | DROP: below break-even |
-| money_delta+sharp_gap | moneyline | 69-190 | 26.6 | 30.0 | -3.4 | -38.59 | -14.9 |  |  | DROP: below break-even |
-| consensus_gap+sharp_gap | moneyline | 74-186 | 28.5 | 41.6 | -13.1 | -34.97 | -13.4 |  |  | !! CHECK: consensus_gap+sharp_gap close moneyline all sits -13.1 pts from its base (41.6%). Verify the base is the right comparison and the sample is not a composition artifact.  ||  DROP: below break-even |
-| follow_move+sharp_gap | moneyline | 150-179 | 45.6 | 45.9 | -0.3 | -33.44 | -10.2 |  |  | DROP: below break-even |
-| money_moving+rlm_quiet | moneyline | 43-109 | 28.3 | 29.1 | -0.8 | -18.39 | -12.1 |  |  | DROP: below break-even |
-| rlm_quiet+sharp_gap | moneyline | 44-111 | 28.4 | 29.1 | -0.7 | -20.79 | -13.4 |  |  | DROP: below break-even |
+| follow_move+rlm_quiet | moneyline | 93-190 | 32.9 | 29.3 | 3.6 | -19.04 | -6.7 |  |  | redundant -- identical record to rlm_quiet alone, not independent confirmation |
+| consensus_gap+money_level | moneyline | 151-90 | 62.7 | 67.9 | -5.2 | -18.33 | -7.6 |  |  | beats break-even but not its base rate -- directional bias, not signal |
+| consensus_gap+money_moving | moneyline | 77-181 | 29.8 | 42.8 | -13.0 | -31.7 | -12.3 |  |  | !! CHECK: consensus_gap+money_moving close moneyline all sits -13.0 pts from its base (42.8%). Verify the base is the right comparison and the sample is not a composition artifact.  ||  DROP: below break-even |
+| follow_move+money_level | moneyline | 311-120 | 72.2 | 68.2 | 4.0 | -26.57 | -6.2 |  |  | beats break-even but not its base rate -- directional bias, not signal |
+| follow_move+money_moving | moneyline | 160-184 | 46.5 | 46.8 | -0.2 | -36.84 | -10.7 |  |  | DROP: below break-even |
+| money_delta+money_moving | moneyline | 71-197 | 26.5 | 30.0 | -3.5 | -43.4 | -16.2 |  |  | DROP: below break-even |
+| money_delta+sharp_gap | moneyline | 69-196 | 26.0 | 30.0 | -4.0 | -44.59 | -16.8 |  |  | DROP: below break-even |
+| consensus_gap+sharp_gap | moneyline | 75-189 | 28.4 | 41.9 | -13.5 | -37.44 | -14.2 |  |  | !! CHECK: consensus_gap+sharp_gap close moneyline all sits -13.5 pts from its base (41.9%). Verify the base is the right comparison and the sample is not a composition artifact.  ||  DROP: below break-even |
+| follow_move+sharp_gap | moneyline | 152-186 | 45.0 | 45.8 | -0.8 | -39.87 | -11.8 |  |  | DROP: below break-even |
+| money_moving+rlm_quiet | moneyline | 43-113 | 27.6 | 29.1 | -1.5 | -22.39 | -14.4 |  |  | DROP: below break-even |
+| rlm_quiet+sharp_gap | moneyline | 44-115 | 27.7 | 29.1 | -1.4 | -24.79 | -15.6 |  |  | DROP: below break-even |
 | consensus_gap+pin_move | moneyline | 49-41 | 54.4 | 51.9 | 2.5 | +22.74 | 25.3 |  |  | no edge shown yet |
-| consensus_gap+pin_rlm | moneyline | 14-32 | 30.4 | 31.4 | -0.9 | +11.53 | 25.1 |  |  | DROP: below break-even |
-| consensus_gap+rlm_ratio | moneyline | 7-37 | 15.9 | 30.5 | -14.6 | -9.26 | -21.0 |  |  | DROP: below break-even |
-| follow_move+pin_move | moneyline | 125-113 | 52.5 | 48.9 | 3.6 | +1.45 | 0.6 |  |  | no edge shown yet |
-| follow_move+pin_rlm | moneyline | 37-65 | 36.3 | 30.7 | 5.6 | -4.12 | -4.0 |  |  | DROP: below break-even |
-| follow_move+rlm_ratio | moneyline | 61-132 | 31.6 | 30.8 | 0.8 | -20.58 | -10.7 |  |  | redundant -- identical record to rlm_ratio alone, not independent confirmation |
-| money_moving+pin_move | moneyline | 70-87 | 44.6 | 42.5 | 2.1 | +10.04 | 6.4 |  |  | DROP: below break-even |
-| money_moving+pin_rlm | moneyline | 53-97 | 35.3 | 30.3 | 5.1 | +19.45 | 13.0 |  |  | DROP: below break-even |
-| money_moving+rlm_ratio | moneyline | 59-124 | 32.2 | 30.9 | 1.3 | -15.7 | -8.6 |  |  | DROP: below break-even |
-| pin_move+pin_rlm | moneyline | 40-69 | 36.7 | 30.1 | 6.6 | +11.99 | 11.0 |  |  | DROP: below break-even |
-| pin_move+rlm_quiet | moneyline | 42-62 | 40.4 | 29.8 | 10.6 | +8.9 | 8.6 |  |  | DROP: below break-even |
-| pin_move+rlm_ratio | moneyline | 31-52 | 37.3 | 31.1 | 6.2 | +1.62 | 1.9 |  |  | DROP: below break-even |
-| pin_move+sharp_gap | moneyline | 68-93 | 42.2 | 41.6 | 0.6 | +3.47 | 2.2 |  |  | DROP: below break-even |
-| pin_rlm+rlm_quiet | moneyline | 24-53 | 31.2 | 29.7 | 1.5 | -9.26 | -12.0 |  |  | DROP: below break-even |
-| pin_rlm+rlm_ratio | moneyline | 37-65 | 36.3 | 30.7 | 5.6 | -4.12 | -4.0 |  |  | DROP: below break-even |
-| pin_rlm+sharp_gap | moneyline | 54-104 | 34.2 | 30.2 | 4.0 | +13.85 | 8.8 |  |  | redundant -- identical record to pin_rlm alone, not independent confirmation |
-| rlm_quiet+rlm_ratio | moneyline | 40-106 | 27.4 | 29.1 | -1.7 | -20.63 | -14.1 |  |  | DROP: below break-even |
-| rlm_ratio+sharp_gap | moneyline | 61-132 | 31.6 | 30.8 | 0.8 | -20.58 | -10.7 |  |  | redundant -- identical record to rlm_ratio alone, not independent confirmation |
-| consensus_gap+money_delta | moneyline | 16-87 | 15.5 | 30.2 | -14.7 | -25.79 | -25.0 |  |  | DROP: below break-even |
-| consensus_gap+pin_value | moneyline | 17-51 | 25.0 | 33.0 | -8.0 | +3.23 | 4.7 |  |  | DROP: below break-even |
-| money_delta+pin_move | moneyline | 25-46 | 35.2 | 31.6 | 3.6 | -0.3 | -0.4 |  |  | DROP: below break-even |
-| money_delta+pin_rlm | moneyline | 31-58 | 34.8 | 30.5 | 4.3 | +3.91 | 4.4 |  |  | DROP: below break-even |
-| money_delta+pin_value | moneyline | 4-18 | 18.2 | 28.6 | -10.4 | -5.3 | -24.1 |  |  | keep collecting (22/30) |
+| consensus_gap+pin_rlm | moneyline | 14-32 | 30.4 | 31.3 | -0.9 | +11.53 | 25.1 |  |  | DROP: below break-even |
+| consensus_gap+rlm_ratio | moneyline | 7-38 | 15.6 | 30.4 | -14.9 | -10.26 | -22.8 |  |  | DROP: below break-even |
+| follow_move+pin_move | moneyline | 127-116 | 52.3 | 48.7 | 3.6 | +1.25 | 0.5 |  |  | no edge shown yet |
+| follow_move+pin_rlm | moneyline | 37-68 | 35.2 | 30.6 | 4.7 | -7.12 | -6.8 |  |  | DROP: below break-even |
+| follow_move+rlm_ratio | moneyline | 61-138 | 30.7 | 30.7 | -0.0 | -26.58 | -13.4 |  |  | redundant -- identical record to rlm_ratio alone, not independent confirmation |
+| money_moving+pin_move | moneyline | 70-90 | 43.8 | 42.5 | 1.3 | +7.04 | 4.4 |  |  | DROP: below break-even |
+| money_moving+pin_rlm | moneyline | 53-100 | 34.6 | 30.2 | 4.4 | +16.45 | 10.8 |  |  | DROP: below break-even |
+| money_moving+rlm_ratio | moneyline | 59-130 | 31.2 | 30.8 | 0.4 | -21.7 | -11.5 |  |  | DROP: below break-even |
+| pin_move+pin_rlm | moneyline | 40-71 | 36.0 | 30.1 | 6.0 | +9.99 | 9.0 |  |  | DROP: below break-even |
+| pin_move+rlm_quiet | moneyline | 44-64 | 40.7 | 29.7 | 11.0 | +9.7 | 9.0 |  |  | DROP: below break-even |
+| pin_move+rlm_ratio | moneyline | 31-54 | 36.5 | 31.1 | 5.4 | -0.38 | -0.5 |  |  | DROP: below break-even |
+| pin_move+sharp_gap | moneyline | 68-96 | 41.5 | 41.6 | -0.2 | +0.47 | 0.3 |  |  | DROP: below break-even |
+| pin_rlm+rlm_quiet | moneyline | 24-56 | 30.0 | 29.6 | 0.4 | -12.26 | -15.3 |  |  | DROP: below break-even |
+| pin_rlm+rlm_ratio | moneyline | 37-68 | 35.2 | 30.6 | 4.7 | -7.12 | -6.8 |  |  | DROP: below break-even |
+| pin_rlm+sharp_gap | moneyline | 54-107 | 33.5 | 30.1 | 3.4 | +10.85 | 6.7 |  |  | redundant -- identical record to pin_rlm alone, not independent confirmation |
+| rlm_quiet+rlm_ratio | moneyline | 40-110 | 26.7 | 29.1 | -2.4 | -24.63 | -16.4 |  |  | DROP: below break-even |
+| rlm_ratio+sharp_gap | moneyline | 61-138 | 30.7 | 30.7 | -0.0 | -26.58 | -13.4 |  |  | redundant -- identical record to rlm_ratio alone, not independent confirmation |
+| consensus_gap+money_delta | moneyline | 16-88 | 15.4 | 30.2 | -14.8 | -26.79 | -25.8 |  |  | DROP: below break-even |
+| consensus_gap+pin_value | moneyline | 17-52 | 24.6 | 32.9 | -8.3 | +2.23 | 3.2 |  |  | DROP: below break-even |
+| money_delta+pin_move | moneyline | 25-48 | 34.2 | 31.5 | 2.8 | -2.3 | -3.2 |  |  | DROP: below break-even |
+| money_delta+pin_rlm | moneyline | 31-61 | 33.7 | 30.4 | 3.3 | +0.91 | 1.0 |  |  | DROP: below break-even |
+| money_delta+pin_value | moneyline | 4-18 | 18.2 | 28.5 | -10.4 | -5.3 | -24.1 |  |  | keep collecting (22/30) |
 | money_moving+pin_value | moneyline | 13-37 | 26.0 | 32.8 | -6.8 | +10.89 | 21.8 |  |  | DROP: below break-even |
-| pin_move+pin_value | moneyline | 9-13 | 40.9 | 40.3 | 0.7 | +6.3 | 28.6 |  |  | keep collecting (22/30) |
-| pin_rlm+pin_value | moneyline | 6-11 | 35.3 | 28.6 | 6.7 | +12.45 | 73.2 |  |  | keep collecting (17/30) |
+| pin_move+pin_value | moneyline | 9-13 | 40.9 | 40.2 | 0.7 | +6.3 | 28.6 |  |  | keep collecting (22/30) |
+| pin_rlm+pin_value | moneyline | 6-11 | 35.3 | 28.5 | 6.8 | +12.45 | 73.2 |  |  | keep collecting (17/30) |
 | pin_value+sharp_gap | moneyline | 13-41 | 24.1 | 34.1 | -10.0 | +6.89 | 12.8 |  |  | DROP: below break-even |
-| follow_move+money_delta | moneyline | 38-77 | 33.0 | 32.7 | 0.4 | -21.98 | -19.1 |  |  | DROP: below break-even |
-| money_delta+money_level | moneyline | 21-27 | 43.8 | 34.8 | 8.9 | +10.22 | 21.3 |  |  | no edge shown yet |
-| money_delta+rlm_ratio | moneyline | 32-66 | 32.7 | 31.6 | 1.0 | -16.47 | -16.8 |  |  | DROP: below break-even |
-| money_level+pin_move | moneyline | 95-58 | 62.1 | 65.6 | -3.5 | -8.05 | -5.3 |  |  | beats break-even but not its base rate -- directional bias, not signal |
+| follow_move+money_delta | moneyline | 38-83 | 31.4 | 32.4 | -1.0 | -27.98 | -23.1 |  |  | DROP: below break-even |
+| money_delta+money_level | moneyline | 21-28 | 42.9 | 34.7 | 8.2 | +9.22 | 18.8 |  |  | no edge shown yet |
+| money_delta+rlm_ratio | moneyline | 32-72 | 30.8 | 31.4 | -0.7 | -22.47 | -21.6 |  |  | DROP: below break-even |
+| money_level+pin_move | moneyline | 95-59 | 61.7 | 65.6 | -3.9 | -9.05 | -5.9 |  |  | beats break-even but not its base rate -- directional bias, not signal |
 | money_level+pin_rlm | moneyline | 14-14 | 50.0 | 34.7 | 15.3 | +3.97 | 14.2 |  |  | keep collecting (28/30) |
-| money_level+rlm_ratio | moneyline | 17-20 | 45.9 | 37.8 | 8.1 | +1.43 | 3.9 |  |  | no edge shown yet |
-| money_delta+rlm_quiet | moneyline | 24-59 | 28.9 | 30.1 | -1.2 | -21.64 | -26.1 |  |  | DROP: below break-even |
+| money_level+rlm_ratio | moneyline | 17-21 | 44.7 | 37.6 | 7.2 | +0.43 | 1.1 |  |  | no edge shown yet |
+| money_delta+rlm_quiet | moneyline | 24-63 | 27.6 | 30.0 | -2.4 | -25.64 | -29.5 |  |  | DROP: below break-even |
 | money_level+pin_value | moneyline | 6-8 | 42.9 | 65.3 | -22.5 | -4.75 | -33.9 |  |  | keep collecting (14/30) |
 | follow_move+pin_value | moneyline | 5-10 | 33.3 | 40.0 | -6.7 | +4.75 | 31.7 |  |  | keep collecting (15/30) |
-| pin_value+rlm_quiet | moneyline | 3-7 | 30.0 | 28.6 | 1.4 | +6.5 | 65.0 |  |  | keep collecting (10/30) |
-| pin_value+rlm_ratio | moneyline | 2-3 | 40.0 | 28.6 | 11.4 | -0.1 | -2.0 |  |  | keep collecting (5/30) |
-| consensus_gap+follow_move | spread | 39-32 | 54.9 | 48.4 | 6.6 | +1.39 | 2.0 |  |  | no edge shown yet |
-| consensus_gap+money_moving | spread | 54-51 | 51.4 | 48.8 | 2.6 | -4.88 | -4.7 |  |  | no edge shown yet |
-| consensus_gap+pin_move | spread | 33-38 | 46.5 | 49.4 | -2.9 | -9.7 | -13.7 |  |  | no edge shown yet |
-| consensus_gap+pin_rlm | spread | 5-4 | 55.6 | 50.3 | 5.2 | +0.3 | 3.3 |  |  | keep collecting (9/30) |
-| consensus_gap+pin_value | spread | 80-60 | 57.1 | 49.1 | 8.1 | +8.31 | 5.9 |  |  | no edge shown yet |
-| consensus_gap+rlm_ratio | spread | 6-4 | 60.0 | 50.0 | 10.0 | +1.09 | 10.9 |  |  | keep collecting (10/30) |
-| consensus_gap+sharp_gap | spread | 53-51 | 51.0 | 49.0 | 1.9 | -5.78 | -5.6 |  |  | no edge shown yet |
-| follow_move+money_moving | spread | 195-196 | 49.9 | 49.3 | 0.5 | -19.47 | -5.0 |  |  | no edge shown yet |
-| follow_move+pin_move | spread | 161-188 | 46.1 | 50.1 | -4.0 | -41.24 | -11.8 |  |  | DROP: below break-even |
-| follow_move+pin_rlm | spread | 21-21 | 50.0 | 50.7 | -0.7 | -1.83 | -4.4 |  |  | no edge shown yet |
-| follow_move+pin_value | spread | 74-66 | 52.9 | 49.1 | 3.8 | -1.44 | -1.0 |  |  | no edge shown yet |
-| follow_move+rlm_ratio | spread | 52-52 | 50.0 | 50.4 | -0.4 | -4.87 | -4.7 |  |  | redundant -- identical record to rlm_ratio alone, not independent confirmation |
-| follow_move+sharp_gap | spread | 196-195 | 50.1 | 49.4 | 0.8 | -17.34 | -4.4 |  |  | no edge shown yet |
-| money_moving+pin_move | spread | 145-155 | 48.3 | 49.9 | -1.6 | -23.97 | -8.0 |  |  | no edge shown yet |
-| money_moving+pin_rlm | spread | 28-26 | 51.9 | 51.1 | 0.7 | -0.53 | -1.0 |  |  | no edge shown yet |
-| money_moving+pin_value | spread | 105-109 | 49.1 | 49.2 | -0.1 | -18.35 | -8.6 |  |  | no edge shown yet |
-| money_moving+rlm_ratio | spread | 50-51 | 49.5 | 50.3 | -0.8 | -5.81 | -5.7 |  |  | no edge shown yet |
-| money_moving+sharp_gap | spread | 413-400 | 50.8 | 49.5 | 1.3 | -27.62 | -3.4 |  |  | no edge shown yet |
-| pin_move+pin_rlm | spread | 30-26 | 53.6 | 51.2 | 2.4 | +1.3 | 2.3 |  |  | redundant -- identical record to pin_rlm alone, not independent confirmation |
-| pin_move+pin_value | spread | 103-107 | 49.0 | 50.0 | -0.9 | -16.38 | -7.8 |  |  | no edge shown yet |
-| pin_move+rlm_ratio | spread | 27-28 | 49.1 | 50.7 | -1.6 | -3.52 | -6.4 |  |  | no edge shown yet |
-| pin_move+sharp_gap | spread | 148-155 | 48.8 | 49.9 | -1.1 | -21.24 | -7.0 |  |  | no edge shown yet |
-| pin_rlm+pin_value | spread | 10-11 | 47.6 | 51.3 | -3.7 | -2.19 | -10.4 |  |  | keep collecting (21/30) |
-| pin_rlm+rlm_ratio | spread | 21-21 | 50.0 | 50.7 | -0.7 | -1.83 | -4.4 |  |  | no edge shown yet |
-| pin_rlm+sharp_gap | spread | 30-26 | 53.6 | 51.2 | 2.4 | +1.3 | 2.3 |  |  | redundant -- identical record to pin_rlm alone, not independent confirmation |
+| pin_value+rlm_quiet | moneyline | 3-7 | 30.0 | 28.5 | 1.5 | +6.5 | 65.0 |  |  | keep collecting (10/30) |
+| pin_value+rlm_ratio | moneyline | 2-3 | 40.0 | 28.5 | 11.5 | -0.1 | -2.0 |  |  | keep collecting (5/30) |
+| consensus_gap+follow_move | spread | 40-32 | 55.6 | 48.3 | 7.3 | +2.22 | 3.1 |  |  | no edge shown yet |
+| consensus_gap+money_moving | spread | 55-51 | 51.9 | 48.8 | 3.1 | -4.05 | -3.8 |  |  | no edge shown yet |
+| consensus_gap+pin_move | spread | 33-38 | 46.5 | 49.3 | -2.8 | -9.7 | -13.7 |  |  | no edge shown yet |
+| consensus_gap+pin_rlm | spread | 5-4 | 55.6 | 50.4 | 5.2 | +0.3 | 3.3 |  |  | keep collecting (9/30) |
+| consensus_gap+pin_value | spread | 81-60 | 57.4 | 49.0 | 8.4 | +9.27 | 6.6 |  |  | no edge shown yet |
+| consensus_gap+rlm_ratio | spread | 7-4 | 63.6 | 50.3 | 13.3 | +1.92 | 17.5 |  |  | keep collecting (11/30) |
+| consensus_gap+sharp_gap | spread | 54-51 | 51.4 | 49.0 | 2.5 | -4.95 | -4.7 |  |  | no edge shown yet |
+| follow_move+money_moving | spread | 198-199 | 49.9 | 49.3 | 0.6 | -19.9 | -5.0 |  |  | no edge shown yet |
+| follow_move+pin_move | spread | 164-189 | 46.5 | 50.1 | -3.7 | -39.55 | -11.2 |  |  | DROP: below break-even |
+| follow_move+pin_rlm | spread | 21-21 | 50.0 | 50.8 | -0.8 | -1.83 | -4.4 |  |  | no edge shown yet |
+| follow_move+pin_value | spread | 75-67 | 52.8 | 49.0 | 3.8 | -1.61 | -1.1 |  |  | no edge shown yet |
+| follow_move+rlm_ratio | spread | 53-52 | 50.5 | 50.5 | 0.0 | -4.04 | -3.8 |  |  | redundant -- identical record to rlm_ratio alone, not independent confirmation |
+| follow_move+sharp_gap | spread | 199-198 | 50.1 | 49.3 | 0.8 | -17.76 | -4.5 |  |  | no edge shown yet |
+| money_moving+pin_move | spread | 148-156 | 48.7 | 49.9 | -1.2 | -22.28 | -7.3 |  |  | no edge shown yet |
+| money_moving+pin_rlm | spread | 28-26 | 51.9 | 51.2 | 0.6 | -0.53 | -1.0 |  |  | no edge shown yet |
+| money_moving+pin_value | spread | 106-112 | 48.6 | 49.1 | -0.5 | -20.52 | -9.4 |  |  | no edge shown yet |
+| money_moving+rlm_ratio | spread | 51-51 | 50.0 | 50.4 | -0.4 | -4.97 | -4.9 |  |  | no edge shown yet |
+| money_moving+sharp_gap | spread | 419-406 | 50.8 | 49.5 | 1.3 | -28.39 | -3.4 |  |  | no edge shown yet |
+| pin_move+pin_rlm | spread | 30-26 | 53.6 | 51.3 | 2.3 | +1.3 | 2.3 |  |  | redundant -- identical record to pin_rlm alone, not independent confirmation |
+| pin_move+pin_value | spread | 104-107 | 49.3 | 50.0 | -0.7 | -15.54 | -7.4 |  |  | no edge shown yet |
+| pin_move+rlm_ratio | spread | 27-28 | 49.1 | 50.8 | -1.7 | -3.52 | -6.4 |  |  | no edge shown yet |
+| pin_move+sharp_gap | spread | 151-156 | 49.2 | 49.9 | -0.7 | -19.55 | -6.4 |  |  | no edge shown yet |
+| pin_rlm+pin_value | spread | 10-11 | 47.6 | 51.4 | -3.8 | -2.19 | -10.4 |  |  | keep collecting (21/30) |
+| pin_rlm+rlm_ratio | spread | 21-21 | 50.0 | 50.8 | -0.8 | -1.83 | -4.4 |  |  | no edge shown yet |
+| pin_rlm+sharp_gap | spread | 30-26 | 53.6 | 51.3 | 2.3 | +1.3 | 2.3 |  |  | redundant -- identical record to pin_rlm alone, not independent confirmation |
 | pin_value+rlm_ratio | spread | 8-8 | 50.0 | 49.6 | 0.4 | -1.17 | -7.3 |  |  | keep collecting (16/30) |
-| pin_value+sharp_gap | spread | 105-109 | 49.1 | 49.3 | -0.2 | -18.41 | -8.6 |  |  | no edge shown yet |
-| rlm_ratio+sharp_gap | spread | 52-52 | 50.0 | 50.4 | -0.4 | -4.87 | -4.7 |  |  | redundant -- identical record to rlm_ratio alone, not independent confirmation |
-| follow_move+money_level | spread | 184-192 | 48.9 | 48.9 | -0.0 | -25.57 | -6.8 |  |  | no edge shown yet |
-| money_level+rlm_ratio | spread | 30-30 | 50.0 | 50.0 | 0.0 | -3.02 | -5.0 |  |  | no edge shown yet |
-| money_level+sharp_gap | spread | 321-311 | 50.8 | 49.1 | 1.7 | -22.1 | -3.5 |  |  | no edge shown yet |
-| consensus_gap+money_level | spread | 65-58 | 52.8 | 48.5 | 4.4 | -2.35 | -1.9 |  |  | no edge shown yet |
-| money_level+money_moving | spread | 320-312 | 50.6 | 49.1 | 1.6 | -24.02 | -3.8 |  |  | no edge shown yet |
-| money_level+pin_move | spread | 129-151 | 46.1 | 49.6 | -3.5 | -34.99 | -12.5 |  |  | DROP: below break-even |
-| money_level+pin_value | spread | 113-112 | 50.2 | 48.8 | 1.5 | -14.6 | -6.5 |  |  | no edge shown yet |
-| consensus_gap+money_delta | spread | 17-15 | 53.1 | 50.9 | 2.2 | -0.46 | -1.4 |  |  | no edge shown yet |
-| follow_move+money_delta | spread | 46-53 | 46.5 | 50.5 | -4.0 | -11.4 | -11.5 |  |  | no edge shown yet |
-| money_delta+money_level | spread | 47-45 | 51.1 | 49.9 | 1.2 | -2.69 | -2.9 |  |  | no edge shown yet |
-| money_delta+money_moving | spread | 81-86 | 48.5 | 50.5 | -2.0 | -12.88 | -7.7 |  |  | no edge shown yet |
-| money_delta+pin_value | spread | 38-30 | 55.9 | 50.8 | 5.1 | +3.19 | 4.7 |  |  | no edge shown yet |
-| money_delta+sharp_gap | spread | 80-84 | 48.8 | 50.5 | -1.7 | -11.86 | -7.2 |  |  | no edge shown yet |
-| follow_move+rlm_quiet | spread | 67-70 | 48.9 | 51.3 | -2.4 | -7.64 | -5.6 |  |  | redundant -- identical record to rlm_quiet alone, not independent confirmation |
-| rlm_quiet+rlm_ratio | spread | 15-8 | 65.2 | 51.4 | 13.8 | +5.65 | 24.5 |  |  | keep collecting (23/30) |
-| rlm_quiet+sharp_gap | spread | 29-18 | 61.7 | 51.7 | 10.0 | +8.6 | 18.3 |  |  | no edge shown yet |
-| money_level+pin_rlm | spread | 16-13 | 55.2 | 50.3 | 4.9 | +1.39 | 4.8 |  |  | keep collecting (29/30) |
-| money_delta+pin_move | spread | 43-49 | 46.7 | 51.2 | -4.5 | -9.9 | -10.8 |  |  | no edge shown yet |
+| pin_value+sharp_gap | spread | 106-112 | 48.6 | 49.2 | -0.6 | -20.58 | -9.4 |  |  | no edge shown yet |
+| rlm_ratio+sharp_gap | spread | 53-52 | 50.5 | 50.5 | 0.0 | -4.04 | -3.8 |  |  | redundant -- identical record to rlm_ratio alone, not independent confirmation |
+| follow_move+money_level | spread | 186-195 | 48.8 | 48.9 | -0.0 | -26.83 | -7.0 |  |  | no edge shown yet |
+| money_level+rlm_ratio | spread | 31-30 | 50.8 | 50.1 | 0.8 | -2.19 | -3.6 |  |  | no edge shown yet |
+| money_level+sharp_gap | spread | 326-317 | 50.7 | 49.0 | 1.7 | -23.7 | -3.7 |  |  | no edge shown yet |
+| consensus_gap+money_level | spread | 66-58 | 53.2 | 48.4 | 4.9 | -1.52 | -1.2 |  |  | no edge shown yet |
+| money_level+money_moving | spread | 325-318 | 50.5 | 49.0 | 1.6 | -25.62 | -4.0 |  |  | no edge shown yet |
+| money_level+pin_move | spread | 131-152 | 46.3 | 49.5 | -3.2 | -34.13 | -12.1 |  |  | DROP: below break-even |
+| money_level+pin_value | spread | 113-115 | 49.6 | 48.7 | 0.9 | -17.6 | -7.7 |  |  | no edge shown yet |
+| consensus_gap+money_delta | spread | 17-15 | 53.1 | 51.0 | 2.1 | -0.46 | -1.4 |  |  | no edge shown yet |
+| follow_move+money_delta | spread | 46-55 | 45.5 | 50.4 | -4.9 | -13.4 | -13.3 |  |  | no edge shown yet |
+| money_delta+money_level | spread | 47-46 | 50.5 | 49.8 | 0.7 | -3.69 | -4.0 |  |  | no edge shown yet |
+| money_delta+money_moving | spread | 81-87 | 48.2 | 50.5 | -2.3 | -13.88 | -8.3 |  |  | no edge shown yet |
+| money_delta+pin_value | spread | 38-30 | 55.9 | 50.9 | 5.0 | +3.19 | 4.7 |  |  | no edge shown yet |
+| money_delta+sharp_gap | spread | 80-85 | 48.5 | 50.5 | -2.0 | -12.86 | -7.8 |  |  | no edge shown yet |
+| follow_move+rlm_quiet | spread | 67-72 | 48.2 | 51.4 | -3.2 | -9.64 | -6.9 |  |  | redundant -- identical record to rlm_quiet alone, not independent confirmation |
+| rlm_quiet+rlm_ratio | spread | 15-8 | 65.2 | 51.6 | 13.7 | +5.65 | 24.5 |  |  | keep collecting (23/30) |
+| rlm_quiet+sharp_gap | spread | 29-18 | 61.7 | 51.9 | 9.8 | +8.6 | 18.3 |  |  | no edge shown yet |
+| money_level+pin_rlm | spread | 16-13 | 55.2 | 50.3 | 4.8 | +1.39 | 4.8 |  |  | keep collecting (29/30) |
+| money_delta+pin_move | spread | 43-49 | 46.7 | 51.3 | -4.6 | -9.9 | -10.8 |  |  | no edge shown yet |
 | money_delta+rlm_ratio | spread | 19-30 | 38.8 | 50.1 | -11.3 | -13.18 | -26.9 |  |  | DROP: below break-even |
-| book_lag+pin_move | spread | 1-0 | 100.0 | 53.0 | 47.0 | +0.88 | 87.7 |  |  | redundant -- identical record to book_lag alone, not independent confirmation |
-| money_delta+pin_rlm | spread | 16-18 | 47.1 | 51.1 | -4.0 | -3.61 | -10.6 |  |  | no edge shown yet |
-| money_delta+rlm_quiet | spread | 18-20 | 47.4 | 51.7 | -4.4 | -3.29 | -8.7 |  |  | no edge shown yet |
-| money_moving+rlm_quiet | spread | 28-18 | 60.9 | 51.7 | 9.2 | +7.65 | 16.6 |  |  | no edge shown yet |
-| pin_move+rlm_quiet | spread | 38-39 | 49.4 | 51.7 | -2.4 | -3.59 | -4.7 |  |  | no edge shown yet |
-| pin_rlm+rlm_quiet | spread | 6-3 | 66.7 | 52.3 | 14.4 | +2.56 | 28.4 |  |  | keep collecting (9/30) |
-| consensus_gap+rlm_quiet | spread | 4-3 | 57.1 | 51.3 | 5.9 | +0.48 | 6.9 |  |  | keep collecting (7/30) |
-| pin_value+rlm_quiet | spread | 7-7 | 50.0 | 50.4 | -0.4 | -0.85 | -6.1 |  |  | keep collecting (14/30) |
-| follow_move+money_delta | total | 118-119 | 49.8 | 49.7 | 0.0 | -10.93 | -4.6 |  |  | no edge shown yet |
-| money_level+money_moving | total | 284-288 | 49.7 | 50.1 | -0.4 | -29.82 | -5.2 |  |  | no edge shown yet |
-| money_level+sharp_gap | total | 279-280 | 49.9 | 50.1 | -0.1 | -26.22 | -4.7 |  |  | no edge shown yet |
-| money_moving+sharp_gap | total | 423-461 | 47.9 | 49.9 | -2.1 | -75.15 | -8.5 |  |  | DROP: below break-even |
-| consensus_gap+money_level | total | 75-72 | 51.0 | 50.3 | 0.7 | -5.53 | -3.8 |  |  | no edge shown yet |
-| consensus_gap+pin_move | total | 36-29 | 55.4 | 50.2 | 5.2 | +2.99 | 4.6 |  |  | no edge shown yet |
-| consensus_gap+pin_value | total | 81-76 | 51.6 | 50.2 | 1.4 | -4.1 | -2.6 |  |  | no edge shown yet |
-| follow_move+money_moving | total | 266-300 | 47.0 | 49.9 | -2.9 | -57.34 | -10.1 |  |  | DROP: below break-even |
-| follow_move+sharp_gap | total | 274-299 | 47.8 | 49.9 | -2.1 | -49.04 | -8.6 |  |  | DROP: below break-even |
-| money_level+pin_move | total | 158-143 | 52.5 | 50.0 | 2.5 | +0.68 | 0.2 |  |  | no edge shown yet |
-| money_level+pin_value | total | 122-105 | 53.7 | 50.2 | 3.5 | +4.23 | 1.9 |  |  | no edge shown yet |
-| pin_move+pin_value | total | 106-102 | 51.0 | 50.0 | 1.0 | -6.33 | -3.0 |  |  | no edge shown yet |
-| follow_move+rlm_quiet | total | 132-167 | 44.1 | 49.7 | -5.6 | -45.38 | -15.2 |  |  | redundant -- identical record to rlm_quiet alone, not independent confirmation |
-| money_moving+pin_move | total | 177-192 | 48.0 | 49.9 | -1.9 | -30.41 | -8.2 |  |  | DROP: below break-even |
-| rlm_quiet+sharp_gap | total | 75-107 | 41.2 | 49.7 | -8.5 | -38.14 | -21.0 |  |  | DROP: below break-even |
-| money_delta+money_moving | total | 148-141 | 51.2 | 49.7 | 1.5 | -5.46 | -1.9 |  |  | no edge shown yet |
-| follow_move+money_level | total | 223-216 | 50.8 | 50.1 | 0.7 | -13.29 | -3.0 |  |  | no edge shown yet |
-| follow_move+pin_value | total | 94-90 | 51.1 | 50.0 | 1.1 | -5.18 | -2.8 |  |  | no edge shown yet |
-| money_moving+pin_value | total | 96-107 | 47.3 | 50.0 | -2.8 | -20.5 | -10.1 |  |  | no edge shown yet |
-| pin_value+sharp_gap | total | 97-108 | 47.3 | 50.0 | -2.7 | -20.55 | -10.0 |  |  | no edge shown yet |
-| consensus_gap+money_moving | total | 61-64 | 48.8 | 50.2 | -1.4 | -9.79 | -7.8 |  |  | no edge shown yet |
-| consensus_gap+sharp_gap | total | 63-64 | 49.6 | 50.2 | -0.6 | -8.0 | -6.3 |  |  | no edge shown yet |
-| consensus_gap+follow_move | total | 51-45 | 53.1 | 50.2 | 2.9 | +0.26 | 0.3 |  |  | no edge shown yet |
-| consensus_gap+money_delta | total | 22-16 | 57.9 | 50.0 | 7.9 | +3.47 | 9.1 |  |  | no edge shown yet |
-| consensus_gap+rlm_quiet | total | 14-13 | 51.9 | 49.9 | 2.0 | -0.42 | -1.6 |  |  | keep collecting (27/30) |
-| money_delta+rlm_quiet | total | 36-57 | 38.7 | 49.6 | -10.9 | -23.92 | -25.7 |  |  | DROP: below break-even |
-| money_delta+sharp_gap | total | 148-138 | 51.7 | 49.7 | 2.0 | -2.46 | -0.9 |  |  | no edge shown yet |
-| money_moving+rlm_quiet | total | 69-104 | 39.9 | 49.7 | -9.8 | -40.59 | -23.5 |  |  | !! IMPLAUSIBLE: money_moving+rlm_quiet close total all 39.9% on n=173. A -110 market outside 40-60% at this sample is a measurement bug until proven otherwise. Recompute from source.  ||  DROP: below break-even |
+| book_lag+pin_move | spread | 1-0 | 100.0 | 53.3 | 46.7 | +0.88 | 87.7 |  |  | redundant -- identical record to book_lag alone, not independent confirmation |
+| money_delta+pin_rlm | spread | 16-18 | 47.1 | 51.1 | -4.1 | -3.61 | -10.6 |  |  | no edge shown yet |
+| money_delta+rlm_quiet | spread | 18-21 | 46.2 | 51.8 | -5.6 | -4.29 | -11.0 |  |  | no edge shown yet |
+| money_moving+rlm_quiet | spread | 28-18 | 60.9 | 51.8 | 9.0 | +7.65 | 16.6 |  |  | no edge shown yet |
+| pin_move+rlm_quiet | spread | 38-39 | 49.4 | 51.9 | -2.5 | -3.59 | -4.7 |  |  | no edge shown yet |
+| pin_rlm+rlm_quiet | spread | 6-3 | 66.7 | 52.5 | 14.1 | +2.56 | 28.4 |  |  | keep collecting (9/30) |
+| consensus_gap+rlm_quiet | spread | 4-3 | 57.1 | 51.4 | 5.7 | +0.48 | 6.9 |  |  | keep collecting (7/30) |
+| pin_value+rlm_quiet | spread | 7-7 | 50.0 | 50.5 | -0.5 | -0.85 | -6.1 |  |  | keep collecting (14/30) |
+| follow_move+money_delta | total | 119-122 | 49.4 | 49.7 | -0.3 | -12.98 | -5.4 |  |  | no edge shown yet |
+| money_level+money_moving | total | 286-290 | 49.7 | 50.1 | -0.4 | -29.96 | -5.2 |  |  | no edge shown yet |
+| money_level+sharp_gap | total | 281-282 | 49.9 | 50.1 | -0.2 | -26.36 | -4.7 |  |  | no edge shown yet |
+| money_moving+sharp_gap | total | 427-469 | 47.7 | 49.9 | -2.3 | -79.47 | -8.9 |  |  | DROP: below break-even |
+| consensus_gap+money_level | total | 77-72 | 51.7 | 50.4 | 1.3 | -3.75 | -2.5 |  |  | no edge shown yet |
+| consensus_gap+pin_move | total | 37-29 | 56.1 | 50.2 | 5.9 | +3.9 | 5.9 |  |  | no edge shown yet |
+| consensus_gap+pin_value | total | 82-76 | 51.9 | 50.2 | 1.7 | -3.19 | -2.0 |  |  | no edge shown yet |
+| follow_move+money_moving | total | 270-305 | 47.0 | 49.9 | -3.0 | -58.65 | -10.2 |  |  | DROP: below break-even |
+| follow_move+sharp_gap | total | 278-304 | 47.8 | 49.9 | -2.1 | -50.35 | -8.7 |  |  | DROP: below break-even |
+| money_level+pin_move | total | 160-144 | 52.6 | 50.0 | 2.6 | +1.54 | 0.5 |  |  | no edge shown yet |
+| money_level+pin_value | total | 124-108 | 53.4 | 50.3 | 3.2 | +3.05 | 1.3 |  |  | no edge shown yet |
+| pin_move+pin_value | total | 107-103 | 51.0 | 50.0 | 1.0 | -6.42 | -3.1 |  |  | no edge shown yet |
+| follow_move+rlm_quiet | total | 133-171 | 43.8 | 49.7 | -5.9 | -48.51 | -16.0 |  |  | redundant -- identical record to rlm_quiet alone, not independent confirmation |
+| money_moving+pin_move | total | 180-193 | 48.3 | 49.9 | -1.6 | -28.6 | -7.7 |  |  | DROP: below break-even |
+| rlm_quiet+sharp_gap | total | 76-111 | 40.6 | 49.6 | -9.0 | -41.27 | -22.1 |  |  | DROP: below break-even |
+| money_delta+money_moving | total | 149-146 | 50.5 | 49.7 | 0.8 | -9.51 | -3.2 |  |  | no edge shown yet |
+| follow_move+money_level | total | 227-217 | 51.1 | 50.1 | 1.0 | -10.57 | -2.4 |  |  | no edge shown yet |
+| follow_move+pin_value | total | 96-91 | 51.3 | 50.0 | 1.3 | -4.4 | -2.4 |  |  | no edge shown yet |
+| money_moving+pin_value | total | 98-109 | 47.3 | 50.1 | -2.7 | -20.72 | -10.0 |  |  | no edge shown yet |
+| pin_value+sharp_gap | total | 99-110 | 47.4 | 50.0 | -2.7 | -20.77 | -9.9 |  |  | no edge shown yet |
+| consensus_gap+money_moving | total | 62-65 | 48.8 | 50.2 | -1.4 | -9.88 | -7.8 |  |  | no edge shown yet |
+| consensus_gap+sharp_gap | total | 64-65 | 49.6 | 50.2 | -0.6 | -8.09 | -6.3 |  |  | no edge shown yet |
+| consensus_gap+follow_move | total | 52-45 | 53.6 | 50.2 | 3.4 | +1.17 | 1.2 |  |  | no edge shown yet |
+| consensus_gap+money_delta | total | 22-16 | 57.9 | 49.9 | 7.9 | +3.47 | 9.1 |  |  | no edge shown yet |
+| consensus_gap+rlm_quiet | total | 14-13 | 51.9 | 49.8 | 2.0 | -0.42 | -1.6 |  |  | keep collecting (27/30) |
+| money_delta+rlm_quiet | total | 36-60 | 37.5 | 49.6 | -12.1 | -26.92 | -28.0 |  |  | DROP: below break-even |
+| money_delta+sharp_gap | total | 149-143 | 51.0 | 49.7 | 1.3 | -6.51 | -2.2 |  |  | no edge shown yet |
+| money_moving+rlm_quiet | total | 70-108 | 39.3 | 49.6 | -10.3 | -43.72 | -24.6 |  |  | !! IMPLAUSIBLE: money_moving+rlm_quiet close total all 39.3% on n=178. A -110 market outside 40-60% at this sample is a measurement bug until proven otherwise. Recompute from source.  ||  DROP: below break-even |
 | book_lag+money_delta | total | 1-1 | 50.0 | 50.0 | 0.0 | -0.12 | -6.2 |  |  | redundant -- identical record to book_lag alone, not independent confirmation |
 | book_lag+money_level | total | 1-1 | 50.0 | 50.0 | 0.0 | -0.12 | -6.2 |  |  | redundant -- identical record to book_lag alone, not independent confirmation |
 | book_lag+money_moving | total | 1-1 | 50.0 | 50.0 | 0.0 | -0.12 | -6.2 |  |  | redundant -- identical record to book_lag alone, not independent confirmation |
 | book_lag+pin_move | total | 1-1 | 50.0 | 50.0 | 0.0 | -0.12 | -6.2 |  |  | redundant -- identical record to book_lag alone, not independent confirmation |
 | book_lag+sharp_gap | total | 1-1 | 50.0 | 50.0 | 0.0 | -0.12 | -6.2 |  |  | redundant -- identical record to book_lag alone, not independent confirmation |
-| money_delta+money_level | total | 75-63 | 54.3 | 49.8 | 4.5 | +5.5 | 4.0 |  |  | no edge shown yet |
-| money_delta+pin_move | total | 81-83 | 49.4 | 49.7 | -0.3 | -8.74 | -5.3 |  |  | no edge shown yet |
-| pin_move+sharp_gap | total | 178-193 | 48.0 | 49.9 | -1.9 | -30.45 | -8.2 |  |  | DROP: below break-even |
-| follow_move+pin_move | total | 202-223 | 47.5 | 49.9 | -2.4 | -38.33 | -9.0 |  |  | DROP: below break-even |
-| pin_value+rlm_quiet | total | 27-38 | 41.5 | 49.7 | -8.2 | -13.22 | -20.3 |  |  | DROP: below break-even |
+| money_delta+money_level | total | 75-64 | 54.0 | 49.8 | 4.2 | +4.5 | 3.2 |  |  | no edge shown yet |
+| money_delta+pin_move | total | 82-83 | 49.7 | 49.6 | 0.1 | -7.79 | -4.7 |  |  | no edge shown yet |
+| pin_move+sharp_gap | total | 181-194 | 48.3 | 49.9 | -1.6 | -28.64 | -7.6 |  |  | DROP: below break-even |
+| follow_move+pin_move | total | 206-224 | 47.9 | 49.9 | -2.0 | -35.57 | -8.3 |  |  | DROP: below break-even |
+| pin_value+rlm_quiet | total | 28-38 | 42.4 | 49.7 | -7.3 | -12.35 | -18.7 |  |  | DROP: below break-even |
 | consensus_gap+pin_rlm | total | 11-11 | 50.0 | 50.0 | 0.0 | -1.22 | -5.5 |  |  | keep collecting (22/30) |
 | consensus_gap+rlm_ratio | total | 20-13 | 60.6 | 50.0 | 10.6 | +4.76 | 14.4 |  |  | no edge shown yet |
-| follow_move+pin_rlm | total | 84-80 | 51.2 | 49.7 | 1.5 | -2.83 | -1.7 |  |  | no edge shown yet |
-| follow_move+rlm_ratio | total | 156-148 | 51.3 | 49.8 | 1.6 | -5.1 | -1.7 |  |  | redundant -- identical record to rlm_ratio alone, not independent confirmation |
+| follow_move+pin_rlm | total | 85-80 | 51.5 | 49.7 | 1.8 | -1.88 | -1.1 |  |  | no edge shown yet |
+| follow_move+rlm_ratio | total | 157-152 | 50.8 | 49.7 | 1.1 | -8.15 | -2.6 |  |  | redundant -- identical record to rlm_ratio alone, not independent confirmation |
 | money_level+pin_rlm | total | 46-32 | 59.0 | 49.7 | 9.3 | +10.22 | 13.1 |  |  | no edge shown yet |
-| money_level+rlm_ratio | total | 74-55 | 57.4 | 49.8 | 7.5 | +12.61 | 9.8 |  |  | no edge shown yet |
-| money_moving+pin_rlm | total | 94-88 | 51.6 | 49.7 | 1.9 | -1.89 | -1.0 |  |  | no edge shown yet |
-| money_moving+rlm_ratio | total | 150-144 | 51.0 | 49.8 | 1.3 | -6.59 | -2.2 |  |  | no edge shown yet |
-| pin_move+pin_rlm | total | 97-91 | 51.6 | 49.7 | 1.9 | -2.15 | -1.1 |  |  | redundant -- identical record to pin_rlm alone, not independent confirmation |
-| pin_move+rlm_ratio | total | 92-82 | 52.9 | 49.8 | 3.1 | +2.33 | 1.3 |  |  | no edge shown yet |
-| pin_rlm+pin_value | total | 32-29 | 52.5 | 49.8 | 2.7 | -0.01 | -0.0 |  |  | no edge shown yet |
-| pin_rlm+rlm_ratio | total | 84-80 | 51.2 | 49.7 | 1.5 | -2.83 | -1.7 |  |  | no edge shown yet |
-| pin_rlm+sharp_gap | total | 97-91 | 51.6 | 49.7 | 1.9 | -2.15 | -1.1 |  |  | redundant -- identical record to pin_rlm alone, not independent confirmation |
+| money_level+rlm_ratio | total | 74-55 | 57.4 | 49.8 | 7.6 | +12.61 | 9.8 |  |  | no edge shown yet |
+| money_moving+pin_rlm | total | 95-88 | 51.9 | 49.7 | 2.3 | -0.94 | -0.5 |  |  | no edge shown yet |
+| money_moving+rlm_ratio | total | 151-148 | 50.5 | 49.7 | 0.8 | -9.64 | -3.2 |  |  | no edge shown yet |
+| pin_move+pin_rlm | total | 98-91 | 51.9 | 49.7 | 2.2 | -1.2 | -0.6 |  |  | redundant -- identical record to pin_rlm alone, not independent confirmation |
+| pin_move+rlm_ratio | total | 93-82 | 53.1 | 49.7 | 3.5 | +3.29 | 1.9 |  |  | no edge shown yet |
+| pin_rlm+pin_value | total | 32-29 | 52.5 | 49.7 | 2.7 | -0.01 | -0.0 |  |  | no edge shown yet |
+| pin_rlm+rlm_ratio | total | 85-80 | 51.5 | 49.7 | 1.8 | -1.88 | -1.1 |  |  | no edge shown yet |
+| pin_rlm+sharp_gap | total | 98-91 | 51.9 | 49.7 | 2.2 | -1.2 | -0.6 |  |  | redundant -- identical record to pin_rlm alone, not independent confirmation |
 | pin_value+rlm_ratio | total | 35-29 | 54.7 | 49.8 | 4.9 | +2.69 | 4.2 |  |  | no edge shown yet |
-| rlm_ratio+sharp_gap | total | 156-148 | 51.3 | 49.8 | 1.6 | -5.1 | -1.7 |  |  | redundant -- identical record to rlm_ratio alone, not independent confirmation |
-| money_delta+pin_rlm | total | 56-49 | 53.3 | 49.7 | 3.7 | +2.46 | 2.3 |  |  | no edge shown yet |
-| money_delta+rlm_ratio | total | 93-75 | 55.4 | 49.7 | 5.6 | +10.1 | 6.0 |  |  | no edge shown yet |
-| money_delta+pin_value | total | 47-34 | 58.0 | 49.8 | 8.2 | +8.55 | 10.6 |  |  | no edge shown yet |
-| pin_move+rlm_quiet | total | 60-85 | 41.4 | 49.8 | -8.4 | -29.7 | -20.5 |  |  | DROP: below break-even |
-| pin_rlm+rlm_quiet | total | 31-46 | 40.3 | 49.7 | -9.4 | -17.58 | -22.8 |  |  | DROP: below break-even |
-| rlm_quiet+rlm_ratio | total | 60-84 | 41.7 | 49.7 | -8.0 | -28.87 | -20.0 |  |  | DROP: below break-even |
-| book_lag+pin_rlm | total | 1-0 | 100.0 | 49.6 | 50.4 | +0.88 | 87.7 |  |  | keep collecting (1/30) |
+| rlm_ratio+sharp_gap | total | 157-152 | 50.8 | 49.7 | 1.1 | -8.15 | -2.6 |  |  | redundant -- identical record to rlm_ratio alone, not independent confirmation |
+| money_delta+pin_rlm | total | 57-49 | 53.8 | 49.6 | 4.2 | +3.41 | 3.2 |  |  | no edge shown yet |
+| money_delta+rlm_ratio | total | 94-78 | 54.7 | 49.7 | 5.0 | +8.05 | 4.7 |  |  | no edge shown yet |
+| money_delta+pin_value | total | 47-35 | 57.3 | 49.7 | 7.6 | +7.55 | 9.2 |  |  | no edge shown yet |
+| pin_move+rlm_quiet | total | 60-85 | 41.4 | 49.7 | -8.3 | -29.7 | -20.5 |  |  | DROP: below break-even |
+| pin_rlm+rlm_quiet | total | 31-46 | 40.3 | 49.6 | -9.4 | -17.58 | -22.8 |  |  | DROP: below break-even |
+| rlm_quiet+rlm_ratio | total | 60-88 | 40.5 | 49.6 | -9.1 | -32.87 | -22.2 |  |  | DROP: below break-even |
+| book_lag+pin_rlm | total | 1-0 | 100.0 | 49.5 | 50.5 | +0.88 | 87.7 |  |  | keep collecting (1/30) |
 
 ## By market depth (both markets, pooled)
 
 | signal | checkpoint | slice | record | hit % | edge | ROI % | CLV avg |
 |---|---|---|---|---|---|---|---|
-| rlm_quiet | close | 1-3k bets | 184-274 | 40.2 | -1.9 | -8.7 |  |
-| rlm_quiet | close | 3k+ bets | 74-102 | 42.0 | -0.3 | -10.3 |  |
-| rlm_quiet | close | <1k bets | 32-47 | 40.5 | -1.5 | -16.0 |  |
-| rlm_quiet | close | pin $1-2k | 77-131 | 37.0 | -6.7 | -18.6 |  |
-| rlm_quiet | close | pin $2k+ | 91-110 | 45.3 | 7.0 | 3.5 |  |
-| rlm_quiet | close | pin limit <$1k | 50-54 | 48.1 | -1.3 | -7.7 |  |
-| pin_move | close | 1-3k bets | 434-443 | 49.5 | -0.1 | -2.8 |  |
-| pin_move | close | 3k+ bets | 170-182 | 48.3 | -1.3 | -7.2 |  |
+| rlm_quiet | close | 1-3k bets | 186-280 | 39.9 | -2.1 | -9.4 |  |
+| rlm_quiet | close | 3k+ bets | 75-106 | 41.4 | -0.9 | -11.5 |  |
+| rlm_quiet | close | <1k bets | 32-47 | 40.5 | -1.4 | -16.0 |  |
+| rlm_quiet | close | pin $1-2k | 78-133 | 37.0 | -6.6 | -18.6 |  |
+| rlm_quiet | close | pin $2k+ | 92-112 | 45.1 | 6.9 | 3.2 |  |
+| rlm_quiet | close | pin limit <$1k | 51-55 | 48.1 | -1.2 | -7.6 |  |
+| pin_move | close | 1-3k bets | 440-445 | 49.7 | 0.2 | -2.3 |  |
+| pin_move | close | 3k+ bets | 174-182 | 48.9 | -0.7 | -5.9 |  |
 | pin_move | close | <1k bets | 87-87 | 50.0 | -0.3 | -4.3 |  |
-| pin_move | close | pin $1-2k | 311-331 | 48.4 | -1.6 | -5.0 |  |
-| pin_move | close | pin $2k+ | 258-264 | 49.4 | 0.1 | -4.5 |  |
-| pin_move | close | pin limit <$1k | 122-117 | 51.0 | 1.4 | -0.5 |  |
-| money_delta | close | 1-3k bets | 257-326 | 44.1 | -0.7 | -7.4 |  |
-| money_delta | close | 3k+ bets | 106-135 | 44.0 | 0.1 | -2.4 |  |
-| money_delta | close | <1k bets | 52-76 | 40.6 | -2.4 | -15.4 |  |
-| money_delta | close | pin $1-2k | 151-148 | 50.5 | 4.3 | 5.3 |  |
-| money_delta | close | pin $2k+ | 106-138 | 43.4 | 1.9 | -8.3 |  |
-| money_delta | close | pin limit <$1k | 62-72 | 46.3 | -3.1 | -8.0 |  |
-| pin_rlm | close | 1-3k bets | 113-133 | 45.9 | 3.6 | 9.0 |  |
-| pin_rlm | close | 3k+ bets | 42-62 | 40.4 | -1.5 | -12.8 |  |
-| pin_rlm | close | <1k bets | 26-26 | 50.0 | 7.7 | 7.9 |  |
-| pin_rlm | close | pin $1-2k | 78-91 | 46.2 | 2.0 | 4.4 |  |
-| pin_rlm | close | pin $2k+ | 54-89 | 37.8 | 1.9 | -5.1 |  |
-| pin_rlm | close | pin limit <$1k | 49-41 | 54.4 | 5.6 | 14.3 |  |
-| follow_move | close | 1-3k bets | 741-707 | 51.2 | 0.5 | -6.0 |  |
-| follow_move | close | 3k+ bets | 264-250 | 51.4 | 0.4 | -5.6 |  |
-| follow_move | close | <1k bets | 164-154 | 51.6 | -0.5 | -11.8 |  |
-| follow_move | close | pin $1-2k | 348-405 | 46.2 | -4.2 | -13.4 |  |
-| follow_move | close | pin $2k+ | 317-276 | 53.5 | 2.7 | -1.6 |  |
-| follow_move | close | pin limit <$1k | 147-144 | 50.5 | 0.6 | -3.8 |  |
-| rlm_ratio | close | 1-3k bets | 170-225 | 43.0 | -0.8 | -7.6 |  |
-| rlm_ratio | close | 3k+ bets | 63-69 | 47.7 | 4.0 | 1.5 |  |
-| rlm_ratio | close | <1k bets | 36-38 | 48.6 | 5.2 | -3.3 |  |
-| rlm_ratio | close | pin $1-2k | 94-104 | 47.5 | 1.7 | -0.9 |  |
-| rlm_ratio | close | pin $2k+ | 53-77 | 40.8 | 2.9 | -9.8 |  |
-| rlm_ratio | close | pin limit <$1k | 54-50 | 51.9 | 2.8 | 0.1 |  |
-| money_level | close | 1-3k bets | 949-691 | 57.9 | 2.5 | -2.5 |  |
-| money_level | close | 3k+ bets | 332-277 | 54.5 | -0.5 | -5.7 |  |
+| pin_move | close | pin $1-2k | 316-333 | 48.7 | -1.3 | -4.5 |  |
+| pin_move | close | pin $2k+ | 261-267 | 49.4 | 0.2 | -4.4 |  |
+| pin_move | close | pin limit <$1k | 124-117 | 51.5 | 1.8 | 0.3 |  |
+| money_delta | close | 1-3k bets | 258-335 | 43.5 | -1.2 | -8.6 |  |
+| money_delta | close | 3k+ bets | 106-140 | 43.1 | -0.6 | -4.4 |  |
+| money_delta | close | <1k bets | 52-76 | 40.6 | -2.3 | -15.4 |  |
+| money_delta | close | pin $1-2k | 152-153 | 49.8 | 3.6 | 3.8 |  |
+| money_delta | close | pin $2k+ | 106-141 | 42.9 | 1.4 | -9.5 |  |
+| money_delta | close | pin limit <$1k | 62-73 | 45.9 | -3.4 | -8.7 |  |
+| pin_rlm | close | 1-3k bets | 114-135 | 45.8 | 3.5 | 8.5 |  |
+| pin_rlm | close | 3k+ bets | 42-63 | 40.0 | -1.8 | -13.6 |  |
+| pin_rlm | close | <1k bets | 26-26 | 50.0 | 7.8 | 7.9 |  |
+| pin_rlm | close | pin $1-2k | 79-92 | 46.2 | 2.2 | 4.3 |  |
+| pin_rlm | close | pin $2k+ | 54-91 | 37.2 | 1.4 | -6.4 |  |
+| pin_rlm | close | pin limit <$1k | 49-41 | 54.4 | 5.7 | 14.3 |  |
+| follow_move | close | 1-3k bets | 750-716 | 51.2 | 0.6 | -6.0 |  |
+| follow_move | close | 3k+ bets | 271-255 | 51.5 | 0.7 | -5.2 |  |
+| follow_move | close | <1k bets | 164-154 | 51.6 | -0.4 | -11.8 |  |
+| follow_move | close | pin $1-2k | 355-409 | 46.5 | -3.9 | -12.9 |  |
+| follow_move | close | pin $2k+ | 320-282 | 53.2 | 2.5 | -2.0 |  |
+| follow_move | close | pin limit <$1k | 150-145 | 50.8 | 1.0 | -3.1 |  |
+| rlm_ratio | close | 1-3k bets | 172-232 | 42.6 | -1.2 | -8.8 |  |
+| rlm_ratio | close | 3k+ bets | 63-72 | 46.7 | 3.1 | -0.7 |  |
+| rlm_ratio | close | <1k bets | 36-38 | 48.6 | 5.3 | -3.3 |  |
+| rlm_ratio | close | pin $1-2k | 95-106 | 47.3 | 1.6 | -1.4 |  |
+| rlm_ratio | close | pin $2k+ | 53-80 | 39.8 | 2.2 | -11.8 |  |
+| rlm_ratio | close | pin limit <$1k | 54-51 | 51.4 | 2.3 | -0.8 |  |
+| money_level | close | 1-3k bets | 961-698 | 57.9 | 2.6 | -2.4 |  |
+| money_level | close | 3k+ bets | 340-281 | 54.8 | -0.3 | -5.2 |  |
 | money_level | close | <1k bets | 205-149 | 57.9 | 2.5 | -6.2 |  |
-| money_level | close | pin $1-2k | 438-388 | 53.0 | -0.7 | -5.9 |  |
-| money_level | close | pin $2k+ | 385-312 | 55.2 | -2.0 | -8.8 |  |
-| money_level | close | pin limit <$1k | 176-156 | 53.0 | 2.7 | 0.6 |  |
-| sharp_gap | close | 1-3k bets | 719-846 | 45.9 | -1.7 | -9.0 |  |
-| sharp_gap | close | 3k+ bets | 278-312 | 47.1 | -0.5 | -2.6 |  |
+| money_level | close | pin $1-2k | 443-395 | 52.9 | -0.8 | -6.3 |  |
+| money_level | close | pin $2k+ | 388-318 | 55.0 | -2.3 | -9.3 |  |
+| money_level | close | pin limit <$1k | 179-157 | 53.3 | 2.9 | 1.1 |  |
+| sharp_gap | close | 1-3k bets | 727-858 | 45.9 | -1.8 | -9.2 |  |
+| sharp_gap | close | 3k+ bets | 282-320 | 46.8 | -0.8 | -3.4 |  |
 | sharp_gap | close | <1k bets | 160-176 | 47.6 | -0.6 | -11.1 |  |
-| sharp_gap | close | pin $1-2k | 378-415 | 47.7 | -1.0 | -5.6 |  |
-| sharp_gap | close | pin $2k+ | 308-361 | 46.0 | -0.7 | -5.4 |  |
-| sharp_gap | close | pin limit <$1k | 150-168 | 47.2 | -2.3 | -6.8 |  |
-| money_moving | close | 1-3k bets | 733-839 | 46.6 | -1.4 | -8.4 |  |
-| money_moving | close | 3k+ bets | 280-312 | 47.3 | -0.8 | -3.5 |  |
+| sharp_gap | close | pin $1-2k | 381-424 | 47.3 | -1.3 | -6.4 |  |
+| sharp_gap | close | pin $2k+ | 310-369 | 45.7 | -1.1 | -6.2 |  |
+| sharp_gap | close | pin limit <$1k | 153-169 | 47.5 | -1.9 | -6.2 |  |
+| money_moving | close | 1-3k bets | 741-851 | 46.5 | -1.5 | -8.6 |  |
+| money_moving | close | 3k+ bets | 284-320 | 47.0 | -1.1 | -4.3 |  |
 | money_moving | close | <1k bets | 158-174 | 47.6 | -0.4 | -9.8 |  |
-| money_moving | close | pin $1-2k | 379-416 | 47.7 | -1.3 | -5.8 |  |
-| money_moving | close | pin $2k+ | 313-356 | 46.8 | 0.0 | -4.6 |  |
-| money_moving | close | pin limit <$1k | 150-174 | 46.3 | -3.2 | -8.6 |  |
-| pin_value | close | 1-3k bets | 327-319 | 50.6 | 2.2 | 3.0 |  |
-| pin_value | close | 3k+ bets | 105-129 | 44.9 | -4.1 | -12.7 |  |
+| money_moving | close | pin $1-2k | 382-425 | 47.3 | -1.7 | -6.6 |  |
+| money_moving | close | pin $2k+ | 315-364 | 46.4 | -0.4 | -5.4 |  |
+| money_moving | close | pin limit <$1k | 153-175 | 46.6 | -2.8 | -7.9 |  |
+| pin_value | close | 1-3k bets | 331-323 | 50.6 | 2.2 | 2.9 |  |
+| pin_value | close | 3k+ bets | 106-131 | 44.7 | -4.3 | -13.0 |  |
 | pin_value | close | <1k bets | 72-58 | 55.4 | 8.0 | 12.3 |  |
-| pin_value | close | pin $1-2k | 233-251 | 48.1 | -0.5 | -3.3 |  |
-| pin_value | close | pin $2k+ | 143-163 | 46.7 | -0.4 | -2.0 |  |
-| pin_value | close | pin limit <$1k | 128-92 | 58.2 | 8.3 | 12.4 |  |
+| pin_value | close | pin $1-2k | 235-256 | 47.9 | -0.7 | -3.9 |  |
+| pin_value | close | pin $2k+ | 146-165 | 46.9 | -0.1 | -1.5 |  |
+| pin_value | close | pin limit <$1k | 130-92 | 58.6 | 8.7 | 13.1 |  |
 | book_lag | close | 1-3k bets | 1-1 | 50.0 | 0.0 | -6.2 |  |
-| book_lag | close | 3k+ bets | 1-0 | 100.0 | 47.0 | 87.7 |  |
-| book_lag | close | pin $1-2k | 1-0 | 100.0 | 47.0 | 87.7 |  |
+| book_lag | close | 3k+ bets | 1-0 | 100.0 | 46.7 | 87.7 |  |
+| book_lag | close | pin $1-2k | 1-0 | 100.0 | 46.7 | 87.7 |  |
 | book_lag | close | pin limit <$1k | 1-1 | 50.0 | 0.0 | -6.2 |  |
-| consensus_gap | close | 1-3k bets | 292-343 | 46.0 | -3.3 | -9.3 |  |
-| consensus_gap | close | 3k+ bets | 110-120 | 47.8 | -1.5 | 1.8 |  |
+| consensus_gap | close | 1-3k bets | 295-345 | 46.1 | -3.2 | -9.2 |  |
+| consensus_gap | close | 3k+ bets | 114-123 | 48.1 | -1.5 | 1.7 |  |
 | consensus_gap | close | <1k bets | 58-86 | 40.3 | -5.1 | -19.8 |  |
-| consensus_gap | close | pin $1-2k | 138-146 | 48.6 | -1.1 | 0.5 |  |
-| consensus_gap | close | pin $2k+ | 140-133 | 51.3 | -0.4 | 1.8 |  |
-| consensus_gap | close | pin limit <$1k | 59-56 | 51.3 | 1.3 | -0.2 |  |
-| consensus_gap+follow_move | close | 1-3k bets | 108-106 | 50.5 | -0.8 | -5.2 |  |
-| consensus_gap+money_level | close | 1-3k bets | 191-131 | 59.3 | 0.8 | -0.4 |  |
-| consensus_gap+money_moving | close | 1-3k bets | 122-184 | 39.9 | -6.4 | -11.8 |  |
+| consensus_gap | close | pin $1-2k | 139-148 | 48.4 | -1.3 | -0.2 |  |
+| consensus_gap | close | pin $2k+ | 142-134 | 51.4 | -0.4 | 2.0 |  |
+| consensus_gap | close | pin limit <$1k | 60-56 | 51.7 | 1.7 | 0.6 |  |
+| consensus_gap+follow_move | close | 1-3k bets | 109-106 | 50.7 | -0.6 | -4.8 |  |
+| consensus_gap+money_level | close | 1-3k bets | 194-132 | 59.5 | 0.9 | -0.2 |  |
+| consensus_gap+money_moving | close | 1-3k bets | 123-185 | 39.9 | -6.5 | -11.8 |  |
 | consensus_gap+pin_move | close | 1-3k bets | 76-67 | 53.1 | 2.6 | 11.4 |  |
-| consensus_gap+pin_value | close | 1-3k bets | 115-127 | 47.5 | 0.8 | -1.6 |  |
-| consensus_gap+sharp_gap | close | 1-3k bets | 120-189 | 38.8 | -6.9 | -13.3 |  |
-| follow_move+money_level | close | 1-3k bets | 466-337 | 58.0 | 2.3 | -4.0 |  |
-| follow_move+money_moving | close | 1-3k bets | 402-440 | 47.7 | -1.2 | -8.2 |  |
-| follow_move+pin_move | close | 1-3k bets | 303-335 | 47.5 | -2.1 | -9.0 |  |
-| follow_move+pin_value | close | 1-3k bets | 107-103 | 51.0 | 2.0 | 1.2 |  |
-| follow_move+sharp_gap | close | 1-3k bets | 403-441 | 47.7 | -0.9 | -7.6 |  |
-| money_level+money_moving | close | 1-3k bets | 524-460 | 53.3 | 0.9 | -3.5 |  |
-| money_level+pin_move | close | 1-3k bets | 250-223 | 52.9 | 0.1 | -4.0 |  |
-| money_level+pin_value | close | 1-3k bets | 157-137 | 53.4 | 3.7 | 0.2 |  |
-| money_level+sharp_gap | close | 1-3k bets | 505-454 | 52.7 | 0.6 | -3.8 |  |
-| money_moving+pin_move | close | 1-3k bets | 252-269 | 48.4 | -0.3 | -3.1 |  |
-| money_moving+pin_value | close | 1-3k bets | 139-161 | 46.3 | -1.5 | -6.2 |  |
-| money_moving+sharp_gap | close | 1-3k bets | 691-804 | 46.2 | -1.6 | -8.1 |  |
-| pin_move+pin_value | close | 1-3k bets | 138-136 | 50.4 | 0.7 | -1.8 |  |
-| pin_move+sharp_gap | close | 1-3k bets | 256-275 | 48.2 | -0.3 | -3.1 |  |
-| pin_value+sharp_gap | close | 1-3k bets | 140-167 | 45.6 | -2.2 | -7.7 |  |
-| follow_move+rlm_quiet | close | 1-3k bets | 184-274 | 40.2 | -1.9 | -8.7 |  |
-| rlm_quiet+sharp_gap | close | 1-3k bets | 90-159 | 36.1 | -5.2 | -15.4 |  |
+| consensus_gap+pin_value | close | 1-3k bets | 115-128 | 47.3 | 0.7 | -2.0 |  |
+| consensus_gap+sharp_gap | close | 1-3k bets | 121-190 | 38.9 | -6.9 | -13.2 |  |
+| follow_move+money_level | close | 1-3k bets | 471-340 | 58.1 | 2.5 | -3.9 |  |
+| follow_move+money_moving | close | 1-3k bets | 409-449 | 47.7 | -1.2 | -8.5 |  |
+| follow_move+pin_move | close | 1-3k bets | 308-337 | 47.8 | -1.8 | -8.5 |  |
+| follow_move+pin_value | close | 1-3k bets | 109-104 | 51.2 | 2.2 | 1.5 |  |
+| follow_move+sharp_gap | close | 1-3k bets | 410-450 | 47.7 | -0.9 | -7.9 |  |
+| money_level+money_moving | close | 1-3k bets | 529-465 | 53.2 | 0.9 | -3.6 |  |
+| money_level+pin_move | close | 1-3k bets | 253-223 | 53.2 | 0.4 | -3.4 |  |
+| money_level+pin_value | close | 1-3k bets | 158-140 | 53.0 | 3.4 | -0.5 |  |
+| money_level+sharp_gap | close | 1-3k bets | 510-459 | 52.6 | 0.6 | -3.9 |  |
+| money_moving+pin_move | close | 1-3k bets | 257-271 | 48.7 | 0.0 | -2.6 |  |
+| money_moving+pin_value | close | 1-3k bets | 141-163 | 46.4 | -1.5 | -6.2 |  |
+| money_moving+sharp_gap | close | 1-3k bets | 699-816 | 46.1 | -1.6 | -8.4 |  |
+| pin_move+pin_value | close | 1-3k bets | 139-136 | 50.5 | 0.9 | -1.5 |  |
+| pin_move+sharp_gap | close | 1-3k bets | 261-277 | 48.5 | 0.1 | -2.6 |  |
+| pin_value+sharp_gap | close | 1-3k bets | 142-169 | 45.7 | -2.2 | -7.7 |  |
+| follow_move+rlm_quiet | close | 1-3k bets | 186-280 | 39.9 | -2.1 | -9.4 |  |
+| rlm_quiet+sharp_gap | close | 1-3k bets | 91-165 | 35.5 | -5.8 | -16.9 |  |
 | consensus_gap+money_delta | close | 1-3k bets | 33-70 | 32.0 | -6.6 | -18.2 |  |
-| follow_move+money_delta | close | 1-3k bets | 126-157 | 44.5 | -1.6 | -11.0 |  |
-| money_delta+money_level | close | 1-3k bets | 92-86 | 51.7 | 3.6 | 6.0 |  |
-| money_delta+money_moving | close | 1-3k bets | 186-256 | 42.1 | -1.1 | -8.7 |  |
+| follow_move+money_delta | close | 1-3k bets | 127-165 | 43.5 | -2.4 | -13.1 |  |
+| money_delta+money_level | close | 1-3k bets | 92-88 | 51.1 | 3.1 | 4.8 |  |
+| money_delta+money_moving | close | 1-3k bets | 187-265 | 41.4 | -1.7 | -10.3 |  |
 | money_delta+pin_value | close | 1-3k bets | 57-52 | 52.3 | 4.5 | 4.0 |  |
-| money_delta+sharp_gap | close | 1-3k bets | 185-253 | 42.2 | -0.9 | -8.3 |  |
+| money_delta+sharp_gap | close | 1-3k bets | 186-262 | 41.5 | -1.6 | -10.0 |  |
 | book_lag+money_delta | close | 1-3k bets | 1-1 | 50.0 | 0.0 | -6.2 |  |
 | book_lag+money_level | close | 1-3k bets | 1-1 | 50.0 | 0.0 | -6.2 |  |
 | book_lag+money_moving | close | 1-3k bets | 1-1 | 50.0 | 0.0 | -6.2 |  |
 | book_lag+pin_move | close | 1-3k bets | 1-1 | 50.0 | 0.0 | -6.2 |  |
 | book_lag+sharp_gap | close | 1-3k bets | 1-1 | 50.0 | 0.0 | -6.2 |  |
-| money_delta+pin_move | close | 1-3k bets | 91-105 | 46.4 | -0.4 | -2.2 |  |
+| money_delta+pin_move | close | 1-3k bets | 92-107 | 46.2 | -0.4 | -2.7 |  |
 | consensus_gap+pin_rlm | close | 1-3k bets | 22-30 | 42.3 | 3.2 | 21.3 |  |
-| money_level+pin_rlm | close | 1-3k bets | 49-39 | 55.7 | 7.9 | 7.6 |  |
-| pin_move+pin_rlm | close | 1-3k bets | 104-111 | 48.4 | 4.4 | 7.2 |  |
+| money_level+pin_rlm | close | 1-3k bets | 49-39 | 55.7 | 8.0 | 7.6 |  |
+| pin_move+pin_rlm | close | 1-3k bets | 105-113 | 48.2 | 4.3 | 6.6 |  |
 | pin_rlm+pin_value | close | 1-3k bets | 33-30 | 52.4 | 5.8 | 22.8 |  |
-| pin_rlm+sharp_gap | close | 1-3k bets | 113-133 | 45.9 | 3.6 | 9.0 |  |
-| money_delta+pin_rlm | close | 1-3k bets | 63-74 | 46.0 | 3.1 | 6.5 |  |
-| money_moving+pin_rlm | close | 1-3k bets | 108-125 | 46.4 | 3.8 | 10.8 |  |
-| consensus_gap+rlm_ratio | close | 1-3k bets | 25-38 | 39.7 | -0.8 | 2.3 |  |
-| follow_move+rlm_ratio | close | 1-3k bets | 170-225 | 43.0 | -0.8 | -7.6 |  |
-| money_delta+rlm_ratio | close | 1-3k bets | 88-115 | 43.3 | -1.2 | -11.8 |  |
-| money_level+rlm_ratio | close | 1-3k bets | 78-73 | 51.7 | 3.0 | -0.1 |  |
-| money_moving+rlm_ratio | close | 1-3k bets | 163-214 | 43.2 | -0.8 | -6.9 |  |
-| pin_move+rlm_ratio | close | 1-3k bets | 89-98 | 47.6 | 2.7 | -0.6 |  |
-| pin_value+rlm_ratio | close | 1-3k bets | 30-27 | 52.6 | 4.7 | 1.6 |  |
-| rlm_ratio+sharp_gap | close | 1-3k bets | 170-225 | 43.0 | -0.8 | -7.6 |  |
+| pin_rlm+sharp_gap | close | 1-3k bets | 114-135 | 45.8 | 3.5 | 8.5 |  |
+| money_delta+pin_rlm | close | 1-3k bets | 64-76 | 45.7 | 3.0 | 5.6 |  |
+| money_moving+pin_rlm | close | 1-3k bets | 109-127 | 46.2 | 3.7 | 10.2 |  |
+| consensus_gap+rlm_ratio | close | 1-3k bets | 26-38 | 40.6 | -0.0 | 3.6 |  |
+| follow_move+rlm_ratio | close | 1-3k bets | 172-232 | 42.6 | -1.2 | -8.8 |  |
+| money_delta+rlm_ratio | close | 1-3k bets | 89-122 | 42.2 | -2.1 | -14.2 |  |
+| money_level+rlm_ratio | close | 1-3k bets | 79-74 | 51.6 | 3.1 | -0.2 |  |
+| money_moving+rlm_ratio | close | 1-3k bets | 165-221 | 42.7 | -1.2 | -8.1 |  |
+| pin_move+rlm_ratio | close | 1-3k bets | 90-100 | 47.4 | 2.6 | -1.2 |  |
+| pin_value+rlm_ratio | close | 1-3k bets | 30-27 | 52.6 | 4.8 | 1.6 |  |
+| rlm_ratio+sharp_gap | close | 1-3k bets | 172-232 | 42.6 | -1.2 | -8.8 |  |
 | consensus_gap+rlm_quiet | close | 1-3k bets | 17-42 | 28.8 | -7.8 | -14.3 |  |
-| follow_move+pin_rlm | close | 1-3k bets | 83-105 | 44.1 | 0.6 | -7.0 |  |
-| money_moving+rlm_quiet | close | 1-3k bets | 84-155 | 35.1 | -6.1 | -16.8 |  |
-| pin_move+rlm_quiet | close | 1-3k bets | 83-119 | 41.1 | -2.8 | -10.9 |  |
-| pin_rlm+rlm_quiet | close | 1-3k bets | 35-66 | 34.7 | -5.1 | -18.6 |  |
-| pin_rlm+rlm_ratio | close | 1-3k bets | 83-105 | 44.1 | 0.6 | -7.0 |  |
-| rlm_quiet+rlm_ratio | close | 1-3k bets | 71-136 | 34.3 | -5.7 | -16.3 |  |
-| money_delta+rlm_quiet | close | 1-3k bets | 47-87 | 35.1 | -7.8 | -25.4 |  |
-| pin_value+rlm_quiet | close | 1-3k bets | 21-30 | 41.2 | -5.0 | -0.2 |  |
-| book_lag+pin_rlm | close | 1-3k bets | 1-0 | 100.0 | 50.4 | 87.7 |  |
-| consensus_gap+follow_move | close | 3k+ bets | 40-35 | 53.3 | 2.8 | 0.3 |  |
-| consensus_gap+money_moving | close | 3k+ bets | 44-68 | 39.3 | -6.7 | 4.2 |  |
-| consensus_gap+pin_move | close | 3k+ bets | 34-28 | 54.8 | 4.1 | 5.5 |  |
-| consensus_gap+pin_rlm | close | 3k+ bets | 5-10 | 33.3 | -8.7 | -11.1 |  |
-| consensus_gap+pin_value | close | 3k+ bets | 44-44 | 50.0 | 2.3 | 1.1 |  |
-| consensus_gap+rlm_ratio | close | 3k+ bets | 5-9 | 35.7 | -5.4 | -4.3 |  |
-| consensus_gap+sharp_gap | close | 3k+ bets | 44-69 | 38.9 | -6.6 | 5.7 |  |
-| follow_move+money_moving | close | 3k+ bets | 141-152 | 48.1 | -0.7 | -6.9 |  |
-| follow_move+pin_move | close | 3k+ bets | 129-132 | 49.4 | -0.2 | -4.5 |  |
-| follow_move+pin_rlm | close | 3k+ bets | 39-45 | 46.4 | 3.2 | 1.3 |  |
-| follow_move+pin_value | close | 3k+ bets | 43-48 | 47.3 | -2.6 | -11.1 |  |
-| follow_move+rlm_ratio | close | 3k+ bets | 63-69 | 47.7 | 4.0 | 1.5 |  |
-| follow_move+sharp_gap | close | 3k+ bets | 140-150 | 48.3 | 0.1 | -4.8 |  |
-| money_moving+pin_move | close | 3k+ bets | 93-115 | 44.7 | -3.6 | -12.4 |  |
-| money_moving+pin_rlm | close | 3k+ bets | 41-60 | 40.6 | -1.3 | -12.1 |  |
-| money_moving+pin_value | close | 3k+ bets | 52-71 | 42.3 | -6.3 | -15.0 |  |
-| money_moving+rlm_ratio | close | 3k+ bets | 60-67 | 47.2 | 3.5 | 0.3 |  |
-| money_moving+sharp_gap | close | 3k+ bets | 269-300 | 47.3 | -0.4 | -2.5 |  |
+| follow_move+pin_rlm | close | 1-3k bets | 84-107 | 44.0 | 0.6 | -7.4 |  |
+| money_moving+rlm_quiet | close | 1-3k bets | 85-161 | 34.6 | -6.6 | -18.4 |  |
+| pin_move+rlm_quiet | close | 1-3k bets | 84-121 | 41.0 | -2.7 | -11.1 |  |
+| pin_rlm+rlm_quiet | close | 1-3k bets | 35-68 | 34.0 | -5.5 | -20.2 |  |
+| pin_rlm+rlm_ratio | close | 1-3k bets | 84-107 | 44.0 | 0.6 | -7.4 |  |
+| rlm_quiet+rlm_ratio | close | 1-3k bets | 71-142 | 33.3 | -6.6 | -18.7 |  |
+| money_delta+rlm_quiet | close | 1-3k bets | 47-93 | 33.6 | -9.1 | -28.6 |  |
+| pin_value+rlm_quiet | close | 1-3k bets | 22-30 | 42.3 | -3.9 | 1.4 |  |
+| book_lag+pin_rlm | close | 1-3k bets | 1-0 | 100.0 | 50.5 | 87.7 |  |
+| consensus_gap+follow_move | close | 3k+ bets | 42-36 | 53.8 | 3.4 | 0.9 |  |
+| consensus_gap+money_moving | close | 3k+ bets | 46-71 | 39.3 | -7.0 | 2.7 |  |
+| consensus_gap+pin_move | close | 3k+ bets | 35-28 | 55.6 | 4.8 | 6.9 |  |
+| consensus_gap+pin_rlm | close | 3k+ bets | 5-10 | 33.3 | -8.8 | -11.1 |  |
+| consensus_gap+pin_value | close | 3k+ bets | 45-44 | 50.6 | 2.8 | 2.1 |  |
+| consensus_gap+rlm_ratio | close | 3k+ bets | 5-10 | 33.3 | -7.0 | -10.7 |  |
+| consensus_gap+sharp_gap | close | 3k+ bets | 46-72 | 39.0 | -6.9 | 4.1 |  |
+| follow_move+money_moving | close | 3k+ bets | 143-155 | 48.0 | -0.8 | -7.3 |  |
+| follow_move+pin_move | close | 3k+ bets | 133-132 | 50.2 | 0.6 | -2.9 |  |
+| follow_move+pin_rlm | close | 3k+ bets | 39-46 | 45.9 | 2.8 | 0.1 |  |
+| follow_move+pin_value | close | 3k+ bets | 44-48 | 47.8 | -2.0 | -10.0 |  |
+| follow_move+rlm_ratio | close | 3k+ bets | 63-72 | 46.7 | 3.1 | -0.7 |  |
+| follow_move+sharp_gap | close | 3k+ bets | 142-153 | 48.1 | -0.0 | -5.3 |  |
+| money_moving+pin_move | close | 3k+ bets | 94-115 | 45.0 | -3.3 | -11.9 |  |
+| money_moving+pin_rlm | close | 3k+ bets | 41-61 | 40.2 | -1.6 | -13.0 |  |
+| money_moving+pin_value | close | 3k+ bets | 53-73 | 42.1 | -6.5 | -15.5 |  |
+| money_moving+rlm_ratio | close | 3k+ bets | 60-70 | 46.2 | 2.6 | -2.0 |  |
+| money_moving+sharp_gap | close | 3k+ bets | 273-308 | 47.0 | -0.7 | -3.3 |  |
 | pin_move+pin_rlm | close | 3k+ bets | 39-54 | 41.9 | -1.6 | -9.7 |  |
-| pin_move+pin_value | close | 3k+ bets | 48-62 | 43.6 | -6.0 | -17.7 |  |
+| pin_move+pin_value | close | 3k+ bets | 49-62 | 44.1 | -5.5 | -16.7 |  |
 | pin_move+rlm_ratio | close | 3k+ bets | 41-46 | 47.1 | 2.4 | 0.9 |  |
-| pin_move+sharp_gap | close | 3k+ bets | 91-115 | 44.2 | -3.7 | -12.2 |  |
+| pin_move+sharp_gap | close | 3k+ bets | 92-115 | 44.4 | -3.4 | -11.7 |  |
 | pin_rlm+pin_value | close | 3k+ bets | 8-18 | 30.8 | -16.7 | -41.4 |  |
-| pin_rlm+rlm_ratio | close | 3k+ bets | 39-45 | 46.4 | 3.2 | 1.3 |  |
-| pin_rlm+sharp_gap | close | 3k+ bets | 42-62 | 40.4 | -1.5 | -12.8 |  |
+| pin_rlm+rlm_ratio | close | 3k+ bets | 39-46 | 45.9 | 2.8 | 0.1 |  |
+| pin_rlm+sharp_gap | close | 3k+ bets | 42-63 | 40.0 | -1.8 | -13.6 |  |
 | pin_value+rlm_ratio | close | 3k+ bets | 10-12 | 45.5 | -4.7 | -13.7 |  |
-| pin_value+sharp_gap | close | 3k+ bets | 52-71 | 42.3 | -6.5 | -14.9 |  |
-| rlm_ratio+sharp_gap | close | 3k+ bets | 63-69 | 47.7 | 4.0 | 1.5 |  |
-| follow_move+money_delta | close | 3k+ bets | 50-63 | 44.2 | -0.7 | -9.1 |  |
-| money_level+money_moving | close | 3k+ bets | 182-171 | 51.6 | -0.8 | -5.1 |  |
-| money_level+sharp_gap | close | 3k+ bets | 177-168 | 51.3 | -0.7 | -4.3 |  |
-| follow_move+money_level | close | 3k+ bets | 151-117 | 56.3 | 0.2 | -5.3 |  |
+| pin_value+sharp_gap | close | 3k+ bets | 53-73 | 42.1 | -6.7 | -15.4 |  |
+| rlm_ratio+sharp_gap | close | 3k+ bets | 63-72 | 46.7 | 3.1 | -0.7 |  |
+| follow_move+money_delta | close | 3k+ bets | 50-66 | 43.1 | -1.5 | -11.4 |  |
+| money_level+money_moving | close | 3k+ bets | 186-175 | 51.5 | -0.9 | -5.2 |  |
+| money_level+sharp_gap | close | 3k+ bets | 181-172 | 51.3 | -0.8 | -4.4 |  |
+| follow_move+money_level | close | 3k+ bets | 154-117 | 56.8 | 0.7 | -4.4 |  |
 | money_level+rlm_ratio | close | 3k+ bets | 26-15 | 63.4 | 15.7 | 29.5 |  |
-| consensus_gap+money_level | close | 3k+ bets | 65-59 | 52.4 | -5.1 | -11.2 |  |
-| money_level+pin_move | close | 3k+ bets | 84-85 | 49.7 | -4.3 | -10.3 |  |
-| money_level+pin_value | close | 3k+ bets | 58-67 | 46.4 | -4.3 | -13.7 |  |
+| consensus_gap+money_level | close | 3k+ bets | 69-60 | 53.5 | -4.2 | -9.3 |  |
+| money_level+pin_move | close | 3k+ bets | 85-85 | 50.0 | -4.0 | -9.7 |  |
+| money_level+pin_value | close | 3k+ bets | 59-69 | 46.1 | -4.6 | -14.2 |  |
 | consensus_gap+rlm_quiet | close | 3k+ bets | 10-16 | 38.5 | -0.9 | -8.7 |  |
-| follow_move+rlm_quiet | close | 3k+ bets | 74-102 | 42.0 | -0.3 | -10.3 |  |
-| money_delta+money_moving | close | 3k+ bets | 78-105 | 42.6 | -0.1 | -1.1 |  |
-| rlm_quiet+rlm_ratio | close | 3k+ bets | 29-46 | 38.7 | -2.0 | -13.2 |  |
-| rlm_quiet+sharp_gap | close | 3k+ bets | 40-57 | 41.2 | -0.8 | -11.0 |  |
-| money_moving+rlm_quiet | close | 3k+ bets | 37-57 | 39.4 | -2.9 | -15.1 |  |
-| consensus_gap+money_delta | close | 3k+ bets | 15-26 | 36.6 | -3.5 | 15.0 |  |
-| money_delta+rlm_quiet | close | 3k+ bets | 18-35 | 34.0 | -8.0 | -27.8 |  |
-| money_delta+sharp_gap | close | 3k+ bets | 76-102 | 42.7 | 0.1 | -0.6 |  |
-| pin_move+rlm_quiet | close | 3k+ bets | 44-53 | 45.4 | 2.2 | -3.0 |  |
-| pin_rlm+rlm_quiet | close | 3k+ bets | 17-30 | 36.2 | -4.4 | -17.4 |  |
-| pin_value+rlm_quiet | close | 3k+ bets | 10-18 | 35.7 | -13.6 | -32.0 |  |
-| money_delta+money_level | close | 3k+ bets | 36-29 | 55.4 | 8.5 | 11.5 |  |
-| money_level+pin_rlm | close | 3k+ bets | 16-11 | 59.3 | 13.5 | 26.8 |  |
-| money_delta+pin_value | close | 3k+ bets | 22-22 | 50.0 | 2.8 | -5.5 |  |
+| follow_move+rlm_quiet | close | 3k+ bets | 75-106 | 41.4 | -0.9 | -11.5 |  |
+| money_delta+money_moving | close | 3k+ bets | 78-108 | 41.9 | -0.6 | -2.7 |  |
+| rlm_quiet+rlm_ratio | close | 3k+ bets | 29-48 | 37.7 | -2.9 | -15.4 |  |
+| rlm_quiet+sharp_gap | close | 3k+ bets | 40-59 | 40.4 | -1.6 | -12.8 |  |
+| money_moving+rlm_quiet | close | 3k+ bets | 37-59 | 38.5 | -3.6 | -16.9 |  |
+| consensus_gap+money_delta | close | 3k+ bets | 15-27 | 35.7 | -4.2 | 12.2 |  |
+| money_delta+rlm_quiet | close | 3k+ bets | 18-37 | 32.7 | -9.1 | -30.4 |  |
+| money_delta+sharp_gap | close | 3k+ bets | 76-105 | 42.0 | -0.5 | -2.3 |  |
+| pin_move+rlm_quiet | close | 3k+ bets | 45-53 | 45.9 | 2.9 | -1.6 |  |
+| pin_rlm+rlm_quiet | close | 3k+ bets | 17-31 | 35.4 | -4.9 | -19.1 |  |
+| pin_value+rlm_quiet | close | 3k+ bets | 10-18 | 35.7 | -13.5 | -32.0 |  |
+| money_delta+money_level | close | 3k+ bets | 36-30 | 54.5 | 7.6 | 9.8 |  |
+| money_level+pin_rlm | close | 3k+ bets | 16-11 | 59.3 | 13.4 | 26.8 |  |
+| money_delta+pin_value | close | 3k+ bets | 22-23 | 48.9 | 1.6 | -7.6 |  |
 | money_delta+pin_move | close | 3k+ bets | 44-53 | 45.4 | -0.1 | -8.1 |  |
-| money_delta+pin_rlm | close | 3k+ bets | 27-34 | 44.3 | 1.9 | -6.5 |  |
-| money_delta+rlm_ratio | close | 3k+ bets | 35-34 | 50.7 | 6.8 | 7.0 |  |
-| book_lag+pin_move | close | 3k+ bets | 1-0 | 100.0 | 47.0 | 87.7 |  |
-| money_level+money_moving | close | <1k bets | 110-95 | 53.7 | 1.2 | -8.2 |  |
+| money_delta+pin_rlm | close | 3k+ bets | 27-35 | 43.5 | 1.4 | -8.0 |  |
+| money_delta+rlm_ratio | close | 3k+ bets | 35-36 | 49.3 | 5.9 | 4.0 |  |
+| book_lag+pin_move | close | 3k+ bets | 1-0 | 100.0 | 46.7 | 87.7 |  |
+| money_level+money_moving | close | <1k bets | 110-95 | 53.7 | 1.3 | -8.2 |  |
 | money_level+sharp_gap | close | <1k bets | 113-96 | 54.1 | 1.3 | -8.3 |  |
-| money_moving+sharp_gap | close | <1k bets | 154-171 | 47.4 | -0.6 | -10.5 |  |
+| money_moving+sharp_gap | close | <1k bets | 154-171 | 47.4 | -0.5 | -10.5 |  |
 | consensus_gap+money_level | close | <1k bets | 31-28 | 52.5 | -3.9 | -18.5 |  |
 | consensus_gap+money_moving | close | <1k bets | 25-41 | 37.9 | -5.9 | -19.1 |  |
 | consensus_gap+pin_move | close | <1k bets | 8-13 | 38.1 | -12.6 | -17.2 |  |
-| consensus_gap+pin_value | close | <1k bets | 19-16 | 54.3 | 11.8 | 29.5 |  |
-| consensus_gap+sharp_gap | close | <1k bets | 26-43 | 37.7 | -6.1 | -20.5 |  |
+| consensus_gap+pin_value | close | <1k bets | 19-16 | 54.3 | 11.9 | 29.5 |  |
+| consensus_gap+sharp_gap | close | <1k bets | 26-43 | 37.7 | -6.0 | -20.5 |  |
 | money_level+pin_move | close | <1k bets | 48-44 | 52.2 | -0.8 | -6.6 |  |
 | money_level+pin_value | close | <1k bets | 26-21 | 55.3 | 5.5 | 3.3 |  |
 | money_moving+pin_move | close | <1k bets | 47-50 | 48.5 | 0.6 | -2.4 |  |
-| money_moving+pin_value | close | <1k bets | 23-21 | 52.3 | 6.9 | 20.2 |  |
-| pin_move+pin_value | close | <1k bets | 32-24 | 57.1 | 8.5 | 14.5 |  |
-| pin_move+sharp_gap | close | <1k bets | 47-51 | 48.0 | -0.4 | -6.7 |  |
-| pin_value+sharp_gap | close | <1k bets | 23-20 | 53.5 | 7.7 | 23.0 |  |
-| follow_move+money_delta | close | <1k bets | 26-29 | 47.3 | 3.5 | -5.4 |  |
-| follow_move+money_moving | close | <1k bets | 76-81 | 48.4 | -1.0 | -11.2 |  |
+| money_moving+pin_value | close | <1k bets | 23-21 | 52.3 | 7.0 | 20.2 |  |
+| pin_move+pin_value | close | <1k bets | 32-24 | 57.1 | 8.6 | 14.5 |  |
+| pin_move+sharp_gap | close | <1k bets | 47-51 | 48.0 | -0.3 | -6.7 |  |
+| pin_value+sharp_gap | close | <1k bets | 23-20 | 53.5 | 7.8 | 23.0 |  |
+| follow_move+money_delta | close | <1k bets | 26-29 | 47.3 | 3.6 | -5.4 |  |
+| follow_move+money_moving | close | <1k bets | 76-81 | 48.4 | -0.9 | -11.2 |  |
 | follow_move+pin_move | close | <1k bets | 56-57 | 49.6 | -1.2 | -7.7 |  |
-| follow_move+sharp_gap | close | <1k bets | 77-82 | 48.4 | -1.5 | -13.6 |  |
-| money_delta+money_moving | close | <1k bets | 36-57 | 38.7 | -2.1 | -16.4 |  |
-| money_delta+pin_move | close | <1k bets | 14-20 | 41.2 | -3.6 | -19.8 |  |
-| money_delta+sharp_gap | close | <1k bets | 36-57 | 38.7 | -2.1 | -16.4 |  |
-| follow_move+rlm_quiet | close | <1k bets | 32-47 | 40.5 | -1.5 | -16.0 |  |
-| follow_move+rlm_ratio | close | <1k bets | 36-38 | 48.6 | 5.2 | -3.3 |  |
+| follow_move+sharp_gap | close | <1k bets | 77-82 | 48.4 | -1.4 | -13.6 |  |
+| money_delta+money_moving | close | <1k bets | 36-57 | 38.7 | -2.0 | -16.4 |  |
+| money_delta+pin_move | close | <1k bets | 14-20 | 41.2 | -3.5 | -19.8 |  |
+| money_delta+sharp_gap | close | <1k bets | 36-57 | 38.7 | -2.0 | -16.4 |  |
+| follow_move+rlm_quiet | close | <1k bets | 32-47 | 40.5 | -1.4 | -16.0 |  |
+| follow_move+rlm_ratio | close | <1k bets | 36-38 | 48.6 | 5.3 | -3.3 |  |
 | money_delta+rlm_quiet | close | <1k bets | 13-14 | 48.1 | 7.0 | -0.5 |  |
-| money_delta+rlm_ratio | close | <1k bets | 21-22 | 48.8 | 6.3 | -1.2 |  |
-| money_moving+rlm_quiet | close | <1k bets | 19-19 | 50.0 | 8.2 | 7.8 |  |
-| money_moving+rlm_ratio | close | <1k bets | 36-38 | 48.6 | 5.2 | -3.3 |  |
+| money_delta+rlm_ratio | close | <1k bets | 21-22 | 48.8 | 6.4 | -1.2 |  |
+| money_moving+rlm_quiet | close | <1k bets | 19-19 | 50.0 | 8.3 | 7.8 |  |
+| money_moving+rlm_ratio | close | <1k bets | 36-38 | 48.6 | 5.3 | -3.3 |  |
 | rlm_quiet+rlm_ratio | close | <1k bets | 15-16 | 48.4 | 7.6 | -0.6 |  |
-| rlm_quiet+sharp_gap | close | <1k bets | 18-20 | 47.4 | 5.0 | -3.8 |  |
-| rlm_ratio+sharp_gap | close | <1k bets | 36-38 | 48.6 | 5.2 | -3.3 |  |
+| rlm_quiet+sharp_gap | close | <1k bets | 18-20 | 47.4 | 5.1 | -3.8 |  |
+| rlm_ratio+sharp_gap | close | <1k bets | 36-38 | 48.6 | 5.3 | -3.3 |  |
 | follow_move+money_level | close | <1k bets | 99-72 | 57.9 | 0.8 | -10.3 |  |
 | consensus_gap+money_delta | close | <1k bets | 7-22 | 24.1 | -10.8 | -35.0 |  |
 | consensus_gap+pin_rlm | close | <1k bets | 3-7 | 30.0 | -2.8 | 12.2 |  |
-| money_delta+pin_rlm | close | <1k bets | 13-17 | 43.3 | 3.0 | -7.1 |  |
-| money_moving+pin_rlm | close | <1k bets | 26-26 | 50.0 | 7.7 | 7.9 |  |
-| pin_rlm+sharp_gap | close | <1k bets | 26-26 | 50.0 | 7.7 | 7.9 |  |
+| money_delta+pin_rlm | close | <1k bets | 13-17 | 43.3 | 3.1 | -7.1 |  |
+| money_moving+pin_rlm | close | <1k bets | 26-26 | 50.0 | 7.8 | 7.9 |  |
+| pin_rlm+sharp_gap | close | <1k bets | 26-26 | 50.0 | 7.8 | 7.9 |  |
 | money_delta+pin_value | close | <1k bets | 10-8 | 55.6 | 9.8 | 25.3 |  |
-| consensus_gap+follow_move | close | <1k bets | 14-21 | 40.0 | -11.1 | -35.2 |  |
+| consensus_gap+follow_move | close | <1k bets | 14-21 | 40.0 | -11.0 | -35.2 |  |
 | follow_move+pin_rlm | close | <1k bets | 20-16 | 55.6 | 11.3 | 9.1 |  |
 | follow_move+pin_value | close | <1k bets | 23-15 | 60.5 | 11.6 | 15.1 |  |
-| pin_move+pin_rlm | close | <1k bets | 24-21 | 53.3 | 8.9 | 10.6 |  |
+| pin_move+pin_rlm | close | <1k bets | 24-21 | 53.3 | 9.0 | 10.6 |  |
 | pin_move+rlm_quiet | close | <1k bets | 13-14 | 48.1 | 2.3 | 2.3 |  |
-| pin_move+rlm_ratio | close | <1k bets | 20-18 | 52.6 | 7.0 | 2.3 |  |
-| pin_rlm+pin_value | close | <1k bets | 7-3 | 70.0 | 27.0 | 66.8 |  |
-| pin_rlm+rlm_quiet | close | <1k bets | 9-6 | 60.0 | 15.9 | 17.9 |  |
+| pin_move+rlm_ratio | close | <1k bets | 20-18 | 52.6 | 7.1 | 2.3 |  |
+| pin_rlm+pin_value | close | <1k bets | 7-3 | 70.0 | 27.1 | 66.8 |  |
+| pin_rlm+rlm_quiet | close | <1k bets | 9-6 | 60.0 | 16.0 | 17.9 |  |
 | pin_rlm+rlm_ratio | close | <1k bets | 20-16 | 55.6 | 11.3 | 9.1 |  |
-| pin_value+rlm_quiet | close | <1k bets | 6-4 | 60.0 | 10.8 | 15.0 |  |
-| pin_value+rlm_ratio | close | <1k bets | 5-1 | 83.3 | 34.6 | 58.3 |  |
-| consensus_gap+rlm_ratio | close | <1k bets | 3-7 | 30.0 | -6.8 | -42.5 |  |
-| money_delta+money_level | close | <1k bets | 15-20 | 42.9 | -0.5 | -14.3 |  |
-| money_level+rlm_ratio | close | <1k bets | 17-17 | 50.0 | 5.0 | -2.7 |  |
+| pin_value+rlm_quiet | close | <1k bets | 6-4 | 60.0 | 10.9 | 15.0 |  |
+| pin_value+rlm_ratio | close | <1k bets | 5-1 | 83.3 | 34.8 | 58.3 |  |
+| consensus_gap+rlm_ratio | close | <1k bets | 3-7 | 30.0 | -6.7 | -42.5 |  |
+| money_delta+money_level | close | <1k bets | 15-20 | 42.9 | -0.4 | -14.3 |  |
+| money_level+rlm_ratio | close | <1k bets | 17-17 | 50.0 | 5.1 | -2.7 |  |
 | money_level+pin_rlm | close | <1k bets | 11-9 | 55.0 | 11.6 | 8.4 |  |
-| consensus_gap+rlm_quiet | close | <1k bets | 1-6 | 14.3 | -22.9 | -72.7 |  |
+| consensus_gap+rlm_quiet | close | <1k bets | 1-6 | 14.3 | -22.8 | -72.7 |  |
 | consensus_gap+follow_move | close | pin $1-2k | 50-57 | 46.7 | -4.9 | -10.9 |  |
-| consensus_gap+money_moving | close | pin $1-2k | 61-76 | 44.5 | -3.8 | -4.5 |  |
+| consensus_gap+money_moving | close | pin $1-2k | 61-77 | 44.2 | -4.3 | -5.2 |  |
 | consensus_gap+pin_move | close | pin $1-2k | 53-54 | 49.5 | -1.8 | 5.9 |  |
 | consensus_gap+pin_rlm | close | pin $1-2k | 14-19 | 42.4 | 1.0 | 25.4 |  |
-| consensus_gap+pin_value | close | pin $1-2k | 81-84 | 49.1 | 2.5 | -0.3 |  |
+| consensus_gap+pin_value | close | pin $1-2k | 81-85 | 48.8 | 2.3 | -0.9 |  |
 | consensus_gap+rlm_ratio | close | pin $1-2k | 15-16 | 48.4 | 3.4 | 6.1 |  |
-| consensus_gap+sharp_gap | close | pin $1-2k | 59-74 | 44.4 | -3.1 | -3.5 |  |
-| follow_move+money_moving | close | pin $1-2k | 204-249 | 45.0 | -4.4 | -12.2 |  |
-| follow_move+pin_move | close | pin $1-2k | 211-256 | 45.2 | -4.9 | -13.0 |  |
-| follow_move+pin_rlm | close | pin $1-2k | 64-72 | 47.1 | 1.3 | -0.7 |  |
-| follow_move+pin_value | close | pin $1-2k | 81-93 | 46.6 | -3.0 | -12.0 |  |
-| follow_move+rlm_ratio | close | pin $1-2k | 94-104 | 47.5 | 1.7 | -0.9 |  |
-| follow_move+sharp_gap | close | pin $1-2k | 208-249 | 45.5 | -3.8 | -11.5 |  |
-| money_moving+pin_move | close | pin $1-2k | 186-210 | 47.0 | -2.4 | -5.6 |  |
-| money_moving+pin_rlm | close | pin $1-2k | 75-84 | 47.2 | 2.5 | 7.0 |  |
-| money_moving+pin_value | close | pin $1-2k | 90-121 | 42.7 | -5.4 | -15.5 |  |
-| money_moving+rlm_ratio | close | pin $1-2k | 92-97 | 48.7 | 2.5 | 1.5 |  |
-| money_moving+sharp_gap | close | pin $1-2k | 363-398 | 47.7 | -1.1 | -5.2 |  |
-| pin_move+pin_rlm | close | pin $1-2k | 75-82 | 47.8 | 2.5 | 6.0 |  |
-| pin_move+pin_value | close | pin $1-2k | 97-120 | 44.7 | -5.1 | -14.1 |  |
-| pin_move+rlm_ratio | close | pin $1-2k | 72-75 | 49.0 | 2.2 | 1.9 |  |
-| pin_move+sharp_gap | close | pin $1-2k | 188-215 | 46.7 | -2.3 | -6.4 |  |
-| pin_rlm+pin_value | close | pin $1-2k | 19-30 | 38.8 | -9.4 | -19.6 |  |
-| pin_rlm+rlm_ratio | close | pin $1-2k | 64-72 | 47.1 | 1.3 | -0.7 |  |
-| pin_rlm+sharp_gap | close | pin $1-2k | 78-91 | 46.2 | 2.0 | 4.4 |  |
+| consensus_gap+sharp_gap | close | pin $1-2k | 59-75 | 44.0 | -3.6 | -4.2 |  |
+| follow_move+money_moving | close | pin $1-2k | 207-253 | 45.0 | -4.4 | -12.4 |  |
+| follow_move+pin_move | close | pin $1-2k | 216-258 | 45.6 | -4.4 | -12.1 |  |
+| follow_move+pin_rlm | close | pin $1-2k | 65-73 | 47.1 | 1.5 | -0.8 |  |
+| follow_move+pin_value | close | pin $1-2k | 81-94 | 46.3 | -3.2 | -12.5 |  |
+| follow_move+rlm_ratio | close | pin $1-2k | 95-106 | 47.3 | 1.6 | -1.4 |  |
+| follow_move+sharp_gap | close | pin $1-2k | 211-253 | 45.5 | -3.9 | -11.8 |  |
+| money_moving+pin_move | close | pin $1-2k | 188-212 | 47.0 | -2.3 | -5.6 |  |
+| money_moving+pin_rlm | close | pin $1-2k | 76-85 | 47.2 | 2.7 | 6.9 |  |
+| money_moving+pin_value | close | pin $1-2k | 90-124 | 42.1 | -5.9 | -16.7 |  |
+| money_moving+rlm_ratio | close | pin $1-2k | 93-99 | 48.4 | 2.4 | 0.9 |  |
+| money_moving+sharp_gap | close | pin $1-2k | 366-407 | 47.3 | -1.4 | -6.1 |  |
+| pin_move+pin_rlm | close | pin $1-2k | 76-83 | 47.8 | 2.6 | 5.9 |  |
+| pin_move+pin_value | close | pin $1-2k | 97-121 | 44.5 | -5.3 | -14.5 |  |
+| pin_move+rlm_ratio | close | pin $1-2k | 73-76 | 49.0 | 2.4 | 1.8 |  |
+| pin_move+sharp_gap | close | pin $1-2k | 190-217 | 46.7 | -2.2 | -6.4 |  |
+| pin_rlm+pin_value | close | pin $1-2k | 19-30 | 38.8 | -9.3 | -19.6 |  |
+| pin_rlm+rlm_ratio | close | pin $1-2k | 65-73 | 47.1 | 1.5 | -0.8 |  |
+| pin_rlm+sharp_gap | close | pin $1-2k | 79-92 | 46.2 | 2.2 | 4.3 |  |
 | pin_value+rlm_ratio | close | pin $1-2k | 21-25 | 45.7 | -3.4 | -12.8 |  |
-| pin_value+sharp_gap | close | pin $1-2k | 90-118 | 43.3 | -4.7 | -14.3 |  |
-| rlm_ratio+sharp_gap | close | pin $1-2k | 94-104 | 47.5 | 1.7 | -0.9 |  |
-| follow_move+money_level | close | pin $1-2k | 223-219 | 50.5 | -3.4 | -11.4 |  |
+| pin_value+sharp_gap | close | pin $1-2k | 90-121 | 42.7 | -5.3 | -15.5 |  |
+| rlm_ratio+sharp_gap | close | pin $1-2k | 95-106 | 47.3 | 1.6 | -1.4 |  |
+| follow_move+money_level | close | pin $1-2k | 226-221 | 50.6 | -3.3 | -11.3 |  |
 | money_level+rlm_ratio | close | pin $1-2k | 49-42 | 53.8 | 5.9 | 4.8 |  |
-| money_level+sharp_gap | close | pin $1-2k | 267-262 | 50.5 | -1.1 | -6.7 |  |
+| money_level+sharp_gap | close | pin $1-2k | 269-268 | 50.1 | -1.4 | -7.5 |  |
 | consensus_gap+rlm_quiet | close | pin $1-2k | 5-15 | 25.0 | -15.6 | -30.7 |  |
-| follow_move+rlm_quiet | close | pin $1-2k | 77-131 | 37.0 | -6.7 | -18.6 |  |
-| money_level+money_moving | close | pin $1-2k | 271-265 | 50.6 | -1.2 | -6.9 |  |
-| consensus_gap+money_level | close | pin $1-2k | 79-70 | 53.0 | -3.2 | -7.1 |  |
-| money_level+pin_value | close | pin $1-2k | 105-105 | 50.0 | 0.1 | -6.5 |  |
-| money_level+pin_move | close | pin $1-2k | 179-179 | 50.0 | -2.4 | -8.9 |  |
-| money_moving+rlm_quiet | close | pin $1-2k | 40-61 | 39.6 | -4.3 | -8.1 |  |
-| pin_move+rlm_quiet | close | pin $1-2k | 54-78 | 40.9 | -4.6 | -9.5 |  |
-| pin_rlm+rlm_quiet | close | pin $1-2k | 25-42 | 37.3 | -7.0 | -12.6 |  |
-| rlm_quiet+rlm_ratio | close | pin $1-2k | 33-52 | 38.8 | -4.5 | -9.0 |  |
-| rlm_quiet+sharp_gap | close | pin $1-2k | 41-63 | 39.4 | -4.5 | -10.3 |  |
-| money_level+pin_rlm | close | pin $1-2k | 35-30 | 53.8 | 7.5 | 5.7 |  |
-| follow_move+money_delta | close | pin $1-2k | 73-81 | 47.4 | 0.8 | -3.4 |  |
-| money_delta+money_moving | close | pin $1-2k | 101-112 | 47.4 | 2.8 | 2.7 |  |
-| money_delta+pin_move | close | pin $1-2k | 72-79 | 47.7 | 0.3 | -0.1 |  |
-| money_delta+pin_rlm | close | pin $1-2k | 46-53 | 46.5 | 2.5 | 4.8 |  |
-| money_delta+rlm_ratio | close | pin $1-2k | 53-54 | 49.5 | 3.8 | 3.2 |  |
-| money_delta+sharp_gap | close | pin $1-2k | 101-110 | 47.9 | 3.2 | 3.7 |  |
-| book_lag+pin_move | close | pin $1-2k | 1-0 | 100.0 | 47.0 | 87.7 |  |
-| money_delta+money_level | close | pin $1-2k | 53-46 | 53.5 | 5.4 | 4.1 |  |
+| follow_move+rlm_quiet | close | pin $1-2k | 78-133 | 37.0 | -6.6 | -18.6 |  |
+| money_level+money_moving | close | pin $1-2k | 273-271 | 50.2 | -1.6 | -7.8 |  |
+| consensus_gap+money_level | close | pin $1-2k | 80-71 | 53.0 | -3.5 | -7.5 |  |
+| money_level+pin_value | close | pin $1-2k | 106-109 | 49.3 | -0.5 | -7.8 |  |
+| money_level+pin_move | close | pin $1-2k | 180-180 | 50.0 | -2.4 | -8.9 |  |
+| money_moving+rlm_quiet | close | pin $1-2k | 40-63 | 38.8 | -5.0 | -9.9 |  |
+| pin_move+rlm_quiet | close | pin $1-2k | 55-79 | 41.0 | -4.2 | -9.1 |  |
+| pin_rlm+rlm_quiet | close | pin $1-2k | 25-43 | 36.8 | -7.3 | -13.8 |  |
+| rlm_quiet+rlm_ratio | close | pin $1-2k | 33-54 | 37.9 | -5.2 | -11.1 |  |
+| rlm_quiet+sharp_gap | close | pin $1-2k | 41-65 | 38.7 | -5.1 | -12.0 |  |
+| money_level+pin_rlm | close | pin $1-2k | 35-30 | 53.8 | 7.6 | 5.7 |  |
+| follow_move+money_delta | close | pin $1-2k | 74-84 | 46.8 | 0.3 | -4.6 |  |
+| money_delta+money_moving | close | pin $1-2k | 102-117 | 46.6 | 2.0 | 0.8 |  |
+| money_delta+pin_move | close | pin $1-2k | 73-80 | 47.7 | 0.4 | -0.1 |  |
+| money_delta+pin_rlm | close | pin $1-2k | 47-54 | 46.5 | 2.7 | 4.7 |  |
+| money_delta+rlm_ratio | close | pin $1-2k | 54-56 | 49.1 | 3.5 | 2.1 |  |
+| money_delta+sharp_gap | close | pin $1-2k | 102-115 | 47.0 | 2.4 | 1.7 |  |
+| book_lag+pin_move | close | pin $1-2k | 1-0 | 100.0 | 46.7 | 87.7 |  |
+| money_delta+money_level | close | pin $1-2k | 53-48 | 52.5 | 4.4 | 2.1 |  |
 | consensus_gap+money_delta | close | pin $1-2k | 20-26 | 43.5 | 1.7 | 7.4 |  |
-| money_delta+pin_value | close | pin $1-2k | 46-47 | 49.5 | 1.3 | -2.0 |  |
-| money_delta+rlm_quiet | close | pin $1-2k | 23-40 | 36.5 | -7.6 | -18.4 |  |
+| money_delta+pin_value | close | pin $1-2k | 46-48 | 48.9 | 0.8 | -3.1 |  |
+| money_delta+rlm_quiet | close | pin $1-2k | 23-42 | 35.4 | -8.6 | -20.9 |  |
 | pin_value+rlm_quiet | close | pin $1-2k | 14-32 | 30.4 | -18.4 | -40.5 |  |
 | consensus_gap+follow_move | close | pin $2k+ | 44-35 | 55.7 | 2.5 | -5.6 |  |
 | consensus_gap+money_delta | close | pin $2k+ | 12-28 | 30.0 | -6.0 | -41.4 |  |
-| consensus_gap+money_level | close | pin $2k+ | 92-67 | 57.9 | -4.4 | -9.9 |  |
-| consensus_gap+money_moving | close | pin $2k+ | 50-79 | 38.8 | -7.5 | -6.0 |  |
+| consensus_gap+money_level | close | pin $2k+ | 93-68 | 57.8 | -4.5 | -10.0 |  |
+| consensus_gap+money_moving | close | pin $2k+ | 50-80 | 38.5 | -8.0 | -6.7 |  |
 | consensus_gap+pin_move | close | pin $2k+ | 47-40 | 54.0 | 3.6 | 3.8 |  |
-| consensus_gap+pin_value | close | pin $2k+ | 54-60 | 47.4 | 3.1 | 7.5 |  |
+| consensus_gap+pin_value | close | pin $2k+ | 55-60 | 47.8 | 3.5 | 8.3 |  |
 | consensus_gap+rlm_ratio | close | pin $2k+ | 4-15 | 21.1 | -13.4 | -52.3 |  |
-| consensus_gap+sharp_gap | close | pin $2k+ | 51-83 | 38.1 | -8.5 | -6.5 |  |
-| follow_move+money_delta | close | pin $2k+ | 42-53 | 44.2 | 2.7 | -8.9 |  |
-| follow_move+money_level | close | pin $2k+ | 178-120 | 59.7 | 0.8 | -4.2 |  |
-| follow_move+money_moving | close | pin $2k+ | 150-154 | 49.3 | 1.8 | -5.5 |  |
-| follow_move+pin_move | close | pin $2k+ | 195-186 | 51.2 | 1.8 | -2.8 |  |
-| follow_move+pin_value | close | pin $2k+ | 44-42 | 51.2 | 3.3 | 8.0 |  |
-| follow_move+rlm_ratio | close | pin $2k+ | 53-77 | 40.8 | 2.9 | -9.8 |  |
-| follow_move+sharp_gap | close | pin $2k+ | 147-154 | 48.8 | 1.4 | -5.8 |  |
-| money_delta+money_level | close | pin $2k+ | 30-24 | 55.6 | 10.8 | 12.7 |  |
-| money_delta+money_moving | close | pin $2k+ | 76-106 | 41.8 | 2.5 | -8.9 |  |
-| money_delta+pin_move | close | pin $2k+ | 44-59 | 42.7 | 0.3 | -13.1 |  |
-| money_delta+pin_value | close | pin $2k+ | 24-25 | 49.0 | 3.9 | -6.5 |  |
-| money_delta+rlm_ratio | close | pin $2k+ | 26-38 | 40.6 | 2.2 | -13.0 |  |
-| money_delta+sharp_gap | close | pin $2k+ | 74-105 | 41.3 | 2.1 | -9.7 |  |
-| money_level+money_moving | close | pin $2k+ | 205-193 | 51.5 | -1.5 | -6.8 |  |
-| money_level+pin_move | close | pin $2k+ | 131-112 | 53.9 | -1.9 | -6.1 |  |
-| money_level+pin_value | close | pin $2k+ | 70-75 | 48.3 | -1.8 | -10.6 |  |
-| money_level+rlm_ratio | close | pin $2k+ | 19-17 | 52.8 | 6.8 | 8.5 |  |
-| money_level+sharp_gap | close | pin $2k+ | 202-196 | 50.8 | -2.2 | -7.4 |  |
-| money_moving+pin_move | close | pin $2k+ | 129-144 | 47.3 | 0.5 | -6.1 |  |
-| money_moving+pin_value | close | pin $2k+ | 73-90 | 44.8 | -1.8 | -2.1 |  |
-| money_moving+rlm_ratio | close | pin $2k+ | 53-76 | 41.1 | 3.2 | -9.1 |  |
-| money_moving+sharp_gap | close | pin $2k+ | 303-351 | 46.3 | -0.3 | -4.8 |  |
-| pin_move+pin_value | close | pin $2k+ | 66-65 | 50.4 | 1.7 | -2.2 |  |
-| pin_move+rlm_ratio | close | pin $2k+ | 39-54 | 41.9 | 3.0 | -5.7 |  |
-| pin_move+sharp_gap | close | pin $2k+ | 128-146 | 46.7 | -0.0 | -6.6 |  |
+| consensus_gap+sharp_gap | close | pin $2k+ | 51-84 | 37.8 | -9.0 | -7.2 |  |
+| follow_move+money_delta | close | pin $2k+ | 42-56 | 42.9 | 1.7 | -11.7 |  |
+| follow_move+money_level | close | pin $2k+ | 178-124 | 58.9 | 0.2 | -5.5 |  |
+| follow_move+money_moving | close | pin $2k+ | 151-160 | 48.6 | 1.0 | -7.1 |  |
+| follow_move+pin_move | close | pin $2k+ | 197-189 | 51.0 | 1.6 | -3.0 |  |
+| follow_move+pin_value | close | pin $2k+ | 45-43 | 51.1 | 3.2 | 7.6 |  |
+| follow_move+rlm_ratio | close | pin $2k+ | 53-80 | 39.8 | 2.2 | -11.8 |  |
+| follow_move+sharp_gap | close | pin $2k+ | 148-160 | 48.1 | 0.7 | -7.3 |  |
+| money_delta+money_level | close | pin $2k+ | 30-25 | 54.5 | 10.1 | 10.7 |  |
+| money_delta+money_moving | close | pin $2k+ | 76-109 | 41.1 | 2.0 | -10.4 |  |
+| money_delta+pin_move | close | pin $2k+ | 44-60 | 42.3 | -0.1 | -14.0 |  |
+| money_delta+pin_value | close | pin $2k+ | 24-25 | 49.0 | 3.8 | -6.5 |  |
+| money_delta+rlm_ratio | close | pin $2k+ | 26-41 | 38.8 | 0.8 | -16.9 |  |
+| money_delta+sharp_gap | close | pin $2k+ | 74-108 | 40.7 | 1.5 | -11.2 |  |
+| money_level+money_moving | close | pin $2k+ | 206-199 | 50.9 | -2.1 | -7.9 |  |
+| money_level+pin_move | close | pin $2k+ | 132-114 | 53.7 | -2.1 | -6.5 |  |
+| money_level+pin_value | close | pin $2k+ | 70-77 | 47.6 | -2.3 | -11.8 |  |
+| money_level+rlm_ratio | close | pin $2k+ | 19-18 | 51.4 | 5.8 | 5.5 |  |
+| money_level+sharp_gap | close | pin $2k+ | 203-202 | 50.1 | -2.7 | -8.5 |  |
+| money_moving+pin_move | close | pin $2k+ | 131-147 | 47.1 | 0.3 | -6.5 |  |
+| money_moving+pin_value | close | pin $2k+ | 74-92 | 44.6 | -2.0 | -2.8 |  |
+| money_moving+rlm_ratio | close | pin $2k+ | 53-79 | 40.2 | 2.5 | -11.2 |  |
+| money_moving+sharp_gap | close | pin $2k+ | 305-359 | 45.9 | -0.7 | -5.6 |  |
+| pin_move+pin_value | close | pin $2k+ | 67-65 | 50.8 | 2.0 | -1.5 |  |
+| pin_move+rlm_ratio | close | pin $2k+ | 39-55 | 41.5 | 2.7 | -6.7 |  |
+| pin_move+sharp_gap | close | pin $2k+ | 130-149 | 46.6 | -0.2 | -6.9 |  |
 | pin_value+rlm_ratio | close | pin $2k+ | 6-7 | 46.2 | 2.1 | -8.8 |  |
-| pin_value+sharp_gap | close | pin $2k+ | 73-93 | 44.0 | -2.8 | -3.9 |  |
-| rlm_ratio+sharp_gap | close | pin $2k+ | 53-77 | 40.8 | 2.9 | -9.8 |  |
+| pin_value+sharp_gap | close | pin $2k+ | 74-95 | 43.8 | -3.0 | -4.5 |  |
+| rlm_ratio+sharp_gap | close | pin $2k+ | 53-80 | 39.8 | 2.2 | -11.8 |  |
 | consensus_gap+pin_rlm | close | pin $2k+ | 9-24 | 27.3 | -6.6 | -13.7 |  |
 | consensus_gap+rlm_quiet | close | pin $2k+ | 7-16 | 30.4 | -0.9 | -31.5 |  |
-| follow_move+pin_rlm | close | pin $2k+ | 39-61 | 39.0 | 2.5 | -10.8 |  |
-| follow_move+rlm_quiet | close | pin $2k+ | 91-110 | 45.3 | 7.0 | 3.5 |  |
-| money_moving+pin_rlm | close | pin $2k+ | 54-88 | 38.0 | 2.1 | -4.4 |  |
-| money_moving+rlm_quiet | close | pin $2k+ | 41-59 | 41.0 | 5.1 | -7.7 |  |
-| pin_move+pin_rlm | close | pin $2k+ | 44-63 | 41.1 | 3.5 | -5.4 |  |
-| pin_move+rlm_quiet | close | pin $2k+ | 60-77 | 43.8 | 3.8 | -3.5 |  |
-| pin_rlm+rlm_quiet | close | pin $2k+ | 21-44 | 32.3 | -0.1 | -21.1 |  |
-| pin_rlm+rlm_ratio | close | pin $2k+ | 39-61 | 39.0 | 2.5 | -10.8 |  |
-| pin_rlm+sharp_gap | close | pin $2k+ | 54-89 | 37.8 | 1.9 | -5.1 |  |
-| rlm_quiet+rlm_ratio | close | pin $2k+ | 28-51 | 35.4 | 2.7 | -16.2 |  |
-| rlm_quiet+sharp_gap | close | pin $2k+ | 40-59 | 40.4 | 4.4 | -9.4 |  |
-| money_delta+pin_rlm | close | pin $2k+ | 30-48 | 38.5 | 2.1 | -9.3 |  |
+| follow_move+pin_rlm | close | pin $2k+ | 39-63 | 38.2 | 1.9 | -12.5 |  |
+| follow_move+rlm_quiet | close | pin $2k+ | 92-112 | 45.1 | 6.9 | 3.2 |  |
+| money_moving+pin_rlm | close | pin $2k+ | 54-90 | 37.5 | 1.6 | -5.7 |  |
+| money_moving+rlm_quiet | close | pin $2k+ | 41-61 | 40.2 | 4.4 | -9.5 |  |
+| pin_move+pin_rlm | close | pin $2k+ | 44-64 | 40.7 | 3.2 | -6.2 |  |
+| pin_move+rlm_quiet | close | pin $2k+ | 61-78 | 43.9 | 4.0 | -3.2 |  |
+| pin_rlm+rlm_quiet | close | pin $2k+ | 21-46 | 31.3 | -1.0 | -23.5 |  |
+| pin_rlm+rlm_ratio | close | pin $2k+ | 39-63 | 38.2 | 1.9 | -12.5 |  |
+| pin_rlm+sharp_gap | close | pin $2k+ | 54-91 | 37.2 | 1.4 | -6.4 |  |
+| rlm_quiet+rlm_ratio | close | pin $2k+ | 28-53 | 34.6 | 1.9 | -18.3 |  |
+| rlm_quiet+sharp_gap | close | pin $2k+ | 40-61 | 39.6 | 3.7 | -11.2 |  |
+| money_delta+pin_rlm | close | pin $2k+ | 30-50 | 37.5 | 1.3 | -11.6 |  |
 | money_level+pin_rlm | close | pin $2k+ | 17-13 | 56.7 | 13.0 | 19.4 |  |
 | pin_rlm+pin_value | close | pin $2k+ | 9-14 | 39.1 | -0.7 | 18.6 |  |
-| money_delta+rlm_quiet | close | pin $2k+ | 23-32 | 41.8 | 3.7 | -13.4 |  |
+| money_delta+rlm_quiet | close | pin $2k+ | 23-34 | 40.4 | 2.5 | -16.5 |  |
 | pin_value+rlm_quiet | close | pin $2k+ | 8-10 | 44.4 | 3.7 | 40.9 |  |
-| follow_move+money_delta | close | pin limit <$1k | 37-48 | 43.5 | -5.7 | -16.5 |  |
-| money_level+money_moving | close | pin limit <$1k | 98-103 | 48.8 | -1.1 | -6.7 |  |
-| money_level+sharp_gap | close | pin limit <$1k | 93-97 | 48.9 | -0.9 | -6.3 |  |
-| money_moving+sharp_gap | close | pin limit <$1k | 138-156 | 46.9 | -2.5 | -7.0 |  |
-| consensus_gap+money_level | close | pin limit <$1k | 33-31 | 51.6 | 0.9 | -4.4 |  |
-| consensus_gap+pin_move | close | pin limit <$1k | 18-14 | 56.2 | 7.6 | 19.9 |  |
-| consensus_gap+pin_value | close | pin limit <$1k | 43-43 | 50.0 | 0.5 | -0.7 |  |
-| follow_move+money_moving | close | pin limit <$1k | 86-100 | 46.2 | -3.2 | -11.2 |  |
-| follow_move+sharp_gap | close | pin limit <$1k | 90-99 | 47.6 | -1.8 | -8.6 |  |
-| money_level+pin_move | close | pin limit <$1k | 72-61 | 54.1 | 4.2 | 3.3 |  |
-| money_level+pin_value | close | pin limit <$1k | 66-45 | 59.5 | 9.3 | 12.6 |  |
-| pin_move+pin_value | close | pin limit <$1k | 55-37 | 59.8 | 9.9 | 18.5 |  |
-| consensus_gap+follow_move | close | pin limit <$1k | 22-15 | 59.5 | 9.9 | 10.1 |  |
-| consensus_gap+money_moving | close | pin limit <$1k | 27-27 | 50.0 | 1.3 | 2.9 |  |
-| consensus_gap+sharp_gap | close | pin limit <$1k | 29-29 | 50.0 | 1.1 | 2.2 |  |
-| follow_move+money_level | close | pin limit <$1k | 78-72 | 52.0 | 1.7 | -1.5 |  |
-| follow_move+pin_move | close | pin limit <$1k | 82-82 | 50.0 | 0.4 | -4.2 |  |
-| follow_move+pin_value | close | pin limit <$1k | 48-31 | 60.8 | 10.9 | 15.4 |  |
-| money_moving+pin_move | close | pin limit <$1k | 77-80 | 49.0 | -0.4 | -3.4 |  |
-| money_moving+pin_value | close | pin limit <$1k | 51-42 | 54.8 | 5.3 | 8.9 |  |
-| pin_move+sharp_gap | close | pin limit <$1k | 78-80 | 49.4 | -0.0 | -2.8 |  |
-| pin_value+sharp_gap | close | pin limit <$1k | 52-47 | 52.5 | 2.9 | 4.2 |  |
-| follow_move+rlm_quiet | close | pin limit <$1k | 50-54 | 48.1 | -1.3 | -7.7 |  |
-| rlm_quiet+sharp_gap | close | pin limit <$1k | 28-36 | 43.8 | -5.4 | -16.1 |  |
-| money_delta+money_moving | close | pin limit <$1k | 52-58 | 47.3 | -1.9 | -5.4 |  |
+| follow_move+money_delta | close | pin limit <$1k | 37-49 | 43.0 | -6.2 | -17.4 |  |
+| money_level+money_moving | close | pin limit <$1k | 100-103 | 49.3 | -0.6 | -5.7 |  |
+| money_level+sharp_gap | close | pin limit <$1k | 95-97 | 49.5 | -0.3 | -5.2 |  |
+| money_moving+sharp_gap | close | pin limit <$1k | 141-157 | 47.3 | -2.1 | -6.4 |  |
+| consensus_gap+money_level | close | pin limit <$1k | 34-31 | 52.3 | 1.6 | -3.0 |  |
+| consensus_gap+pin_move | close | pin limit <$1k | 19-14 | 57.6 | 8.9 | 22.0 |  |
+| consensus_gap+pin_value | close | pin limit <$1k | 44-43 | 50.6 | 1.1 | 0.3 |  |
+| follow_move+money_moving | close | pin limit <$1k | 89-101 | 46.8 | -2.6 | -10.1 |  |
+| follow_move+sharp_gap | close | pin limit <$1k | 93-100 | 48.2 | -1.2 | -7.5 |  |
+| money_level+pin_move | close | pin limit <$1k | 74-61 | 54.8 | 4.9 | 4.6 |  |
+| money_level+pin_value | close | pin limit <$1k | 67-45 | 59.8 | 9.7 | 13.3 |  |
+| pin_move+pin_value | close | pin limit <$1k | 56-37 | 60.2 | 10.3 | 19.3 |  |
+| consensus_gap+follow_move | close | pin limit <$1k | 23-15 | 60.5 | 11.0 | 12.2 |  |
+| consensus_gap+money_moving | close | pin limit <$1k | 28-27 | 50.9 | 2.1 | 4.5 |  |
+| consensus_gap+sharp_gap | close | pin limit <$1k | 30-29 | 50.8 | 1.9 | 3.8 |  |
+| follow_move+money_level | close | pin limit <$1k | 80-72 | 52.6 | 2.4 | -0.2 |  |
+| follow_move+pin_move | close | pin limit <$1k | 84-82 | 50.6 | 1.1 | -3.0 |  |
+| follow_move+pin_value | close | pin limit <$1k | 50-31 | 61.7 | 11.9 | 17.2 |  |
+| money_moving+pin_move | close | pin limit <$1k | 79-80 | 49.7 | 0.3 | -2.2 |  |
+| money_moving+pin_value | close | pin limit <$1k | 53-42 | 55.8 | 6.2 | 10.6 |  |
+| pin_move+sharp_gap | close | pin limit <$1k | 80-80 | 50.0 | 0.6 | -1.6 |  |
+| pin_value+sharp_gap | close | pin limit <$1k | 54-47 | 53.5 | 3.9 | 5.9 |  |
+| follow_move+rlm_quiet | close | pin limit <$1k | 51-55 | 48.1 | -1.2 | -7.6 |  |
+| rlm_quiet+sharp_gap | close | pin limit <$1k | 29-37 | 43.9 | -5.2 | -15.8 |  |
+| money_delta+money_moving | close | pin limit <$1k | 52-59 | 46.8 | -2.3 | -6.2 |  |
 | consensus_gap+money_delta | close | pin limit <$1k | 10-8 | 55.6 | 8.2 | 30.0 |  |
 | money_delta+money_level | close | pin limit <$1k | 26-25 | 51.0 | 1.3 | -2.3 |  |
-| money_delta+pin_value | close | pin limit <$1k | 19-10 | 65.5 | 16.3 | 39.8 |  |
-| money_delta+sharp_gap | close | pin limit <$1k | 51-56 | 47.7 | -1.5 | -4.6 |  |
+| money_delta+pin_value | close | pin limit <$1k | 19-10 | 65.5 | 16.4 | 39.8 |  |
+| money_delta+sharp_gap | close | pin limit <$1k | 51-57 | 47.2 | -1.9 | -5.4 |  |
 | book_lag+money_delta | close | pin limit <$1k | 1-1 | 50.0 | 0.0 | -6.2 |  |
 | book_lag+money_level | close | pin limit <$1k | 1-1 | 50.0 | 0.0 | -6.2 |  |
 | book_lag+money_moving | close | pin limit <$1k | 1-1 | 50.0 | 0.0 | -6.2 |  |
@@ -1908,179 +1912,179 @@ on with the games testing it. Use the forward table for any decision.
 | book_lag+sharp_gap | close | pin limit <$1k | 1-1 | 50.0 | 0.0 | -6.2 |  |
 | money_delta+pin_move | close | pin limit <$1k | 33-40 | 45.2 | -3.7 | -7.2 |  |
 | consensus_gap+pin_rlm | close | pin limit <$1k | 7-4 | 63.6 | 17.5 | 61.2 |  |
-| money_delta+pin_rlm | close | pin limit <$1k | 27-24 | 52.9 | 4.4 | 10.3 |  |
+| money_delta+pin_rlm | close | pin limit <$1k | 27-24 | 52.9 | 4.5 | 10.3 |  |
 | money_moving+pin_rlm | close | pin limit <$1k | 46-39 | 54.1 | 5.4 | 14.3 |  |
 | pin_move+pin_rlm | close | pin limit <$1k | 48-41 | 53.9 | 4.9 | 8.4 |  |
-| pin_rlm+pin_value | close | pin limit <$1k | 20-7 | 74.1 | 25.0 | 57.7 |  |
-| pin_rlm+sharp_gap | close | pin limit <$1k | 49-41 | 54.4 | 5.6 | 14.3 |  |
-| consensus_gap+rlm_quiet | close | pin limit <$1k | 7-4 | 63.6 | 15.8 | 21.7 |  |
-| pin_value+rlm_quiet | close | pin limit <$1k | 15-10 | 60.0 | 10.2 | 14.8 |  |
-| money_delta+rlm_quiet | close | pin limit <$1k | 12-21 | 36.4 | -12.2 | -30.2 |  |
+| pin_rlm+pin_value | close | pin limit <$1k | 20-7 | 74.1 | 25.1 | 57.7 |  |
+| pin_rlm+sharp_gap | close | pin limit <$1k | 49-41 | 54.4 | 5.7 | 14.3 |  |
+| consensus_gap+rlm_quiet | close | pin limit <$1k | 7-4 | 63.6 | 15.9 | 21.7 |  |
+| pin_value+rlm_quiet | close | pin limit <$1k | 16-10 | 61.5 | 11.8 | 17.5 |  |
+| money_delta+rlm_quiet | close | pin limit <$1k | 12-22 | 35.3 | -13.2 | -32.2 |  |
 | pin_move+rlm_quiet | close | pin limit <$1k | 26-31 | 45.6 | -3.5 | -12.2 |  |
-| follow_move+pin_rlm | close | pin limit <$1k | 39-33 | 54.2 | 5.0 | 4.2 |  |
-| follow_move+rlm_ratio | close | pin limit <$1k | 54-50 | 51.9 | 2.8 | 0.1 |  |
-| money_delta+rlm_ratio | close | pin limit <$1k | 30-31 | 49.2 | 0.1 | -5.4 |  |
-| money_moving+rlm_quiet | close | pin limit <$1k | 22-35 | 38.6 | -10.4 | -25.8 |  |
-| money_moving+rlm_ratio | close | pin limit <$1k | 49-47 | 51.0 | 2.0 | -1.5 |  |
-| pin_move+rlm_ratio | close | pin limit <$1k | 39-33 | 54.2 | 5.0 | 4.2 |  |
-| pin_rlm+rlm_quiet | close | pin limit <$1k | 15-16 | 48.4 | -0.1 | -6.9 |  |
-| pin_rlm+rlm_ratio | close | pin limit <$1k | 39-33 | 54.2 | 5.0 | 4.2 |  |
-| rlm_quiet+rlm_ratio | close | pin limit <$1k | 24-28 | 46.2 | -2.8 | -11.4 |  |
-| rlm_ratio+sharp_gap | close | pin limit <$1k | 54-50 | 51.9 | 2.8 | 0.1 |  |
-| money_level+pin_rlm | close | pin limit <$1k | 24-16 | 60.0 | 10.3 | 15.1 |  |
-| money_level+rlm_ratio | close | pin limit <$1k | 26-19 | 57.8 | 8.5 | 12.1 |  |
-| pin_value+rlm_ratio | close | pin limit <$1k | 18-8 | 69.2 | 19.4 | 32.5 |  |
+| follow_move+pin_rlm | close | pin limit <$1k | 39-33 | 54.2 | 5.1 | 4.2 |  |
+| follow_move+rlm_ratio | close | pin limit <$1k | 54-51 | 51.4 | 2.3 | -0.8 |  |
+| money_delta+rlm_ratio | close | pin limit <$1k | 30-32 | 48.4 | -0.6 | -7.0 |  |
+| money_moving+rlm_quiet | close | pin limit <$1k | 23-36 | 39.0 | -10.0 | -25.1 |  |
+| money_moving+rlm_ratio | close | pin limit <$1k | 49-48 | 50.5 | 1.5 | -2.5 |  |
+| pin_move+rlm_ratio | close | pin limit <$1k | 39-33 | 54.2 | 5.1 | 4.2 |  |
+| pin_rlm+rlm_quiet | close | pin limit <$1k | 15-16 | 48.4 | -0.0 | -6.9 |  |
+| pin_rlm+rlm_ratio | close | pin limit <$1k | 39-33 | 54.2 | 5.1 | 4.2 |  |
+| rlm_quiet+rlm_ratio | close | pin limit <$1k | 24-29 | 45.3 | -3.6 | -13.1 |  |
+| rlm_ratio+sharp_gap | close | pin limit <$1k | 54-51 | 51.4 | 2.3 | -0.8 |  |
+| money_level+pin_rlm | close | pin limit <$1k | 24-16 | 60.0 | 10.4 | 15.1 |  |
+| money_level+rlm_ratio | close | pin limit <$1k | 26-19 | 57.8 | 8.6 | 12.1 |  |
+| pin_value+rlm_ratio | close | pin limit <$1k | 18-8 | 69.2 | 19.5 | 32.5 |  |
 | consensus_gap+rlm_ratio | close | pin limit <$1k | 7-6 | 53.8 | 5.6 | 2.9 |  |
-| book_lag+pin_rlm | close | pin limit <$1k | 1-0 | 100.0 | 50.4 | 87.7 |  |
+| book_lag+pin_rlm | close | pin limit <$1k | 1-0 | 100.0 | 50.5 | 87.7 |  |
 | rlm_quiet | early | 1-3k bets | 3-6 | 33.3 | -4.6 | 7.9 | -0.02 |
-| rlm_quiet | early | 3k+ bets | 0-2 | 0.0 | -51.7 | -100.0 | -0.5 |
-| rlm_quiet | early | <1k bets | 53-60 | 46.9 | 10.5 | 14.1 | 0.54 |
+| rlm_quiet | early | 3k+ bets | 0-2 | 0.0 | -51.9 | -100.0 | -0.5 |
+| rlm_quiet | early | <1k bets | 53-61 | 46.5 | 10.1 | 13.1 | 0.54 |
 | rlm_quiet | early | pin $1-2k | 3-7 | 30.0 | -1.0 | 7.2 | -0.12 |
-| rlm_quiet | early | pin $2k+ | 0-1 | 0.0 | -28.6 | -100.0 | 1.3 |
-| rlm_quiet | early | pin limit <$1k | 6-8 | 42.9 | -2.3 | -13.5 | 0.23 |
-| pin_move | early | 1-3k bets | 0-1 | 0.0 | -50.4 | -100.0 | -1.0 |
-| pin_move | early | <1k bets | 11-19 | 36.7 | -11.6 | -31.9 | 0.24 |
-| pin_move | early | pin $1-2k | 1-5 | 16.7 | -25.2 | -67.6 | -0.05 |
-| pin_move | early | pin limit <$1k | 10-15 | 40.0 | -9.9 | -26.0 | 0.26 |
+| rlm_quiet | early | pin $2k+ | 0-1 | 0.0 | -28.5 | -100.0 | 1.3 |
+| rlm_quiet | early | pin limit <$1k | 6-9 | 40.0 | -5.4 | -19.3 | 0.28 |
+| pin_move | early | 1-3k bets | 0-1 | 0.0 | -50.5 | -100.0 | -1.0 |
+| pin_move | early | <1k bets | 14-21 | 40.0 | -9.1 | -26.3 | 0.19 |
+| pin_move | early | pin $1-2k | 2-9 | 18.2 | -30.9 | -68.6 | 0.27 |
+| pin_move | early | pin limit <$1k | 12-16 | 42.9 | -7.0 | -20.2 | 0.44 |
 | money_delta | early | 1-3k bets | 2-1 | 66.7 | 16.5 | 23.4 | 0.33 |
-| money_delta | early | <1k bets | 12-11 | 52.2 | 13.5 | 22.6 | 0.98 |
-| money_delta | early | pin $1-2k | 0-3 | 0.0 | -36.7 | -100.0 | 2.17 |
-| money_delta | early | pin limit <$1k | 5-0 | 100.0 | 50.8 | 88.6 | 0.0 |
+| money_delta | early | <1k bets | 12-11 | 52.2 | 13.6 | 22.6 | 0.98 |
+| money_delta | early | pin $1-2k | 0-3 | 0.0 | -36.8 | -100.0 | 2.17 |
+| money_delta | early | pin limit <$1k | 5-0 | 100.0 | 50.9 | 88.6 | 0.0 |
 | pin_rlm | early | <1k bets | 1-4 | 20.0 | -17.1 | -61.5 | -0.3 |
-| pin_rlm | early | pin $1-2k | 0-3 | 0.0 | -42.9 | -100.0 | -0.67 |
-| pin_rlm | early | pin limit <$1k | 1-1 | 50.0 | 21.4 | -3.7 | 0.25 |
-| follow_move | early | 1-3k bets | 22-20 | 52.4 | 2.6 | -1.0 | -0.0 |
-| follow_move | early | 3k+ bets | 0-2 | 0.0 | -51.7 | -100.0 | -0.5 |
-| follow_move | early | <1k bets | 586-533 | 52.4 | 1.5 | -6.2 | 0.14 |
-| follow_move | early | pin $1-2k | 40-29 | 58.0 | 7.4 | 7.3 | -0.33 |
-| follow_move | early | pin $2k+ | 0-2 | 0.0 | -40.8 | -100.0 | 0.65 |
-| follow_move | early | pin limit <$1k | 58-59 | 49.6 | -0.4 | -6.8 | -0.13 |
-| rlm_ratio | early | 1-3k bets | 6-3 | 66.7 | 22.9 | 73.7 | -0.13 |
-| rlm_ratio | early | 3k+ bets | 0-1 | 0.0 | -53.0 | -100.0 | -1.0 |
+| pin_rlm | early | pin $1-2k | 0-3 | 0.0 | -42.8 | -100.0 | -0.67 |
+| pin_rlm | early | pin limit <$1k | 1-1 | 50.0 | 21.5 | -3.7 | 0.25 |
+| follow_move | early | 1-3k bets | 22-20 | 52.4 | 2.7 | -1.0 | -0.0 |
+| follow_move | early | 3k+ bets | 0-2 | 0.0 | -51.9 | -100.0 | -0.5 |
+| follow_move | early | <1k bets | 597-542 | 52.4 | 1.6 | -5.9 | 0.15 |
+| follow_move | early | pin $1-2k | 41-32 | 56.2 | 6.4 | 4.5 | -0.34 |
+| follow_move | early | pin $2k+ | 0-2 | 0.0 | -40.9 | -100.0 | 0.65 |
+| follow_move | early | pin limit <$1k | 60-60 | 50.0 | 0.1 | -5.9 | -0.08 |
+| rlm_ratio | early | 1-3k bets | 6-3 | 66.7 | 22.8 | 73.7 | -0.13 |
+| rlm_ratio | early | 3k+ bets | 0-1 | 0.0 | -53.3 | -100.0 | -1.0 |
 | rlm_ratio | early | <1k bets | 33-29 | 53.2 | 14.5 | 20.8 | 0.52 |
-| rlm_ratio | early | pin $1-2k | 2-4 | 33.3 | -10.5 | 29.7 | -1.02 |
-| rlm_ratio | early | pin $2k+ | 0-2 | 0.0 | -40.8 | -100.0 | 0.65 |
+| rlm_ratio | early | pin $1-2k | 2-4 | 33.3 | -10.6 | 29.7 | -1.02 |
+| rlm_ratio | early | pin $2k+ | 0-2 | 0.0 | -40.9 | -100.0 | 0.65 |
 | rlm_ratio | early | pin limit <$1k | 8-2 | 80.0 | 36.6 | 61.1 | 0.33 |
-| money_level | early | 1-3k bets | 26-20 | 56.5 | 1.5 | -6.8 | 0.05 |
-| money_level | early | 3k+ bets | 3-0 | 100.0 | 44.0 | 59.7 | 0.33 |
-| money_level | early | <1k bets | 212-150 | 58.6 | -0.3 | -7.6 | -0.24 |
+| money_level | early | 1-3k bets | 26-20 | 56.5 | 1.6 | -6.8 | 0.05 |
+| money_level | early | 3k+ bets | 3-0 | 100.0 | 44.1 | 59.7 | 0.33 |
+| money_level | early | <1k bets | 213-150 | 58.7 | -0.2 | -7.3 | -0.25 |
 | money_level | early | pin $1-2k | 24-13 | 64.9 | 1.3 | -2.9 | -0.05 |
-| money_level | early | pin $2k+ | 1-1 | 50.0 | -12.2 | -47.2 | -0.7 |
-| money_level | early | pin limit <$1k | 31-32 | 49.2 | -2.8 | -8.4 | 0.26 |
-| sharp_gap | early | 1-3k bets | 25-21 | 54.3 | 7.2 | 20.4 | 0.03 |
-| sharp_gap | early | 3k+ bets | 2-1 | 66.7 | 8.7 | -1.4 | -0.33 |
-| sharp_gap | early | <1k bets | 171-161 | 51.5 | 2.3 | -1.1 | 0.31 |
-| sharp_gap | early | pin $1-2k | 18-17 | 51.4 | -3.8 | -6.9 | -0.3 |
-| sharp_gap | early | pin $2k+ | 0-2 | 0.0 | -40.8 | -100.0 | 0.65 |
-| sharp_gap | early | pin limit <$1k | 35-23 | 60.3 | 11.8 | 23.4 | 0.18 |
-| money_moving | early | 1-3k bets | 22-11 | 66.7 | 17.5 | 32.6 | 0.16 |
-| money_moving | early | 3k+ bets | 2-0 | 100.0 | 51.7 | 89.2 | 0.5 |
-| money_moving | early | <1k bets | 123-112 | 52.3 | 1.7 | -6.0 | 0.24 |
+| money_level | early | pin $2k+ | 1-1 | 50.0 | -12.4 | -47.2 | -0.7 |
+| money_level | early | pin limit <$1k | 32-32 | 50.0 | -2.0 | -6.9 | 0.24 |
+| sharp_gap | early | 1-3k bets | 25-21 | 54.3 | 7.1 | 20.4 | 0.03 |
+| sharp_gap | early | 3k+ bets | 2-1 | 66.7 | 8.6 | -1.4 | -0.33 |
+| sharp_gap | early | <1k bets | 172-161 | 51.7 | 2.5 | -0.8 | 0.31 |
+| sharp_gap | early | pin $1-2k | 18-17 | 51.4 | -3.9 | -6.9 | -0.3 |
+| sharp_gap | early | pin $2k+ | 0-2 | 0.0 | -40.9 | -100.0 | 0.65 |
+| sharp_gap | early | pin limit <$1k | 36-23 | 61.0 | 12.4 | 24.5 | 0.16 |
+| money_moving | early | 1-3k bets | 22-11 | 66.7 | 17.6 | 32.6 | 0.16 |
+| money_moving | early | 3k+ bets | 2-0 | 100.0 | 51.9 | 89.2 | 0.5 |
+| money_moving | early | <1k bets | 124-112 | 52.5 | 1.9 | -5.6 | 0.23 |
 | money_moving | early | pin $1-2k | 8-13 | 38.1 | -18.9 | -47.8 | 0.36 |
-| money_moving | early | pin $2k+ | 1-1 | 50.0 | 12.2 | -8.4 | 0.65 |
-| money_moving | early | pin limit <$1k | 32-11 | 74.4 | 24.6 | 52.7 | 0.41 |
-| pin_value | early | 1-3k bets | 13-10 | 56.5 | 8.3 | 6.3 | -0.04 |
-| pin_value | early | 3k+ bets | 1-0 | 100.0 | 53.0 | 83.3 | 1.0 |
-| pin_value | early | <1k bets | 57-57 | 50.0 | 1.0 | -5.4 | 0.1 |
-| pin_value | early | pin $1-2k | 19-28 | 40.4 | -6.9 | -24.0 | 0.16 |
-| pin_value | early | pin $2k+ | 1-0 | 100.0 | 53.0 | 83.3 | 0.0 |
-| pin_value | early | pin limit <$1k | 51-39 | 56.7 | 7.0 | 7.3 | 0.04 |
-| book_lag | early | 1-3k bets | 0-1 | 0.0 | -50.4 | -100.0 | -1.0 |
-| book_lag | early | <1k bets | 1-3 | 25.0 | -27.1 | -52.3 | -1.0 |
+| money_moving | early | pin $2k+ | 1-1 | 50.0 | 12.4 | -8.4 | 0.65 |
+| money_moving | early | pin limit <$1k | 33-11 | 75.0 | 25.2 | 53.4 | 0.38 |
+| pin_value | early | 1-3k bets | 13-10 | 56.5 | 8.4 | 6.3 | -0.04 |
+| pin_value | early | 3k+ bets | 1-0 | 100.0 | 53.3 | 83.3 | 1.0 |
+| pin_value | early | <1k bets | 58-58 | 50.0 | 1.0 | -5.4 | 0.11 |
+| pin_value | early | pin $1-2k | 19-30 | 38.8 | -8.5 | -27.1 | 0.19 |
+| pin_value | early | pin $2k+ | 1-0 | 100.0 | 53.3 | 83.3 | 0.0 |
+| pin_value | early | pin limit <$1k | 53-39 | 57.6 | 7.9 | 9.1 | 0.05 |
+| book_lag | early | 1-3k bets | 0-1 | 0.0 | -50.5 | -100.0 | -1.0 |
+| book_lag | early | <1k bets | 1-3 | 25.0 | -27.3 | -52.3 | -1.0 |
 | book_lag | early | pin limit <$1k | 0-2 | 0.0 | -50.0 | -100.0 | 0.0 |
-| consensus_gap | early | 1-3k bets | 9-16 | 36.0 | -11.1 | -21.4 | 0.04 |
-| consensus_gap | early | 3k+ bets | 1-1 | 50.0 | 12.2 | -8.4 | 0.5 |
-| consensus_gap | early | <1k bets | 285-333 | 46.1 | -3.5 | -12.3 | 0.44 |
+| consensus_gap | early | 1-3k bets | 9-16 | 36.0 | -11.0 | -21.4 | 0.04 |
+| consensus_gap | early | 3k+ bets | 1-1 | 50.0 | 12.4 | -8.4 | 0.5 |
+| consensus_gap | early | <1k bets | 288-337 | 46.1 | -3.6 | -12.5 | 0.42 |
 | consensus_gap | early | pin $1-2k | 22-25 | 46.8 | -0.5 | -11.9 | 0.29 |
-| consensus_gap | early | pin $2k+ | 1-1 | 50.0 | 12.2 | -8.4 | 0.65 |
+| consensus_gap | early | pin $2k+ | 1-1 | 50.0 | 12.4 | -8.4 | 0.65 |
 | consensus_gap | early | pin limit <$1k | 26-38 | 40.6 | -9.5 | -17.9 | 0.24 |
-| money_delta+money_level | early | 1-3k bets | 0-1 | 0.0 | -53.0 | -100.0 | 1.0 |
+| money_delta+money_level | early | 1-3k bets | 0-1 | 0.0 | -53.3 | -100.0 | 1.0 |
 | money_delta+money_moving | early | 1-3k bets | 2-1 | 66.7 | 16.5 | 23.4 | 0.33 |
 | money_delta+pin_value | early | 1-3k bets | 2-1 | 66.7 | 16.5 | 23.4 | 0.33 |
-| money_delta+sharp_gap | early | 1-3k bets | 1-1 | 50.0 | -1.7 | -6.5 | 0.5 |
-| money_level+money_moving | early | 1-3k bets | 13-5 | 72.2 | 17.7 | 23.7 | 0.29 |
-| money_level+pin_value | early | 1-3k bets | 6-5 | 54.5 | 5.4 | 3.1 | 0.0 |
+| money_delta+sharp_gap | early | 1-3k bets | 1-1 | 50.0 | -1.9 | -6.5 | 0.5 |
+| money_level+money_moving | early | 1-3k bets | 13-5 | 72.2 | 17.8 | 23.7 | 0.29 |
+| money_level+pin_value | early | 1-3k bets | 6-5 | 54.5 | 5.5 | 3.1 | 0.0 |
 | money_level+sharp_gap | early | 1-3k bets | 16-13 | 55.2 | 4.3 | 2.3 | 0.08 |
-| money_moving+pin_value | early | 1-3k bets | 7-4 | 63.6 | 14.3 | 19.4 | -0.09 |
+| money_moving+pin_value | early | 1-3k bets | 7-4 | 63.6 | 14.4 | 19.4 | -0.09 |
 | money_moving+sharp_gap | early | 1-3k bets | 13-7 | 65.0 | 19.1 | 42.2 | 0.27 |
 | pin_value+sharp_gap | early | 1-3k bets | 8-4 | 66.7 | 16.8 | 26.0 | -0.25 |
-| book_lag+pin_move | early | 1-3k bets | 0-1 | 0.0 | -50.4 | -100.0 | -1.0 |
-| consensus_gap+follow_move | early | 1-3k bets | 5-6 | 45.5 | -0.7 | -23.0 | 0.39 |
-| consensus_gap+pin_value | early | 1-3k bets | 6-5 | 54.5 | 8.4 | 1.3 | 0.27 |
-| consensus_gap+rlm_quiet | early | 1-3k bets | 1-2 | 33.3 | -1.4 | -38.9 | 0.77 |
-| follow_move+pin_value | early | 1-3k bets | 7-7 | 50.0 | 2.9 | -6.4 | -0.29 |
+| book_lag+pin_move | early | 1-3k bets | 0-1 | 0.0 | -50.5 | -100.0 | -1.0 |
+| consensus_gap+follow_move | early | 1-3k bets | 5-6 | 45.5 | -0.6 | -23.0 | 0.39 |
+| consensus_gap+pin_value | early | 1-3k bets | 6-5 | 54.5 | 8.5 | 1.3 | 0.27 |
+| consensus_gap+rlm_quiet | early | 1-3k bets | 1-2 | 33.3 | -1.3 | -38.9 | 0.77 |
+| follow_move+pin_value | early | 1-3k bets | 7-7 | 50.0 | 3.0 | -6.4 | -0.29 |
 | follow_move+rlm_quiet | early | 1-3k bets | 3-6 | 33.3 | -4.6 | 7.9 | -0.02 |
-| pin_value+rlm_quiet | early | 1-3k bets | 1-2 | 33.3 | -8.7 | -38.9 | -0.67 |
-| consensus_gap+money_level | early | 1-3k bets | 4-7 | 36.4 | -20.0 | -46.2 | 0.15 |
-| consensus_gap+sharp_gap | early | 1-3k bets | 4-7 | 36.4 | -3.0 | 7.9 | 0.23 |
-| follow_move+money_level | early | 1-3k bets | 15-11 | 57.7 | 3.5 | -6.6 | 0.04 |
-| follow_move+sharp_gap | early | 1-3k bets | 12-9 | 57.1 | 9.5 | 24.3 | -0.04 |
-| follow_move+rlm_ratio | early | 1-3k bets | 6-3 | 66.7 | 22.9 | 73.7 | -0.13 |
-| money_level+rlm_ratio | early | 1-3k bets | 4-1 | 80.0 | 28.4 | 55.0 | 0.0 |
+| pin_value+rlm_quiet | early | 1-3k bets | 1-2 | 33.3 | -8.6 | -38.9 | -0.67 |
+| consensus_gap+money_level | early | 1-3k bets | 4-7 | 36.4 | -19.9 | -46.2 | 0.15 |
+| consensus_gap+sharp_gap | early | 1-3k bets | 4-7 | 36.4 | -2.9 | 7.9 | 0.23 |
+| follow_move+money_level | early | 1-3k bets | 15-11 | 57.7 | 3.6 | -6.6 | 0.04 |
+| follow_move+sharp_gap | early | 1-3k bets | 12-9 | 57.1 | 9.6 | 24.3 | -0.04 |
+| follow_move+rlm_ratio | early | 1-3k bets | 6-3 | 66.7 | 22.8 | 73.7 | -0.13 |
+| money_level+rlm_ratio | early | 1-3k bets | 4-1 | 80.0 | 28.3 | 55.0 | 0.0 |
 | pin_value+rlm_ratio | early | 1-3k bets | 1-1 | 50.0 | 0.0 | -4.5 | -1.5 |
-| rlm_ratio+sharp_gap | early | 1-3k bets | 6-3 | 66.7 | 22.9 | 73.7 | -0.13 |
-| follow_move+money_moving | early | 1-3k bets | 12-5 | 70.6 | 21.3 | 25.3 | 0.18 |
-| consensus_gap+money_delta | early | 1-3k bets | 2-0 | 100.0 | 51.3 | 85.1 | 0.0 |
-| consensus_gap+money_moving | early | 1-3k bets | 6-4 | 60.0 | 17.3 | 56.1 | 0.15 |
-| follow_move+money_delta | early | 1-3k bets | 2-0 | 100.0 | 51.3 | 85.1 | 0.0 |
-| money_delta+rlm_quiet | early | 1-3k bets | 1-0 | 100.0 | 53.0 | 83.3 | 0.0 |
+| rlm_ratio+sharp_gap | early | 1-3k bets | 6-3 | 66.7 | 22.8 | 73.7 | -0.13 |
+| follow_move+money_moving | early | 1-3k bets | 12-5 | 70.6 | 21.4 | 25.3 | 0.18 |
+| consensus_gap+money_delta | early | 1-3k bets | 2-0 | 100.0 | 51.4 | 85.1 | 0.0 |
+| consensus_gap+money_moving | early | 1-3k bets | 6-4 | 60.0 | 17.4 | 56.1 | 0.15 |
+| follow_move+money_delta | early | 1-3k bets | 2-0 | 100.0 | 51.4 | 85.1 | 0.0 |
+| money_delta+rlm_quiet | early | 1-3k bets | 1-0 | 100.0 | 53.3 | 83.3 | 0.0 |
 | money_moving+rlm_quiet | early | 1-3k bets | 2-2 | 50.0 | 11.4 | -2.2 | -0.3 |
-| money_moving+rlm_ratio | early | 1-3k bets | 3-2 | 60.0 | 18.0 | 18.8 | -0.24 |
+| money_moving+rlm_ratio | early | 1-3k bets | 3-2 | 60.0 | 17.9 | 18.8 | -0.24 |
 | rlm_quiet+rlm_ratio | early | 1-3k bets | 2-2 | 50.0 | 16.0 | 97.0 | -0.3 |
 | rlm_quiet+sharp_gap | early | 1-3k bets | 2-2 | 50.0 | 16.0 | 97.0 | -0.3 |
-| consensus_gap+rlm_ratio | early | 1-3k bets | 0-1 | 0.0 | -28.6 | -100.0 | 1.3 |
-| consensus_gap+money_level | early | 3k+ bets | 1-0 | 100.0 | 53.0 | 83.3 | 1.0 |
-| consensus_gap+money_moving | early | 3k+ bets | 1-0 | 100.0 | 53.0 | 83.3 | 1.0 |
-| consensus_gap+pin_value | early | 3k+ bets | 1-0 | 100.0 | 53.0 | 83.3 | 1.0 |
-| follow_move+rlm_quiet | early | 3k+ bets | 0-2 | 0.0 | -51.7 | -100.0 | -0.5 |
-| follow_move+rlm_ratio | early | 3k+ bets | 0-1 | 0.0 | -53.0 | -100.0 | -1.0 |
-| follow_move+sharp_gap | early | 3k+ bets | 0-1 | 0.0 | -53.0 | -100.0 | -1.0 |
-| money_level+money_moving | early | 3k+ bets | 2-0 | 100.0 | 51.7 | 89.2 | 0.5 |
-| money_level+pin_value | early | 3k+ bets | 1-0 | 100.0 | 53.0 | 83.3 | 1.0 |
-| money_moving+pin_value | early | 3k+ bets | 1-0 | 100.0 | 53.0 | 83.3 | 1.0 |
-| rlm_quiet+rlm_ratio | early | 3k+ bets | 0-1 | 0.0 | -53.0 | -100.0 | -1.0 |
-| rlm_quiet+sharp_gap | early | 3k+ bets | 0-1 | 0.0 | -53.0 | -100.0 | -1.0 |
-| rlm_ratio+sharp_gap | early | 3k+ bets | 0-1 | 0.0 | -53.0 | -100.0 | -1.0 |
+| consensus_gap+rlm_ratio | early | 1-3k bets | 0-1 | 0.0 | -28.5 | -100.0 | 1.3 |
+| consensus_gap+money_level | early | 3k+ bets | 1-0 | 100.0 | 53.3 | 83.3 | 1.0 |
+| consensus_gap+money_moving | early | 3k+ bets | 1-0 | 100.0 | 53.3 | 83.3 | 1.0 |
+| consensus_gap+pin_value | early | 3k+ bets | 1-0 | 100.0 | 53.3 | 83.3 | 1.0 |
+| follow_move+rlm_quiet | early | 3k+ bets | 0-2 | 0.0 | -51.9 | -100.0 | -0.5 |
+| follow_move+rlm_ratio | early | 3k+ bets | 0-1 | 0.0 | -53.3 | -100.0 | -1.0 |
+| follow_move+sharp_gap | early | 3k+ bets | 0-1 | 0.0 | -53.3 | -100.0 | -1.0 |
+| money_level+money_moving | early | 3k+ bets | 2-0 | 100.0 | 51.9 | 89.2 | 0.5 |
+| money_level+pin_value | early | 3k+ bets | 1-0 | 100.0 | 53.3 | 83.3 | 1.0 |
+| money_moving+pin_value | early | 3k+ bets | 1-0 | 100.0 | 53.3 | 83.3 | 1.0 |
+| rlm_quiet+rlm_ratio | early | 3k+ bets | 0-1 | 0.0 | -53.3 | -100.0 | -1.0 |
+| rlm_quiet+sharp_gap | early | 3k+ bets | 0-1 | 0.0 | -53.3 | -100.0 | -1.0 |
+| rlm_ratio+sharp_gap | early | 3k+ bets | 0-1 | 0.0 | -53.3 | -100.0 | -1.0 |
 | money_level+sharp_gap | early | 3k+ bets | 2-0 | 100.0 | 39.5 | 47.9 | 0.0 |
-| money_moving+sharp_gap | early | 3k+ bets | 1-0 | 100.0 | 50.4 | 95.2 | 0.0 |
-| consensus_gap+follow_move | early | <1k bets | 41-52 | 44.1 | -9.3 | -21.9 | 0.87 |
+| money_moving+sharp_gap | early | 3k+ bets | 1-0 | 100.0 | 50.5 | 95.2 | 0.0 |
+| consensus_gap+follow_move | early | <1k bets | 42-53 | 44.2 | -9.3 | -22.0 | 0.85 |
 | consensus_gap+money_level | early | <1k bets | 51-38 | 57.3 | -6.8 | -12.0 | -0.06 |
 | consensus_gap+sharp_gap | early | <1k bets | 37-53 | 41.1 | -9.7 | -19.5 | 0.54 |
 | follow_move+money_level | early | <1k bets | 102-51 | 66.7 | 6.7 | -1.3 | 0.03 |
 | follow_move+sharp_gap | early | <1k bets | 87-53 | 62.1 | 12.6 | 13.0 | 0.53 |
-| money_level+sharp_gap | early | <1k bets | 116-84 | 58.0 | 1.7 | -4.9 | 0.04 |
+| money_level+sharp_gap | early | <1k bets | 117-84 | 58.2 | 2.0 | -4.4 | 0.03 |
 | follow_move+money_moving | early | <1k bets | 60-42 | 58.8 | 7.3 | 6.5 | 0.46 |
-| money_level+money_moving | early | <1k bets | 70-51 | 57.9 | 0.3 | -6.4 | -0.04 |
-| money_moving+sharp_gap | early | <1k bets | 70-68 | 50.7 | 2.4 | -4.2 | 0.46 |
-| consensus_gap+money_moving | early | <1k bets | 20-24 | 45.5 | -5.9 | -27.0 | 0.59 |
-| follow_move+pin_value | early | <1k bets | 17-15 | 53.1 | 3.5 | -0.2 | -0.17 |
-| follow_move+rlm_quiet | early | <1k bets | 53-60 | 46.9 | 10.5 | 14.1 | 0.54 |
+| money_level+money_moving | early | <1k bets | 71-51 | 58.2 | 0.7 | -5.6 | -0.05 |
+| money_moving+sharp_gap | early | <1k bets | 71-68 | 51.1 | 2.8 | -3.5 | 0.45 |
+| consensus_gap+money_moving | early | <1k bets | 20-24 | 45.5 | -5.8 | -27.0 | 0.59 |
+| follow_move+pin_value | early | <1k bets | 18-16 | 52.9 | 3.3 | -0.3 | -0.1 |
+| follow_move+rlm_quiet | early | <1k bets | 53-61 | 46.5 | 10.1 | 13.1 | 0.54 |
 | money_moving+rlm_quiet | early | <1k bets | 18-18 | 50.0 | 12.8 | 22.1 | 0.69 |
 | rlm_quiet+sharp_gap | early | <1k bets | 26-22 | 54.2 | 16.5 | 25.4 | 0.22 |
 | follow_move+rlm_ratio | early | <1k bets | 33-29 | 53.2 | 14.5 | 20.8 | 0.52 |
-| rlm_quiet+rlm_ratio | early | <1k bets | 23-17 | 57.5 | 20.6 | 36.2 | 0.16 |
+| rlm_quiet+rlm_ratio | early | <1k bets | 23-17 | 57.5 | 20.7 | 36.2 | 0.16 |
 | rlm_ratio+sharp_gap | early | <1k bets | 33-29 | 53.2 | 14.5 | 20.8 | 0.52 |
-| pin_move+pin_value | early | <1k bets | 4-10 | 28.6 | -20.7 | -45.1 | 0.36 |
-| follow_move+pin_move | early | <1k bets | 7-9 | 43.8 | -5.2 | -20.3 | 0.28 |
-| consensus_gap+pin_value | early | <1k bets | 23-26 | 46.9 | -0.6 | -11.8 | 0.25 |
-| pin_value+rlm_quiet | early | <1k bets | 0-3 | 0.0 | -43.7 | -100.0 | -0.6 |
-| money_delta+money_moving | early | <1k bets | 11-11 | 50.0 | 11.8 | 19.5 | 1.02 |
+| pin_move+pin_value | early | <1k bets | 5-11 | 31.2 | -18.2 | -39.8 | 0.44 |
+| follow_move+pin_move | early | <1k bets | 9-10 | 47.4 | -1.8 | -12.6 | 0.49 |
+| consensus_gap+pin_value | early | <1k bets | 23-26 | 46.9 | -0.5 | -11.8 | 0.25 |
+| pin_value+rlm_quiet | early | <1k bets | 0-3 | 0.0 | -43.8 | -100.0 | -0.6 |
+| money_delta+money_moving | early | <1k bets | 11-11 | 50.0 | 11.9 | 19.5 | 1.02 |
 | money_delta+sharp_gap | early | <1k bets | 10-9 | 52.6 | 15.2 | 28.3 | 1.18 |
 | consensus_gap+pin_move | early | <1k bets | 2-6 | 25.0 | -21.9 | -51.7 | 0.29 |
 | money_level+pin_move | early | <1k bets | 4-6 | 40.0 | -9.9 | -30.2 | 0.14 |
-| consensus_gap+pin_rlm | early | <1k bets | 0-1 | 0.0 | -28.6 | -100.0 | -4.8 |
-| consensus_gap+rlm_quiet | early | <1k bets | 4-6 | 40.0 | 3.0 | -12.2 | 1.03 |
-| consensus_gap+rlm_ratio | early | <1k bets | 5-3 | 62.5 | 20.8 | 25.0 | 0.65 |
+| consensus_gap+pin_rlm | early | <1k bets | 0-1 | 0.0 | -28.5 | -100.0 | -4.8 |
+| consensus_gap+rlm_quiet | early | <1k bets | 4-6 | 40.0 | 3.1 | -12.2 | 1.03 |
+| consensus_gap+rlm_ratio | early | <1k bets | 5-3 | 62.5 | 20.9 | 25.0 | 0.65 |
 | follow_move+pin_rlm | early | <1k bets | 1-3 | 25.0 | -14.3 | -51.8 | -0.7 |
-| pin_rlm+pin_value | early | <1k bets | 0-1 | 0.0 | -28.6 | -100.0 | -4.8 |
-| pin_rlm+rlm_quiet | early | <1k bets | 0-1 | 0.0 | -28.6 | -100.0 | -4.8 |
+| pin_rlm+pin_value | early | <1k bets | 0-1 | 0.0 | -28.5 | -100.0 | -4.8 |
+| pin_rlm+rlm_quiet | early | <1k bets | 0-1 | 0.0 | -28.5 | -100.0 | -4.8 |
 | pin_rlm+rlm_ratio | early | <1k bets | 1-3 | 25.0 | -14.3 | -51.8 | -0.7 |
 | pin_rlm+sharp_gap | early | <1k bets | 1-4 | 20.0 | -17.1 | -61.5 | -0.3 |
-| pin_value+rlm_ratio | early | <1k bets | 2-1 | 66.7 | 24.1 | 27.3 | -0.93 |
+| pin_value+rlm_ratio | early | <1k bets | 2-1 | 66.7 | 24.2 | 27.3 | -0.93 |
 | pin_value+sharp_gap | early | <1k bets | 6-8 | 42.9 | -7.2 | -18.2 | 0.42 |
 | money_level+pin_value | early | <1k bets | 7-7 | 50.0 | -1.7 | -4.5 | 0.84 |
-| book_lag+consensus_gap | early | <1k bets | 0-2 | 0.0 | -51.3 | -100.0 | -0.5 |
-| book_lag+pin_value | early | <1k bets | 0-1 | 0.0 | -49.6 | -100.0 | 1.0 |
+| book_lag+consensus_gap | early | <1k bets | 0-2 | 0.0 | -51.4 | -100.0 | -0.5 |
+| book_lag+pin_value | early | <1k bets | 0-1 | 0.0 | -49.5 | -100.0 | 1.0 |
 | money_moving+pin_value | early | <1k bets | 4-4 | 50.0 | -3.3 | -4.0 | 1.21 |
 | money_level+rlm_ratio | early | <1k bets | 8-12 | 40.0 | -1.4 | -17.1 | 1.32 |
 | money_moving+rlm_ratio | early | <1k bets | 16-11 | 59.3 | 19.0 | 39.9 | 0.95 |
@@ -2088,125 +2092,126 @@ on with the games testing it. Use the forward table for any decision.
 | money_delta+money_level | early | <1k bets | 4-4 | 50.0 | 8.2 | 4.6 | 1.44 |
 | pin_move+sharp_gap | early | <1k bets | 2-4 | 33.3 | -13.3 | -47.8 | 0.47 |
 | money_level+pin_rlm | early | <1k bets | 1-2 | 33.3 | -9.5 | -35.8 | 0.67 |
-| pin_move+pin_rlm | early | <1k bets | 1-1 | 50.0 | 21.4 | -3.7 | 0.25 |
-| pin_move+rlm_ratio | early | <1k bets | 1-1 | 50.0 | 21.4 | -3.7 | 0.25 |
-| follow_move+money_delta | early | <1k bets | 6-5 | 54.5 | 16.4 | 52.8 | 1.28 |
-| money_delta+rlm_quiet | early | <1k bets | 3-3 | 50.0 | 17.9 | 72.5 | 0.38 |
+| pin_move+pin_rlm | early | <1k bets | 1-1 | 50.0 | 21.5 | -3.7 | 0.25 |
+| pin_move+rlm_ratio | early | <1k bets | 1-1 | 50.0 | 21.5 | -3.7 | 0.25 |
+| follow_move+money_delta | early | <1k bets | 6-5 | 54.5 | 16.5 | 52.8 | 1.28 |
+| money_delta+rlm_quiet | early | <1k bets | 3-3 | 50.0 | 18.0 | 72.5 | 0.38 |
 | money_delta+rlm_ratio | early | <1k bets | 5-3 | 62.5 | 26.1 | 86.2 | 2.04 |
-| money_delta+pin_value | early | <1k bets | 2-0 | 100.0 | 50.4 | 90.9 | 0.0 |
-| money_moving+pin_rlm | early | <1k bets | 0-1 | 0.0 | -28.6 | -100.0 | 1.3 |
-| money_moving+pin_move | early | <1k bets | 1-1 | 50.0 | 0.4 | -2.4 | 1.0 |
+| money_delta+pin_value | early | <1k bets | 2-0 | 100.0 | 50.5 | 90.9 | 0.0 |
+| money_moving+pin_rlm | early | <1k bets | 0-1 | 0.0 | -28.5 | -100.0 | 1.3 |
+| money_moving+pin_move | early | <1k bets | 1-1 | 50.0 | 0.5 | -2.4 | 1.0 |
 | consensus_gap+money_level | early | pin $1-2k | 7-5 | 58.3 | -7.0 | -9.8 | 0.07 |
 | consensus_gap+money_moving | early | pin $1-2k | 1-3 | 25.0 | -40.3 | -54.2 | 0.95 |
-| consensus_gap+pin_value | early | pin $1-2k | 8-11 | 42.1 | -1.0 | -22.3 | 0.14 |
+| consensus_gap+pin_value | early | pin $1-2k | 8-11 | 42.1 | -0.9 | -22.3 | 0.14 |
 | follow_move+rlm_quiet | early | pin $1-2k | 3-7 | 30.0 | -1.0 | 7.2 | -0.12 |
-| follow_move+rlm_ratio | early | pin $1-2k | 2-4 | 33.3 | -10.5 | 29.7 | -1.02 |
-| follow_move+sharp_gap | early | pin $1-2k | 9-6 | 60.0 | 2.9 | 19.2 | -0.62 |
+| follow_move+rlm_ratio | early | pin $1-2k | 2-4 | 33.3 | -10.6 | 29.7 | -1.02 |
+| follow_move+sharp_gap | early | pin $1-2k | 9-6 | 60.0 | 2.8 | 19.2 | -0.62 |
 | money_level+money_moving | early | pin $1-2k | 8-8 | 50.0 | -13.0 | -31.4 | 0.26 |
-| money_level+pin_value | early | pin $1-2k | 2-4 | 33.3 | -18.8 | -37.6 | 0.78 |
+| money_level+pin_value | early | pin $1-2k | 2-4 | 33.3 | -18.6 | -37.6 | 0.78 |
 | money_moving+pin_value | early | pin $1-2k | 1-4 | 20.0 | -34.8 | -63.3 | 0.94 |
 | rlm_quiet+rlm_ratio | early | pin $1-2k | 1-3 | 25.0 | -9.7 | 45.0 | -1.9 |
 | rlm_quiet+sharp_gap | early | pin $1-2k | 1-3 | 25.0 | -9.7 | 45.0 | -1.9 |
-| rlm_ratio+sharp_gap | early | pin $1-2k | 2-4 | 33.3 | -10.5 | 29.7 | -1.02 |
-| money_delta+money_level | early | pin $1-2k | 0-2 | 0.0 | -40.8 | -100.0 | 1.25 |
-| money_delta+money_moving | early | pin $1-2k | 0-3 | 0.0 | -36.7 | -100.0 | 2.17 |
-| money_delta+pin_value | early | pin $1-2k | 0-1 | 0.0 | -53.0 | -100.0 | 1.0 |
-| money_delta+sharp_gap | early | pin $1-2k | 0-3 | 0.0 | -36.7 | -100.0 | 2.17 |
+| rlm_ratio+sharp_gap | early | pin $1-2k | 2-4 | 33.3 | -10.6 | 29.7 | -1.02 |
+| money_delta+money_level | early | pin $1-2k | 0-2 | 0.0 | -40.9 | -100.0 | 1.25 |
+| money_delta+money_moving | early | pin $1-2k | 0-3 | 0.0 | -36.8 | -100.0 | 2.17 |
+| money_delta+pin_value | early | pin $1-2k | 0-1 | 0.0 | -53.3 | -100.0 | 1.0 |
+| money_delta+sharp_gap | early | pin $1-2k | 0-3 | 0.0 | -36.8 | -100.0 | 2.17 |
 | money_level+sharp_gap | early | pin $1-2k | 15-9 | 62.5 | -0.9 | -4.8 | -0.23 |
 | money_moving+sharp_gap | early | pin $1-2k | 4-10 | 28.6 | -27.6 | -61.0 | 0.36 |
-| pin_value+sharp_gap | early | pin $1-2k | 1-4 | 20.0 | -30.6 | -61.8 | -0.22 |
+| pin_value+sharp_gap | early | pin $1-2k | 1-4 | 20.0 | -30.7 | -61.8 | -0.22 |
 | consensus_gap+follow_move | early | pin $1-2k | 6-7 | 46.2 | -2.2 | -11.3 | 0.4 |
-| consensus_gap+rlm_quiet | early | pin $1-2k | 1-3 | 25.0 | -3.6 | -35.0 | -0.65 |
-| follow_move+pin_value | early | pin $1-2k | 6-7 | 46.2 | -1.5 | -14.7 | -0.25 |
-| pin_value+rlm_quiet | early | pin $1-2k | 0-2 | 0.0 | -28.6 | -100.0 | -1.9 |
-| follow_move+money_level | early | pin $1-2k | 12-6 | 66.7 | 3.0 | -0.4 | -0.03 |
-| money_level+rlm_ratio | early | pin $1-2k | 1-1 | 50.0 | -12.2 | -1.0 | 0.75 |
-| follow_move+money_moving | early | pin $1-2k | 4-3 | 57.1 | -7.7 | -23.6 | -0.13 |
-| consensus_gap+pin_rlm | early | pin $1-2k | 0-1 | 0.0 | -28.6 | -100.0 | -4.8 |
-| consensus_gap+rlm_ratio | early | pin $1-2k | 0-1 | 0.0 | -28.6 | -100.0 | -4.8 |
+| consensus_gap+rlm_quiet | early | pin $1-2k | 1-3 | 25.0 | -3.5 | -35.0 | -0.65 |
+| follow_move+pin_value | early | pin $1-2k | 6-8 | 42.9 | -5.1 | -20.8 | -0.24 |
+| pin_value+rlm_quiet | early | pin $1-2k | 0-2 | 0.0 | -28.5 | -100.0 | -1.9 |
+| follow_move+money_level | early | pin $1-2k | 12-6 | 66.7 | 3.1 | -0.4 | -0.03 |
+| money_level+rlm_ratio | early | pin $1-2k | 1-1 | 50.0 | -12.4 | -1.0 | 0.75 |
+| follow_move+money_moving | early | pin $1-2k | 4-3 | 57.1 | -7.6 | -23.6 | -0.13 |
+| consensus_gap+pin_rlm | early | pin $1-2k | 0-1 | 0.0 | -28.5 | -100.0 | -4.8 |
+| consensus_gap+rlm_ratio | early | pin $1-2k | 0-1 | 0.0 | -28.5 | -100.0 | -4.8 |
 | consensus_gap+sharp_gap | early | pin $1-2k | 4-5 | 44.4 | -12.7 | -31.7 | -0.69 |
 | follow_move+pin_rlm | early | pin $1-2k | 0-2 | 0.0 | -50.0 | -100.0 | -1.65 |
-| pin_rlm+pin_value | early | pin $1-2k | 0-1 | 0.0 | -28.6 | -100.0 | -4.8 |
-| pin_rlm+rlm_quiet | early | pin $1-2k | 0-1 | 0.0 | -28.6 | -100.0 | -4.8 |
+| pin_rlm+pin_value | early | pin $1-2k | 0-1 | 0.0 | -28.5 | -100.0 | -4.8 |
+| pin_rlm+rlm_quiet | early | pin $1-2k | 0-1 | 0.0 | -28.5 | -100.0 | -4.8 |
 | pin_rlm+rlm_ratio | early | pin $1-2k | 0-2 | 0.0 | -50.0 | -100.0 | -1.65 |
-| pin_rlm+sharp_gap | early | pin $1-2k | 0-3 | 0.0 | -42.9 | -100.0 | -0.67 |
-| pin_value+rlm_ratio | early | pin $1-2k | 0-1 | 0.0 | -28.6 | -100.0 | -4.8 |
-| consensus_gap+pin_move | early | pin $1-2k | 0-2 | 0.0 | -28.6 | -100.0 | -0.15 |
-| money_moving+pin_rlm | early | pin $1-2k | 0-1 | 0.0 | -28.6 | -100.0 | 1.3 |
-| pin_move+pin_value | early | pin $1-2k | 0-2 | 0.0 | -47.0 | -100.0 | 0.0 |
-| money_level+pin_rlm | early | pin $1-2k | 0-1 | 0.0 | -71.4 | -100.0 | 1.5 |
-| follow_move+pin_move | early | pin $1-2k | 1-1 | 50.0 | 3.0 | -2.9 | -0.5 |
-| money_level+pin_move | early | pin $1-2k | 1-0 | 100.0 | 53.0 | 94.3 | -1.0 |
-| consensus_gap+money_moving | early | pin $2k+ | 1-1 | 50.0 | 12.2 | -8.4 | 0.65 |
-| consensus_gap+pin_value | early | pin $2k+ | 1-0 | 100.0 | 53.0 | 83.3 | 0.0 |
-| follow_move+money_level | early | pin $2k+ | 0-1 | 0.0 | -53.0 | -100.0 | 0.0 |
-| follow_move+rlm_ratio | early | pin $2k+ | 0-2 | 0.0 | -40.8 | -100.0 | 0.65 |
-| follow_move+sharp_gap | early | pin $2k+ | 0-2 | 0.0 | -40.8 | -100.0 | 0.65 |
-| money_level+rlm_ratio | early | pin $2k+ | 0-1 | 0.0 | -53.0 | -100.0 | 0.0 |
-| money_level+sharp_gap | early | pin $2k+ | 0-1 | 0.0 | -53.0 | -100.0 | 0.0 |
-| money_moving+pin_value | early | pin $2k+ | 1-0 | 100.0 | 53.0 | 83.3 | 0.0 |
-| rlm_ratio+sharp_gap | early | pin $2k+ | 0-2 | 0.0 | -40.8 | -100.0 | 0.65 |
-| consensus_gap+follow_move | early | pin $2k+ | 0-1 | 0.0 | -28.6 | -100.0 | 1.3 |
-| consensus_gap+rlm_quiet | early | pin $2k+ | 0-1 | 0.0 | -28.6 | -100.0 | 1.3 |
-| consensus_gap+rlm_ratio | early | pin $2k+ | 0-1 | 0.0 | -28.6 | -100.0 | 1.3 |
-| consensus_gap+sharp_gap | early | pin $2k+ | 0-1 | 0.0 | -28.6 | -100.0 | 1.3 |
-| follow_move+money_moving | early | pin $2k+ | 0-1 | 0.0 | -28.6 | -100.0 | 1.3 |
-| follow_move+rlm_quiet | early | pin $2k+ | 0-1 | 0.0 | -28.6 | -100.0 | 1.3 |
-| money_moving+rlm_quiet | early | pin $2k+ | 0-1 | 0.0 | -28.6 | -100.0 | 1.3 |
-| money_moving+rlm_ratio | early | pin $2k+ | 0-1 | 0.0 | -28.6 | -100.0 | 1.3 |
-| money_moving+sharp_gap | early | pin $2k+ | 0-1 | 0.0 | -28.6 | -100.0 | 1.3 |
-| rlm_quiet+rlm_ratio | early | pin $2k+ | 0-1 | 0.0 | -28.6 | -100.0 | 1.3 |
-| rlm_quiet+sharp_gap | early | pin $2k+ | 0-1 | 0.0 | -28.6 | -100.0 | 1.3 |
-| follow_move+rlm_quiet | early | pin limit <$1k | 6-8 | 42.9 | -2.3 | -13.5 | 0.23 |
-| money_level+money_moving | early | pin limit <$1k | 17-7 | 70.8 | 19.2 | 32.1 | 0.48 |
-| money_level+sharp_gap | early | pin limit <$1k | 25-20 | 55.6 | 5.6 | 2.6 | 0.24 |
-| money_moving+sharp_gap | early | pin limit <$1k | 23-6 | 79.3 | 30.9 | 68.0 | 0.31 |
-| book_lag+pin_move | early | pin limit <$1k | 0-1 | 0.0 | -50.4 | -100.0 | -1.0 |
-| money_level+pin_value | early | pin limit <$1k | 12-8 | 60.0 | 10.0 | 14.0 | 0.4 |
-| money_moving+pin_value | early | pin limit <$1k | 10-4 | 71.4 | 21.8 | 35.6 | 0.36 |
-| pin_value+sharp_gap | early | pin limit <$1k | 13-8 | 61.9 | 12.1 | 17.4 | 0.19 |
-| consensus_gap+follow_move | early | pin limit <$1k | 7-10 | 41.2 | -10.2 | -23.2 | 0.41 |
+| pin_rlm+sharp_gap | early | pin $1-2k | 0-3 | 0.0 | -42.8 | -100.0 | -0.67 |
+| pin_value+rlm_ratio | early | pin $1-2k | 0-1 | 0.0 | -28.5 | -100.0 | -4.8 |
+| consensus_gap+pin_move | early | pin $1-2k | 0-2 | 0.0 | -28.5 | -100.0 | -0.15 |
+| money_moving+pin_rlm | early | pin $1-2k | 0-1 | 0.0 | -28.5 | -100.0 | 1.3 |
+| pin_move+pin_value | early | pin $1-2k | 0-4 | 0.0 | -48.4 | -100.0 | 0.5 |
+| money_level+pin_rlm | early | pin $1-2k | 0-1 | 0.0 | -71.5 | -100.0 | 1.5 |
+| follow_move+pin_move | early | pin $1-2k | 1-2 | 33.3 | -15.6 | -35.2 | -0.33 |
+| money_level+pin_move | early | pin $1-2k | 1-0 | 100.0 | 53.3 | 94.3 | -1.0 |
+| consensus_gap+money_moving | early | pin $2k+ | 1-1 | 50.0 | 12.4 | -8.4 | 0.65 |
+| consensus_gap+pin_value | early | pin $2k+ | 1-0 | 100.0 | 53.3 | 83.3 | 0.0 |
+| follow_move+money_level | early | pin $2k+ | 0-1 | 0.0 | -53.3 | -100.0 | 0.0 |
+| follow_move+rlm_ratio | early | pin $2k+ | 0-2 | 0.0 | -40.9 | -100.0 | 0.65 |
+| follow_move+sharp_gap | early | pin $2k+ | 0-2 | 0.0 | -40.9 | -100.0 | 0.65 |
+| money_level+rlm_ratio | early | pin $2k+ | 0-1 | 0.0 | -53.3 | -100.0 | 0.0 |
+| money_level+sharp_gap | early | pin $2k+ | 0-1 | 0.0 | -53.3 | -100.0 | 0.0 |
+| money_moving+pin_value | early | pin $2k+ | 1-0 | 100.0 | 53.3 | 83.3 | 0.0 |
+| rlm_ratio+sharp_gap | early | pin $2k+ | 0-2 | 0.0 | -40.9 | -100.0 | 0.65 |
+| consensus_gap+follow_move | early | pin $2k+ | 0-1 | 0.0 | -28.5 | -100.0 | 1.3 |
+| consensus_gap+rlm_quiet | early | pin $2k+ | 0-1 | 0.0 | -28.5 | -100.0 | 1.3 |
+| consensus_gap+rlm_ratio | early | pin $2k+ | 0-1 | 0.0 | -28.5 | -100.0 | 1.3 |
+| consensus_gap+sharp_gap | early | pin $2k+ | 0-1 | 0.0 | -28.5 | -100.0 | 1.3 |
+| follow_move+money_moving | early | pin $2k+ | 0-1 | 0.0 | -28.5 | -100.0 | 1.3 |
+| follow_move+rlm_quiet | early | pin $2k+ | 0-1 | 0.0 | -28.5 | -100.0 | 1.3 |
+| money_moving+rlm_quiet | early | pin $2k+ | 0-1 | 0.0 | -28.5 | -100.0 | 1.3 |
+| money_moving+rlm_ratio | early | pin $2k+ | 0-1 | 0.0 | -28.5 | -100.0 | 1.3 |
+| money_moving+sharp_gap | early | pin $2k+ | 0-1 | 0.0 | -28.5 | -100.0 | 1.3 |
+| rlm_quiet+rlm_ratio | early | pin $2k+ | 0-1 | 0.0 | -28.5 | -100.0 | 1.3 |
+| rlm_quiet+sharp_gap | early | pin $2k+ | 0-1 | 0.0 | -28.5 | -100.0 | 1.3 |
+| follow_move+rlm_quiet | early | pin limit <$1k | 6-9 | 40.0 | -5.4 | -19.3 | 0.28 |
+| money_level+money_moving | early | pin limit <$1k | 18-7 | 72.0 | 20.5 | 34.3 | 0.42 |
+| money_level+sharp_gap | early | pin limit <$1k | 26-20 | 56.5 | 6.6 | 4.5 | 0.22 |
+| money_moving+sharp_gap | early | pin limit <$1k | 24-6 | 80.0 | 31.5 | 68.6 | 0.27 |
+| book_lag+pin_move | early | pin limit <$1k | 0-1 | 0.0 | -50.5 | -100.0 | -1.0 |
+| money_level+pin_value | early | pin limit <$1k | 13-8 | 61.9 | 11.9 | 17.4 | 0.33 |
+| money_moving+pin_value | early | pin limit <$1k | 11-4 | 73.3 | 23.7 | 39.0 | 0.27 |
+| pin_value+sharp_gap | early | pin limit <$1k | 14-8 | 63.6 | 13.8 | 20.6 | 0.14 |
+| consensus_gap+follow_move | early | pin limit <$1k | 7-10 | 41.2 | -10.1 | -23.2 | 0.41 |
 | consensus_gap+money_level | early | pin limit <$1k | 6-7 | 46.2 | -8.3 | -19.0 | 0.31 |
-| consensus_gap+pin_value | early | pin limit <$1k | 21-20 | 51.2 | 2.0 | -3.4 | 0.33 |
-| consensus_gap+sharp_gap | early | pin limit <$1k | 7-4 | 63.6 | 18.1 | 56.6 | 0.91 |
-| follow_move+money_level | early | pin limit <$1k | 14-14 | 50.0 | -1.9 | -6.7 | -0.03 |
-| follow_move+pin_value | early | pin limit <$1k | 18-15 | 54.5 | 5.2 | 2.9 | -0.18 |
+| consensus_gap+pin_value | early | pin limit <$1k | 21-20 | 51.2 | 2.1 | -3.4 | 0.33 |
+| consensus_gap+sharp_gap | early | pin limit <$1k | 7-4 | 63.6 | 18.2 | 56.6 | 0.91 |
+| follow_move+money_level | early | pin limit <$1k | 14-14 | 50.0 | -1.8 | -6.7 | -0.03 |
+| follow_move+pin_value | early | pin limit <$1k | 19-15 | 55.9 | 6.6 | 5.6 | -0.12 |
 | follow_move+sharp_gap | early | pin limit <$1k | 16-10 | 61.5 | 13.6 | 17.7 | -0.02 |
 | follow_move+rlm_ratio | early | pin limit <$1k | 8-2 | 80.0 | 36.6 | 61.1 | 0.33 |
 | money_level+rlm_ratio | early | pin limit <$1k | 7-1 | 87.5 | 43.1 | 68.3 | 0.44 |
-| pin_value+rlm_ratio | early | pin limit <$1k | 3-1 | 75.0 | 25.2 | 43.2 | -0.25 |
+| pin_value+rlm_ratio | early | pin limit <$1k | 3-1 | 75.0 | 25.3 | 43.2 | -0.25 |
 | rlm_ratio+sharp_gap | early | pin limit <$1k | 8-2 | 80.0 | 36.6 | 61.1 | 0.33 |
-| consensus_gap+money_delta | early | pin limit <$1k | 3-0 | 100.0 | 51.0 | 87.1 | 0.33 |
-| consensus_gap+money_moving | early | pin limit <$1k | 10-3 | 76.9 | 29.1 | 76.9 | 0.65 |
-| consensus_gap+rlm_quiet | early | pin limit <$1k | 1-1 | 50.0 | 1.7 | -8.4 | 1.5 |
-| follow_move+money_delta | early | pin limit <$1k | 3-0 | 100.0 | 51.0 | 87.1 | 0.33 |
-| follow_move+money_moving | early | pin limit <$1k | 13-5 | 72.2 | 22.8 | 38.2 | 0.39 |
-| money_delta+money_moving | early | pin limit <$1k | 4-0 | 100.0 | 50.8 | 88.0 | 0.0 |
-| money_delta+pin_value | early | pin limit <$1k | 4-0 | 100.0 | 50.8 | 88.0 | 0.0 |
-| money_delta+rlm_quiet | early | pin limit <$1k | 1-0 | 100.0 | 53.0 | 83.3 | 0.0 |
-| money_moving+rlm_quiet | early | pin limit <$1k | 4-2 | 66.7 | 17.4 | 26.0 | 0.0 |
+| consensus_gap+money_delta | early | pin limit <$1k | 3-0 | 100.0 | 51.1 | 87.1 | 0.33 |
+| consensus_gap+money_moving | early | pin limit <$1k | 10-3 | 76.9 | 29.2 | 76.9 | 0.65 |
+| consensus_gap+rlm_quiet | early | pin limit <$1k | 1-1 | 50.0 | 1.9 | -8.4 | 1.5 |
+| follow_move+money_delta | early | pin limit <$1k | 3-0 | 100.0 | 51.1 | 87.1 | 0.33 |
+| follow_move+money_moving | early | pin limit <$1k | 13-5 | 72.2 | 22.9 | 38.2 | 0.39 |
+| money_delta+money_moving | early | pin limit <$1k | 4-0 | 100.0 | 50.9 | 88.0 | 0.0 |
+| money_delta+pin_value | early | pin limit <$1k | 4-0 | 100.0 | 50.9 | 88.0 | 0.0 |
+| money_delta+rlm_quiet | early | pin limit <$1k | 1-0 | 100.0 | 53.3 | 83.3 | 0.0 |
+| money_moving+rlm_quiet | early | pin limit <$1k | 4-2 | 66.7 | 17.5 | 26.0 | 0.0 |
 | pin_value+rlm_quiet | early | pin limit <$1k | 1-3 | 25.0 | -25.0 | -54.2 | 0.0 |
 | money_moving+rlm_ratio | early | pin limit <$1k | 4-1 | 80.0 | 30.1 | 54.4 | -0.2 |
-| money_delta+sharp_gap | early | pin limit <$1k | 3-0 | 100.0 | 50.1 | 89.6 | 0.0 |
+| money_delta+sharp_gap | early | pin limit <$1k | 3-0 | 100.0 | 50.2 | 89.6 | 0.0 |
 | rlm_quiet+rlm_ratio | early | pin limit <$1k | 1-1 | 50.0 | 10.5 | 32.0 | -0.1 |
 | rlm_quiet+sharp_gap | early | pin limit <$1k | 2-2 | 50.0 | 5.5 | 13.7 | -0.05 |
-| pin_move+pin_value | early | pin limit <$1k | 4-8 | 33.3 | -16.3 | -36.0 | 0.42 |
-| follow_move+pin_move | early | pin limit <$1k | 6-8 | 42.9 | -6.4 | -22.8 | 0.39 |
+| pin_move+pin_value | early | pin limit <$1k | 5-8 | 38.5 | -11.2 | -25.9 | 0.54 |
+| follow_move+pin_move | early | pin limit <$1k | 8-9 | 47.1 | -2.2 | -13.7 | 0.67 |
 | consensus_gap+pin_move | early | pin limit <$1k | 2-4 | 33.3 | -19.7 | -35.7 | 0.43 |
-| money_level+pin_move | early | pin limit <$1k | 3-6 | 33.3 | -16.9 | -44.0 | 0.27 |
-| book_lag+consensus_gap | early | pin limit <$1k | 0-1 | 0.0 | -49.6 | -100.0 | 1.0 |
-| book_lag+pin_value | early | pin limit <$1k | 0-1 | 0.0 | -49.6 | -100.0 | 1.0 |
+| money_level+pin_move | early | pin limit <$1k | 3-6 | 33.3 | -17.0 | -44.0 | 0.27 |
+| book_lag+consensus_gap | early | pin limit <$1k | 0-1 | 0.0 | -49.5 | -100.0 | 1.0 |
+| book_lag+pin_value | early | pin limit <$1k | 0-1 | 0.0 | -49.5 | -100.0 | 1.0 |
 | pin_move+sharp_gap | early | pin limit <$1k | 2-4 | 33.3 | -13.3 | -47.8 | 0.47 |
-| follow_move+pin_rlm | early | pin limit <$1k | 1-1 | 50.0 | 21.4 | -3.7 | 0.25 |
-| money_level+pin_rlm | early | pin limit <$1k | 1-1 | 50.0 | 21.4 | -3.7 | 0.25 |
-| pin_move+pin_rlm | early | pin limit <$1k | 1-1 | 50.0 | 21.4 | -3.7 | 0.25 |
-| pin_move+rlm_ratio | early | pin limit <$1k | 1-1 | 50.0 | 21.4 | -3.7 | 0.25 |
-| pin_rlm+rlm_ratio | early | pin limit <$1k | 1-1 | 50.0 | 21.4 | -3.7 | 0.25 |
-| pin_rlm+sharp_gap | early | pin limit <$1k | 1-1 | 50.0 | 21.4 | -3.7 | 0.25 |
-| money_delta+money_level | early | pin limit <$1k | 2-0 | 100.0 | 50.4 | 90.9 | 0.0 |
-| consensus_gap+rlm_ratio | early | pin limit <$1k | 1-0 | 100.0 | 50.4 | 90.9 | 1.0 |
-| money_delta+rlm_ratio | early | pin limit <$1k | 1-0 | 100.0 | 50.4 | 90.9 | 1.0 |
-| money_moving+pin_move | early | pin limit <$1k | 1-1 | 50.0 | 0.4 | -2.4 | 1.0 |
+| follow_move+pin_rlm | early | pin limit <$1k | 1-1 | 50.0 | 21.5 | -3.7 | 0.25 |
+| money_level+pin_rlm | early | pin limit <$1k | 1-1 | 50.0 | 21.5 | -3.7 | 0.25 |
+| pin_move+pin_rlm | early | pin limit <$1k | 1-1 | 50.0 | 21.5 | -3.7 | 0.25 |
+| pin_move+rlm_ratio | early | pin limit <$1k | 1-1 | 50.0 | 21.5 | -3.7 | 0.25 |
+| pin_rlm+rlm_ratio | early | pin limit <$1k | 1-1 | 50.0 | 21.5 | -3.7 | 0.25 |
+| pin_rlm+sharp_gap | early | pin limit <$1k | 1-1 | 50.0 | 21.5 | -3.7 | 0.25 |
+| money_delta+money_level | early | pin limit <$1k | 2-0 | 100.0 | 50.5 | 90.9 | 0.0 |
+| consensus_gap+rlm_ratio | early | pin limit <$1k | 1-0 | 100.0 | 50.5 | 90.9 | 1.0 |
+| money_delta+rlm_ratio | early | pin limit <$1k | 1-0 | 100.0 | 50.5 | 90.9 | 1.0 |
+| money_moving+pin_move | early | pin limit <$1k | 1-1 | 50.0 | 0.5 | -2.4 | 1.0 |
+| pin_move+rlm_quiet | early | pin limit <$1k | 0-1 | 0.0 | -49.5 | -100.0 | 1.0 |
 | rlm_quiet | close | 1-3k bets | 116-168 | 40.8 | -0.8 | -7.9 |  |
 | rlm_quiet | close | 3k+ bets | 44-60 | 42.3 | -0.3 | -8.1 |  |
 | rlm_quiet | close | <1k bets | 22-28 | 44.0 | 2.5 | -6.0 |  |
@@ -2882,544 +2887,545 @@ on with the games testing it. Use the forward table for any decision.
 | pin_rlm+rlm_ratio | early | pin limit <$1k | 1-0 | 100.0 | 73.4 | 92.6 | 0.5 |
 | pin_rlm+sharp_gap | early | pin limit <$1k | 1-0 | 100.0 | 73.4 | 92.6 | 0.5 |
 | money_delta+money_level | early | pin limit <$1k | 1-0 | 100.0 | 49.7 | 90.9 | -1.0 |
-| rlm_quiet | close | 1-3k bets | 68-106 | 39.1 | -4.0 | -10.1 |  |
-| rlm_quiet | close | 3k+ bets | 30-42 | 41.7 | -1.1 | -13.5 |  |
-| rlm_quiet | close | <1k bets | 10-19 | 34.5 | -8.6 | -33.2 |  |
-| rlm_quiet | close | pin $1-2k | 31-50 | 38.3 | -6.4 | -20.5 |  |
-| rlm_quiet | close | pin $2k+ | 38-47 | 44.7 | 4.1 | 10.6 |  |
-| rlm_quiet | close | pin limit <$1k | 14-18 | 43.8 | -4.0 | -15.4 |  |
-| pin_move | close | 1-3k bets | 126-137 | 47.9 | -1.3 | -4.0 |  |
-| pin_move | close | 3k+ bets | 49-56 | 46.7 | -3.4 | -11.4 |  |
+| rlm_quiet | close | 1-3k bets | 70-112 | 38.5 | -4.4 | -11.7 |  |
+| rlm_quiet | close | 3k+ bets | 31-46 | 40.3 | -2.4 | -16.0 |  |
+| rlm_quiet | close | <1k bets | 10-19 | 34.5 | -8.5 | -33.2 |  |
+| rlm_quiet | close | pin $1-2k | 32-52 | 38.1 | -6.2 | -20.5 |  |
+| rlm_quiet | close | pin $2k+ | 39-49 | 44.3 | 3.9 | 9.6 |  |
+| rlm_quiet | close | pin limit <$1k | 15-19 | 44.1 | -3.6 | -14.9 |  |
+| pin_move | close | 1-3k bets | 132-139 | 48.7 | -0.3 | -2.4 |  |
+| pin_move | close | 3k+ bets | 53-56 | 48.6 | -1.4 | -7.2 |  |
 | pin_move | close | <1k bets | 20-19 | 51.3 | 1.6 | -3.3 |  |
-| pin_move | close | pin $1-2k | 79-102 | 43.6 | -5.8 | -14.5 |  |
-| pin_move | close | pin $2k+ | 82-77 | 51.6 | 2.1 | 2.7 |  |
-| pin_move | close | pin limit <$1k | 34-33 | 50.7 | 1.3 | -2.8 |  |
-| money_delta | close | 1-3k bets | 58-75 | 43.6 | -0.5 | -11.3 |  |
-| money_delta | close | 3k+ bets | 27-26 | 50.9 | 6.0 | 0.7 |  |
-| money_delta | close | <1k bets | 14-14 | 50.0 | 5.3 | 11.4 |  |
-| money_delta | close | pin $1-2k | 39-33 | 54.2 | 7.7 | 11.5 |  |
-| money_delta | close | pin $2k+ | 24-26 | 48.0 | 6.4 | -2.7 |  |
-| money_delta | close | pin limit <$1k | 12-18 | 40.0 | -7.5 | -23.0 |  |
-| pin_rlm | close | 1-3k bets | 26-39 | 40.0 | -1.8 | -13.1 |  |
-| pin_rlm | close | 3k+ bets | 10-16 | 38.5 | -3.3 | -20.2 |  |
-| pin_rlm | close | <1k bets | 5-5 | 50.0 | 2.4 | -4.9 |  |
-| pin_rlm | close | pin $1-2k | 17-25 | 40.5 | -3.7 | -15.3 |  |
-| pin_rlm | close | pin $2k+ | 16-23 | 41.0 | 3.4 | -8.3 |  |
-| pin_rlm | close | pin limit <$1k | 8-12 | 40.0 | -7.7 | -23.0 |  |
-| follow_move | close | 1-3k bets | 195-229 | 46.0 | -3.2 | -10.0 |  |
-| follow_move | close | 3k+ bets | 74-73 | 50.3 | 1.3 | -6.7 |  |
-| follow_move | close | <1k bets | 44-46 | 48.9 | -1.0 | -13.1 |  |
-| follow_move | close | pin $1-2k | 91-122 | 42.7 | -6.5 | -18.9 |  |
-| follow_move | close | pin $2k+ | 97-93 | 51.1 | 2.2 | 2.8 |  |
-| follow_move | close | pin limit <$1k | 41-40 | 50.6 | 0.9 | -4.1 |  |
-| rlm_ratio | close | 1-3k bets | 44-70 | 38.6 | -3.8 | -17.6 |  |
-| rlm_ratio | close | 3k+ bets | 15-25 | 37.5 | -4.9 | -22.0 |  |
-| rlm_ratio | close | <1k bets | 10-12 | 45.5 | 1.0 | -12.8 |  |
-| rlm_ratio | close | pin $1-2k | 24-31 | 43.6 | -0.6 | -9.9 |  |
-| rlm_ratio | close | pin $2k+ | 15-24 | 38.5 | 0.9 | -15.0 |  |
-| rlm_ratio | close | pin limit <$1k | 10-16 | 38.5 | -9.5 | -26.2 |  |
-| money_level | close | 1-3k bets | 256-199 | 56.3 | 1.2 | -4.2 |  |
-| money_level | close | 3k+ bets | 88-84 | 51.2 | -3.6 | -12.3 |  |
-| money_level | close | <1k bets | 60-31 | 65.9 | 11.1 | 9.2 |  |
-| money_level | close | pin $1-2k | 120-111 | 51.9 | -1.5 | -8.7 |  |
-| money_level | close | pin $2k+ | 106-96 | 52.5 | -4.2 | -13.1 |  |
-| money_level | close | pin limit <$1k | 51-36 | 58.6 | 7.0 | 10.7 |  |
-| sharp_gap | close | 1-3k bets | 198-227 | 46.6 | -1.9 | -10.6 |  |
-| sharp_gap | close | 3k+ bets | 68-94 | 42.0 | -6.2 | -18.4 |  |
+| pin_move | close | pin $1-2k | 84-104 | 44.7 | -4.6 | -12.3 |  |
+| pin_move | close | pin $2k+ | 85-80 | 51.5 | 2.0 | 2.7 |  |
+| pin_move | close | pin limit <$1k | 36-33 | 52.2 | 2.8 | -0.1 |  |
+| money_delta | close | 1-3k bets | 59-84 | 41.3 | -2.5 | -16.2 |  |
+| money_delta | close | 3k+ bets | 27-31 | 46.6 | 2.2 | -8.0 |  |
+| money_delta | close | <1k bets | 14-14 | 50.0 | 5.5 | 11.4 |  |
+| money_delta | close | pin $1-2k | 40-38 | 51.3 | 5.0 | 5.4 |  |
+| money_delta | close | pin $2k+ | 24-29 | 45.3 | 4.2 | -8.2 |  |
+| money_delta | close | pin limit <$1k | 12-19 | 38.7 | -8.5 | -25.5 |  |
+| pin_rlm | close | 1-3k bets | 27-41 | 39.7 | -1.7 | -14.1 |  |
+| pin_rlm | close | 3k+ bets | 10-17 | 37.0 | -4.3 | -23.2 |  |
+| pin_rlm | close | <1k bets | 5-5 | 50.0 | 2.5 | -4.9 |  |
+| pin_rlm | close | pin $1-2k | 18-26 | 40.9 | -2.9 | -14.8 |  |
+| pin_rlm | close | pin $2k+ | 16-25 | 39.0 | 1.8 | -12.8 |  |
+| pin_rlm | close | pin limit <$1k | 8-12 | 40.0 | -7.5 | -23.0 |  |
+| follow_move | close | 1-3k bets | 204-238 | 46.2 | -2.9 | -9.9 |  |
+| follow_move | close | 3k+ bets | 81-78 | 50.9 | 2.1 | -5.2 |  |
+| follow_move | close | <1k bets | 44-46 | 48.9 | -0.9 | -13.1 |  |
+| follow_move | close | pin $1-2k | 98-126 | 43.8 | -5.4 | -17.1 |  |
+| follow_move | close | pin $2k+ | 100-99 | 50.3 | 1.5 | 1.3 |  |
+| follow_move | close | pin limit <$1k | 44-41 | 51.8 | 2.1 | -1.8 |  |
+| rlm_ratio | close | 1-3k bets | 46-77 | 37.4 | -4.8 | -20.6 |  |
+| rlm_ratio | close | 3k+ bets | 15-28 | 34.9 | -7.1 | -27.5 |  |
+| rlm_ratio | close | <1k bets | 10-12 | 45.5 | 1.2 | -12.8 |  |
+| rlm_ratio | close | pin $1-2k | 25-33 | 43.1 | -1.0 | -11.2 |  |
+| rlm_ratio | close | pin $2k+ | 15-27 | 35.7 | -1.4 | -21.1 |  |
+| rlm_ratio | close | pin limit <$1k | 10-17 | 37.0 | -10.7 | -28.9 |  |
+| money_level | close | 1-3k bets | 268-206 | 56.5 | 1.4 | -3.7 |  |
+| money_level | close | 3k+ bets | 96-88 | 52.2 | -2.6 | -10.3 |  |
+| money_level | close | <1k bets | 60-31 | 65.9 | 11.0 | 9.2 |  |
+| money_level | close | pin $1-2k | 125-118 | 51.4 | -2.0 | -9.9 |  |
+| money_level | close | pin $2k+ | 109-102 | 51.7 | -5.0 | -14.5 |  |
+| money_level | close | pin limit <$1k | 54-37 | 59.3 | 7.8 | 12.1 |  |
+| sharp_gap | close | 1-3k bets | 206-239 | 46.3 | -2.1 | -11.4 |  |
+| sharp_gap | close | 3k+ bets | 72-102 | 41.4 | -6.8 | -20.0 |  |
 | sharp_gap | close | <1k bets | 46-39 | 54.1 | 4.8 | -0.8 |  |
-| sharp_gap | close | pin $1-2k | 103-111 | 48.1 | -0.6 | -6.9 |  |
-| sharp_gap | close | pin $2k+ | 85-106 | 44.5 | -3.2 | -12.2 |  |
-| sharp_gap | close | pin limit <$1k | 35-46 | 43.2 | -6.4 | -17.5 |  |
-| money_moving | close | 1-3k bets | 208-222 | 48.4 | -0.4 | -7.6 |  |
-| money_moving | close | 3k+ bets | 71-92 | 43.6 | -5.4 | -17.6 |  |
-| money_moving | close | <1k bets | 46-37 | 55.4 | 5.9 | 1.5 |  |
-| money_moving | close | pin $1-2k | 108-107 | 50.2 | 1.0 | -4.1 |  |
-| money_moving | close | pin $2k+ | 89-103 | 46.4 | -1.5 | -9.4 |  |
-| money_moving | close | pin limit <$1k | 39-47 | 45.3 | -4.3 | -13.4 |  |
-| pin_value | close | 1-3k bets | 107-89 | 54.6 | 4.8 | 8.9 |  |
-| pin_value | close | 3k+ bets | 24-43 | 35.8 | -14.8 | -32.0 |  |
-| pin_value | close | <1k bets | 18-14 | 56.2 | 8.9 | 17.6 |  |
-| pin_value | close | pin $1-2k | 70-67 | 51.1 | 1.6 | 0.6 |  |
-| pin_value | close | pin $2k+ | 44-50 | 46.8 | -2.6 | -1.9 |  |
-| pin_value | close | pin limit <$1k | 35-29 | 54.7 | 4.2 | 4.0 |  |
-| consensus_gap | close | 1-3k bets | 83-69 | 54.6 | 2.3 | 0.4 |  |
-| consensus_gap | close | 3k+ bets | 29-25 | 53.7 | -0.8 | -9.2 |  |
-| consensus_gap | close | <1k bets | 18-8 | 69.2 | 18.4 | 29.9 |  |
-| consensus_gap | close | pin $1-2k | 30-27 | 52.6 | 0.8 | 7.0 |  |
-| consensus_gap | close | pin $2k+ | 57-28 | 67.1 | 10.8 | 20.1 |  |
-| consensus_gap | close | pin limit <$1k | 9-13 | 40.9 | -7.9 | -22.0 |  |
-| follow_move+pin_move | close | 1-3k bets | 80-111 | 41.9 | -6.9 | -17.9 |  |
-| money_delta+money_moving | close | 1-3k bets | 47-55 | 46.1 | 3.3 | -5.1 |  |
-| money_delta+sharp_gap | close | 1-3k bets | 47-54 | 46.5 | 3.8 | -4.1 |  |
-| money_moving+sharp_gap | close | 1-3k bets | 192-213 | 47.4 | -1.2 | -8.6 |  |
-| consensus_gap+money_level | close | 1-3k bets | 51-37 | 58.0 | 0.0 | -8.1 |  |
-| follow_move+rlm_quiet | close | 1-3k bets | 68-106 | 39.1 | -4.0 | -10.1 |  |
-| pin_move+rlm_quiet | close | 1-3k bets | 31-51 | 37.8 | -6.4 | -16.6 |  |
-| consensus_gap+follow_move | close | 1-3k bets | 20-26 | 43.5 | -6.5 | -19.2 |  |
-| follow_move+money_level | close | 1-3k bets | 96-85 | 53.0 | -1.9 | -8.2 |  |
-| money_level+money_moving | close | 1-3k bets | 146-128 | 53.3 | 0.6 | -4.0 |  |
-| money_level+sharp_gap | close | 1-3k bets | 138-128 | 51.9 | -0.6 | -6.1 |  |
-| consensus_gap+money_moving | close | 1-3k bets | 25-35 | 41.7 | -8.2 | -19.7 |  |
+| sharp_gap | close | pin $1-2k | 106-120 | 46.9 | -1.8 | -9.7 |  |
+| sharp_gap | close | pin $2k+ | 87-114 | 43.3 | -4.4 | -14.7 |  |
+| sharp_gap | close | pin limit <$1k | 38-47 | 44.7 | -4.8 | -14.6 |  |
+| money_moving | close | 1-3k bets | 216-234 | 48.0 | -0.7 | -8.5 |  |
+| money_moving | close | 3k+ bets | 75-100 | 42.9 | -6.1 | -19.2 |  |
+| money_moving | close | <1k bets | 46-37 | 55.4 | 6.0 | 1.5 |  |
+| money_moving | close | pin $1-2k | 111-116 | 48.9 | -0.4 | -7.0 |  |
+| money_moving | close | pin $2k+ | 91-111 | 45.0 | -2.7 | -12.0 |  |
+| money_moving | close | pin limit <$1k | 42-48 | 46.7 | -2.9 | -10.9 |  |
+| pin_value | close | 1-3k bets | 111-93 | 54.4 | 4.7 | 8.3 |  |
+| pin_value | close | 3k+ bets | 25-45 | 35.7 | -14.9 | -32.2 |  |
+| pin_value | close | <1k bets | 18-14 | 56.2 | 9.1 | 17.6 |  |
+| pin_value | close | pin $1-2k | 72-72 | 50.0 | 0.6 | -1.6 |  |
+| pin_value | close | pin $2k+ | 47-52 | 47.5 | -1.9 | -0.4 |  |
+| pin_value | close | pin limit <$1k | 37-29 | 56.1 | 5.5 | 6.6 |  |
+| consensus_gap | close | 1-3k bets | 86-71 | 54.8 | 2.3 | 0.1 |  |
+| consensus_gap | close | 3k+ bets | 33-28 | 54.1 | -0.6 | -8.2 |  |
+| consensus_gap | close | <1k bets | 18-8 | 69.2 | 18.5 | 29.9 |  |
+| consensus_gap | close | pin $1-2k | 31-29 | 51.7 | -0.4 | 3.6 |  |
+| consensus_gap | close | pin $2k+ | 59-29 | 67.0 | 10.5 | 20.1 |  |
+| consensus_gap | close | pin limit <$1k | 10-13 | 43.5 | -5.3 | -17.1 |  |
+| follow_move+pin_move | close | 1-3k bets | 85-113 | 42.9 | -5.7 | -15.7 |  |
+| money_delta+money_moving | close | 1-3k bets | 48-64 | 42.9 | 0.4 | -11.8 |  |
+| money_delta+sharp_gap | close | 1-3k bets | 48-63 | 43.2 | 0.8 | -11.0 |  |
+| money_moving+sharp_gap | close | 1-3k bets | 200-225 | 47.1 | -1.5 | -9.5 |  |
+| consensus_gap+money_level | close | 1-3k bets | 54-38 | 58.7 | 0.4 | -7.1 |  |
+| follow_move+rlm_quiet | close | 1-3k bets | 70-112 | 38.5 | -4.4 | -11.7 |  |
+| pin_move+rlm_quiet | close | 1-3k bets | 32-53 | 37.6 | -6.2 | -16.7 |  |
+| consensus_gap+follow_move | close | 1-3k bets | 21-26 | 44.7 | -5.4 | -17.0 |  |
+| follow_move+money_level | close | 1-3k bets | 101-88 | 53.4 | -1.5 | -7.5 |  |
+| money_level+money_moving | close | 1-3k bets | 151-133 | 53.2 | 0.6 | -4.3 |  |
+| money_level+sharp_gap | close | 1-3k bets | 143-133 | 51.8 | -0.6 | -6.4 |  |
+| consensus_gap+money_moving | close | 1-3k bets | 26-36 | 41.9 | -8.3 | -19.3 |  |
 | consensus_gap+pin_move | close | 1-3k bets | 23-14 | 62.2 | 13.1 | 36.6 |  |
-| consensus_gap+pin_value | close | 1-3k bets | 29-27 | 51.8 | 2.6 | -1.8 |  |
-| consensus_gap+sharp_gap | close | 1-3k bets | 25-37 | 40.3 | -9.2 | -22.4 |  |
-| follow_move+money_moving | close | 1-3k bets | 100-123 | 44.8 | -3.4 | -12.4 |  |
-| follow_move+pin_value | close | 1-3k bets | 33-27 | 55.0 | 5.0 | 20.4 |  |
-| follow_move+sharp_gap | close | 1-3k bets | 100-126 | 44.2 | -4.0 | -13.9 |  |
-| money_level+pin_move | close | 1-3k bets | 57-50 | 53.3 | -0.0 | -4.9 |  |
-| money_level+pin_value | close | 1-3k bets | 46-38 | 54.8 | 4.4 | 2.6 |  |
-| money_moving+pin_move | close | 1-3k bets | 60-62 | 49.2 | 1.0 | -3.4 |  |
-| money_moving+pin_value | close | 1-3k bets | 39-40 | 49.4 | -0.2 | -6.8 |  |
-| pin_move+pin_value | close | 1-3k bets | 39-39 | 50.0 | -1.1 | -5.3 |  |
-| pin_move+sharp_gap | close | 1-3k bets | 57-68 | 45.6 | -2.2 | -10.3 |  |
-| pin_value+sharp_gap | close | 1-3k bets | 38-43 | 46.9 | -2.8 | -11.5 |  |
-| follow_move+money_delta | close | 1-3k bets | 31-48 | 39.2 | -5.0 | -20.2 |  |
-| money_delta+pin_move | close | 1-3k bets | 21-25 | 45.7 | 1.7 | -9.6 |  |
-| money_delta+rlm_quiet | close | 1-3k bets | 16-34 | 32.0 | -10.0 | -31.8 |  |
-| follow_move+rlm_ratio | close | 1-3k bets | 44-70 | 38.6 | -3.8 | -17.6 |  |
-| money_moving+rlm_quiet | close | 1-3k bets | 29-52 | 35.8 | -5.2 | -19.0 |  |
-| money_moving+rlm_ratio | close | 1-3k bets | 43-64 | 40.2 | -2.4 | -14.0 |  |
-| rlm_quiet+rlm_ratio | close | 1-3k bets | 21-48 | 30.4 | -9.7 | -29.1 |  |
-| rlm_quiet+sharp_gap | close | 1-3k bets | 28-55 | 33.7 | -7.4 | -24.1 |  |
-| rlm_ratio+sharp_gap | close | 1-3k bets | 44-70 | 38.6 | -3.8 | -17.6 |  |
-| money_delta+money_level | close | 1-3k bets | 18-14 | 56.2 | 8.2 | 10.4 |  |
-| consensus_gap+rlm_quiet | close | 1-3k bets | 5-12 | 29.4 | -9.2 | -31.8 |  |
-| consensus_gap+rlm_ratio | close | 1-3k bets | 6-8 | 42.9 | 3.2 | -4.0 |  |
-| money_delta+rlm_ratio | close | 1-3k bets | 22-38 | 36.7 | -5.5 | -23.5 |  |
-| consensus_gap+pin_rlm | close | 1-3k bets | 5-3 | 62.5 | 20.1 | 47.4 |  |
-| money_level+pin_rlm | close | 1-3k bets | 10-10 | 50.0 | 4.2 | -2.2 |  |
-| money_moving+pin_rlm | close | 1-3k bets | 26-34 | 43.3 | 1.1 | -5.9 |  |
-| pin_rlm+sharp_gap | close | 1-3k bets | 26-39 | 40.0 | -1.8 | -13.1 |  |
-| money_level+rlm_ratio | close | 1-3k bets | 19-17 | 52.8 | 6.2 | 2.8 |  |
-| consensus_gap+money_delta | close | 1-3k bets | 8-6 | 57.1 | 16.2 | 14.0 |  |
-| follow_move+pin_rlm | close | 1-3k bets | 21-33 | 38.9 | -2.7 | -14.5 |  |
-| money_delta+pin_rlm | close | 1-3k bets | 14-20 | 41.2 | 0.1 | -16.9 |  |
-| pin_move+pin_rlm | close | 1-3k bets | 25-33 | 43.1 | 0.9 | -6.7 |  |
-| pin_move+rlm_ratio | close | 1-3k bets | 22-30 | 42.3 | -0.4 | -8.6 |  |
-| pin_rlm+rlm_quiet | close | 1-3k bets | 11-24 | 31.4 | -8.4 | -23.6 |  |
-| pin_rlm+rlm_ratio | close | 1-3k bets | 21-33 | 38.9 | -2.7 | -14.5 |  |
-| money_delta+pin_value | close | 1-3k bets | 13-7 | 65.0 | 17.3 | 25.6 |  |
-| pin_value+rlm_quiet | close | 1-3k bets | 7-10 | 41.2 | -5.7 | 38.9 |  |
+| consensus_gap+pin_value | close | 1-3k bets | 29-28 | 50.9 | 2.0 | -3.6 |  |
+| consensus_gap+sharp_gap | close | 1-3k bets | 26-38 | 40.6 | -9.3 | -22.0 |  |
+| follow_move+money_moving | close | 1-3k bets | 107-132 | 44.8 | -3.4 | -13.1 |  |
+| follow_move+pin_value | close | 1-3k bets | 35-28 | 55.6 | 5.3 | 20.5 |  |
+| follow_move+sharp_gap | close | 1-3k bets | 107-135 | 44.2 | -3.9 | -14.4 |  |
+| money_level+pin_move | close | 1-3k bets | 60-50 | 54.5 | 1.3 | -2.2 |  |
+| money_level+pin_value | close | 1-3k bets | 47-41 | 53.4 | 3.0 | 0.1 |  |
+| money_moving+pin_move | close | 1-3k bets | 65-64 | 50.4 | 2.4 | -1.2 |  |
+| money_moving+pin_value | close | 1-3k bets | 41-42 | 49.4 | -0.2 | -6.8 |  |
+| pin_move+pin_value | close | 1-3k bets | 40-39 | 50.6 | -0.6 | -4.2 |  |
+| pin_move+sharp_gap | close | 1-3k bets | 62-70 | 47.0 | -0.6 | -7.8 |  |
+| pin_value+sharp_gap | close | 1-3k bets | 40-45 | 47.1 | -2.7 | -11.3 |  |
+| follow_move+money_delta | close | 1-3k bets | 32-56 | 36.4 | -7.4 | -26.1 |  |
+| money_delta+pin_move | close | 1-3k bets | 22-27 | 44.9 | 1.5 | -11.2 |  |
+| money_delta+rlm_quiet | close | 1-3k bets | 16-40 | 28.6 | -13.1 | -39.1 |  |
+| follow_move+rlm_ratio | close | 1-3k bets | 46-77 | 37.4 | -4.8 | -20.6 |  |
+| money_moving+rlm_quiet | close | 1-3k bets | 30-58 | 34.1 | -6.8 | -23.3 |  |
+| money_moving+rlm_ratio | close | 1-3k bets | 45-71 | 38.8 | -3.6 | -17.4 |  |
+| rlm_quiet+rlm_ratio | close | 1-3k bets | 21-54 | 28.0 | -12.0 | -34.8 |  |
+| rlm_quiet+sharp_gap | close | 1-3k bets | 29-61 | 32.2 | -8.8 | -27.9 |  |
+| rlm_ratio+sharp_gap | close | 1-3k bets | 46-77 | 37.4 | -4.8 | -20.6 |  |
+| money_delta+money_level | close | 1-3k bets | 18-16 | 52.9 | 5.6 | 3.9 |  |
+| consensus_gap+rlm_quiet | close | 1-3k bets | 5-12 | 29.4 | -9.0 | -31.8 |  |
+| consensus_gap+rlm_ratio | close | 1-3k bets | 7-8 | 46.7 | 6.1 | 1.9 |  |
+| money_delta+rlm_ratio | close | 1-3k bets | 23-45 | 33.8 | -8.0 | -29.6 |  |
+| consensus_gap+pin_rlm | close | 1-3k bets | 5-3 | 62.5 | 20.3 | 47.4 |  |
+| money_level+pin_rlm | close | 1-3k bets | 10-10 | 50.0 | 4.5 | -2.2 |  |
+| money_moving+pin_rlm | close | 1-3k bets | 27-36 | 42.9 | 1.0 | -7.3 |  |
+| pin_rlm+sharp_gap | close | 1-3k bets | 27-41 | 39.7 | -1.7 | -14.1 |  |
+| money_level+rlm_ratio | close | 1-3k bets | 20-18 | 52.6 | 6.2 | 2.2 |  |
+| consensus_gap+money_delta | close | 1-3k bets | 8-6 | 57.1 | 16.4 | 14.0 |  |
+| follow_move+pin_rlm | close | 1-3k bets | 22-35 | 38.6 | -2.5 | -15.6 |  |
+| money_delta+pin_rlm | close | 1-3k bets | 15-22 | 40.5 | -0.1 | -18.4 |  |
+| pin_move+pin_rlm | close | 1-3k bets | 26-35 | 42.6 | 0.8 | -8.1 |  |
+| pin_move+rlm_ratio | close | 1-3k bets | 23-32 | 41.8 | -0.4 | -10.0 |  |
+| pin_rlm+rlm_quiet | close | 1-3k bets | 11-26 | 29.7 | -9.5 | -27.7 |  |
+| pin_rlm+rlm_ratio | close | 1-3k bets | 22-35 | 38.6 | -2.5 | -15.6 |  |
+| money_delta+pin_value | close | 1-3k bets | 13-7 | 65.0 | 17.5 | 25.6 |  |
+| pin_value+rlm_quiet | close | 1-3k bets | 8-10 | 44.4 | -2.7 | 41.6 |  |
 | pin_value+rlm_ratio | close | 1-3k bets | 5-5 | 50.0 | 2.1 | -1.2 |  |
 | pin_rlm+pin_value | close | 1-3k bets | 4-6 | 40.0 | -8.2 | -19.3 |  |
-| money_level+money_moving | close | 3k+ bets | 40-50 | 44.4 | -8.5 | -19.9 |  |
-| money_level+sharp_gap | close | 3k+ bets | 36-50 | 41.9 | -10.5 | -21.7 |  |
-| money_moving+sharp_gap | close | 3k+ bets | 67-90 | 42.7 | -5.7 | -17.6 |  |
-| follow_move+money_delta | close | 3k+ bets | 12-16 | 42.9 | -1.3 | -14.9 |  |
-| follow_move+money_level | close | 3k+ bets | 32-27 | 54.2 | -1.7 | -12.2 |  |
-| follow_move+money_moving | close | 3k+ bets | 40-46 | 46.5 | -2.1 | -13.7 |  |
-| follow_move+pin_move | close | 3k+ bets | 37-42 | 46.8 | -2.4 | -10.8 |  |
-| follow_move+pin_rlm | close | 3k+ bets | 9-14 | 39.1 | -1.8 | -18.0 |  |
-| follow_move+rlm_ratio | close | 3k+ bets | 15-25 | 37.5 | -4.9 | -22.0 |  |
-| follow_move+sharp_gap | close | 3k+ bets | 37-45 | 45.1 | -2.4 | -12.1 |  |
-| money_delta+money_level | close | 3k+ bets | 5-7 | 41.7 | -7.4 | -19.5 |  |
-| money_delta+money_moving | close | 3k+ bets | 18-22 | 45.0 | 1.4 | -10.1 |  |
-| money_delta+pin_move | close | 3k+ bets | 9-11 | 45.0 | -1.1 | -12.4 |  |
-| money_delta+pin_rlm | close | 3k+ bets | 6-7 | 46.2 | 2.0 | -6.4 |  |
-| money_delta+rlm_ratio | close | 3k+ bets | 7-10 | 41.2 | -1.5 | -16.8 |  |
-| money_delta+sharp_gap | close | 3k+ bets | 18-22 | 45.0 | 1.4 | -10.1 |  |
-| money_level+pin_move | close | 3k+ bets | 18-24 | 42.9 | -13.2 | -27.7 |  |
-| money_level+pin_rlm | close | 3k+ bets | 1-2 | 33.3 | -16.9 | -34.9 |  |
-| money_level+rlm_ratio | close | 3k+ bets | 3-3 | 50.0 | -0.5 | -3.8 |  |
-| money_moving+pin_move | close | 3k+ bets | 22-32 | 40.7 | -9.0 | -24.2 |  |
-| money_moving+pin_rlm | close | 3k+ bets | 10-15 | 40.0 | -2.1 | -17.0 |  |
-| money_moving+rlm_ratio | close | 3k+ bets | 14-25 | 35.9 | -6.7 | -27.0 |  |
-| pin_move+pin_rlm | close | 3k+ bets | 8-14 | 36.4 | -7.0 | -27.3 |  |
+| money_level+money_moving | close | 3k+ bets | 44-54 | 44.9 | -8.1 | -19.1 |  |
+| money_level+sharp_gap | close | 3k+ bets | 40-54 | 42.6 | -9.8 | -20.8 |  |
+| money_moving+sharp_gap | close | 3k+ bets | 71-98 | 42.0 | -6.5 | -19.2 |  |
+| follow_move+money_delta | close | 3k+ bets | 12-19 | 38.7 | -4.6 | -23.1 |  |
+| follow_move+money_level | close | 3k+ bets | 35-27 | 56.5 | 0.5 | -7.8 |  |
+| follow_move+money_moving | close | 3k+ bets | 42-49 | 46.2 | -2.3 | -14.7 |  |
+| follow_move+pin_move | close | 3k+ bets | 41-42 | 49.4 | 0.2 | -5.3 |  |
+| follow_move+pin_rlm | close | 3k+ bets | 9-15 | 37.5 | -3.0 | -21.4 |  |
+| follow_move+rlm_ratio | close | 3k+ bets | 15-28 | 34.9 | -7.1 | -27.5 |  |
+| follow_move+sharp_gap | close | 3k+ bets | 39-48 | 44.8 | -2.6 | -13.2 |  |
+| money_delta+money_level | close | 3k+ bets | 5-8 | 38.5 | -10.7 | -25.7 |  |
+| money_delta+money_moving | close | 3k+ bets | 18-25 | 41.9 | -1.4 | -16.4 |  |
+| money_delta+pin_move | close | 3k+ bets | 9-11 | 45.0 | -1.2 | -12.4 |  |
+| money_delta+pin_rlm | close | 3k+ bets | 6-8 | 42.9 | -0.5 | -13.1 |  |
+| money_delta+rlm_ratio | close | 3k+ bets | 7-12 | 36.8 | -4.6 | -25.5 |  |
+| money_delta+sharp_gap | close | 3k+ bets | 18-25 | 41.9 | -1.4 | -16.4 |  |
+| money_level+pin_move | close | 3k+ bets | 19-24 | 44.2 | -11.9 | -24.9 |  |
+| money_level+pin_rlm | close | 3k+ bets | 1-2 | 33.3 | -17.0 | -34.9 |  |
+| money_level+rlm_ratio | close | 3k+ bets | 3-3 | 50.0 | -0.6 | -3.8 |  |
+| money_moving+pin_move | close | 3k+ bets | 23-32 | 41.8 | -8.1 | -22.1 |  |
+| money_moving+pin_rlm | close | 3k+ bets | 10-16 | 38.5 | -3.2 | -20.2 |  |
+| money_moving+rlm_ratio | close | 3k+ bets | 14-28 | 33.3 | -8.9 | -32.2 |  |
+| pin_move+pin_rlm | close | 3k+ bets | 8-14 | 36.4 | -6.9 | -27.3 |  |
 | pin_move+rlm_ratio | close | 3k+ bets | 8-14 | 36.4 | -6.8 | -27.2 |  |
-| pin_move+sharp_gap | close | 3k+ bets | 20-32 | 38.5 | -10.6 | -25.9 |  |
-| pin_rlm+rlm_ratio | close | 3k+ bets | 9-14 | 39.1 | -1.8 | -18.0 |  |
-| pin_rlm+sharp_gap | close | 3k+ bets | 10-16 | 38.5 | -3.3 | -20.2 |  |
-| rlm_ratio+sharp_gap | close | 3k+ bets | 15-25 | 37.5 | -4.9 | -22.0 |  |
-| consensus_gap+money_level | close | 3k+ bets | 21-15 | 58.3 | -1.2 | -6.1 |  |
-| consensus_gap+money_moving | close | 3k+ bets | 11-16 | 40.7 | -10.5 | -28.1 |  |
-| consensus_gap+sharp_gap | close | 3k+ bets | 10-17 | 37.0 | -13.0 | -32.4 |  |
-| follow_move+rlm_quiet | close | 3k+ bets | 30-42 | 41.7 | -1.1 | -13.5 |  |
-| pin_move+rlm_quiet | close | 3k+ bets | 18-23 | 43.9 | 0.7 | -7.9 |  |
-| money_delta+rlm_quiet | close | 3k+ bets | 8-11 | 42.1 | 0.2 | -15.0 |  |
-| money_level+pin_value | close | 3k+ bets | 13-24 | 35.1 | -16.8 | -33.9 |  |
-| money_moving+pin_value | close | 3k+ bets | 12-22 | 35.3 | -16.4 | -33.7 |  |
-| pin_value+sharp_gap | close | 3k+ bets | 12-23 | 34.3 | -17.9 | -35.6 |  |
-| consensus_gap+follow_move | close | 3k+ bets | 10-8 | 55.6 | 3.1 | -9.2 |  |
-| consensus_gap+pin_value | close | 3k+ bets | 9-11 | 45.0 | -7.0 | -14.4 |  |
-| money_moving+rlm_quiet | close | 3k+ bets | 16-26 | 38.1 | -5.3 | -23.9 |  |
-| rlm_quiet+sharp_gap | close | 3k+ bets | 17-25 | 40.5 | -2.6 | -17.5 |  |
-| pin_rlm+rlm_quiet | close | 3k+ bets | 6-13 | 31.6 | -8.5 | -33.3 |  |
-| rlm_quiet+rlm_ratio | close | 3k+ bets | 10-22 | 31.2 | -9.6 | -33.9 |  |
-| pin_move+pin_value | close | 3k+ bets | 15-22 | 40.5 | -10.5 | -23.1 |  |
-| follow_move+pin_value | close | 3k+ bets | 10-15 | 40.0 | -10.5 | -24.2 |  |
-| consensus_gap+money_delta | close | 3k+ bets | 3-3 | 50.0 | 3.5 | -5.1 |  |
-| consensus_gap+pin_move | close | 3k+ bets | 12-9 | 57.1 | 5.1 | -0.2 |  |
+| pin_move+sharp_gap | close | 3k+ bets | 21-32 | 39.6 | -9.6 | -23.6 |  |
+| pin_rlm+rlm_ratio | close | 3k+ bets | 9-15 | 37.5 | -3.0 | -21.4 |  |
+| pin_rlm+sharp_gap | close | 3k+ bets | 10-17 | 37.0 | -4.3 | -23.2 |  |
+| rlm_ratio+sharp_gap | close | 3k+ bets | 15-28 | 34.9 | -7.1 | -27.5 |  |
+| consensus_gap+money_level | close | 3k+ bets | 25-16 | 61.0 | 1.1 | -0.6 |  |
+| consensus_gap+money_moving | close | 3k+ bets | 13-19 | 40.6 | -11.2 | -28.6 |  |
+| consensus_gap+sharp_gap | close | 3k+ bets | 12-20 | 37.5 | -13.2 | -32.2 |  |
+| follow_move+rlm_quiet | close | 3k+ bets | 31-46 | 40.3 | -2.4 | -16.0 |  |
+| pin_move+rlm_quiet | close | 3k+ bets | 19-23 | 45.2 | 2.3 | -4.5 |  |
+| money_delta+rlm_quiet | close | 3k+ bets | 8-13 | 38.1 | -3.4 | -23.1 |  |
+| money_level+pin_value | close | 3k+ bets | 14-26 | 35.0 | -16.7 | -34.1 |  |
+| money_moving+pin_value | close | 3k+ bets | 13-24 | 35.1 | -16.5 | -33.9 |  |
+| pin_value+sharp_gap | close | 3k+ bets | 13-25 | 34.2 | -17.9 | -35.6 |  |
+| consensus_gap+follow_move | close | 3k+ bets | 12-9 | 57.1 | 5.0 | -5.8 |  |
+| consensus_gap+pin_value | close | 3k+ bets | 10-11 | 47.6 | -4.4 | -9.4 |  |
+| money_moving+rlm_quiet | close | 3k+ bets | 16-28 | 36.4 | -6.9 | -27.4 |  |
+| rlm_quiet+sharp_gap | close | 3k+ bets | 17-27 | 38.6 | -4.3 | -21.2 |  |
+| pin_rlm+rlm_quiet | close | 3k+ bets | 6-14 | 30.0 | -9.6 | -36.6 |  |
+| rlm_quiet+rlm_ratio | close | 3k+ bets | 10-24 | 29.4 | -11.3 | -37.8 |  |
+| pin_move+pin_value | close | 3k+ bets | 16-22 | 42.1 | -9.1 | -20.1 |  |
+| follow_move+pin_value | close | 3k+ bets | 11-15 | 42.3 | -8.2 | -19.8 |  |
+| consensus_gap+money_delta | close | 3k+ bets | 3-4 | 42.9 | -1.9 | -18.6 |  |
+| consensus_gap+pin_move | close | 3k+ bets | 13-9 | 59.1 | 7.1 | 4.0 |  |
 | consensus_gap+rlm_quiet | close | 3k+ bets | 3-4 | 42.9 | -0.2 | -17.6 |  |
-| money_delta+pin_value | close | 3k+ bets | 4-3 | 57.1 | 4.1 | 9.1 |  |
-| pin_value+rlm_quiet | close | 3k+ bets | 3-6 | 33.3 | -16.6 | -37.1 |  |
-| consensus_gap+pin_rlm | close | 3k+ bets | 2-4 | 33.3 | -12.7 | -36.9 |  |
-| consensus_gap+rlm_ratio | close | 3k+ bets | 1-3 | 25.0 | -16.5 | -52.3 |  |
-| pin_rlm+pin_value | close | 3k+ bets | 2-3 | 40.0 | -11.6 | -24.3 |  |
+| money_delta+pin_value | close | 3k+ bets | 4-4 | 50.0 | -3.4 | -4.5 |  |
+| pin_value+rlm_quiet | close | 3k+ bets | 3-6 | 33.3 | -16.8 | -37.1 |  |
+| consensus_gap+pin_rlm | close | 3k+ bets | 2-4 | 33.3 | -12.9 | -36.9 |  |
+| consensus_gap+rlm_ratio | close | 3k+ bets | 1-4 | 20.0 | -19.6 | -61.8 |  |
+| pin_rlm+pin_value | close | 3k+ bets | 2-3 | 40.0 | -11.9 | -24.3 |  |
 | pin_value+rlm_ratio | close | 3k+ bets | 1-2 | 33.3 | -15.9 | -36.4 |  |
 | consensus_gap+money_level | close | <1k bets | 13-1 | 92.9 | 35.1 | 48.5 |  |
 | consensus_gap+money_moving | close | <1k bets | 8-1 | 88.9 | 35.7 | 81.0 |  |
-| consensus_gap+pin_value | close | <1k bets | 5-2 | 71.4 | 28.5 | 85.8 |  |
+| consensus_gap+pin_value | close | <1k bets | 5-2 | 71.4 | 28.9 | 85.8 |  |
 | consensus_gap+sharp_gap | close | <1k bets | 9-2 | 81.8 | 29.2 | 60.9 |  |
 | follow_move+pin_move | close | <1k bets | 14-15 | 48.3 | -1.8 | -9.0 |  |
-| follow_move+rlm_quiet | close | <1k bets | 10-19 | 34.5 | -8.6 | -33.2 |  |
-| money_level+money_moving | close | <1k bets | 34-18 | 65.4 | 12.3 | 10.0 |  |
-| money_level+pin_value | close | <1k bets | 8-4 | 66.7 | 18.2 | 24.9 |  |
-| money_level+sharp_gap | close | <1k bets | 34-19 | 64.2 | 10.8 | 8.1 |  |
-| money_moving+pin_value | close | <1k bets | 6-5 | 54.5 | 9.4 | 36.2 |  |
-| money_moving+sharp_gap | close | <1k bets | 44-36 | 55.0 | 5.9 | 2.4 |  |
-| pin_move+rlm_quiet | close | <1k bets | 3-4 | 42.9 | -5.5 | -18.6 |  |
-| pin_value+sharp_gap | close | <1k bets | 6-5 | 54.5 | 9.4 | 36.2 |  |
+| follow_move+rlm_quiet | close | <1k bets | 10-19 | 34.5 | -8.5 | -33.2 |  |
+| money_level+money_moving | close | <1k bets | 34-18 | 65.4 | 12.2 | 10.0 |  |
+| money_level+pin_value | close | <1k bets | 8-4 | 66.7 | 18.5 | 24.9 |  |
+| money_level+sharp_gap | close | <1k bets | 34-19 | 64.2 | 10.7 | 8.1 |  |
+| money_moving+pin_value | close | <1k bets | 6-5 | 54.5 | 9.8 | 36.2 |  |
+| money_moving+sharp_gap | close | <1k bets | 44-36 | 55.0 | 6.0 | 2.4 |  |
+| pin_move+rlm_quiet | close | <1k bets | 3-4 | 42.9 | -5.7 | -18.6 |  |
+| pin_value+sharp_gap | close | <1k bets | 6-5 | 54.5 | 9.8 | 36.2 |  |
 | follow_move+money_moving | close | <1k bets | 22-18 | 55.0 | 5.7 | -3.6 |  |
 | follow_move+sharp_gap | close | <1k bets | 21-19 | 52.5 | 3.2 | -5.9 |  |
-| money_level+pin_move | close | <1k bets | 14-9 | 60.9 | 10.4 | 14.1 |  |
-| money_moving+rlm_quiet | close | <1k bets | 5-7 | 41.7 | -1.6 | -19.1 |  |
-| rlm_quiet+sharp_gap | close | <1k bets | 5-7 | 41.7 | -1.6 | -19.1 |  |
-| follow_move+money_delta | close | <1k bets | 8-9 | 47.1 | 1.4 | -10.3 |  |
-| follow_move+pin_rlm | close | <1k bets | 4-5 | 44.4 | -3.2 | -15.5 |  |
-| follow_move+pin_value | close | <1k bets | 5-3 | 62.5 | 13.0 | 19.9 |  |
-| follow_move+rlm_ratio | close | <1k bets | 10-12 | 45.5 | 1.0 | -12.8 |  |
-| money_delta+money_moving | close | <1k bets | 9-11 | 45.0 | 2.5 | 8.2 |  |
-| money_delta+pin_move | close | <1k bets | 1-3 | 25.0 | -22.8 | -52.3 |  |
-| money_delta+pin_rlm | close | <1k bets | 1-3 | 25.0 | -22.8 | -52.3 |  |
-| money_delta+pin_value | close | <1k bets | 4-0 | 100.0 | 55.9 | 181.8 |  |
-| money_delta+rlm_quiet | close | <1k bets | 5-4 | 55.6 | 11.9 | 7.3 |  |
-| money_delta+rlm_ratio | close | <1k bets | 5-7 | 41.7 | -2.2 | -20.7 |  |
-| money_delta+sharp_gap | close | <1k bets | 9-11 | 45.0 | 2.5 | 8.2 |  |
-| money_moving+pin_move | close | <1k bets | 11-9 | 55.0 | 7.0 | 4.3 |  |
-| money_moving+pin_rlm | close | <1k bets | 5-5 | 50.0 | 2.4 | -4.9 |  |
-| money_moving+rlm_ratio | close | <1k bets | 10-12 | 45.5 | 1.0 | -12.8 |  |
-| pin_move+pin_rlm | close | <1k bets | 5-5 | 50.0 | 2.4 | -4.9 |  |
-| pin_move+pin_value | close | <1k bets | 7-4 | 63.6 | 14.2 | 20.8 |  |
-| pin_move+rlm_ratio | close | <1k bets | 4-5 | 44.4 | -3.2 | -15.5 |  |
-| pin_move+sharp_gap | close | <1k bets | 11-9 | 55.0 | 7.0 | 4.3 |  |
-| pin_rlm+pin_value | close | <1k bets | 2-0 | 100.0 | 52.2 | 90.9 |  |
-| pin_rlm+rlm_quiet | close | <1k bets | 2-1 | 66.7 | 17.4 | 26.2 |  |
-| pin_rlm+rlm_ratio | close | <1k bets | 4-5 | 44.4 | -3.2 | -15.5 |  |
-| pin_rlm+sharp_gap | close | <1k bets | 5-5 | 50.0 | 2.4 | -4.9 |  |
-| pin_value+rlm_quiet | close | <1k bets | 3-0 | 100.0 | 52.2 | 90.9 |  |
-| pin_value+rlm_ratio | close | <1k bets | 1-0 | 100.0 | 52.2 | 90.9 |  |
-| rlm_quiet+rlm_ratio | close | <1k bets | 5-6 | 45.5 | 2.7 | -11.8 |  |
-| rlm_ratio+sharp_gap | close | <1k bets | 10-12 | 45.5 | 1.0 | -12.8 |  |
+| money_level+pin_move | close | <1k bets | 14-9 | 60.9 | 10.5 | 14.1 |  |
+| money_moving+rlm_quiet | close | <1k bets | 5-7 | 41.7 | -1.3 | -19.1 |  |
+| rlm_quiet+sharp_gap | close | <1k bets | 5-7 | 41.7 | -1.3 | -19.1 |  |
+| follow_move+money_delta | close | <1k bets | 8-9 | 47.1 | 1.6 | -10.3 |  |
+| follow_move+pin_rlm | close | <1k bets | 4-5 | 44.4 | -3.1 | -15.5 |  |
+| follow_move+pin_value | close | <1k bets | 5-3 | 62.5 | 13.1 | 19.9 |  |
+| follow_move+rlm_ratio | close | <1k bets | 10-12 | 45.5 | 1.2 | -12.8 |  |
+| money_delta+money_moving | close | <1k bets | 9-11 | 45.0 | 2.8 | 8.2 |  |
+| money_delta+pin_move | close | <1k bets | 1-3 | 25.0 | -22.6 | -52.3 |  |
+| money_delta+pin_rlm | close | <1k bets | 1-3 | 25.0 | -22.6 | -52.3 |  |
+| money_delta+pin_value | close | <1k bets | 4-0 | 100.0 | 56.2 | 181.8 |  |
+| money_delta+rlm_quiet | close | <1k bets | 5-4 | 55.6 | 12.0 | 7.3 |  |
+| money_delta+rlm_ratio | close | <1k bets | 5-7 | 41.7 | -1.9 | -20.7 |  |
+| money_delta+sharp_gap | close | <1k bets | 9-11 | 45.0 | 2.8 | 8.2 |  |
+| money_moving+pin_move | close | <1k bets | 11-9 | 55.0 | 7.2 | 4.3 |  |
+| money_moving+pin_rlm | close | <1k bets | 5-5 | 50.0 | 2.5 | -4.9 |  |
+| money_moving+rlm_ratio | close | <1k bets | 10-12 | 45.5 | 1.2 | -12.8 |  |
+| pin_move+pin_rlm | close | <1k bets | 5-5 | 50.0 | 2.5 | -4.9 |  |
+| pin_move+pin_value | close | <1k bets | 7-4 | 63.6 | 14.3 | 20.8 |  |
+| pin_move+rlm_ratio | close | <1k bets | 4-5 | 44.4 | -3.1 | -15.5 |  |
+| pin_move+sharp_gap | close | <1k bets | 11-9 | 55.0 | 7.2 | 4.3 |  |
+| pin_rlm+pin_value | close | <1k bets | 2-0 | 100.0 | 52.4 | 90.9 |  |
+| pin_rlm+rlm_quiet | close | <1k bets | 2-1 | 66.7 | 17.5 | 26.2 |  |
+| pin_rlm+rlm_ratio | close | <1k bets | 4-5 | 44.4 | -3.1 | -15.5 |  |
+| pin_rlm+sharp_gap | close | <1k bets | 5-5 | 50.0 | 2.5 | -4.9 |  |
+| pin_value+rlm_quiet | close | <1k bets | 3-0 | 100.0 | 52.4 | 90.9 |  |
+| pin_value+rlm_ratio | close | <1k bets | 1-0 | 100.0 | 52.4 | 90.9 |  |
+| rlm_quiet+rlm_ratio | close | <1k bets | 5-6 | 45.5 | 2.9 | -11.8 |  |
+| rlm_ratio+sharp_gap | close | <1k bets | 10-12 | 45.5 | 1.2 | -12.8 |  |
 | consensus_gap+follow_move | close | <1k bets | 5-1 | 83.3 | 28.4 | 42.8 |  |
 | consensus_gap+pin_move | close | <1k bets | 2-0 | 100.0 | 42.6 | 70.5 |  |
-| follow_move+money_level | close | <1k bets | 24-13 | 64.9 | 9.8 | 7.3 |  |
-| money_delta+money_level | close | <1k bets | 3-3 | 50.0 | 7.6 | 7.7 |  |
-| money_level+pin_rlm | close | <1k bets | 2-3 | 40.0 | -6.6 | -23.6 |  |
-| money_level+rlm_ratio | close | <1k bets | 4-4 | 50.0 | 5.2 | -5.5 |  |
-| consensus_gap+money_delta | close | <1k bets | 3-0 | 100.0 | 50.7 | 208.0 |  |
-| consensus_gap+rlm_ratio | close | <1k bets | 1-0 | 100.0 | 52.2 | 89.3 |  |
-| consensus_gap+rlm_quiet | close | <1k bets | 1-1 | 50.0 | 9.6 | -4.5 |  |
-| money_delta+money_moving | close | pin $1-2k | 24-20 | 54.5 | 10.2 | 16.9 |  |
-| money_delta+sharp_gap | close | pin $1-2k | 24-20 | 54.5 | 10.2 | 16.9 |  |
-| money_moving+sharp_gap | close | pin $1-2k | 100-102 | 49.5 | 0.5 | -4.0 |  |
+| follow_move+money_level | close | <1k bets | 24-13 | 64.9 | 9.6 | 7.3 |  |
+| money_delta+money_level | close | <1k bets | 3-3 | 50.0 | 8.0 | 7.7 |  |
+| money_level+pin_rlm | close | <1k bets | 2-3 | 40.0 | -6.5 | -23.6 |  |
+| money_level+rlm_ratio | close | <1k bets | 4-4 | 50.0 | 5.4 | -5.5 |  |
+| consensus_gap+money_delta | close | <1k bets | 3-0 | 100.0 | 50.8 | 208.0 |  |
+| consensus_gap+rlm_ratio | close | <1k bets | 1-0 | 100.0 | 52.4 | 89.3 |  |
+| consensus_gap+rlm_quiet | close | <1k bets | 1-1 | 50.0 | 9.9 | -4.5 |  |
+| money_delta+money_moving | close | pin $1-2k | 25-25 | 50.0 | 5.7 | 6.8 |  |
+| money_delta+sharp_gap | close | pin $1-2k | 25-25 | 50.0 | 5.7 | 6.8 |  |
+| money_moving+sharp_gap | close | pin $1-2k | 103-111 | 48.1 | -0.8 | -7.1 |  |
 | consensus_gap+follow_move | close | pin $1-2k | 9-11 | 45.0 | -5.7 | -16.3 |  |
-| consensus_gap+money_level | close | pin $1-2k | 16-14 | 53.3 | -2.2 | -10.1 |  |
-| consensus_gap+money_moving | close | pin $1-2k | 8-12 | 40.0 | -8.7 | -11.1 |  |
-| consensus_gap+pin_move | close | pin $1-2k | 11-11 | 50.0 | 1.5 | 10.9 |  |
-| consensus_gap+pin_value | close | pin $1-2k | 16-14 | 53.3 | 4.5 | 14.0 |  |
-| consensus_gap+sharp_gap | close | pin $1-2k | 8-12 | 40.0 | -8.7 | -9.8 |  |
-| follow_move+money_level | close | pin $1-2k | 45-50 | 47.4 | -5.8 | -16.3 |  |
-| follow_move+money_moving | close | pin $1-2k | 52-62 | 45.6 | -3.2 | -12.6 |  |
-| follow_move+pin_move | close | pin $1-2k | 47-84 | 35.9 | -13.0 | -30.2 |  |
-| follow_move+pin_value | close | pin $1-2k | 25-26 | 49.0 | -0.7 | -6.9 |  |
-| follow_move+sharp_gap | close | pin $1-2k | 53-65 | 44.9 | -3.9 | -13.7 |  |
-| money_level+money_moving | close | pin $1-2k | 75-69 | 52.1 | 0.3 | -6.3 |  |
-| money_level+pin_move | close | pin $1-2k | 37-46 | 44.6 | -7.2 | -19.4 |  |
-| money_level+pin_value | close | pin $1-2k | 31-28 | 52.5 | 2.6 | -2.0 |  |
-| money_level+sharp_gap | close | pin $1-2k | 70-70 | 50.0 | -1.4 | -8.8 |  |
-| money_moving+pin_move | close | pin $1-2k | 42-47 | 47.2 | -2.3 | -9.4 |  |
-| money_moving+pin_value | close | pin $1-2k | 25-24 | 51.0 | 2.2 | 3.7 |  |
-| pin_move+pin_value | close | pin $1-2k | 27-33 | 45.0 | -5.8 | -14.8 |  |
-| pin_move+sharp_gap | close | pin $1-2k | 41-53 | 43.6 | -5.0 | -15.5 |  |
-| pin_value+sharp_gap | close | pin $1-2k | 25-24 | 51.0 | 2.2 | 3.7 |  |
-| follow_move+money_delta | close | pin $1-2k | 19-24 | 44.2 | -2.6 | -13.4 |  |
-| follow_move+rlm_quiet | close | pin $1-2k | 31-50 | 38.3 | -6.4 | -20.5 |  |
-| money_delta+pin_move | close | pin $1-2k | 14-16 | 46.7 | 0.4 | -7.9 |  |
-| money_delta+rlm_quiet | close | pin $1-2k | 11-15 | 42.3 | -3.2 | -16.3 |  |
-| pin_move+rlm_quiet | close | pin $1-2k | 21-32 | 39.6 | -6.1 | -17.0 |  |
-| follow_move+pin_rlm | close | pin $1-2k | 15-22 | 40.5 | -4.2 | -14.6 |  |
-| follow_move+rlm_ratio | close | pin $1-2k | 24-31 | 43.6 | -0.6 | -9.9 |  |
-| pin_move+pin_rlm | close | pin $1-2k | 17-22 | 43.6 | -1.5 | -8.8 |  |
-| pin_move+rlm_ratio | close | pin $1-2k | 15-21 | 41.7 | -3.9 | -12.2 |  |
-| pin_rlm+rlm_quiet | close | pin $1-2k | 10-16 | 38.5 | -5.9 | -15.6 |  |
-| pin_rlm+rlm_ratio | close | pin $1-2k | 15-22 | 40.5 | -4.2 | -14.6 |  |
-| pin_rlm+sharp_gap | close | pin $1-2k | 17-25 | 40.5 | -3.7 | -15.3 |  |
-| rlm_quiet+rlm_ratio | close | pin $1-2k | 13-20 | 39.4 | -4.1 | -15.3 |  |
-| rlm_quiet+sharp_gap | close | pin $1-2k | 17-23 | 42.5 | -1.5 | -10.7 |  |
-| rlm_ratio+sharp_gap | close | pin $1-2k | 24-31 | 43.6 | -0.6 | -9.9 |  |
-| money_delta+money_level | close | pin $1-2k | 11-9 | 55.0 | 7.3 | 6.8 |  |
-| money_delta+pin_rlm | close | pin $1-2k | 9-11 | 45.0 | 0.8 | -9.9 |  |
-| money_delta+rlm_ratio | close | pin $1-2k | 11-13 | 45.8 | 1.2 | -8.7 |  |
-| money_level+pin_rlm | close | pin $1-2k | 6-7 | 46.2 | 1.3 | -10.0 |  |
-| money_level+rlm_ratio | close | pin $1-2k | 9-9 | 50.0 | 4.3 | -3.6 |  |
-| money_moving+pin_rlm | close | pin $1-2k | 17-20 | 45.9 | 0.6 | -3.9 |  |
-| money_moving+rlm_ratio | close | pin $1-2k | 24-27 | 47.1 | 2.2 | -2.8 |  |
-| money_moving+rlm_quiet | close | pin $1-2k | 17-22 | 43.6 | -0.4 | -8.4 |  |
+| consensus_gap+money_level | close | pin $1-2k | 17-15 | 53.1 | -3.2 | -11.9 |  |
+| consensus_gap+money_moving | close | pin $1-2k | 8-13 | 38.1 | -11.4 | -15.4 |  |
+| consensus_gap+pin_move | close | pin $1-2k | 11-11 | 50.0 | 1.4 | 10.9 |  |
+| consensus_gap+pin_value | close | pin $1-2k | 16-15 | 51.6 | 3.2 | 10.3 |  |
+| consensus_gap+sharp_gap | close | pin $1-2k | 8-13 | 38.1 | -11.4 | -14.1 |  |
+| follow_move+money_level | close | pin $1-2k | 48-52 | 48.0 | -5.3 | -15.7 |  |
+| follow_move+money_moving | close | pin $1-2k | 55-66 | 45.5 | -3.3 | -13.6 |  |
+| follow_move+pin_move | close | pin $1-2k | 52-86 | 37.7 | -11.0 | -26.4 |  |
+| follow_move+pin_value | close | pin $1-2k | 25-27 | 48.1 | -1.5 | -8.7 |  |
+| follow_move+sharp_gap | close | pin $1-2k | 56-69 | 44.8 | -4.0 | -14.6 |  |
+| money_level+money_moving | close | pin $1-2k | 77-75 | 50.7 | -1.2 | -9.3 |  |
+| money_level+pin_move | close | pin $1-2k | 38-47 | 44.7 | -7.1 | -19.0 |  |
+| money_level+pin_value | close | pin $1-2k | 32-32 | 50.0 | 0.1 | -6.7 |  |
+| money_level+sharp_gap | close | pin $1-2k | 72-76 | 48.6 | -2.8 | -11.7 |  |
+| money_moving+pin_move | close | pin $1-2k | 44-49 | 47.3 | -2.0 | -9.2 |  |
+| money_moving+pin_value | close | pin $1-2k | 25-27 | 48.1 | -0.6 | -2.3 |  |
+| pin_move+pin_value | close | pin $1-2k | 27-34 | 44.3 | -6.5 | -16.2 |  |
+| pin_move+sharp_gap | close | pin $1-2k | 43-55 | 43.9 | -4.6 | -15.0 |  |
+| pin_value+sharp_gap | close | pin $1-2k | 25-27 | 48.1 | -0.6 | -2.3 |  |
+| follow_move+money_delta | close | pin $1-2k | 20-27 | 42.6 | -3.7 | -16.6 |  |
+| follow_move+rlm_quiet | close | pin $1-2k | 32-52 | 38.1 | -6.2 | -20.5 |  |
+| money_delta+pin_move | close | pin $1-2k | 15-17 | 46.9 | 1.2 | -7.6 |  |
+| money_delta+rlm_quiet | close | pin $1-2k | 11-17 | 39.3 | -5.7 | -22.3 |  |
+| pin_move+rlm_quiet | close | pin $1-2k | 22-33 | 40.0 | -5.2 | -15.7 |  |
+| follow_move+pin_rlm | close | pin $1-2k | 16-23 | 41.0 | -3.3 | -13.9 |  |
+| follow_move+rlm_ratio | close | pin $1-2k | 25-33 | 43.1 | -1.0 | -11.2 |  |
+| pin_move+pin_rlm | close | pin $1-2k | 18-23 | 43.9 | -0.7 | -8.5 |  |
+| pin_move+rlm_ratio | close | pin $1-2k | 16-22 | 42.1 | -3.0 | -11.7 |  |
+| pin_rlm+rlm_quiet | close | pin $1-2k | 10-17 | 37.0 | -6.7 | -18.7 |  |
+| pin_rlm+rlm_ratio | close | pin $1-2k | 16-23 | 41.0 | -3.3 | -13.9 |  |
+| pin_rlm+sharp_gap | close | pin $1-2k | 18-26 | 40.9 | -2.9 | -14.8 |  |
+| rlm_quiet+rlm_ratio | close | pin $1-2k | 13-22 | 37.1 | -6.0 | -20.1 |  |
+| rlm_quiet+sharp_gap | close | pin $1-2k | 17-25 | 40.5 | -3.2 | -15.0 |  |
+| rlm_ratio+sharp_gap | close | pin $1-2k | 25-33 | 43.1 | -1.0 | -11.2 |  |
+| money_delta+money_level | close | pin $1-2k | 11-11 | 50.0 | 2.4 | -2.9 |  |
+| money_delta+pin_rlm | close | pin $1-2k | 10-12 | 45.5 | 1.9 | -9.2 |  |
+| money_delta+rlm_ratio | close | pin $1-2k | 12-15 | 44.4 | 0.2 | -11.6 |  |
+| money_level+pin_rlm | close | pin $1-2k | 6-7 | 46.2 | 1.5 | -10.0 |  |
+| money_level+rlm_ratio | close | pin $1-2k | 9-9 | 50.0 | 4.4 | -3.6 |  |
+| money_moving+pin_rlm | close | pin $1-2k | 18-21 | 46.2 | 1.3 | -3.8 |  |
+| money_moving+rlm_ratio | close | pin $1-2k | 25-29 | 46.3 | 1.7 | -4.6 |  |
+| money_moving+rlm_quiet | close | pin $1-2k | 17-24 | 41.5 | -2.1 | -12.9 |  |
 | consensus_gap+rlm_quiet | close | pin $1-2k | 2-4 | 33.3 | -6.5 | -28.5 |  |
-| pin_value+rlm_quiet | close | pin $1-2k | 6-10 | 37.5 | -10.6 | -24.9 |  |
-| money_delta+pin_value | close | pin $1-2k | 9-5 | 64.3 | 18.8 | 51.2 |  |
-| consensus_gap+money_delta | close | pin $1-2k | 4-1 | 80.0 | 37.3 | 132.7 |  |
+| pin_value+rlm_quiet | close | pin $1-2k | 6-10 | 37.5 | -10.5 | -24.9 |  |
+| money_delta+pin_value | close | pin $1-2k | 9-6 | 60.0 | 14.3 | 41.1 |  |
+| consensus_gap+money_delta | close | pin $1-2k | 4-1 | 80.0 | 37.4 | 132.7 |  |
 | consensus_gap+rlm_ratio | close | pin $1-2k | 1-2 | 33.3 | -6.0 | -20.7 |  |
 | pin_rlm+pin_value | close | pin $1-2k | 4-5 | 44.4 | -3.5 | -10.4 |  |
-| pin_value+rlm_ratio | close | pin $1-2k | 3-4 | 42.9 | -4.1 | -12.0 |  |
+| pin_value+rlm_ratio | close | pin $1-2k | 3-4 | 42.9 | -4.0 | -12.0 |  |
 | consensus_gap+pin_rlm | close | pin $1-2k | 1-1 | 50.0 | 7.4 | 19.0 |  |
-| follow_move+pin_move | close | pin $2k+ | 62-62 | 50.0 | 0.9 | -3.4 |  |
-| consensus_gap+money_level | close | pin $2k+ | 38-21 | 64.4 | 3.6 | -0.1 |  |
-| follow_move+rlm_quiet | close | pin $2k+ | 38-47 | 44.7 | 4.1 | 10.6 |  |
-| pin_move+rlm_quiet | close | pin $2k+ | 25-36 | 41.0 | -0.9 | -7.9 |  |
-| money_level+money_moving | close | pin $2k+ | 55-60 | 47.8 | -5.3 | -14.2 |  |
-| money_level+sharp_gap | close | pin $2k+ | 52-62 | 45.6 | -7.4 | -16.6 |  |
-| money_moving+sharp_gap | close | pin $2k+ | 85-102 | 45.5 | -2.2 | -10.3 |  |
-| consensus_gap+pin_value | close | pin $2k+ | 20-14 | 58.8 | 9.1 | 10.7 |  |
-| follow_move+money_level | close | pin $2k+ | 39-32 | 54.9 | -3.2 | -11.1 |  |
-| follow_move+money_moving | close | pin $2k+ | 43-50 | 46.2 | -1.3 | -11.2 |  |
-| follow_move+sharp_gap | close | pin $2k+ | 39-49 | 44.3 | -2.9 | -13.2 |  |
-| money_level+pin_move | close | pin $2k+ | 30-23 | 56.6 | -1.9 | -6.6 |  |
-| money_moving+pin_move | close | pin $2k+ | 33-37 | 47.1 | 0.1 | -7.8 |  |
-| pin_move+sharp_gap | close | pin $2k+ | 32-38 | 45.7 | -1.3 | -9.4 |  |
-| money_delta+money_level | close | pin $2k+ | 6-3 | 66.7 | 20.7 | 35.6 |  |
-| money_delta+money_moving | close | pin $2k+ | 20-26 | 43.5 | 3.1 | -11.0 |  |
-| money_delta+sharp_gap | close | pin $2k+ | 20-26 | 43.5 | 3.1 | -11.0 |  |
-| consensus_gap+money_moving | close | pin $2k+ | 19-18 | 51.4 | -1.4 | 0.8 |  |
-| consensus_gap+sharp_gap | close | pin $2k+ | 18-19 | 48.6 | -4.1 | -2.4 |  |
-| money_level+pin_value | close | pin $2k+ | 16-25 | 39.0 | -11.7 | -27.3 |  |
-| money_moving+pin_value | close | pin $2k+ | 17-26 | 39.5 | -10.9 | -26.0 |  |
-| pin_value+sharp_gap | close | pin $2k+ | 17-28 | 37.8 | -13.4 | -29.3 |  |
+| follow_move+pin_move | close | pin $2k+ | 64-65 | 49.6 | 0.5 | -3.8 |  |
+| consensus_gap+money_level | close | pin $2k+ | 39-22 | 63.9 | 2.7 | -0.7 |  |
+| follow_move+rlm_quiet | close | pin $2k+ | 39-49 | 44.3 | 3.9 | 9.6 |  |
+| pin_move+rlm_quiet | close | pin $2k+ | 26-37 | 41.3 | -0.4 | -7.0 |  |
+| money_level+money_moving | close | pin $2k+ | 56-66 | 45.9 | -7.1 | -17.5 |  |
+| money_level+sharp_gap | close | pin $2k+ | 53-68 | 43.8 | -9.0 | -19.8 |  |
+| money_moving+sharp_gap | close | pin $2k+ | 87-110 | 44.2 | -3.5 | -12.9 |  |
+| consensus_gap+pin_value | close | pin $2k+ | 21-14 | 60.0 | 10.2 | 13.1 |  |
+| follow_move+money_level | close | pin $2k+ | 39-36 | 52.0 | -5.9 | -15.8 |  |
+| follow_move+money_moving | close | pin $2k+ | 44-56 | 44.0 | -3.5 | -15.6 |  |
+| follow_move+sharp_gap | close | pin $2k+ | 40-55 | 42.1 | -5.1 | -17.7 |  |
+| money_level+pin_move | close | pin $2k+ | 31-25 | 55.4 | -3.0 | -8.1 |  |
+| money_moving+pin_move | close | pin $2k+ | 35-40 | 46.7 | -0.6 | -8.9 |  |
+| pin_move+sharp_gap | close | pin $2k+ | 34-41 | 45.3 | -2.0 | -10.4 |  |
+| money_delta+money_level | close | pin $2k+ | 6-4 | 60.0 | 15.4 | 22.1 |  |
+| money_delta+money_moving | close | pin $2k+ | 20-29 | 40.8 | 1.0 | -16.5 |  |
+| money_delta+sharp_gap | close | pin $2k+ | 20-29 | 40.8 | 1.0 | -16.5 |  |
+| consensus_gap+money_moving | close | pin $2k+ | 19-19 | 50.0 | -3.1 | -1.9 |  |
+| consensus_gap+sharp_gap | close | pin $2k+ | 18-20 | 47.4 | -5.8 | -5.0 |  |
+| money_level+pin_value | close | pin $2k+ | 16-27 | 37.2 | -13.4 | -30.7 |  |
+| money_moving+pin_value | close | pin $2k+ | 18-28 | 39.1 | -11.5 | -26.8 |  |
+| pin_value+sharp_gap | close | pin $2k+ | 18-30 | 37.5 | -13.8 | -29.9 |  |
 | consensus_gap+pin_rlm | close | pin $2k+ | 5-4 | 55.6 | 10.9 | 24.4 |  |
-| money_level+pin_rlm | close | pin $2k+ | 2-4 | 33.3 | -13.0 | -32.5 |  |
-| money_moving+pin_rlm | close | pin $2k+ | 16-22 | 42.1 | 4.4 | -5.9 |  |
-| pin_rlm+sharp_gap | close | pin $2k+ | 16-23 | 41.0 | 3.4 | -8.3 |  |
-| follow_move+money_delta | close | pin $2k+ | 11-15 | 42.3 | 1.9 | -14.9 |  |
-| follow_move+rlm_ratio | close | pin $2k+ | 15-24 | 38.5 | 0.9 | -15.0 |  |
-| money_delta+rlm_ratio | close | pin $2k+ | 7-14 | 33.3 | -5.0 | -31.4 |  |
-| money_moving+rlm_ratio | close | pin $2k+ | 15-24 | 38.5 | 0.9 | -15.0 |  |
-| rlm_ratio+sharp_gap | close | pin $2k+ | 15-24 | 38.5 | 0.9 | -15.0 |  |
-| money_level+rlm_ratio | close | pin $2k+ | 5-4 | 55.6 | 10.1 | 7.2 |  |
-| consensus_gap+follow_move | close | pin $2k+ | 17-7 | 70.8 | 14.1 | 20.6 |  |
+| money_level+pin_rlm | close | pin $2k+ | 2-4 | 33.3 | -12.8 | -32.5 |  |
+| money_moving+pin_rlm | close | pin $2k+ | 16-24 | 40.0 | 2.7 | -10.6 |  |
+| pin_rlm+sharp_gap | close | pin $2k+ | 16-25 | 39.0 | 1.8 | -12.8 |  |
+| follow_move+money_delta | close | pin $2k+ | 11-18 | 37.9 | -1.7 | -23.7 |  |
+| follow_move+rlm_ratio | close | pin $2k+ | 15-27 | 35.7 | -1.4 | -21.1 |  |
+| money_delta+rlm_ratio | close | pin $2k+ | 7-17 | 29.2 | -8.4 | -40.0 |  |
+| money_moving+rlm_ratio | close | pin $2k+ | 15-27 | 35.7 | -1.4 | -21.1 |  |
+| rlm_ratio+sharp_gap | close | pin $2k+ | 15-27 | 35.7 | -1.4 | -21.1 |  |
+| money_level+rlm_ratio | close | pin $2k+ | 5-5 | 50.0 | 5.7 | -3.5 |  |
+| consensus_gap+follow_move | close | pin $2k+ | 17-7 | 70.8 | 14.0 | 20.6 |  |
 | consensus_gap+pin_move | close | pin $2k+ | 23-8 | 74.2 | 21.7 | 44.2 |  |
-| follow_move+pin_value | close | pin $2k+ | 11-11 | 50.0 | -0.5 | 38.2 |  |
-| pin_move+pin_value | close | pin $2k+ | 20-20 | 50.0 | -1.5 | -5.6 |  |
-| follow_move+pin_rlm | close | pin $2k+ | 12-19 | 38.7 | 3.2 | -11.1 |  |
-| pin_rlm+rlm_ratio | close | pin $2k+ | 12-19 | 38.7 | 3.2 | -11.1 |  |
-| pin_value+rlm_quiet | close | pin $2k+ | 4-3 | 57.1 | 9.4 | 146.6 |  |
-| money_moving+rlm_quiet | close | pin $2k+ | 15-23 | 39.5 | 1.1 | -11.1 |  |
-| rlm_quiet+sharp_gap | close | pin $2k+ | 14-22 | 38.9 | 0.2 | -13.3 |  |
-| money_delta+rlm_quiet | close | pin $2k+ | 7-12 | 36.8 | -1.5 | -24.6 |  |
-| rlm_quiet+rlm_ratio | close | pin $2k+ | 8-18 | 30.8 | -3.6 | -26.0 |  |
-| money_delta+pin_move | close | pin $2k+ | 13-13 | 50.0 | 7.9 | -1.5 |  |
-| money_delta+pin_rlm | close | pin $2k+ | 9-12 | 42.9 | 4.1 | -12.2 |  |
-| pin_move+pin_rlm | close | pin $2k+ | 13-18 | 41.9 | 4.3 | -7.5 |  |
-| pin_move+rlm_ratio | close | pin $2k+ | 12-17 | 41.4 | 3.4 | -10.1 |  |
-| pin_rlm+rlm_quiet | close | pin $2k+ | 8-16 | 33.3 | -1.2 | -19.8 |  |
-| consensus_gap+money_delta | close | pin $2k+ | 5-2 | 71.4 | 23.7 | 37.7 |  |
+| follow_move+pin_value | close | pin $2k+ | 12-12 | 50.0 | -1.2 | 34.4 |  |
+| pin_move+pin_value | close | pin $2k+ | 21-20 | 51.2 | -0.7 | -3.4 |  |
+| follow_move+pin_rlm | close | pin $2k+ | 12-21 | 36.4 | 1.2 | -16.5 |  |
+| pin_rlm+rlm_ratio | close | pin $2k+ | 12-21 | 36.4 | 1.2 | -16.5 |  |
+| pin_value+rlm_quiet | close | pin $2k+ | 4-3 | 57.1 | 9.0 | 146.6 |  |
+| money_moving+rlm_quiet | close | pin $2k+ | 15-25 | 37.5 | -0.6 | -15.5 |  |
+| rlm_quiet+sharp_gap | close | pin $2k+ | 14-24 | 36.8 | -1.5 | -17.9 |  |
+| money_delta+rlm_quiet | close | pin $2k+ | 7-14 | 33.3 | -4.5 | -31.8 |  |
+| rlm_quiet+rlm_ratio | close | pin $2k+ | 8-20 | 28.6 | -5.5 | -31.3 |  |
+| money_delta+pin_move | close | pin $2k+ | 13-14 | 48.1 | 6.3 | -5.2 |  |
+| money_delta+pin_rlm | close | pin $2k+ | 9-14 | 39.1 | 0.9 | -19.8 |  |
+| pin_move+pin_rlm | close | pin $2k+ | 13-19 | 40.6 | 3.2 | -10.4 |  |
+| pin_move+rlm_ratio | close | pin $2k+ | 12-18 | 40.0 | 2.3 | -13.1 |  |
+| pin_rlm+rlm_quiet | close | pin $2k+ | 8-18 | 30.8 | -3.4 | -26.0 |  |
+| consensus_gap+money_delta | close | pin $2k+ | 5-2 | 71.4 | 23.3 | 37.7 |  |
 | consensus_gap+rlm_quiet | close | pin $2k+ | 3-3 | 50.0 | 10.9 | 20.3 |  |
-| money_delta+pin_value | close | pin $2k+ | 6-3 | 66.7 | 13.5 | 26.6 |  |
-| consensus_gap+rlm_ratio | close | pin $2k+ | 4-2 | 66.7 | 25.6 | 51.1 |  |
-| pin_value+rlm_ratio | close | pin $2k+ | 2-0 | 100.0 | 48.5 | 87.8 |  |
-| pin_rlm+pin_value | close | pin $2k+ | 3-1 | 75.0 | 21.7 | 42.4 |  |
-| consensus_gap+follow_move | close | pin limit <$1k | 4-5 | 44.4 | -3.2 | -14.6 |  |
-| consensus_gap+money_level | close | pin limit <$1k | 5-6 | 45.5 | -6.7 | -14.2 |  |
-| consensus_gap+money_moving | close | pin limit <$1k | 5-10 | 33.3 | -14.8 | -36.0 |  |
-| consensus_gap+pin_value | close | pin limit <$1k | 7-12 | 36.8 | -12.7 | -30.2 |  |
-| follow_move+money_level | close | pin limit <$1k | 24-18 | 57.1 | 6.0 | 7.1 |  |
-| follow_move+money_moving | close | pin limit <$1k | 21-27 | 43.8 | -5.7 | -16.2 |  |
-| follow_move+pin_value | close | pin limit <$1k | 12-8 | 60.0 | 9.2 | 14.3 |  |
-| money_level+money_moving | close | pin limit <$1k | 29-27 | 51.8 | 0.8 | -1.4 |  |
-| money_level+pin_value | close | pin limit <$1k | 20-13 | 60.6 | 8.9 | 15.1 |  |
-| money_moving+pin_value | close | pin limit <$1k | 15-17 | 46.9 | -3.3 | -10.9 |  |
-| follow_move+pin_move | close | pin limit <$1k | 22-22 | 50.0 | 0.7 | -3.9 |  |
-| money_level+pin_move | close | pin limit <$1k | 22-14 | 61.1 | 10.5 | 16.6 |  |
-| money_moving+sharp_gap | close | pin limit <$1k | 34-43 | 44.2 | -5.4 | -15.7 |  |
-| pin_move+pin_value | close | pin limit <$1k | 14-12 | 53.8 | 3.6 | 2.8 |  |
-| follow_move+rlm_quiet | close | pin limit <$1k | 14-18 | 43.8 | -4.0 | -15.4 |  |
-| money_moving+pin_move | close | pin limit <$1k | 18-19 | 48.6 | -0.6 | -6.9 |  |
-| consensus_gap+money_delta | close | pin limit <$1k | 3-2 | 60.0 | 15.2 | 16.4 |  |
-| consensus_gap+pin_move | close | pin limit <$1k | 3-4 | 42.9 | -4.1 | -16.9 |  |
-| consensus_gap+pin_rlm | close | pin limit <$1k | 1-2 | 33.3 | -9.5 | -33.3 |  |
-| consensus_gap+rlm_quiet | close | pin limit <$1k | 3-3 | 50.0 | 4.7 | -3.0 |  |
-| consensus_gap+rlm_ratio | close | pin limit <$1k | 2-3 | 40.0 | -4.8 | -21.8 |  |
-| consensus_gap+sharp_gap | close | pin limit <$1k | 5-11 | 31.2 | -16.9 | -40.0 |  |
-| follow_move+money_delta | close | pin limit <$1k | 6-11 | 35.3 | -11.9 | -32.1 |  |
-| follow_move+pin_rlm | close | pin limit <$1k | 7-11 | 38.9 | -8.8 | -25.0 |  |
-| follow_move+rlm_ratio | close | pin limit <$1k | 10-16 | 38.5 | -9.5 | -26.2 |  |
-| follow_move+sharp_gap | close | pin limit <$1k | 20-26 | 43.5 | -5.9 | -16.8 |  |
-| money_delta+money_moving | close | pin limit <$1k | 9-13 | 40.9 | -6.4 | -21.1 |  |
-| money_delta+pin_move | close | pin limit <$1k | 4-10 | 28.6 | -18.2 | -44.5 |  |
-| money_delta+pin_rlm | close | pin limit <$1k | 3-7 | 30.0 | -16.3 | -41.4 |  |
-| money_delta+rlm_quiet | close | pin limit <$1k | 3-4 | 42.9 | -2.8 | -16.9 |  |
-| money_delta+rlm_ratio | close | pin limit <$1k | 5-10 | 33.3 | -13.8 | -35.7 |  |
-| money_delta+sharp_gap | close | pin limit <$1k | 9-13 | 40.9 | -6.4 | -21.1 |  |
-| money_moving+pin_rlm | close | pin limit <$1k | 8-12 | 40.0 | -7.7 | -23.0 |  |
-| money_moving+rlm_quiet | close | pin limit <$1k | 3-10 | 23.1 | -23.9 | -54.9 |  |
-| money_moving+rlm_ratio | close | pin limit <$1k | 9-15 | 37.5 | -10.4 | -28.0 |  |
-| pin_move+pin_rlm | close | pin limit <$1k | 8-12 | 40.0 | -7.7 | -23.0 |  |
-| pin_move+rlm_quiet | close | pin limit <$1k | 6-10 | 37.5 | -10.2 | -27.0 |  |
-| pin_move+rlm_ratio | close | pin limit <$1k | 7-11 | 38.9 | -8.8 | -25.0 |  |
-| pin_move+sharp_gap | close | pin limit <$1k | 15-18 | 45.5 | -3.5 | -13.0 |  |
-| pin_rlm+rlm_quiet | close | pin limit <$1k | 1-6 | 14.3 | -32.0 | -71.4 |  |
-| pin_rlm+rlm_ratio | close | pin limit <$1k | 7-11 | 38.9 | -8.8 | -25.0 |  |
-| pin_rlm+sharp_gap | close | pin limit <$1k | 8-12 | 40.0 | -7.7 | -23.0 |  |
-| rlm_quiet+rlm_ratio | close | pin limit <$1k | 3-10 | 23.1 | -23.9 | -55.2 |  |
-| rlm_quiet+sharp_gap | close | pin limit <$1k | 3-10 | 23.1 | -23.9 | -55.2 |  |
-| rlm_ratio+sharp_gap | close | pin limit <$1k | 10-16 | 38.5 | -9.5 | -26.2 |  |
-| money_delta+pin_value | close | pin limit <$1k | 6-2 | 75.0 | 26.6 | 43.2 |  |
-| pin_value+rlm_quiet | close | pin limit <$1k | 3-3 | 50.0 | 2.2 | -4.5 |  |
-| pin_value+rlm_ratio | close | pin limit <$1k | 2-3 | 40.0 | -8.7 | -24.4 |  |
-| pin_value+sharp_gap | close | pin limit <$1k | 14-19 | 42.4 | -7.7 | -19.4 |  |
-| money_level+sharp_gap | close | pin limit <$1k | 25-26 | 49.0 | -1.9 | -6.7 |  |
-| pin_rlm+pin_value | close | pin limit <$1k | 1-3 | 25.0 | -22.8 | -52.3 |  |
-| money_delta+money_level | close | pin limit <$1k | 1-6 | 14.3 | -33.5 | -72.1 |  |
-| money_level+pin_rlm | close | pin limit <$1k | 5-4 | 55.6 | 6.8 | 6.5 |  |
-| money_level+rlm_ratio | close | pin limit <$1k | 5-5 | 50.0 | 1.3 | -4.1 |  |
-| rlm_quiet | early | <1k bets | 26-32 | 44.8 | 6.2 | 7.1 | 0.82 |
-| rlm_quiet | early | pin $1-2k | 2-2 | 50.0 | 17.1 | 23.0 | 1.12 |
-| rlm_quiet | early | pin limit <$1k | 1-1 | 50.0 | 2.2 | -4.5 | 0.0 |
-| pin_move | early | <1k bets | 6-11 | 35.3 | -13.4 | -32.2 | 0.18 |
-| pin_move | early | pin $1-2k | 1-2 | 33.3 | -11.6 | -35.2 | -0.33 |
-| pin_move | early | pin limit <$1k | 5-9 | 35.7 | -13.7 | -31.5 | 0.29 |
-| money_delta | early | <1k bets | 4-5 | 44.4 | 6.5 | 16.3 | 3.02 |
-| money_delta | early | pin $1-2k | 0-1 | 0.0 | -32.9 | -100.0 | 1.5 |
-| money_delta | early | pin limit <$1k | 1-0 | 100.0 | 52.2 | 90.9 | 1.0 |
+| money_delta+pin_value | close | pin $2k+ | 6-3 | 66.7 | 13.0 | 26.6 |  |
+| consensus_gap+rlm_ratio | close | pin $2k+ | 4-2 | 66.7 | 25.7 | 51.1 |  |
+| pin_value+rlm_ratio | close | pin $2k+ | 2-0 | 100.0 | 48.3 | 87.8 |  |
+| pin_rlm+pin_value | close | pin $2k+ | 3-1 | 75.0 | 21.2 | 42.4 |  |
+| consensus_gap+follow_move | close | pin limit <$1k | 5-5 | 50.0 | 2.5 | -4.0 |  |
+| consensus_gap+money_level | close | pin limit <$1k | 6-6 | 50.0 | -2.0 | -5.5 |  |
+| consensus_gap+money_moving | close | pin limit <$1k | 6-10 | 37.5 | -10.6 | -28.1 |  |
+| consensus_gap+pin_value | close | pin limit <$1k | 8-12 | 40.0 | -9.5 | -24.2 |  |
+| follow_move+money_level | close | pin limit <$1k | 26-18 | 59.1 | 8.0 | 11.0 |  |
+| follow_move+money_moving | close | pin limit <$1k | 24-28 | 46.2 | -3.2 | -11.6 |  |
+| follow_move+pin_value | close | pin limit <$1k | 14-8 | 63.6 | 12.8 | 21.1 |  |
+| money_level+money_moving | close | pin limit <$1k | 31-27 | 53.4 | 2.5 | 1.8 |  |
+| money_level+pin_value | close | pin limit <$1k | 21-13 | 61.8 | 9.9 | 17.4 |  |
+| money_moving+pin_value | close | pin limit <$1k | 17-17 | 50.0 | -0.3 | -5.0 |  |
+| follow_move+pin_move | close | pin limit <$1k | 24-22 | 52.2 | 3.0 | 0.3 |  |
+| money_level+pin_move | close | pin limit <$1k | 24-14 | 63.2 | 12.6 | 20.6 |  |
+| money_moving+sharp_gap | close | pin limit <$1k | 37-44 | 45.7 | -3.8 | -12.8 |  |
+| pin_move+pin_value | close | pin limit <$1k | 15-12 | 55.6 | 5.3 | 6.1 |  |
+| follow_move+rlm_quiet | close | pin limit <$1k | 15-19 | 44.1 | -3.6 | -14.9 |  |
+| money_moving+pin_move | close | pin limit <$1k | 20-19 | 51.3 | 2.2 | -1.8 |  |
+| consensus_gap+money_delta | close | pin limit <$1k | 3-2 | 60.0 | 15.4 | 16.4 |  |
+| consensus_gap+pin_move | close | pin limit <$1k | 4-4 | 50.0 | 3.1 | -3.4 |  |
+| consensus_gap+pin_rlm | close | pin limit <$1k | 1-2 | 33.3 | -9.3 | -33.3 |  |
+| consensus_gap+rlm_quiet | close | pin limit <$1k | 3-3 | 50.0 | 4.9 | -3.0 |  |
+| consensus_gap+rlm_ratio | close | pin limit <$1k | 2-3 | 40.0 | -4.6 | -21.8 |  |
+| consensus_gap+sharp_gap | close | pin limit <$1k | 6-11 | 35.3 | -12.8 | -32.3 |  |
+| follow_move+money_delta | close | pin limit <$1k | 6-12 | 33.3 | -13.7 | -35.8 |  |
+| follow_move+pin_rlm | close | pin limit <$1k | 7-11 | 38.9 | -8.7 | -25.0 |  |
+| follow_move+rlm_ratio | close | pin limit <$1k | 10-17 | 37.0 | -10.7 | -28.9 |  |
+| follow_move+sharp_gap | close | pin limit <$1k | 23-27 | 46.0 | -3.3 | -12.0 |  |
+| money_delta+money_moving | close | pin limit <$1k | 9-14 | 39.1 | -8.0 | -24.5 |  |
+| money_delta+pin_move | close | pin limit <$1k | 4-10 | 28.6 | -17.9 | -44.5 |  |
+| money_delta+pin_rlm | close | pin limit <$1k | 3-7 | 30.0 | -16.1 | -41.4 |  |
+| money_delta+rlm_quiet | close | pin limit <$1k | 3-5 | 37.5 | -8.2 | -27.3 |  |
+| money_delta+rlm_ratio | close | pin limit <$1k | 5-11 | 31.2 | -15.7 | -39.8 |  |
+| money_delta+sharp_gap | close | pin limit <$1k | 9-14 | 39.1 | -8.0 | -24.5 |  |
+| money_moving+pin_rlm | close | pin limit <$1k | 8-12 | 40.0 | -7.5 | -23.0 |  |
+| money_moving+rlm_quiet | close | pin limit <$1k | 4-11 | 26.7 | -20.5 | -48.5 |  |
+| money_moving+rlm_ratio | close | pin limit <$1k | 9-16 | 36.0 | -11.7 | -30.9 |  |
+| pin_move+pin_rlm | close | pin limit <$1k | 8-12 | 40.0 | -7.5 | -23.0 |  |
+| pin_move+rlm_quiet | close | pin limit <$1k | 6-10 | 37.5 | -10.0 | -27.0 |  |
+| pin_move+rlm_ratio | close | pin limit <$1k | 7-11 | 38.9 | -8.7 | -25.0 |  |
+| pin_move+sharp_gap | close | pin limit <$1k | 17-18 | 48.6 | -0.3 | -6.9 |  |
+| pin_rlm+rlm_quiet | close | pin limit <$1k | 1-6 | 14.3 | -31.8 | -71.4 |  |
+| pin_rlm+rlm_ratio | close | pin limit <$1k | 7-11 | 38.9 | -8.7 | -25.0 |  |
+| pin_rlm+sharp_gap | close | pin limit <$1k | 8-12 | 40.0 | -7.5 | -23.0 |  |
+| rlm_quiet+rlm_ratio | close | pin limit <$1k | 3-11 | 21.4 | -25.4 | -58.4 |  |
+| rlm_quiet+sharp_gap | close | pin limit <$1k | 4-11 | 26.7 | -20.5 | -48.7 |  |
+| rlm_ratio+sharp_gap | close | pin limit <$1k | 10-17 | 37.0 | -10.7 | -28.9 |  |
+| money_delta+pin_value | close | pin limit <$1k | 6-2 | 75.0 | 26.8 | 43.2 |  |
+| pin_value+rlm_quiet | close | pin limit <$1k | 4-3 | 57.1 | 8.9 | 8.5 |  |
+| pin_value+rlm_ratio | close | pin limit <$1k | 2-3 | 40.0 | -8.5 | -24.4 |  |
+| pin_value+sharp_gap | close | pin limit <$1k | 16-19 | 45.7 | -4.5 | -13.2 |  |
+| money_level+sharp_gap | close | pin limit <$1k | 27-26 | 50.9 | 0.0 | -2.9 |  |
+| pin_rlm+pin_value | close | pin limit <$1k | 1-3 | 25.0 | -22.6 | -52.3 |  |
+| money_delta+money_level | close | pin limit <$1k | 1-6 | 14.3 | -33.3 | -72.1 |  |
+| money_level+pin_rlm | close | pin limit <$1k | 5-4 | 55.6 | 6.9 | 6.5 |  |
+| money_level+rlm_ratio | close | pin limit <$1k | 5-5 | 50.0 | 1.5 | -4.1 |  |
+| rlm_quiet | early | <1k bets | 26-33 | 44.1 | 5.6 | 5.3 | 0.82 |
+| rlm_quiet | early | pin $1-2k | 2-2 | 50.0 | 17.3 | 23.0 | 1.12 |
+| rlm_quiet | early | pin limit <$1k | 1-2 | 33.3 | -14.2 | -36.4 | 0.33 |
+| pin_move | early | <1k bets | 9-13 | 40.9 | -8.6 | -23.2 | 0.12 |
+| pin_move | early | pin $1-2k | 2-6 | 25.0 | -26.4 | -56.8 | 0.29 |
+| pin_move | early | pin limit <$1k | 7-10 | 41.2 | -8.0 | -20.9 | 0.59 |
+| money_delta | early | <1k bets | 4-5 | 44.4 | 6.8 | 16.3 | 3.02 |
+| money_delta | early | pin $1-2k | 0-1 | 0.0 | -32.7 | -100.0 | 1.5 |
+| money_delta | early | pin limit <$1k | 1-0 | 100.0 | 52.4 | 90.9 | 1.0 |
 | pin_rlm | early | <1k bets | 0-2 | 0.0 | -50.0 | -100.0 | 0.75 |
-| pin_rlm | early | pin $1-2k | 0-1 | 0.0 | -67.1 | -100.0 | 1.5 |
-| pin_rlm | early | pin limit <$1k | 0-1 | 0.0 | -32.9 | -100.0 | 0.0 |
-| follow_move | early | <1k bets | 192-210 | 47.8 | -1.2 | -8.8 | 0.03 |
-| follow_move | early | pin $1-2k | 13-12 | 52.0 | 5.9 | 3.6 | -0.32 |
-| follow_move | early | pin limit <$1k | 11-20 | 35.5 | -13.5 | -30.8 | -0.18 |
-| rlm_ratio | early | <1k bets | 10-16 | 38.5 | -2.9 | -7.6 | 0.4 |
-| rlm_ratio | early | pin $1-2k | 0-1 | 0.0 | -67.1 | -100.0 | 1.5 |
-| rlm_ratio | early | pin limit <$1k | 1-1 | 50.0 | 9.6 | -4.5 | 0.5 |
-| money_level | early | <1k bets | 72-61 | 54.1 | -3.3 | -13.1 | -0.39 |
-| money_level | early | pin $1-2k | 3-5 | 37.5 | -22.5 | -38.8 | -0.29 |
-| money_level | early | pin limit <$1k | 7-6 | 53.8 | 3.8 | 3.1 | 0.38 |
-| sharp_gap | early | <1k bets | 55-63 | 46.6 | -3.6 | -11.3 | 0.25 |
-| sharp_gap | early | pin $1-2k | 2-6 | 25.0 | -36.3 | -63.1 | -0.04 |
-| sharp_gap | early | pin limit <$1k | 6-5 | 54.5 | 5.7 | 4.5 | 0.45 |
-| money_moving | early | <1k bets | 45-43 | 51.1 | 2.0 | -3.0 | 0.62 |
-| money_moving | early | pin $1-2k | 0-4 | 0.0 | -55.5 | -100.0 | 1.05 |
-| money_moving | early | pin limit <$1k | 9-2 | 81.8 | 31.5 | 54.5 | 0.36 |
-| pin_value | early | <1k bets | 21-18 | 53.8 | 4.2 | 1.7 | 0.04 |
-| pin_value | early | pin $1-2k | 6-9 | 40.0 | -9.1 | -24.9 | 0.25 |
-| pin_value | early | pin limit <$1k | 15-9 | 62.5 | 12.6 | 18.4 | -0.08 |
-| consensus_gap | early | <1k bets | 110-97 | 53.1 | 0.3 | -7.1 | 0.59 |
-| consensus_gap | early | pin $1-2k | 10-5 | 66.7 | 16.2 | 23.1 | -0.17 |
+| pin_rlm | early | pin $1-2k | 0-1 | 0.0 | -67.3 | -100.0 | 1.5 |
+| pin_rlm | early | pin limit <$1k | 0-1 | 0.0 | -32.7 | -100.0 | 0.0 |
+| follow_move | early | <1k bets | 203-219 | 48.1 | -0.7 | -8.1 | 0.07 |
+| follow_move | early | pin $1-2k | 14-15 | 48.3 | 3.2 | -2.9 | -0.35 |
+| follow_move | early | pin limit <$1k | 13-21 | 38.2 | -10.4 | -25.6 | 0.01 |
+| rlm_ratio | early | <1k bets | 10-16 | 38.5 | -2.8 | -7.6 | 0.4 |
+| rlm_ratio | early | pin $1-2k | 0-1 | 0.0 | -67.3 | -100.0 | 1.5 |
+| rlm_ratio | early | pin limit <$1k | 1-1 | 50.0 | 9.9 | -4.5 | 0.5 |
+| money_level | early | <1k bets | 73-61 | 54.5 | -3.1 | -12.4 | -0.39 |
+| money_level | early | pin $1-2k | 3-5 | 37.5 | -22.6 | -38.8 | -0.29 |
+| money_level | early | pin limit <$1k | 8-6 | 57.1 | 6.8 | 9.1 | 0.29 |
+| sharp_gap | early | <1k bets | 56-63 | 47.1 | -3.2 | -10.4 | 0.24 |
+| sharp_gap | early | pin $1-2k | 2-6 | 25.0 | -36.6 | -63.1 | -0.04 |
+| sharp_gap | early | pin limit <$1k | 7-5 | 58.3 | 9.2 | 11.4 | 0.33 |
+| money_moving | early | <1k bets | 46-43 | 51.7 | 2.6 | -2.0 | 0.6 |
+| money_moving | early | pin $1-2k | 0-4 | 0.0 | -55.8 | -100.0 | 1.05 |
+| money_moving | early | pin limit <$1k | 10-2 | 83.3 | 32.9 | 57.2 | 0.25 |
+| pin_value | early | <1k bets | 22-19 | 53.7 | 4.1 | 1.5 | 0.09 |
+| pin_value | early | pin $1-2k | 6-11 | 35.3 | -13.6 | -33.8 | 0.34 |
+| pin_value | early | pin limit <$1k | 17-9 | 65.4 | 15.5 | 24.0 | -0.04 |
+| consensus_gap | early | <1k bets | 113-101 | 52.8 | -0.1 | -7.9 | 0.54 |
+| consensus_gap | early | pin $1-2k | 10-5 | 66.7 | 16.3 | 23.1 | -0.17 |
 | consensus_gap | early | pin limit <$1k | 8-4 | 66.7 | 16.3 | 26.7 | 0.08 |
-| follow_move+money_level | early | <1k bets | 26-18 | 59.1 | 2.1 | -11.2 | 0.11 |
-| follow_move+sharp_gap | early | <1k bets | 24-26 | 48.0 | -0.0 | -6.0 | 0.62 |
-| money_level+sharp_gap | early | <1k bets | 37-37 | 50.0 | -5.8 | -16.5 | -0.17 |
-| follow_move+money_moving | early | <1k bets | 19-19 | 50.0 | 2.3 | 0.4 | 0.67 |
-| money_level+money_moving | early | <1k bets | 21-17 | 55.3 | 0.0 | -4.8 | 0.49 |
-| consensus_gap+money_level | early | <1k bets | 24-17 | 58.5 | -3.0 | -12.7 | -0.54 |
-| follow_move+rlm_quiet | early | <1k bets | 26-32 | 44.8 | 6.2 | 7.1 | 0.82 |
-| follow_move+rlm_ratio | early | <1k bets | 10-16 | 38.5 | -2.9 | -7.6 | 0.4 |
-| rlm_quiet+rlm_ratio | early | <1k bets | 9-10 | 47.4 | 8.2 | 16.3 | 0.32 |
-| rlm_quiet+sharp_gap | early | <1k bets | 10-12 | 45.5 | 5.1 | 9.2 | 0.5 |
-| rlm_ratio+sharp_gap | early | <1k bets | 10-16 | 38.5 | -2.9 | -7.6 | 0.4 |
-| consensus_gap+follow_move | early | <1k bets | 15-19 | 44.1 | -10.9 | -26.3 | 0.91 |
-| money_moving+rlm_quiet | early | <1k bets | 9-10 | 47.4 | 8.2 | 15.7 | 0.91 |
-| money_moving+rlm_ratio | early | <1k bets | 7-6 | 53.8 | 13.5 | 31.1 | 1.58 |
-| money_moving+sharp_gap | early | <1k bets | 24-28 | 46.2 | -0.9 | -4.6 | 0.93 |
+| follow_move+money_level | early | <1k bets | 26-18 | 59.1 | 1.9 | -11.2 | 0.11 |
+| follow_move+sharp_gap | early | <1k bets | 24-26 | 48.0 | 0.0 | -6.0 | 0.62 |
+| money_level+sharp_gap | early | <1k bets | 38-37 | 50.7 | -5.2 | -15.2 | -0.18 |
+| follow_move+money_moving | early | <1k bets | 19-19 | 50.0 | 2.4 | 0.4 | 0.67 |
+| money_level+money_moving | early | <1k bets | 22-17 | 56.4 | 1.1 | -2.5 | 0.45 |
+| consensus_gap+money_level | early | <1k bets | 24-17 | 58.5 | -3.2 | -12.7 | -0.54 |
+| follow_move+rlm_quiet | early | <1k bets | 26-33 | 44.1 | 5.6 | 5.3 | 0.82 |
+| follow_move+rlm_ratio | early | <1k bets | 10-16 | 38.5 | -2.8 | -7.6 | 0.4 |
+| rlm_quiet+rlm_ratio | early | <1k bets | 9-10 | 47.4 | 8.4 | 16.3 | 0.32 |
+| rlm_quiet+sharp_gap | early | <1k bets | 10-12 | 45.5 | 5.3 | 9.2 | 0.5 |
+| rlm_ratio+sharp_gap | early | <1k bets | 10-16 | 38.5 | -2.8 | -7.6 | 0.4 |
+| consensus_gap+follow_move | early | <1k bets | 16-20 | 44.4 | -10.7 | -26.1 | 0.87 |
+| money_moving+rlm_quiet | early | <1k bets | 9-10 | 47.4 | 8.4 | 15.7 | 0.91 |
+| money_moving+rlm_ratio | early | <1k bets | 7-6 | 53.8 | 13.6 | 31.1 | 1.58 |
+| money_moving+sharp_gap | early | <1k bets | 25-28 | 47.2 | 0.1 | -2.9 | 0.89 |
 | consensus_gap+money_moving | early | <1k bets | 10-5 | 66.7 | 11.6 | 6.5 | 1.23 |
-| consensus_gap+sharp_gap | early | <1k bets | 15-15 | 50.0 | -7.0 | -21.3 | -0.38 |
-| money_level+rlm_ratio | early | <1k bets | 1-6 | 14.3 | -33.1 | -72.7 | 0.64 |
-| follow_move+pin_move | early | <1k bets | 2-6 | 25.0 | -21.3 | -51.9 | 0.12 |
-| follow_move+money_delta | early | <1k bets | 3-2 | 60.0 | 21.1 | 71.2 | 2.74 |
-| money_delta+money_level | early | <1k bets | 1-3 | 25.0 | -15.4 | -52.3 | 1.68 |
-| money_delta+money_moving | early | <1k bets | 4-5 | 44.4 | 6.5 | 16.3 | 3.02 |
-| money_delta+rlm_ratio | early | <1k bets | 3-2 | 60.0 | 21.1 | 71.2 | 2.74 |
-| money_delta+sharp_gap | early | <1k bets | 4-5 | 44.4 | 6.5 | 16.3 | 3.02 |
-| follow_move+pin_value | early | <1k bets | 4-4 | 50.0 | 1.3 | -4.5 | -0.62 |
-| consensus_gap+pin_move | early | <1k bets | 2-1 | 66.7 | 15.0 | 28.7 | 0.33 |
-| consensus_gap+pin_value | early | <1k bets | 10-3 | 76.9 | 27.8 | 45.4 | -0.15 |
+| consensus_gap+sharp_gap | early | <1k bets | 15-15 | 50.0 | -7.1 | -21.3 | -0.38 |
+| money_level+rlm_ratio | early | <1k bets | 1-6 | 14.3 | -33.0 | -72.7 | 0.64 |
+| follow_move+pin_move | early | <1k bets | 4-7 | 36.4 | -10.9 | -29.9 | 0.55 |
+| follow_move+money_delta | early | <1k bets | 3-2 | 60.0 | 21.4 | 71.2 | 2.74 |
+| money_delta+money_level | early | <1k bets | 1-3 | 25.0 | -15.1 | -52.3 | 1.68 |
+| money_delta+money_moving | early | <1k bets | 4-5 | 44.4 | 6.8 | 16.3 | 3.02 |
+| money_delta+rlm_ratio | early | <1k bets | 3-2 | 60.0 | 21.4 | 71.2 | 2.74 |
+| money_delta+sharp_gap | early | <1k bets | 4-5 | 44.4 | 6.8 | 16.3 | 3.02 |
+| follow_move+pin_value | early | <1k bets | 5-5 | 50.0 | 0.8 | -4.1 | -0.3 |
+| consensus_gap+pin_move | early | <1k bets | 2-1 | 66.7 | 14.7 | 28.7 | 0.33 |
+| consensus_gap+pin_value | early | <1k bets | 10-3 | 76.9 | 27.9 | 45.4 | -0.15 |
 | money_level+pin_move | early | <1k bets | 2-4 | 33.3 | -14.4 | -35.8 | 0.17 |
-| money_level+pin_value | early | <1k bets | 3-3 | 50.0 | -3.9 | -4.5 | 0.78 |
-| pin_move+pin_value | early | <1k bets | 3-6 | 33.3 | -16.3 | -35.9 | 0.44 |
-| money_moving+pin_value | early | <1k bets | 3-2 | 60.0 | 6.9 | 15.4 | 1.14 |
-| pin_value+sharp_gap | early | <1k bets | 1-4 | 20.0 | -34.9 | -61.8 | 1.34 |
-| consensus_gap+money_delta | early | <1k bets | 1-0 | 100.0 | 52.2 | 90.9 | 1.0 |
-| consensus_gap+rlm_ratio | early | <1k bets | 1-0 | 100.0 | 52.2 | 90.9 | 1.0 |
-| money_delta+pin_value | early | <1k bets | 1-0 | 100.0 | 52.2 | 90.9 | 1.0 |
-| pin_value+rlm_ratio | early | <1k bets | 1-0 | 100.0 | 52.2 | 90.9 | 1.0 |
+| money_level+pin_value | early | <1k bets | 3-3 | 50.0 | -4.1 | -4.5 | 0.78 |
+| pin_move+pin_value | early | <1k bets | 4-7 | 36.4 | -13.5 | -29.8 | 0.55 |
+| money_moving+pin_value | early | <1k bets | 3-2 | 60.0 | 6.8 | 15.4 | 1.14 |
+| pin_value+sharp_gap | early | <1k bets | 1-4 | 20.0 | -35.1 | -61.8 | 1.34 |
+| consensus_gap+money_delta | early | <1k bets | 1-0 | 100.0 | 52.4 | 90.9 | 1.0 |
+| consensus_gap+rlm_ratio | early | <1k bets | 1-0 | 100.0 | 52.4 | 90.9 | 1.0 |
+| money_delta+pin_value | early | <1k bets | 1-0 | 100.0 | 52.4 | 90.9 | 1.0 |
+| pin_value+rlm_ratio | early | <1k bets | 1-0 | 100.0 | 52.4 | 90.9 | 1.0 |
 | follow_move+pin_rlm | early | <1k bets | 0-2 | 0.0 | -50.0 | -100.0 | 0.75 |
 | money_level+pin_rlm | early | <1k bets | 0-2 | 0.0 | -50.0 | -100.0 | 0.75 |
 | pin_rlm+rlm_ratio | early | <1k bets | 0-2 | 0.0 | -50.0 | -100.0 | 0.75 |
 | pin_rlm+sharp_gap | early | <1k bets | 0-2 | 0.0 | -50.0 | -100.0 | 0.75 |
-| pin_move+sharp_gap | early | <1k bets | 0-3 | 0.0 | -45.8 | -100.0 | 1.0 |
-| money_delta+rlm_quiet | early | <1k bets | 2-1 | 66.7 | 33.7 | 121.7 | 3.57 |
-| consensus_gap+rlm_quiet | early | <1k bets | 1-1 | 50.0 | 17.1 | 30.0 | 1.1 |
-| money_moving+pin_move | early | <1k bets | 1-1 | 50.0 | 2.2 | -2.4 | 1.0 |
-| pin_move+pin_rlm | early | <1k bets | 0-1 | 0.0 | -32.9 | -100.0 | 0.0 |
-| pin_move+rlm_ratio | early | <1k bets | 0-1 | 0.0 | -32.9 | -100.0 | 0.0 |
-| pin_move+pin_value | early | pin $1-2k | 0-2 | 0.0 | -44.9 | -100.0 | 0.0 |
-| follow_move+rlm_quiet | early | pin $1-2k | 2-2 | 50.0 | 17.1 | 23.0 | 1.12 |
-| money_level+money_moving | early | pin $1-2k | 0-3 | 0.0 | -55.7 | -100.0 | 1.07 |
-| money_level+pin_value | early | pin $1-2k | 0-1 | 0.0 | -67.1 | -100.0 | 1.7 |
-| money_level+sharp_gap | early | pin $1-2k | 2-5 | 28.6 | -33.6 | -57.8 | -0.19 |
-| money_moving+pin_value | early | pin $1-2k | 0-2 | 0.0 | -61.1 | -100.0 | 1.35 |
-| money_moving+sharp_gap | early | pin $1-2k | 0-4 | 0.0 | -55.5 | -100.0 | 1.05 |
-| pin_value+sharp_gap | early | pin $1-2k | 0-2 | 0.0 | -61.1 | -100.0 | 1.35 |
-| consensus_gap+pin_value | early | pin $1-2k | 3-1 | 75.0 | 27.6 | 39.3 | -0.5 |
-| follow_move+money_level | early | pin $1-2k | 1-2 | 33.3 | -26.3 | -35.2 | 0.17 |
-| follow_move+pin_rlm | early | pin $1-2k | 0-1 | 0.0 | -67.1 | -100.0 | 1.5 |
-| follow_move+rlm_ratio | early | pin $1-2k | 0-1 | 0.0 | -67.1 | -100.0 | 1.5 |
-| follow_move+sharp_gap | early | pin $1-2k | 0-2 | 0.0 | -67.1 | -100.0 | 0.75 |
-| money_level+pin_rlm | early | pin $1-2k | 0-1 | 0.0 | -67.1 | -100.0 | 1.5 |
-| money_level+rlm_ratio | early | pin $1-2k | 0-1 | 0.0 | -67.1 | -100.0 | 1.5 |
-| pin_rlm+rlm_ratio | early | pin $1-2k | 0-1 | 0.0 | -67.1 | -100.0 | 1.5 |
-| pin_rlm+sharp_gap | early | pin $1-2k | 0-1 | 0.0 | -67.1 | -100.0 | 1.5 |
-| rlm_ratio+sharp_gap | early | pin $1-2k | 0-1 | 0.0 | -67.1 | -100.0 | 1.5 |
+| pin_move+sharp_gap | early | <1k bets | 0-3 | 0.0 | -45.9 | -100.0 | 1.0 |
+| money_delta+rlm_quiet | early | <1k bets | 2-1 | 66.7 | 34.0 | 121.7 | 3.57 |
+| consensus_gap+rlm_quiet | early | <1k bets | 1-1 | 50.0 | 17.3 | 30.0 | 1.1 |
+| money_moving+pin_move | early | <1k bets | 1-1 | 50.0 | 2.4 | -2.4 | 1.0 |
+| pin_move+pin_rlm | early | <1k bets | 0-1 | 0.0 | -32.7 | -100.0 | 0.0 |
+| pin_move+rlm_ratio | early | <1k bets | 0-1 | 0.0 | -32.7 | -100.0 | 0.0 |
+| pin_move+pin_value | early | pin $1-2k | 0-4 | 0.0 | -47.0 | -100.0 | 0.5 |
+| follow_move+rlm_quiet | early | pin $1-2k | 2-2 | 50.0 | 17.3 | 23.0 | 1.12 |
+| money_level+money_moving | early | pin $1-2k | 0-3 | 0.0 | -55.8 | -100.0 | 1.07 |
+| money_level+pin_value | early | pin $1-2k | 0-1 | 0.0 | -67.3 | -100.0 | 1.7 |
+| money_level+sharp_gap | early | pin $1-2k | 2-5 | 28.6 | -33.8 | -57.8 | -0.19 |
+| money_moving+pin_value | early | pin $1-2k | 0-2 | 0.0 | -61.6 | -100.0 | 1.35 |
+| money_moving+sharp_gap | early | pin $1-2k | 0-4 | 0.0 | -55.8 | -100.0 | 1.05 |
+| pin_value+sharp_gap | early | pin $1-2k | 0-2 | 0.0 | -61.6 | -100.0 | 1.35 |
+| consensus_gap+pin_value | early | pin $1-2k | 3-1 | 75.0 | 28.0 | 39.3 | -0.5 |
+| follow_move+money_level | early | pin $1-2k | 1-2 | 33.3 | -26.2 | -35.2 | 0.17 |
+| follow_move+pin_rlm | early | pin $1-2k | 0-1 | 0.0 | -67.3 | -100.0 | 1.5 |
+| follow_move+rlm_ratio | early | pin $1-2k | 0-1 | 0.0 | -67.3 | -100.0 | 1.5 |
+| follow_move+sharp_gap | early | pin $1-2k | 0-2 | 0.0 | -67.3 | -100.0 | 0.75 |
+| money_level+pin_rlm | early | pin $1-2k | 0-1 | 0.0 | -67.3 | -100.0 | 1.5 |
+| money_level+rlm_ratio | early | pin $1-2k | 0-1 | 0.0 | -67.3 | -100.0 | 1.5 |
+| pin_rlm+rlm_ratio | early | pin $1-2k | 0-1 | 0.0 | -67.3 | -100.0 | 1.5 |
+| pin_rlm+sharp_gap | early | pin $1-2k | 0-1 | 0.0 | -67.3 | -100.0 | 1.5 |
+| rlm_ratio+sharp_gap | early | pin $1-2k | 0-1 | 0.0 | -67.3 | -100.0 | 1.5 |
 | consensus_gap+follow_move | early | pin $1-2k | 2-1 | 66.7 | 22.4 | 55.3 | 0.6 |
-| follow_move+pin_move | early | pin $1-2k | 1-1 | 50.0 | 5.1 | -2.9 | -0.5 |
-| follow_move+pin_value | early | pin $1-2k | 0-1 | 0.0 | -44.9 | -100.0 | 0.0 |
-| consensus_gap+money_level | early | pin $1-2k | 2-1 | 66.7 | -0.4 | -1.6 | -1.83 |
-| consensus_gap+sharp_gap | early | pin $1-2k | 2-1 | 66.7 | -0.4 | -1.6 | -1.83 |
-| consensus_gap+rlm_quiet | early | pin $1-2k | 1-0 | 100.0 | 67.1 | 160.0 | 0.3 |
-| consensus_gap+money_moving | early | pin $1-2k | 0-1 | 0.0 | -67.1 | -100.0 | 0.0 |
-| follow_move+money_moving | early | pin $1-2k | 0-1 | 0.0 | -67.1 | -100.0 | 0.0 |
-| money_level+pin_move | early | pin $1-2k | 1-0 | 100.0 | 55.1 | 94.3 | -1.0 |
-| money_delta+money_level | early | pin $1-2k | 0-1 | 0.0 | -32.9 | -100.0 | 1.5 |
-| money_delta+money_moving | early | pin $1-2k | 0-1 | 0.0 | -32.9 | -100.0 | 1.5 |
-| money_delta+sharp_gap | early | pin $1-2k | 0-1 | 0.0 | -32.9 | -100.0 | 1.5 |
-| follow_move+pin_move | early | pin limit <$1k | 1-5 | 16.7 | -30.1 | -68.2 | 0.33 |
-| follow_move+pin_value | early | pin limit <$1k | 4-3 | 57.1 | 7.9 | 9.1 | -0.71 |
-| consensus_gap+money_level | early | pin limit <$1k | 3-0 | 100.0 | 49.3 | 90.9 | 0.0 |
-| consensus_gap+pin_move | early | pin limit <$1k | 2-1 | 66.7 | 15.0 | 28.7 | 0.33 |
+| follow_move+pin_move | early | pin $1-2k | 1-2 | 33.3 | -14.7 | -35.2 | -0.33 |
+| follow_move+pin_value | early | pin $1-2k | 0-2 | 0.0 | -50.0 | -100.0 | 0.0 |
+| consensus_gap+money_level | early | pin $1-2k | 2-1 | 66.7 | -0.6 | -1.6 | -1.83 |
+| consensus_gap+sharp_gap | early | pin $1-2k | 2-1 | 66.7 | -0.6 | -1.6 | -1.83 |
+| consensus_gap+rlm_quiet | early | pin $1-2k | 1-0 | 100.0 | 67.3 | 160.0 | 0.3 |
+| consensus_gap+money_moving | early | pin $1-2k | 0-1 | 0.0 | -67.3 | -100.0 | 0.0 |
+| follow_move+money_moving | early | pin $1-2k | 0-1 | 0.0 | -67.3 | -100.0 | 0.0 |
+| money_level+pin_move | early | pin $1-2k | 1-0 | 100.0 | 55.9 | 94.3 | -1.0 |
+| money_delta+money_level | early | pin $1-2k | 0-1 | 0.0 | -32.7 | -100.0 | 1.5 |
+| money_delta+money_moving | early | pin $1-2k | 0-1 | 0.0 | -32.7 | -100.0 | 1.5 |
+| money_delta+sharp_gap | early | pin $1-2k | 0-1 | 0.0 | -32.7 | -100.0 | 1.5 |
+| follow_move+pin_move | early | pin limit <$1k | 3-6 | 33.3 | -13.7 | -35.9 | 0.89 |
+| follow_move+pin_value | early | pin limit <$1k | 5-3 | 62.5 | 13.5 | 19.9 | -0.38 |
+| consensus_gap+money_level | early | pin limit <$1k | 3-0 | 100.0 | 49.2 | 90.9 | 0.0 |
+| consensus_gap+pin_move | early | pin limit <$1k | 2-1 | 66.7 | 14.7 | 28.7 | 0.33 |
 | consensus_gap+pin_value | early | pin limit <$1k | 7-2 | 77.8 | 27.9 | 48.1 | 0.0 |
-| follow_move+money_moving | early | pin limit <$1k | 4-2 | 66.7 | 18.1 | 28.0 | 0.5 |
-| follow_move+rlm_quiet | early | pin limit <$1k | 1-1 | 50.0 | 2.2 | -4.5 | 0.0 |
-| follow_move+sharp_gap | early | pin limit <$1k | 3-3 | 50.0 | 3.2 | -3.8 | 0.17 |
-| money_level+pin_move | early | pin limit <$1k | 1-4 | 20.0 | -28.3 | -61.8 | 0.4 |
-| money_level+pin_value | early | pin limit <$1k | 3-2 | 60.0 | 8.7 | 14.5 | 0.6 |
-| money_moving+rlm_quiet | early | pin limit <$1k | 1-1 | 50.0 | 2.2 | -4.5 | 0.0 |
-| money_moving+sharp_gap | early | pin limit <$1k | 5-1 | 83.3 | 34.1 | 59.8 | 0.17 |
-| pin_move+pin_value | early | pin limit <$1k | 3-4 | 42.9 | -8.1 | -17.6 | 0.57 |
-| rlm_quiet+sharp_gap | early | pin limit <$1k | 0-1 | 0.0 | -47.8 | -100.0 | 0.0 |
+| follow_move+money_moving | early | pin limit <$1k | 4-2 | 66.7 | 18.3 | 28.0 | 0.5 |
+| follow_move+rlm_quiet | early | pin limit <$1k | 1-2 | 33.3 | -14.2 | -36.4 | 0.33 |
+| follow_move+sharp_gap | early | pin limit <$1k | 3-3 | 50.0 | 3.3 | -3.8 | 0.17 |
+| money_level+pin_move | early | pin limit <$1k | 1-4 | 20.0 | -28.5 | -61.8 | 0.4 |
+| money_level+pin_value | early | pin limit <$1k | 4-2 | 66.7 | 15.0 | 26.6 | 0.33 |
+| money_moving+rlm_quiet | early | pin limit <$1k | 1-1 | 50.0 | 2.4 | -4.5 | 0.0 |
+| money_moving+sharp_gap | early | pin limit <$1k | 6-1 | 85.7 | 36.1 | 63.7 | 0.0 |
+| pin_move+pin_value | early | pin limit <$1k | 4-4 | 50.0 | -0.6 | -3.5 | 0.75 |
+| rlm_quiet+sharp_gap | early | pin limit <$1k | 0-1 | 0.0 | -47.6 | -100.0 | 0.0 |
 | consensus_gap+follow_move | early | pin limit <$1k | 1-1 | 50.0 | 0.0 | -4.5 | -0.5 |
-| consensus_gap+money_delta | early | pin limit <$1k | 1-0 | 100.0 | 52.2 | 90.9 | 1.0 |
-| consensus_gap+money_moving | early | pin limit <$1k | 3-0 | 100.0 | 52.2 | 92.3 | 1.0 |
-| consensus_gap+rlm_ratio | early | pin limit <$1k | 1-0 | 100.0 | 52.2 | 90.9 | 1.0 |
-| consensus_gap+sharp_gap | early | pin limit <$1k | 1-0 | 100.0 | 52.2 | 90.9 | 1.0 |
-| follow_move+money_delta | early | pin limit <$1k | 1-0 | 100.0 | 52.2 | 90.9 | 1.0 |
+| consensus_gap+money_delta | early | pin limit <$1k | 1-0 | 100.0 | 52.4 | 90.9 | 1.0 |
+| consensus_gap+money_moving | early | pin limit <$1k | 3-0 | 100.0 | 52.4 | 92.3 | 1.0 |
+| consensus_gap+rlm_ratio | early | pin limit <$1k | 1-0 | 100.0 | 52.4 | 90.9 | 1.0 |
+| consensus_gap+sharp_gap | early | pin limit <$1k | 1-0 | 100.0 | 52.4 | 90.9 | 1.0 |
+| follow_move+money_delta | early | pin limit <$1k | 1-0 | 100.0 | 52.4 | 90.9 | 1.0 |
 | follow_move+money_level | early | pin limit <$1k | 3-3 | 50.0 | 2.5 | -3.8 | 0.0 |
-| follow_move+rlm_ratio | early | pin limit <$1k | 1-1 | 50.0 | 9.6 | -4.5 | 0.5 |
-| money_delta+money_level | early | pin limit <$1k | 1-0 | 100.0 | 52.2 | 90.9 | 1.0 |
-| money_delta+money_moving | early | pin limit <$1k | 1-0 | 100.0 | 52.2 | 90.9 | 1.0 |
-| money_delta+pin_value | early | pin limit <$1k | 1-0 | 100.0 | 52.2 | 90.9 | 1.0 |
-| money_delta+rlm_ratio | early | pin limit <$1k | 1-0 | 100.0 | 52.2 | 90.9 | 1.0 |
-| money_delta+sharp_gap | early | pin limit <$1k | 1-0 | 100.0 | 52.2 | 90.9 | 1.0 |
-| money_level+money_moving | early | pin limit <$1k | 4-0 | 100.0 | 50.0 | 92.0 | 0.5 |
-| money_level+rlm_ratio | early | pin limit <$1k | 1-1 | 50.0 | 9.6 | -4.5 | 0.5 |
-| money_level+sharp_gap | early | pin limit <$1k | 5-4 | 55.6 | 6.5 | 6.5 | 0.67 |
-| money_moving+pin_value | early | pin limit <$1k | 3-0 | 100.0 | 52.2 | 92.3 | 1.0 |
-| money_moving+rlm_ratio | early | pin limit <$1k | 1-0 | 100.0 | 52.2 | 90.9 | 1.0 |
-| pin_value+rlm_ratio | early | pin limit <$1k | 1-0 | 100.0 | 52.2 | 90.9 | 1.0 |
-| pin_value+sharp_gap | early | pin limit <$1k | 1-2 | 33.3 | -17.4 | -36.4 | 1.33 |
-| rlm_ratio+sharp_gap | early | pin limit <$1k | 1-1 | 50.0 | 9.6 | -4.5 | 0.5 |
-| pin_move+sharp_gap | early | pin limit <$1k | 0-3 | 0.0 | -45.8 | -100.0 | 1.0 |
-| money_moving+pin_move | early | pin limit <$1k | 1-1 | 50.0 | 2.2 | -2.4 | 1.0 |
-| follow_move+pin_rlm | early | pin limit <$1k | 0-1 | 0.0 | -32.9 | -100.0 | 0.0 |
-| money_level+pin_rlm | early | pin limit <$1k | 0-1 | 0.0 | -32.9 | -100.0 | 0.0 |
-| pin_move+pin_rlm | early | pin limit <$1k | 0-1 | 0.0 | -32.9 | -100.0 | 0.0 |
-| pin_move+rlm_ratio | early | pin limit <$1k | 0-1 | 0.0 | -32.9 | -100.0 | 0.0 |
-| pin_rlm+rlm_ratio | early | pin limit <$1k | 0-1 | 0.0 | -32.9 | -100.0 | 0.0 |
-| pin_rlm+sharp_gap | early | pin limit <$1k | 0-1 | 0.0 | -32.9 | -100.0 | 0.0 |
+| follow_move+rlm_ratio | early | pin limit <$1k | 1-1 | 50.0 | 9.9 | -4.5 | 0.5 |
+| money_delta+money_level | early | pin limit <$1k | 1-0 | 100.0 | 52.4 | 90.9 | 1.0 |
+| money_delta+money_moving | early | pin limit <$1k | 1-0 | 100.0 | 52.4 | 90.9 | 1.0 |
+| money_delta+pin_value | early | pin limit <$1k | 1-0 | 100.0 | 52.4 | 90.9 | 1.0 |
+| money_delta+rlm_ratio | early | pin limit <$1k | 1-0 | 100.0 | 52.4 | 90.9 | 1.0 |
+| money_delta+sharp_gap | early | pin limit <$1k | 1-0 | 100.0 | 52.4 | 90.9 | 1.0 |
+| money_level+money_moving | early | pin limit <$1k | 5-0 | 100.0 | 49.5 | 91.0 | 0.2 |
+| money_level+rlm_ratio | early | pin limit <$1k | 1-1 | 50.0 | 9.9 | -4.5 | 0.5 |
+| money_level+sharp_gap | early | pin limit <$1k | 6-4 | 60.0 | 10.5 | 14.6 | 0.5 |
+| money_moving+pin_value | early | pin limit <$1k | 4-0 | 100.0 | 51.2 | 91.0 | 0.5 |
+| money_moving+rlm_ratio | early | pin limit <$1k | 1-0 | 100.0 | 52.4 | 90.9 | 1.0 |
+| pin_value+rlm_ratio | early | pin limit <$1k | 1-0 | 100.0 | 52.4 | 90.9 | 1.0 |
+| pin_value+sharp_gap | early | pin limit <$1k | 2-2 | 50.0 | -1.2 | -5.5 | 0.75 |
+| rlm_ratio+sharp_gap | early | pin limit <$1k | 1-1 | 50.0 | 9.9 | -4.5 | 0.5 |
+| pin_move+sharp_gap | early | pin limit <$1k | 0-3 | 0.0 | -45.9 | -100.0 | 1.0 |
+| money_moving+pin_move | early | pin limit <$1k | 1-1 | 50.0 | 2.4 | -2.4 | 1.0 |
+| follow_move+pin_rlm | early | pin limit <$1k | 0-1 | 0.0 | -32.7 | -100.0 | 0.0 |
+| money_level+pin_rlm | early | pin limit <$1k | 0-1 | 0.0 | -32.7 | -100.0 | 0.0 |
+| pin_move+pin_rlm | early | pin limit <$1k | 0-1 | 0.0 | -32.7 | -100.0 | 0.0 |
+| pin_move+rlm_ratio | early | pin limit <$1k | 0-1 | 0.0 | -32.7 | -100.0 | 0.0 |
+| pin_rlm+rlm_ratio | early | pin limit <$1k | 0-1 | 0.0 | -32.7 | -100.0 | 0.0 |
+| pin_rlm+sharp_gap | early | pin limit <$1k | 0-1 | 0.0 | -32.7 | -100.0 | 0.0 |
+| pin_move+rlm_quiet | early | pin limit <$1k | 0-1 | 0.0 | -47.6 | -100.0 | 1.0 |
