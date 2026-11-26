@@ -1,6 +1,6 @@
 # NFL period board
 
-Generated 2026-11-26 06:35 UTC. Live halves, quarters and team totals where a signal has an
+Generated 2026-11-26 11:35 UTC. Live halves, quarters and team totals where a signal has an
 opinion. Each call shows that signal's graded record so far.
 
 No splits exist for any of these markets — every call is handicap or price.
@@ -20,12 +20,11 @@ This is analysis, not picks.
 
 | kickoff (ET) | game | market | lean | FD | open | Pin | gap | limit | price | calls |
 |---|---|---|---|---|---|---|---|---|---|---|
-| Thu 13:00 | Chicago Bears @ Detroit Lions | 1h\|ml | home | -104 | 106 | 105 |  | $2000 | -104 | follow_move->home (91-87-10 fit · 54-40-2 fwd) |
-| Thu 13:00 | Chicago Bears @ Detroit Lions | 1h\|spread | home | 1.5 | 1.5 | 0.5 | 1.0 | $3000 | -135 | pin_value->home (53-47 fit · 16-16 fwd) |
-| Thu 13:00 | Chicago Bears @ Detroit Lions | 2h\|ml | home | 100 | 108 |  |  |  | 100 | follow_move->home (91-87-10 fit · 54-40-2 fwd) |
+| Thu 13:00 | Chicago Bears @ Detroit Lions | 1h\|spread | home | 1.5 | 1.5 | 0.5 | 1.0 | $3000 | -125 | pin_value->home (53-47 fit · 16-16 fwd) |
+| Thu 13:00 | Chicago Bears @ Detroit Lions | 1h\|tt\|home | over | 13.5 | 13.5 | 13.5 |  | $2000 | -118 | pin_price->over (5-12 fit · 4-9 fwd) |
+| Thu 13:00 | Chicago Bears @ Detroit Lions | 2h\|ml | home | 106 | 108 |  |  |  | 106 | follow_move->home (91-87-10 fit · 54-40-2 fwd) |
 | Thu 13:00 | Chicago Bears @ Detroit Lions | 2h\|total | over | 27.5 | 26.5 |  |  |  | -110 | follow_move->over (91-87-10 fit · 54-40-2 fwd) |
-| Thu 13:00 | Chicago Bears @ Detroit Lions | 2h\|tt\|home | over | 13.5 | 13.5 |  |  |  | -128 | fd_juice->over (37-40 fit · 20-15 fwd) |
-| Thu 13:00 | Chicago Bears @ Detroit Lions | q4\|ml | home | -108 | -105 |  |  |  | -108 | follow_move->home (91-87-10 fit · 54-40-2 fwd) |
+| Thu 13:00 | Chicago Bears @ Detroit Lions | q4\|ml | away | -118 | -105 |  |  |  | -118 | follow_move->away (91-87-10 fit · 54-40-2 fwd) |
 | Thu 16:30 | Philadelphia Eagles @ Dallas Cowboys | 1h\|spread | away | 6.5 | -6.5 | -4.5 | -2.0 | $3000 | -110 | pin_value->away (53-47 fit · 16-16 fwd) |
 | Thu 16:30 | Philadelphia Eagles @ Dallas Cowboys | 1h\|total | under | 24.5 | 24.5 | 24.0 | 0.5 | $2000 | -120 | pin_value->under (53-47 fit · 16-16 fwd) |
 | Thu 16:30 | Philadelphia Eagles @ Dallas Cowboys | 2h\|ml | home | -240 | -235 |  |  |  | -240 | follow_move->home (91-87-10 fit · 54-40-2 fwd) |
@@ -34,14 +33,14 @@ This is analysis, not picks.
 | Thu 16:30 | Philadelphia Eagles @ Dallas Cowboys | 2h\|tt\|home | over | 13.5 | 13.5 |  |  |  | -130 | fd_juice->over (37-40 fit · 20-15 fwd) |
 | Thu 16:30 | Philadelphia Eagles @ Dallas Cowboys | q4\|ml | home | -192 | -188 |  |  |  | -192 | follow_move->home (91-87-10 fit · 54-40-2 fwd) |
 | Thu 16:30 | Philadelphia Eagles @ Dallas Cowboys | q4\|spread | home | -2.5 | -1.5 |  |  |  | -106 | follow_move->home (91-87-10 fit · 54-40-2 fwd) |
-| Thu 20:20 | Kansas City Chiefs @ Buffalo Bills | 1h\|total | under | 23.5 | 25.5 | 23.5 |  | $2000 | -115 | follow_move->under (91-87-10 fit · 54-40-2 fwd) |
-| Thu 20:20 | Kansas City Chiefs @ Buffalo Bills | 1h\|tt\|away | under | 10.5 | 12.5 | 10.5 |  | $2000 | -158 | follow_move->under (91-87-10 fit · 54-40-2 fwd) |
-| Thu 20:20 | Kansas City Chiefs @ Buffalo Bills | 2h\|ml | away | -106 | -124 |  |  |  | -106 | follow_move->away (91-87-10 fit · 54-40-2 fwd) |
-| Thu 20:20 | Kansas City Chiefs @ Buffalo Bills | 2h\|spread | away | 1.5 | -1.5 |  |  |  | -145 | fd_juice->away (37-40 fit · 20-15 fwd) |
-| Thu 20:20 | Kansas City Chiefs @ Buffalo Bills | 2h\|total | under | 22.5 | 23.5 |  |  |  | 100 | follow_move->under (91-87-10 fit · 54-40-2 fwd) |
-| Thu 20:20 | Kansas City Chiefs @ Buffalo Bills | 2h\|tt\|away | under | 10.5 | 11.5 |  |  |  | -115 | follow_move->under (91-87-10 fit · 54-40-2 fwd) |
-| Thu 20:20 | Kansas City Chiefs @ Buffalo Bills | 2h\|tt\|home | under | 10.5 | 12.5 |  |  |  | -111 | follow_move->under (91-87-10 fit · 54-40-2 fwd) |
-| Thu 20:20 | Kansas City Chiefs @ Buffalo Bills | q4\|total | under | 13.5 | 13.5 |  |  |  | -128 | fd_juice->under (37-40 fit · 20-15 fwd) |
+| Thu 20:20 | Kansas City Chiefs @ Buffalo Bills | 1h\|ml | home | -170 | -148 | -148 |  | $2000 | -170 | follow_move->home (91-87-10 fit · 54-40-2 fwd) |
+| Thu 20:20 | Kansas City Chiefs @ Buffalo Bills | 1h\|total | under | 23.5 | 25.5 | 23.5 |  | $2000 | -120 | follow_move->under (91-87-10 fit · 54-40-2 fwd) |
+| Thu 20:20 | Kansas City Chiefs @ Buffalo Bills | 2h\|ml | away | -104 | -124 |  |  |  | -104 | follow_move->away (91-87-10 fit · 54-40-2 fwd) |
+| Thu 20:20 | Kansas City Chiefs @ Buffalo Bills | 2h\|total | under | 22.5 | 23.5 |  |  |  | -110 | follow_move->under (91-87-10 fit · 54-40-2 fwd) |
+| Thu 20:20 | Kansas City Chiefs @ Buffalo Bills | 2h\|tt\|away | under | 10.5 | 11.5 |  |  |  | -128 | follow_move->under (91-87-10 fit · 54-40-2 fwd) |
+| Thu 20:20 | Kansas City Chiefs @ Buffalo Bills | 2h\|tt\|home | under | 10.5 | 12.5 |  |  |  | -115 | follow_move->under (91-87-10 fit · 54-40-2 fwd) |
+| Thu 20:20 | Kansas City Chiefs @ Buffalo Bills | q4\|ml | home | -130 | -128 |  |  |  | -130 | follow_move->home (91-87-10 fit · 54-40-2 fwd) |
+| Thu 20:20 | Kansas City Chiefs @ Buffalo Bills | q4\|total | under | 12.5 | 13.5 |  |  |  | 102 | follow_move->under (91-87-10 fit · 54-40-2 fwd) |
 | Fri 15:00 | Denver Broncos @ Pittsburgh Steelers | 1h\|ml | away | -170 | 114 | 143 |  | $2000 | -170 | follow_move->away (91-87-10 fit · 54-40-2 fwd) |
 | Fri 15:00 | Denver Broncos @ Pittsburgh Steelers | 1h\|spread | away | -2.5 | 1.5 | 2.5 |  | $3000 | -115 | follow_move->away (91-87-10 fit · 54-40-2 fwd) |
 | Fri 15:00 | Denver Broncos @ Pittsburgh Steelers | 1h\|tt\|home | under | 7.5 | 9.5 | 7.5 |  | $1000 | -130 | follow_move->under (91-87-10 fit · 54-40-2 fwd) |
@@ -95,7 +94,7 @@ This is analysis, not picks.
 | Sun 13:00 | New York Jets @ Miami Dolphins | q4\|total | under | 10.5 | 11.5 |  |  |  | -110 | follow_move->under (91-87-10 fit · 54-40-2 fwd) |
 | Sun 13:00 | Tennessee Titans @ Jacksonville Jaguars | q4\|total | over | 13.5 | 13.5 |  |  |  | -104 | fd_juice->over (37-40 fit · 20-15 fwd) |
 | Sun 13:00 | Atlanta Falcons @ Minnesota Vikings | q4\|total | under | 10.5 | 11.5 |  |  |  | -110 | follow_move->under (91-87-10 fit · 54-40-2 fwd) |
-| Sun 16:05 | New England Patriots @ Los Angeles Chargers | 1h\|ml | away | -116 | -110 | -105 |  | $500 | -116 | follow_move->away (91-87-10 fit · 54-40-2 fwd) |
+| Sun 16:05 | New England Patriots @ Los Angeles Chargers | 1h\|ml | away | -116 | -110 | -106 |  | $500 | -116 | follow_move->away (91-87-10 fit · 54-40-2 fwd) |
 | Sun 16:05 | New England Patriots @ Los Angeles Chargers | 2h\|ml | away | -112 | -108 |  |  |  | -112 | follow_move->away (91-87-10 fit · 54-40-2 fwd) |
 | Sun 16:05 | New England Patriots @ Los Angeles Chargers | 2h\|spread | away | -1.5 | -1.5 |  |  |  | 120 | follow_move->away (91-87-10 fit · 54-40-2 fwd) |
 | Sun 16:05 | New England Patriots @ Los Angeles Chargers | 2h\|total | over | 17.5 | 16.5 |  |  |  | -105 | follow_move->over (91-87-10 fit · 54-40-2 fwd) |
@@ -140,11 +139,11 @@ This is analysis, not picks.
 
 | kickoff (ET) | game | market | lean | FD | open | Pin | gap | limit | price | calls |
 |---|---|---|---|---|---|---|---|---|---|---|
-| Thu 13:00 | Chicago Bears @ Detroit Lions | 1h\|tt\|away | under | 13.5 | 14.5 | 14.5 | -1.0 | $2000 | 108 | follow_move->under (91-87-10 fit · 54-40-2 fwd); pin_value->over (53-47 fit · 16-16 fwd) |
-| Thu 16:30 | Philadelphia Eagles @ Dallas Cowboys | 1h\|ml | home | -370 | -330 | -292 |  | $2000 | -370 | follow_move->home (91-87-10 fit · 54-40-2 fwd); pin_price->away (5-12 fit · 4-9 fwd) |
-| Thu 20:20 | Kansas City Chiefs @ Buffalo Bills | 1h\|ml | home | -170 | -148 | -148 |  | $2000 | -170 | follow_move->home (91-87-10 fit · 54-40-2 fwd); pin_price->away (5-12 fit · 4-9 fwd) |
+| Thu 13:00 | Chicago Bears @ Detroit Lions | 1h\|tt\|away | under | 13.5 | 14.5 | 14.5 | -1.0 | $2000 | 114 | follow_move->under (91-87-10 fit · 54-40-2 fwd); pin_value->over (53-47 fit · 16-16 fwd) |
+| Thu 16:30 | Philadelphia Eagles @ Dallas Cowboys | 1h\|ml | home | -370 | -330 | -291 |  | $2000 | -370 | follow_move->home (91-87-10 fit · 54-40-2 fwd); pin_price->away (5-12 fit · 4-9 fwd) |
 | Thu 20:20 | Kansas City Chiefs @ Buffalo Bills | 1h\|spread | home | -2.5 | -1.5 | -1.5 | -1.0 | $3000 | -115 | follow_move->home (91-87-10 fit · 54-40-2 fwd); pin_value->away (53-47 fit · 16-16 fwd) |
-| Thu 20:20 | Kansas City Chiefs @ Buffalo Bills | 1h\|tt\|home | under | 12.5 | 13.5 | 13.5 | -1.0 | $2000 | 108 | follow_move->under (91-87-10 fit · 54-40-2 fwd); pin_value->over (53-47 fit · 16-16 fwd) |
+| Thu 20:20 | Kansas City Chiefs @ Buffalo Bills | 1h\|tt\|away | under | 9.5 | 12.5 | 10.5 | -1.0 | $2000 | 122 | follow_move->under (91-87-10 fit · 54-40-2 fwd); pin_value->over (53-47 fit · 16-16 fwd) |
+| Thu 20:20 | Kansas City Chiefs @ Buffalo Bills | 1h\|tt\|home | under | 12.5 | 13.5 | 13.5 | -1.0 | $2000 | 102 | follow_move->under (91-87-10 fit · 54-40-2 fwd); pin_value->over (53-47 fit · 16-16 fwd) |
 | Sun 13:00 | New Orleans Saints @ Cincinnati Bengals | 1h\|ml | home | -440 | -390 | -353 |  | $500 | -440 | follow_move->home (91-87-10 fit · 54-40-2 fwd); pin_price->away (5-12 fit · 4-9 fwd) |
 | Sun 13:00 | Tennessee Titans @ Jacksonville Jaguars | 1h\|ml | home | -700 | -650 | -559 |  | $500 | -700 | follow_move->home (91-87-10 fit · 54-40-2 fwd); pin_price->away (5-12 fit · 4-9 fwd) |
 | Sun 13:00 | New Orleans Saints @ Cincinnati Bengals | 1h\|spread | home | -7.5 | -6.5 | -6.5 | -1.0 | $500 | 105 | follow_move->home (91-87-10 fit · 54-40-2 fwd); pin_value->away (53-47 fit · 16-16 fwd) |
