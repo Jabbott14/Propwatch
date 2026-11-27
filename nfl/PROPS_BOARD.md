@@ -1,6 +1,6 @@
 # NFL prop board
 
-Generated 2026-11-26 22:26 UTC. Live props where at least one signal has an opinion, most
+Generated 2026-11-27 00:03 UTC. Live props where at least one signal has an opinion, most
 agreement first. Each call shows that signal's graded record so far.
 
 `Pin` is Pinnacle's number and the size it will take. Prop limits run $250-$3,000
@@ -15,8 +15,11 @@ This is analysis, not picks.
 |---|---|---|---|---|---|---|---|---|---|---|
 | Thu 20:20 | Dj Moore | recv_yds | under | 49.5 | 50.5 | 48.5 | 1.0 | $7500 | -113 | pin_value->under (141-127 fit · 65-58 fwd); fd_move->under (240-231 fit · 147-132 fwd) |
 | Thu 20:20 | Josh Downs | recv_yds | under | 36.5 | 38.5 | 35.5 | 1.0 | $7500 | -113 | pin_value->under (141-127 fit · 65-58 fwd); fd_move->under (240-231 fit · 147-132 fwd) |
+| Thu 20:20 | Patrick Mahomes | pass_yds | under | 228.5 | 254.5 | 226.5 | 2.0 | $10000 | -113 | pin_value->under (141-127 fit · 65-58 fwd); fd_move->under (240-231 fit · 147-132 fwd) |
 | Thu 20:20 | Ty Johnson | recv_yds | under | 16.5 | 18.5 | 15.5 | 1.0 | $1000 | -113 | pin_value->under (141-127 fit · 65-58 fwd); fd_move->under (240-231 fit · 147-132 fwd) |
 | Thu 20:20 | Xavier Worthy | recv_yds | under | 21.5 | 24.5 | 20.5 | 1.0 | $5000 | -113 | pin_value->under (141-127 fit · 65-58 fwd); fd_move->under (240-231 fit · 147-132 fwd) |
+| Fri 15:00 | Jonah Coleman | rush_yds | over | 73.5 | 69.5 | 75.5 | -2.0 | $500 | -113 | pin_value->over (141-127 fit · 65-58 fwd); fd_move->over (240-231 fit · 147-132 fwd) |
+| Sun 13:00 | Jordyn Tyson | recv_yds | under | 43.5 | 47.5 | 41.5 | 2.0 | $250 | -114 | pin_value->under (141-127 fit · 65-58 fwd); fd_move->under (240-231 fit · 147-132 fwd) |
 | Sun 13:00 | Justin Jefferson | receptions | under | 6.5 | 6.5 | 6.5 |  | $250 | -102 | pin_price->under (51-57 fit · 15-46 fwd); fd_juice->under (128-102 fit · 81-61 fwd) |
 | Sun 16:25 | Antonio Williams | recv_yds | over | 41.5 | 40.5 | 42.5 | -1.0 | $250 | -114 | pin_value->over (141-127 fit · 65-58 fwd); fd_move->over (240-231 fit · 147-132 fwd) |
 | Sun 20:20 | Jack Bech | recv_yds | over | 10.5 | 8.5 | 10.5 |  | $250 | -114 | pin_price->over (51-57 fit · 15-46 fwd); fd_move->over (240-231 fit · 147-132 fwd) |
@@ -31,34 +34,41 @@ This is analysis, not picks.
 
 | kickoff (ET) | player | stat | lean | FD | open | Pin | gap | limit | price | calls |
 |---|---|---|---|---|---|---|---|---|---|---|
-| Thu 20:20 | Cyrus Allen | anytime_td | over | 0.5 | 0.5 | 0.5 |  | $1000 | +900 | pin_price->over (51-57 fit · 15-46 fwd) |
+| Thu 20:20 | Cyrus Allen | anytime_td | over | 0.5 | 0.5 | 0.5 |  | $1000 | +1000 | pin_price->over (51-57 fit · 15-46 fwd) |
+| Thu 20:20 | Cyrus Allen | receptions | under | 1.5 | 1.5 | 1.5 |  | $2000 | -210 | pin_price->under (51-57 fit · 15-46 fwd) |
+| Thu 20:20 | Dalton Kincaid | anytime_td | over | 0.5 | 0.5 | 0.5 |  | $5000 | +320 | pin_price->over (51-57 fit · 15-46 fwd) |
 | Thu 20:20 | Dalton Kincaid | receptions | under | 3.5 | 3.5 | 3.5 |  | $7500 | -180 | fd_juice->under (128-102 fit · 81-61 fwd) |
-| Thu 20:20 | Dawson Knox | recv_yds | over | 13.5 | 9.5 |  |  |  | -113 | fd_move->over (240-231 fit · 147-132 fwd) |
-| Thu 20:20 | Dawson Knox | receptions | over | 1.5 | 1.5 |  |  |  | -108 | fd_juice->over (128-102 fit · 81-61 fwd) |
+| Thu 20:20 | Dawson Knox | anytime_td | over | 0.5 | 0.5 | 0.5 |  | $1000 | +600 | pin_price->over (51-57 fit · 15-46 fwd) |
+| Thu 20:20 | Dawson Knox | recv_yds | over | 12.5 | 9.5 | 12.5 |  | $1000 | -113 | fd_move->over (240-231 fit · 147-132 fwd) |
+| Thu 20:20 | Dawson Knox | receptions | over | 1.5 | 1.5 | 1.5 |  | $1000 | -106 | fd_juice->over (128-102 fit · 81-61 fwd) |
 | Thu 20:20 | Dj Moore | receptions | under | 3.5 | 4.5 | 3.5 |  | $7500 | +112 | fd_move->under (240-231 fit · 147-132 fwd) |
+| Thu 20:20 | Dj Moore | anytime_td | over | 0.5 | 0.5 | 0.5 |  | $5000 | +270 | pin_price->over (51-57 fit · 15-46 fwd) |
 | Thu 20:20 | Emmett Johnson | anytime_td | over | 0.5 | 0.5 | 0.5 |  | $7500 | -170 | td_steam->over (9-24 fit · 3-19 fwd) |
 | Thu 20:20 | Emmett Johnson | recv_yds | over | 30.5 | 28.5 | 30.5 |  | $7500 | -113 | fd_move->over (240-231 fit · 147-132 fwd) |
 | Thu 20:20 | Emmett Johnson | receptions | over | 3.5 | 3.5 | 3.5 |  | $7500 | -132 | fd_juice->over (128-102 fit · 81-61 fwd) |
 | Thu 20:20 | James Cook | receptions | under | 1.5 | 1.5 | 1.5 |  | $5000 | -174 | fd_juice->under (128-102 fit · 81-61 fwd) |
+| Thu 20:20 | James Cook | rush_yds | over | 87.5 | 85.5 | 87.5 |  | $10000 | -113 | fd_move->over (240-231 fit · 147-132 fwd) |
 | Thu 20:20 | Josh Allen | pass_yds | under | 215.5 | 251.5 | 215.5 |  | $10000 | -113 | fd_move->under (240-231 fit · 147-132 fwd) |
-| Thu 20:20 | Josh Allen | pass_tds | under | 1.5 | 1.5 | 1.5 |  | $10000 | -165 | fd_juice->under (128-102 fit · 81-61 fwd) |
+| Thu 20:20 | Josh Allen | pass_tds | under | 1.5 | 1.5 | 1.5 |  | $10000 | -188 | fd_juice->under (128-102 fit · 81-61 fwd) |
 | Thu 20:20 | Josh Allen | rush_yds | over | 38.5 | 32.5 | 38.5 |  | $7500 | -113 | fd_move->over (240-231 fit · 147-132 fwd) |
+| Thu 20:20 | Josh Allen | anytime_td | over | 0.5 | 0.5 | 0.5 |  | $5000 | -140 | td_steam->over (9-24 fit · 3-19 fwd) |
 | Thu 20:20 | Josh Downs | receptions | under | 3.5 | 3.5 | 3.5 |  | $7500 | -166 | fd_juice->under (128-102 fit · 81-61 fwd) |
 | Thu 20:20 | Josh Downs | anytime_td | over | 0.5 | 0.5 | 0.5 |  | $5000 | +330 | pin_price->over (51-57 fit · 15-46 fwd) |
 | Thu 20:20 | Keon Coleman | receptions | under | 1.5 | 2.5 | 1.5 |  | $3000 | +140 | fd_move->under (240-231 fit · 147-132 fwd) |
+| Thu 20:20 | Keon Coleman | anytime_td | over | 0.5 | 0.5 | 0.5 |  | $3000 | +500 | pin_price->over (51-57 fit · 15-46 fwd) |
 | Thu 20:20 | Khalil Shakir | recv_yds | under | 36.5 | 37.5 | 36.5 |  | $7500 | -113 | fd_move->under (240-231 fit · 147-132 fwd) |
 | Thu 20:20 | Khalil Shakir | receptions | under | 3.5 | 3.5 | 3.5 |  | $7500 | -132 | fd_juice->under (128-102 fit · 81-61 fwd) |
-| Thu 20:20 | Khalil Shakir | anytime_td | over | 0.5 | 0.5 | 0.5 |  | $5000 | +320 | pin_price->over (51-57 fit · 15-46 fwd) |
+| Thu 20:20 | Khalil Shakir | anytime_td | over | 0.5 | 0.5 | 0.5 |  | $5000 | +340 | pin_price->over (51-57 fit · 15-46 fwd) |
 | Thu 20:20 | Noah Gray | receptions | under | 1.5 | 1.5 | 1.5 |  | $2000 | -140 | fd_juice->under (128-102 fit · 81-61 fwd) |
-| Thu 20:20 | Patrick Mahomes | pass_tds | under | 1.5 | 1.5 | 1.5 |  | $10000 | -164 | fd_juice->under (128-102 fit · 81-61 fwd) |
-| Thu 20:20 | Patrick Mahomes | pass_yds | under | 228.5 | 254.5 | 228.5 |  | $10000 | -113 | fd_move->under (240-231 fit · 147-132 fwd) |
-| Thu 20:20 | Patrick Mahomes | anytime_td | over | 0.5 | 0.5 | 0.5 |  | $2000 | +500 | td_steam->over (9-24 fit · 3-19 fwd) |
+| Thu 20:20 | Patrick Mahomes | pass_tds | under | 1.5 | 1.5 | 1.5 |  | $10000 | -165 | fd_juice->under (128-102 fit · 81-61 fwd) |
+| Thu 20:20 | Patrick Mahomes | anytime_td | over | 0.5 | 0.5 | 0.5 |  | $2000 | +550 | pin_price->over (51-57 fit · 15-46 fwd) |
 | Thu 20:20 | Rashee Rice | receptions | under | 4.5 | 4.5 | 4.5 |  | $7500 | -140 | fd_juice->under (128-102 fit · 81-61 fwd) |
 | Thu 20:20 | Rashee Rice | anytime_td | over | 0.5 | 0.5 | 0.5 |  | $5000 | +260 | pin_price->over (51-57 fit · 15-46 fwd) |
-| Thu 20:20 | Ray Davis | rush_yds | under | 3.5 | 4.5 |  |  |  | -113 | fd_move->under (240-231 fit · 147-132 fwd) |
+| Thu 20:20 | Ray Davis | rush_yds | under | 3.5 | 4.5 | 3.5 |  | $1000 | -113 | fd_move->under (240-231 fit · 147-132 fwd) |
 | Thu 20:20 | Travis Kelce | recv_yds | under | 44.5 | 46.5 | 44.5 |  | $7500 | -113 | fd_move->under (240-231 fit · 147-132 fwd) |
 | Thu 20:20 | Travis Kelce | receptions | under | 4.5 | 4.5 | 4.5 |  | $7500 | -180 | fd_juice->under (128-102 fit · 81-61 fwd) |
 | Thu 20:20 | Ty Johnson | receptions | over | 2.5 | 2.5 | 2.5 |  | $1000 | +116 | fd_juice->over (128-102 fit · 81-61 fwd) |
+| Thu 20:20 | Ty Johnson | anytime_td | over | 0.5 | 0.5 | 0.5 |  | $1000 | +700 | pin_price->over (51-57 fit · 15-46 fwd) |
 | Thu 20:20 | Ty Johnson | rush_yds | under | 1.5 | 1.5 | 1.5 |  | $1000 | -130 | fd_juice->under (128-102 fit · 81-61 fwd) |
 | Thu 20:20 | Xavier Worthy | receptions | under | 2.5 | 2.5 | 2.5 |  | $5000 | -154 | fd_juice->under (128-102 fit · 81-61 fwd) |
 | Fri 15:00 | Aaron Rodgers | pass_yds | under | 196.5 | 203.5 | 196.5 |  | $250 | -114 | fd_move->under (240-231 fit · 147-132 fwd) |
@@ -83,7 +93,6 @@ This is analysis, not picks.
 | Fri 15:00 | Jaylen Warren | rush_yds | over | 64.5 | 58.5 | 64.5 |  | $500 | -113 | fd_move->over (240-231 fit · 147-132 fwd) |
 | Fri 15:00 | Jonah Coleman | receptions | over | 3.5 | 3.5 | 3.5 |  | $500 | +102 | fd_juice->over (128-102 fit · 81-61 fwd) |
 | Fri 15:00 | Jonah Coleman | recv_yds | over | 21.5 | 19.5 | 21.5 |  | $500 | -113 | fd_move->over (240-231 fit · 147-132 fwd) |
-| Fri 15:00 | Jonah Coleman | rush_yds | over | 75.5 | 69.5 | 75.5 |  | $500 | -113 | fd_move->over (240-231 fit · 147-132 fwd) |
 | Fri 15:00 | Jonah Coleman | anytime_td | over | 0.5 | 0.5 |  |  |  | -135 | td_steam->over (9-24 fit · 3-19 fwd) |
 | Fri 15:00 | Marvin Mims Jr | rush_yds | over | 3.5 | 1.5 | 3.5 |  | $500 | -102 | fd_move->over (240-231 fit · 147-132 fwd) |
 | Fri 15:00 | Mason Rudolph | pass_tds | under | 0.5 | 0.5 | 0.5 |  | $500 | +142 | fd_juice->under (128-102 fit · 81-61 fwd) |
@@ -120,6 +129,7 @@ This is analysis, not picks.
 | Sun 13:00 | Jacoby Brissett | pass_tds | under | 1.5 | 1.5 | 1.5 |  | $250 | -240 | fd_juice->under (128-102 fit · 81-61 fwd) |
 | Sun 13:00 | Jacoby Brissett | pass_yds | under | 235.5 | 242.5 | 235.5 |  | $250 | -114 | fd_move->under (240-231 fit · 147-132 fwd) |
 | Sun 13:00 | Jakobi Meyers | receptions | over | 3.5 | 3.5 | 3.5 |  | $250 | -136 | fd_juice->over (128-102 fit · 81-61 fwd) |
+| Sun 13:00 | Jakobi Meyers | recv_yds | over | 52.5 | 49.5 | 52.5 |  | $250 | -114 | fd_move->over (240-231 fit · 147-132 fwd) |
 | Sun 13:00 | Jauan Jennings | receptions | under | 2.5 | 2.5 | 2.5 |  | $250 | -130 | fd_juice->under (128-102 fit · 81-61 fwd) |
 | Sun 13:00 | Jauan Jennings | recv_yds | under | 28.5 | 30.5 | 28.5 |  | $250 | -114 | fd_move->under (240-231 fit · 147-132 fwd) |
 | Sun 13:00 | Jj Mccarthy | pass_yds | under | 219.5 | 223.5 | 219.5 |  | $250 | -114 | fd_move->under (240-231 fit · 147-132 fwd) |
@@ -127,7 +137,6 @@ This is analysis, not picks.
 | Sun 13:00 | Joe Burrow | pass_yds | under | 294.5 | 302.5 | 294.5 |  | $250 | -114 | fd_move->under (240-231 fit · 147-132 fwd) |
 | Sun 13:00 | Jonathan Taylor | receptions | under | 2.5 | 2.5 | 2.5 |  | $250 | -122 | fd_juice->under (128-102 fit · 81-61 fwd) |
 | Sun 13:00 | Jonathan Taylor | recv_yds | under | 13.5 | 15.5 | 13.5 |  | $250 | -114 | fd_move->under (240-231 fit · 147-132 fwd) |
-| Sun 13:00 | Jordyn Tyson | recv_yds | under | 41.5 | 47.5 | 41.5 |  | $250 | -114 | fd_move->under (240-231 fit · 147-132 fwd) |
 | Sun 13:00 | Jordyn Tyson | receptions | under | 4.5 | 4.5 | 4.5 |  | $250 | -166 | fd_juice->under (128-102 fit · 81-61 fwd) |
 | Sun 13:00 | Josh Cameron | receptions | over | 2.5 | 2.5 | 2.5 |  | $250 | +148 | fd_juice->over (128-102 fit · 81-61 fwd) |
 | Sun 13:00 | Justice Hill | anytime_td | over | 0.5 | 0.5 |  |  |  | +350 | td_steam->over (9-24 fit · 3-19 fwd) |
@@ -180,8 +189,8 @@ This is analysis, not picks.
 | Sun 16:25 | Kaelon Black | rush_yds | under | 19.5 | 22.5 | 19.5 |  | $250 | -114 | fd_move->under (240-231 fit · 147-132 fwd) |
 | Sun 16:25 | Keenan Allen | recv_yds | over | 27.5 | 24.5 | 27.5 |  | $250 | -114 | fd_move->over (240-231 fit · 147-132 fwd) |
 | Sun 16:25 | Keenan Allen | receptions | under | 2.5 | 2.5 | 2.5 |  | $250 | +118 | fd_juice->under (128-102 fit · 81-61 fwd) |
-| Sun 16:25 | Mike Evans | receptions | over | 4.5 | 4.5 | 4.5 |  | $250 | -104 | fd_juice->over (128-102 fit · 81-61 fwd) |
-| Sun 16:25 | Mike Evans | recv_yds | over | 59.5 | 57.5 | 59.5 |  | $250 | -114 | fd_move->over (240-231 fit · 147-132 fwd) |
+| Sun 16:25 | Mike Evans | receptions | over | 4.5 | 4.5 | 4.5 |  | $250 | +100 | fd_juice->over (128-102 fit · 81-61 fwd) |
+| Sun 16:25 | Mike Evans | recv_yds | over | 57.5 | 57.5 | 59.5 | -2.0 | $250 | -114 | pin_value->over (141-127 fit · 65-58 fwd) |
 | Sun 16:25 | Sam Darnold | pass_yds | under | 227.5 | 230.5 | 227.5 |  | $250 | -114 | fd_move->under (240-231 fit · 147-132 fwd) |
 | Sun 16:25 | Tory Horton | recv_yds | under | 3.5 | 4.5 | 3.5 |  | $250 | -114 | fd_move->under (240-231 fit · 147-132 fwd) |
 | Sun 16:25 | Tory Horton | receptions | under | 0.5 | 0.5 |  |  |  | +112 | fd_juice->under (128-102 fit · 81-61 fwd) |
@@ -195,14 +204,14 @@ This is analysis, not picks.
 | Sun 20:20 | Quinshon Judkins | receptions | over | 1.5 | 1.5 | 1.5 |  | $250 | +130 | fd_juice->over (128-102 fit · 81-61 fwd) |
 | Sun 20:20 | Tre Tucker | receptions | under | 2.5 | 2.5 | 2.5 |  | $250 | -188 | fd_juice->under (128-102 fit · 81-61 fwd) |
 | Sun 20:20 | Tre Tucker | recv_yds | under | 28.5 | 31.5 | 28.5 |  | $250 | -114 | fd_move->under (240-231 fit · 147-132 fwd) |
-| Mon 20:15 | Baker Mayfield | pass_tds | over | 1.5 | 1.5 | 1.5 |  | $250 | -102 | fd_juice->over (128-102 fit · 81-61 fwd) |
-| Mon 20:15 | Chris Godwin | recv_yds | under | 21.5 | 22.5 |  |  |  | -114 | fd_move->under (240-231 fit · 147-132 fwd) |
+| Mon 20:15 | Baker Mayfield | pass_tds | over | 1.5 | 1.5 | 1.5 |  | $250 | -104 | fd_juice->over (128-102 fit · 81-61 fwd) |
 | Mon 20:15 | Emeka Egbuka | receptions | under | 3.5 | 3.5 | 3.5 |  | $250 | -130 | fd_juice->under (128-102 fit · 81-61 fwd) |
 | Mon 20:15 | Emeka Egbuka | recv_yds | under | 34.5 | 39.5 | 34.5 |  | $250 | -114 | fd_move->under (240-231 fit · 147-132 fwd) |
 | Mon 20:15 | Jalen Coker | receptions | over | 3.5 | 3.5 | 3.5 |  | $250 | -114 | fd_juice->over (128-102 fit · 81-61 fwd) |
 | Mon 20:15 | John Metchie Iii | receptions | over | 1.5 | 1.5 | 1.5 |  | $250 | +140 | pin_price->over (51-57 fit · 15-46 fwd) |
 | Mon 20:15 | Tez Johnson | recv_yds | under | 15.5 | 16.5 | 15.5 |  | $250 | -114 | fd_move->under (240-231 fit · 147-132 fwd) |
 | Mon 20:15 | Tez Johnson | receptions | under | 1.5 | 1.5 | 1.5 |  | $250 | -166 | fd_juice->under (128-102 fit · 81-61 fwd) |
+| Mon 20:15 | Tommy Tremble | recv_yds | over | 21.5 | 18.5 | 21.5 |  | $250 | -114 | fd_move->over (240-231 fit · 147-132 fwd) |
 | Mon 20:15 | Tommy Tremble | receptions | over | 2.5 | 2.5 | 2.5 |  | $250 | +126 | fd_juice->over (128-102 fit · 81-61 fwd) |
 
 ## 1 signal agree, 1 against
@@ -211,7 +220,7 @@ This is analysis, not picks.
 |---|---|---|---|---|---|---|---|---|---|---|
 | Thu 20:20 | Dalton Kincaid | recv_yds | over | 34.5 | 46.5 | 35.5 | -1.0 | $7500 | -113 | pin_value->over (141-127 fit · 65-58 fwd); fd_move->under (240-231 fit · 147-132 fwd) |
 | Thu 20:20 | James Cook | recv_yds | over | 7.5 | 8.5 | 8.5 | -1.0 | $5000 | -113 | pin_value->over (141-127 fit · 65-58 fwd); fd_move->under (240-231 fit · 147-132 fwd) |
-| Thu 20:20 | James Cook | rush_yds | under | 87.5 | 85.5 | 86.5 | 1.0 | $10000 | -113 | pin_value->under (141-127 fit · 65-58 fwd); fd_move->over (240-231 fit · 147-132 fwd) |
+| Thu 20:20 | Jaydn Ott | rush_yds | under | 6.5 | 5.5 | 5.5 | 1.0 | $1000 | -113 | pin_value->under (141-127 fit · 65-58 fwd); fd_move->over (240-231 fit · 147-132 fwd) |
 | Thu 20:20 | Keon Coleman | recv_yds | over | 21.5 | 25.5 | 22.5 | -1.0 | $5000 | -113 | pin_value->over (141-127 fit · 65-58 fwd); fd_move->under (240-231 fit · 147-132 fwd) |
 | Thu 20:20 | Noah Gray | recv_yds | under | 13.5 | 12.5 | 12.5 | 1.0 | $2000 | -113 | pin_value->under (141-127 fit · 65-58 fwd); fd_move->over (240-231 fit · 147-132 fwd) |
 | Thu 20:20 | Rashee Rice | recv_yds | over | 44.5 | 48.5 | 45.5 | -1.0 | $7500 | -113 | pin_value->over (141-127 fit · 65-58 fwd); fd_move->under (240-231 fit · 147-132 fwd) |
@@ -219,14 +228,15 @@ This is analysis, not picks.
 | Fri 15:00 | Mason Rudolph | pass_yds | over | 175.5 | 177.5 | 178.5 | -3.0 | $500 | -113 | pin_value->over (141-127 fit · 65-58 fwd); fd_move->under (240-231 fit · 147-132 fwd) |
 | Fri 15:00 | Pat Bryant | recv_yds | under | 27.5 | 25.5 | 27.5 |  | $500 | -113 | pin_lead->under (22-22 fit · 17-10 fwd); fd_move->over (240-231 fit · 147-132 fwd) |
 | Sun 13:00 | Cam Skattebo | rush_yds | under | 75.5 | 74.5 | 74.5 | 1.0 | $250 | -114 | pin_value->under (141-127 fit · 65-58 fwd); fd_move->over (240-231 fit · 147-132 fwd) |
+| Sun 13:00 | Carnell Tate | recv_yds | under | 52.5 | 50.5 | 50.5 | 2.0 | $250 | -114 | pin_value->under (141-127 fit · 65-58 fwd); fd_move->over (240-231 fit · 147-132 fwd) |
 | Sun 13:00 | Chimere Dike | receptions | under | 2.5 | 2.5 | 2.5 |  | $250 | +152 | pin_price->under (51-57 fit · 15-46 fwd); fd_juice->over (128-102 fit · 81-61 fwd) |
-| Sun 13:00 | Jakobi Meyers | recv_yds | under | 52.5 | 49.5 | 49.5 | 3.0 | $250 | -114 | pin_value->under (141-127 fit · 65-58 fwd); fd_move->over (240-231 fit · 147-132 fwd) |
 | Sun 13:00 | Josh Cameron | recv_yds | under | 26.5 | 24.5 | 24.5 | 2.0 | $250 | -114 | pin_value->under (141-127 fit · 65-58 fwd); fd_move->over (240-231 fit · 147-132 fwd) |
 | Sun 13:00 | Kenyon Sadiq | recv_yds | under | 20.5 | 18.5 | 18.5 | 2.0 | $250 | -114 | pin_value->under (141-127 fit · 65-58 fwd); fd_move->over (240-231 fit · 147-132 fwd) |
+| Sun 13:00 | Malik Nabers | recv_yds | under | 65.5 | 63.5 | 63.5 | 2.0 | $250 | -114 | pin_value->under (141-127 fit · 65-58 fwd); fd_move->over (240-231 fit · 147-132 fwd) |
 | Sun 13:00 | Parker Washington | recv_yds | over | 69.5 | 70.5 | 72.5 | -3.0 | $250 | -114 | pin_value->over (141-127 fit · 65-58 fwd); fd_move->under (240-231 fit · 147-132 fwd) |
 | Sun 13:00 | Rashod Bateman | recv_yds | over | 32.5 | 33.5 | 35.5 | -3.0 | $250 | -114 | pin_value->over (141-127 fit · 65-58 fwd); fd_move->under (240-231 fit · 147-132 fwd) |
 | Sun 16:25 | Antonio Williams | receptions | under | 3.5 | 3.5 | 3.5 |  | $250 | +112 | pin_price->under (51-57 fit · 15-46 fwd); fd_juice->over (128-102 fit · 81-61 fwd) |
+| Sun 16:25 | Zach Charbonnet | recv_yds | under | 8.5 | 7.5 | 7.5 | 1.0 | $250 | -114 | pin_value->under (141-127 fit · 65-58 fwd); fd_move->over (240-231 fit · 147-132 fwd) |
 | Sun 20:20 | Brock Bowers | recv_yds | over | 59.5 | 66.5 | 60.5 | -1.0 | $250 | -114 | pin_value->over (141-127 fit · 65-58 fwd); fd_move->under (240-231 fit · 147-132 fwd) |
 | Mon 20:15 | Jalen Coker | recv_yds | under | 44.5 | 42.5 | 42.5 | 2.0 | $250 | -114 | pin_value->under (141-127 fit · 65-58 fwd); fd_move->over (240-231 fit · 147-132 fwd) |
-| Mon 20:15 | Tommy Tremble | recv_yds | under | 21.5 | 18.5 | 18.5 | 3.0 | $250 | -114 | pin_value->under (141-127 fit · 65-58 fwd); fd_move->over (240-231 fit · 147-132 fwd) |
 
