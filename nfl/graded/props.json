@@ -70495,5 +70495,668 @@
     "units": -1.0
    }
   }
+ },
+ {
+  "game": "Kansas City Chiefs @ Buffalo Bills",
+  "player": "emmett johnson",
+  "stat": "anytime_td",
+  "kickoff": "2026-11-27T01:20:00.000Z",
+  "week": 12,
+  "actual": 0.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-27T0119Z",
+    "line": 0.5,
+    "odds": {
+     "over": -185,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {
+     "td_steam": "over"
+    },
+    "pin": 0.5,
+    "pin_lim": 7500,
+    "fair_over": 0.6073,
+    "td_open_odds": -130,
+    "td_move_pp": 8.4
+   },
+   "early": {
+    "t": "2026-11-23T0956Z",
+    "line": 0.5,
+    "odds": {
+     "over": -130,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {},
+    "td_open_odds": -130,
+    "td_move_pp": 0.0
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "td_steam": {
+    "side": "over",
+    "line": 0.5,
+    "odds": -185,
+    "res": "L",
+    "units": -1.0
+   }
+  }
+ },
+ {
+  "game": "Kansas City Chiefs @ Buffalo Bills",
+  "player": "josh allen",
+  "stat": "anytime_td",
+  "kickoff": "2026-11-27T01:20:00.000Z",
+  "week": 12,
+  "actual": 0.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-27T0119Z",
+    "line": 0.5,
+    "odds": {
+     "over": -140,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {
+     "td_steam": "over"
+    },
+    "pin": 0.5,
+    "pin_lim": 5000,
+    "fair_over": 0.527,
+    "td_open_odds": -115,
+    "td_move_pp": 4.8
+   },
+   "early": {
+    "t": "2026-11-23T0956Z",
+    "line": 0.5,
+    "odds": {
+     "over": -115,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {},
+    "td_open_odds": -115,
+    "td_move_pp": 0.0
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "td_steam": {
+    "side": "over",
+    "line": 0.5,
+    "odds": -140,
+    "res": "L",
+    "units": -1.0
+   }
+  }
+ },
+ {
+  "game": "Kansas City Chiefs @ Buffalo Bills",
+  "player": "rashee rice",
+  "stat": "anytime_td",
+  "kickoff": "2026-11-27T01:20:00.000Z",
+  "week": 12,
+  "actual": 0.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-27T0119Z",
+    "line": 0.5,
+    "odds": {
+     "over": 270,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {
+     "pin_price": "over"
+    },
+    "pin": 0.5,
+    "pin_lim": 5000,
+    "fair_over": 0.2938,
+    "edge_pct": 8.71,
+    "td_open_odds": 190,
+    "td_move_pp": -7.5
+   },
+   "early": {
+    "t": "2026-11-23T0956Z",
+    "line": 0.5,
+    "odds": {
+     "over": 190,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {},
+    "td_open_odds": 190,
+    "td_move_pp": 0.0
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "pin_price": {
+    "side": "over",
+    "line": 0.5,
+    "odds": 270,
+    "res": "L",
+    "units": -1.0
+   }
+  }
+ },
+ {
+  "game": "Kansas City Chiefs @ Buffalo Bills",
+  "player": "travis kelce",
+  "stat": "anytime_td",
+  "kickoff": "2026-11-27T01:20:00.000Z",
+  "week": 12,
+  "actual": 0.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-27T0119Z",
+    "line": 0.5,
+    "odds": {
+     "over": 250,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {
+     "pin_price": "over"
+    },
+    "pin": 0.5,
+    "pin_lim": 5000,
+    "fair_over": 0.2902,
+    "edge_pct": 1.55,
+    "td_open_odds": 210,
+    "td_move_pp": -3.7
+   },
+   "early": {
+    "t": "2026-11-23T0956Z",
+    "line": 0.5,
+    "odds": {
+     "over": 210,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {},
+    "td_open_odds": 210,
+    "td_move_pp": 0.0
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "pin_price": {
+    "side": "over",
+    "line": 0.5,
+    "odds": 250,
+    "res": "L",
+    "units": -1.0
+   }
+  }
+ },
+ {
+  "game": "Kansas City Chiefs @ Buffalo Bills",
+  "player": "khalil shakir",
+  "stat": "anytime_td",
+  "kickoff": "2026-11-27T01:20:00.000Z",
+  "week": 12,
+  "actual": 0.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-27T0119Z",
+    "line": 0.5,
+    "odds": {
+     "over": 340,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {
+     "pin_price": "over"
+    },
+    "pin": 0.5,
+    "pin_lim": 5000,
+    "fair_over": 0.248,
+    "edge_pct": 9.11,
+    "td_open_odds": 250,
+    "td_move_pp": -5.8
+   },
+   "early": {
+    "t": "2026-11-23T0956Z",
+    "line": 0.5,
+    "odds": {
+     "over": 250,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {},
+    "td_open_odds": 250,
+    "td_move_pp": 0.0
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "pin_price": {
+    "side": "over",
+    "line": 0.5,
+    "odds": 340,
+    "res": "L",
+    "units": -1.0
+   }
+  }
+ },
+ {
+  "game": "Kansas City Chiefs @ Buffalo Bills",
+  "player": "dalton kincaid",
+  "stat": "anytime_td",
+  "kickoff": "2026-11-27T01:20:00.000Z",
+  "week": 12,
+  "actual": 0.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-27T0119Z",
+    "line": 0.5,
+    "odds": {
+     "over": 320,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {
+     "pin_price": "over"
+    },
+    "pin": 0.5,
+    "pin_lim": 5000,
+    "fair_over": 0.2404,
+    "edge_pct": 0.97,
+    "td_open_odds": 310,
+    "td_move_pp": -0.6
+   },
+   "early": {
+    "t": "2026-11-23T0956Z",
+    "line": 0.5,
+    "odds": {
+     "over": 310,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {},
+    "td_open_odds": 310,
+    "td_move_pp": 0.0
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "pin_price": {
+    "side": "over",
+    "line": 0.5,
+    "odds": 320,
+    "res": "L",
+    "units": -1.0
+   }
+  }
+ },
+ {
+  "game": "Kansas City Chiefs @ Buffalo Bills",
+  "player": "dawson knox",
+  "stat": "anytime_td",
+  "kickoff": "2026-11-27T01:20:00.000Z",
+  "week": 12,
+  "actual": 0.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-27T0119Z",
+    "line": 0.5,
+    "odds": {
+     "over": 600,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {
+     "pin_price": "over"
+    },
+    "pin": 0.5,
+    "pin_lim": 1000,
+    "fair_over": 0.1568,
+    "edge_pct": 9.73,
+    "td_open_odds": 310,
+    "td_move_pp": -10.1
+   },
+   "early": {
+    "t": "2026-11-23T0956Z",
+    "line": 0.5,
+    "odds": {
+     "over": 310,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {},
+    "td_open_odds": 310,
+    "td_move_pp": 0.0
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "pin_price": {
+    "side": "over",
+    "line": 0.5,
+    "odds": 600,
+    "res": "L",
+    "units": -1.0
+   }
+  }
+ },
+ {
+  "game": "Kansas City Chiefs @ Buffalo Bills",
+  "player": "keon coleman",
+  "stat": "anytime_td",
+  "kickoff": "2026-11-27T01:20:00.000Z",
+  "week": 12,
+  "actual": 0.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-27T0119Z",
+    "line": 0.5,
+    "odds": {
+     "over": 500,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {
+     "pin_price": "over"
+    },
+    "pin": 0.5,
+    "pin_lim": 3000,
+    "fair_over": 0.1781,
+    "edge_pct": 6.85,
+    "td_open_odds": 370,
+    "td_move_pp": -4.6
+   },
+   "early": {
+    "t": "2026-11-23T0956Z",
+    "line": 0.5,
+    "odds": {
+     "over": 370,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {},
+    "td_open_odds": 370,
+    "td_move_pp": 0.0
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "pin_price": {
+    "side": "over",
+    "line": 0.5,
+    "odds": 500,
+    "res": "L",
+    "units": -1.0
+   }
+  }
+ },
+ {
+  "game": "Kansas City Chiefs @ Buffalo Bills",
+  "player": "xavier worthy",
+  "stat": "anytime_td",
+  "kickoff": "2026-11-27T01:20:00.000Z",
+  "week": 12,
+  "actual": 0.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-27T0119Z",
+    "line": 0.5,
+    "odds": {
+     "over": 550,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {
+     "pin_price": "over"
+    },
+    "pin": 0.5,
+    "pin_lim": 1000,
+    "fair_over": 0.1565,
+    "edge_pct": 1.71,
+    "td_open_odds": 380,
+    "td_move_pp": -5.4
+   },
+   "early": {
+    "t": "2026-11-23T0956Z",
+    "line": 0.5,
+    "odds": {
+     "over": 380,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {},
+    "td_open_odds": 380,
+    "td_move_pp": 0.0
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "pin_price": {
+    "side": "over",
+    "line": 0.5,
+    "odds": 550,
+    "res": "L",
+    "units": -1.0
+   }
+  }
+ },
+ {
+  "game": "Kansas City Chiefs @ Buffalo Bills",
+  "player": "cyrus allen",
+  "stat": "anytime_td",
+  "kickoff": "2026-11-27T01:20:00.000Z",
+  "week": 12,
+  "actual": 0.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-27T0119Z",
+    "line": 0.5,
+    "odds": {
+     "over": 950,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {
+     "pin_price": "over"
+    },
+    "pin": 0.5,
+    "pin_lim": 1000,
+    "fair_over": 0.1318,
+    "edge_pct": 38.43,
+    "td_open_odds": 550,
+    "td_move_pp": -5.9
+   },
+   "early": {
+    "t": "2026-11-23T0956Z",
+    "line": 0.5,
+    "odds": {
+     "over": 550,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {},
+    "td_open_odds": 550,
+    "td_move_pp": 0.0
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "pin_price": {
+    "side": "over",
+    "line": 0.5,
+    "odds": 950,
+    "res": "L",
+    "units": -1.0
+   }
+  }
+ },
+ {
+  "game": "Kansas City Chiefs @ Buffalo Bills",
+  "player": "ty johnson",
+  "stat": "anytime_td",
+  "kickoff": "2026-11-27T01:20:00.000Z",
+  "week": 12,
+  "actual": 0.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-27T0119Z",
+    "line": 0.5,
+    "odds": {
+     "over": 700,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {
+     "pin_price": "over"
+    },
+    "pin": 0.5,
+    "pin_lim": 1000,
+    "fair_over": 0.1333,
+    "edge_pct": 6.65,
+    "td_open_odds": 600,
+    "td_move_pp": -1.8
+   },
+   "early": {
+    "t": "2026-11-23T0956Z",
+    "line": 0.5,
+    "odds": {
+     "over": 600,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {},
+    "td_open_odds": 600,
+    "td_move_pp": 0.0
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "pin_price": {
+    "side": "over",
+    "line": 0.5,
+    "odds": 700,
+    "res": "L",
+    "units": -1.0
+   }
+  }
+ },
+ {
+  "game": "Kansas City Chiefs @ Buffalo Bills",
+  "player": "patrick mahomes",
+  "stat": "anytime_td",
+  "kickoff": "2026-11-27T01:20:00.000Z",
+  "week": 12,
+  "actual": 0.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-27T0119Z",
+    "line": 0.5,
+    "odds": {
+     "over": 500,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {
+     "td_steam": "over"
+    },
+    "pin": 0.5,
+    "pin_lim": 2000,
+    "fair_over": 0.1594,
+    "td_open_odds": 750,
+    "td_move_pp": 4.9
+   },
+   "early": {
+    "t": "2026-11-23T0956Z",
+    "line": 0.5,
+    "odds": {
+     "over": 750,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {},
+    "td_open_odds": 750,
+    "td_move_pp": 0.0
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "td_steam": {
+    "side": "over",
+    "line": 0.5,
+    "odds": 500,
+    "res": "L",
+    "units": -1.0
+   }
+  }
+ },
+ {
+  "game": "Kansas City Chiefs @ Buffalo Bills",
+  "player": "noah gray",
+  "stat": "anytime_td",
+  "kickoff": "2026-11-27T01:20:00.000Z",
+  "week": 12,
+  "actual": 0.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-27T0119Z",
+    "line": 0.5,
+    "odds": {
+     "over": 1000,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {
+     "pin_price": "over"
+    },
+    "pin": 0.5,
+    "pin_lim": 1000,
+    "fair_over": 0.0955,
+    "edge_pct": 5.0,
+    "td_open_odds": 700,
+    "td_move_pp": -3.4
+   },
+   "early": {
+    "t": "2026-11-25T1759Z",
+    "line": 0.5,
+    "odds": {
+     "over": 750,
+     "under": null
+    },
+    "open": 0.5,
+    "calls": {
+     "pin_price": "over"
+    },
+    "pin": 0.5,
+    "pin_lim": 500,
+    "fair_over": 0.1438,
+    "edge_pct": 22.21,
+    "td_open_odds": 700,
+    "td_move_pp": -0.7
+   }
+  },
+  "early_graded": {
+   "pin_price": {
+    "side": "over",
+    "line": 0.5,
+    "odds": 750,
+    "res": "L",
+    "units": -1.0,
+    "clv": 0.0,
+    "clv_pct": -2.7
+   }
+  },
+  "close_graded": {
+   "pin_price": {
+    "side": "over",
+    "line": 0.5,
+    "odds": 1000,
+    "res": "L",
+    "units": -1.0
+   }
+  }
  }
 ]
