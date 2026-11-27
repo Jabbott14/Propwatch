@@ -132,14 +132,32 @@ def main():
         complete = gg.get("status") == "complete"
         total_pts = (ap + hp) if (complete and ap is not None and hp is not None) else None
 
-        pin_rows = {kk[2:]: v for kk, v in pin.items() if kk[0] and kk[1]
-                    and any(t in kk[0] or t in kk[1] for t in [])}
-        # select this game's pinnacle rows by start time match
+        # Select this game's Pinnacle rows BY TEAM NAME, never by start time.
+        #
+        # This join was an exact start-time equality until 2026-11-27 and it was wrong
+        # twice over. (a) The two feeds disagree on kickoff: Action Network had KC@BUF at
+        # 01:20Z and Pinnacle at 01:15:00Z, so the match returned nothing and the record
+        # stored `pinnacle_close: {}`, which prints as "pin total None" and reads as
+        # "Pinnacle had no close" rather than as a failed filter -- engine defect 4's rule
+        # that an empty filter is evidence about the filter first. (b) Worse, start time
+        # does not identify a game at all: nine games kick off at 18:00Z every Sunday, so
+        # every one of them wrote to the same `total|over` key and the last one won. The
+        # three Thanksgiving records survived only because each had a unique kickoff.
+        #
+        # Action Network's `full_name` and Pinnacle's participant names agree exactly
+        # ("Kansas City Chiefs", "Buffalo Bills"), so the pair of names is the key. Matched
+        # as an unordered pair, because Pinnacle lists some games in the opposite
+        # orientation to Action Network.
+        names = {t.get("full_name") for t in (gg.get("teams") or []) if t.get("full_name")}
         mine = {}
-        for kk, v in pin.items():
-            if v.get("start") and dt.datetime.fromisoformat(
-                    v["start"].replace("Z", "+00:00")) == k:
-                mine[f"{kk[2]}|{kk[3]}"] = {"pts": v["pts"], "price": v["price"], "limit": v["limit"]}
+        if len(names) == 2:
+            for kk, v in pin.items():
+                if {kk[0], kk[1]} == names:
+                    mine[f"{kk[2]}|{kk[3]}"] = {"pts": v["pts"], "price": v["price"],
+                                                "limit": v["limit"]}
+        if not mine:
+            print(f"  WARN {label}: no Pinnacle main rows matched {sorted(names)} "
+                  f"in {os.path.basename(lp[-1])} -- filter, not a quiet market")
 
         books = {}
         for bid, bm in (ag.get("markets") or {}).items():
