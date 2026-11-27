@@ -1,13 +1,13 @@
 {
- "run_utc": "2026-11-27T00:37:14Z",
- "cycle": 31,
- "heavy": true,
+ "run_utc": "2026-11-27T00:40:34Z",
+ "cycle": 32,
+ "heavy": false,
  "games": 14,
  "rows": 4100,
- "props_gz": 40702,
+ "props_gz": 40707,
  "pulls_ok": 98,
  "pulls_fail": 0,
- "elapsed_min": 131.6,
+ "elapsed_min": 134.9,
  "next_kickoff_h": 0.7,
  "cadence_min": 3,
  "closing_window": true,
@@ -15,13 +15,8 @@
  "attempts": [
   {
    "name": "actionnet",
-   "bytes": 523442,
-   "gz": 29313
-  },
-  {
-   "name": "fanduel",
-   "bytes": 1120258,
-   "gz": 87758
+   "bytes": 523819,
+   "gz": 29277
   },
   {
    "name": "pin_prices",
@@ -36,25 +31,7 @@
   {
    "name": "sbr",
    "bytes": 546625,
-   "gz": 50967
-  },
-  {
-   "name": "vsin",
-   "error": "HTTPError: HTTP Error 403: Forbidden"
-  },
-  {
-   "name": "vsin_circa",
-   "error": "HTTPError: HTTP Error 403: Forbidden"
-  },
-  {
-   "name": "sbr_totals",
-   "bytes": 546427,
-   "gz": 50572
-  },
-  {
-   "name": "espn",
-   "bytes": 278889,
-   "gz": 24447
+   "gz": 50962
   }
  ]
 }
