@@ -184,7 +184,7 @@
     }
    }
   },
-  "captured_at": "2026-11-27T1742Z",
+  "captured_at": "2026-11-27T2247Z",
   "close_snap": "2026-11-26T0100Z",
   "final": {
    "away": "GB",
@@ -406,7 +406,7 @@
     }
    }
   },
-  "captured_at": "2026-11-27T1742Z",
+  "captured_at": "2026-11-27T2247Z",
   "close_snap": "2026-11-26T1759Z",
   "final": {
    "away": "CHI",
@@ -628,7 +628,7 @@
     }
    }
   },
-  "captured_at": "2026-11-27T1742Z",
+  "captured_at": "2026-11-27T2247Z",
   "close_snap": "2026-11-26T2130Z",
   "final": {
    "away": "PHI",
@@ -850,7 +850,7 @@
     }
    }
   },
-  "captured_at": "2026-11-27T1742Z",
+  "captured_at": "2026-11-27T2247Z",
   "close_snap": "2026-11-27T0119Z",
   "final": {
    "away": "KC",
@@ -886,5 +886,221 @@
    }
   },
   "status": "complete"
+ },
+ {
+  "book_closes": {
+   "15": {
+    "spread|away": {
+     "money_pct": 74,
+     "odds": -113,
+     "tickets_pct": 81,
+     "value": -4.5
+    },
+    "spread|home": {
+     "money_pct": 26,
+     "odds": -104,
+     "tickets_pct": 19,
+     "value": 4.5
+    },
+    "total|over": {
+     "money_pct": 68,
+     "odds": -111,
+     "tickets_pct": 72,
+     "value": 37
+    },
+    "total|under": {
+     "money_pct": 32,
+     "odds": -108,
+     "tickets_pct": 28,
+     "value": 37
+    }
+   },
+   "30": {
+    "spread|away": {
+     "money_pct": null,
+     "odds": -110,
+     "tickets_pct": null,
+     "value": -1.5
+    },
+    "spread|home": {
+     "money_pct": null,
+     "odds": -110,
+     "tickets_pct": null,
+     "value": 1.5
+    },
+    "total|over": {
+     "money_pct": null,
+     "odds": -110,
+     "tickets_pct": null,
+     "value": 39.5
+    },
+    "total|under": {
+     "money_pct": null,
+     "odds": -110,
+     "tickets_pct": null,
+     "value": 39.5
+    }
+   },
+   "49": {
+    "spread|away": {
+     "money_pct": 74,
+     "odds": -114,
+     "tickets_pct": 81,
+     "value": -4.5
+    },
+    "spread|home": {
+     "money_pct": 26,
+     "odds": -105,
+     "tickets_pct": 19,
+     "value": 4.5
+    },
+    "total|over": {
+     "money_pct": 68,
+     "odds": -108,
+     "tickets_pct": 72,
+     "value": 37
+    },
+    "total|under": {
+     "money_pct": 32,
+     "odds": -112,
+     "tickets_pct": 28,
+     "value": 37
+    }
+   },
+   "68": {
+    "spread|away": {
+     "money_pct": 74,
+     "odds": -119,
+     "tickets_pct": 81,
+     "value": -4.5
+    },
+    "spread|home": {
+     "money_pct": 26,
+     "odds": -101,
+     "tickets_pct": 19,
+     "value": 4.5
+    },
+    "total|over": {
+     "money_pct": 68,
+     "odds": -112,
+     "tickets_pct": 72,
+     "value": 36.5
+    },
+    "total|under": {
+     "money_pct": 32,
+     "odds": -107,
+     "tickets_pct": 28,
+     "value": 36.5
+    }
+   },
+   "69": {
+    "spread|away": {
+     "money_pct": 74,
+     "odds": -114,
+     "tickets_pct": 81,
+     "value": -4.5
+    },
+    "spread|home": {
+     "money_pct": 26,
+     "odds": -106,
+     "tickets_pct": 19,
+     "value": 4.5
+    },
+    "total|over": {
+     "money_pct": 68,
+     "odds": -114,
+     "tickets_pct": 72,
+     "value": 36.5
+    },
+    "total|under": {
+     "money_pct": 32,
+     "odds": -106,
+     "tickets_pct": 28,
+     "value": 36.5
+    }
+   },
+   "71": {
+    "spread|away": {
+     "money_pct": 74,
+     "odds": -108,
+     "tickets_pct": 81,
+     "value": -5.5
+    },
+    "spread|home": {
+     "money_pct": 26,
+     "odds": -112,
+     "tickets_pct": 19,
+     "value": 5
+    },
+    "total|over": {
+     "money_pct": 68,
+     "odds": -113,
+     "tickets_pct": 72,
+     "value": 36.5
+    },
+    "total|under": {
+     "money_pct": 32,
+     "odds": -107,
+     "tickets_pct": 28,
+     "value": 36.5
+    }
+   },
+   "75": {
+    "spread|away": {
+     "money_pct": 74,
+     "odds": -110,
+     "tickets_pct": 81,
+     "value": -4.5
+    },
+    "spread|home": {
+     "money_pct": 26,
+     "odds": 100,
+     "tickets_pct": 19,
+     "value": 4.5
+    },
+    "total|over": {
+     "money_pct": 68,
+     "odds": -108,
+     "tickets_pct": 72,
+     "value": 37
+    },
+    "total|under": {
+     "money_pct": 32,
+     "odds": -110,
+     "tickets_pct": 28,
+     "value": 37
+    }
+   }
+  },
+  "captured_at": "2026-11-27T2247Z",
+  "close_snap": "2026-11-27T1959Z",
+  "final": null,
+  "game": "DEN@PIT",
+  "key": "DEN@PIT|2026-11-27T2000Z",
+  "kickoff": "2026-11-27T2000Z",
+  "num_bets_at_close": 101756,
+  "pinnacle_close": {
+   "spread|Denver Broncos": {
+    "limit": 100000,
+    "price": -103,
+    "pts": -4.5
+   },
+   "spread|Pittsburgh Steelers": {
+    "limit": 100000,
+    "price": -107,
+    "pts": 4.5
+   },
+   "total|over": {
+    "limit": 50000,
+    "price": -106,
+    "pts": 37.0
+   },
+   "total|under": {
+    "limit": 50000,
+    "price": -106,
+    "pts": 37.0
+   }
+  },
+  "status": "inprogress"
  }
 ]
