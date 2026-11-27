@@ -1,6 +1,6 @@
 # Picks scorecard — what was actually recommended
 
-Generated 2026-11-26 17:08 UTC. Every pick ever logged, graded at the price and number
+Generated 2026-11-27 01:50 UTC. Every pick ever logged, graded at the price and number
 taken. `picks.json` is append-only: nothing here is edited or removed after
 the fact, including the losers.
 
@@ -21,7 +21,7 @@ is losing.
 - **Record: 5-5-1**
 - **Net: -0.31 units** (ROI -5.2% on 6u risked)
 - **CLV: +0.14 average**, 27% of picks beat the close
-- 2 pending, 6 unmatched
+- 0 pending, 8 unmatched
 
 ## Real money vs paper
 
@@ -103,3 +103,5 @@ flatters itself.
 - `2026-11-22T17:40Z` nfl JAX@NYG total under
 - `2026-11-22T17:40Z` nfl MIA@BUF spread home
 - `2026-11-22T17:40Z` nfl TEN@DAL spread home
+- `2026-11-24T00:10Z` nfl CIN@WAS total under
+- `2026-11-24T00:10Z` nfl CIN@WAS spread home
