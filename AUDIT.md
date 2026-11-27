@@ -12,15 +12,15 @@ a session opens it, and the guards only fire once a measurement is already wrong
 
 ## 0. IS THE DATA STILL ARRIVING?
 
-  NFL collector    last    0.0h ago  (2026-11-27T12:41:58+00:00)
-  CBB collector    last    0.1h ago  (2026-11-27T12:35:39+00:00)
-  NCAAF collector  last    0.3h ago  (2026-11-27T12:24:57+00:00)
-  NFL grader       last    4.0h ago  (2026-11-27T08:46:11+00:00)
-  CBB grader       last    3.6h ago  (2026-11-27T09:08:20+00:00)
+  NFL collector    last    0.6h ago  (2026-11-27T17:12:04+00:00)
+  CBB collector    last    0.4h ago  (2026-11-27T17:26:03+00:00)
+  NCAAF collector  last    0.6h ago  (2026-11-27T17:15:27+00:00)
+  NFL grader       last    4.0h ago  (2026-11-27T13:46:57+00:00)
+  CBB grader       last    8.7h ago  (2026-11-27T09:08:20+00:00)
 
-  data             all sources OK as of 2026-11-27T12:41:44Z
-  cbb              all sources OK as of 2026-11-27T12:35:33Z
-  ncaaf            all sources OK as of 2026-11-27T12:24:50Z
+  data             all sources OK as of 2026-11-27T17:11:49Z
+  cbb              all sources OK as of 2026-11-27T17:25:59Z
+  ncaaf            all sources OK as of 2026-11-27T17:15:17Z
 
   all feeds current.
 
