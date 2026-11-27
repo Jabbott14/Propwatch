@@ -1,6 +1,6 @@
 # NFL scorecard
 
-Generated 2026-11-26 22:26 UTC. 57 graded games (1 finished games had no final score and are not graded).
+Generated 2026-11-27 01:54 UTC. 57 graded games (2 finished games had no final score and are not graded).
 
 ## Read this first: fit vs forward
 
