@@ -1,6 +1,6 @@
 # NFL prop board
 
-Generated 2026-11-27 09:09 UTC. Live props where at least one signal has an opinion, most
+Generated 2026-11-27 13:47 UTC. Live props where at least one signal has an opinion, most
 agreement first. Each call shows that signal's graded record so far.
 
 `Pin` is Pinnacle's number and the size it will take. Prop limits run $250-$3,000
@@ -18,6 +18,7 @@ This is analysis, not picks.
 | Fri 15:00 | Jonah Coleman | rush_yds | over | 73.5 | 69.5 | 75.5 | -2.0 | $500 | -113 | pin_value->over (141-127 fit · 74-67 fwd); fd_move->over (240-231 fit · 169-149 fwd) |
 | Sun 13:00 | Jordyn Tyson | recv_yds | under | 43.5 | 47.5 | 41.5 | 2.0 | $250 | -114 | pin_value->under (141-127 fit · 74-67 fwd); fd_move->under (240-231 fit · 169-149 fwd) |
 | Sun 13:00 | Justin Jefferson | receptions | under | 6.5 | 6.5 | 6.5 |  | $250 | -102 | pin_price->under (51-57 fit · 17-58 fwd); fd_juice->under (128-102 fit · 96-68 fwd) |
+| Sun 13:00 | Samaje Perine | rush_yds | under | 27.5 | 28.5 | 26.5 | 1.0 | $250 | -114 | pin_value->under (141-127 fit · 74-67 fwd); fd_move->under (240-231 fit · 169-149 fwd) |
 | Sun 16:25 | Antonio Williams | recv_yds | over | 41.5 | 40.5 | 42.5 | -1.0 | $250 | -114 | pin_value->over (141-127 fit · 74-67 fwd); fd_move->over (240-231 fit · 169-149 fwd) |
 | Sun 20:20 | Jack Bech | recv_yds | over | 10.5 | 8.5 | 10.5 |  | $250 | -114 | pin_price->over (51-57 fit · 17-58 fwd); fd_move->over (240-231 fit · 169-149 fwd) |
 
@@ -41,14 +42,15 @@ This is analysis, not picks.
 | Fri 15:00 | Germie Bernard | receptions | under | 2.5 | 3.5 | 2.5 |  | $500 | +118 | fd_move->under (240-231 fit · 169-149 fwd) |
 | Fri 15:00 | Jaylen Waddle | receptions | under | 3.5 | 3.5 | 3.5 |  | $500 | +100 | fd_juice->under (128-102 fit · 96-68 fwd) |
 | Fri 15:00 | Jaylen Waddle | recv_yds | under | 41.5 | 42.5 | 41.5 |  | $500 | -113 | fd_move->under (240-231 fit · 169-149 fwd) |
-| Fri 15:00 | Jaylen Warren | receptions | under | 2.5 | 2.5 | 2.5 |  | $500 | -114 | fd_juice->under (128-102 fit · 96-68 fwd) |
+| Fri 15:00 | Jaylen Warren | receptions | under | 2.5 | 2.5 | 2.5 |  | $500 | -110 | fd_juice->under (128-102 fit · 96-68 fwd) |
 | Fri 15:00 | Jaylen Warren | recv_yds | under | 18.5 | 19.5 | 18.5 |  | $500 | -113 | fd_move->under (240-231 fit · 169-149 fwd) |
 | Fri 15:00 | Jonah Coleman | receptions | over | 3.5 | 3.5 | 3.5 |  | $500 | +102 | fd_juice->over (128-102 fit · 96-68 fwd) |
 | Fri 15:00 | Jonah Coleman | recv_yds | over | 21.5 | 19.5 | 21.5 |  | $500 | -113 | fd_move->over (240-231 fit · 169-149 fwd) |
-| Fri 15:00 | Jonah Coleman | anytime_td | over | 0.5 | 0.5 |  |  |  | -135 | td_steam->over (9-24 fit · 4-21 fwd) |
+| Fri 15:00 | Jonah Coleman | anytime_td | over | 0.5 | 0.5 |  |  |  | -130 | td_steam->over (9-24 fit · 4-21 fwd) |
 | Fri 15:00 | Marvin Mims Jr | rush_yds | over | 3.5 | 1.5 | 3.5 |  | $500 | -102 | fd_move->over (240-231 fit · 169-149 fwd) |
 | Fri 15:00 | Mason Rudolph | pass_tds | under | 0.5 | 0.5 | 0.5 |  | $500 | +140 | fd_juice->under (128-102 fit · 96-68 fwd) |
 | Fri 15:00 | Mason Rudolph | rush_yds | over | 5.5 | 5.5 |  |  |  | -128 | fd_juice->over (128-102 fit · 96-68 fwd) |
+| Fri 15:00 | Max Hurleman | recv_yds | under | 3.5 | 3.5 |  |  |  | -162 | fd_juice->under (128-102 fit · 96-68 fwd) |
 | Fri 15:00 | Michael Pittman Jr | recv_yds | under | 11.5 | 11.5 | 10.5 | 1.0 | $500 | -113 | pin_value->under (141-127 fit · 74-67 fwd) |
 | Fri 15:00 | Michael Pittman Jr | receptions | under | 1.5 | 1.5 | 1.5 |  | $500 | -146 | fd_juice->under (128-102 fit · 96-68 fwd) |
 | Fri 15:00 | Pat Freiermuth | receptions | under | 2.5 | 2.5 | 2.5 |  | $500 | -154 | fd_juice->under (128-102 fit · 96-68 fwd) |
@@ -60,6 +62,7 @@ This is analysis, not picks.
 | Fri 15:00 | Troy Franklin | receptions | under | 0.5 | 0.5 | 0.5 |  | $500 | +124 | fd_juice->under (128-102 fit · 96-68 fwd) |
 | Fri 15:00 | Troy Franklin | recv_yds | under | 4.5 | 5.5 | 4.5 |  | $500 | -113 | fd_move->under (240-231 fit · 169-149 fwd) |
 | Fri 15:00 | Tyler Badie | rush_yds | over | 5.5 | 4.5 |  |  |  | -111 | fd_move->over (240-231 fit · 169-149 fwd) |
+| Sun 13:00 | Aaron Jones | receptions | over | 1.5 | 1.5 | 1.5 |  | $250 | -108 | pin_price->over (51-57 fit · 17-58 fwd) |
 | Sun 13:00 | Adonai Mitchell | receptions | under | 2.5 | 2.5 | 2.5 |  | $250 | +104 | fd_juice->under (128-102 fit · 96-68 fwd) |
 | Sun 13:00 | Anthony Gould | receptions | under | 1.5 | 1.5 | 1.5 |  | $250 | +118 | fd_juice->under (128-102 fit · 96-68 fwd) |
 | Sun 13:00 | Anthony Richardson | pass_yds | under | 163.5 | 170.5 | 163.5 |  | $250 | -114 | fd_move->under (240-231 fit · 169-149 fwd) |
@@ -67,14 +70,14 @@ This is analysis, not picks.
 | Sun 13:00 | Breece Hall | rush_yds | under | 59.5 | 61.5 | 59.5 |  | $250 | -114 | fd_move->under (240-231 fit · 169-149 fwd) |
 | Sun 13:00 | Brian Thomas Jr | recv_yds | over | 19.5 | 18.5 |  |  |  | -114 | fd_move->over (240-231 fit · 169-149 fwd) |
 | Sun 13:00 | Brian Thomas Jr | receptions | under | 1.5 | 1.5 |  |  |  | +104 | fd_juice->under (128-102 fit · 96-68 fwd) |
+| Sun 13:00 | Cam Skattebo | receptions | over | 2.5 | 2.5 | 2.5 |  | $250 | +108 | pin_price->over (51-57 fit · 17-58 fwd) |
 | Sun 13:00 | Cam Ward | pass_yds | over | 208.5 | 206.5 | 208.5 |  | $250 | -114 | fd_move->over (240-231 fit · 169-149 fwd) |
-| Sun 13:00 | Cam Ward | pass_tds | over | 1.5 | 0.5 | 1.5 |  | $250 | +194 | fd_move->over (240-231 fit · 169-149 fwd) |
+| Sun 13:00 | Cam Ward | pass_tds | over | 0.5 | 0.5 | 1.5 | -1.0 | $250 | -270 | pin_value->over (141-127 fit · 74-67 fwd) |
 | Sun 13:00 | Chimere Dike | recv_yds | over | 28.5 | 22.5 | 28.5 |  | $250 | -114 | fd_move->over (240-231 fit · 169-149 fwd) |
 | Sun 13:00 | Chris Olave | receptions | under | 5.5 | 5.5 | 5.5 |  | $250 | -102 | pin_price->under (51-57 fit · 17-58 fwd) |
 | Sun 13:00 | Cj Stroud | pass_yds | over | 257.5 | 255.5 | 257.5 |  | $250 | -114 | fd_move->over (240-231 fit · 169-149 fwd) |
 | Sun 13:00 | Derrick Henry | anytime_td | over | 0.5 | 0.5 |  |  |  | -160 | td_steam->over (9-24 fit · 4-21 fwd) |
 | Sun 13:00 | Drake London | recv_yds | under | 67.5 | 69.5 | 67.5 |  | $250 | -114 | fd_move->under (240-231 fit · 169-149 fwd) |
-| Sun 13:00 | Elic Ayomanor | recv_yds | under | 26.5 | 33.5 | 26.5 |  | $250 | -114 | fd_move->under (240-231 fit · 169-149 fwd) |
 | Sun 13:00 | Elic Ayomanor | receptions | under | 2.5 | 2.5 | 2.5 |  | $250 | -154 | fd_juice->under (128-102 fit · 96-68 fwd) |
 | Sun 13:00 | Gunnar Helm | receptions | over | 2.5 | 2.5 | 2.5 |  | $250 | -172 | fd_juice->over (128-102 fit · 96-68 fwd) |
 | Sun 13:00 | Gunnar Helm | recv_yds | under | 21.5 | 22.5 | 21.5 |  | $250 | -114 | fd_move->under (240-231 fit · 169-149 fwd) |
@@ -89,11 +92,11 @@ This is analysis, not picks.
 | Sun 13:00 | Jonathan Taylor | receptions | under | 2.5 | 2.5 | 2.5 |  | $250 | -122 | fd_juice->under (128-102 fit · 96-68 fwd) |
 | Sun 13:00 | Jonathan Taylor | recv_yds | under | 13.5 | 15.5 | 13.5 |  | $250 | -114 | fd_move->under (240-231 fit · 169-149 fwd) |
 | Sun 13:00 | Jordyn Tyson | receptions | under | 4.5 | 4.5 | 4.5 |  | $250 | -166 | fd_juice->under (128-102 fit · 96-68 fwd) |
-| Sun 13:00 | Josh Cameron | receptions | over | 2.5 | 2.5 | 2.5 |  | $250 | +148 | fd_juice->over (128-102 fit · 96-68 fwd) |
+| Sun 13:00 | Josh Cameron | receptions | over | 2.5 | 2.5 | 2.5 |  | $250 | +140 | fd_juice->over (128-102 fit · 96-68 fwd) |
 | Sun 13:00 | Justice Hill | anytime_td | over | 0.5 | 0.5 |  |  |  | +350 | td_steam->over (9-24 fit · 4-21 fwd) |
 | Sun 13:00 | Justice Hill | recv_yds | over | 17.5 | 16.5 | 17.5 |  | $250 | -114 | fd_move->over (240-231 fit · 169-149 fwd) |
 | Sun 13:00 | Kyle Mccord | pass_yds | under | 170.5 | 174.5 | 170.5 |  | $250 | -114 | fd_move->under (240-231 fit · 169-149 fwd) |
-| Sun 13:00 | Kyle Mccord | pass_tds | under | 0.5 | 1.5 | 0.5 |  | $250 | +194 | fd_move->under (240-231 fit · 169-149 fwd) |
+| Sun 13:00 | Kyle Mccord | pass_tds | under | 0.5 | 1.5 | 0.5 |  | $250 | +188 | fd_move->under (240-231 fit · 169-149 fwd) |
 | Sun 13:00 | Kyle Mccord | rush_yds | under | 7.5 | 8.5 | 7.5 |  | $250 | -114 | fd_move->under (240-231 fit · 169-149 fwd) |
 | Sun 13:00 | Laquon Treadwell | recv_yds | under | 21.5 | 21.5 | 21.5 |  | $250 | -114 | pin_price->under (51-57 fit · 17-58 fwd) |
 | Sun 13:00 | Laquon Treadwell | receptions | under | 1.5 | 1.5 | 1.5 |  | $250 | +118 | fd_juice->under (128-102 fit · 96-68 fwd) |
@@ -106,12 +109,11 @@ This is analysis, not picks.
 | Sun 13:00 | Ollie Gordon Ii | rush_yds | over | 66.5 | 65.5 | 66.5 |  | $250 | -114 | fd_move->over (240-231 fit · 169-149 fwd) |
 | Sun 13:00 | Parker Washington | receptions | over | 4.5 | 4.5 | 4.5 |  | $250 | -120 | pin_price->over (51-57 fit · 17-58 fwd) |
 | Sun 13:00 | Rashod Bateman | receptions | over | 2.5 | 2.5 | 2.5 |  | $250 | +106 | fd_juice->over (128-102 fit · 96-68 fwd) |
-| Sun 13:00 | Samaje Perine | rush_yds | under | 26.5 | 28.5 | 26.5 |  | $250 | -114 | fd_move->under (240-231 fit · 169-149 fwd) |
 | Sun 13:00 | Tony Pollard | recv_yds | over | 14.5 | 11.5 | 14.5 |  | $250 | -114 | fd_move->over (240-231 fit · 169-149 fwd) |
 | Sun 13:00 | Tony Pollard | receptions | over | 2.5 | 2.5 | 2.5 |  | $250 | -136 | fd_juice->over (128-102 fit · 96-68 fwd) |
 | Sun 13:00 | Tony Pollard | rush_yds | under | 52.5 | 54.5 | 52.5 |  | $250 | -114 | fd_move->under (240-231 fit · 169-149 fwd) |
 | Sun 13:00 | Travis Etienne | receptions | under | 2.5 | 2.5 |  |  |  | -148 | fd_juice->under (128-102 fit · 96-68 fwd) |
-| Sun 13:00 | Trevor Lawrence | pass_yds | over | 261.5 | 260.5 | 261.5 |  | $250 | -114 | fd_move->over (240-231 fit · 169-149 fwd) |
+| Sun 13:00 | Trevor Lawrence | pass_yds | over | 260.5 | 260.5 | 261.5 | -1.0 | $250 | -114 | pin_value->over (141-127 fit · 74-67 fwd) |
 | Sun 13:00 | Tyler Shough | pass_yds | over | 247.5 | 242.5 | 247.5 |  | $250 | -114 | fd_move->over (240-231 fit · 169-149 fwd) |
 | Sun 13:00 | Tyler Shough | pass_tds | over | 1.5 | 1.5 | 1.5 |  | $250 | +142 | fd_juice->over (128-102 fit · 96-68 fwd) |
 | Sun 13:00 | Tyler Warren | receptions | over | 3.5 | 3.5 | 3.5 |  | $250 | -148 | fd_juice->over (128-102 fit · 96-68 fwd) |
@@ -178,7 +180,9 @@ This is analysis, not picks.
 | Sun 13:00 | Cam Skattebo | rush_yds | under | 75.5 | 74.5 | 74.5 | 1.0 | $250 | -114 | pin_value->under (141-127 fit · 74-67 fwd); fd_move->over (240-231 fit · 169-149 fwd) |
 | Sun 13:00 | Carnell Tate | recv_yds | under | 52.5 | 50.5 | 50.5 | 2.0 | $250 | -114 | pin_value->under (141-127 fit · 74-67 fwd); fd_move->over (240-231 fit · 169-149 fwd) |
 | Sun 13:00 | Chimere Dike | receptions | under | 2.5 | 2.5 | 2.5 |  | $250 | +152 | pin_price->under (51-57 fit · 17-58 fwd); fd_juice->over (128-102 fit · 96-68 fwd) |
+| Sun 13:00 | Elic Ayomanor | recv_yds | over | 25.5 | 33.5 | 26.5 | -1.0 | $250 | -114 | pin_value->over (141-127 fit · 74-67 fwd); fd_move->under (240-231 fit · 169-149 fwd) |
 | Sun 13:00 | Jakobi Meyers | recv_yds | under | 54.5 | 49.5 | 52.5 | 2.0 | $250 | -114 | pin_value->under (141-127 fit · 74-67 fwd); fd_move->over (240-231 fit · 169-149 fwd) |
+| Sun 13:00 | Josh Cameron | recv_yds | under | 25.5 | 24.5 | 24.5 | 1.0 | $250 | -114 | pin_value->under (141-127 fit · 74-67 fwd); fd_move->over (240-231 fit · 169-149 fwd) |
 | Sun 13:00 | Kenyon Sadiq | recv_yds | under | 20.5 | 18.5 | 18.5 | 2.0 | $250 | -114 | pin_value->under (141-127 fit · 74-67 fwd); fd_move->over (240-231 fit · 169-149 fwd) |
 | Sun 13:00 | Malik Nabers | recv_yds | under | 65.5 | 63.5 | 63.5 | 2.0 | $250 | -114 | pin_value->under (141-127 fit · 74-67 fwd); fd_move->over (240-231 fit · 169-149 fwd) |
 | Sun 13:00 | Parker Washington | recv_yds | over | 68.5 | 70.5 | 72.5 | -4.0 | $250 | -114 | pin_value->over (141-127 fit · 74-67 fwd); fd_move->under (240-231 fit · 169-149 fwd) |
