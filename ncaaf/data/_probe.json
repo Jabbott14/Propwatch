@@ -12,7 +12,7 @@
  "pin_leagues": [
   {
    "id": 880,
-   "n": 72,
+   "n": 66,
    "name": "NCAA"
   }
  ],
@@ -22,12 +22,12 @@
    "name": "Football"
   }
  ],
- "run_utc": "2026-11-27T18:15:46Z",
+ "run_utc": "2026-11-27T23:36:16Z",
  "tried": [
   {
-   "bytes": 807305,
+   "bytes": 998616,
    "kind": "fd_lobby",
-   "score": 75,
+   "score": 70,
    "url": "https://sbapi.nj.sportsbook.fanduel.com/api/content-managed-page?page=CUSTOM&customPageId=ncaaf&_ak=<ak>"
   },
   {
@@ -49,19 +49,19 @@
    "url": "https://sbapi.nj.sportsbook.fanduel.com/api/content-managed-page?page=CUSTOM&customPageId=cfb&_ak=<ak>"
   },
   {
-   "bytes": 2288216,
+   "bytes": 2250546,
    "kind": "actionnet",
    "score": 69,
    "url": "https://api.actionnetwork.com/web/v2/scoreboard/ncaaf?period=game"
   },
   {
-   "bytes": 2288216,
+   "bytes": 2250546,
    "kind": "actionnet",
    "score": 69,
    "url": "https://api.actionnetwork.com/web/v2/scoreboard/ncaaf?period=game&date=20261127"
   },
   {
-   "bytes": 2288216,
+   "bytes": 2250546,
    "kind": "actionnet",
    "score": 69,
    "url": "https://api.actionnetwork.com/web/v2/scoreboard/ncaaf?period=game&division=FBS&date=20261127"
