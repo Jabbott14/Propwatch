@@ -6,19 +6,23 @@
   "regular": 2807
  },
  "an_rows": 2807,
- "cycle": 27,
- "cycle_sec": 14.9,
- "deferred_events": 32,
- "elapsed_min": 260.2,
+ "cycle": 30,
+ "cycle_sec": 21.7,
+ "deferred_events": 33,
+ "elapsed_min": 290.4,
  "errors": [],
- "event_rows": 1150,
+ "event_rows": 1202,
  "events_with_tabs": 67,
  "gz": {
-  "pin": 2345,
-  "props": 5727,
-  "splits": 2710
+  "pin": 1526,
+  "props": 2076,
+  "raw_actionnet_wk": 114546,
+  "raw_fanduel": 71902,
+  "raw_pin_matchups": 21779,
+  "raw_pin_prices": 43228,
+  "splits": 1675
  },
- "gz_kb_total": 10.5,
+ "gz_kb_total": 250.7,
  "keyframe": false,
  "lobby_events": 65,
  "lobby_rows": 451,
@@ -26,13 +30,13 @@
  "pin_rows": 1584,
  "pulls_fail": 0,
  "pulls_ok": 150,
- "raw": false,
+ "raw": true,
  "rows_written": {
-  "pin": 212,
-  "props": 412,
-  "splits": 141
+  "pin": 128,
+  "props": 124,
+  "splits": 69
  },
- "run_utc": "2026-11-28T14:37:18Z",
+ "run_utc": "2026-11-28T15:07:18Z",
  "tiers": {
   "A": 17,
   "B": 0,
