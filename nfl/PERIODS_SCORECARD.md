@@ -1,6 +1,6 @@
 # NFL period scorecard — halves, quarters, team totals
 
-Generated 2026-11-28 08:24 UTC. 514 graded period markets.
+Generated 2026-11-28 10:14 UTC. 514 graded period markets.
 
 ## Read this first: fit vs forward
 
