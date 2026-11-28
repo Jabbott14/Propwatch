@@ -125380,5 +125380,3513 @@
     "took_default": false
    }
   }
+ },
+ {
+  "game": "Cincinnati @ Boston College",
+  "market": "1h|total",
+  "period": "1h",
+  "kind": "total",
+  "tip": "2026-11-27T21:30:00.000Z",
+  "ot": false,
+  "markets": {
+   "close": {
+    "t": "2026-11-27T2129Z",
+    "line": {
+     "over": 65.5,
+     "under": 65.5
+    },
+    "odds": {
+     "over": -115,
+     "under": -111
+    },
+    "open": 66.5,
+    "calls": {
+     "follow_move": "under",
+     "pin_value": "under"
+    },
+    "move": -1.0,
+    "pin": 65.0,
+    "pin_lim": 500,
+    "pin_gap": 0.5
+   },
+   "early": {
+    "t": "2026-11-27T1325Z",
+    "line": {
+     "over": 66.5,
+     "under": 66.5
+    },
+    "odds": {
+     "over": -106,
+     "under": -120
+    },
+    "open": 66.5,
+    "calls": {}
+   }
+  },
+  "default_res": "L",
+  "early_graded": {},
+  "close_graded": {
+   "follow_move": {
+    "side": "under",
+    "line": 65.5,
+    "odds": -111,
+    "res": "W",
+    "units": 0.901,
+    "took_default": false
+   },
+   "pin_value": {
+    "side": "under",
+    "line": 65.5,
+    "odds": -111,
+    "res": "W",
+    "units": 0.901,
+    "took_default": false
+   }
+  }
+ },
+ {
+  "game": "Cincinnati @ Boston College",
+  "market": "1h|ml",
+  "period": "1h",
+  "kind": "ml",
+  "tip": "2026-11-27T21:30:00.000Z",
+  "ot": false,
+  "markets": {
+   "close": {
+    "t": "2026-11-27T2129Z",
+    "line": {
+     "home": 210,
+     "away": -265
+    },
+    "odds": {
+     "home": 210,
+     "away": -265
+    },
+    "open": 225,
+    "calls": {
+     "follow_move": "home"
+    },
+    "move": null,
+    "pin": 207,
+    "pin_lim": 500
+   },
+   "early": {
+    "t": "2026-11-27T1325Z",
+    "line": {
+     "home": 225,
+     "away": -290
+    },
+    "odds": {
+     "home": 225,
+     "away": -290
+    },
+    "open": 225,
+    "calls": {}
+   }
+  },
+  "default_res": "L",
+  "early_graded": {},
+  "close_graded": {
+   "follow_move": {
+    "side": "home",
+    "line": 210,
+    "odds": 210,
+    "res": "W",
+    "units": 2.1,
+    "took_default": false
+   }
+  }
+ },
+ {
+  "game": "Villanova @ Kansas",
+  "market": "1h|total",
+  "period": "1h",
+  "kind": "total",
+  "tip": "2026-11-27T22:00:00.000Z",
+  "ot": false,
+  "markets": {
+   "close": {
+    "t": "2026-11-27T2159Z",
+    "line": {
+     "over": 75.5,
+     "under": 75.5
+    },
+    "odds": {
+     "over": -113,
+     "under": -113
+    },
+    "open": 75.5,
+    "calls": {
+     "pin_value": "under"
+    },
+    "pin": 75.0,
+    "pin_lim": 500,
+    "pin_gap": 0.5
+   },
+   "early": {
+    "t": "2026-11-27T1325Z",
+    "line": {
+     "over": 75.5,
+     "under": 75.5
+    },
+    "odds": {
+     "over": -113,
+     "under": -113
+    },
+    "open": 75.5,
+    "calls": {}
+   }
+  },
+  "default_res": "L",
+  "early_graded": {},
+  "close_graded": {
+   "pin_value": {
+    "side": "under",
+    "line": 75.5,
+    "odds": -113,
+    "res": "W",
+    "units": 0.885,
+    "took_default": false
+   }
+  }
+ },
+ {
+  "game": "Villanova @ Kansas",
+  "market": "1h|ml",
+  "period": "1h",
+  "kind": "ml",
+  "tip": "2026-11-27T22:00:00.000Z",
+  "ot": false,
+  "markets": {
+   "close": {
+    "t": "2026-11-27T2159Z",
+    "line": {
+     "home": -355,
+     "away": 270
+    },
+    "odds": {
+     "home": -355,
+     "away": 270
+    },
+    "open": -480,
+    "calls": {
+     "follow_move": "away",
+     "pin_price": "away"
+    },
+    "move": null,
+    "pin": -326,
+    "pin_lim": 500,
+    "edge_pct": 0.17
+   },
+   "early": {
+    "t": "2026-11-27T1325Z",
+    "line": {
+     "home": -420,
+     "away": 310
+    },
+    "odds": {
+     "home": -420,
+     "away": 310
+    },
+    "open": -480,
+    "calls": {
+     "follow_move": "away"
+    },
+    "move": null
+   }
+  },
+  "default_res": "W",
+  "early_graded": {
+   "follow_move": {
+    "side": "away",
+    "line": 310,
+    "odds": 310,
+    "res": "L",
+    "units": -1.0,
+    "took_default": false,
+    "clv": 2.6
+   }
+  },
+  "close_graded": {
+   "follow_move": {
+    "side": "away",
+    "line": 270,
+    "odds": 270,
+    "res": "L",
+    "units": -1.0,
+    "took_default": false
+   },
+   "pin_price": {
+    "side": "away",
+    "line": 270,
+    "odds": 270,
+    "res": "L",
+    "units": -1.0,
+    "took_default": false
+   }
+  }
+ },
+ {
+  "game": "Villanova @ Kansas",
+  "market": "1h|spread",
+  "period": "1h",
+  "kind": "spread",
+  "tip": "2026-11-27T22:00:00.000Z",
+  "ot": false,
+  "markets": {
+   "close": {
+    "t": "2026-11-27T2159Z",
+    "line": {
+     "home": -5.5,
+     "away": 5.5
+    },
+    "odds": {
+     "home": -116,
+     "away": -108
+    },
+    "open": -7.5,
+    "calls": {
+     "follow_move": "away"
+    },
+    "move": 2.0,
+    "pin": -5.5,
+    "pin_lim": 500
+   },
+   "early": {
+    "t": "2026-11-27T1325Z",
+    "line": {
+     "home": -6.5,
+     "away": 6.5
+    },
+    "odds": {
+     "home": -116,
+     "away": -108
+    },
+    "open": -7.5,
+    "calls": {
+     "follow_move": "away"
+    },
+    "move": 1.0
+   }
+  },
+  "default_res": "W",
+  "early_graded": {
+   "follow_move": {
+    "side": "away",
+    "line": 6.5,
+    "odds": -108,
+    "res": "W",
+    "units": 0.926,
+    "took_default": false,
+    "clv": 1.0
+   }
+  },
+  "close_graded": {
+   "follow_move": {
+    "side": "away",
+    "line": 5.5,
+    "odds": -108,
+    "res": "L",
+    "units": -1.0,
+    "took_default": false
+   }
+  }
+ },
+ {
+  "game": "Villanova @ Kansas",
+  "market": "2h|tt_away",
+  "period": "2h",
+  "kind": "tt_away",
+  "tip": "2026-11-27T22:00:00.000Z",
+  "ot": false,
+  "markets": {
+   "close": {
+    "t": "2026-11-27T2159Z",
+    "line": {
+     "over": 39.5,
+     "under": 39.5
+    },
+    "odds": {
+     "over": -104,
+     "under": -122
+    },
+    "open": 38.5,
+    "calls": {
+     "follow_move": "over"
+    },
+    "move": 1.0
+   },
+   "early": {
+    "t": "2026-11-27T1325Z",
+    "line": {
+     "over": 38.5,
+     "under": 38.5
+    },
+    "odds": {
+     "over": -128,
+     "under": 100
+    },
+    "open": 38.5,
+    "calls": {
+     "fd_juice": "over"
+    }
+   }
+  },
+  "default_res": "L",
+  "early_graded": {
+   "fd_juice": {
+    "side": "over",
+    "line": 38.5,
+    "odds": -128,
+    "res": "L",
+    "units": -1.0,
+    "took_default": true,
+    "clv": 1.0
+   }
+  },
+  "close_graded": {
+   "follow_move": {
+    "side": "over",
+    "line": 39.5,
+    "odds": -104,
+    "res": "L",
+    "units": -1.0,
+    "took_default": true
+   }
+  }
+ },
+ {
+  "game": "Old Dominion @ Virginia Tech",
+  "market": "1h|ml",
+  "period": "1h",
+  "kind": "ml",
+  "tip": "2026-11-27T22:00:00.000Z",
+  "ot": false,
+  "markets": {
+   "close": {
+    "t": "2026-11-27T2159Z",
+    "line": {
+     "home": -950,
+     "away": 590
+    },
+    "odds": {
+     "home": -950,
+     "away": 590
+    },
+    "open": -1100,
+    "calls": {
+     "follow_move": "away",
+     "pin_price": "away"
+    },
+    "move": null,
+    "pin": -762,
+    "pin_lim": 500,
+    "edge_pct": 9.15
+   },
+   "early": {
+    "t": "2026-11-27T1355Z",
+    "line": {
+     "home": -1100,
+     "away": 650
+    },
+    "odds": {
+     "home": -1100,
+     "away": 650
+    },
+    "open": -1100,
+    "calls": {}
+   }
+  },
+  "default_res": "W",
+  "early_graded": {},
+  "close_graded": {
+   "follow_move": {
+    "side": "away",
+    "line": 590,
+    "odds": 590,
+    "res": "L",
+    "units": -1.0,
+    "took_default": false
+   },
+   "pin_price": {
+    "side": "away",
+    "line": 590,
+    "odds": 590,
+    "res": "L",
+    "units": -1.0,
+    "took_default": false
+   }
+  }
+ },
+ {
+  "game": "Old Dominion @ Virginia Tech",
+  "market": "2h|tt_home",
+  "period": "2h",
+  "kind": "tt_home",
+  "tip": "2026-11-27T22:00:00.000Z",
+  "ot": false,
+  "markets": {
+   "close": {
+    "t": "2026-11-27T2159Z",
+    "line": {
+     "over": 41.5,
+     "under": 41.5
+    },
+    "odds": {
+     "over": -106,
+     "under": -120
+    },
+    "open": 42.5,
+    "calls": {
+     "follow_move": "under"
+    },
+    "move": -1.0
+   },
+   "early": {
+    "t": "2026-11-27T1355Z",
+    "line": {
+     "over": 42.5,
+     "under": 42.5
+    },
+    "odds": {
+     "over": -115,
+     "under": -113
+    },
+    "open": 42.5,
+    "calls": {}
+   }
+  },
+  "default_res": "L",
+  "early_graded": {},
+  "close_graded": {
+   "follow_move": {
+    "side": "under",
+    "line": 41.5,
+    "odds": -120,
+    "res": "W",
+    "units": 0.833,
+    "took_default": false
+   }
+  }
+ },
+ {
+  "game": "Old Dominion @ Virginia Tech",
+  "market": "2h|tt_away",
+  "period": "2h",
+  "kind": "tt_away",
+  "tip": "2026-11-27T22:00:00.000Z",
+  "ot": false,
+  "markets": {
+   "close": {
+    "t": "2026-11-27T2159Z",
+    "line": {
+     "over": 32.5,
+     "under": 32.5
+    },
+    "odds": {
+     "over": -113,
+     "under": -113
+    },
+    "open": 33.5,
+    "calls": {
+     "follow_move": "under"
+    },
+    "move": -1.0
+   },
+   "early": {
+    "t": "2026-11-27T1355Z",
+    "line": {
+     "over": 33.5,
+     "under": 33.5
+    },
+    "odds": {
+     "over": -120,
+     "under": -106
+    },
+    "open": 33.5,
+    "calls": {}
+   }
+  },
+  "default_res": "W",
+  "early_graded": {},
+  "close_graded": {
+   "follow_move": {
+    "side": "under",
+    "line": 32.5,
+    "odds": -113,
+    "res": "L",
+    "units": -1.0,
+    "took_default": false
+   }
+  }
+ },
+ {
+  "game": "Old Dominion @ Virginia Tech",
+  "market": "1h|spread",
+  "period": "1h",
+  "kind": "spread",
+  "tip": "2026-11-27T22:00:00.000Z",
+  "ot": false,
+  "markets": {
+   "close": {
+    "t": "2026-11-27T2159Z",
+    "line": {
+     "home": -9.5,
+     "away": 9.5
+    },
+    "odds": {
+     "home": -122,
+     "away": -102
+    },
+    "open": -10.5,
+    "calls": {
+     "follow_move": "away",
+     "pin_value": "home"
+    },
+    "move": 1.0,
+    "pin": -10.5,
+    "pin_lim": 500,
+    "pin_gap": 1.0
+   },
+   "early": {
+    "t": "2026-11-27T1355Z",
+    "line": {
+     "home": -10.5,
+     "away": 10.5
+    },
+    "odds": {
+     "home": -112,
+     "away": -112
+    },
+    "open": -10.5,
+    "calls": {}
+   }
+  },
+  "default_res": "L",
+  "early_graded": {},
+  "close_graded": {
+   "follow_move": {
+    "side": "away",
+    "line": 9.5,
+    "odds": -102,
+    "res": "W",
+    "units": 0.98,
+    "took_default": false
+   },
+   "pin_value": {
+    "side": "home",
+    "line": -9.5,
+    "odds": -122,
+    "res": "L",
+    "units": -1.0,
+    "took_default": true
+   }
+  }
+ },
+ {
+  "game": "Old Dominion @ Virginia Tech",
+  "market": "1h|total",
+  "period": "1h",
+  "kind": "total",
+  "tip": "2026-11-27T22:00:00.000Z",
+  "ot": false,
+  "markets": {
+   "close": {
+    "t": "2026-11-27T2159Z",
+    "line": {
+     "over": 67.5,
+     "under": 67.5
+    },
+    "odds": {
+     "over": -111,
+     "under": -115
+    },
+    "open": 68.5,
+    "calls": {
+     "follow_move": "under",
+     "pin_value": "over"
+    },
+    "move": -1.0,
+    "pin": 68.0,
+    "pin_lim": 500,
+    "pin_gap": -0.5
+   },
+   "early": {
+    "t": "2026-11-27T1355Z",
+    "line": {
+     "over": 68.5,
+     "under": 68.5
+    },
+    "odds": {
+     "over": -108,
+     "under": -118
+    },
+    "open": 68.5,
+    "calls": {}
+   }
+  },
+  "default_res": "L",
+  "early_graded": {},
+  "close_graded": {
+   "follow_move": {
+    "side": "under",
+    "line": 67.5,
+    "odds": -115,
+    "res": "W",
+    "units": 0.87,
+    "took_default": false
+   },
+   "pin_value": {
+    "side": "over",
+    "line": 67.5,
+    "odds": -111,
+    "res": "L",
+    "units": -1.0,
+    "took_default": true
+   }
+  }
+ },
+ {
+  "game": "Texas @ Saint Mary's",
+  "market": "1h|ml",
+  "period": "1h",
+  "kind": "ml",
+  "tip": "2026-11-27T22:00:00.000Z",
+  "ot": false,
+  "markets": {
+   "close": {
+    "t": "2026-11-27T2159Z",
+    "line": {
+     "home": 198,
+     "away": -250
+    },
+    "odds": {
+     "home": 198,
+     "away": -250
+    },
+    "open": 210,
+    "calls": {
+     "follow_move": "home"
+    },
+    "move": null
+   },
+   "early": {
+    "t": "2026-11-27T1415Z",
+    "line": {
+     "home": 210,
+     "away": -265
+    },
+    "odds": {
+     "home": 210,
+     "away": -265
+    },
+    "open": 210,
+    "calls": {}
+   }
+  },
+  "default_res": "L",
+  "early_graded": {},
+  "close_graded": {
+   "follow_move": {
+    "side": "home",
+    "line": 198,
+    "odds": 198,
+    "res": "W",
+    "units": 1.98,
+    "took_default": false
+   }
+  }
+ },
+ {
+  "game": "Texas @ Saint Mary's",
+  "market": "1h|total",
+  "period": "1h",
+  "kind": "total",
+  "tip": "2026-11-27T22:00:00.000Z",
+  "ot": false,
+  "markets": {
+   "close": {
+    "t": "2026-11-27T2159Z",
+    "line": {
+     "over": 75.5,
+     "under": 75.5
+    },
+    "odds": {
+     "over": -113,
+     "under": -113
+    },
+    "open": 74.5,
+    "calls": {
+     "follow_move": "over"
+    },
+    "move": 1.0
+   },
+   "early": {
+    "t": "2026-11-27T1415Z",
+    "line": {
+     "over": 74.5,
+     "under": 74.5
+    },
+    "odds": {
+     "over": -115,
+     "under": -111
+    },
+    "open": 74.5,
+    "calls": {}
+   }
+  },
+  "default_res": "L",
+  "early_graded": {},
+  "close_graded": {
+   "follow_move": {
+    "side": "over",
+    "line": 75.5,
+    "odds": -113,
+    "res": "L",
+    "units": -1.0,
+    "took_default": true
+   }
+  }
+ },
+ {
+  "game": "Texas @ Saint Mary's",
+  "market": "2h|tt_home",
+  "period": "2h",
+  "kind": "tt_home",
+  "tip": "2026-11-27T22:00:00.000Z",
+  "ot": false,
+  "markets": {
+   "close": {
+    "t": "2026-11-27T2159Z",
+    "line": {
+     "over": 40.5,
+     "under": 40.5
+    },
+    "odds": {
+     "over": -125,
+     "under": -102
+    },
+    "open": 40.5,
+    "calls": {
+     "fd_juice": "over"
+    }
+   },
+   "early": {
+    "t": "2026-11-27T1415Z",
+    "line": {
+     "over": 40.5,
+     "under": 40.5
+    },
+    "odds": {
+     "over": -102,
+     "under": -125
+    },
+    "open": 40.5,
+    "calls": {}
+   }
+  },
+  "default_res": "L",
+  "early_graded": {},
+  "close_graded": {
+   "fd_juice": {
+    "side": "over",
+    "line": 40.5,
+    "odds": -125,
+    "res": "L",
+    "units": -1.0,
+    "took_default": true
+   }
+  }
+ },
+ {
+  "game": "Texas @ Saint Mary's",
+  "market": "2h|tt_away",
+  "period": "2h",
+  "kind": "tt_away",
+  "tip": "2026-11-27T22:00:00.000Z",
+  "ot": false,
+  "markets": {
+   "close": {
+    "t": "2026-11-27T2159Z",
+    "line": {
+     "over": 44.5,
+     "under": 44.5
+    },
+    "odds": {
+     "over": -106,
+     "under": -120
+    },
+    "open": 43.5,
+    "calls": {
+     "follow_move": "over"
+    },
+    "move": 1.0
+   },
+   "early": {
+    "t": "2026-11-27T1415Z",
+    "line": {
+     "over": 43.5,
+     "under": 43.5
+    },
+    "odds": {
+     "over": -115,
+     "under": -111
+    },
+    "open": 43.5,
+    "calls": {}
+   }
+  },
+  "default_res": "W",
+  "early_graded": {},
+  "close_graded": {
+   "follow_move": {
+    "side": "over",
+    "line": 44.5,
+    "odds": -106,
+    "res": "W",
+    "units": 0.943,
+    "took_default": true
+   }
+  }
+ },
+ {
+  "game": "Texas A&M @ Marquette",
+  "market": "1h|ml",
+  "period": "1h",
+  "kind": "ml",
+  "tip": "2026-11-27T22:00:20.000Z",
+  "ot": false,
+  "markets": {
+   "close": {
+    "t": "2026-11-27T2159Z",
+    "line": {
+     "home": -132,
+     "away": 108
+    },
+    "odds": {
+     "home": -132,
+     "away": 108
+    },
+    "open": -102,
+    "calls": {
+     "follow_move": "home"
+    },
+    "move": null,
+    "pin": -137,
+    "pin_lim": 500
+   },
+   "early": {
+    "t": "2026-11-27T1355Z",
+    "line": {
+     "home": -102,
+     "away": -120
+    },
+    "odds": {
+     "home": -102,
+     "away": -120
+    },
+    "open": -102,
+    "calls": {}
+   }
+  },
+  "default_res": "W",
+  "early_graded": {},
+  "close_graded": {
+   "follow_move": {
+    "side": "home",
+    "line": -132,
+    "odds": -132,
+    "res": "W",
+    "units": 0.758,
+    "took_default": true
+   }
+  }
+ },
+ {
+  "game": "Texas A&M @ Marquette",
+  "market": "1h|total",
+  "period": "1h",
+  "kind": "total",
+  "tip": "2026-11-27T22:00:20.000Z",
+  "ot": false,
+  "markets": {
+   "close": {
+    "t": "2026-11-27T2159Z",
+    "line": {
+     "over": 74.5,
+     "under": 74.5
+    },
+    "odds": {
+     "over": -120,
+     "under": -106
+    },
+    "open": 73.5,
+    "calls": {
+     "follow_move": "over",
+     "pin_value": "over"
+    },
+    "move": 1.0,
+    "pin": 75.0,
+    "pin_lim": 500,
+    "pin_gap": -0.5
+   },
+   "early": {
+    "t": "2026-11-27T1355Z",
+    "line": {
+     "over": 73.5,
+     "under": 73.5
+    },
+    "odds": {
+     "over": -113,
+     "under": -113
+    },
+    "open": 73.5,
+    "calls": {}
+   }
+  },
+  "default_res": "W",
+  "early_graded": {},
+  "close_graded": {
+   "follow_move": {
+    "side": "over",
+    "line": 74.5,
+    "odds": -120,
+    "res": "W",
+    "units": 0.833,
+    "took_default": true
+   },
+   "pin_value": {
+    "side": "over",
+    "line": 74.5,
+    "odds": -120,
+    "res": "W",
+    "units": 0.833,
+    "took_default": true
+   }
+  }
+ },
+ {
+  "game": "Texas A&M @ Marquette",
+  "market": "2h|spread",
+  "period": "2h",
+  "kind": "spread",
+  "tip": "2026-11-27T22:00:20.000Z",
+  "ot": false,
+  "markets": {
+   "close": {
+    "t": "2026-11-27T2159Z",
+    "line": {
+     "home": -0.5,
+     "away": 0.5
+    },
+    "odds": {
+     "home": -110,
+     "away": -114
+    },
+    "open": 0.5,
+    "calls": {
+     "follow_move": "home"
+    },
+    "move": -1.0
+   },
+   "early": {
+    "t": "2026-11-27T1355Z",
+    "line": {
+     "home": 0.5,
+     "away": -0.5
+    },
+    "odds": {
+     "home": -118,
+     "away": -106
+    },
+    "open": 0.5,
+    "calls": {}
+   }
+  },
+  "default_res": "L",
+  "early_graded": {},
+  "close_graded": {
+   "follow_move": {
+    "side": "home",
+    "line": -0.5,
+    "odds": -110,
+    "res": "L",
+    "units": -1.0,
+    "took_default": true
+   }
+  }
+ },
+ {
+  "game": "Texas A&M @ Marquette",
+  "market": "2h|tt_home",
+  "period": "2h",
+  "kind": "tt_home",
+  "tip": "2026-11-27T22:00:20.000Z",
+  "ot": false,
+  "markets": {
+   "close": {
+    "t": "2026-11-27T2159Z",
+    "line": {
+     "over": 42.5,
+     "under": 42.5
+    },
+    "odds": {
+     "over": -122,
+     "under": -104
+    },
+    "open": 42.5,
+    "calls": {
+     "fd_juice": "over"
+    }
+   },
+   "early": {
+    "t": "2026-11-27T1355Z",
+    "line": {
+     "over": 42.5,
+     "under": 42.5
+    },
+    "odds": {
+     "over": 100,
+     "under": -128
+    },
+    "open": 42.5,
+    "calls": {}
+   }
+  },
+  "default_res": "L",
+  "early_graded": {},
+  "close_graded": {
+   "fd_juice": {
+    "side": "over",
+    "line": 42.5,
+    "odds": -122,
+    "res": "L",
+    "units": -1.0,
+    "took_default": true
+   }
+  }
+ },
+ {
+  "game": "Texas A&M @ Marquette",
+  "market": "1h|spread",
+  "period": "1h",
+  "kind": "spread",
+  "tip": "2026-11-27T22:00:20.000Z",
+  "ot": false,
+  "markets": {
+   "close": {
+    "t": "2026-11-27T2159Z",
+    "line": {
+     "home": -0.5,
+     "away": 0.5
+    },
+    "odds": {
+     "home": -120,
+     "away": -104
+    },
+    "open": 0.5,
+    "calls": {
+     "follow_move": "home",
+     "pin_value": "home"
+    },
+    "move": -1.0,
+    "pin": -1.0,
+    "pin_lim": 500,
+    "pin_gap": 0.5
+   },
+   "early": {
+    "t": "2026-11-27T1355Z",
+    "line": {
+     "home": 0.5,
+     "away": -0.5
+    },
+    "odds": {
+     "home": -112,
+     "away": -112
+    },
+    "open": 0.5,
+    "calls": {}
+   }
+  },
+  "default_res": "W",
+  "early_graded": {},
+  "close_graded": {
+   "follow_move": {
+    "side": "home",
+    "line": -0.5,
+    "odds": -120,
+    "res": "W",
+    "units": 0.833,
+    "took_default": true
+   },
+   "pin_value": {
+    "side": "home",
+    "line": -0.5,
+    "odds": -120,
+    "res": "W",
+    "units": 0.833,
+    "took_default": true
+   }
+  }
+ },
+ {
+  "game": "Drake @ Boise State",
+  "market": "1h|ml",
+  "period": "1h",
+  "kind": "ml",
+  "tip": "2026-11-27T22:30:00.000Z",
+  "ot": false,
+  "markets": {
+   "close": {
+    "t": "2026-11-27T2229Z",
+    "line": {
+     "home": -210,
+     "away": 168
+    },
+    "odds": {
+     "home": -210,
+     "away": 168
+    },
+    "open": -205,
+    "calls": {
+     "follow_move": "home"
+    },
+    "move": null,
+    "pin": -211,
+    "pin_lim": 500
+   },
+   "early": {
+    "t": "2026-11-27T1815Z",
+    "line": {
+     "home": -205,
+     "away": 164
+    },
+    "odds": {
+     "home": -205,
+     "away": 164
+    },
+    "open": -205,
+    "calls": {},
+    "pin": -194,
+    "pin_lim": 500
+   }
+  },
+  "default_res": "L",
+  "early_graded": {},
+  "close_graded": {
+   "follow_move": {
+    "side": "home",
+    "line": -210,
+    "odds": -210,
+    "res": "L",
+    "units": -1.0,
+    "took_default": true
+   }
+  }
+ },
+ {
+  "game": "Drake @ Boise State",
+  "market": "1h|total",
+  "period": "1h",
+  "kind": "total",
+  "tip": "2026-11-27T22:30:00.000Z",
+  "ot": false,
+  "markets": {
+   "close": {
+    "t": "2026-11-27T2229Z",
+    "line": {
+     "over": 74.5,
+     "under": 74.5
+    },
+    "odds": {
+     "over": -113,
+     "under": -113
+    },
+    "open": 74.5,
+    "calls": {
+     "pin_value": "under"
+    },
+    "pin": 74.0,
+    "pin_lim": 500,
+    "pin_gap": 0.5
+   },
+   "early": {
+    "t": "2026-11-27T1815Z",
+    "line": {
+     "over": 74.5,
+     "under": 74.5
+    },
+    "odds": {
+     "over": -113,
+     "under": -113
+    },
+    "open": 74.5,
+    "calls": {
+     "pin_value": "under"
+    },
+    "pin": 74.0,
+    "pin_lim": 500,
+    "pin_gap": 0.5
+   }
+  },
+  "default_res": "L",
+  "early_graded": {
+   "pin_value": {
+    "side": "under",
+    "line": 74.5,
+    "odds": -113,
+    "res": "W",
+    "units": 0.885,
+    "took_default": false,
+    "clv": 0.0
+   }
+  },
+  "close_graded": {
+   "pin_value": {
+    "side": "under",
+    "line": 74.5,
+    "odds": -113,
+    "res": "W",
+    "units": 0.885,
+    "took_default": false
+   }
+  }
+ },
+ {
+  "game": "Drake @ Boise State",
+  "market": "1h|spread",
+  "period": "1h",
+  "kind": "spread",
+  "tip": "2026-11-27T22:30:00.000Z",
+  "ot": false,
+  "markets": {
+   "close": {
+    "t": "2026-11-27T2229Z",
+    "line": {
+     "home": -3.5,
+     "away": 3.5
+    },
+    "odds": {
+     "home": -110,
+     "away": -114
+    },
+    "open": -3.5,
+    "calls": {
+     "pin_value": "away"
+    },
+    "pin": -3.0,
+    "pin_lim": 500,
+    "pin_gap": -0.5
+   },
+   "early": {
+    "t": "2026-11-27T1815Z",
+    "line": {
+     "home": -3.5,
+     "away": 3.5
+    },
+    "odds": {
+     "home": -104,
+     "away": -120
+    },
+    "open": -3.5,
+    "calls": {
+     "pin_value": "away"
+    },
+    "pin": -3.0,
+    "pin_lim": 500,
+    "pin_gap": -0.5
+   }
+  },
+  "default_res": "L",
+  "early_graded": {
+   "pin_value": {
+    "side": "away",
+    "line": 3.5,
+    "odds": -120,
+    "res": "W",
+    "units": 0.833,
+    "took_default": false,
+    "clv": 0.0
+   }
+  },
+  "close_graded": {
+   "pin_value": {
+    "side": "away",
+    "line": 3.5,
+    "odds": -114,
+    "res": "W",
+    "units": 0.877,
+    "took_default": false
+   }
+  }
+ },
+ {
+  "game": "Kansas State @ Michigan",
+  "market": "2h|tt_home",
+  "period": "2h",
+  "kind": "tt_home",
+  "tip": "2026-11-27T22:30:00.000Z",
+  "ot": false,
+  "markets": {
+   "close": {
+    "t": "2026-11-27T2229Z",
+    "line": {
+     "over": 46.5,
+     "under": 46.5
+    },
+    "odds": {
+     "over": -106,
+     "under": -120
+    },
+    "open": 45.5,
+    "calls": {
+     "follow_move": "over"
+    },
+    "move": 1.0
+   },
+   "early": {
+    "t": "2026-11-27T1845Z",
+    "line": {
+     "over": 45.5,
+     "under": 45.5
+    },
+    "odds": {
+     "over": -108,
+     "under": -118
+    },
+    "open": 45.5,
+    "calls": {}
+   }
+  },
+  "default_res": "W",
+  "early_graded": {},
+  "close_graded": {
+   "follow_move": {
+    "side": "over",
+    "line": 46.5,
+    "odds": -106,
+    "res": "W",
+    "units": 0.943,
+    "took_default": true
+   }
+  }
+ },
+ {
+  "game": "Kansas State @ Michigan",
+  "market": "1h|ml",
+  "period": "1h",
+  "kind": "ml",
+  "tip": "2026-11-27T22:30:00.000Z",
+  "ot": false,
+  "markets": {
+   "close": {
+    "t": "2026-11-27T2229Z",
+    "line": {
+     "home": -340,
+     "away": 260
+    },
+    "odds": {
+     "home": -340,
+     "away": 260
+    },
+    "open": -300,
+    "calls": {
+     "follow_move": "home"
+    },
+    "move": null
+   },
+   "early": {
+    "t": "2026-11-27T1845Z",
+    "line": {
+     "home": -300,
+     "away": 235
+    },
+    "odds": {
+     "home": -300,
+     "away": 235
+    },
+    "open": -300,
+    "calls": {}
+   }
+  },
+  "default_res": "W",
+  "early_graded": {},
+  "close_graded": {
+   "follow_move": {
+    "side": "home",
+    "line": -340,
+    "odds": -340,
+    "res": "W",
+    "units": 0.294,
+    "took_default": true
+   }
+  }
+ },
+ {
+  "game": "Kansas State @ Michigan",
+  "market": "2h|tt_away",
+  "period": "2h",
+  "kind": "tt_away",
+  "tip": "2026-11-27T22:30:00.000Z",
+  "ot": false,
+  "markets": {
+   "close": {
+    "t": "2026-11-27T2229Z",
+    "line": {
+     "over": 41.5,
+     "under": 41.5
+    },
+    "odds": {
+     "over": -118,
+     "under": -108
+    },
+    "open": 40.5,
+    "calls": {
+     "follow_move": "over"
+    },
+    "move": 1.0
+   },
+   "early": {
+    "t": "2026-11-27T1845Z",
+    "line": {
+     "over": 40.5,
+     "under": 40.5
+    },
+    "odds": {
+     "over": -115,
+     "under": -111
+    },
+    "open": 40.5,
+    "calls": {}
+   }
+  },
+  "default_res": "L",
+  "early_graded": {},
+  "close_graded": {
+   "follow_move": {
+    "side": "over",
+    "line": 41.5,
+    "odds": -118,
+    "res": "L",
+    "units": -1.0,
+    "took_default": true
+   }
+  }
+ },
+ {
+  "game": "Bowling Green @ Indiana",
+  "market": "2h|tt_away",
+  "period": "2h",
+  "kind": "tt_away",
+  "tip": "2026-11-27T23:00:00.000Z",
+  "ot": false,
+  "markets": {
+   "close": {
+    "t": "2026-11-27T2259Z",
+    "line": {
+     "over": 34.5,
+     "under": 34.5
+    },
+    "odds": {
+     "over": -111,
+     "under": -115
+    },
+    "open": 35.5,
+    "calls": {
+     "follow_move": "under"
+    },
+    "move": -1.0
+   },
+   "early": {
+    "t": "2026-11-27T1845Z",
+    "line": {
+     "over": 35.5,
+     "under": 35.5
+    },
+    "odds": {
+     "over": -128,
+     "under": 100
+    },
+    "open": 35.5,
+    "calls": {}
+   }
+  },
+  "default_res": "W",
+  "early_graded": {},
+  "close_graded": {
+   "follow_move": {
+    "side": "under",
+    "line": 34.5,
+    "odds": -115,
+    "res": "L",
+    "units": -1.0,
+    "took_default": false
+   }
+  }
+ },
+ {
+  "game": "Bowling Green @ Indiana",
+  "market": "1h|total",
+  "period": "1h",
+  "kind": "total",
+  "tip": "2026-11-27T23:00:00.000Z",
+  "ot": false,
+  "markets": {
+   "close": {
+    "t": "2026-11-27T2259Z",
+    "line": {
+     "over": 72.5,
+     "under": 72.5
+    },
+    "odds": {
+     "over": -113,
+     "under": -113
+    },
+    "open": 71.5,
+    "calls": {
+     "follow_move": "over",
+     "pin_value": "under"
+    },
+    "move": 1.0,
+    "pin": 71.0,
+    "pin_lim": 500,
+    "pin_gap": 1.5
+   },
+   "early": {
+    "t": "2026-11-27T1845Z",
+    "line": {
+     "over": 71.5,
+     "under": 71.5
+    },
+    "odds": {
+     "over": -111,
+     "under": -115
+    },
+    "open": 71.5,
+    "calls": {},
+    "pin": 71.5,
+    "pin_lim": 500
+   }
+  },
+  "default_res": "L",
+  "early_graded": {},
+  "close_graded": {
+   "follow_move": {
+    "side": "over",
+    "line": 72.5,
+    "odds": -113,
+    "res": "L",
+    "units": -1.0,
+    "took_default": true
+   },
+   "pin_value": {
+    "side": "under",
+    "line": 72.5,
+    "odds": -113,
+    "res": "W",
+    "units": 0.885,
+    "took_default": false
+   }
+  }
+ },
+ {
+  "game": "Bowling Green @ Indiana",
+  "market": "1h|ml",
+  "period": "1h",
+  "kind": "ml",
+  "tip": "2026-11-27T23:00:00.000Z",
+  "ot": false,
+  "markets": {
+   "close": {
+    "t": "2026-11-27T2259Z",
+    "line": {
+     "home": -3000,
+     "away": 1120
+    },
+    "odds": {
+     "home": -3000,
+     "away": 1120
+    },
+    "open": -3000,
+    "calls": {
+     "pin_price": "away"
+    },
+    "pin": -1306,
+    "pin_lim": 500,
+    "edge_pct": 37.29
+   },
+   "early": {
+    "t": "2026-11-27T1845Z",
+    "line": {
+     "home": -3000,
+     "away": 1120
+    },
+    "odds": {
+     "home": -3000,
+     "away": 1120
+    },
+    "open": -3000,
+    "calls": {
+     "pin_price": "away"
+    },
+    "pin": -1146,
+    "pin_lim": 500,
+    "edge_pct": 49.09
+   }
+  },
+  "default_res": "W",
+  "early_graded": {
+   "pin_price": {
+    "side": "away",
+    "line": 1120,
+    "odds": 1120,
+    "res": "L",
+    "units": -1.0,
+    "took_default": false,
+    "clv": 0.0
+   }
+  },
+  "close_graded": {
+   "pin_price": {
+    "side": "away",
+    "line": 1120,
+    "odds": 1120,
+    "res": "L",
+    "units": -1.0,
+    "took_default": false
+   }
+  }
+ },
+ {
+  "game": "Bowling Green @ Indiana",
+  "market": "1h|spread",
+  "period": "1h",
+  "kind": "spread",
+  "tip": "2026-11-27T23:00:00.000Z",
+  "ot": false,
+  "markets": {
+   "close": {
+    "t": "2026-11-27T2259Z",
+    "line": {
+     "home": -13.5,
+     "away": 13.5
+    },
+    "odds": {
+     "home": -106,
+     "away": -118
+    },
+    "open": -13.5,
+    "calls": {
+     "pin_value": "away"
+    },
+    "pin": -13.0,
+    "pin_lim": 500,
+    "pin_gap": -0.5
+   },
+   "early": {
+    "t": "2026-11-27T1845Z",
+    "line": {
+     "home": -13.5,
+     "away": 13.5
+    },
+    "odds": {
+     "home": -106,
+     "away": -118
+    },
+    "open": -13.5,
+    "calls": {
+     "pin_value": "away"
+    },
+    "pin": -13.0,
+    "pin_lim": 500,
+    "pin_gap": -0.5
+   }
+  },
+  "default_res": "W",
+  "early_graded": {
+   "pin_value": {
+    "side": "away",
+    "line": 13.5,
+    "odds": -118,
+    "res": "L",
+    "units": -1.0,
+    "took_default": false,
+    "clv": 0.0
+   }
+  },
+  "close_graded": {
+   "pin_value": {
+    "side": "away",
+    "line": 13.5,
+    "odds": -118,
+    "res": "L",
+    "units": -1.0,
+    "took_default": false
+   }
+  }
+ },
+ {
+  "game": "Bowling Green @ Indiana",
+  "market": "2h|tt_home",
+  "period": "2h",
+  "kind": "tt_home",
+  "tip": "2026-11-27T23:00:00.000Z",
+  "ot": false,
+  "markets": {
+   "close": {
+    "t": "2026-11-27T2259Z",
+    "line": {
+     "over": 44.5,
+     "under": 44.5
+    },
+    "odds": {
+     "over": -108,
+     "under": -118
+    },
+    "open": 45.5,
+    "calls": {
+     "follow_move": "under"
+    },
+    "move": -1.0
+   },
+   "early": {
+    "t": "2026-11-27T1845Z",
+    "line": {
+     "over": 45.5,
+     "under": 45.5
+    },
+    "odds": {
+     "over": -122,
+     "under": -104
+    },
+    "open": 45.5,
+    "calls": {}
+   }
+  },
+  "default_res": "W",
+  "early_graded": {},
+  "close_graded": {
+   "follow_move": {
+    "side": "under",
+    "line": 44.5,
+    "odds": -118,
+    "res": "L",
+    "units": -1.0,
+    "took_default": false
+   }
+  }
+ },
+ {
+  "game": "Western Kentucky @ Illinois",
+  "market": "1h|spread",
+  "period": "1h",
+  "kind": "spread",
+  "tip": "2026-11-27T23:00:00.000Z",
+  "ot": false,
+  "markets": {
+   "close": {
+    "t": "2026-11-27T2259Z",
+    "line": {
+     "home": -15.5,
+     "away": 15.5
+    },
+    "odds": {
+     "home": -112,
+     "away": -112
+    },
+    "open": -15.5,
+    "calls": {
+     "pin_value": "home"
+    },
+    "pin": -16.0,
+    "pin_lim": 500,
+    "pin_gap": 0.5
+   },
+   "early": {
+    "t": "2026-11-27T1845Z",
+    "line": {
+     "home": -15.5,
+     "away": 15.5
+    },
+    "odds": {
+     "home": -112,
+     "away": -112
+    },
+    "open": -15.5,
+    "calls": {
+     "pin_value": "away"
+    },
+    "pin": -14.5,
+    "pin_lim": 500,
+    "pin_gap": -1.0
+   }
+  },
+  "default_res": "L",
+  "early_graded": {
+   "pin_value": {
+    "side": "away",
+    "line": 15.5,
+    "odds": -112,
+    "res": "W",
+    "units": 0.893,
+    "took_default": false,
+    "clv": 0.0
+   }
+  },
+  "close_graded": {
+   "pin_value": {
+    "side": "home",
+    "line": -15.5,
+    "odds": -112,
+    "res": "L",
+    "units": -1.0,
+    "took_default": true
+   }
+  }
+ },
+ {
+  "game": "West Virginia @ North Carolina",
+  "market": "2h|tt_away",
+  "period": "2h",
+  "kind": "tt_away",
+  "tip": "2026-11-28T00:00:00.000Z",
+  "ot": false,
+  "markets": {
+   "close": {
+    "t": "2026-11-27T2359Z",
+    "line": {
+     "over": 40.5,
+     "under": 40.5
+    },
+    "odds": {
+     "over": -102,
+     "under": -125
+    },
+    "open": 40.5,
+    "calls": {
+     "fd_juice": "under"
+    }
+   },
+   "early": {
+    "t": "2026-11-27T1445Z",
+    "line": {
+     "over": 40.5,
+     "under": 40.5
+    },
+    "odds": {
+     "over": -115,
+     "under": -111
+    },
+    "open": 40.5,
+    "calls": {}
+   }
+  },
+  "default_res": "L",
+  "early_graded": {},
+  "close_graded": {
+   "fd_juice": {
+    "side": "under",
+    "line": 40.5,
+    "odds": -125,
+    "res": "W",
+    "units": 0.8,
+    "took_default": false
+   }
+  }
+ },
+ {
+  "game": "West Virginia @ North Carolina",
+  "market": "2h|tt_home",
+  "period": "2h",
+  "kind": "tt_home",
+  "tip": "2026-11-28T00:00:00.000Z",
+  "ot": false,
+  "markets": {
+   "close": {
+    "t": "2026-11-27T2359Z",
+    "line": {
+     "over": 39.5,
+     "under": 39.5
+    },
+    "odds": {
+     "over": 100,
+     "under": -128
+    },
+    "open": 39.5,
+    "calls": {
+     "fd_juice": "under"
+    }
+   },
+   "early": {
+    "t": "2026-11-27T1445Z",
+    "line": {
+     "over": 39.5,
+     "under": 39.5
+    },
+    "odds": {
+     "over": -111,
+     "under": -115
+    },
+    "open": 39.5,
+    "calls": {}
+   }
+  },
+  "default_res": "L",
+  "early_graded": {},
+  "close_graded": {
+   "fd_juice": {
+    "side": "under",
+    "line": 39.5,
+    "odds": -128,
+    "res": "W",
+    "units": 0.781,
+    "took_default": false
+   }
+  }
+ },
+ {
+  "game": "West Virginia @ North Carolina",
+  "market": "1h|ml",
+  "period": "1h",
+  "kind": "ml",
+  "tip": "2026-11-28T00:00:00.000Z",
+  "ot": false,
+  "markets": {
+   "close": {
+    "t": "2026-11-27T2359Z",
+    "line": {
+     "home": 124,
+     "away": -152
+    },
+    "odds": {
+     "home": 124,
+     "away": -152
+    },
+    "open": 116,
+    "calls": {
+     "follow_move": "away"
+    },
+    "move": null,
+    "pin": 123,
+    "pin_lim": 500
+   },
+   "early": {
+    "t": "2026-11-27T1445Z",
+    "line": {
+     "home": 116,
+     "away": -142
+    },
+    "odds": {
+     "home": 116,
+     "away": -142
+    },
+    "open": 116,
+    "calls": {},
+    "pin": 121,
+    "pin_lim": 250
+   }
+  },
+  "default_res": "W",
+  "early_graded": {},
+  "close_graded": {
+   "follow_move": {
+    "side": "away",
+    "line": -152,
+    "odds": -152,
+    "res": "W",
+    "units": 0.658,
+    "took_default": true
+   }
+  }
+ },
+ {
+  "game": "West Virginia @ North Carolina",
+  "market": "1h|total",
+  "period": "1h",
+  "kind": "total",
+  "tip": "2026-11-28T00:00:00.000Z",
+  "ot": false,
+  "markets": {
+   "close": {
+    "t": "2026-11-27T2359Z",
+    "line": {
+     "over": 69.5,
+     "under": 69.5
+    },
+    "odds": {
+     "over": -111,
+     "under": -115
+    },
+    "open": 69.5,
+    "calls": {
+     "pin_value": "over"
+    },
+    "pin": 70.0,
+    "pin_lim": 500,
+    "pin_gap": -0.5
+   },
+   "early": {
+    "t": "2026-11-27T1445Z",
+    "line": {
+     "over": 69.5,
+     "under": 69.5
+    },
+    "odds": {
+     "over": -115,
+     "under": -111
+    },
+    "open": 69.5,
+    "calls": {
+     "pin_value": "over"
+    },
+    "pin": 70.0,
+    "pin_lim": 250,
+    "pin_gap": -0.5
+   }
+  },
+  "default_res": "W",
+  "early_graded": {
+   "pin_value": {
+    "side": "over",
+    "line": 69.5,
+    "odds": -115,
+    "res": "W",
+    "units": 0.87,
+    "took_default": true,
+    "clv": 0.0
+   }
+  },
+  "close_graded": {
+   "pin_value": {
+    "side": "over",
+    "line": 69.5,
+    "odds": -111,
+    "res": "W",
+    "units": 0.901,
+    "took_default": true
+   }
+  }
+ },
+ {
+  "game": "UCF @ Georgia",
+  "market": "2h|tt_away",
+  "period": "2h",
+  "kind": "tt_away",
+  "tip": "2026-11-28T00:00:00.000Z",
+  "ot": false,
+  "markets": {
+   "close": {
+    "t": "2026-11-27T2359Z",
+    "line": {
+     "over": 41.5,
+     "under": 41.5
+    },
+    "odds": {
+     "over": -122,
+     "under": -104
+    },
+    "open": 42.5,
+    "calls": {
+     "follow_move": "under"
+    },
+    "move": -1.0
+   },
+   "early": {
+    "t": "2026-11-27T1445Z",
+    "line": {
+     "over": 42.5,
+     "under": 42.5
+    },
+    "odds": {
+     "over": -106,
+     "under": -120
+    },
+    "open": 42.5,
+    "calls": {}
+   }
+  },
+  "default_res": "L",
+  "early_graded": {},
+  "close_graded": {
+   "follow_move": {
+    "side": "under",
+    "line": 41.5,
+    "odds": -104,
+    "res": "W",
+    "units": 0.962,
+    "took_default": false
+   }
+  }
+ },
+ {
+  "game": "UCF @ Georgia",
+  "market": "1h|spread",
+  "period": "1h",
+  "kind": "spread",
+  "tip": "2026-11-28T00:00:00.000Z",
+  "ot": false,
+  "markets": {
+   "close": {
+    "t": "2026-11-27T2359Z",
+    "line": {
+     "home": -2.5,
+     "away": 2.5
+    },
+    "odds": {
+     "home": -114,
+     "away": -110
+    },
+    "open": -2.5,
+    "calls": {
+     "pin_value": "home"
+    },
+    "pin": -3.0,
+    "pin_lim": 500,
+    "pin_gap": 0.5
+   },
+   "early": {
+    "t": "2026-11-27T1445Z",
+    "line": {
+     "home": -2.5,
+     "away": 2.5
+    },
+    "odds": {
+     "home": -114,
+     "away": -110
+    },
+    "open": -2.5,
+    "calls": {}
+   }
+  },
+  "default_res": "L",
+  "early_graded": {},
+  "close_graded": {
+   "pin_value": {
+    "side": "home",
+    "line": -2.5,
+    "odds": -114,
+    "res": "L",
+    "units": -1.0,
+    "took_default": true
+   }
+  }
+ },
+ {
+  "game": "UCF @ Georgia",
+  "market": "1h|ml",
+  "period": "1h",
+  "kind": "ml",
+  "tip": "2026-11-28T00:00:00.000Z",
+  "ot": false,
+  "markets": {
+   "close": {
+    "t": "2026-11-27T2359Z",
+    "line": {
+     "home": -184,
+     "away": 148
+    },
+    "odds": {
+     "home": -184,
+     "away": 148
+    },
+    "open": -180,
+    "calls": {
+     "follow_move": "home"
+    },
+    "move": null,
+    "pin": -186,
+    "pin_lim": 500
+   },
+   "early": {
+    "t": "2026-11-27T1445Z",
+    "line": {
+     "home": -180,
+     "away": 146
+    },
+    "odds": {
+     "home": -180,
+     "away": 146
+    },
+    "open": -180,
+    "calls": {}
+   }
+  },
+  "default_res": "L",
+  "early_graded": {},
+  "close_graded": {
+   "follow_move": {
+    "side": "home",
+    "line": -184,
+    "odds": -184,
+    "res": "L",
+    "units": -1.0,
+    "took_default": true
+   }
+  }
+ },
+ {
+  "game": "UCF @ Georgia",
+  "market": "1h|total",
+  "period": "1h",
+  "kind": "total",
+  "tip": "2026-11-28T00:00:00.000Z",
+  "ot": false,
+  "markets": {
+   "close": {
+    "t": "2026-11-27T2359Z",
+    "line": {
+     "over": 75.5,
+     "under": 75.5
+    },
+    "odds": {
+     "over": -115,
+     "under": -111
+    },
+    "open": 76.5,
+    "calls": {
+     "follow_move": "under",
+     "pin_value": "over"
+    },
+    "move": -1.0,
+    "pin": 76.0,
+    "pin_lim": 500,
+    "pin_gap": -0.5
+   },
+   "early": {
+    "t": "2026-11-27T1445Z",
+    "line": {
+     "over": 76.5,
+     "under": 76.5
+    },
+    "odds": {
+     "over": -115,
+     "under": -111
+    },
+    "open": 76.5,
+    "calls": {}
+   }
+  },
+  "default_res": "W",
+  "early_graded": {},
+  "close_graded": {
+   "follow_move": {
+    "side": "under",
+    "line": 75.5,
+    "odds": -111,
+    "res": "L",
+    "units": -1.0,
+    "took_default": false
+   },
+   "pin_value": {
+    "side": "over",
+    "line": 75.5,
+    "odds": -115,
+    "res": "W",
+    "units": 0.87,
+    "took_default": true
+   }
+  }
+ },
+ {
+  "game": "UCF @ Georgia",
+  "market": "2h|tt_home",
+  "period": "2h",
+  "kind": "tt_home",
+  "tip": "2026-11-28T00:00:00.000Z",
+  "ot": false,
+  "markets": {
+   "close": {
+    "t": "2026-11-27T2359Z",
+    "line": {
+     "over": 44.5,
+     "under": 44.5
+    },
+    "odds": {
+     "over": -104,
+     "under": -122
+    },
+    "open": 44.5,
+    "calls": {
+     "fd_juice": "under"
+    }
+   },
+   "early": {
+    "t": "2026-11-27T1445Z",
+    "line": {
+     "over": 44.5,
+     "under": 44.5
+    },
+    "odds": {
+     "over": -118,
+     "under": -108
+    },
+    "open": 44.5,
+    "calls": {}
+   }
+  },
+  "default_res": "L",
+  "early_graded": {},
+  "close_graded": {
+   "fd_juice": {
+    "side": "under",
+    "line": 44.5,
+    "odds": -122,
+    "res": "W",
+    "units": 0.82,
+    "took_default": false
+   }
+  }
+ },
+ {
+  "game": "Oakland @ Houston",
+  "market": "2h|tt_away",
+  "period": "2h",
+  "kind": "tt_away",
+  "tip": "2026-11-28T00:30:00.000Z",
+  "ot": false,
+  "markets": {
+   "close": {
+    "t": "2026-11-28T0029Z",
+    "line": {
+     "over": 30.5,
+     "under": 30.5
+    },
+    "odds": {
+     "over": -104,
+     "under": -122
+    },
+    "open": 29.5,
+    "calls": {
+     "follow_move": "over"
+    },
+    "move": 1.0
+   },
+   "early": {
+    "t": "2026-11-27T1845Z",
+    "line": {
+     "over": 29.5,
+     "under": 29.5
+    },
+    "odds": {
+     "over": -113,
+     "under": -113
+    },
+    "open": 29.5,
+    "calls": {}
+   }
+  },
+  "default_res": "L",
+  "early_graded": {},
+  "close_graded": {
+   "follow_move": {
+    "side": "over",
+    "line": 30.5,
+    "odds": -104,
+    "res": "L",
+    "units": -1.0,
+    "took_default": true
+   }
+  }
+ },
+ {
+  "game": "Oakland @ Houston",
+  "market": "1h|spread",
+  "period": "1h",
+  "kind": "spread",
+  "tip": "2026-11-28T00:30:00.000Z",
+  "ot": false,
+  "markets": {
+   "close": {
+    "t": "2026-11-28T0029Z",
+    "line": {
+     "home": -21.5,
+     "away": 21.5
+    },
+    "odds": {
+     "home": -102,
+     "away": -122
+    },
+    "open": -20.5,
+    "calls": {
+     "follow_move": "home",
+     "pin_value": "away"
+    },
+    "move": -1.0,
+    "pin": -20.5,
+    "pin_lim": 500,
+    "pin_gap": -1.0
+   },
+   "early": {
+    "t": "2026-11-27T1845Z",
+    "line": {
+     "home": -20.5,
+     "away": 20.5
+    },
+    "odds": {
+     "home": -102,
+     "away": -122
+    },
+    "open": -20.5,
+    "calls": {},
+    "pin": -20.5,
+    "pin_lim": 250
+   }
+  },
+  "default_res": "W",
+  "early_graded": {},
+  "close_graded": {
+   "follow_move": {
+    "side": "home",
+    "line": -21.5,
+    "odds": -102,
+    "res": "W",
+    "units": 0.98,
+    "took_default": true
+   },
+   "pin_value": {
+    "side": "away",
+    "line": 21.5,
+    "odds": -122,
+    "res": "L",
+    "units": -1.0,
+    "took_default": false
+   }
+  }
+ },
+ {
+  "game": "Oakland @ Houston",
+  "market": "2h|spread",
+  "period": "2h",
+  "kind": "spread",
+  "tip": "2026-11-28T00:30:00.000Z",
+  "ot": false,
+  "markets": {
+   "close": {
+    "t": "2026-11-28T0029Z",
+    "line": {
+     "home": -15.5,
+     "away": 15.5
+    },
+    "odds": {
+     "home": -106,
+     "away": -118
+    },
+    "open": -16.5,
+    "calls": {
+     "follow_move": "away"
+    },
+    "move": 1.0
+   },
+   "early": {
+    "t": "2026-11-27T1845Z",
+    "line": {
+     "home": -16.5,
+     "away": 16.5
+    },
+    "odds": {
+     "home": -118,
+     "away": -106
+    },
+    "open": -16.5,
+    "calls": {}
+   }
+  },
+  "default_res": "L",
+  "early_graded": {},
+  "close_graded": {
+   "follow_move": {
+    "side": "away",
+    "line": 15.5,
+    "odds": -118,
+    "res": "W",
+    "units": 0.847,
+    "took_default": false
+   }
+  }
+ },
+ {
+  "game": "Oakland @ Houston",
+  "market": "2h|tt_home",
+  "period": "2h",
+  "kind": "tt_home",
+  "tip": "2026-11-28T00:30:00.000Z",
+  "ot": false,
+  "markets": {
+   "close": {
+    "t": "2026-11-28T0029Z",
+    "line": {
+     "over": 45.5,
+     "under": 45.5
+    },
+    "odds": {
+     "over": -113,
+     "under": -113
+    },
+    "open": 46.5,
+    "calls": {
+     "follow_move": "under"
+    },
+    "move": -1.0
+   },
+   "early": {
+    "t": "2026-11-27T1845Z",
+    "line": {
+     "over": 46.5,
+     "under": 46.5
+    },
+    "odds": {
+     "over": -108,
+     "under": -120
+    },
+    "open": 46.5,
+    "calls": {}
+   }
+  },
+  "default_res": "L",
+  "early_graded": {},
+  "close_graded": {
+   "follow_move": {
+    "side": "under",
+    "line": 45.5,
+    "odds": -113,
+    "res": "W",
+    "units": 0.885,
+    "took_default": false
+   }
+  }
+ },
+ {
+  "game": "Oakland @ Houston",
+  "market": "1h|total",
+  "period": "1h",
+  "kind": "total",
+  "tip": "2026-11-28T00:30:00.000Z",
+  "ot": false,
+  "markets": {
+   "close": {
+    "t": "2026-11-28T0029Z",
+    "line": {
+     "over": 68.5,
+     "under": 68.5
+    },
+    "odds": {
+     "over": -115,
+     "under": -111
+    },
+    "open": 68.5,
+    "calls": {
+     "pin_value": "over"
+    },
+    "pin": 69.5,
+    "pin_lim": 500,
+    "pin_gap": -1.0
+   },
+   "early": {
+    "t": "2026-11-27T1845Z",
+    "line": {
+     "over": 68.5,
+     "under": 68.5
+    },
+    "odds": {
+     "over": -115,
+     "under": -111
+    },
+    "open": 68.5,
+    "calls": {
+     "pin_value": "over"
+    },
+    "pin": 69.0,
+    "pin_lim": 250,
+    "pin_gap": -0.5
+   }
+  },
+  "default_res": "L",
+  "early_graded": {
+   "pin_value": {
+    "side": "over",
+    "line": 68.5,
+    "odds": -115,
+    "res": "L",
+    "units": -1.0,
+    "took_default": true,
+    "clv": 0.0
+   }
+  },
+  "close_graded": {
+   "pin_value": {
+    "side": "over",
+    "line": 68.5,
+    "odds": -115,
+    "res": "L",
+    "units": -1.0,
+    "took_default": true
+   }
+  }
+ },
+ {
+  "game": "Pacific @ UC Davis",
+  "market": "2h|tt_home",
+  "period": "2h",
+  "kind": "tt_home",
+  "tip": "2026-11-28T01:00:00.000Z",
+  "ot": false,
+  "markets": {
+   "close": {
+    "t": "2026-11-28T0059Z",
+    "line": {
+     "over": 34.5,
+     "under": 34.5
+    },
+    "odds": {
+     "over": -115,
+     "under": -111
+    },
+    "open": 35.5,
+    "calls": {
+     "follow_move": "under"
+    },
+    "move": -1.0
+   },
+   "early": {
+    "t": "2026-11-27T1845Z",
+    "line": {
+     "over": 35.5,
+     "under": 35.5
+    },
+    "odds": {
+     "over": -108,
+     "under": -118
+    },
+    "open": 35.5,
+    "calls": {}
+   }
+  },
+  "default_res": "L",
+  "early_graded": {},
+  "close_graded": {
+   "follow_move": {
+    "side": "under",
+    "line": 34.5,
+    "odds": -111,
+    "res": "W",
+    "units": 0.901,
+    "took_default": false
+   }
+  }
+ },
+ {
+  "game": "Pacific @ UC Davis",
+  "market": "2h|tt_away",
+  "period": "2h",
+  "kind": "tt_away",
+  "tip": "2026-11-28T01:00:00.000Z",
+  "ot": false,
+  "markets": {
+   "close": {
+    "t": "2026-11-28T0059Z",
+    "line": {
+     "over": 37.5,
+     "under": 37.5
+    },
+    "odds": {
+     "over": -125,
+     "under": -102
+    },
+    "open": 38.5,
+    "calls": {
+     "follow_move": "under"
+    },
+    "move": -1.0
+   },
+   "early": {
+    "t": "2026-11-27T1845Z",
+    "line": {
+     "over": 38.5,
+     "under": 38.5
+    },
+    "odds": {
+     "over": -111,
+     "under": -115
+    },
+    "open": 38.5,
+    "calls": {}
+   }
+  },
+  "default_res": "W",
+  "early_graded": {},
+  "close_graded": {
+   "follow_move": {
+    "side": "under",
+    "line": 37.5,
+    "odds": -102,
+    "res": "L",
+    "units": -1.0,
+    "took_default": false
+   }
+  }
+ },
+ {
+  "game": "Pacific @ UC Davis",
+  "market": "1h|total",
+  "period": "1h",
+  "kind": "total",
+  "tip": "2026-11-28T01:00:00.000Z",
+  "ot": false,
+  "markets": {
+   "close": {
+    "t": "2026-11-28T0059Z",
+    "line": {
+     "over": 63.5,
+     "under": 63.5
+    },
+    "odds": {
+     "over": -113,
+     "under": -113
+    },
+    "open": 64.5,
+    "calls": {
+     "follow_move": "under",
+     "pin_value": "over"
+    },
+    "move": -1.0,
+    "pin": 64.5,
+    "pin_lim": 250,
+    "pin_gap": -1.0
+   },
+   "early": {
+    "t": "2026-11-27T1845Z",
+    "line": {
+     "over": 64.5,
+     "under": 64.5
+    },
+    "odds": {
+     "over": -120,
+     "under": -104
+    },
+    "open": 64.5,
+    "calls": {
+     "pin_value": "over"
+    },
+    "pin": 65.0,
+    "pin_lim": 250,
+    "pin_gap": -0.5
+   }
+  },
+  "default_res": "W",
+  "early_graded": {
+   "pin_value": {
+    "side": "over",
+    "line": 64.5,
+    "odds": -120,
+    "res": "W",
+    "units": 0.833,
+    "took_default": true,
+    "clv": -1.0
+   }
+  },
+  "close_graded": {
+   "follow_move": {
+    "side": "under",
+    "line": 63.5,
+    "odds": -113,
+    "res": "L",
+    "units": -1.0,
+    "took_default": false
+   },
+   "pin_value": {
+    "side": "over",
+    "line": 63.5,
+    "odds": -113,
+    "res": "W",
+    "units": 0.885,
+    "took_default": true
+   }
+  }
+ },
+ {
+  "game": "Alabama @ Miami",
+  "market": "2h|tt_away",
+  "period": "2h",
+  "kind": "tt_away",
+  "tip": "2026-11-28T01:30:00.000Z",
+  "ot": false,
+  "markets": {
+   "close": {
+    "t": "2026-11-28T0129Z",
+    "line": {
+     "over": 45.5,
+     "under": 45.5
+    },
+    "odds": {
+     "over": 100,
+     "under": -128
+    },
+    "open": 44.5,
+    "calls": {
+     "follow_move": "over"
+    },
+    "move": 1.0
+   },
+   "early": {
+    "t": "2026-11-27T1915Z",
+    "line": {
+     "over": 44.5,
+     "under": 44.5
+    },
+    "odds": {
+     "over": -122,
+     "under": -104
+    },
+    "open": 44.5,
+    "calls": {}
+   }
+  },
+  "default_res": "L",
+  "early_graded": {},
+  "close_graded": {
+   "follow_move": {
+    "side": "over",
+    "line": 45.5,
+    "odds": 100,
+    "res": "L",
+    "units": -1.0,
+    "took_default": true
+   }
+  }
+ },
+ {
+  "game": "Alabama @ Miami",
+  "market": "1h|total",
+  "period": "1h",
+  "kind": "total",
+  "tip": "2026-11-28T01:30:00.000Z",
+  "ot": false,
+  "markets": {
+   "close": {
+    "t": "2026-11-28T0129Z",
+    "line": {
+     "over": 79.5,
+     "under": 79.5
+    },
+    "odds": {
+     "over": -113,
+     "under": -113
+    },
+    "open": 80.5,
+    "calls": {
+     "follow_move": "under",
+     "pin_value": "under"
+    },
+    "move": -1.0,
+    "pin": 73.0,
+    "pin_lim": 500,
+    "pin_gap": 6.5
+   },
+   "early": {
+    "t": "2026-11-27T1915Z",
+    "line": {
+     "over": 80.5,
+     "under": 80.5
+    },
+    "odds": {
+     "over": -115,
+     "under": -111
+    },
+    "open": 80.5,
+    "calls": {
+     "pin_value": "under"
+    },
+    "pin": 73.0,
+    "pin_lim": 500,
+    "pin_gap": 7.5
+   }
+  },
+  "default_res": "W",
+  "early_graded": {
+   "pin_value": {
+    "side": "under",
+    "line": 80.5,
+    "odds": -111,
+    "res": "L",
+    "units": -1.0,
+    "took_default": false,
+    "clv": 1.0
+   }
+  },
+  "close_graded": {
+   "follow_move": {
+    "side": "under",
+    "line": 79.5,
+    "odds": -113,
+    "res": "L",
+    "units": -1.0,
+    "took_default": false
+   },
+   "pin_value": {
+    "side": "under",
+    "line": 79.5,
+    "odds": -113,
+    "res": "L",
+    "units": -1.0,
+    "took_default": false
+   }
+  }
+ },
+ {
+  "game": "Alabama @ Miami",
+  "market": "1h|ml",
+  "period": "1h",
+  "kind": "ml",
+  "tip": "2026-11-28T01:30:00.000Z",
+  "ot": false,
+  "markets": {
+   "close": {
+    "t": "2026-11-28T0129Z",
+    "line": {
+     "home": -134,
+     "away": 110
+    },
+    "odds": {
+     "home": -134,
+     "away": 110
+    },
+    "open": -148,
+    "calls": {
+     "follow_move": "away"
+    },
+    "move": null
+   },
+   "early": {
+    "t": "2026-11-27T1915Z",
+    "line": {
+     "home": -148,
+     "away": 120
+    },
+    "odds": {
+     "home": -148,
+     "away": 120
+    },
+    "open": -148,
+    "calls": {}
+   }
+  },
+  "default_res": "W",
+  "early_graded": {},
+  "close_graded": {
+   "follow_move": {
+    "side": "away",
+    "line": 110,
+    "odds": 110,
+    "res": "L",
+    "units": -1.0,
+    "took_default": false
+   }
+  }
+ },
+ {
+  "game": "Alabama @ Miami",
+  "market": "1h|spread",
+  "period": "1h",
+  "kind": "spread",
+  "tip": "2026-11-28T01:30:00.000Z",
+  "ot": false,
+  "markets": {
+   "close": {
+    "t": "2026-11-28T0129Z",
+    "line": {
+     "home": -0.5,
+     "away": 0.5
+    },
+    "odds": {
+     "home": -122,
+     "away": -102
+    },
+    "open": -1.5,
+    "calls": {
+     "follow_move": "away",
+     "pin_value": "home"
+    },
+    "move": 1.0,
+    "pin": -17.5,
+    "pin_lim": 500,
+    "pin_gap": 17.0
+   },
+   "early": {
+    "t": "2026-11-27T1915Z",
+    "line": {
+     "home": -1.5,
+     "away": 1.5
+    },
+    "odds": {
+     "home": -112,
+     "away": -112
+    },
+    "open": -1.5,
+    "calls": {
+     "pin_value": "home"
+    },
+    "pin": -17.5,
+    "pin_lim": 500,
+    "pin_gap": 16.0
+   }
+  },
+  "default_res": "W",
+  "early_graded": {
+   "pin_value": {
+    "side": "home",
+    "line": -1.5,
+    "odds": -112,
+    "res": "W",
+    "units": 0.893,
+    "took_default": true,
+    "clv": -1.0
+   }
+  },
+  "close_graded": {
+   "follow_move": {
+    "side": "away",
+    "line": 0.5,
+    "odds": -102,
+    "res": "L",
+    "units": -1.0,
+    "took_default": false
+   },
+   "pin_value": {
+    "side": "home",
+    "line": -0.5,
+    "odds": -122,
+    "res": "W",
+    "units": 0.82,
+    "took_default": true
+   }
+  }
+ },
+ {
+  "game": "Louisville @ Tennessee",
+  "market": "2h|spread",
+  "period": "2h",
+  "kind": "spread",
+  "tip": "2026-11-28T02:00:00.000Z",
+  "ot": false,
+  "markets": {
+   "close": {
+    "t": "2026-11-28T0159Z",
+    "line": {
+     "home": 1.5,
+     "away": -1.5
+    },
+    "odds": {
+     "home": -112,
+     "away": -112
+    },
+    "open": 0.5,
+    "calls": {
+     "follow_move": "away"
+    },
+    "move": 1.0
+   },
+   "early": {
+    "t": "2026-11-27T1615Z",
+    "line": {
+     "home": 1.5,
+     "away": -1.5
+    },
+    "odds": {
+     "home": -122,
+     "away": -102
+    },
+    "open": 0.5,
+    "calls": {
+     "follow_move": "away"
+    },
+    "move": 1.0
+   }
+  },
+  "default_res": "W",
+  "early_graded": {
+   "follow_move": {
+    "side": "away",
+    "line": -1.5,
+    "odds": -102,
+    "res": "W",
+    "units": 0.98,
+    "took_default": true,
+    "clv": 0.0
+   }
+  },
+  "close_graded": {
+   "follow_move": {
+    "side": "away",
+    "line": -1.5,
+    "odds": -112,
+    "res": "W",
+    "units": 0.893,
+    "took_default": true
+   }
+  }
+ },
+ {
+  "game": "Louisville @ Tennessee",
+  "market": "2h|tt_home",
+  "period": "2h",
+  "kind": "tt_home",
+  "tip": "2026-11-28T02:00:00.000Z",
+  "ot": false,
+  "markets": {
+   "close": {
+    "t": "2026-11-28T0159Z",
+    "line": {
+     "over": 38.5,
+     "under": 38.5
+    },
+    "odds": {
+     "over": -120,
+     "under": -106
+    },
+    "open": 39.5,
+    "calls": {
+     "follow_move": "under"
+    },
+    "move": -1.0
+   },
+   "early": {
+    "t": "2026-11-27T1615Z",
+    "line": {
+     "over": 39.5,
+     "under": 39.5
+    },
+    "odds": {
+     "over": -113,
+     "under": -113
+    },
+    "open": 39.5,
+    "calls": {}
+   }
+  },
+  "default_res": "L",
+  "early_graded": {},
+  "close_graded": {
+   "follow_move": {
+    "side": "under",
+    "line": 38.5,
+    "odds": -106,
+    "res": "W",
+    "units": 0.943,
+    "took_default": false
+   }
+  }
+ },
+ {
+  "game": "Wichita State @ Kentucky",
+  "market": "1h|ml",
+  "period": "1h",
+  "kind": "ml",
+  "tip": "2026-11-28T02:00:00.000Z",
+  "ot": true,
+  "markets": {
+   "close": {
+    "t": "2026-11-28T0159Z",
+    "line": {
+     "home": -184,
+     "away": 148
+    },
+    "odds": {
+     "home": -184,
+     "away": 148
+    },
+    "open": -180,
+    "calls": {
+     "follow_move": "home",
+     "pin_price": "away"
+    },
+    "move": null,
+    "pin": -157,
+    "pin_lim": 500,
+    "edge_pct": 2.85
+   },
+   "early": {
+    "t": "2026-11-27T1915Z",
+    "line": {
+     "home": -180,
+     "away": 146
+    },
+    "odds": {
+     "home": -180,
+     "away": 146
+    },
+    "open": -180,
+    "calls": {
+     "pin_price": "away"
+    },
+    "pin": -161,
+    "pin_lim": 250,
+    "edge_pct": 0.68
+   }
+  },
+  "default_res": "W",
+  "early_graded": {
+   "pin_price": {
+    "side": "away",
+    "line": 146,
+    "odds": 146,
+    "res": "L",
+    "units": -1.0,
+    "took_default": false,
+    "clv": -0.3
+   }
+  },
+  "close_graded": {
+   "follow_move": {
+    "side": "home",
+    "line": -184,
+    "odds": -184,
+    "res": "W",
+    "units": 0.543,
+    "took_default": true
+   },
+   "pin_price": {
+    "side": "away",
+    "line": 148,
+    "odds": 148,
+    "res": "L",
+    "units": -1.0,
+    "took_default": false
+   }
+  }
+ },
+ {
+  "game": "Wichita State @ Kentucky",
+  "market": "1h|total",
+  "period": "1h",
+  "kind": "total",
+  "tip": "2026-11-28T02:00:00.000Z",
+  "ot": true,
+  "markets": {
+   "close": {
+    "t": "2026-11-28T0159Z",
+    "line": {
+     "over": 74.5,
+     "under": 74.5
+    },
+    "odds": {
+     "over": -111,
+     "under": -115
+    },
+    "open": 73.5,
+    "calls": {
+     "follow_move": "over",
+     "pin_value": "under"
+    },
+    "move": 1.0,
+    "pin": 73.5,
+    "pin_lim": 500,
+    "pin_gap": 1.0
+   },
+   "early": {
+    "t": "2026-11-27T1915Z",
+    "line": {
+     "over": 73.5,
+     "under": 73.5
+    },
+    "odds": {
+     "over": -120,
+     "under": -106
+    },
+    "open": 73.5,
+    "calls": {},
+    "pin": 73.5,
+    "pin_lim": 250
+   }
+  },
+  "default_res": "L",
+  "early_graded": {},
+  "close_graded": {
+   "follow_move": {
+    "side": "over",
+    "line": 74.5,
+    "odds": -111,
+    "res": "L",
+    "units": -1.0,
+    "took_default": true
+   },
+   "pin_value": {
+    "side": "under",
+    "line": 74.5,
+    "odds": -115,
+    "res": "W",
+    "units": 0.87,
+    "took_default": false
+   }
+  }
+ },
+ {
+  "game": "Wichita State @ Kentucky",
+  "market": "1h|spread",
+  "period": "1h",
+  "kind": "spread",
+  "tip": "2026-11-28T02:00:00.000Z",
+  "ot": true,
+  "markets": {
+   "close": {
+    "t": "2026-11-28T0159Z",
+    "line": {
+     "home": -2.5,
+     "away": 2.5
+    },
+    "odds": {
+     "home": -112,
+     "away": -112
+    },
+    "open": -2.5,
+    "calls": {
+     "pin_value": "away"
+    },
+    "pin": -2.0,
+    "pin_lim": 500,
+    "pin_gap": -0.5
+   },
+   "early": {
+    "t": "2026-11-27T1915Z",
+    "line": {
+     "home": -2.5,
+     "away": 2.5
+    },
+    "odds": {
+     "home": -112,
+     "away": -112
+    },
+    "open": -2.5,
+    "calls": {
+     "pin_value": "away"
+    },
+    "pin": -2.0,
+    "pin_lim": 250,
+    "pin_gap": -0.5
+   }
+  },
+  "default_res": "W",
+  "early_graded": {
+   "pin_value": {
+    "side": "away",
+    "line": 2.5,
+    "odds": -112,
+    "res": "L",
+    "units": -1.0,
+    "took_default": false,
+    "clv": 0.0
+   }
+  },
+  "close_graded": {
+   "pin_value": {
+    "side": "away",
+    "line": 2.5,
+    "odds": -112,
+    "res": "L",
+    "units": -1.0,
+    "took_default": false
+   }
+  }
+ },
+ {
+  "game": "Gonzaga @ Creighton",
+  "market": "1h|total",
+  "period": "1h",
+  "kind": "total",
+  "tip": "2026-11-28T04:00:39.000Z",
+  "ot": true,
+  "markets": {
+   "close": {
+    "t": "2026-11-28T0359Z",
+    "line": {
+     "over": 75.5,
+     "under": 75.5
+    },
+    "odds": {
+     "over": -111,
+     "under": -115
+    },
+    "open": 74.5,
+    "calls": {
+     "follow_move": "over"
+    },
+    "move": 1.0
+   },
+   "early": {
+    "t": "2026-11-27T1445Z",
+    "line": {
+     "over": 74.5,
+     "under": 74.5
+    },
+    "odds": {
+     "over": -115,
+     "under": -111
+    },
+    "open": 74.5,
+    "calls": {}
+   }
+  },
+  "default_res": "L",
+  "early_graded": {},
+  "close_graded": {
+   "follow_move": {
+    "side": "over",
+    "line": 75.5,
+    "odds": -111,
+    "res": "L",
+    "units": -1.0,
+    "took_default": true
+   }
+  }
+ },
+ {
+  "game": "Texas Tech @ San Diego State",
+  "market": "2h|tt_home",
+  "period": "2h",
+  "kind": "tt_home",
+  "tip": "2026-11-28T04:30:24.000Z",
+  "ot": false,
+  "markets": {
+   "close": {
+    "t": "2026-11-28T0429Z",
+    "line": {
+     "over": 35.5,
+     "under": 35.5
+    },
+    "odds": {
+     "over": -113,
+     "under": -113
+    },
+    "open": 36.5,
+    "calls": {
+     "follow_move": "under"
+    },
+    "move": -1.0
+   },
+   "early": {
+    "t": "2026-11-27T2006Z",
+    "line": {
+     "over": 36.5,
+     "under": 36.5
+    },
+    "odds": {
+     "over": -102,
+     "under": -125
+    },
+    "open": 36.5,
+    "calls": {}
+   }
+  },
+  "default_res": "W",
+  "early_graded": {},
+  "close_graded": {
+   "follow_move": {
+    "side": "under",
+    "line": 35.5,
+    "odds": -113,
+    "res": "L",
+    "units": -1.0,
+    "took_default": false
+   }
+  }
  }
 ]
