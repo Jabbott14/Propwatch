@@ -1,36 +1,36 @@
 # Propwatch watch
 
-Generated 2026-11-28T02:43Z by `watch.py`.
+Generated 2026-11-28T12:43Z by `watch.py`.
 
 ```
 ====================================================================================
-PROPWATCH WATCH   2026-11-28T02:43Z
+PROPWATCH WATCH   2026-11-28T12:43Z
 ====================================================================================
 
 ## BROKEN — the number moved AGAINST heavy public money  (6)
    the setup. Only visible because the prior state was recorded.
 
-   TEN@JAC    spread  JAC    public  88%/ 85% (entry 90%/89%)  -14.5 (-105) -> -14.5 (-100) [held 59/345s, line 345/345s]  =  -1.2pp (line +0.0 price -1.2)  Pin -14.5 $10,000  books -14.5/-14  12,076 bets  2026-11-29 18:00Z
-   SEA@SF     total   over   public  79%/ 76% (entry 83%/78%)  44.5 (-110) -> 42.5 (-110) [held 5/345s, line 5/345s]  =  -5.5pp (line -5.5 price +0.0)  Pin 42 $5,000  books 42.5/43  15,852 bets  2026-11-29 21:25Z
-   LV@CLE     total   over   public  78%/ 76% (entry 74%/70%)  39.5 (-115) -> 39.5 (-110) [held 57/345s, line 112/345s]  =  -1.1pp (line +0.0 price -1.1)  Pin 39.5 $5,000  books 39/39.5  12,026 bets  2026-11-30 01:20Z
-   TEN@JAC    total   over   public  73%/ 69% (entry 76%/79%)  48.5 (-110) -> 48.5 (-105) [held 59/345s, line 73/345s]  =  -1.2pp (line +0.0 price -1.2)  Pin 48.5 $5,000  books 47.5/48/48.5  12,076 bets  2026-11-29 18:00Z
-   NYJ@MIA    total   over   public  70%/ 74% (entry 78%/76%)  40.5 (-110) -> 40.5 (-100) [held 252/345s, line 345/345s]  =  -2.4pp (line +0.0 price -2.4)  Pin 40 $5,000  books 39.5/40/40.5  7,451 bets  2026-11-29 18:00Z
-   SEA@SF     spread  SF     public  69%/ 64% (entry 70%/69%)  -2.5 (-115) -> 1.5 (-115) [held 5/345s, line 5/345s]  = -11.0pp (line -11.0 price +0.0)  Pin 1 $20,000  books 0.5/1/1.5  15,852 bets  2026-11-29 21:25Z
+   TEN@JAC    spread  JAC    public  87%/ 85% (entry 90%/89%)  -14.5 (-105) -> -14.5 (-100) [held 69/355s, line 355/355s]  =  -1.2pp (line +0.0 price -1.2)  Pin -14.5 $10,000  books -14.5/-14  13,262 bets  2026-11-29 18:00Z
+   SEA@SF     total   over   public  79%/ 73% (entry 83%/78%)  44.5 (-110) -> 42.5 (-110) [held 15/355s, line 15/355s]  =  -5.5pp (line -5.5 price +0.0)  Pin 42 $5,000  books 42.5  17,473 bets  2026-11-29 21:25Z
+   LV@CLE     total   over   public  79%/ 75% (entry 74%/70%)  39.5 (-115) -> 39.5 (-110) [held 67/355s, line 122/355s]  =  -1.1pp (line +0.0 price -1.1)  Pin 39.5 $5,000  books 38.5/39/39.5  13,308 bets  2026-11-30 01:20Z
+   TEN@JAC    total   over   public  72%/ 70% (entry 76%/79%)  48.5 (-110) -> 48.5 (-105) [held 69/355s, line 83/355s]  =  -1.2pp (line +0.0 price -1.2)  Pin 48.5 $5,000  books 47.5/48/48.5  13,262 bets  2026-11-29 18:00Z
+   NYJ@MIA    total   over   public  70%/ 75% (entry 78%/76%)  40.5 (-110) -> 40.5 (-100) [held 262/355s, line 355/355s]  =  -2.4pp (line +0.0 price -2.4)  Pin 40 $5,000  books 39.5/40/40.5  8,370 bets  2026-11-29 18:00Z
+   SEA@SF     spread  SF     public  67%/ 60% (entry 70%/69%)  -2.5 (-115) -> 1.5 (-115) [held 15/355s, line 15/355s]  = -11.0pp (line -11.0 price +0.0)  Pin 1 $20,000  books 0.5/1/1.5  17,473 bets  2026-11-29 21:25Z
 
 ## LOADED — one-way money, number still on its opener  (11)
    nothing has happened yet. Where to look, not what to bet.
 
-   NO@CIN     spread  CIN    public  91%/ 91% (entry 90%/92%)  -9.5 (-120) -> -9.5 (-120) [held 345/345s, line 345/345s]  =  +0.0pp (line +0.0 price +0.0)  Pin -10.5 $30,000  books -10/-9.5  11,707 bets  2026-11-29 18:00Z
-   NE@LAC     total   over   public  85%/ 85% (entry 86%/85%)  35.5 (-112) -> 35.5 (-112) [held 345/345s, line 345/345s]  =  +0.0pp (line +0.0 price +0.0)  Pin 35.5 $3,000  books 34.5/35/35.5  9,042 bets  2026-11-29 21:05Z
-   WAS@ARI    spread  WAS    public  84%/ 84% (entry 84%/85%)  -7 (-105) -> -7 (-105) [held 345/345s, line 345/345s]  =  +0.0pp (line +0.0 price +0.0)  Pin -6.5 $20,000  books -6.5  10,178 bets  2026-11-29 21:25Z   <-- FanDuel alone at its number
-   NYG@IND    spread  NYG    public  83%/ 84% (entry 84%/84%)  -6.5 (-105) -> -5.5 (-115) [held 30/345s, line 30/345s]  =  -0.5pp (line -2.8 price +2.3)  Pin -5.5 $30,000  books -6.5/-5.5  12,167 bets  2026-11-29 18:00Z
-   CAR@TB     total   over   public  82%/ 81% (entry 83%/78%)  43.5 (-115) -> 43.5 (-115) [held 345/345s, line 345/345s]  =  +0.0pp (line +0.0 price +0.0)  Pin 43.5 $10,000  books 43.5  9,092 bets  2026-12-01 01:15Z
-   ATL@MIN    spread  MIN    public  81%/ 81% (entry 83%/85%)  -7 (-105) -> -7 (-105) [held 345/345s, line 345/345s]  =  +0.0pp (line +0.0 price +0.0)  Pin -7 $20,000  books -7/-6.5  13,227 bets  2026-11-29 18:00Z
-   NYG@IND    total   over   public  75%/ 74% (entry 77%/74%)  42.5 (-100) -> 42.5 (-100) [held 345/345s, line 345/345s]  =  +0.0pp (line +0.0 price +0.0)  Pin 42 $5,000  books 40.5/41.5  12,167 bets  2026-11-29 18:00Z
-   WAS@ARI    total   over   public  73%/ 73% (entry 83%/80%)  41.5 (-110) -> 41.5 (-110) [held 345/345s, line 345/345s]  =  +0.0pp (line +0.0 price +0.0)  Pin 41.5 $5,000  books 41.5  10,178 bets  2026-11-29 21:25Z
-   LV@CLE     spread  LV     public  70%/ 71% (entry 66%/66%)  4.5 (-105) -> 4.5 (-105) [held 345/345s, line 345/345s]  =  +0.0pp (line +0.0 price +0.0)  Pin 4.5 $20,000  books 4.5  12,026 bets  2026-11-30 01:20Z
-   ATL@MIN    total   over   public  65%/ 66% (entry 69%/68%)  41.5 (-110) -> 41.5 (-110) [held 345/345s, line 345/345s]  =  +0.0pp (line +0.0 price +0.0)  Pin 41.5 $5,000  books 41.5  13,227 bets  2026-11-29 18:00Z
-   BAL@HOU    total   over   public  63%/ 68% (entry 72%/75%)  47.5 (-105) -> 47.5 (-105) [held 345/345s, line 345/345s]  =  +0.0pp (line +0.0 price +0.0)  Pin 47.5 $5,000  books 46.5/47/47.5  11,182 bets  2026-11-29 18:00Z
+   NO@CIN     spread  CIN    public  90%/ 90% (entry 90%/92%)  -9.5 (-120) -> -9.5 (-120) [held 355/355s, line 355/355s]  =  +0.0pp (line +0.0 price +0.0)  Pin -10.5 $30,000  books -10/-9.5  13,374 bets  2026-11-29 18:00Z
+   NE@LAC     total   over   public  85%/ 83% (entry 86%/85%)  35.5 (-112) -> 35.5 (-112) [held 355/355s, line 355/355s]  =  +0.0pp (line +0.0 price +0.0)  Pin 35.5 $3,000  books 34.5/35/35.5  9,951 bets  2026-11-29 21:05Z
+   WAS@ARI    spread  WAS    public  84%/ 84% (entry 84%/85%)  -7 (-105) -> -7 (-105) [held 355/355s, line 355/355s]  =  +0.0pp (line +0.0 price +0.0)  Pin -6.5 $20,000  books -6.5  11,172 bets  2026-11-29 21:25Z   <-- FanDuel alone at its number
+   NYG@IND    spread  NYG    public  82%/ 84% (entry 84%/84%)  -6.5 (-105) -> -5.5 (-115) [held 40/355s, line 40/355s]  =  -0.5pp (line -2.8 price +2.3)  Pin -5.5 $30,000  books -6.5/-5.5  13,495 bets  2026-11-29 18:00Z
+   CAR@TB     total   over   public  81%/ 86% (entry 83%/78%)  43.5 (-115) -> 43.5 (-115) [held 355/355s, line 355/355s]  =  +0.0pp (line +0.0 price +0.0)  Pin 43.5 $10,000  books 43.5  9,643 bets  2026-12-01 01:15Z
+   ATL@MIN    spread  MIN    public  80%/ 80% (entry 83%/85%)  -7 (-105) -> -7 (-105) [held 355/355s, line 355/355s]  =  +0.0pp (line +0.0 price +0.0)  Pin -7 $20,000  books -7/-6.5  14,777 bets  2026-11-29 18:00Z
+   NYG@IND    total   over   public  75%/ 74% (entry 77%/74%)  42.5 (-100) -> 42.5 (-100) [held 355/355s, line 355/355s]  =  +0.0pp (line +0.0 price +0.0)  Pin 42 $5,000  books 40.5/41.5  13,495 bets  2026-11-29 18:00Z
+   WAS@ARI    total   over   public  74%/ 74% (entry 83%/80%)  41.5 (-110) -> 41.5 (-110) [held 355/355s, line 355/355s]  =  +0.0pp (line +0.0 price +0.0)  Pin 41.5 $5,000  books 41.5  11,172 bets  2026-11-29 21:25Z
+   LV@CLE     spread  LV     public  70%/ 71% (entry 66%/66%)  4.5 (-105) -> 4.5 (-105) [held 355/355s, line 355/355s]  =  +0.0pp (line +0.0 price +0.0)  Pin 4.5 $20,000  books 4.5  13,308 bets  2026-11-30 01:20Z
+   ATL@MIN    total   over   public  66%/ 65% (entry 69%/68%)  41.5 (-110) -> 41.5 (-110) [held 355/355s, line 355/355s]  =  +0.0pp (line +0.0 price +0.0)  Pin 41.5 $5,000  books 41.5  14,777 bets  2026-11-29 18:00Z
+   BAL@HOU    total   over   public  64%/ 68% (entry 72%/75%)  47.5 (-105) -> 47.5 (-105) [held 355/355s, line 355/355s]  =  +0.0pp (line +0.0 price +0.0)  Pin 47.5 $5,000  books 46.5/47/47.5  12,308 bets  2026-11-29 18:00Z
 
 ## FOLLOWED — the number moved WITH the public  (0)
    not a fade. Printed because these get mistaken for fades afterwards.
