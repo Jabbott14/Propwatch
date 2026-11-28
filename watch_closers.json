@@ -184,7 +184,7 @@
     }
    }
   },
-  "captured_at": "2026-11-27T2247Z",
+  "captured_at": "2026-11-28T0243Z",
   "close_snap": "2026-11-26T0100Z",
   "final": {
    "away": "GB",
@@ -406,7 +406,7 @@
     }
    }
   },
-  "captured_at": "2026-11-27T2247Z",
+  "captured_at": "2026-11-28T0243Z",
   "close_snap": "2026-11-26T1759Z",
   "final": {
    "away": "CHI",
@@ -628,7 +628,7 @@
     }
    }
   },
-  "captured_at": "2026-11-27T2247Z",
+  "captured_at": "2026-11-28T0243Z",
   "close_snap": "2026-11-26T2130Z",
   "final": {
    "away": "PHI",
@@ -850,7 +850,7 @@
     }
    }
   },
-  "captured_at": "2026-11-27T2247Z",
+  "captured_at": "2026-11-28T0243Z",
   "close_snap": "2026-11-27T0119Z",
   "final": {
    "away": "KC",
@@ -1072,9 +1072,15 @@
     }
    }
   },
-  "captured_at": "2026-11-27T2247Z",
+  "captured_at": "2026-11-28T0243Z",
   "close_snap": "2026-11-27T1959Z",
-  "final": null,
+  "final": {
+   "away": "DEN",
+   "away_pts": 5,
+   "home": "PIT",
+   "home_pts": 27,
+   "total": 32
+  },
   "game": "DEN@PIT",
   "key": "DEN@PIT|2026-11-27T2000Z",
   "kickoff": "2026-11-27T2000Z",
@@ -1101,6 +1107,6 @@
     "pts": 37.0
    }
   },
-  "status": "inprogress"
+  "status": "complete"
  }
 ]

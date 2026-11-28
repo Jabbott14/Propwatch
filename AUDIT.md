@@ -12,19 +12,19 @@ a session opens it, and the guards only fire once a measurement is already wrong
 
 ## 0. IS THE DATA STILL ARRIVING?
 
-  NFL collector    not in the last 1 commits (shallow clone — not a failure)
-  CBB collector    last    0.1h ago  (2026-11-27T21:46:35Z)
-  NCAAF collector  not in the last 1 commits (shallow clone — not a failure)
-  NFL grader       not in the last 1 commits (shallow clone — not a failure)
-  CBB grader       not in the last 1 commits (shallow clone — not a failure)
+  NFL collector    last    0.6h ago  (2026-11-28T02:13:25+00:00)
+  CBB collector    last    0.2h ago  (2026-11-28T02:36:55+00:00)
+  NCAAF collector  last    0.3h ago  (2026-11-28T02:26:22+00:00)
+  NFL grader       last    2.6h ago  (2026-11-28T00:12:46+00:00)
+  CBB grader       last    7.6h ago  (2026-11-27T19:12:10+00:00)
 
-  data             SOURCES FAILING as of 2026-11-27T21:02:24Z:
+  data             SOURCES FAILING as of 2026-11-28T02:13:02Z:
       vsin           HTTPError: HTTP Error 403: Forbidden
       vsin_circa     HTTPError: HTTP Error 403: Forbidden
       (that run reported pulls_fail=0 — the counter
        covers prop requests only, not these)
-  cbb              all sources OK as of 2026-11-27T21:46:25Z
-  ncaaf            all sources OK as of 2026-11-27T21:35:49Z
+  cbb              all sources OK as of 2026-11-28T02:36:53Z
+  ncaaf            all sources OK as of 2026-11-28T02:26:20Z
 
   1 feed/source problem(s). EVERY NUMBER BELOW THAT DEPENDS ON THEM IS SUSPECT --
   a dead feed does not look like an error downstream, it looks like a quiet
@@ -81,8 +81,8 @@ a session opens it, and the guards only fire once a measurement is already wrong
 ## 2. ANOMALY SCAN, WITH THE MULTIPLE-COMPARISONS DENOMINATOR
 
   excluded as non-independent or unscoreable:
-      1650  period=all (fit+fwd re-counted)
-       896  market=both (pools base rates)
+      1656  period=all (fit+fwd re-counted)
+       898  market=both (pools base rates)
        856  signal pair (derived from singles)
 
   independent-ish cells with >=30 decisions: 413
@@ -278,26 +278,26 @@ a session opens it, and the guards only fire once a measurement is already wrong
   nfl   fit  mny_crossed    total           59.6% n=89 +13.4      43.4% n=113 -16.9   2.28
   cbb   fit  mny_crossed    total          49.3% n=2821 -5.9       53.9% n=679 +3.1  -2.17
   nfl   fit  line_reversed  moneyline       50.4% n=139 -8.2      37.7% n=122 -37.0   2.05
-  nfl   fwd  mny_crossed    spread          46.7% n=60 -10.1       24.1% n=29 -52.5   2.04
   cbb   fit  mny_gave_back  spread         51.9% n=1157 -1.1      48.5% n=1881 -8.0   1.82
+  nfl   fwd  mny_crossed    spread          46.7% n=60 -10.1       28.6% n=35 -44.0   1.74
   nfl   fit  key_crossed    spread          31.7% n=41 -38.9      45.3% n=172 -14.7  -1.59
   nfl   fit  mny_gave_back  moneyline        51.1% n=90 +7.8      40.9% n=171 -37.1   1.57
   cbb   fit  line_ineff     total           52.9% n=681 +1.1      49.5% n=2819 -5.4   1.57
   cbb   fit  line_reversed  moneyline       47.9% n=941 +9.4      44.6% n=1273 -7.9   1.54
   nfl   fit  mny_gave_back  total           41.8% n=55 -20.1       53.7% n=147 +2.6  -1.51
-  nfl   fwd  line_ineff     total           75.9% n=29 +44.7       60.6% n=71 +15.7   1.46
-  nfl   fwd  mny_gave_back  spread          44.8% n=58 -12.7       29.0% n=31 -44.8   1.45
-  nfl   fwd  mny_gave_back  total            55.9% n=34 +8.1       69.7% n=66 +32.4  -1.37
+  nfl   fwd  line_ineff     total           75.9% n=29 +44.7       60.8% n=79 +16.3   1.46
+  nfl   fwd  mny_gave_back  total            55.9% n=34 +8.1       68.9% n=74 +31.2  -1.32
   cbb   fit  mny_gave_back  moneyline       44.3% n=902 -3.4      47.2% n=1312 +1.5  -1.31
   cbb   fwd  line_ineff     total           51.5% n=452 -1.6      47.9% n=1098 -8.5   1.30
   cbb   fwd  mny_gave_back  spread         43.9% n=223 -17.0       48.7% n=896 -7.4  -1.26
   cbb   fwd  mny_crossed    spread         46.3% n=702 -12.3       50.1% n=417 -4.4  -1.24
+  nfl   fwd  mny_gave_back  spread          44.8% n=58 -12.7       32.4% n=37 -38.0   1.20
   cbb   fit  mny_gave_back  total          49.3% n=1954 -5.8      51.3% n=1546 -2.1  -1.18
   cbb   fwd  line_ineff     spread          50.3% n=316 -4.1      46.7% n=803 -11.4   1.09
-  nfl   fwd  deep_series    moneyline       44.0% n=50 +11.7       33.9% n=59 -41.5   1.08
   nfl   fit  mny_crossed    spread          33.3% n=27 -37.2      44.1% n=186 -16.8  -1.06
+  nfl   fwd  deep_series    moneyline       42.9% n=56 +10.7       33.9% n=59 -41.5   0.99
   cbb   fit  mny_crossed    spread         49.3% n=2111 -6.6       51.1% n=927 -2.5  -0.95
-  nfl   fwd  deep_series    total           60.8% n=51 +16.2       69.4% n=49 +32.4  -0.90
+  nfl   fwd  deep_series    total           61.0% n=59 +16.9       69.4% n=49 +32.4  -0.91
   cbb   fwd  mny_crossed    moneyline       48.3% n=745 -4.8       45.8% n=456 -5.8   0.84
   cbb   fit  line_ineff     spread          48.5% n=715 -8.0      50.2% n=2323 -4.6  -0.80
   cbb   fwd  mny_crossed    total          49.4% n=1317 -5.7      46.8% n=233 -10.7   0.72
@@ -310,16 +310,16 @@ a session opens it, and the guards only fire once a measurement is already wrong
   cbb   fwd  line_reversed  total           50.0% n=204 -5.0      48.8% n=1346 -6.7   0.32
   nfl   fit  deep_series    total           50.8% n=177 -2.8        48.0% n=25 -8.8   0.27
   cbb   fit  mny_crossed    moneyline      46.2% n=1458 -0.9       45.6% n=756 +0.2   0.27
+  nfl   fwd  deep_series    spread          41.3% n=46 -19.3       38.8% n=49 -25.6   0.25
   cbb   fwd  mny_gave_back  total           49.2% n=832 -6.1       48.7% n=718 -6.9   0.16
   cbb   fit  line_reversed  spread          50.2% n=233 -5.4      49.8% n=2805 -5.4   0.12
-  nfl   fwd  deep_series    spread          40.0% n=40 -21.8       38.8% n=49 -25.6   0.12
   cbb   fwd  line_reversed  moneyline       47.5% n=451 -3.3       47.3% n=750 -6.3   0.04
 
   FIT is a hypothesis, FORWARD is evidence. A feature that only appears in FIT
   rows has not been tested; one that holds in both, and across sports, is the
   project's own standard for believing anything.
 
-  12 at |z|>=2.0 against ~2.4 expected. Above chance — worth a look.
+  11 at |z|>=2.0 against ~2.4 expected. Above chance — worth a look.
   ROI is the currency, not hit rate: money_level hit 73.4% and lost 14.87 units.
 
 ## 4. HOLDOUT AND FORWARD SAMPLE
@@ -328,8 +328,8 @@ a session opens it, and the guards only fire once a measurement is already wrong
          684 fit games, 308 forward games
 
   nfl: holdout from 2026-11-21 (6d ago)
-         43 fit games, 16 forward games
-         forward sample is 16 games. Nothing measured forward can
+         43 fit games, 17 forward games
+         forward sample is 17 games. Nothing measured forward can
          distinguish a 55% signal from a 50% one yet. Do not promote on it.
 
 ------------------------------------------------------------------------------
