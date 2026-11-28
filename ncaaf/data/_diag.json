@@ -3,38 +3,38 @@
   "bowl": 0,
   "cfp": 0,
   "champ": 0,
-  "regular": 2807
+  "regular": 2614
  },
- "an_rows": 2807,
- "cycle": 12,
- "cycle_sec": 20.1,
- "deferred_events": 0,
- "elapsed_min": 110.3,
+ "an_rows": 2614,
+ "cycle": 15,
+ "cycle_sec": 19.1,
+ "deferred_events": 5,
+ "elapsed_min": 140.3,
  "errors": [],
- "event_rows": 856,
+ "event_rows": 1014,
  "events_with_tabs": 67,
  "gz": {
-  "pin": 456,
+  "pin": 0,
   "props": 0,
-  "splits": 2427
+  "splits": 880
  },
- "gz_kb_total": 2.8,
+ "gz_kb_total": 0.9,
  "keyframe": false,
  "lobby_events": 65,
  "lobby_rows": 451,
  "new_openers_caught": 0,
  "pin_rows": 1584,
  "pulls_fail": 0,
- "pulls_ok": 128,
+ "pulls_ok": 150,
  "raw": false,
  "rows_written": {
-  "pin": 24,
+  "pin": 0,
   "props": 0,
-  "splits": 96
+  "splits": 26
  },
- "run_utc": "2026-11-28T06:46:51Z",
+ "run_utc": "2026-11-28T07:16:51Z",
  "tiers": {
-  "A": 14,
+  "A": 17,
   "B": 0,
   "C": 0,
   "U": 0
