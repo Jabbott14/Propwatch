@@ -31754,5 +31754,797 @@
     "took_default": false
    }
   }
+ },
+ {
+  "game": "Denver Broncos @ Pittsburgh Steelers",
+  "market": "q4|spread",
+  "period": "q4",
+  "kind": "spread",
+  "kickoff": "2026-11-27T20:00:00.000Z",
+  "markets": {
+   "close": {
+    "t": "2026-11-27T1959Z",
+    "line": {
+     "home": 1.5,
+     "away": -1.5
+    },
+    "odds": {
+     "home": -124,
+     "away": 102
+    },
+    "open": 1.5,
+    "open_odds": {
+     "home": -144,
+     "away": 118
+    },
+    "calls": {
+     "fd_juice": "away"
+    }
+   },
+   "early": {
+    "t": "2026-11-23T1256Z",
+    "line": {
+     "home": 1.5,
+     "away": -1.5
+    },
+    "odds": {
+     "home": -144,
+     "away": 118
+    },
+    "open": 1.5,
+    "open_odds": {
+     "home": -144,
+     "away": 118
+    },
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "fd_juice": {
+    "side": "away",
+    "line": -1.5,
+    "odds": 102,
+    "res": "L",
+    "units": -1.0,
+    "took_default": true
+   }
+  }
+ },
+ {
+  "game": "Denver Broncos @ Pittsburgh Steelers",
+  "market": "q4|total",
+  "period": "q4",
+  "kind": "total",
+  "kickoff": "2026-11-27T20:00:00.000Z",
+  "markets": {
+   "close": {
+    "t": "2026-11-27T1959Z",
+    "line": {
+     "over": 9.5,
+     "under": 9.5
+    },
+    "odds": {
+     "over": -136,
+     "under": 110
+    },
+    "open": 10.5,
+    "open_odds": {
+     "over": 118,
+     "under": -142
+    },
+    "calls": {
+     "follow_move": "under"
+    },
+    "move": -1.0
+   },
+   "early": {
+    "t": "2026-11-23T1256Z",
+    "line": {
+     "over": 10.5,
+     "under": 10.5
+    },
+    "odds": {
+     "over": 118,
+     "under": -142
+    },
+    "open": 10.5,
+    "open_odds": {
+     "over": 118,
+     "under": -142
+    },
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "follow_move": {
+    "side": "under",
+    "line": 9.5,
+    "odds": 110,
+    "res": "W",
+    "units": 1.1,
+    "took_default": false
+   }
+  }
+ },
+ {
+  "game": "Denver Broncos @ Pittsburgh Steelers",
+  "market": "q4|ml",
+  "period": "q4",
+  "kind": "ml",
+  "kickoff": "2026-11-27T20:00:00.000Z",
+  "markets": {
+   "close": {
+    "t": "2026-11-27T1959Z",
+    "line": {
+     "home": 134,
+     "away": -164
+    },
+    "odds": {
+     "home": 134,
+     "away": -164
+    },
+    "open": 110,
+    "open_odds": {
+     "home": 110,
+     "away": -134
+    },
+    "calls": {
+     "follow_move": "away"
+    },
+    "move": 24
+   },
+   "early": {
+    "t": "2026-11-23T1256Z",
+    "line": {
+     "home": 110,
+     "away": -134
+    },
+    "odds": {
+     "home": 110,
+     "away": -134
+    },
+    "open": 110,
+    "open_odds": {
+     "home": 110,
+     "away": -134
+    },
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "follow_move": {
+    "side": "away",
+    "line": -164,
+    "odds": -164,
+    "res": "L",
+    "units": -1.0,
+    "took_default": true
+   }
+  }
+ },
+ {
+  "game": "Denver Broncos @ Pittsburgh Steelers",
+  "market": "1h|tt|away",
+  "period": "1h",
+  "kind": "tt",
+  "kickoff": "2026-11-27T20:00:00.000Z",
+  "markets": {
+   "close": {
+    "t": "2026-11-27T1959Z",
+    "line": {
+     "over": 10.5,
+     "under": 10.5
+    },
+    "odds": {
+     "over": 124,
+     "under": -158
+    },
+    "open": 9.5,
+    "open_odds": {
+     "over": -154,
+     "under": 120
+    },
+    "calls": {
+     "follow_move": "over",
+     "pin_value": "under"
+    },
+    "move": 1.0,
+    "pin": 9.5,
+    "pin_lim": 3000,
+    "pin_gap": 1.0
+   },
+   "early": {
+    "t": "2026-11-23T1256Z",
+    "line": {
+     "over": 9.5,
+     "under": 9.5
+    },
+    "odds": {
+     "over": -154,
+     "under": 120
+    },
+    "open": 9.5,
+    "open_odds": {
+     "over": -154,
+     "under": 120
+    },
+    "calls": {},
+    "pin": 9.5,
+    "pin_lim": 2000
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "follow_move": {
+    "side": "over",
+    "line": 10.5,
+    "odds": 124,
+    "res": "L",
+    "units": -1.0,
+    "took_default": true
+   },
+   "pin_value": {
+    "side": "under",
+    "line": 10.5,
+    "odds": -158,
+    "res": "W",
+    "units": 0.633,
+    "took_default": false
+   }
+  }
+ },
+ {
+  "game": "Denver Broncos @ Pittsburgh Steelers",
+  "market": "1h|tt|home",
+  "period": "1h",
+  "kind": "tt",
+  "kickoff": "2026-11-27T20:00:00.000Z",
+  "markets": {
+   "close": {
+    "t": "2026-11-27T1959Z",
+    "line": {
+     "over": 7.5,
+     "under": 7.5
+    },
+    "odds": {
+     "over": 112,
+     "under": -142
+    },
+    "open": 9.5,
+    "open_odds": {
+     "over": -113,
+     "under": -113
+    },
+    "calls": {
+     "follow_move": "under"
+    },
+    "move": -2.0,
+    "pin": 7.5,
+    "pin_lim": 3000
+   },
+   "early": {
+    "t": "2026-11-23T1256Z",
+    "line": {
+     "over": 9.5,
+     "under": 9.5
+    },
+    "odds": {
+     "over": -113,
+     "under": -113
+    },
+    "open": 9.5,
+    "open_odds": {
+     "over": -113,
+     "under": -113
+    },
+    "calls": {},
+    "pin": 9.5,
+    "pin_lim": 2000
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "follow_move": {
+    "side": "under",
+    "line": 7.5,
+    "odds": -142,
+    "res": "L",
+    "units": -1.0,
+    "took_default": false
+   }
+  }
+ },
+ {
+  "game": "Denver Broncos @ Pittsburgh Steelers",
+  "market": "1h|total",
+  "period": "1h",
+  "kind": "total",
+  "kickoff": "2026-11-27T20:00:00.000Z",
+  "markets": {
+   "close": {
+    "t": "2026-11-27T1959Z",
+    "line": {
+     "over": 18.5,
+     "under": 18.5
+    },
+    "odds": {
+     "over": -110,
+     "under": -110
+    },
+    "open": 19.5,
+    "open_odds": {
+     "over": -120,
+     "under": 100
+    },
+    "calls": {
+     "follow_move": "under",
+     "pin_value": "under"
+    },
+    "move": -1.0,
+    "pin": 17.5,
+    "pin_lim": 10000,
+    "pin_gap": 1.0
+   },
+   "early": {
+    "t": "2026-11-23T1256Z",
+    "line": {
+     "over": 19.5,
+     "under": 19.5
+    },
+    "odds": {
+     "over": -120,
+     "under": 100
+    },
+    "open": 19.5,
+    "open_odds": {
+     "over": -120,
+     "under": 100
+    },
+    "calls": {},
+    "pin": 19.5,
+    "pin_lim": 3000
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "follow_move": {
+    "side": "under",
+    "line": 18.5,
+    "odds": -110,
+    "res": "L",
+    "units": -1.0,
+    "took_default": false
+   },
+   "pin_value": {
+    "side": "under",
+    "line": 18.5,
+    "odds": -110,
+    "res": "L",
+    "units": -1.0,
+    "took_default": false
+   }
+  }
+ },
+ {
+  "game": "Denver Broncos @ Pittsburgh Steelers",
+  "market": "1h|ml",
+  "period": "1h",
+  "kind": "ml",
+  "kickoff": "2026-11-27T20:00:00.000Z",
+  "markets": {
+   "close": {
+    "t": "2026-11-27T1959Z",
+    "line": {
+     "home": 156,
+     "away": -190
+    },
+    "odds": {
+     "home": 156,
+     "away": -190
+    },
+    "open": 114,
+    "open_odds": {
+     "home": 114,
+     "away": -140
+    },
+    "calls": {
+     "follow_move": "away"
+    },
+    "move": 42,
+    "pin": 160,
+    "pin_lim": 10000
+   },
+   "early": {
+    "t": "2026-11-23T1256Z",
+    "line": {
+     "home": 114,
+     "away": -140
+    },
+    "odds": {
+     "home": 114,
+     "away": -140
+    },
+    "open": 114,
+    "open_odds": {
+     "home": 114,
+     "away": -140
+    },
+    "calls": {},
+    "pin": 115,
+    "pin_lim": 5000
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "follow_move": {
+    "side": "away",
+    "line": -190,
+    "odds": -190,
+    "res": "L",
+    "units": -1.0,
+    "took_default": true
+   }
+  }
+ },
+ {
+  "game": "Denver Broncos @ Pittsburgh Steelers",
+  "market": "1h|spread",
+  "period": "1h",
+  "kind": "spread",
+  "kickoff": "2026-11-27T20:00:00.000Z",
+  "markets": {
+   "close": {
+    "t": "2026-11-27T1959Z",
+    "line": {
+     "home": 2.5,
+     "away": -2.5
+    },
+    "odds": {
+     "home": 105,
+     "away": -125
+    },
+    "open": 1.5,
+    "open_odds": {
+     "home": -120,
+     "away": 100
+    },
+    "calls": {
+     "follow_move": "away"
+    },
+    "move": 1.0,
+    "pin": 2.5,
+    "pin_lim": 20000
+   },
+   "early": {
+    "t": "2026-11-23T1256Z",
+    "line": {
+     "home": 1.5,
+     "away": -1.5
+    },
+    "odds": {
+     "home": -120,
+     "away": 100
+    },
+    "open": 1.5,
+    "open_odds": {
+     "home": -120,
+     "away": 100
+    },
+    "calls": {
+     "pin_value": "home"
+    },
+    "pin": 0.5,
+    "pin_lim": 5000,
+    "pin_gap": 1.0
+   }
+  },
+  "early_graded": {
+   "pin_value": {
+    "side": "home",
+    "line": 1.5,
+    "odds": -120,
+    "res": "W",
+    "units": 0.833,
+    "took_default": false,
+    "clv": -1.0
+   }
+  },
+  "close_graded": {
+   "follow_move": {
+    "side": "away",
+    "line": -2.5,
+    "odds": -125,
+    "res": "L",
+    "units": -1.0,
+    "took_default": true
+   }
+  }
+ },
+ {
+  "game": "Denver Broncos @ Pittsburgh Steelers",
+  "market": "2h|spread",
+  "period": "2h",
+  "kind": "spread",
+  "kickoff": "2026-11-27T20:00:00.000Z",
+  "markets": {
+   "close": {
+    "t": "2026-11-27T1959Z",
+    "line": {
+     "home": 2.5,
+     "away": -2.5
+    },
+    "odds": {
+     "home": 100,
+     "away": -120
+    },
+    "open": 1.5,
+    "open_odds": {
+     "home": -120,
+     "away": 100
+    },
+    "calls": {
+     "follow_move": "away"
+    },
+    "move": 1.0
+   },
+   "early": {
+    "t": "2026-11-23T1256Z",
+    "line": {
+     "home": 1.5,
+     "away": -1.5
+    },
+    "odds": {
+     "home": -120,
+     "away": 100
+    },
+    "open": 1.5,
+    "open_odds": {
+     "home": -120,
+     "away": 100
+    },
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "follow_move": {
+    "side": "away",
+    "line": -2.5,
+    "odds": -120,
+    "res": "L",
+    "units": -1.0,
+    "took_default": true
+   }
+  }
+ },
+ {
+  "game": "Denver Broncos @ Pittsburgh Steelers",
+  "market": "2h|total",
+  "period": "2h",
+  "kind": "total",
+  "kickoff": "2026-11-27T20:00:00.000Z",
+  "markets": {
+   "close": {
+    "t": "2026-11-27T1959Z",
+    "line": {
+     "over": 17.5,
+     "under": 17.5
+    },
+    "odds": {
+     "over": -110,
+     "under": -110
+    },
+    "open": 18.5,
+    "open_odds": {
+     "over": -110,
+     "under": -110
+    },
+    "calls": {
+     "follow_move": "under"
+    },
+    "move": -1.0
+   },
+   "early": {
+    "t": "2026-11-23T1256Z",
+    "line": {
+     "over": 18.5,
+     "under": 18.5
+    },
+    "odds": {
+     "over": -110,
+     "under": -110
+    },
+    "open": 18.5,
+    "open_odds": {
+     "over": -110,
+     "under": -110
+    },
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "follow_move": {
+    "side": "under",
+    "line": 17.5,
+    "odds": -110,
+    "res": "W",
+    "units": 0.909,
+    "took_default": false
+   }
+  }
+ },
+ {
+  "game": "Denver Broncos @ Pittsburgh Steelers",
+  "market": "2h|tt|away",
+  "period": "2h",
+  "kind": "tt",
+  "kickoff": "2026-11-27T20:00:00.000Z",
+  "markets": {
+   "close": {
+    "t": "2026-11-27T1959Z",
+    "line": {
+     "over": 9.5,
+     "under": 9.5
+    },
+    "odds": {
+     "over": -146,
+     "under": 114
+    },
+    "open": 9.5,
+    "open_odds": {
+     "over": -132,
+     "under": 104
+    },
+    "calls": {
+     "fd_juice": "over"
+    }
+   },
+   "early": {
+    "t": "2026-11-23T1256Z",
+    "line": {
+     "over": 9.5,
+     "under": 9.5
+    },
+    "odds": {
+     "over": -132,
+     "under": 104
+    },
+    "open": 9.5,
+    "open_odds": {
+     "over": -132,
+     "under": 104
+    },
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "fd_juice": {
+    "side": "over",
+    "line": 9.5,
+    "odds": -146,
+    "res": "L",
+    "units": -1.0,
+    "took_default": true
+   }
+  }
+ },
+ {
+  "game": "Denver Broncos @ Pittsburgh Steelers",
+  "market": "2h|ml",
+  "period": "2h",
+  "kind": "ml",
+  "kickoff": "2026-11-27T20:00:00.000Z",
+  "markets": {
+   "close": {
+    "t": "2026-11-27T1959Z",
+    "line": {
+     "home": 152,
+     "away": -180
+    },
+    "odds": {
+     "home": 152,
+     "away": -180
+    },
+    "open": 118,
+    "open_odds": {
+     "home": 118,
+     "away": -138
+    },
+    "calls": {
+     "follow_move": "away"
+    },
+    "move": 34
+   },
+   "early": {
+    "t": "2026-11-23T1256Z",
+    "line": {
+     "home": 118,
+     "away": -138
+    },
+    "odds": {
+     "home": 118,
+     "away": -138
+    },
+    "open": 118,
+    "open_odds": {
+     "home": 118,
+     "away": -138
+    },
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "follow_move": {
+    "side": "away",
+    "line": -180,
+    "odds": -180,
+    "res": "L",
+    "units": -1.0,
+    "took_default": true
+   }
+  }
+ },
+ {
+  "game": "Denver Broncos @ Pittsburgh Steelers",
+  "market": "2h|tt|home",
+  "period": "2h",
+  "kind": "tt",
+  "kickoff": "2026-11-27T20:00:00.000Z",
+  "markets": {
+   "close": {
+    "t": "2026-11-27T1959Z",
+    "line": {
+     "over": 7.5,
+     "under": 7.5
+    },
+    "odds": {
+     "over": 108,
+     "under": -138
+    },
+    "open": 8.5,
+    "open_odds": {
+     "over": -111,
+     "under": -115
+    },
+    "calls": {
+     "follow_move": "under"
+    },
+    "move": -1.0
+   },
+   "early": {
+    "t": "2026-11-23T1256Z",
+    "line": {
+     "over": 8.5,
+     "under": 8.5
+    },
+    "odds": {
+     "over": -111,
+     "under": -115
+    },
+    "open": 8.5,
+    "open_odds": {
+     "over": -111,
+     "under": -115
+    },
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "follow_move": {
+    "side": "under",
+    "line": 7.5,
+    "odds": -138,
+    "res": "W",
+    "units": 0.725,
+    "took_default": false
+   }
+  }
  }
 ]
