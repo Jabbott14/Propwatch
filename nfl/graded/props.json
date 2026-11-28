@@ -74450,6 +74450,1009 @@
  },
  {
   "game": "Denver Broncos @ Pittsburgh Steelers",
+  "player": "bo nix",
+  "stat": "pass_tds",
+  "kickoff": "2026-11-27T20:00:00.000Z",
+  "week": 12,
+  "actual": 0.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-27T1959Z",
+    "line": 1.5,
+    "odds": {
+     "over": 185,
+     "under": -250
+    },
+    "open": 1.5,
+    "calls": {
+     "fd_juice": "under"
+    },
+    "pin": 1.5,
+    "pin_lim": 7500,
+    "fair_over": 0.3395,
+    "juice_c": [
+     27,
+     -35
+    ]
+   },
+   "early": {
+    "t": "2026-11-23T1256Z",
+    "line": 1.5,
+    "odds": {
+     "over": 158,
+     "under": -215
+    },
+    "open": 1.5,
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "fd_juice": {
+    "side": "under",
+    "line": 1.5,
+    "odds": -250,
+    "res": "W",
+    "units": 0.4
+   }
+  }
+ },
+ {
+  "game": "Denver Broncos @ Pittsburgh Steelers",
+  "player": "bo nix",
+  "stat": "pass_yds",
+  "kickoff": "2026-11-27T20:00:00.000Z",
+  "week": 12,
+  "actual": 169.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-27T1959Z",
+    "line": 201.5,
+    "odds": {
+     "over": -113,
+     "under": -113
+    },
+    "open": 212.5,
+    "calls": {
+     "pin_value": "over",
+     "fd_move": "under"
+    },
+    "pin": 202.5,
+    "pin_lim": 10000,
+    "fair_over": 0.4805,
+    "pin_gap": -1.0,
+    "move_pts": -11.0
+   },
+   "early": {
+    "t": "2026-11-23T1256Z",
+    "line": 212.5,
+    "odds": {
+     "over": -114,
+     "under": -114
+    },
+    "open": 212.5,
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "pin_value": {
+    "side": "over",
+    "line": 201.5,
+    "odds": -113,
+    "res": "L",
+    "units": -1.0
+   },
+   "fd_move": {
+    "side": "under",
+    "line": 201.5,
+    "odds": -113,
+    "res": "W",
+    "units": 0.885
+   }
+  }
+ },
+ {
+  "game": "Denver Broncos @ Pittsburgh Steelers",
+  "player": "courtland sutton",
+  "stat": "receptions",
+  "kickoff": "2026-11-27T20:00:00.000Z",
+  "week": 12,
+  "actual": 1.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-27T1959Z",
+    "line": 2.5,
+    "odds": {
+     "over": -138,
+     "under": 104
+    },
+    "open": 2.5,
+    "calls": {
+     "fd_juice": "under"
+    },
+    "pin": 2.5,
+    "pin_lim": 5000,
+    "fair_over": 0.5479,
+    "juice_c": [
+     16,
+     -12
+    ]
+   },
+   "early": {
+    "t": "2026-11-23T1256Z",
+    "line": 2.5,
+    "odds": {
+     "over": -154,
+     "under": 116
+    },
+    "open": 2.5,
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "fd_juice": {
+    "side": "under",
+    "line": 2.5,
+    "odds": 104,
+    "res": "W",
+    "units": 1.04
+   }
+  }
+ },
+ {
+  "game": "Denver Broncos @ Pittsburgh Steelers",
+  "player": "jaylen warren",
+  "stat": "receptions",
+  "kickoff": "2026-11-27T20:00:00.000Z",
+  "week": 12,
+  "actual": 1.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-27T1959Z",
+    "line": 2.5,
+    "odds": {
+     "over": -125,
+     "under": -106
+    },
+    "open": 2.5,
+    "calls": {
+     "fd_juice": "under"
+    },
+    "pin": 2.5,
+    "pin_lim": 5000,
+    "fair_over": 0.527,
+    "juice_c": [
+     13,
+     -210
+    ]
+   },
+   "early": {
+    "t": "2026-11-23T1256Z",
+    "line": 2.5,
+    "odds": {
+     "over": -138,
+     "under": 104
+    },
+    "open": 2.5,
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "fd_juice": {
+    "side": "under",
+    "line": 2.5,
+    "odds": -106,
+    "res": "W",
+    "units": 0.943
+   }
+  }
+ },
+ {
+  "game": "Denver Broncos @ Pittsburgh Steelers",
+  "player": "jonah coleman",
+  "stat": "receptions",
+  "kickoff": "2026-11-27T20:00:00.000Z",
+  "week": 12,
+  "actual": 8.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-27T1959Z",
+    "line": 3.5,
+    "odds": {
+     "over": -102,
+     "under": -130
+    },
+    "open": 3.5,
+    "calls": {
+     "fd_juice": "over"
+    },
+    "pin": 3.5,
+    "pin_lim": 5000,
+    "fair_over": 0.4817,
+    "juice_c": [
+     -226,
+     36
+    ]
+   },
+   "early": {
+    "t": "2026-11-23T1256Z",
+    "line": 3.5,
+    "odds": {
+     "over": 124,
+     "under": -166
+    },
+    "open": 3.5,
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "fd_juice": {
+    "side": "over",
+    "line": 3.5,
+    "odds": -102,
+    "res": "W",
+    "units": 0.98
+   }
+  }
+ },
+ {
+  "game": "Denver Broncos @ Pittsburgh Steelers",
+  "player": "pat bryant",
+  "stat": "receptions",
+  "kickoff": "2026-11-27T20:00:00.000Z",
+  "week": 12,
+  "actual": 4.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-27T1959Z",
+    "line": 2.5,
+    "odds": {
+     "over": 112,
+     "under": -148
+    },
+    "open": 2.5,
+    "calls": {
+     "fd_juice": "under"
+    },
+    "pin": 2.5,
+    "pin_lim": 2000,
+    "fair_over": 0.4319,
+    "juice_c": [
+     214,
+     -18
+    ]
+   },
+   "early": {
+    "t": "2026-11-23T1256Z",
+    "line": 2.5,
+    "odds": {
+     "over": -102,
+     "under": -130
+    },
+    "open": 2.5,
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "fd_juice": {
+    "side": "under",
+    "line": 2.5,
+    "odds": -148,
+    "res": "L",
+    "units": -1.0
+   }
+  }
+ },
+ {
+  "game": "Denver Broncos @ Pittsburgh Steelers",
+  "player": "pat bryant",
+  "stat": "recv_yds",
+  "kickoff": "2026-11-27T20:00:00.000Z",
+  "week": 12,
+  "actual": 42.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-27T1959Z",
+    "line": 23.5,
+    "odds": {
+     "over": -113,
+     "under": -113
+    },
+    "open": 25.5,
+    "calls": {
+     "fd_move": "under"
+    },
+    "pin": 23.5,
+    "pin_lim": 2000,
+    "fair_over": 0.5022,
+    "move_pts": -2.0
+   },
+   "early": {
+    "t": "2026-11-23T1256Z",
+    "line": 25.5,
+    "odds": {
+     "over": -114,
+     "under": -114
+    },
+    "open": 25.5,
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "fd_move": {
+    "side": "under",
+    "line": 23.5,
+    "odds": -113,
+    "res": "L",
+    "units": -1.0
+   }
+  }
+ },
+ {
+  "game": "Denver Broncos @ Pittsburgh Steelers",
+  "player": "troy franklin",
+  "stat": "receptions",
+  "kickoff": "2026-11-27T20:00:00.000Z",
+  "week": 12,
+  "actual": 1.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-27T1959Z",
+    "line": 0.5,
+    "odds": {
+     "over": -166,
+     "under": 124
+    },
+    "open": 0.5,
+    "calls": {
+     "fd_juice": "under"
+    },
+    "pin": 0.5,
+    "pin_lim": 1000,
+    "fair_over": 0.5556,
+    "juice_c": [
+     39,
+     -28
+    ]
+   },
+   "early": {
+    "t": "2026-11-23T1256Z",
+    "line": 0.5,
+    "odds": {
+     "over": -205,
+     "under": 152
+    },
+    "open": 0.5,
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "fd_juice": {
+    "side": "under",
+    "line": 0.5,
+    "odds": 124,
+    "res": "L",
+    "units": -1.0
+   }
+  }
+ },
+ {
+  "game": "Denver Broncos @ Pittsburgh Steelers",
+  "player": "troy franklin",
+  "stat": "recv_yds",
+  "kickoff": "2026-11-27T20:00:00.000Z",
+  "week": 12,
+  "actual": 1.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-27T1959Z",
+    "line": 4.5,
+    "odds": {
+     "over": -113,
+     "under": -113
+    },
+    "open": 5.5,
+    "calls": {
+     "fd_move": "under"
+    },
+    "pin": 4.5,
+    "pin_lim": 1000,
+    "fair_over": 0.5,
+    "move_pts": -1.0
+   },
+   "early": {
+    "t": "2026-11-23T1256Z",
+    "line": 5.5,
+    "odds": {
+     "over": -114,
+     "under": -114
+    },
+    "open": 5.5,
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "fd_move": {
+    "side": "under",
+    "line": 4.5,
+    "odds": -113,
+    "res": "W",
+    "units": 0.885
+   }
+  }
+ },
+ {
+  "game": "Denver Broncos @ Pittsburgh Steelers",
+  "player": "evan engram",
+  "stat": "recv_yds",
+  "kickoff": "2026-11-27T20:00:00.000Z",
+  "week": 12,
+  "actual": 0.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-27T1959Z",
+    "line": 22.5,
+    "odds": {
+     "over": -113,
+     "under": -113
+    },
+    "open": 20.5,
+    "calls": {
+     "fd_move": "over"
+    },
+    "pin": 22.5,
+    "pin_lim": 2000,
+    "fair_over": 0.5183,
+    "move_pts": 2.0
+   },
+   "early": {
+    "t": "2026-11-23T1256Z",
+    "line": 20.5,
+    "odds": {
+     "over": -114,
+     "under": -114
+    },
+    "open": 20.5,
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "fd_move": {
+    "side": "over",
+    "line": 22.5,
+    "odds": -113,
+    "res": "L",
+    "units": -1.0
+   }
+  }
+ },
+ {
+  "game": "Denver Broncos @ Pittsburgh Steelers",
+  "player": "rico dowdle",
+  "stat": "receptions",
+  "kickoff": "2026-11-27T20:00:00.000Z",
+  "week": 12,
+  "actual": 1.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-27T1959Z",
+    "line": 1.5,
+    "odds": {
+     "over": -148,
+     "under": 112
+    },
+    "open": 1.5,
+    "calls": {
+     "fd_juice": "under"
+    },
+    "pin": 1.5,
+    "pin_lim": 1000,
+    "fair_over": 0.5412,
+    "juice_c": [
+     34,
+     -24
+    ]
+   },
+   "early": {
+    "t": "2026-11-23T1256Z",
+    "line": 1.5,
+    "odds": {
+     "over": -182,
+     "under": 136
+    },
+    "open": 1.5,
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "fd_juice": {
+    "side": "under",
+    "line": 1.5,
+    "odds": 112,
+    "res": "W",
+    "units": 1.12
+   }
+  }
+ },
+ {
+  "game": "Denver Broncos @ Pittsburgh Steelers",
+  "player": "courtland sutton",
+  "stat": "recv_yds",
+  "kickoff": "2026-11-27T20:00:00.000Z",
+  "week": 12,
+  "actual": 4.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-27T1959Z",
+    "line": 26.5,
+    "odds": {
+     "over": -113,
+     "under": -113
+    },
+    "open": 27.5,
+    "calls": {
+     "fd_move": "under"
+    },
+    "pin": 26.5,
+    "pin_lim": 5000,
+    "fair_over": 0.4978,
+    "move_pts": -1.0
+   },
+   "early": {
+    "t": "2026-11-23T1256Z",
+    "line": 27.5,
+    "odds": {
+     "over": -114,
+     "under": -114
+    },
+    "open": 27.5,
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "fd_move": {
+    "side": "under",
+    "line": 26.5,
+    "odds": -113,
+    "res": "W",
+    "units": 0.885
+   }
+  }
+ },
+ {
+  "game": "Denver Broncos @ Pittsburgh Steelers",
+  "player": "jonah coleman",
+  "stat": "recv_yds",
+  "kickoff": "2026-11-27T20:00:00.000Z",
+  "week": 12,
+  "actual": 46.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-27T1959Z",
+    "line": 22.5,
+    "odds": {
+     "over": -113,
+     "under": -113
+    },
+    "open": 19.5,
+    "calls": {
+     "pin_value": "under",
+     "fd_move": "over"
+    },
+    "pin": 21.5,
+    "pin_lim": 5000,
+    "fair_over": 0.513,
+    "pin_gap": 1.0,
+    "move_pts": 3.0
+   },
+   "early": {
+    "t": "2026-11-23T1256Z",
+    "line": 19.5,
+    "odds": {
+     "over": -114,
+     "under": -114
+    },
+    "open": 19.5,
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "pin_value": {
+    "side": "under",
+    "line": 22.5,
+    "odds": -113,
+    "res": "L",
+    "units": -1.0
+   },
+   "fd_move": {
+    "side": "over",
+    "line": 22.5,
+    "odds": -113,
+    "res": "W",
+    "units": 0.885
+   }
+  }
+ },
+ {
+  "game": "Denver Broncos @ Pittsburgh Steelers",
+  "player": "marvin mims jr",
+  "stat": "recv_yds",
+  "kickoff": "2026-11-27T20:00:00.000Z",
+  "week": 12,
+  "actual": 0.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-27T1959Z",
+    "line": 9.5,
+    "odds": {
+     "over": -113,
+     "under": -113
+    },
+    "open": 8.5,
+    "calls": {
+     "pin_value": "under",
+     "fd_move": "over"
+    },
+    "pin": 8.5,
+    "pin_lim": 1000,
+    "fair_over": 0.4913,
+    "pin_gap": 1.0,
+    "move_pts": 1.0
+   },
+   "early": {
+    "t": "2026-11-23T1256Z",
+    "line": 8.5,
+    "odds": {
+     "over": -114,
+     "under": -114
+    },
+    "open": 8.5,
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "pin_value": {
+    "side": "under",
+    "line": 9.5,
+    "odds": -113,
+    "res": "W",
+    "units": 0.885
+   },
+   "fd_move": {
+    "side": "over",
+    "line": 9.5,
+    "odds": -113,
+    "res": "L",
+    "units": -1.0
+   }
+  }
+ },
+ {
+  "game": "Denver Broncos @ Pittsburgh Steelers",
+  "player": "jaylen waddle",
+  "stat": "recv_yds",
+  "kickoff": "2026-11-27T20:00:00.000Z",
+  "week": 12,
+  "actual": 53.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-27T1959Z",
+    "line": 43.5,
+    "odds": {
+     "over": -113,
+     "under": -113
+    },
+    "open": 42.5,
+    "calls": {
+     "pin_value": "over",
+     "fd_move": "over"
+    },
+    "pin": 44.5,
+    "pin_lim": 7500,
+    "fair_over": 0.5081,
+    "pin_gap": -1.0,
+    "move_pts": 1.0
+   },
+   "early": {
+    "t": "2026-11-23T1256Z",
+    "line": 42.5,
+    "odds": {
+     "over": -114,
+     "under": -114
+    },
+    "open": 42.5,
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "pin_value": {
+    "side": "over",
+    "line": 43.5,
+    "odds": -113,
+    "res": "W",
+    "units": 0.885
+   },
+   "fd_move": {
+    "side": "over",
+    "line": 43.5,
+    "odds": -113,
+    "res": "W",
+    "units": 0.885
+   }
+  }
+ },
+ {
+  "game": "Denver Broncos @ Pittsburgh Steelers",
+  "player": "jaylen warren",
+  "stat": "recv_yds",
+  "kickoff": "2026-11-27T20:00:00.000Z",
+  "week": 12,
+  "actual": 0.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-27T1959Z",
+    "line": 19.5,
+    "odds": {
+     "over": -113,
+     "under": -113
+    },
+    "open": 19.5,
+    "calls": {
+     "pin_value": "under",
+     "pin_lead": "under"
+    },
+    "pin": 18.5,
+    "pin_lim": 5000,
+    "fair_over": 0.513,
+    "pin_gap": 1.0
+   },
+   "early": {
+    "t": "2026-11-23T1256Z",
+    "line": 19.5,
+    "odds": {
+     "over": -114,
+     "under": -114
+    },
+    "open": 19.5,
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "pin_value": {
+    "side": "under",
+    "line": 19.5,
+    "odds": -113,
+    "res": "W",
+    "units": 0.885
+   },
+   "pin_lead": {
+    "side": "under",
+    "line": 19.5,
+    "odds": -113,
+    "res": "W",
+    "units": 0.885
+   }
+  }
+ },
+ {
+  "game": "Denver Broncos @ Pittsburgh Steelers",
+  "player": "jaylen warren",
+  "stat": "rush_yds",
+  "kickoff": "2026-11-27T20:00:00.000Z",
+  "week": 12,
+  "actual": 46.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-27T1959Z",
+    "line": 62.5,
+    "odds": {
+     "over": -113,
+     "under": -113
+    },
+    "open": 58.5,
+    "calls": {
+     "pin_value": "over",
+     "fd_move": "over"
+    },
+    "pin": 63.5,
+    "pin_lim": 7500,
+    "fair_over": 0.5043,
+    "pin_gap": -1.0,
+    "move_pts": 4.0
+   },
+   "early": {
+    "t": "2026-11-23T1256Z",
+    "line": 58.5,
+    "odds": {
+     "over": -114,
+     "under": -114
+    },
+    "open": 58.5,
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "pin_value": {
+    "side": "over",
+    "line": 62.5,
+    "odds": -113,
+    "res": "L",
+    "units": -1.0
+   },
+   "fd_move": {
+    "side": "over",
+    "line": 62.5,
+    "odds": -113,
+    "res": "L",
+    "units": -1.0
+   }
+  }
+ },
+ {
+  "game": "Denver Broncos @ Pittsburgh Steelers",
+  "player": "bo nix",
+  "stat": "rush_yds",
+  "kickoff": "2026-11-27T20:00:00.000Z",
+  "week": 12,
+  "actual": 7.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-27T1959Z",
+    "line": 10.5,
+    "odds": {
+     "over": -113,
+     "under": -113
+    },
+    "open": 11.5,
+    "calls": {
+     "fd_move": "under"
+    },
+    "pin": 10.5,
+    "pin_lim": 2000,
+    "fair_over": 0.5,
+    "move_pts": -1.0
+   },
+   "early": {
+    "t": "2026-11-23T1256Z",
+    "line": 11.5,
+    "odds": {
+     "over": -108,
+     "under": -120
+    },
+    "open": 11.5,
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "fd_move": {
+    "side": "under",
+    "line": 10.5,
+    "odds": -113,
+    "res": "W",
+    "units": 0.885
+   }
+  }
+ },
+ {
+  "game": "Denver Broncos @ Pittsburgh Steelers",
+  "player": "jonah coleman",
+  "stat": "rush_yds",
+  "kickoff": "2026-11-27T20:00:00.000Z",
+  "week": 12,
+  "actual": 26.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-27T1959Z",
+    "line": 73.5,
+    "odds": {
+     "over": -113,
+     "under": -113
+    },
+    "open": 69.5,
+    "calls": {
+     "fd_move": "over"
+    },
+    "pin": 73.5,
+    "pin_lim": 7500,
+    "fair_over": 0.4817,
+    "move_pts": 4.0
+   },
+   "early": {
+    "t": "2026-11-23T1256Z",
+    "line": 69.5,
+    "odds": {
+     "over": -114,
+     "under": -114
+    },
+    "open": 69.5,
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "fd_move": {
+    "side": "over",
+    "line": 73.5,
+    "odds": -113,
+    "res": "L",
+    "units": -1.0
+   }
+  }
+ },
+ {
+  "game": "Denver Broncos @ Pittsburgh Steelers",
+  "player": "rico dowdle",
+  "stat": "rush_yds",
+  "kickoff": "2026-11-27T20:00:00.000Z",
+  "week": 12,
+  "actual": 71.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-27T1959Z",
+    "line": 32.5,
+    "odds": {
+     "over": -113,
+     "under": -113
+    },
+    "open": 28.5,
+    "calls": {
+     "pin_value": "under",
+     "fd_move": "over"
+    },
+    "pin": 31.5,
+    "pin_lim": 3000,
+    "fair_over": 0.4957,
+    "pin_gap": 1.0,
+    "move_pts": 4.0
+   },
+   "early": {
+    "t": "2026-11-23T1256Z",
+    "line": 28.5,
+    "odds": {
+     "over": -114,
+     "under": -114
+    },
+    "open": 28.5,
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "pin_value": {
+    "side": "under",
+    "line": 32.5,
+    "odds": -113,
+    "res": "L",
+    "units": -1.0
+   },
+   "fd_move": {
+    "side": "over",
+    "line": 32.5,
+    "odds": -113,
+    "res": "W",
+    "units": 0.885
+   }
+  }
+ },
+ {
+  "game": "Denver Broncos @ Pittsburgh Steelers",
   "player": "jonah coleman",
   "stat": "anytime_td",
   "kickoff": "2026-11-27T20:00:00.000Z",
@@ -74744,6 +75747,694 @@
     "odds": 550,
     "res": "L",
     "units": -1.0
+   }
+  }
+ },
+ {
+  "game": "Denver Broncos @ Pittsburgh Steelers",
+  "player": "dk metcalf",
+  "stat": "receptions",
+  "kickoff": "2026-11-27T20:00:00.000Z",
+  "week": 12,
+  "actual": 3.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-27T1959Z",
+    "line": 2.5,
+    "odds": {
+     "over": -102,
+     "under": -130
+    },
+    "open": 3.5,
+    "calls": {
+     "fd_move": "under"
+    },
+    "pin": 2.5,
+    "pin_lim": 5000,
+    "fair_over": 0.5022,
+    "move_pts": -1.0
+   },
+   "early": {
+    "t": "2026-11-23T2335Z",
+    "line": 3.5,
+    "odds": {
+     "over": 124,
+     "under": -166
+    },
+    "open": 3.5,
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "fd_move": {
+    "side": "under",
+    "line": 2.5,
+    "odds": -130,
+    "res": "L",
+    "units": -1.0
+   }
+  }
+ },
+ {
+  "game": "Denver Broncos @ Pittsburgh Steelers",
+  "player": "dk metcalf",
+  "stat": "recv_yds",
+  "kickoff": "2026-11-27T20:00:00.000Z",
+  "week": 12,
+  "actual": 36.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-27T1959Z",
+    "line": 27.5,
+    "odds": {
+     "over": -113,
+     "under": -113
+    },
+    "open": 34.5,
+    "calls": {
+     "pin_value": "over",
+     "pin_lead": "over",
+     "fd_move": "under"
+    },
+    "pin": 28.5,
+    "pin_lim": 5000,
+    "fair_over": 0.4935,
+    "pin_gap": -1.0,
+    "move_pts": -7.0
+   },
+   "early": {
+    "t": "2026-11-23T2335Z",
+    "line": 34.5,
+    "odds": {
+     "over": -114,
+     "under": -114
+    },
+    "open": 34.5,
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "pin_value": {
+    "side": "over",
+    "line": 27.5,
+    "odds": -113,
+    "res": "W",
+    "units": 0.885
+   },
+   "pin_lead": {
+    "side": "over",
+    "line": 27.5,
+    "odds": -113,
+    "res": "W",
+    "units": 0.885
+   },
+   "fd_move": {
+    "side": "under",
+    "line": 27.5,
+    "odds": -113,
+    "res": "L",
+    "units": -1.0
+   }
+  }
+ },
+ {
+  "game": "Denver Broncos @ Pittsburgh Steelers",
+  "player": "germie bernard",
+  "stat": "recv_yds",
+  "kickoff": "2026-11-27T20:00:00.000Z",
+  "week": 12,
+  "actual": 58.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-27T1959Z",
+    "line": 22.5,
+    "odds": {
+     "over": -113,
+     "under": -113
+    },
+    "open": 24.5,
+    "calls": {
+     "fd_move": "under"
+    },
+    "pin": 22.5,
+    "pin_lim": 3000,
+    "fair_over": 0.5043,
+    "move_pts": -2.0
+   },
+   "early": {
+    "t": "2026-11-23T2335Z",
+    "line": 24.5,
+    "odds": {
+     "over": -114,
+     "under": -114
+    },
+    "open": 24.5,
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "fd_move": {
+    "side": "under",
+    "line": 22.5,
+    "odds": -113,
+    "res": "L",
+    "units": -1.0
+   }
+  }
+ },
+ {
+  "game": "Denver Broncos @ Pittsburgh Steelers",
+  "player": "pat freiermuth",
+  "stat": "recv_yds",
+  "kickoff": "2026-11-27T20:00:00.000Z",
+  "week": 12,
+  "actual": 1.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-27T1959Z",
+    "line": 20.5,
+    "odds": {
+     "over": -113,
+     "under": -113
+    },
+    "open": 19.5,
+    "calls": {
+     "fd_move": "over"
+    },
+    "pin": 20.5,
+    "pin_lim": 2000,
+    "fair_over": 0.5043,
+    "move_pts": 1.0
+   },
+   "early": {
+    "t": "2026-11-23T2335Z",
+    "line": 19.5,
+    "odds": {
+     "over": -114,
+     "under": -114
+    },
+    "open": 19.5,
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "fd_move": {
+    "side": "over",
+    "line": 20.5,
+    "odds": -113,
+    "res": "L",
+    "units": -1.0
+   }
+  }
+ },
+ {
+  "game": "Denver Broncos @ Pittsburgh Steelers",
+  "player": "adam trautman",
+  "stat": "receptions",
+  "kickoff": "2026-11-27T20:00:00.000Z",
+  "week": 12,
+  "actual": 2.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-27T1959Z",
+    "line": 0.5,
+    "odds": {
+     "over": -188,
+     "under": 140
+    },
+    "open": 0.5,
+    "calls": {
+     "pin_price": "under"
+    },
+    "pin": 0.5,
+    "pin_lim": 1000,
+    "fair_over": 0.5832,
+    "edge_pct": 0.04
+   },
+   "early": {
+    "t": "2026-11-23T2335Z",
+    "line": 0.5,
+    "odds": {
+     "over": -188,
+     "under": 140
+    },
+    "open": 0.5,
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "pin_price": {
+    "side": "under",
+    "line": 0.5,
+    "odds": 140,
+    "res": "L",
+    "units": -1.0
+   }
+  }
+ },
+ {
+  "game": "Denver Broncos @ Pittsburgh Steelers",
+  "player": "germie bernard",
+  "stat": "receptions",
+  "kickoff": "2026-11-27T20:00:00.000Z",
+  "week": 12,
+  "actual": 1.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-27T1959Z",
+    "line": 2.5,
+    "odds": {
+     "over": -148,
+     "under": 112
+    },
+    "open": 3.5,
+    "calls": {
+     "fd_move": "under"
+    },
+    "pin": 2.5,
+    "pin_lim": 3000,
+    "fair_over": 0.5716,
+    "move_pts": -1.0
+   },
+   "early": {
+    "t": "2026-11-23T2335Z",
+    "line": 3.5,
+    "odds": {
+     "over": 124,
+     "under": -166
+    },
+    "open": 3.5,
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "fd_move": {
+    "side": "under",
+    "line": 2.5,
+    "odds": 112,
+    "res": "W",
+    "units": 1.12
+   }
+  }
+ },
+ {
+  "game": "Denver Broncos @ Pittsburgh Steelers",
+  "player": "roman wilson",
+  "stat": "receptions",
+  "kickoff": "2026-11-27T20:00:00.000Z",
+  "week": 12,
+  "actual": 1.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-27T1959Z",
+    "line": 1.5,
+    "odds": {
+     "over": 104,
+     "under": -138
+    },
+    "open": 1.5,
+    "calls": {
+     "fd_juice": "under"
+    },
+    "pin": 1.5,
+    "pin_lim": 1000,
+    "fair_over": 0.4463,
+    "juice_c": [
+     218,
+     -24
+    ]
+   },
+   "early": {
+    "t": "2026-11-23T2335Z",
+    "line": 1.5,
+    "odds": {
+     "over": -114,
+     "under": -114
+    },
+    "open": 1.5,
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "fd_juice": {
+    "side": "under",
+    "line": 1.5,
+    "odds": -138,
+    "res": "W",
+    "units": 0.725
+   }
+  }
+ },
+ {
+  "game": "Denver Broncos @ Pittsburgh Steelers",
+  "player": "roman wilson",
+  "stat": "recv_yds",
+  "kickoff": "2026-11-27T20:00:00.000Z",
+  "week": 12,
+  "actual": 37.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-27T1959Z",
+    "line": 12.5,
+    "odds": {
+     "over": -113,
+     "under": -113
+    },
+    "open": 16.5,
+    "calls": {
+     "fd_move": "under"
+    },
+    "pin": 12.5,
+    "pin_lim": 1000,
+    "fair_over": 0.5043,
+    "move_pts": -4.0
+   },
+   "early": {
+    "t": "2026-11-23T2335Z",
+    "line": 16.5,
+    "odds": {
+     "over": -114,
+     "under": -114
+    },
+    "open": 16.5,
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "fd_move": {
+    "side": "under",
+    "line": 12.5,
+    "odds": -113,
+    "res": "L",
+    "units": -1.0
+   }
+  }
+ },
+ {
+  "game": "Denver Broncos @ Pittsburgh Steelers",
+  "player": "marvin mims jr",
+  "stat": "rush_yds",
+  "kickoff": "2026-11-27T20:00:00.000Z",
+  "week": 12,
+  "actual": -2.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-27T1959Z",
+    "line": 4.5,
+    "odds": {
+     "over": -113,
+     "under": -113
+    },
+    "open": 1.5,
+    "calls": {
+     "pin_value": "under",
+     "fd_move": "over"
+    },
+    "pin": 3.5,
+    "pin_lim": 1000,
+    "fair_over": 0.4978,
+    "pin_gap": 1.0,
+    "move_pts": 3.0
+   },
+   "early": {
+    "t": "2026-11-23T2335Z",
+    "line": 1.5,
+    "odds": {
+     "over": -102,
+     "under": -128
+    },
+    "open": 1.5,
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "pin_value": {
+    "side": "under",
+    "line": 4.5,
+    "odds": -113,
+    "res": "W",
+    "units": 0.885
+   },
+   "fd_move": {
+    "side": "over",
+    "line": 4.5,
+    "odds": -113,
+    "res": "L",
+    "units": -1.0
+   }
+  }
+ },
+ {
+  "game": "Denver Broncos @ Pittsburgh Steelers",
+  "player": "mason rudolph",
+  "stat": "pass_yds",
+  "kickoff": "2026-11-27T20:00:00.000Z",
+  "week": 12,
+  "actual": 142.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-27T1959Z",
+    "line": 170.5,
+    "odds": {
+     "over": -113,
+     "under": -113
+    },
+    "open": 177.5,
+    "calls": {
+     "pin_value": "over",
+     "fd_move": "under"
+    },
+    "pin": 172.5,
+    "pin_lim": 7500,
+    "fair_over": 0.5,
+    "pin_gap": -2.0,
+    "move_pts": -7.0
+   },
+   "early": {
+    "t": "2026-11-25T0617Z",
+    "line": 177.5,
+    "odds": {
+     "over": -114,
+     "under": -114
+    },
+    "open": 177.5,
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "pin_value": {
+    "side": "over",
+    "line": 170.5,
+    "odds": -113,
+    "res": "L",
+    "units": -1.0
+   },
+   "fd_move": {
+    "side": "under",
+    "line": 170.5,
+    "odds": -113,
+    "res": "W",
+    "units": 0.885
+   }
+  }
+ },
+ {
+  "game": "Denver Broncos @ Pittsburgh Steelers",
+  "player": "mason rudolph",
+  "stat": "pass_tds",
+  "kickoff": "2026-11-27T20:00:00.000Z",
+  "week": 12,
+  "actual": 1.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-27T1959Z",
+    "line": 0.5,
+    "odds": {
+     "over": -182,
+     "under": 138
+    },
+    "open": 0.5,
+    "calls": {
+     "fd_juice": "under"
+    },
+    "pin": 0.5,
+    "pin_lim": 7500,
+    "fair_over": 0.6102,
+    "juice_c": [
+     28,
+     -16
+    ]
+   },
+   "early": {
+    "t": "2026-11-25T0617Z",
+    "line": 0.5,
+    "odds": {
+     "over": -210,
+     "under": 154
+    },
+    "open": 0.5,
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "fd_juice": {
+    "side": "under",
+    "line": 0.5,
+    "odds": 138,
+    "res": "L",
+    "units": -1.0
+   }
+  }
+ },
+ {
+  "game": "Denver Broncos @ Pittsburgh Steelers",
+  "player": "mason rudolph",
+  "stat": "rush_yds",
+  "kickoff": "2026-11-27T20:00:00.000Z",
+  "week": 12,
+  "actual": 0.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-27T1959Z",
+    "line": 7.5,
+    "odds": {
+     "over": -113,
+     "under": -113
+    },
+    "open": 5.5,
+    "calls": {
+     "pin_value": "under",
+     "fd_move": "over"
+    },
+    "pin": 5.5,
+    "pin_lim": 1000,
+    "fair_over": 0.5699,
+    "pin_gap": 2.0,
+    "move_pts": 2.0
+   },
+   "early": {
+    "t": "2026-11-25T1308Z",
+    "line": 5.5,
+    "odds": {
+     "over": -114,
+     "under": -114
+    },
+    "open": 5.5,
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "pin_value": {
+    "side": "under",
+    "line": 7.5,
+    "odds": -113,
+    "res": "W",
+    "units": 0.885
+   },
+   "fd_move": {
+    "side": "over",
+    "line": 7.5,
+    "odds": -113,
+    "res": "L",
+    "units": -1.0
+   }
+  }
+ },
+ {
+  "game": "Denver Broncos @ Pittsburgh Steelers",
+  "player": "tyler badie",
+  "stat": "rush_yds",
+  "kickoff": "2026-11-27T20:00:00.000Z",
+  "week": 12,
+  "actual": 11.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-27T1959Z",
+    "line": 5.5,
+    "odds": {
+     "over": -115,
+     "under": -111
+    },
+    "open": 4.5,
+    "calls": {
+     "fd_move": "over"
+    },
+    "move_pts": 1.0
+   },
+   "early": {
+    "t": "2026-11-27T0430Z",
+    "line": 4.5,
+    "odds": {
+     "over": -113,
+     "under": -113
+    },
+    "open": 4.5,
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "fd_move": {
+    "side": "over",
+    "line": 5.5,
+    "odds": -115,
+    "res": "W",
+    "units": 0.87
+   }
+  }
+ },
+ {
+  "game": "Denver Broncos @ Pittsburgh Steelers",
+  "player": "max hurleman",
+  "stat": "recv_yds",
+  "kickoff": "2026-11-27T20:00:00.000Z",
+  "week": 12,
+  "actual": 0.0,
+  "markets": {
+   "close": {
+    "t": "2026-11-27T1959Z",
+    "line": 0.5,
+    "odds": {
+     "over": null,
+     "under": null
+    },
+    "open": 3.5,
+    "calls": {
+     "fd_move": "under"
+    },
+    "move_pts": -3.0
+   },
+   "early": {
+    "t": "2026-11-27T0545Z",
+    "line": 3.5,
+    "odds": {
+     "over": 108,
+     "under": -138
+    },
+    "open": 3.5,
+    "calls": {}
+   }
+  },
+  "early_graded": {},
+  "close_graded": {
+   "fd_move": {
+    "side": "under",
+    "line": 0.5,
+    "odds": null,
+    "res": "W",
+    "units": 0.0
    }
   }
  }
