@@ -1,32 +1,32 @@
 {
- "run_utc": "2026-11-28T09:13:26Z",
- "cycle": 5,
+ "run_utc": "2026-11-28T12:14:02Z",
+ "cycle": 3,
  "heavy": true,
  "games": 21,
  "rows": 3769,
  "props_gz": 38663,
  "pulls_ok": 112,
  "pulls_fail": 0,
- "elapsed_min": 240.6,
- "next_kickoff_h": 32.8,
+ "elapsed_min": 120.8,
+ "next_kickoff_h": 29.8,
  "cadence_min": 60,
  "closing_window": false,
  "pin_signals": 9,
  "attempts": [
   {
    "name": "actionnet",
-   "bytes": 488405,
-   "gz": 27896
+   "bytes": 484995,
+   "gz": 27910
   },
   {
    "name": "fanduel",
-   "bytes": 1373190,
-   "gz": 102177
+   "bytes": 1373160,
+   "gz": 102202
   },
   {
    "name": "pin_prices",
-   "bytes": 619589,
-   "gz": 29226
+   "bytes": 619670,
+   "gz": 29629
   },
   {
    "name": "pin_matchups",
@@ -35,8 +35,8 @@
   },
   {
    "name": "sbr",
-   "bytes": 551177,
-   "gz": 51052
+   "bytes": 550972,
+   "gz": 50997
   },
   {
    "name": "vsin",
@@ -48,13 +48,13 @@
   },
   {
    "name": "sbr_totals",
-   "bytes": 550931,
-   "gz": 50676
+   "bytes": 550778,
+   "gz": 50653
   },
   {
    "name": "espn",
-   "bytes": 277714,
-   "gz": 22805
+   "bytes": 277750,
+   "gz": 22820
   }
  ]
 }
