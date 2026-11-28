@@ -1,6 +1,6 @@
 # NFL period board
 
-Generated 2026-11-28 05:13 UTC. Live halves, quarters and team totals where a signal has an
+Generated 2026-11-28 08:24 UTC. Live halves, quarters and team totals where a signal has an
 opinion. Each call shows that signal's graded record so far.
 
 No splits exist for any of these markets — every call is handicap or price.
@@ -64,7 +64,7 @@ This is analysis, not picks.
 | Sun 13:00 | New York Giants @ Indianapolis Colts | q4\|total | under | 10.5 | 11.5 |  |  |  | -108 | follow_move->under (91-87-10 fit · 74-53-2 fwd) |
 | Sun 13:00 | New York Jets @ Miami Dolphins | q4\|total | under | 10.5 | 11.5 |  |  |  | -120 | follow_move->under (91-87-10 fit · 74-53-2 fwd) |
 | Sun 13:00 | Atlanta Falcons @ Minnesota Vikings | q4\|total | under | 10.5 | 11.5 |  |  |  | -114 | follow_move->under (91-87-10 fit · 74-53-2 fwd) |
-| Sun 16:05 | New England Patriots @ Los Angeles Chargers | 1h\|ml | away | -144 | -110 | 119 |  | $500 | -144 | follow_move->away (91-87-10 fit · 74-53-2 fwd) |
+| Sun 16:05 | New England Patriots @ Los Angeles Chargers | 1h\|ml | away | -144 | -110 | 121 |  | $500 | -144 | follow_move->away (91-87-10 fit · 74-53-2 fwd) |
 | Sun 16:05 | New England Patriots @ Los Angeles Chargers | 2h\|ml | away | -134 | -108 |  |  |  | -134 | follow_move->away (91-87-10 fit · 74-53-2 fwd) |
 | Sun 16:05 | New England Patriots @ Los Angeles Chargers | 2h\|spread | away | -1.5 | -1.5 |  |  |  | 100 | follow_move->away (91-87-10 fit · 74-53-2 fwd) |
 | Sun 16:05 | New England Patriots @ Los Angeles Chargers | 2h\|total | over | 17.5 | 16.5 |  |  |  | 100 | follow_move->over (91-87-10 fit · 74-53-2 fwd) |
@@ -73,6 +73,7 @@ This is analysis, not picks.
 | Sun 16:05 | New England Patriots @ Los Angeles Chargers | q4\|ml | away | -132 | -112 |  |  |  | -132 | follow_move->away (91-87-10 fit · 74-53-2 fwd) |
 | Sun 16:05 | New England Patriots @ Los Angeles Chargers | q4\|spread | away | -1.5 | -1.5 |  |  |  | 124 | follow_move->away (91-87-10 fit · 74-53-2 fwd) |
 | Sun 16:05 | New England Patriots @ Los Angeles Chargers | q4\|total | over | 9.5 | 9.5 |  |  |  | -128 | fd_juice->over (37-40 fit · 26-20 fwd) |
+| Sun 16:25 | Seattle Seahawks @ San Francisco 49ers | 1h\|ml | away | -116 | -154 | -110 |  | $500 | -116 | follow_move->away (91-87-10 fit · 74-53-2 fwd) |
 | Sun 16:25 | Washington Commanders @ Arizona Cardinals | 1h\|ml | home | 215 | 215 | 195 |  | $500 | 215 | pin_price->home (5-12 fit · 6-10 fwd) |
 | Sun 16:25 | Washington Commanders @ Arizona Cardinals | 1h\|spread | home | 4.5 | 4.5 | 4.0 | 0.5 | $500 | -120 | pin_value->home (53-47 fit · 18-23 fwd) |
 | Sun 16:25 | Washington Commanders @ Arizona Cardinals | 1h\|total | over | 20.5 | 20.5 | 20.5 |  | $500 | 100 | pin_price->over (5-12 fit · 6-10 fwd) |
@@ -106,7 +107,7 @@ This is analysis, not picks.
 
 | kickoff (ET) | game | market | lean | FD | open | Pin | gap | limit | price | calls |
 |---|---|---|---|---|---|---|---|---|---|---|
-| Sun 13:00 | New Orleans Saints @ Cincinnati Bengals | 1h\|ml | home | -440 | -390 | -342 |  | $500 | -440 | follow_move->home (91-87-10 fit · 74-53-2 fwd); pin_price->away (5-12 fit · 6-10 fwd) |
+| Sun 13:00 | New Orleans Saints @ Cincinnati Bengals | 1h\|ml | home | -440 | -390 | -343 |  | $500 | -440 | follow_move->home (91-87-10 fit · 74-53-2 fwd); pin_price->away (5-12 fit · 6-10 fwd) |
 | Sun 13:00 | New Orleans Saints @ Cincinnati Bengals | 1h\|spread | home | -7.5 | -6.5 | -6.5 | -1.0 | $500 | 105 | follow_move->home (91-87-10 fit · 74-53-2 fwd); pin_value->away (53-47 fit · 18-23 fwd) |
 | Sun 13:00 | Baltimore Ravens @ Houston Texans | 1h\|spread | away | 3.5 | -3.5 | -4.0 | 0.5 | $500 | -110 | fd_juice->away (37-40 fit · 26-20 fwd); pin_value->home (53-47 fit · 18-23 fwd) |
 | Sun 13:00 | New York Giants @ Indianapolis Colts | 1h\|spread | home | 3.5 | 3.5 | 4.0 | -0.5 | $500 | -120 | fd_juice->home (37-40 fit · 26-20 fwd); pin_value->away (53-47 fit · 18-23 fwd) |
@@ -120,7 +121,6 @@ This is analysis, not picks.
 | Sun 16:05 | New England Patriots @ Los Angeles Chargers | 1h\|spread | away | -1.5 | -1.5 | -0.5 | 2.0 | $500 | 100 | follow_move->away (91-87-10 fit · 74-53-2 fwd); pin_value->home (53-47 fit · 18-23 fwd) |
 | Sun 16:05 | New England Patriots @ Los Angeles Chargers | 1h\|tt\|away | over | 9.5 | 8.5 | 8.5 | 1.0 | $500 | -118 | follow_move->over (91-87-10 fit · 74-53-2 fwd); pin_value->under (53-47 fit · 18-23 fwd) |
 | Sun 16:05 | New England Patriots @ Los Angeles Chargers | 1h\|tt\|home | under | 7.5 | 8.5 | 9.5 | -2.0 | $500 | -130 | follow_move->under (91-87-10 fit · 74-53-2 fwd); pin_value->over (53-47 fit · 18-23 fwd) |
-| Sun 16:25 | Seattle Seahawks @ San Francisco 49ers | 1h\|ml | away | -116 | -154 | -112 |  | $500 | -116 | follow_move->away (91-87-10 fit · 74-53-2 fwd); pin_price->home (5-12 fit · 6-10 fwd) |
 | Sun 16:25 | Seattle Seahawks @ San Francisco 49ers | 1h\|spread | away | -1.5 | -1.5 | -2.5 | 4.0 | $500 | 120 | follow_move->away (91-87-10 fit · 74-53-2 fwd); pin_value->home (53-47 fit · 18-23 fwd) |
 | Sun 16:25 | Seattle Seahawks @ San Francisco 49ers | 1h\|total | under | 20.5 | 23.5 | 23.5 | -3.0 | $500 | -110 | follow_move->under (91-87-10 fit · 74-53-2 fwd); pin_value->over (53-47 fit · 18-23 fwd) |
 | Sun 16:25 | Seattle Seahawks @ San Francisco 49ers | 1h\|tt\|home | under | 9.5 | 12.5 | 13.5 | -4.0 | $500 | 120 | follow_move->under (91-87-10 fit · 74-53-2 fwd); pin_value->over (53-47 fit · 18-23 fwd) |
